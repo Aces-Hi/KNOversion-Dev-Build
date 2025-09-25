@@ -1,0 +1,2935 @@
+[Data]
+;Amount of life to start with
+life = 1500
+;attack power (more is stronger)
+attack = 100
+;defensive power (more is stronger)
+defence = 100
+;Percentage to increase defense everytime player is knocked down
+fall.defence_up = 0
+;Time which player lies down for, before getting up
+liedown.time = 60
+;Number of points for juggling
+airjuggle = 20
+;Default hit spark number for HitDefs
+sparkno = 2
+;Default guard spark number
+guard.sparkno = 40
+;1 to enable echo on KO
+KO.echo = 0
+;Volume offset (negative for softer)
+volume = 0
+
+power = 6000
+;Variables with this index and above will not have their values
+;reset to 0 between rounds or matches. There are 60 int variables,
+;indexed from 0 to 59, and 40 float variables, indexed from 0 to 39.
+;If omitted, then it defaults to 60 and 40 for integer and float
+;variables repectively, meaning that none are persistent, i.e. all
+;are reset. If you want your variables to persist between matches,
+;you need to override state 5900 from common1.cns.
+IntPersistIndex = 60
+FloatPersistIndex = 39
+
+[Size]
+xscale = .84          ;Horizontal scaling factor.
+yscale = .84     ;Vertical scaling factor.
+ground.back = 15     ;Player width (back, ground)
+ground.front = 16    ;Player width (front, ground)
+air.back = 12        ;Player width (back, air)
+air.front = 12       ;Player width (front, air)
+height = 50          ;Height of player (for opponent to jump over)
+attack.dist = 0    ;Default attack distance
+proj.attack.dist = 0;Default attack distance for projectiles
+proj.doscale = 0     ;Set to 1 to scale projectiles too
+head.pos = 3, -75   ;Approximate position of head
+mid.pos = 0, -50    ;Approximate position of midsection
+shadowoffset = 0     ;Number of pixels to vertically offset the shadow
+draw.offset = 0,-0.2   ;Player drawing offset in pixels (x, y). Recommended 0,0
+
+[Velocity]
+walk.fwd  = 8.5     ;Walk forward
+walk.back = -8.5    ;Walk backward
+run.fwd  = 4.6, 0    ;Run forward (x, y)
+run.back = -4.5,-3.8 ;Hop backward (x, y)
+jump.neu = 0,-8       ;Neutral jumping velocity (x, y)
+jump.back = -4    ;Jump back Speed (x, y)
+jump.fwd = 6    ;Jump forward Speed (x, y)
+runjump.back = -4 ;Running jump speeds (opt)
+runjump.fwd = 6     ;.
+airjump.neu = 0,-6.5      ;.
+air.gethit.groundrecover = -.15,-3.5  ;Velocity for ground recovery state (x, y) **MUGEN 1.0**
+air.gethit.airrecover.mul = .5,.2     ;Multiplier for air recovery velocity (x, y) **MUGEN 1.0**
+air.gethit.airrecover.add = 0,-4.5    ;Velocity offset for air recovery (x, y) **MUGEN 1.0**
+air.gethit.airrecover.back = -1       ;Extra x-velocity for holding back during air recovery **MUGEN 1.0**
+air.gethit.airrecover.fwd = 0         ;Extra x-velocity for holding forward during air recovery **MUGEN 1.0**
+air.gethit.airrecover.up = -2         ;Extra y-velocity for holding up during air recovery **MUGEN 1.0**
+air.gethit.airrecover.down = 1.5      ;Extra y-velocity for holding down during air recovery **MUGEN 1.0**
+
+[Movement]
+airjump.num = 1       ;Number of air jumps allowed (opt)
+airjump.height = 35   ;Minimum distance from ground before you can air jump (opt)
+yaccel = .44          ;Vertical acceleration
+stand.friction = .85  ;Friction coefficient when standing
+crouch.friction = .82 ;Friction coefficient when crouching
+stand.friction.threshold = 2          ;If player's speed drops below this threshold while standing, stop his movement **MUGEN 1.0**
+crouch.friction.threshold = .05       ;If player's speed drops below this threshold while crouching, stop his movement **MUGEN 1.0**
+air.gethit.groundlevel = 25           ;Y-position at which a falling player is considered to hit the ground **MUGEN 1.0**
+air.gethit.groundrecover.ground.threshold = -20 ;Y-position below which falling player can use the recovery command **MUGEN 1.0**
+air.gethit.groundrecover.groundlevel = 0   ;Y-position at which player in the ground recovery state touches the ground **MUGEN 1.0**
+air.gethit.airrecover.threshold = 3  ;Y-velocity above which player may use the air recovery command **MUGEN 1.0**
+air.gethit.airrecover.yaccel = .35    ;Vertical acceleration for player in the air recovery state **MUGEN 1.0**
+air.gethit.trip.groundlevel = -5      ;Y-position at which player in the tripped state touches the ground **MUGEN 1.0**
+down.bounce.offset = 0, -5            ;Offset for player bouncing off the ground (x, y) **MUGEN 1.0**
+down.bounce.yaccel = .4               ;Vertical acceleration for player bouncing off the ground **MUGEN 1.0**
+down.bounce.groundlevel = -4          ;Y-position at which player bouncing off the ground touches the ground again **MUGEN 1.0**
+down.friction.threshold = .05     ;If the player's speed drops below this threshold while lying down, stop his movement **MUGEN 1.0**
+
+[Constants]
+StateTagAssistF = 515
+StateTagAssistD = 1036
+StateTagAssistB = 450
+StateTagSuperAssist = 3100
+StateTagSuperAssist2  = 3000
+MVCIActiveSwitch  = 1
+
+;Default language victory quotes (optional).  **MUGEN 1.0**
+;If this section is included, the default language victory quotes must be in English.
+[Quotes]
+; Up to 100 victory quotes can be specified per language (victory0 - victory99)
+victory1 = "I am a template! Wait.. what?"
+;Alternate language victory quotes (optional).
+;0 or more alternate language sections may be added, preceded by the
+;ISO 639-1 code followed by a ".", e.g. "[ja.Quotes]".
+;See language setting in mugen.cfg.
+[ja.Quotes]
+victory1 = "私は私のベルトで長年の経験を持っています、あなたは知っています。"
+
+;---------------------------------------------------------------------------
+; Variable usage:
+; This is a record of the variables that KFM uses. Keeping a record of your
+; variable usage helps you avoid careless mistakes later.
+; var(1)  - Used in kfm.cmd for combo condition (updated every tick)
+; var(2)  - Used in Kung Fu Throw (state 800) to remember if fwd was being
+;           held (remembered from state 800 through state 810).
+
+
+;---------------------------------------------------------------------------
+; Lose by Time Over
+; CNS difficulty: basic
+[Statedef 170]
+type = S
+ctrl = 0
+anim = 170
+velset = 0,0
+
+[State 170, 1]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 1
+
+;---------------------------------------------------------------------------
+; Win state decider
+; CNS difficulty: basic
+[Statedef 180]
+type = S
+
+[State 180, 1]
+type = ChangeState
+trigger1 = Time = 0
+trigger1 = prevstateno!=3003
+value = 181
+
+[State 180, 1]
+type = ChangeState
+trigger1 = Time = 0
+trigger1 = prevstateno=3003
+value = 182
+
+[State 650, 2]
+type = Explod
+trigger1 = time=0
+trigger1 = map(december)=1
+anim = 3112
+pos = 0,0
+id = 3112
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = -1
+ownpal = 0
+scale=1,1
+ontop=1
+facing=1
+removetime=-1
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = prevstateno=3003
+flag = invisible
+flag2 = nobardisplay
+flag3 = globalnoshadow
+ignorehitpause=1
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = prevstateno=3003
+flag = timerfreeze
+flag2 = noFG
+flag3 = noBG
+ignorehitpause=1
+
+;---------------------------------------------------------------------------
+; Win
+[Statedef 181]
+type = S
+ctrl = 0
+anim = 1
+velset = 0,0
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+trigger1 = map(december)=0
+flag = invisible
+ignorehitpause = 1
+persistent = 1
+
+[State 0, VarSet]
+type = Mapset
+triggerall = palno=4||palno=5||palno=6||palno=7||palno=8||palno=9||palno=10||palno=11
+trigger1 =time=1
+map = "specialoutro"
+value = 0+random%2
+ignorehitpause = 1
+persistent = 0
+
+
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time=0
+value = 3000,1
+volumescale = 100
+persistent=0
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time=15
+value = 3000,1
+volumescale = 100
+persistent=0
+
+[State 0, Explod]
+type = Explod
+trigger1 = time=0
+anim = 5121
+ID = 5121
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -2
+scale = .84,.84
+sprpriority = 3
+ontop = 0
+ownpal = 0
+
+[State Voice From Above]
+type = PlaySnd
+trigger1 = map(specialoutro)=0
+trigger2 = map(specialoutro)=1
+trigger2 = palno=5||palno=6||palno=7||palno=8||palno=9
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall = time=5
+triggerall=enemynear,name!="Roger"&&enemynear,name!="Vile"&&enemynear,name!="JoJo"
+value = 170, (0+(Random%5))
+volumescale=200
+channel=7
+[State Voice From Above]
+type = PlaySnd
+trigger1 = map(specialoutro)=0
+trigger2 = map(specialoutro)=1
+trigger2 = palno=5||palno=6||palno=7||palno=8||palno=9
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall = time=5
+triggerall=enemynear,name="Roger"||enemynear,name="Alicia"
+value = 170, (0+(Random%6))
+volumescale=200
+channel=7
+[State Voice From Above]
+type = PlaySnd
+trigger1 = map(specialoutro)=0
+trigger2 = map(specialoutro)=1
+trigger2 = palno=5||palno=6||palno=7||palno=8||palno=9
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall = time=5
+triggerall=enemynear,name="Vile"
+value = 170, (5+(Random%3))
+volumescale=200
+channel=7
+[State Voice From Above]
+type = PlaySnd
+trigger1 = map(specialoutro)=0
+trigger2 = map(specialoutro)=1
+trigger2 = palno=5||palno=6||palno=7||palno=8||palno=9
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall = time=5
+triggerall=enemynear,name="JoJo"
+value = 170, (6+(Random%2))
+volumescale=200
+channel=7
+
+[State Voice From Above]
+type = PlaySnd
+trigger1 = map(specialoutro)=0
+trigger2 = map(specialoutro)=1
+trigger2 = palno=5||palno=6||palno=7||palno=8||palno=9
+triggerall=map(december)=0
+triggerall= time=5
+triggerall=enemy,name="Deus"
+value = 177, (0+(Random%3))
+volumescale=200
+channel=7
+
+[State 650, 2]
+type = Explod
+trigger1 = time=15
+trigger1 = map(specialoutro)=0
+trigger1 = map(december)=0
+anim = 165+random%10
+pos = 140,170
+id = 181
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 5
+ownpal = 0
+scale=.84,.84
+ontop=1
+facing=1
+removetime = -1
+removeonchangestate=1
+[State 650, 2]
+type = Explod
+trigger1 = time=15
+trigger1 = map(specialoutro)=1
+trigger1 = palno=4
+anim = 3050
+pos = 140,170
+id = 181
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 5
+ownpal = 0
+scale=.84,.84
+ontop=1
+facing=facing
+removetime = -1
+removeonchangestate=1
+[State Voice From Above]
+type = PlaySnd
+trigger1 = map(specialoutro)=1
+trigger1 = time=15
+trigger1 = palno=4
+value = 171, (0+(Random%2))
+volumescale=200
+channel=7
+
+[State 650, 2]
+type = Explod
+trigger1 = time=15
+trigger1 = map(specialoutro)=1
+trigger1 = palno=5
+anim = 3051+random%2
+pos = 140,170
+id = 181
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 5
+ownpal = 0
+scale=.84,.84
+ontop=1
+facing=1
+removetime = -1
+removeonchangestate=1
+
+[State 650, 2]
+type = Explod
+trigger1 = time=15
+trigger1 = map(specialoutro)=1
+trigger1 = palno=6
+anim = 3053
+pos = 140,170
+id = 181
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 5
+ownpal = 0
+scale=.84,.84
+ontop=1
+facing=1
+removetime = -1
+removeonchangestate=1
+[State 650, 2]
+type = Explod
+trigger1 = time=15
+trigger1 = map(specialoutro)=1
+trigger1 = palno=7
+anim = 3054
+pos = 140,170
+id = 181
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 5
+ownpal = 0
+scale=.84,.84
+ontop=1
+facing=facing
+removetime = -1
+removeonchangestate=1
+[State 650, 2]
+type = Explod
+trigger1 = time=15
+trigger1 = map(specialoutro)=1
+trigger1 = palno=8
+anim = 3055+random%2
+pos = 140,170
+id = 181
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 5
+ownpal = 0
+scale=.84,.84
+ontop=1
+facing=facing
+removetime = -1
+removeonchangestate=1
+[State 650, 2]
+type = Explod
+trigger1 = time=15
+trigger1 = map(specialoutro)=1
+trigger1 = palno=9
+anim = 3057
+pos = 140,170
+id = 181
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 5
+ownpal = 0
+scale=.84,.84
+ontop=1
+facing=1
+removetime = -1
+removeonchangestate=1
+[State 650, 2]
+type = Explod
+trigger1 = time=15
+trigger1 = map(specialoutro)=1
+trigger1 = palno=10
+anim = 3058
+pos = 140,170
+id = 181
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 5
+ownpal = 0
+scale=.84,.84
+ontop=1
+facing=facing
+removetime = -1
+removeonchangestate=1
+[State Voice From Above]
+type = PlaySnd
+trigger1 = map(specialoutro)=1
+trigger1 = time=15
+trigger1 = palno=10
+value = 172, (0+(Random%2))
+volumescale=200
+channel=7
+
+
+[State 650, 2]
+type = Explod
+trigger1 = time=15
+trigger1 = map(specialoutro)=1
+trigger1 = palno=11
+trigger1 = map(rina)=1
+anim = 3059
+pos = 140,170
+id = 181
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 5
+ownpal = 0
+scale=.84,.84
+ontop=1
+facing=facing
+removetime = -1
+removeonchangestate=1
+[State 650, 2]
+type = Explod
+trigger1 = time=15
+trigger1 = map(specialoutro)=1
+trigger1 = palno=11
+trigger1 = map(rina)=2
+anim = 3060
+pos = 140,170
+id = 181
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 5
+ownpal = 0
+scale=.84,.84
+ontop=1
+facing=facing
+removetime = -1
+removeonchangestate=1
+[State 650, 2]
+type = Explod
+trigger1 = time=15
+trigger1 = map(specialoutro)=1
+trigger1 = palno=11
+trigger1 = map(rina)=5
+anim = 3061
+pos = 140,170
+id = 181
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 5
+ownpal = 0
+scale=.84,.84
+ontop=1
+facing=facing
+removetime = -1
+removeonchangestate=1
+[State 650, 2]
+type = Explod
+trigger1 = time=15
+trigger1 = map(specialoutro)=1
+trigger1 = palno=11
+trigger1 = map(rina)=4
+anim = 3062
+pos = 140,170
+id = 181
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 5
+ownpal = 0
+scale=.84,.84
+ontop=1
+facing=facing
+removetime = -1
+removeonchangestate=1
+[State 650, 2]
+type = Explod
+trigger1 = time=15
+trigger1 = map(specialoutro)=1
+trigger1 = palno=11
+trigger1 = map(rina)=3
+anim = 3063
+pos = 140,170
+id = 181
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 5
+ownpal = 0
+scale=.84,.84
+ontop=1
+facing=facing
+removetime = -1
+removeonchangestate=1
+[State Voice From Above]
+type = PlaySnd
+trigger1 = map(specialoutro)=1
+trigger1 = time=15
+trigger1 = palno=11
+value = 173, (0+(Random%2))
+volumescale=200
+channel=7
+
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time=15
+trigger1 = map(december)=1
+value = 3064+random%2
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = time=15
+trigger1 = map(december)=1
+y = -10
+
+[State -3, Win Announcer]
+type = PlaySnd
+trigger1 = time=0
+value = 7410, (0+(Random%2))
+
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = Roundstate > 3
+flag = Nobardisplay
+;---------------------------------------------------------------------------
+; Super Outro
+[Statedef 182]
+type = S
+ctrl = 0
+anim = 3100
+velset = 0,0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time=0
+value = 3000,1
+volumescale = 100
+persistent=0
+[State 650, 2]
+type = Explod
+trigger1 = time=0
+trigger1 = map(december)=0
+anim = 3111
+pos = 0,0
+id = 3111
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = -1
+ownpal = 0
+scale=1,1
+ontop=1
+facing=1
+removetime=-1
+[State 650, 2]
+type = Explod
+trigger1 = time=0
+trigger1 = map(december)=1
+anim = 3112
+pos = 0,0
+id = 3112
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = -1
+ownpal = 0
+scale=1,1
+ontop=1
+facing=1
+removetime=-1
+[State 650, 2]
+type = Explod
+trigger1 = time=0
+anim = 3100
+pos = 10,-37
+id = 3100
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 5
+ownpal = 0
+scale=.5,.5
+ontop=1
+facing=1
+removetime=-1
+
+
+[State 0, VarSet]
+type = Mapset
+triggerall = palno=4||palno=7||palno=8||palno=10
+trigger1 =time=1
+map = "specialoutro"
+value = 1
+ignorehitpause = 1
+persistent = 0
+
+[State 650, 2]
+type = Explod
+trigger1 = animelem=23
+triggerall= map(specialoutro)=0
+trigger1 = map(december)=0
+anim = 3101+random%3
+pos = 10,-37
+id = 3101
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 6
+ownpal = 0
+scale=.5,.5
+ontop=1
+facing=1
+removetime=-1
+
+[State 650, 2]
+type = Explod
+trigger1 = animelem=23
+triggerall= map(specialoutro)=1
+trigger1 = palno=4||palno=10
+anim = 3104
+pos = 10,-37
+id = 3101
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 6
+ownpal = 0
+scale=.5,.5
+ontop=1
+facing=1
+removetime=-1
+[State 650, 2]
+type = Explod
+trigger1 = animelem=23
+triggerall= map(specialoutro)=1
+trigger1 = palno=7
+anim = 3105
+pos = 10,-37
+id = 3101
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 6
+ownpal = 0
+scale=.5,.5
+ontop=1
+facing=1
+removetime=-1
+[State 650, 2]
+type = Explod
+trigger1 = animelem=23
+triggerall= map(specialoutro)=1
+trigger1 = palno=8
+anim = 3106
+pos = 10,-37
+id = 3101
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 6
+ownpal = 0
+scale=.5,.5
+ontop=1
+facing=1
+removetime=-1
+
+[State 650, 2]
+type = Explod
+trigger1 = animelem=23
+trigger1 = map(december)=1
+anim = 3107
+pos = 10,-37
+id = 3101
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 6
+ownpal = 0
+scale=.5,.5
+ontop=1
+facing=1
+removetime=-1
+
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = invisible
+flag2 = nobardisplay
+flag3 = globalnoshadow
+ignorehitpause=1
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = timerfreeze
+flag2 = noFG
+flag3 = noBG
+ignorehitpause=1
+
+[State -3, Win Announcer]
+type = PlaySnd
+trigger1 = time=0
+value = 7410, (0+(Random%2))
+
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = Roundstate > 3
+flag = Nobardisplay
+
+
+;---------------------------------------------------------------------------
+;TimeOut
+[Statedef 185]
+type = S
+movetype=I
+physics=N
+velset=0,0
+ctrl=0
+
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall = player(map(enemyteamlead)),name!="Deus"
+trigger1 = time=5
+trigger1 = roundstate=2
+value = 185,0+random%5
+volumescale=200
+channel=7
+lowpriority=1
+
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall = player(map(enemyteamlead)),name="Deus"
+triggerall = player(map(enemyteamlead)),map(december)=0
+trigger1 = time=5
+trigger1 = teamside=1
+trigger1 = roundstate=2
+value = 187,0
+volumescale=200
+channel=7
+lowpriority=1
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time=0
+trigger1=anim!=184
+value = 184
+ignorehitpause = 1
+persistent = 1
+
+
+[State 0, CtrlSet]
+type = CtrlSet
+trigger1 = time>250
+value = 1
+;---------------------------------------------------------------------------
+; Intro 1
+[Statedef 191]
+type = S
+ctrl = 0
+anim = 185
+velset = 0,0
+
+[State 190]
+type = selfstate
+triggerall=time=0
+triggerall=enemy,name!="Deus"
+trigger1 = prevstateno!=191
+value = 191+random%3
+[State 190]
+type = selfstate
+triggerall=time=0
+triggerall=enemy,name="Deus"
+trigger1 = prevstateno!=191
+value = 192+random%3
+[State 190]
+type = selfstate
+triggerall=enemy,name="Deus"
+trigger1=enemy,stateno=194
+value = 194
+
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name!="Angous"&&player(map(enemyteamlead)),name!="Eddy"&&player(map(enemyteamlead)),name!="One"
+triggerall=player(map(enemyteamlead)),name!="Roger"&&player(map(enemyteamlead)),name!="Vile"&&player(map(enemyteamlead)),name!="Sahkive"&&player(map(enemyteamlead)),name!="JoJo"
+triggerall=player(map(enemyteamlead)),name!="Arzon"&&player(map(enemyteamlead)),name!="JV"&&player(map(enemyteamlead)),name!="Alicia"&&player(map(enemyteamlead)),name!="Crow"&&player(map(enemyteamlead)),name!="Akira"
+trigger1 = time=45
+value = 190, (1+(Random%5))
+volumescale=175
+channel=7
+lowpriority=1
+
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Angous"||player(map(enemyteamlead)),name="Eddy"||player(map(enemyteamlead)),name="One"
+trigger1 = time=45
+value = 190, (0+(Random%6))
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Sahkive"
+trigger1 = time=45
+value = 190, (1+(Random%6))
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Roger"
+trigger1 = time=45
+value = 190, (1+(Random%7))
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Vile"
+trigger1 = time=45
+value = 190, (7+(Random%3))
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="JoJo"
+trigger1 = time=45
+value = 190, (8+(Random%2))
+volumescale=175
+channel=7
+lowpriority=1
+
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Arzon"
+trigger1 = time=30
+value = 191, (0+(Random%2))
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="JV"
+trigger1 = time=45
+value = 192, 0
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Alicia"
+trigger1 = time=45
+value = 193, (0+(Random%2))
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Crow"
+trigger1 = time=45
+value = 194, (0+(Random%2))
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Akira"
+trigger1 = time=45
+value = 195, (0+(Random%2))
+volumescale=175
+channel=7
+lowpriority=1
+
+[State 0, Explod]
+type = Explod
+trigger1 = time=0
+anim = 186
+ID = 186
+pos = 0,0
+postype = p2  ;p2,front,back,left,right
+facing = -1
+vfacing = 1
+bindtime = 1
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -2
+scale = 1,1
+sprpriority = -8
+ontop = 0
+ownpal = 0
+[State 0, Explod]
+type = Explod
+trigger1 = time=0
+anim = 187
+ID = 187
+pos = 0,-10
+postype = p2  ;p2,front,back,left,right
+facing = -1
+vfacing = 1
+bindtime = 1
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -2
+scale = 1,1
+sprpriority =8
+ontop = 1
+ownpal = 0
+[State 0, Explod]
+type = Explod
+trigger1 = time=0
+anim = 188
+ID = 188
+pos = 50,0
+postype = p2  ;p2,front,back,left,right
+facing = -1
+vfacing = 1
+bindtime = 1
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -2
+scale = .75,.75
+sprpriority = -8
+ontop = 0
+ownpal = 0
+
+[State 0, Explod]
+type = Explod
+trigger1 = animelem=3
+anim = 189
+ID = 189
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -2
+scale = .84,.84
+sprpriority = 2
+ontop = 0
+ownpal = 0
+[State 0, Explod]
+type = Explod
+trigger1 = animelem=4
+anim = 190
+ID = 190
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -2
+scale = .84,.84
+sprpriority = 2
+ontop = 0
+ownpal = 0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time=0
+value = 3002,0
+volumescale = 150
+persistent=0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem=2
+value = 3000,1
+volumescale = 100
+persistent=0
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem=3
+value = 3000,1
+volumescale = 100
+persistent=0
+
+[State 193, 1]
+type = AssertSpecial
+trigger1 = 1
+flag = Intro
+flag2 = nomusic
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = time<170
+flag = globalnoshadow
+flag2 = noFG
+flag3 = noBG
+ignorehitpause=1
+
+[State 191, 3] ;Change to stand state when done
+type = ChangeState
+trigger1 = animtime=0
+value = 0
+
+;---------------------------------------------------------------------------
+; Intro 2
+[Statedef 192]
+type = S
+physics=N
+ctrl = 0
+anim = 191
+velset = 0,0
+
+[State 190]
+type = selfstate
+triggerall=enemy,name="Deus"
+trigger1=enemy,stateno=194
+value = 194
+
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name!="Angous"&&player(map(enemyteamlead)),name!="Eddy"&&player(map(enemyteamlead)),name!="One"
+triggerall=player(map(enemyteamlead)),name!="Roger"&&player(map(enemyteamlead)),name!="Vile"&&player(map(enemyteamlead)),name!="Sahkive"&&player(map(enemyteamlead)),name!="JoJo"
+triggerall=player(map(enemyteamlead)),name!="Arzon"&&player(map(enemyteamlead)),name!="JV"&&player(map(enemyteamlead)),name!="Alicia"&&player(map(enemyteamlead)),name!="Crow"&&player(map(enemyteamlead)),name!="Akira"
+trigger1 = time=60
+value = 190, (1+(Random%5))
+volumescale=175
+channel=7
+lowpriority=1
+
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Angous"||player(map(enemyteamlead)),name="Eddy"||player(map(enemyteamlead)),name="One"
+trigger1 = time=60
+value = 190, (0+(Random%6))
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Sahkive"
+trigger1 = time=60
+value = 190, (1+(Random%6))
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Roger"
+trigger1 = time=60
+value = 190, (1+(Random%7))
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Vile"
+trigger1 = time=60
+value = 190, (7+(Random%3))
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="JoJo"
+trigger1 = time=60
+value = 190, (8+(Random%2))
+volumescale=175
+channel=7
+lowpriority=1
+
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Arzon"
+trigger1 = time=60
+value = 191, (0+(Random%2))
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="JV"
+trigger1 = time=60
+value = 192, 0
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Alicia"
+trigger1 = time=60
+value = 193, (0+(Random%2))
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Crow"
+trigger1 = time=60
+value = 194, (0+(Random%2))
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Akira"
+trigger1 = time=60
+value = 195, (0+(Random%2))
+volumescale=175
+channel=7
+lowpriority=1
+
+[State Voice From Above]
+type = PlaySnd
+triggerall=enemy,name="Deus"
+triggerall=map(december)=0
+triggerall=player(map(enemyteamlead)),map(december)=0
+trigger1 = teamside=1
+trigger1 = time=60
+value = 77, (0+(Random%4))
+volumescale=175
+channel=7
+lowpriority=1
+
+[State 0, Explod]
+type = Explod
+trigger1 = time=4
+anim =1203
+ID = 2000
+pos = 175,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 10
+removetime = -2
+pausemovetime = 0
+scale = 1,1
+sprpriority = 5
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+[State 0, Explod]
+type = Explod
+trigger1 = time=4
+anim =1204
+ID = 2000
+pos = 175,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 10
+removetime = -2
+pausemovetime = 0
+scale = 1,1
+sprpriority = -5
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+
+
+[State 0, Explod]
+type = Explod
+trigger1 = time=8
+anim =1203
+ID = 2000
+pos = 115,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 10
+removetime = -2
+pausemovetime = 0
+scale = 1,1
+sprpriority = 6
+ontop = 0
+shadow = 0,0,0
+ownpal =0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+[State 0, Explod]
+type = Explod
+trigger1 = time=8
+anim =1204
+ID = 2000
+pos = 115,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 10
+removetime = -2
+pausemovetime = 0
+scale = 1,1
+sprpriority = -5
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+[State 0, Explod]
+type = Explod
+trigger1 = time=8
+anim = 1203
+ID = 2000
+pos = -125,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 10
+removetime = -2
+pausemovetime = 0
+scale = 1,1
+sprpriority = 6
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+[State 0, Explod]
+type = Explod
+trigger1 = time=8
+anim = 1204
+ID = 2000
+pos = -125,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 10
+removetime = -2
+pausemovetime = 0
+scale = 1,1
+sprpriority = -5
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+
+
+[State 0, Explod]
+type = Explod
+trigger1 = time=12
+anim = 1203	
+ID = 2000
+pos = -65,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 10
+removetime = -2
+pausemovetime = 0
+scale = 1,1
+sprpriority = 7
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+[State 0, Explod]
+type = Explod
+trigger1 = time=12
+anim = 1204	
+ID = 2000
+pos = -65,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 10
+removetime = -2
+pausemovetime = 0
+scale = 1,1
+sprpriority = -5
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+[State 0, Explod]
+type = Explod
+trigger1 = time=12
+anim = 1203
+ID = 2000
+pos = 55,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 10
+removetime = -2
+pausemovetime = 0
+scale = 1,1
+sprpriority = 7
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+[State 0, Explod]
+type = Explod
+trigger1 = time=12
+anim = 1204
+ID = 2000
+pos = 55,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 10
+removetime = -2
+pausemovetime = 0
+scale = 1,1
+sprpriority = -5
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+
+[State 0, Explod]
+type = Explod
+trigger1 = time=16
+anim = 1203
+ID = 2000
+pos = -5,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 10
+removetime = -2
+pausemovetime = 0
+scale = .84,.84
+sprpriority = 8
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+[State 0, Explod]
+type = Explod
+trigger1 = time=16
+anim = 1204
+ID = 2000
+pos = -5,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 10
+removetime = -2
+pausemovetime = 0
+scale = .84,.84
+sprpriority = -5
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+
+[State 0, Explod]
+type = Explod
+trigger1 = time=20
+anim = 2002
+ID = 2000
+pos = -5,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 10
+removetime = -2
+pausemovetime = 0
+scale = .84,.84
+sprpriority = -3
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 =time=1
+value = 1400,1
+volumescale = 200
+persistent=0
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 =time=20
+value = 1300,1
+volumescale = 100
+persistent=0
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time=25
+trigger2 = time=35
+value = 1800,3
+volumescale = 175
+ignorehitpause=1
+
+
+[State 0, Explod]
+type = Explod
+trigger1 = time=24
+anim = 2000
+ID = 2000
+pos = -65,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 10
+removetime = -2
+pausemovetime = 0
+scale = .84,.84
+sprpriority = -3
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+[State 0, Explod]
+type = Explod
+trigger1 = time=24
+anim = 2000
+ID = 2000
+pos = 55,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 10
+removetime = -2
+pausemovetime = 0
+scale = .84,.84
+sprpriority = -3
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+
+
+[State 0, Explod]
+type = Explod
+trigger1 = time=28
+anim = 2000
+ID = 2000
+pos = -125,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 10
+removetime = -2
+pausemovetime = 0
+scale = .84,.84
+sprpriority = -3
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+[State 0, Explod]
+type = Explod
+trigger1 = time=28
+anim = 2000
+ID = 2000
+pos = 115,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 10
+removetime = -2
+pausemovetime = 0
+scale = .84,.84
+sprpriority = -3
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+
+
+[State 0, Explod]
+type = Explod
+trigger1 = time=32
+anim = 2000
+ID = 2000
+pos = 175,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 10
+removetime = -2
+pausemovetime = 0
+scale = .84,.84
+sprpriority = -3
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+
+[State 0, EnvShake]
+type = EnvShake
+trigger1 = time=37
+time = 16
+freq = 120
+ampl = 8
+phase = 1
+[State 0, BGPalFX]
+type = BGPalFX
+trigger1 = time=10
+time = 80
+sinadd=100,100,100,-160
+invertall = 0
+color = 256
+ignorehitpause = 1
+
+[State 0, Explod]
+type = Explod
+trigger1 = animelem =15
+anim = 192
+ID = 192
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 0
+removetime = -2
+pausemovetime = 0
+scale = .84,.84
+sprpriority = -3
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem=15
+value = 3000,1
+volumescale = 100
+persistent=0
+[State 0, Explod]
+type = Explod
+trigger1 = animelem =17
+anim = 193
+ID = 193
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 0
+removetime = -2
+pausemovetime = 0
+scale = .84,.84
+sprpriority = -2
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem=17
+value = 3000,1
+volumescale = 100
+persistent=0
+[State 0, Explod]
+type = Explod
+trigger1 = animelem =19
+anim = 194
+ID = 194
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 0
+removetime = -2
+pausemovetime = 0
+scale = .84,.84
+sprpriority = -2
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem=19
+value = 3000,1
+volumescale = 100
+persistent=0
+
+[State 0, Explod]
+type = Explod
+trigger1 = animelem =16
+anim = 195
+ID = 195
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 0
+removetime = -2
+pausemovetime = 0
+scale = .84,.84
+sprpriority = 5
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+[State 0, Explod]
+type = Explod
+trigger1 = animelem =16
+anim = 195
+ID = 195
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 0
+removetime = -2
+pausemovetime = 0
+scale = .84,.84
+sprpriority = 5
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+[State 0, Explod]
+type = Explod
+trigger1 = animelem =18
+anim = 196
+ID = 196
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 0
+removetime = -2
+pausemovetime = 0
+scale = .84,.84
+sprpriority = 5
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+[State 0, Explod]
+type = Explod
+trigger1 = animelem =20
+anim = 197
+ID = 197
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 0
+removetime = -2
+pausemovetime = 0
+scale = .84,.84
+sprpriority = 5
+ontop = 0
+shadow = 0,0,0
+ownpal = 1
+removeongethit = 0
+ignorehitpause = 1
+persistent = 0
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelemtime(20)=4
+value = 3000,1
+volumescale = 100
+persistent=0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 =animelem=21
+value = 105,1
+volumescale = 100
+persistent=0
+
+[State 193, 1]
+type = AssertSpecial
+trigger1 = 1
+flag = Intro
+flag2 = nomusic
+
+[State 191, 3] ;Change to stand state when done
+type = ChangeState
+trigger1 = animtime=0
+value = 0
+
+;---------------------------------------------------------------------------
+; Intro 3
+[Statedef 193]
+type = S
+ctrl = 0
+anim = 198
+velset = 0,0
+
+[State 190]
+type = selfstate
+triggerall=enemy,name="Deus"
+trigger1=enemy,stateno=194
+value = 194
+
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name!="Angous"&&player(map(enemyteamlead)),name!="Eddy"&&player(map(enemyteamlead)),name!="One"
+triggerall=player(map(enemyteamlead)),name!="Roger"&&player(map(enemyteamlead)),name!="Vile"&&player(map(enemyteamlead)),name!="Sahkive"&&player(map(enemyteamlead)),name!="JoJo"
+triggerall=player(map(enemyteamlead)),name!="Arzon"&&player(map(enemyteamlead)),name!="JV"&&player(map(enemyteamlead)),name!="Alicia"&&player(map(enemyteamlead)),name!="Crow"&&player(map(enemyteamlead)),name!="Akira"
+trigger1 = time=5
+value = 190, (1+(Random%5))
+volumescale=175
+channel=7
+lowpriority=1
+
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Angous"||player(map(enemyteamlead)),name="Eddy"||player(map(enemyteamlead)),name="One"
+trigger1 = time=5
+value = 190, (0+(Random%6))
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Sahkive"
+trigger1 = time=5
+value = 190, (1+(Random%6))
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Roger"
+trigger1 = time=5
+value = 190, (1+(Random%7))
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Vile"
+trigger1 = time=5
+value = 190, (7+(Random%3))
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="JoJo"
+trigger1 = time=5
+value = 190, (8+(Random%2))
+volumescale=175
+channel=7
+lowpriority=1
+
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Arzon"
+trigger1 = time=5
+value = 191, (0+(Random%2))
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="JV"
+trigger1 = time=5
+value = 192, 0
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Alicia"
+trigger1 = time=5
+value = 193, (0+(Random%2))
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Crow"
+trigger1 = time=5
+value = 194, (0+(Random%2))
+volumescale=175
+channel=7
+lowpriority=1
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=enemy,name!="Deus"
+triggerall=player(map(enemyteamlead)),name="Akira"
+trigger1 = time=5
+value = 195, (0+(Random%2))
+volumescale=175
+channel=7
+lowpriority=1
+
+[State Voice From Above]
+type = PlaySnd
+triggerall=enemy,name="Deus"
+triggerall=map(december)=0
+triggerall=player(map(enemyteamlead)),map(december)=0
+trigger1 = teamside=1
+trigger1 = time=60
+value = 77, (0+(Random%4))
+volumescale=175
+channel=7
+lowpriority=1
+
+[State 0, Explod]
+type = Explod
+trigger1 =time=15
+anim = 199
+ID = 199
+pos = 200,0
+postype = p1  ;p2,front,back,left,right
+bindtime = -1
+removetime = -2
+scale =.84,.84
+sprpriority = -5
+ownpal = 1
+removeongethit = 1
+ignorehitpause =1 
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time=12
+value = 3000,1
+volumescale = 100
+persistent=0
+[State 0, Explod]
+type = Explod
+trigger1 =time=20
+anim = 199
+ID = 199
+pos = 150,0
+postype = p1  ;p2,front,back,left,right
+bindtime = -1
+removetime = -2
+scale =.84,.84
+sprpriority =-5
+ownpal = 1
+removeongethit = 1
+ignorehitpause =1 
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time=17
+value = 3000,1
+volumescale = 100
+persistent=0
+[State 0, Explod]
+type = Explod
+trigger1 =time=25
+anim = 199
+ID = 199
+pos = 100,0
+postype = p1  ;p2,front,back,left,right
+bindtime = -1
+removetime = -2
+scale =.84,.84
+sprpriority =-5
+ownpal = 1
+removeongethit = 1
+ignorehitpause =1 
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time=22
+value = 3000,1
+volumescale = 100
+persistent=0
+[State 0, Explod]
+type = Explod
+trigger1 =time=30
+anim = 199
+ID = 199
+pos = 50,0
+postype = p1  ;p2,front,back,left,right
+bindtime = -1
+removetime = -2
+scale =.84,.84
+sprpriority =-5
+ownpal = 1
+removeongethit = 1
+ignorehitpause =1 
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time=27
+value = 3000,1
+volumescale = 100
+persistent=0
+[State 0, Explod]
+type = Explod
+trigger1 =time=35
+anim = 199
+ID = 199
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+bindtime = -1
+removetime = -2
+scale =.84,.84
+sprpriority =5
+ownpal = 1
+removeongethit = 1
+ignorehitpause =1 
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time=32
+value = 3000,1
+volumescale = 100
+persistent=0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem=3
+value = 3000,1
+volumescale = 100
+persistent=0
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem=6
+value = 3000,1
+volumescale = 100
+persistent=0
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem=9
+value = 3000,1
+volumescale = 100
+persistent=0
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem=12
+value = 3000,1
+volumescale = 100
+persistent=0
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = animtime=0&&anim=198
+trigger2 = anim=11
+value = 11
+elem = 1
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time=110
+value = 13
+
+[State 193, 1]
+type = AssertSpecial
+trigger1 = 1
+flag = Intro
+flag2 = nomusic
+
+[State 191, 3] ;Change to stand state when done
+type = ChangeState
+trigger1 = animtime=0&&anim=13
+value = 0
+
+;---------------------------------------------------------------------------
+; Intro Deus
+[Statedef 194]
+type = S
+ctrl = 0
+anim = 185
+velset = 0,0
+
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=0
+triggerall=player(map(enemyteamlead)),map(december)=0
+trigger1 = teamside=1
+trigger1 = time=1
+value = 77, (0+(Random%4))
+volumescale=175
+channel=7
+lowpriority=1
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 =time=1
+trigger1=teamside=1
+value = 1400,1
+volumescale = 200
+persistent=0
+
+[State 650, 2]
+type = Explod
+trigger1 = time=0&&teamside=1
+anim = 162
+pos = 61.25,-10
+id = 194
+postype = p1
+ignorehitpause = 0
+persistent = 0
+sprpriority = 1
+ownpal = 0
+scale=.84,.84
+ontop=0
+facing=1
+removetime = -2
+[State 650, 2]
+type = Explod
+trigger1 = time=0&&teamside=2
+anim = 163
+pos = 61.25,-10
+id = 194
+postype = p1
+ignorehitpause = 0
+persistent = 0
+sprpriority = 2
+ownpal = 0
+scale=.84,.84
+ontop=0
+facing=-1
+removetime = -2
+[State 0, ChangeAnim]
+type = ChangeAnim
+Trigger1 = time=137
+value = 198
+elem = 11
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = anim=198&&animtime=0
+value = 13
+
+[State 0, PlaySnd]
+type = PlaySnd
+Trigger1 = time=130
+value = 3000,1
+volumescale = 100
+persistent=0
+
+[State 193, 1]
+type = AssertSpecial
+trigger1 = 1
+flag = Intro
+flag2 = nomusic
+
+[State 191, 3] ;Change to stand state when done
+type = ChangeState
+trigger1 = animtime=0&&anim=13
+value = 0
+
+;---------------------------------------------------------------------------
+; Override common states (use same number to override) :
+;---------------------------------------------------------------------------
+
+;---------------------------------------------------------------------------
+; States that are always executed (use statedef -2)
+;---------------------------------------------------------------------------
+
+;---------------------------------------------------------------------------
+; States that are executed when in self's state file (use statedef -3)
+;---------------------------------------------------------------------------
+
+;=============================================================================
+
+
+[Statedef -2]
+
+;our god is as powerful as she is merciful.
+[State 0, TargetLifeAdd]
+type = SelfState
+trigger1 = TimeRemaining <=60
+triggerall = gamemode!="Training"
+trigger1 = stateno!=185
+value = 185
+ignorehitpause = 1
+persistent = 1
+
+[State 0, VarSet]
+type = MapSet
+trigger1 = roundstate<=1
+map = "notime"
+value = 0
+ignorehitpause = 1
+persistent = 1
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = TimeRemaining <=60
+trigger1 = map(notime)<=10
+triggerall = gamemode!="Training"
+flag = timerfreeze
+ignorehitpause = 1
+persistent = 1
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = TimeRemaining <=60
+trigger1 = combocount=0
+trigger1 = movetype!=H
+trigger1 = map(notime)<=10
+flag = GlobalNoKo
+ignorehitpause = 1
+persistent = 1
+[State 0, AssertSpecial]
+type = RoundTimeSet
+trigger1 = TimeRemaining <=60
+trigger1 = map(notime)<=10
+triggerall = gamemode!="Training"
+value=60
+ignorehitpause = 1
+persistent = 1
+[State 0, VarSet]
+type = MapAdd
+trigger1 = TimeRemaining <=60
+triggerall = gamemode!="Training"
+map = "notime"
+value = 1
+ignorehitpause = 1
+persistent = 1
+[State 0, LifeSet]
+type = LifeSet
+triggerall = player(map(enemyteamlead)),name!="Deus"
+trigger1 = TimeRemaining <=60
+trigger1 = map(notime)<=10
+trigger1 = map(notime)>0
+value = 1
+ignorehitpause = 1
+persistent = 1
+
+;give praise and be thankful.
+
+[State 0, Pause]
+type = Pause
+trigger1 = time%2 = 0
+trigger1 = fvar(18) > 0
+time = 1
+movetime = 1
+;endcmdbuftime = 0
+pausebg = 1
+;ignorehitpause = 
+;persistent = 
+
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = fvar(18) >0 
+fv = (18)
+value = -1
+
+;------------------------------------
+;Either he techs throws or he doesnt it depends
+[State -2, RemoveExplod]
+type = RemoveExplod
+trigger1 = stateno != 812
+trigger1 = stateno != 803
+id = 44020
+
+
+;------------------------
+[State -2, VarSet]
+type = VarSet
+trigger1 = !numtarget
+v = 3
+value = 1
+
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1 = stateno = 900
+id = 900
+
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1 = numhelper(99149)
+id = 900
+
+[State 0, VarSet]
+type = VarSet
+trigger1 =  GetHitVar(fall) = 1 
+v = 50    ;fv = 10
+value = 0
+
+
+[State 0, DisplayToClipboard]
+type = DisplayToClipboard
+trigger1 = 1
+text = "facing %f stun %f  dmg %f smash %f mh %f D %f vel %f rina %f bmh %f"
+params = map(animcheck), fvar(25), fvar(13), map(smashattack), map(multihits), map(fulldsmash), map(vel), map(rina), map(bmhit)
+
+
+
+[State 0, PalFXWiz]
+type = PalFX
+trigger1 = helper, numexplod(900)=1
+time = 15
+add = 100,100,100
+mul = 256,256,256
+sinadd = 30,30,30,3
+invertall = 0
+color = 256
+
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = stateno = [400,420]
+trigger1 = movecontact = 1
+v = 30 	;fv = 10
+value = 1
+;ignorehitpause = 
+;persistent = 
+
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = command = "holdup"
+v = 44     ;fv = 
+value = 1
+;ignorehitpause = 
+;persistent = 
+
+[State 0, VarAdd]
+type = VarSet
+trigger1 = command!= "holdup" 
+v =44     ;fv = 
+value = 0
+;ignorehitpause = 
+;persistent = 
+
+
+[State 0, Explod]
+type = Explod
+triggerall = prevstateno = 410
+trigger1 = animelemtime(1) = 0
+anim = 9900
+ID = 9900
+pos = 0,10-random%35
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -2
+pausemovetime = 0
+scale = .23,.23
+sprpriority = 0
+ontop = 1
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+;ignorehitpause =
+;trans = 
+;persistent =
+;supermove = 0
+;pausemove = 0
+
+
+;===============================================================================
+; ------- Damage Dampener --------
+;===============================================================================
+
+[State -2, Counter Flag] 
+type = VarSet
+trigger1 = NumEnemy
+fvar(8) = (EnemyNear, MoveType = A)
+ignoreHitPause = 1
+
+[State -2, Reset Counter Flag] 
+type = VarSet
+trigger1 = NumEnemy
+trigger1=(EnemyNear,MoveType!=A)
+Trigger1=Enemy,Ctrl=1
+fvar(8) = 0
+ignoreHitPause = 1 
+ 
+;Damage Dampener Variable (by POTS)
+[State -2, Hit Count] 
+type = VarAdd 
+triggerall = stateno!=610
+triggerall = stateno!=[3000,3001]
+triggerall = stateno!=[8012,8013]
+triggerall = !IsHelper
+trigger1 = MoveHit = 1 
+trigger1 = !HitPauseTime 
+trigger1 = !(HitDefAttr = SCA, AT,HA,AP) 
+trigger1 = stateno!=420
+fvar(13) = 1 
+ 
+[State -2, Hit Count Reset] 
+type = VarSet 
+trigger1 = NumEnemy && fvar(13) 
+trigger1 = (combocount=0)&& (EnemyNear, StateNo != 5300) 
+fvar(13) = 0 
+ignoreHitPause = 1
+ 
+[State -2, Dampener] 
+type = VarSet 
+trigger1 = 1 
+fvar(10) = ifElse(fvar(13) < 2, 16, ifElse(fvar(13) >= 14, 1, 16 - fvar(13))) / 16.0
+ignoreHitPause = 1 
+ 
+[State -2, Dampener Limit] 
+type = VarSet 
+trigger1 = fvar(10) < 0 
+fvar(10) = 0 
+ignoreHitPause = 1 
+ 
+[State -2, Root Dampener] 
+type = VarSet 
+trigger1 = 1 
+fvar(11) = fvar(10) * ifElse(fvar(8), 1.5, 1) 
+ignoreHitPause = 1
+
+
+;=======================================================================================
+;=======================================================================================
+;=================================== Stun Dampener =====================================
+;=======================================================================================
+;=======================================================================================
+;Normal Hitstun Decay
+
+;Damage Dampener Variable (by POTS)
+[State -2, Hit Count] 
+type = VarAdd 
+triggerall = stateno!=610
+trigger1 = !IsHelper
+trigger1 = MoveHit = 1 
+trigger1 = !HitPauseTime 
+trigger1 = !(HitDefAttr = SCA, AT,AP) 
+fvar(15) = 1 
+
+[State -2, Hit Count Reset] 
+type = VarSet 
+trigger1 = NumEnemy && fvar(15) 
+trigger1 =(combocount=0)&& (EnemyNear, StateNo != 5300) 
+fvar(15) = 0 
+ignoreHitPause = 1
+
+[State -2, Dampener] 
+type = VarSet 
+trigger1 = 1 
+fvar(15) = ifElse(fvar(25) < 0, 13, ifElse(fvar(25) >= 14, 1, 13 - fvar(25))) / 13.0
+ignoreHitPause = 1 
+
+[State -2, Hit Count Reset] 
+type = VarSet 
+trigger1 = NumEnemy && fvar(25) 
+trigger1 =(combocount=0) && (EnemyNear, StateNo != 5300) 
+fvar(25) = 0 
+ignoreHitPause = 1
+
+
+
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+[Statedef -3]
+
+;GREAT EQUALIZER is THE DEATH!!!!!!!
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = map(DIE)=1
+value = 9000,0+random%4
+channel = -1
+loop = 0
+persistent = 0
+volumescale=100
+ignorehitpause=1
+
+[State 0, VarAdd]
+type = MapAdd
+trigger1 = !alive
+map = "DIE"
+value = 1
+ignorehitpause=1
+persistent=1
+[State 0, VarAdd]
+type = MapSet
+trigger1 = roundstate=0
+map = "DIE"
+value = 0
+ignorehitpause=0
+;------------------------------------------------
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = movetype=H
+trigger2 = prevstateno=1600
+trigger3 = prevstateno=1700
+value = 9999,9999
+volumescale = 0
+persistent=1
+channel=16
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = movetype=H
+trigger2 = prevstateno=3051
+trigger3=stateno=690000
+value = 9999,9999
+volumescale = 0
+persistent=1
+channel=11
+
+;SLIPPITY SLIDE
+[State 0, 3]
+type = VelMul
+triggerall=statetype!=A
+triggerall=movetype!=H
+trigger1 = abs(vel x) >= 0.1
+x = .95
+[State 0, 3]
+type = VelSet
+triggerall=statetype!=A
+triggerall=movetype!=H
+trigger1 = abs(vel x) < 0.1
+x = 0
+;===========
+;SLIPPITY SLIDE CROUCH
+[State 0, 3]
+type = VelMul
+triggerall=statetype=C
+triggerall=movetype!=H
+trigger1 = abs(vel x) >= 0.1
+trigger2 = abs(vel x) <= -0.1
+x = .925
+[State 0, 3]
+type = VelSet
+triggerall=statetype=C
+triggerall=movetype!=H
+trigger1 = abs(vel x) < 0.1
+trigger1 = abs(vel x) > -0.1
+x = 0
+;===========
+;AIR DRIFT
+[State 0, VelAdd]
+type = VelAdd
+triggerall=statetype=A
+triggerall=movetype!=H
+triggerall=stateno!=[900,902]&&stateno!=69002
+trigger1 = vel x < (const(velocity.jump.fwd.x))
+trigger1 = command = "holdfwd"
+x = .35
+[State 0, VelAdd]
+type = VelAdd
+triggerall=statetype=A
+triggerall=movetype!=H
+triggerall=stateno!=[900,902]&&stateno!=69002
+triggerall = command = "holdback"
+trigger1 = vel x > (const(velocity.jump.back.x))
+x = -.35
+;===========
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = enemy,stateno=1226&&enemy,time=4
+trigger1 = enemy,movetype=H
+value = 300,0+random%2
+volumescale = 100
+ignorehitpause = 1
+persistent=0
+
+;=====SCALING SHIT==================
+[State Stun Scaling]
+type = VarSet
+trigger1 = prevstateno=3000||prevstateno=3005||prevstateno=3001||prevstateno=3002
+trigger1 = stateno!=3001&&stateno!=3002
+fv = 25  
+value = 25
+ignorehitpause = 1
+persistent = 1
+
+[State Damage Scaling]
+type = VarSet
+trigger1 = prevstateno=3000||prevstateno=3005||prevstateno=3001||prevstateno=3002
+trigger1 = stateno!=3001&&stateno!=3002
+fv =13     ;fv = 
+value = 25
+ignorehitpause = 1
+persistent = 1
+;==================================
+
+[State 0, PalFX]
+type = PalFX
+trigger1 = prevstateno=420
+trigger2 = prevstateno=220
+triggerall= time=0
+time =0
+ignorehitpause = 1
+persistent=0
+
+[State 0, VarSet]
+type = Mapset
+triggerall = palno=11
+trigger1 =map(stopcountingpls)<roundno
+trigger1 = roundno =1
+map = "rina"
+value = 1+random%5
+ignorehitpause = 1
+persistent = 0
+[State 0, VarSet]
+type = MapAdd
+triggerall = palno=11
+trigger1 =map(stopcountingpls)<roundno
+trigger1 = roundno >1
+map = "rina"
+value = 1+random%4
+ignorehitpause = 1
+persistent = 0
+
+[State 0, VarSet]
+type = MapAdd
+triggerall = palno=11
+trigger1 =roundstate=0
+trigger1 = map(stopcountingpls)<roundno
+map = "stopcountingpls"
+value = 1
+ignorehitpause = 1
+persistent = 0
+
+[State 0, VarSet]
+type = MapSet
+triggerall = palno=11
+trigger1 = map(rina)>5
+map = "rina"
+value = map(rina)-5
+ignorehitpause = 1
+persistent = 1
+
+[State 0, VarSet]
+type = MapSet
+trigger1 = combocount=0
+map = "bair"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+[State 0, VarSet]
+type = MapSet
+trigger1 = combocount=0&&stateno!=202
+map = "AUTOCOMBO"
+value = 0
+ignorehitpause = 1
+persistent = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = combocount=0
+map = "fair"
+value = 0
+ignorehitpause = 1
+persistent = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = combocount=0
+map = "bair"
+value = 0
+ignorehitpause = 1
+persistent = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = combocount=0
+map = "dspecial"
+value = 0
+ignorehitpause = 1
+persistent = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = combocount=0
+map = "fullfsmash"
+value = 0
+ignorehitpause = 1
+persistent = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = combocount=0
+map = "fulldsmash"
+value = 0
+ignorehitpause = 1
+persistent = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = combocount=0
+trigger1 = stateno!=1000
+trigger1 = stateno!=1010
+map = "ggta"
+value = 0
+ignorehitpause = 1
+persistent = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = combocount=0
+map = "schlide"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+[State 0, VarSet]
+type = MapSet
+trigger1 = statetype!=A
+trigger2 = Movetype=H
+map = "airdodge"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+[State 0, VarSet]
+type = MapSet
+trigger1 = stateno!=10
+trigger1 = stateno!=11
+map = "vel"
+value = vel x
+ignorehitpause = 1
+persistent = 1
+
+[State 0, VarSet]
+type = MapSet
+trigger1 = statetype!=A
+map = "dj"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+[State 0, VarSet]
+type = Mapset
+triggerall = palno=12
+trigger1 =consecutivewins>=5
+trigger1 =roundno=1&&roundstate=0
+map = "december"
+value = 1
+ignorehitpause = 1
+persistent = 0
+
+;HEAVEN-SENT
+[State 0]
+type=modifybgctrl
+trigger1=map(december)=1
+trigger1 =roundstate=0
+id = 1
+value=1
+[State 0, PlaySnd] ;HEAVEN-SENT
+type = PlayBgm
+trigger1=map(december)=1
+triggerall=roundsexisted=0
+trigger1 = map(bgmtimer)=198
+ignorehitpause=1
+persistent=0
+bgm = "sound/black.mp3"
+loop = 1
+[State 0]
+type = MapSet
+triggerall=roundsexisted=0
+triggerall=roundstate<2
+trigger1=map(december)>0
+map = "bgmtimer"
+value = 200
+[State 0, BGPalFX]
+type = BGPalFX
+trigger1=map(december)=1
+time = -1
+mul =  100,100,100
+add=-10,-10,-10
+color = 1
+ignorehitpause = 1
+[State 0, Explod]
+type = Explod
+trigger1=map(december)=1
+trigger1 =roundstate=0
+anim = 3011
+ID = 3011
+pos =40,220
+postype = left  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = -2
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -1
+pausemovetime = 0
+scale = 1.5,1.5
+sprpriority = 5
+ontop = 0
+shadow = 0,0,0
+ownpal = 1
+removeongethit = 0
+ignorehitpause =1
+trans = add
+alpha=256,100
+persistent =0
+[State 0, AfterImage]
+type = AfterImage
+trigger1=map(december)=1
+trigger1=time=0
+time = -1
+length = 8
+palcolor = 1
+palinvertall = 0
+palbright =0,0,0
+palcontrast = 256,256,256
+paladd = 256,256,256
+palmul = .5,.5,.5
+framegap = 1
+trans = "none"
+persistent =1
+ignorehitpause=1
+
+[State 0, 3] ;Stop moving if low velocity
+type = MapSet
+triggerall = statetype=C
+triggerall = movetype=I
+trigger1 = Map(Vel) >= 0.1
+map = "vel"
+value = map(vel)*0.9
+ignorehitpause = 1
+persistent = 1
+
+[State 0, 3]
+type = MapSet
+triggerall = statetype=C
+triggerall = movetype=I
+trigger1 = Map(Vel) < 0.1
+map = "vel"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = anim=5
+trigger1=animtime=0
+value = 0
+ignorehitpause = 1
+
+[state 1]
+type = AssertSpecial
+trigger1 = map(lockin)=0
+flag = NoAutoTurn
+ignorehitpause = 1
+[state 1]
+type = mapset
+trigger1 = command!="hold_c"
+map = "lockin"
+value=0
+ignorehitpause = 1
+persistent = 1
+
+[State 0, VarRangeSet]
+type = VarRangeSet
+trigger1 = !numtarget
+fvalue = 0
+first = 20
+last = 27 ;
+
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1=stateno = 3002&&anim=3002
+id = 777
+ignorehitpause=1
+persistent=1
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1=stateno = 3002&&anim=3002
+id = 778
+ignorehitpause=1
+persistent=1
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1=stateno = 3002&&anim=3002
+id = 779
+ignorehitpause=1
+persistent=1
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1=stateno = 3002&&anim=3002
+id = 900
+ignorehitpause=1
+persistent=1
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1=stateno = 3002&&anim=3002
+id = 7050
+ignorehitpause=1
+persistent=1

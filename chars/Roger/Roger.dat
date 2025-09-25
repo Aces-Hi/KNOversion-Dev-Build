@@ -1,0 +1,153 @@
+	<#bbbbbb>This move list assumes you are facing to the right.</>
+
+	<#964317>UNIQUE TRAIT: TRUE POWER</>
+	Unlike every other character, Roger has no unique gimmick.
+	He scoffs at the idea of unique gameplay mechanics, instead preferring
+	to dominate with more health and sheer power. And you know what?
+	It works.
+
+	<#964317>UNIQUE MOVES</>
+UPPERCUT	-		_B^A
+SCUFFED	-		_DF^C
+
+
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#964317>SPECIAL MOVES</>
+GUARDIAN SLAMMER	-		(CAN BE HELD) ^Y
+   <#bbbbbb>A command grab.
+   Holding the button increases its power.</>
+FLYING GUARDIAN SLAMMER	-		<#65b5ff>(AIR ONLY)</> ^Y
+   <#bbbbbb>An airborne command grab. Can be used in combos.</>
+GOD CRUSH	-		_F^Y
+   <#bbbbbb>A command grab. Can be used in combos.</>
+_!A PRAYER UNANSWERED	-		^Y
+        <#bbbbbb>Cancels the move early.</>
+UMBRAL SNATCH	-		_B^Y
+HELL DELIVERY	-		_D^Y/_DF^Y
+   <#bbbbbb>An anti-air command grab.
+   Holding forward makes Roger move more forward. Can be used in combos.</>
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#964317>REMIX MOVES</>
+VITRIOL COALESCENCE	-		(CAN BE HELD) ^Z
+   <#bbbbbb>Hitting any projectile with it creates a large,
+   powerful fireball that beats enemy projectiles.</>
+NUKE KNUCKLE	-		(CAN BE HELD) _B^Z
+SEISMIC SCRUTINY	-			 _D (HOLD)^Z
+_!SECOND THOUGHT	-		LET GO OF ^Z
+        <#bbbbbb>Letting go of the button cancels the attack.</>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#ffef0f>EX MOVES</>
+_EX GUARDIAN SLAMMER	-		<#55ffff>(1 BAR)</> ^Y+^Z
+   <#bbbbbb>A faster command grab with more range.</>
+_EX FLYING GUARDIAN SLAMMER	-		<#65b5ff>(AIR ONLY)</><#55ffff>(1 BAR)</> ^Y+^Z
+   <#bbbbbb>An airborne command grab that launches the enemy. Can be used in combos.</>
+_EX GOD CRUSH	-		<#55ffff>(1 BAR)</> _F^Y+^Z
+   <#bbbbbb>A command grab. Can start orcontinue combos.</>
+_EX UMBRAL SNATCH	-		<#55ffff>(1 BAR)</> _B^Y+^Z
+   <#bbbbbb>An armored reversal attack.</>
+_EX HELL DELIVERY	-		<#55ffff>(1 BAR)</> _D^Y+^Z/_DF^Y+^Z
+   <#bbbbbb>An anti-air command grab that launches the enemy.
+   Holding forward makes Roger move more forward. Can be used in combos.</>
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#55ffff>SUPERS</>
+<#964317>INFINITE HYPERDEATH</>	-		<#55ffff>(2 BARS)</> _D_DF_F_-^A/^B/^C
+   <#bbbbbb>A powerful and invincible command grab.</>
+<#964317>STAY STILL.</>	-		<#55ffff>(2 BARS)</> _D_DB_B_-^A/^B/^C
+   <#bbbbbb>A powerful anti-air command grab. Can be used in combos.</>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	UNIVERSAL MOVES
+OVERHEAD	-		_F^B
+   <#bbbbbb>Puts you in the air and hits overhead.</>
+ANTI-AIR	-		_D^C
+   <#bbbbbb>This move has invulnerability to airborne enemies.</>
+GRAB	-		ANY 2 NORMALS </>
+   <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.</>
+FORCE BLOCK (WHILE BLOCKING)	-		<#55ffff>(1/4 BAR)</> _B^X
+   <#bbbbbb>Can push the enemy backwards while you block.</>
+RECOIL GUARD (WHILE BLOCKING)	-		<#55ffff>(2 BARS)</> _F^X
+   <#bbbbbb>A fullscreen-ranged reversal that knocks the
+   enemy down and beats projectiles. Refunds 1 BAR on hit.</>
+RECORD SCRATCH (WHILE ATTACKING)		<#55ffff>(1 BAR/2 BARS ON BLOCK)</> ^X
+   <#bbbbbb>Can be used to instantly cancel most attacks.</>
+BURST (WHILE GETTING HIT)	-		^X+^A/^B/^C
+   <#bbbbbb>A large reversal that can be used while you're getting hit.</>
+PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(4 BARS)</> ^X+^A/^B/^C
+   <#bbbbbb>An extra burst that can be used in an emergency.</>
+   <#ff0000>Using this PERMANENTLY limits your meter to a max of 1 BAR
+   for the rest of the game.</>
+	
+
+_D	_D		_D
+ 
+	2V2 MODE
+SWITCH CHARACTERS	-		ASSIST </>
+ACTIVE SWITCH (WHILE ATTACKING)	-		<#55ffff>(2 BARS)</>ASSIST </>
+ASSIST ATTACK	-		_B/_D/_F+ASSIST </>
+   <#bbbbbb>Each character has 3 assist attacks.</>
+TAG SUPER (DURING A SUPER)		<#55ffff>(2 BARS)</>_D_DF_F+ASSIST OR _D_DB_B+ASSIST </>
+
+</>

@@ -1,0 +1,1080 @@
+; Definitions of system screens
+
+;----------------------------
+[Info]
+name = "KNO"          ;Name of motif
+author = "Elecbyte"       ;Motif author name
+versiondate = 09,01,2009  ;Version date of motif (MM-DD-YYYY) (new in MUGEN 2009)
+mugenversion = 1.0        ;Version of M.U.G.E.N motif is compatible with (new in MUGEN 2009)
+localcoord = 320,240      ;Local coordinate space width and height (new in MUGEN 2009)
+
+;----------------------------
+;Directories are checked in this order:
+;1. current directory system.def is in
+;2. data/
+;3. your MUGEN directory
+;eg. If you write "spr = system.sff", and this system.def file
+;    is in ~/mugen/data/mymotif/, then Mugen will first look
+;    for ~/mugen/data/mymotif/system.sff. If it does not find
+;    it there, it looks for ~/mugen/data/system.sff (the default).
+;    Finally, if that is not found, it will look for
+;    ~/mugen/system.sff. 
+
+[Files]
+spr = system.sff          ;Filename of sprite data
+snd = system.snd          ;Filename of sound data
+logo.storyboard = logo.def   ;Logo storyboard definition (optional)
+intro.storyboard = intro.def ;Intro storyboard definition (optional)
+select = select.def       ;Character and stage selection list
+fight = data/knockoutlb/fight.def         ;Fight definition filename
+font1 = f-4x6.def         ;System fonts
+font2 = f-6x9.def         ;System fonts
+font3 = jg.fnt            ;System fonts
+
+;----------------------------
+[Ultimate]
+ ; [] = Not a value.
+ ;
+ ;Additions to I.K.E.M.E.N Go Plus
+ ;  Coins:
+ ;    Victory: Player earns `(coinswin * [difficulty] * ([team1size] / [team2size])) * coinrate` after battles.
+ ;    Defeat : Player loses `(coinlose * [difficulty] * ([team1size] / [team2size])) * coinrate` after battles.
+ ;
+ ;  bosslock: Setting this above 0 locks Boss Rush when Arcade Completion is below the specified percent.
+ ;  allrlock: Setting this above 0 locks All Rush when Arcade Completion is below the specified percent.
+ ;  survlock: Setting this above 0 locks Survival mode when completed characters is below the specified amount.
+coinrate  = 1
+coinswin  = 5
+coinlose = 0.5
+
+bosslock  = 33
+allrlock  = 100
+survlock  = 1
+
+;----------------------------
+[Music]
+ ;Put a filename for a MOD, MP3 or MIDI here, or just leave it
+ ;blank if you do not want music. If an invalid filename is
+ ;given, then no music will play.
+ ;To play mymusic.mp3 from the sound/ directory, put:
+ ;  title.bgm = sound/mymusic.mp3
+ ;Music will continue to play between screens if the files names
+ ;are the same, and both BGMs are specified to loop.
+  ;Music to play at title screen.
+title.bgm = main.mp3
+title.bgm.loop = 1        ;Set to 0 to prevent looping
+title.bgm.loopstart = 
+title.bgm.loopend = 
+  ;Music to play at char select screen.
+select.bgm = css.mp3
+select.bgm.loop = 1
+select.bgm.loopstart =
+select.bgm.loopend = 
+  ;Music to play at versus screen.
+vs.bgm = Versus.mp3
+vs.bgm.loop = 0
+vs.bgm.loopstart =
+vs.bgm.loopend = 
+  ;Music to play at victory screen.
+victory.bgm = Victory.mp3
+victory.bgm.loop = 0
+victory.bgm.loopstart =
+victory.bgm.loopend = 
+
+;-------------------------------------------------------------------
+;Title screen definition
+[Title Info]
+fadein.time = 10
+fadeout.time = 10
+menu.pos = 160,162
+menu.item.font = 3,0,0
+menu.item.active.font = 3,5,0
+menu.item.spacing = 0, 13
+menu.window.margins.y = 12, 15
+menu.window.visibleitems = 7
+; Names for each of the items in the menu. Names must be in quotes.
+; Use "" or remove itemname parameter to disable an item. If all are disabled,
+; goes straight to demo mode (hold Esc to quit demos).
+;
+; Ikemen feature: Flexible submenu grouping. General syntax for handling modes
+; looks as follows: menu.itemname.optional_submenus.item = "displayed text"
+; where:
+; * optional_submenus: combination of 1 or more strings, separated by dots,
+;   where each of them refer to additional level of nested menus. For example
+;   menu.itemname.extras = "EXTRAS" means we're displaying EXTRAS option on the
+;   screen (in this case right on the main menu, but it could be nested further)
+;   that opens up additional submenu with items that use menu.itemname.extras.
+;   as a prefix, e.g. menu.itemname.extras.freebattle
+; * item: strings used to start modes and control menus. Following item names
+;   are reserved by the engine and should not be used for submenu names:
+;   - arcade: Arcade Mode
+;   - versus: Versus Mode
+;   - teamarcade: Team Arcade
+;   - teamversus: Team Versus
+;   - teamcoop: Team Cooperative
+;   - survival: Survival
+;   - survivalcoop: Survival Cooperative
+;   - storymode: Story Mode (reserved, not implemented yet)
+;   - timeattack: Time Attack (reserved, not implemented yet)
+;   - training: Training Mode
+;   - watch: Watch Mode
+;   - options: Options
+;   - exit: Exit the game
+;   - back: Back to previous menu
+;   - freebattle: Free Battle
+;   - timechallenge: Time Challenge (reserved, not implemented yet)
+;   - scorechallenge: Score Challenge (reserved, not implemented yet)
+;   - 100kumite: VS 100 Kumite
+;   - bossrush: Boss Rush
+;   - charrush: All Rush
+;   - trials: Trials Mode (reserved, not implemented yet)
+;   - scoreranking: Score Ranking (reserved, not implemented yet)
+;   - replay: Replay
+;   - randomtest: Random AI Battles
+;   - tournament32: Tournament Mode starting from round of 32 (reserved)
+;   - tournament16: Tournament Mode starting from round of 16 (reserved)
+;   - tournament8: Tournament Mode starting from quarterfinals (reserved)
+;   - tournament4: Tournament Mode starting from semifinals (reserved)
+;   - joinadd: New IP Address
+;   - serverhost: Host Game
+;   - serverjoin: Join Game (reserved submenu)
+;   - ip_ prefix: used by items automatically appended to serverjoin submenu
+;   - server: special submenu, opened automatically by serverhost/serverjoin 
+;   - netplayversus: Online Versus
+;   - netplayteamcoop: Online Cooperative
+;   - netplaysurvivalcoop: Online Survival
+;   - bonusgames: Bonus Games (reserved submenu)
+;   - bonus_ prefix: used by items automatically appended to bonusgames submenu
+; Order in which menu items will show up on the screen depends on their order in
+; this file. For backward compatibility with mugen screenpacks sake, none of the
+; itemnames are available by default, which means screenpack DEF file should be
+; updated to support additional modes available in Ikemen GO. Submenus should
+; be declared before parameters referring to items nested inside those menus.
+; Default example grouping used in this file follows vanilla mugen modes style,
+; just with 2 subgroups added (online and extras), which open nested menus.
+
+; MAIN MENU
+menu.itemname.ko = "KNOCKOUT!"
+menu.itemname.ko.versus = "1v1"
+menu.itemname.ko.teamversus = "2v2"
+menu.itemname.ko.freebattle = "PLAYER VS AI"    
+menu.itemname.ko.watch = "AI VS AI"   
+menu.itemname.ko.back = "BACK"
+menu.itemname.online = "ONLINE"  
+menu.itemname.training = "THE LAB"
+menu.itemname.replay = "REPLAYS"                      ;Ikemen feature 
+menu.itemname.options = "OPTIONS"                         ;Ikemen feature
+menu.itemname.exit = "EXIT"
+
+; MAIN MENU -> ONLINE SUBMENU
+menu.itemname.online.serverhost = "HOST GAME"               ;Ikemen feature
+menu.itemname.online.serverjoin = "JOIN GAME"               ;Ikemen feature
+menu.itemname.online.back = "BACK"                          ;Ikemen feature
+
+; MAIN MENU -> ONLINE -> SERVERJOIN SUBMENU
+; known IP addresses show up before serverjoin.back item
+menu.itemname.online.serverjoin.joinadd = "NEW ADDRESS"     ;Ikemen feature
+menu.itemname.online.serverjoin.back = "BACK"               ;Ikemen feature
+
+; MAIN MENU -> EXTRAS SUBMENU
+menu.itemname.extras.arcade= "ARCADE"     
+menu.itemname.extras.freebattle = "1P VS AI"          
+menu.itemname.extras.watch = "AI VS AI"
+menu.itemname.extras.100kumite = "VS 100 KUMITE"            ;Ikemen feature      
+menu.itemname.extras.charrush = "ALL RUSH"                 ;Ultimate feature
+menu.itemname.extras.survival = "SURVIVAL"
+menu.itemname.extras.back = "BACK"                          ;Ikemen feature
+
+; MAIN MENU -> EXTRAS SUBMENU -> BONUSGAMES SUBMENU
+; names of bonus characters show up before bonusgames.back item
+menu.itemname.extras.bonusgames.back = "BACK"               ;Ikemen feature
+
+; SERVER SUBMENU
+; This group is hidden and should not be moved to other menus.
+; It's opened automatically, after synchronization with online player.
+menu.itemname.server.netplayversus = "1v1"              ;Ikemen feature
+menu.itemname.server.netplayteamversus = "2v2"              ;Ikemen feature
+menu.itemname.server.back = "EXIT"                          ;Ikemen feature
+
+
+; These parameters define the window in which the items are visible
+; in.
+menu.window.margins.y = 12, 8
+menu.window.visibleitems = 5
+menu.boxcursor.visible = 1     ;Set to 0 to disable default cursor display
+menu.boxcursor.coords = -58,-10,57,2
+; These are the sounds for cursor movement
+cursor.move.snd = 100,0
+cursor.done.snd = 100,1
+cancel.snd = 100,2
+
+;----------------------------
+;Title background definition
+[TitleBGdef]
+bgclearcolor = 0,0,0
+
+[TitleBG 2]
+type  = normal
+spriteno = 5,0
+start = 0, 0
+tile = 1,2
+velocity = 0
+mask = 0
+
+[TitleBG 1]
+type = normal
+spriteno=1,1
+start = 0,145
+tile = 1,1
+velocity = 0.1,0.1
+TRANS=add
+
+[TitleBG Sun]
+type  = normal
+spriteno = 8,0
+start = 0, 145
+mask=1
+trans=add
+[TitleBG 1]
+type = normal
+spriteno=1,0
+actionno=1
+start = 0,180
+mask = 1
+TRANS=add
+[TitleBG Sun]
+type  = normal
+spriteno = 8,1
+start = 0, 145
+mask=1
+
+
+[TitleBG 1] ; Floor
+type  = parallax
+spriteno = 4,1
+start = 32.5,145
+delta = .25, 1;.25, .35
+tile = 1, 1
+velocity=-0.4,0
+yscalestart = 150
+tilespacing = 0, 0
+width = 65, 330
+;yscalestart = 100
+[TitleBG 1] ; Floor
+type  = parallax
+spriteno = 4,2
+start = 32.5,145
+delta = .25, 1;.25, .35
+tile = 1, 0
+velocity=0,0
+yscalestart = 150
+tilespacing = 0, 0
+width = 65, 330
+mask=1
+;yscalestart = 100
+; 0
+
+[TitleBG 1]
+type  = normal
+spriteno = 5, 2
+start = -160, 145
+trans = sub
+
+
+[TitleBG 3]
+type  = anim
+actionno=0
+start = 0, 0
+[TitleBG 3]
+type  = normal
+spriteno = 0,0
+start = 0, 0
+mask = 0
+
+
+;-------------------------------------------------------------------
+;Character select definition
+[Select Info]
+fadein.time = 10
+fadeout.time = 10
+; *** NOTICE ***
+; Are you trying to add more rows or columns?
+; As of MUGEN 1.0, the default motif is defined in data/mugen1/system.def.
+; You can also edit mugen.cfg to select the "big" motif.
+rows = 3
+columns = 10
+wrapping = 1              ;1 to let cursor wrap around
+pos = 17,170              ;Position to draw to
+showemptyboxes = 0        ;1 to show empty boxes
+moveoveremptyboxes = 0    ;1 to allow cursor to move over empty boxes
+cell.size = 27,27         ;x,y size of each cell (in pixels)
+cell.spacing = 2          ;Space between each cell
+cell.bg.spr =      ;Note: Don't use animation for cells
+cell.random.spr = 151,0   ;Icon for random select (don't use animation)
+cell.random.switchtime = 3;Time to wait before changing to another random portrait
+cell.random.offset = 0, 0
+p1.cursor.startcell = 0,3
+p1.cursor.active.spr = 160,0
+p1.cursor.done.spr = 161,0
+p1.cursor.move.snd = 100,0
+p1.cursor.done.snd = 100,1
+p1.random.move.snd = -1
+p2.cursor.startcell = 0,6
+p2.cursor.active.spr = 170,0
+p2.cursor.done.spr = 171,0
+p2.cursor.blink = 1       ;1 to blink p2's cursor if overlapping p1's
+p2.cursor.move.snd = 100,0
+p2.cursor.done.snd = 100,1
+p2.random.move.snd = -1
+random.move.snd.cancel = 1;1 to have random move sound cancel itself when played repeatedly
+stage.move.snd = 100,0
+stage.done.snd = 100,1
+cancel.snd = 100,2
+portrait.spr = 9000,0     ;Do not change from 9000,0
+portrait.offset = -1,-1
+portrait.scale = 0.95,0.95
+title.offset = 159,13     ;Position of title (Arcade Mode, etc)
+title.font = 3,0,0        ;Font of title (-1 for none)
+p1.select.snd=7410,0
+p2.select.snd=7410,0
+p3.select.snd=7410,0
+p4.select.snd=7410,0
+;Big portraits
+
+
+;p1.face2.spr = 9000,1
+p1.face2.offset = 0,0      
+p1.face2.scale = 1,1
+p1.face2.facing = 1
+p1.face.num = 2
+;Player 1's Main Character
+p1.member1.face.anim = 11110 
+p1.member1.face.done.anim = 11111
+p1.member1.face.offset = 70,155
+p1.member1.face.scale = 1.2,1.2
+;Player 1's Main Character
+p1.member2.face.anim = 11110 
+p1.member2.face.done.anim = 11111
+p1.member2.face.offset = 30,155
+p1.member2.face.scale = 1.2,1.2
+
+;p2.face2.spr = 9000,1
+p2.face2.offset = 0,0
+p2.face2.scale = 1,1
+p2.face2.facing = -1
+p2.face.num = 2
+;Player 2's Main Character
+p2.member1.face.anim = 11110
+p2.member1.face.done.anim = 11111
+p2.member1.face.offset = 250,155
+p2.member1.face.scale = 1.2,1.2
+p2.member1.face.facing = -1
+;Player 2's Main Character
+p2.member2.face.anim = 11110
+p2.member2.face.done.anim = 11111
+p2.member2.face.offset = 290,155
+p2.member2.face.scale = 1.2,1.2
+p2.member2.face.facing = -1
+;Name
+p1.name.offset = 10,162   ;Position to put name
+p1.name.font = 3,4,1      ;Set to -1 for no display
+p2.name.offset = 309,162
+p2.name.font = 3,1,-1
+;Stage select
+stage.portrait.spr = 0,0
+stage.portrait.offset = -160, -171
+stage.pos = 160,237
+stage.active.font = 3,0,0
+stage.active2.font = 3,2  ;Second font color for blinking
+stage.done.font = 3,0
+stage.portrait.layerno=0
+stage.portrait.window = 0,66, 330,127
+stage.portrait.random.spr = 1,2
+stage.portrait.random.offset =-160, -171
+stage.text = "%s"
+stage.random.text = "RANDOM [DOESN'T WORK ONLINE]"
+
+;Team menu
+teammenu.move.wrapping = 1
+p1.teammenu.pos = 20, 30
+;p1.teammenu.bg.spr =
+p1.teammenu.selftitle.font = 3,0, 1
+p1.teammenu.selftitle.text =
+p1.teammenu.enemytitle.font = 3,0, 1
+p1.teammenu.enemytitle.text = 
+p1.teammenu.move.snd = 100,0
+p1.teammenu.value.snd = 100,0
+p1.teammenu.done.snd = 100,1
+p1.teammenu.item.offset = 0,20
+p1.teammenu.item.spacing = 0,15
+p1.teammenu.item.font = 3,0, 1
+p1.teammenu.item.active.font = 3,3, 1
+p1.teammenu.item.active2.font = 3,0, 1 ;Second font color for blinking
+p1.teammenu.item.cursor.offset = -10, 0
+p1.teammenu.item.cursor.anim = 180
+p1.teammenu.value.icon.offset = 60,1
+p1.teammenu.value.icon.spr = 181,0
+p1.teammenu.value.empty.icon.offset = 60,1
+p1.teammenu.value.empty.icon.spr = 182,0
+p1.teammenu.value.spacing = 6,0
+
+p1.teammenu.ratio1.icon.spr = 300, 0       ;Ikemen feature
+p1.teammenu.ratio1.icon.offset = 172, 203  ;Ikemen feature
+p1.teammenu.ratio1.icon.facing = 1,        ;Ikemen feature
+p1.teammenu.ratio1.icon.scale = 0.40, 0.40 ;Ikemen feature
+p1.teammenu.ratio2.icon.spr = 300, 1       ;Ikemen feature
+p1.teammenu.ratio2.icon.offset = 172, 203  ;Ikemen feature
+p1.teammenu.ratio2.icon.facing = 1,        ;Ikemen feature
+p1.teammenu.ratio2.icon.scale = 0.40, 0.40 ;Ikemen feature
+p1.teammenu.ratio3.icon.spr = 300, 2       ;Ikemen feature
+p1.teammenu.ratio3.icon.offset = 172, 203  ;Ikemen feature
+p1.teammenu.ratio3.icon.facing = 1,        ;Ikemen feature
+p1.teammenu.ratio3.icon.scale = 0.40, 0.40 ;Ikemen feature
+p1.teammenu.ratio4.icon.spr = 300, 3       ;Ikemen feature
+p1.teammenu.ratio4.icon.offset = 172, 203  ;Ikemen feature
+p1.teammenu.ratio4.icon.facing = 1,        ;Ikemen feature
+p1.teammenu.ratio4.icon.scale = 0.40, 0.40 ;Ikemen feature
+p1.teammenu.ratio5.icon.spr = 300, 4       ;Ikemen feature
+p1.teammenu.ratio5.icon.offset = 172, 203  ;Ikemen feature
+p1.teammenu.ratio5.icon.facing = 1,        ;Ikemen feature
+p1.teammenu.ratio5.icon.scale = 0.40, 0.40 ;Ikemen feature
+p1.teammenu.ratio6.icon.spr = 300, 5       ;Ikemen feature
+p1.teammenu.ratio6.icon.offset = 172, 203  ;Ikemen feature
+p1.teammenu.ratio6.icon.facing = 1,        ;Ikemen feature
+p1.teammenu.ratio6.icon.scale = 0.40, 0.40 ;Ikemen feature
+p1.teammenu.ratio7.icon.spr = 300, 6       ;Ikemen feature
+p1.teammenu.ratio7.icon.offset = 172, 203  ;Ikemen feature
+p1.teammenu.ratio7.icon.facing = 1,        ;Ikemen feature
+p1.teammenu.ratio7.icon.scale = 0.40, 0.40 ;Ikemen feature
+
+;p2 team
+p2.teammenu.pos = 299, 30
+;p2.teammenu.bg.spr =
+p2.teammenu.selftitle.font = 3,0, -1
+p2.teammenu.selftitle.text =
+p2.teammenu.enemytitle.font = 3,0, -1
+p2.teammenu.enemytitle.text =
+p2.teammenu.move.snd = 100,0
+p2.teammenu.value.snd = 100,0
+p2.teammenu.done.snd = 100,1
+p2.teammenu.item.offset = 0,20
+p2.teammenu.item.spacing = 0,15
+p2.teammenu.item.font = 3,0, -1
+p2.teammenu.item.active.font = 3,1, -1
+p2.teammenu.item.active2.font = 3,0, -1 ;Second font color for blinking
+p2.teammenu.item.cursor.offset = 10, 0
+p2.teammenu.item.cursor.anim = 190
+p2.teammenu.value.icon.offset = -60,1
+p2.teammenu.value.icon.spr = 191,0
+p2.teammenu.value.empty.icon.offset = -60,1
+p2.teammenu.value.empty.icon.spr = 192,0
+p2.teammenu.value.spacing = -6,0
+
+p2.teammenu.ratio1.icon.spr = 301, 0       ;Ikemen feature
+p2.teammenu.ratio1.icon.offset = 309, 203  ;Ikemen feature
+p2.teammenu.ratio1.icon.facing = 1,        ;Ikemen feature
+p2.teammenu.ratio1.icon.scale = 0.40, 0.40 ;Ikemen feature
+p2.teammenu.ratio2.icon.spr = 301, 1       ;Ikemen feature
+p2.teammenu.ratio2.icon.offset = 309, 203  ;Ikemen feature
+p2.teammenu.ratio2.icon.facing = 1,        ;Ikemen feature
+p2.teammenu.ratio2.icon.scale = 0.40, 0.40 ;Ikemen feature
+p2.teammenu.ratio3.icon.spr = 301, 2       ;Ikemen feature
+p2.teammenu.ratio3.icon.offset = 309, 203  ;Ikemen feature
+p2.teammenu.ratio3.icon.facing = 1,        ;Ikemen feature
+p2.teammenu.ratio3.icon.scale = 0.40, 0.40 ;Ikemen feature
+p2.teammenu.ratio4.icon.spr = 301, 3       ;Ikemen feature
+p2.teammenu.ratio4.icon.offset = 309, 203  ;Ikemen feature
+p2.teammenu.ratio4.icon.facing = 1,        ;Ikemen feature
+p2.teammenu.ratio4.icon.scale = 0.40, 0.40 ;Ikemen feature
+p2.teammenu.ratio5.icon.spr = 301, 4       ;Ikemen feature
+p2.teammenu.ratio5.icon.offset = 309, 203  ;Ikemen feature
+p2.teammenu.ratio5.icon.facing = 1,        ;Ikemen feature
+p2.teammenu.ratio5.icon.scale = 0.40, 0.40 ;Ikemen feature
+p2.teammenu.ratio6.icon.spr = 301, 5       ;Ikemen feature
+p2.teammenu.ratio6.icon.offset = 309, 203  ;Ikemen feature
+p2.teammenu.ratio6.icon.facing = 1,        ;Ikemen feature
+p2.teammenu.ratio6.icon.scale = 0.40, 0.40 ;Ikemen feature
+p2.teammenu.ratio7.icon.spr = 301, 6       ;Ikemen feature
+p2.teammenu.ratio7.icon.offset = 309, 203  ;Ikemen feature
+p2.teammenu.ratio7.icon.facing = 1,        ;Ikemen feature
+p2.teammenu.ratio7.icon.scale = 0.40, 0.40 ;Ikemen feature
+
+teammenu.itemname.single = Solo ;Ikemen feature
+teammenu.itemname.tag = Tag      ;Ikemen feature
+teammenu.itemname.simul =   ;Ikemen feature
+teammenu.itemname.turns =    ;Ikemen feature
+teammenu.itemname.ratio =    ;Ikemen feature
+
+
+;Sounds
+
+[Begin Action 180] ;P1 Team mode cursor
+180,0, 0,0, 1
+180,0, 1,0, 1
+180,0, 2,0, 1
+180,0, 3,0, 1
+180,0, 4,0, 1
+180,0, 5,0, 1
+180,0, 6,0, 1
+180,0, 7,0, 1
+
+[Begin Action 0]
+-1,0, 0,0, 1800
+0,1, 0,0, 5, , AS256D200
+0,1, 0,0, 5, , AS256D150
+0,1, 0,0, 5, , AS256D100
+0,1, 0,0, 5, , AS256D50
+0,1, 0,0, -1
+
+[Begin Action 190] ;P2 Team mode cursor
+190,0, 0,0, 1
+190,0,-1,0, 1
+190,0,-2,0, 1
+190,0,-3,0, 1
+190,0,-4,0, 1
+190,0,-5,0, 1
+190,0,-6,0, 1
+190,0,-7,0, 1
+
+;-----------------------
+;Character select screen background
+[SelectBGdef]
+;spr = graphics/selectbg.sff  ;Filename of sprite data
+
+[SelectBG 0] ;Scrolling background
+type  = normal
+spriteno = 100,0
+layerno = 0
+start = 0,0
+tile  = 0,0
+
+
+[SelectBG 1] ;Dark box
+type  = normal
+spriteno = 100,1
+layerno = 0
+start = 0, 166
+delta = 0,0
+tile  = 1,0
+trans = sub
+velocity = -1, 0
+
+[SelectBG 2.A] ;Title background
+type  = normal
+spriteno = 102,0
+layerno = 0
+start = 0, 2
+delta = 0,0
+tile  = 1,0
+trans = sub
+velocity = -1, 0
+
+[SelectBG 2.B] ;Title background B
+type  = normal
+spriteno = 102,1
+layerno = 0
+start = 0, 2
+delta = 0,0
+tile  = 1,0
+trans = add
+velocity = -3, 0
+
+[SelectBG 2.C] ;Title background C
+type  = normal
+spriteno = 102,2
+layerno = 0
+start = 0, 2
+delta = 0,0
+tile  = 1,0
+trans = add
+velocity = -6, 0
+
+;-------------------------------------------------------------------
+[VS Screen]
+time = 150                ;Time to show screen
+fadein.time = 15
+fadeout.time = 15
+;Match text in arcade modes
+match.text = "Match %i"   ;%i can be used for the match number
+match.offset = 159, 12
+match.font = 3,0,0
+;Big portraits
+p1.anim = 11110
+p1.offset =  73,160
+p1.facing = 1
+p1.scale = 1,1
+p2.anim = 11110
+p2.offset = 246,160
+p2.facing = -1
+p2.scale = 1,1
+;Names
+p1.name.offset  =  78,190
+p1.name.font =   3,0,0
+p2.name.offset  = 241,190
+p2.name.font =   3,0,0
+
+;-----------------------
+;VS Match up screen background
+[VersusBGdef] 
+
+[VersusBG 1] 
+type  = normal
+spriteno = 100,2
+start = 0,0
+tile  = 1,1
+velocity = 0,1.5
+
+[VersusBG 2] ;VS Screen
+type  = normal
+spriteno = 100,1
+start = 20,13
+tile  = 1,1
+trans = sub
+window = 19,30, 140,171
+velocity = -2, 0
+
+[VersusBG 3] ;VS Screen
+type  = normal
+spriteno = 100,1
+start = 20,13
+tile  = 1,1
+trans = sub
+window = 179,30, 300,171
+velocity = 2, 0
+
+[VersusBG 1] 
+type  = normal
+spriteno = 100,3
+start = 0,0
+scale=0.5,0.5
+
+[VersusBG 4] ;VS Logo
+type  = anim
+actionno = 200
+layerno = 1 ; Front
+start = 0,95
+
+[Begin Action 200]
+200,4, 0,0, 1
+200,3, 0,0, 2
+200,2, 0,0, 3
+200,1, 0,0, 4
+200,0, 0,0, 8
+200,5, 0,0, 3
+200,6, 0,0, 3
+200,7, 0,0, 3
+200,8, 0,0, 3
+200,0, 0,0, -1
+
+;-------------------------------------------------------------------
+;Demo mode definition
+[Demo Mode]
+enabled = 0               ;Set to 1 to enable demo mode, 0 to disable
+select.enabled = 0        ;Set to 1 to display select screen, 0 to disable
+vsscreen.enabled = 0      ;Set to 1 to display versus screen, 0 to disable
+title.waittime = 3600      ;Time to wait at title before starting demo mode
+fight.endtime = 2000     ;Time to display the fight before returning to title
+fight.playbgm = 0         ;Set to 1 to enable in-fight BGM, 0 to disable
+fight.stopbgm = 0		  ;Set to 1 to stop title BGM (only if playbgm = 0)
+fight.bars.display = 1    ;Set to 1 to display lifebar, 0 to disable
+intro.waitcycles = 10    ;Cycles to wait before intro cutscene is played again
+debuginfo = 0             ;Set to 0 to hide debugging info (debug mode only)
+
+;-------------------------------------------------------------------
+;Continue screen definition
+[Continue Screen]
+enabled = 1               ;Set to 1 to show continue screen, 0 to disable
+
+;-------------------------------------------------------------------
+;Game over screen definition
+[Game Over Screen]
+enabled = 1               ;Set to 1 to show game over screen, 0 to disable
+storyboard = gameover.def ;Game over storyboard filename
+
+;-------------------------------------------------------------------
+;Victory screen definition
+;This is the screen that is shown when you win a match in arcade mode.
+;It will not be displayed on the last match of arcade mode.
+[Victory Screen]
+enabled = 0
+time = 600                ;Time to show screen
+fadein.time = 8
+fadeout.time = 15
+vs.enabled = 0
+cpu.enabled =0
+;Winner's portrait and name
+p1.offset = 160,155
+p1.anim = 11111
+p1.facing = 1
+p1.scale = 1,1
+p1.name.offset = 20,180
+p1.name.font = 3,0,1
+;Win quote text
+winquote.text = "Winner!" ;Default win quote text to show
+winquote.offset = 20,192
+winquote.font = 2,0,1
+winquote.window = 18,171, 301,228
+winquote.textwrap = w     ;Word wrap
+
+;-----------------------
+;Victory screen background
+[VictoryBGdef] 
+
+[VictoryBG 1] 
+type  = normal
+spriteno = 100,0
+start = 0,0
+tile  = 1,1
+velocity = 0,1.5
+
+[VictoryBG 2]
+type  = normal
+spriteno = 100,1
+start = 20,13
+tile  = 1,1
+trans = sub
+window = 0,19, 319,160
+velocity = -2, 0
+
+[VictoryBG 3]
+type  = normal
+spriteno = 100,1
+start = 10,170
+tile  = 1,1
+trans = sub
+window = 15,170, 304,229
+velocity = 0, 0
+
+;-------------------------------------------------------------------
+;Win screen definition
+;This is the screen that is shown when you win in arcade mode.
+;It will not be displayed if the winning character has an ending.
+[Win Screen]
+enabled = 1               ;Set to 1 to show win screen, 0 to disable
+wintext.text = "Congratulations!"
+wintext.font = 2,0,0
+wintext.offset = 159,70
+wintext.displaytime = -1
+wintext.layerno = 2
+fadein.time = 32
+pose.time = 300
+fadeout.time = 64
+
+;-------------------------------------------------------------------
+;Game ending screen definition
+;This screen shows up after the Win Screen.
+;It will not be displayed if the winning character has an ending.
+[Default Ending]
+enabled = 0               ;Set to 1 to show default ending, 0 to disable
+storyboard =              ;Default ending storyboard filename
+
+;-------------------------------------------------------------------
+;Ending credits screen definition
+;This screen shows up after the Win Screen and Ending
+[End Credits]
+enabled = 0               ;Set to 1 to show credits, 0 to disable
+storyboard = credits.def  ;Credits storyboard filename
+
+;-------------------------------------------------------------------
+;Survival mode results screen definition
+;This is the screen that is shown when you win in survival mode.
+;It will not be displayed if the winning character has an ending.
+[Survival Results Screen]
+enabled = 1
+winstext.text = "Rounds survived: %i"  ;Use %i for win counter
+winstext.font = 3,0,0
+winstext.offset = 159,70
+winstext.displaytime = -1
+winstext.layerno = 2
+fadein.time = 32
+show.time = 300
+fadeout.time = 64
+roundstowin = 5           ;Number of rounds to get win pose (lose pose otherwise)
+
+;-------------------------------------------------------------------
+;Options screen definition
+[Option Info] ;Ikemen feature
+	fadein.time = 10
+	fadeout.time = 10
+
+	title.offset = 159, 19
+	title.font = "f-6x9.def", 0, 0, 255, 255, 255, -1
+	title.scale = 1.0, 1.0
+
+	cursor.move.snd = 100, 0
+	cursor.done.snd = 100, 1
+	cancel.snd = 100, 2
+
+	; Ikemen features
+	; --------------------------------------------------------------------------
+	fadein.col = 0, 0, 0
+	fadein.anim = -1
+	fadeout.col = 0, 0, 0
+	fadeout.anim = -1
+
+	title.text = "OPTIONS"
+
+	; Refer to Notes at the beginning of this file.
+	menu.uselocalcoord = 0
+
+	; Refer to [Title Info] menu parameters for extra comments explaining how to
+	; define menus (unlike Mugen, where option screen look is hardcoded, Ikemen
+	; follows vanilla Mugen convention from Title Screen for building menus)
+
+	menu.pos = 85, 33
+
+	;menu.bg.<itemname>.anim = -1
+	;menu.bg.<itemname>.spr = 
+	;menu.bg.<itemname>.offset = 0, 0
+	;menu.bg.<itemname>.facing = 1
+	;menu.bg.<itemname>.scale = 1.0, 1.0
+	;menu.bg.active.<itemname>.anim = -1
+	;menu.bg.active.<itemname>.spr = 
+	;menu.bg.active.<itemname>.offset = 0, 0
+	;menu.bg.active.<itemname>.facing = 1
+	;menu.bg.active.<itemname>.scale = 1.0, 1.0
+
+	menu.item.offset = 0, 0
+	menu.item.font = "f-6x9.def", 0, 1, 191, 191, 191, -1
+	menu.item.scale = 1.0, 1.0
+
+	menu.item.active.offset = 0, 0
+	menu.item.active.font = "f-6x9.def", 0, 1, 255, 255, 255, -1
+	menu.item.active.scale = 1.0, 1.0
+
+	menu.item.selected.offset = 0, 0
+	menu.item.selected.font = "f-6x9.def", 0, 1, 0, 247, 247, -1
+	menu.item.selected.scale = 1.0, 1.0
+	menu.item.selected.active.offset = 0, 0
+	menu.item.selected.active.font = "f-6x9.def", 0, 1, 0, 247, 247, -1
+	menu.item.selected.active.scale = 1.0, 1.0
+
+	menu.item.value.offset = 150, 0
+	menu.item.value.font = "f-6x9.def", 0, -1, 191, 191, 191, -1
+	menu.item.value.scale = 1.0, 1.0
+
+	menu.item.value.active.offset = 150, 0
+	menu.item.value.active.font = "f-6x9.def", 0, -1, 255, 255, 255, -1
+	menu.item.value.active.scale = 1.0, 1.0
+
+	menu.item.value.conflict.offset = 150, 0
+	menu.item.value.conflict.font = "f-6x9.def", 0, -1, 247, 0, 0, -1
+	menu.item.value.conflict.scale = 1.0, 1.0
+
+	menu.item.info.offset = 150, 0
+	menu.item.info.font = "f-6x9.def", 0, -1, 247, 247, 0, -1
+	menu.item.info.scale = 1.0, 1.0
+	menu.item.info.active.offset = 150, 0
+	menu.item.info.active.font = "f-6x9.def", 0, -1, 247, 247, 0, -1
+	menu.item.info.active.scale = 1.0, 1.0
+
+	menu.item.spacing = 0, 14
+	menu.window.margins.y = 0, 0
+	menu.window.visibleitems = 13
+
+	menu.boxcursor.visible = 1
+	menu.boxcursor.coords = -5, -10, 154, 3
+	menu.boxcursor.col = 255, 255, 255
+	menu.boxcursor.alpharange = 10, 40, 2, 255, 255, 0
+	menu.boxbg.visible = 1
+	menu.boxbg.col = 0, 0, 0
+	menu.boxbg.alpha = 0, 128
+
+	menu.arrow.up.anim = -1
+	menu.arrow.up.spr = 
+	menu.arrow.up.offset = 0, 0
+	menu.arrow.up.facing = 1
+	menu.arrow.up.scale = 1.0, 1.0
+	menu.arrow.down.anim = -1
+	menu.arrow.down.spr = 
+	menu.arrow.down.offset = 0, 0
+	menu.arrow.down.facing = 1
+	menu.arrow.down.scale = 1.0, 1.0
+
+	menu.title.uppercase = 1
+	menu.valuename.none = "None"
+	menu.valuename.random = "Random"
+	menu.valuename.default = "Default"
+	menu.valuename.f = "(F%i)"
+	menu.valuename.esc = "(Esc)"
+	menu.valuename.page = "(Tab)"
+	menu.valuename.nokey = "Not used"
+	menu.valuename.yes = "Yes"
+	menu.valuename.no = "No"
+	menu.valuename.enabled = "Enabled"
+	menu.valuename.disabled = "Disabled"
+
+	keymenu.p1.pos = 39, 33
+	keymenu.p2.pos = 178, 33
+
+	;keymenu.bg.<itemname>.anim = -1
+	;keymenu.bg.<itemname>.spr = 
+	;keymenu.bg.<itemname>.offset = 0, 0
+	;keymenu.bg.<itemname>.facing = 1
+	;keymenu.bg.<itemname>.scale = 1.0, 1.0
+	;keymenu.bg.active.<itemname>.anim = -1
+	;keymenu.bg.active.<itemname>.spr = 
+	;keymenu.bg.active.<itemname>.offset = 0, 0
+	;keymenu.bg.active.<itemname>.facing = 1
+	;keymenu.bg.active.<itemname>.scale = 1.0, 1.0
+
+	keymenu.item.p1.offset = 52, 0
+	keymenu.item.p1.font = "f-6x9.def", 0, 0, 0, 247, 247, -1
+	keymenu.item.p1.scale = 1.0, 1.0
+	keymenu.item.p2.offset = 52, 0
+	keymenu.item.p2.font = "f-6x9.def", 0, 0, 247, 0, 0, -1
+	keymenu.item.p2.scale = 1.0, 1.0
+
+	; Unassigned keymenu.item parameters use corresponding menu.item values.
+	keymenu.item.spacing = 0, 12
+	keymenu.item.value.offset = 101, 0
+	keymenu.item.value.active.offset = 101, 0
+	keymenu.item.value.conflict.offset = 101, 0
+	keymenu.item.info.offset = 101, 0
+	keymenu.item.info.active.offset = 101, 0
+	keymenu.boxcursor.coords = -5, -9, 106, 2
+	keymenu.itemname.playerno = "PLAYER %i"
+	keymenu.itemname.configall = "Config all"
+	keymenu.itemname.up = "Up"
+	keymenu.itemname.down = "Down"
+	keymenu.itemname.left = "Left"
+	keymenu.itemname.right = "Right"
+	keymenu.itemname.x = "Light"
+	keymenu.itemname.y = "Medium"
+	keymenu.itemname.z = "Heavy"
+	keymenu.itemname.a = "KNO"
+	keymenu.itemname.b = "Special"
+	keymenu.itemname.c = "Remix"
+	keymenu.itemname.start = "Taunt"
+	keymenu.itemname.d = "Special+Remix"
+	keymenu.itemname.w = "Dash/Assist"
+	keymenu.itemname.menu = "Pause"
+	keymenu.itemname.back = "Back"
+	keymenu.itemname.page = "Page"
+
+	textinput.offset = 25, 32
+	textinput.font = "default-3x5.def", 0, 1, 191, 191, 191, -1
+	textinput.scale = 1.0, 1.0
+	textinput.port.text = "Type in Host Port, e.g. 7500.\nPress ENTER to accept.\nPress ESC to cancel."
+	textinput.reswidth.text = "Type in screen width.\nPress ENTER to accept.\nPress ESC to cancel."
+	textinput.resheight.text = "Type in screen height.\nPress ENTER to accept.\nPress ESC to cancel."
+	;textinput.overlay.window = 0, 0, localcoordX, localcoordY
+	textinput.overlay.col = 0, 0, 0
+	textinput.overlay.alpha = 0, 128
+
+	; https://github.com/ikemen-engine/Ikemen-GO/wiki/Screenpack-features#submenus
+	; If custom menu is not declared, following menu is loaded by default:
+	menu.itemname.menugame = "Game Settings"
+	menu.itemname.menugame.credits = "Credits"
+	menu.itemname.menugame.aipalette = "Arcade Palette"
+	menu.itemname.menugame.aisurvivalpalette = "Survival Palette"
+	menu.itemname.menugame.airamping = "AI Ramping"
+	menu.itemname.menugame.quickcontinue = "Quick Continue""
+	menu.itemname.menugame.empty = ""
+	menu.itemname.menugame.back = "Back"
+
+	menu.itemname.menuvideo = "Video Settings"
+	menu.itemname.menuvideo.resolution = "Resolution" ;reserved submenu
+	; Resolution is assigned based on values used in itemname suffix (e.g. 320x240)
+	menu.itemname.menuvideo.resolution.320x240 = "320x240"
+	menu.itemname.menuvideo.resolution.640x480 = "640x480"
+	menu.itemname.menuvideo.resolution.960x720 = "960x720"
+	menu.itemname.menuvideo.resolution.1440x1080 = "1440x1080"
+	menu.itemname.menuvideo.resolution.back = "Back"
+	menu.itemname.menuvideo.fullscreen = "Fullscreen"
+	menu.itemname.menuvideo.vretrace = "VSync"
+	menu.itemname.menuvideo.empty = ""
+	menu.itemname.menuvideo.back = "Back"
+
+	menu.itemname.menuaudio = "Audio Settings"
+	menu.itemname.menuaudio.mastervolume = "Master Volume"
+	menu.itemname.menuaudio.bgmvolume = "BGM Volume"
+	menu.itemname.menuaudio.sfxvolume = "SFX Volume"
+	menu.itemname.menuaudio.empty = ""
+	menu.itemname.menuaudio.back = "Back"
+
+	menu.itemname.menuinput = "Input Settings"
+	menu.itemname.menuinput.keyboard = "Key Config"
+	menu.itemname.menuinput.gamepad = "Joystick Config"
+
+	menu.itemname.menuinput.empty = ""
+	menu.itemname.menuinput.inputdefault = "Default"
+	menu.itemname.menuinput.back = "Back"
+
+	menu.itemname.menuengine = "Engine Settings"
+	menu.itemname.menuengine.debugkeys = "Debug Keys"
+	menu.itemname.menuengine.debugmode = "Debug Mode"
+	menu.itemname.menuengine.empty = ""
+	menu.itemname.menuengine.back = "Back"
+
+	menu.itemname.empty = ""
+	menu.itemname.savereturn = "Save and Return"
+	menu.itemname.return = "Return Without Saving"
+;-------------------
+;Options screen background
+[OptionBGdef] 
+
+[OptionBG 1]
+type  = normal
+spriteno = 100,2
+start = 0,0
+
+[Menu Info]
+
+
+	movelist.title.text = "%s"
+	movelist.title.uppercase = 1
+	movelist.text.scale = 0.3, 0.3
+	movelist.text.spacing = 1, 1
+	movelist.window.visibleitems = 25
+	movelist.overlay.col = 0,0,0
+	movelist.overlay.alpha = 20, 20
+	menu.itemname.back = "Continue"
+	menu.itemname.menuinput = "Button Config"
+	menu.itemname.menuinput.keyboard = "Key Config"
+	menu.itemname.menuinput.gamepad = "Joystick Config"
+	menu.itemname.menuinput.empty = ""
+	menu.itemname.menuinput.inputdefault = "Default"
+	menu.itemname.menuinput.back = "Back"
+	menu.itemname.commandlist = "Move List"
+	menu.itemname.characterchange = "Character Select"
+	menu.itemname.exit = "Main Menu"
+	menu.itemname.reset = "Reset Match"
+
+[Training Info]
+	menu.itemname.back = "Continue"
+	menu.itemname.menutraining = "Training Menu"
+	menu.itemname.menutraining.dummycontrol = "Dummy Control"
+	menu.itemname.menutraining.guardmode = "Guard Mode"
+	menu.itemname.menutraining.punish = "Mash After Guard"
+	menu.itemname.menutraining.mash = "Mash After Hit"
+	menu.itemname.menutraining.fallrecovery = "Tech Direction"
+	menu.itemname.menutraining.dummymode = "Dummy Mode"
+	menu.valuename.dummymode.stand = "Stand"
+	menu.valuename.dummymode.crouch = "Crouch"
+	menu.valuename.dummymode.jump = "Jump"
+
+	menu.itemname.menutraining.distance = "Distance"
+	menu.itemname.menutraining.buttonjam = "Button Mash"
+	menu.itemname.menutraining.ctrldatadisp = "Show Control"
+	menu.itemname.menutraining.atkdatadisp = "Show Training Info"
+	menu.itemname.menutraining.back = "Back"
+	menu.itemname.menuinput = "Button Config"
+	menu.itemname.menuinput.keyboard = "Key Config"
+	menu.itemname.menuinput.gamepad = "Joystick Config"
+	menu.itemname.menuinput.empty = ""
+	menu.itemname.menuinput.inputdefault = "Default"
+	menu.itemname.menuinput.back = "Back"
+	menu.itemname.commandlist = "Move List"
+	menu.itemname.characterchange = "Character Select"
+	menu.itemname.exit = "Main Menu"
+	menu.itemname.reset = "Reset"
+
+	menu.valuename.buttonjam.none = "None"
+	menu.valuename.buttonjam.a = "Grab"
+	menu.valuename.buttonjam.b = "Special"
+	menu.valuename.buttonjam.c = "Remix"
+	menu.valuename.buttonjam.x = "Light"
+	menu.valuename.buttonjam.y = "Medium"
+	menu.valuename.buttonjam.z = "Heavy"
+	menu.valuename.buttonjam.s = "Start"

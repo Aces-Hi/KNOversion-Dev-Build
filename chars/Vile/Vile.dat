@@ -1,0 +1,153 @@
+	<#bbbbbb>This move list assumes you are facing to the right.</>
+
+	<#009d20>UNIQUE TRAIT: ACID PUDDLES</>
+	Vile can empower himself by placing and interacting with acid puddles.
+	Puddles placed with Remix Moves are temporary, but puddles placed with
+	EX Moves last until Vile creates a new puddle. Puddles give Vile a
+	variety of benefits, so he should try to always be standing in or near one.
+
+	<#009d20>UNIQUE MOVES</>
+LOW KICK	-		_B^A
+CROSS SLASH	-		_B^C
+ACIDIC SWEEP	-		_DF^C
+VILE CLAW	-		<#65b5ff>(AIR ONLY)</> _DF^C
+   <#aaff00>IN PUDDLE: Causes a sliding knockdown.</>
+LAUNCHER 	-		^C
+   <#aaff00>IN PUDDLE: Launches much higher.</>
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#009d20>SPECIAL MOVES</>
+RAZOR	-		<#aaffff>(GROUND OR AIR)</> ^Y
+   <#aaff00>IN PUDDLE: Lasts longer and has more hits.</>
+RISING	-		<#aaffff>(GROUND OR AIR)</> _F^Y
+   <#bbbbbb>Can be airdash canceled on hit.</>
+_!KNEE	-		<#65b5ff>(AIR ONLY)</> _F^Y
+        <#aaff00>IN PUDDLE: Causes a sliding knockdown.</>
+LOOPHOLD	-		_B^Y
+   <#bbbbbb>A command grab.</>
+   <#aaff00>IN PUDDLE: Does more damage.</>
+CURB STOMP	-		_D^Y
+   <#bbbbbb>Can be canceled into _F^Y on hit.</>
+<#aaff00>IN PUDDLE: Has much more range and launches the enemy.</>
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#009d20>REMIX MOVES</>
+ACIDIC SPAWN		<#aaffff>(GROUND OR AIR)</>^Z/_F^Z/_B^Z, <#65b5ff>(AIR ONLY)<#55ffff>_D^Z
+   <#bbbbbb>Creates an acid bubble that the enemy can hit to destroy.
+   Using this move while holding different directions
+   changes where the bubble spawns.</>
+_!TOXIC WILL		<#aaffff>(GROUND OR AIR)</> _U^Z/_F^Z/_B^Z/_D^Z
+        <#bbbbbb>Moves the bubble in your chosen direction.</>
+_!DETONATE	-		<#aaffff>(GROUND OR AIR)</>^Z
+        <#bbbbbb>Causes the bubble to explode.</>
+ACID PUDDLE	-		_DB^Z/_D^Z/_DF^Z
+   <#bbbbbb>Creates an <#aaff00>Acid Puddle<#bbbbbb> at Vile's feet.
+   The _DB and _DF variations change the placement of the <#aaff00>Puddle.</>
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#ffef0f>EX MOVES</>
+_EX RAZOR	-		<#aaffff>(GROUND OR AIR)<#55ffff>(1 BAR)</> ^Y+^Z
+_EX RISING	-		<#aaffff>(GROUND OR AIR)<#55ffff>(1 BAR)</> ^Y+^Z
+   <#bbbbbb>Anti-air reversal move. Can be airdash canceled on hit.
+   The air version has no invincibility.</>
+_!_EX KNEE	-		<#65b5ff>(AIR ONLY)</> _F^Y+^Z
+_EX LOOPHOLD	-		<#55ffff>(1 BAR)</> _B^Y+^Z
+_EX CURB STOMP	-		<#55ffff>(1 BAR)</> _D^Y+^Z
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#55ffff>SUPERS</>
+<#009d20>OMEN</>	-		<#55ffff>(2 BARS)</> _D_DF_F_-^A/^B/^C
+   <#bbbbbb>A multi-hitting attack with invincible startup.</>
+<#009d20>OUROBUBBLES</>	-		<#55ffff>(2 BARS)</> _D_DB_B_-^A/^B/^C
+   <#bbbbbb>Vile spawns 2 acid bubbles that circle around him.
+   These bubbles can hit whenever the enemy is blocking or
+   taking damage. They disappear if Vile blocks or takes damage.</>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	UNIVERSAL MOVES
+OVERHEAD	-		_F^B
+   <#bbbbbb>Puts you in the air and hits overhead.</>
+ANTI-AIR	-		_D^C
+   <#bbbbbb>This move has invulnerability to airborne enemies.</>
+GRAB	-		ANY 2 NORMALS </>
+   <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.</>
+FORCE BLOCK (WHILE BLOCKING)	-		<#55ffff>(1/4 BAR)</> _B^X
+   <#bbbbbb>Can push the enemy backwards while you block.</>
+RECOIL GUARD (WHILE BLOCKING)	-		<#55ffff>(2 BARS)</> _F^X
+   <#bbbbbb>A fullscreen-ranged reversal that knocks the
+   enemy down and beats projectiles. Refunds 1 BAR on hit.</>
+RECORD SCRATCH (WHILE ATTACKING)		<#55ffff>(1 BAR/2 BARS ON BLOCK)</> ^X
+   <#bbbbbb>Can be used to instantly cancel most attacks.</>
+BURST (WHILE GETTING HIT)	-		^X+^A/^B/^C
+   <#bbbbbb>A large reversal that can be used while you're getting hit.</>
+PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(4 BARS)</> ^X+^A/^B/^C
+   <#bbbbbb>An extra burst that can be used in an emergency.</>
+   <#ff0000>Using this PERMANENTLY limits your meter to a max of 1 BAR
+   for the rest of the game.</>
+
+
+_D	_D		_D
+ 
+	2V2 MODE
+SWITCH CHARACTERS	-		ASSIST </>
+ACTIVE SWITCH (WHILE ATTACKING)	-		<#55ffff>(2 BARS)</>ASSIST </>
+ASSIST ATTACK	-		_B/_D/_F+ASSIST </>
+   <#bbbbbb>Each character has 3 assist attacks.</>
+TAG SUPER (DURING A SUPER)		<#55ffff>(2 BARS)</>_D_DF_F+ASSIST OR _D_DB_B+ASSIST </>
+
+</>

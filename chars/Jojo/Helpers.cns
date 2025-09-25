@@ -1,0 +1,366 @@
+;===========================================================================
+;===========================================================================
+;===========================================================================
+;================================HELPERS===================================
+;=================This constants contains all Helpers & Parries========================
+;===========================================================================
+;===========================================================================
+;===========================================================================
+
+;--- PUSH BLOCKING ---
+[Statedef 99149]
+type    = U
+movetype= I
+physics = N
+juggle  = 0
+poweradd= 0
+ctrl = 0
+anim = 9999
+velset = 6
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim =F41 
+ID = 41
+pos = 0,-45
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -2
+pausemovetime = 0
+scale = .6,.6
+sprpriority = 8
+ontop = 1
+removeongethit = 0
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim =6700
+ID = 41
+pos = 100,0
+postype = p1  ;p2,front,back,left,right
+facing = -1
+vfacing = 1
+bindtime = 1
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -2
+pausemovetime = 0
+scale = .6,.6
+sprpriority = 8
+ontop = 1
+removeongethit = 0
+
+[State 0, EnvShake]
+type = EnvShake
+trigger1 = time=0
+time = 7
+freq = 60
+ampl = -7
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time=0
+value = F4141,0
+
+
+
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+;value2 = S,NA
+time = 1
+
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 = animtime = 0
+
+
+;===============================================================================================
+;===============================================================================================
+;===============================================================================================
+;===============================================================================================
+;===============================================================================================
+
+;--- STANDING ---
+[Statedef 300]
+type = S
+physics = S
+movetype = I
+anim = 700;702+random%3
+velset = 0, 0
+ctrl = 0
+sprpriority = 2
+poweradd = 78
+facep2 = 1
+
+
+[State 0, Explod]
+type = Explod
+trigger1 = time=0
+anim = 706
+ID = 706
+pos = 0,-61
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -2
+scale = .6,.6
+sprpriority = 0
+ontop = 1
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause =1
+;persistent =
+;supermove = 0
+pausemovetime = 22
+
+
+[State 700, Snd]
+type = playsnd
+trigger1 = !time
+value = S6700, 0
+
+
+[State 700, Stop]
+type = posfreeze
+trigger1 = 1
+value = 1
+
+[State 700, Pause]
+type = pause
+trigger1 = !time
+time = 8
+movetime = 4
+endcmdbuftime = 8
+pausebg = 0
+
+[State 700, Pause]
+type = pause
+trigger1 = !time && numenemy
+trigger1 = (enemynear, movehit = 1)
+time = ifelse((enemynear, hitpausetime = [0, 15]), 15 -(enemynear, hitpausetime), 0)
+movetime = ifelse((enemynear, hitpausetime = [0, 15]), 15 -(enemynear, hitpausetime), 0)
+endcmdbuftime = ifelse((enemynear, hitpausetime = [0, 15]), 15 -(enemynear, hitpausetime), 0)
+pausebg = 0
+
+[State 700, Flash]
+type = palfx
+trigger1 = !time
+add = 0, 50, 255
+sinadd = 0, -50, -255, 60
+time = 15
+
+
+[State 700, Spark]
+type = explod
+trigger1 = animelem = 2
+anim = 7200
+ID = 7200
+sprpriority = 5
+postype = p1
+pos = 15, -71
+pausemovetime = 60
+ownpal = 1
+scale = 0.5, 0.5
+
+[State 700, No walking]
+type = assertspecial
+trigger1 = 1
+flag = nowalk
+
+[State 700, End]
+type = changestate
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;--- CROUCHING ---
+[Statedef 301]
+type = C
+physics = C
+movetype = I
+anim = 705
+velset = 0, 0
+ctrl = 0
+sprpriority = 2
+poweradd = 78
+facep2 = 1
+[State 700, Snd]
+type = playsnd
+trigger1 = !time
+value = S37, 2
+
+[State 700, HB]
+type = hitby
+trigger1 = 1
+value = SCA, AT
+time = 1
+[State 700, Stop]
+type = posfreeze
+trigger1 = 1
+value = 1
+
+[State 701, Pause]
+type = pause
+trigger1 = !time
+time = 15
+movetime = 15
+endcmdbuftime = 15
+pausebg = 0
+[State 701, Pause]
+type = pause
+trigger1 = !time && numenemy
+trigger1 = (enemynear, movehit = 1)
+time = ifelse((enemynear, hitpausetime = [0, 15]), 15 -(enemynear, hitpausetime), 0)
+movetime = ifelse((enemynear, hitpausetime = [0, 15]), 15 -(enemynear, hitpausetime), 0)
+endcmdbuftime = ifelse((enemynear, hitpausetime = [0, 15]), 15 -(enemynear, hitpausetime), 0)
+pausebg = 0
+
+[State 701, Flash]
+type = palfx
+trigger1 = !time
+add = 0, 50, 255
+sinadd = 0, -50, -255, 60
+time = 15
+
+[State 701, Snd]
+type = playsnd
+trigger1 = !time
+value = S37, 2
+[State 700, Snd]
+type = playsnd
+trigger1 = !time
+value = S6700, 0
+[State 701, Spark]
+type = explod
+trigger1 = animelem = 2
+anim = 7200
+ID = 7200
+sprpriority = 5
+postype = p1
+pos = 49, -21
+pausemovetime = 60
+ownpal = 1
+scale = 0.5, 0.5
+
+[State 701, No walking]
+type = assertspecial
+trigger1 = 1
+flag = nowalk
+[State 701, End]
+type = changestate
+trigger1 = !animtime
+value = 11
+ctrl = 1
+
+;--- AERIAL ---
+[Statedef 302]
+type = A
+physics = A
+movetype = I
+anim = 710
+ctrl = 0
+sprpriority = 2
+poweradd = 78
+facep2 = 1
+[State 700, Snd]
+type = playsnd
+trigger1 = !time
+value = S37, 2
+
+[State 702, HB]
+type = hitby
+trigger1 = time < 15
+value = SCA, AT
+time = 1
+[State 700, Snd]
+type = playsnd
+trigger1 = !time
+value = S6700, 1
+[State 702, Pause]
+type = pause
+trigger1 = !time
+time = 15
+movetime = 15
+endcmdbuftime = 15
+pausebg = 0
+[State 702, Pause]
+type = pause
+trigger1 = !time && numenemy
+trigger1 = (enemynear, movehit = 1)
+time = ifelse((enemynear, hitpausetime = [0, 15]), 15 -(enemynear, hitpausetime), 0)
+movetime = ifelse((enemynear, hitpausetime = [0, 15]), 15 -(enemynear, hitpausetime), 0)
+endcmdbuftime = ifelse((enemynear, hitpausetime = [0, 15]), 15 -(enemynear, hitpausetime), 0)
+pausebg = 0
+
+[State 702, Type]
+type = statetypeset
+trigger1 = time < 15
+physics = N
+[State 702, Stop]
+type = posfreeze
+trigger1 = time < 15
+value = 1
+
+[State 702, Vel]
+type = velset
+trigger1 = time = 15
+x = ifelse(vel x > 2, 2, ifelse(vel x < -2, -2, vel x))
+y = ifelse(vel y < -2, vel y, -2)
+[State 702, Type]
+type = statetypeset
+trigger1 = time >= 15
+physics = A
+[State 702, Ctrl]
+type = ctrlset
+trigger1 = time >= 15
+value = 1
+
+[State 702, Flash]
+type = palfx
+trigger1 = !time
+add = 0, 64, 255
+sinadd = 0, -64, -255, 60
+time = 15
+
+[State 702, Snd]
+type = playsnd
+trigger1 = !time
+value = s37, 2
+[State 702, Spark]
+type = explod
+trigger1 = animelem = 2
+anim = 7200
+ID = 7200
+sprpriority = 5
+postype = p1
+pos = 33, -48
+pausemovetime = 60
+ownpal = 1
+scale = 0.5, 0.5
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = animtime= 0
+value =69000
+ctrl = 1

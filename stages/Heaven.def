@@ -1,0 +1,117 @@
+[Info]
+name = "HEAVEN"
+
+[camera]
+startx 		= 0
+starty 		= 0
+boundleft 	= -200
+boundright 	= 200
+boundhigh 	= -300
+boundlow 	= 0
+verticalfollow 	= 0
+tension 	= 100
+floortension 	= 180
+
+;--------------------------------------------------------
+[playerinfo]
+p1startx = -70          ;starting x coordinates
+p1starty = 0            ;starting y coordinates
+p1startz = 0            ;starting z coordinates
+p1facing = 1            ;direction player faces: 1=right, -1=left
+
+p2startx = 70
+p2starty = 0
+p2startz = 0
+p2facing = -1
+
+leftbound  = -1000 ;left bound (x-movement)
+rightbound =  1000 ;right bound
+topbound  =  0   ;Top bound (z-movement)
+botbound  =  0    ;Bottom bound
+
+;--------------------------------------------------------
+[scaling]
+topz     = 0       ;top z-coordinate for scaling
+botz     = 50      ;bottom z-coordinate for scaling
+topscale = 1       ;scale to use at top
+botscale = 1.2     ;scale to use at bottom
+
+;--------------------------------------------------------
+[bound]
+screenleft = 15    ;dist from left of screen that player can move to
+screenright = 15   ;right edge
+
+;--------------------------------------------------------
+[stageinfo]
+ 
+zoffset = 200
+autoturn = 1
+resetbg = 0
+;--------------------------------------------------------
+[shadow]
+intensity = 60
+color = 20,20,20
+fade.range = 0,-50
+yscale = 0.3
+
+
+;--------------------------------------------------------
+[Music]
+ 
+[BGdef]
+spr = stages/Heaven.sff
+debugbg = 0
+
+
+[BG Heaven]
+type  =normal
+spriteno=3011,0
+start = -40, 126
+delta = 0.1, 0.35
+mask = 1
+velocity = -1, 0
+tile = 1, 0
+id=3
+
+[BG Heaven]
+type  =normal
+spriteno=3011,0
+start = -40, 160
+delta =  0.3, 0.37
+mask = 1
+velocity = 3, 0
+tile = 1, 0
+id=2
+trans=add
+alpha=256,100
+
+
+[BGCtrlDef Heaven]
+looptime = -1
+ctrlID = 1,2,3
+[BGCtrl Heaven]
+type = enable
+time = 0,1,1
+value=0
+sctrlid=1
+
+[BG Heaven]
+type  =normal
+spriteno=3011,0
+start = -40, 185
+delta = 1, 1
+mask = 1
+velocity = -10, 0
+tile = 1, 0
+id=1
+trans=add
+alpha=256,200
+
+[bg Floor]
+type = normal
+spriteno = 1,0
+start = 0, 130
+delta = 1,1
+tile = 1,0
+mask = 1
+

@@ -1,0 +1,153 @@
+	<#bbbbbb>This move list assumes you are facing to the right.</>
+
+	<#190bd9>UNIQUE TRAIT: JÖRMUNGANDR DRIVE</>
+	JV can enhance his Special, Remix, and Super Moves by dashing forward
+	before using them. The enhanced moves are more powerful, have unique
+	properties, and are all limited to one use per combo.
+	JV also does not have any EX Moves; Instead, he has level 1 Super Moves.
+
+	<#190bd9>UNIQUE MOVES</>
+DIVIDER	-		_F^C
+SNAKE IN THE GRASS	-		_DF^C
+MJÖLLNIR	-		<#65b5ff>(AIR ONLY)</> _D^C
+   <#bbbbbb>Has movement followups on hit.</>
+_!FLOW STATE	-		^A/^B/^C
+        <#bbbbbb>The different buttons send JV in different directions.</>
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#190bd9>SPECIAL MOVES (PAGE 1)</>
+ONE-INCH PUNCH	-		^Y
+   <#983eff>Enhanced version launches higher and for longer.</>
+JÖTUNN'S WRATH	-		<#65b5ff>(AIR ONLY)</> ^Y
+   <#983eff>Enhanced version wallbounces and has a movement followup on hit.</>
+_!FLOW STATE	-		^A/^B/^C
+        <#983eff>The different buttons send JV in different directions.</>
+BERETTA DRIVER	-		(HOLD) ^Y
+   <#bbbbbb>Can be dash canceled on hit.</>
+NAGANT DRIVER	-		(HOLD LONGER) ^Y
+   <#bbbbbb>Unblockable. Can be dash canceled on hit.</>
+VEÐRFÖLNIR	-		_F^Y
+   <#bbbbbb>This move can be used to dodge low-hitting attacks.
+   <#983eff>Enhanced version has 2 hits and a movement followup on hit.</>
+_!FLOW STATE	-		^A/^B/^C
+        <#983eff>The different buttons send JV in different directions.</>
+
+
+
+
+
+
+_D	_D		_D
+
+<#190bd9>SPECIAL MOVES (PAGE 2)</>
+AIMLESS SERPENT	-		_B^Y
+   <#bbbbbb>JV enters a stance with a unique followup.
+   The stance can be dash canceled, but doing this
+   locks JV out of using any normals attacks for a short while.
+   <#983eff>Enhanced version moves JV forward and is dash cancelable on hit.</>
+_!LUNGING SERPENT	-		^Y
+        <#bbbbbb>An overhead attack. Can be used to start combos.</>
+DISENGANGE	-		_D^Y 
+   <#983eff>Enhanced version has some invincibility and unique followup attacks.</>
+_!SUNDR	-		^A
+        <#983eff>Is dash cancellable on hit.</>
+_!NAORA	-		^B
+        <#983eff>An invincible attack.</>
+_!YGGDRASIL	-		^C
+        <#983eff>A very strong combo starter.</>
+
+
+
+
+
+
+_D	_D		_D
+
+	<#190bd9>REMIX MOVES</>
+COILED SERPENT	-		^Z
+   <#bbbbbb>JV enters a stance with unique followup attacks.
+   <#983eff>Enhanced version is much faster.</>
+_!SVERA	-		^A
+        <#983eff>Enhanced version is much faster and has more hitstun.</>
+_!MEGIN	-		^B
+        <#983eff>Enhanced version is faster and has more hitstun.</>
+_!GUNGNIR	-		^C
+        <#983eff>Enhanced version has some invincibility and launches higher.</>
+SKYFALL	-		<#65b5ff>(AIR ONLY)</> ^Z
+   <#bbbbbb>A fastfall JV can use to reach the ground.</>
+   <#983eff>Enhanced version is faster and can be canceled into Flow State.</>
+_!FLOW STATE	-		^A/^B/^C
+        <#983eff>The different buttons send JV in different directions.</>
+STRIKING SERPENT	-		_D^Z
+   <#bbbbbb>A low-hitting kick that puts JV into COILED SERPENT stance.</>
+   <#983eff>Enhanced version is much faster.</>
+
+
+
+
+_D	_D		_D
+
+	<#55ffff>SUPER MOVES</>
+<#190bd9>36 CHAMBERS</>	-		<#55ffff>(1 BAR)</> _D_DF_F_-^A/^B/^C
+<#190bd9>WANDERING SERPENT</>	-		<#55ffff>(1 BAR)</> _D_DB_B_-^A/^B/^C
+   <#bbbbbb>An invincible reversal attack. Can be dash canceled on hit.</>
+<#190bd9>ALTERNATE BERETTA DRIVER</>		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _D_DB_B_-^Y
+   <#bbbbbb>Grounded version is a fullscreen anti-air that wallbounces airborne enemies.
+   Air version is a fullscreen overhead attack that causes a
+   sliding knockdown on grounded enemies.</>
+
+	<#55ffff>ENHANCED SUPER MOVES</>
+<#983eff>72 CHAMBERS</>	-		<#55ffff>(2 BARS)</> _D_DF_F_-^A/^B/^C
+   <#bbbbbb>A long-ranged invincible attack.</>
+<#983eff>TWENTY-EIGHT MALIGNANT GATES</>	-		<#55ffff>(2 BARS)</> _D_DB_B_-^A/^B/^C
+<#983eff>BEAUTIFUL DEATH</>		<#aaffff>(GROUND OR AIR)</><#55ffff>(2 BARS)</> _D_DB_B_-^Y
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	UNIVERSAL MOVES
+OVERHEAD	-		_F^B
+   <#bbbbbb>Puts you in the air and hits overhead.</>
+ANTI-AIR	-		_D^C
+   <#bbbbbb>This move has invulnerability to airborne enemies.</>
+GRAB	-		ANY 2 NORMALS </>
+   <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.</>
+FORCE BLOCK (WHILE BLOCKING)	-		<#55ffff>(1/4 BAR)</> _B^X
+   <#bbbbbb>Can push the enemy backwards while you block.</>
+RECOIL GUARD (WHILE BLOCKING)	-		<#55ffff>(2 BARS)</> _F^X
+   <#bbbbbb>A fullscreen-ranged reversal that knocks the
+   enemy down and beats projectiles. Refunds 1 BAR on hit.</>
+RECORD SCRATCH (WHILE ATTACKING)		<#55ffff>(1 BAR/2 BARS ON BLOCK)</> ^X
+   <#bbbbbb>Can be used to instantly cancel most attacks.</>
+BURST (WHILE GETTING HIT)	-		^X+^A/^B/^C
+   <#bbbbbb>A large reversal that can be used while you're getting hit.</>
+PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(4 BARS)</> ^X+^A/^B/^C
+   <#bbbbbb>An extra burst that can be used in an emergency.</>
+   <#ff0000>Using this PERMANENTLY limits your meter to a max of 1 BAR
+   for the rest of the game.</>
+
+
+_D	_D		_D
+ 
+	2V2 MODE
+SWITCH CHARACTERS	-		ASSIST </>
+ACTIVE SWITCH (WHILE ATTACKING)	-		<#55ffff>(2 BARS)</>ASSIST </>
+ASSIST ATTACK	-		_B/_D/_F+ASSIST </>
+   <#bbbbbb>Each character has 3 assist attacks.</>
+TAG SUPER (DURING A SUPER)		<#55ffff>(2 BARS)</>_D_DF_F+ASSIST OR _D_DB_B+ASSIST </>
+
+</>

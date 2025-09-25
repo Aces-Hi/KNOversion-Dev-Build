@@ -1,0 +1,153 @@
+	<#bbbbbb>This move list assumes you are facing to the right.</>
+
+	<#008928>UNIQUE TRAIT: UNSTOPPABLE FORCE</>
+	Sahkive can cancel his Remix Moves on hit by using Special Moves,
+	granting him a number of plenty of unique attack options.
+	Additionally, he has a unique air dash: you can hold forward to 
+	'charge' it, and then it can be redirected by holding up or down.
+
+	<#008928>UNIQUE MOVES</>
+BELLIGERENT SLUGGER	-		_F^C
+   <#D62187>Doing this during a forward dash makes it hit harder.</>
+C'MERE	-		_DF^C
+   <#bbbbbb>Sahkive throws the enemy into the air if this hits.</>
+_!CANNON UPPERCUT	-		^A/^B/^C
+GRAB	-		^X
+   <#bbbbbb>Sahkive's grab has 2 additional followups unique to himself.</>
+_!UP THROW	-		_U
+_!DOWN THROW	-		_D
+
+
+
+
+
+_D	_D		_D
+
+	<#008928>SPECIAL MOVES</>
+SKIN-TIGHT FADE	-		^Y
+   <#bbbbbb>A command grab with follow-up attacks. Can be used in combos.</>
+_!<#bbbbbb>AND, KIDNEY PUNCH</>	-		^A
+        <#bbbbbb>Doing this move makes the other followups more difficult to combo from.</>
+_!<#bbbbbb>OVER THERE, PLEASE</>	-		^B
+_!<#bbbbbb>JUST LIKE VENOM</>	-		^C
+_!<#bbbbbb>RELEASE</>	-		^Y
+DDT!	-		_F^Y
+   <#D62187>Doing this during a forward dash turns it into a command grab.</>
+WHY ARE YOU JUMPING!?	-		_B^Y
+   <#bbbbbb>An anti-air command grab with follow-up attacks. Can be used in combos.</>
+_!<#bbbbbb>PIÑATA</>	-		^A
+        <#bbbbbb>Doing this move makes the other followups more difficult to combo from.</>
+_!<#bbbbbb>GET OUTTA HERE</>	-		^B
+_!<#bbbbbb>I WILL LITERALLY SLIDE YOU</>	-		^C
+_!<#bbbbbb>RELEASE</>	-		^Y
+EARTH MOVER	-		_D^Y 
+
+
+
+
+_D	_D		_D
+
+	<#008928>REMIX MOVES</>
+RUSHING ANGEL	-		^Z
+CHARGING ANGEL	-		(HOLD) ^Z
+   <#bbbbbb>Can be dash canceled while charging or on hit.</>
+GUARDIAN'S SPEED	-		_F^Z/_B^Z
+   <#bbbbbb>A dash that can pass through opponents.
+   Forward version ignores projectiles.
+   Can be special cancelled at any point.</>
+GUARDIAN'S STRENGTH	-		_D^Z
+
+
+
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#ffef0f>EX MOVES</>
+_EX GUARDIAN'S EMBRACE	-		<#55ffff>(1 BAR)</> ^Y
+   <#bbbbbb>A faster, harder-hitting command grab. Can be used in combos.</>
+_EX DDT!	-		<#55ffff>(1 BAR)</> _F^Y
+   <#D62187>Doing this during a forward dash turns it into a command grab.</>
+_EX GUARDIAN'S DOMAIN	-		<#55ffff>(1 BAR)</> _B^Y
+   <#bbbbbb>An anti-air command grab. Can be used in combos.</>
+_EX EARTH MOVER	-		<#55ffff>(1 BAR)</> _D^Y
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#55ffff>SUPER MOVES</>
+<#008928>RAGING JACKHAMMER</>	-		<#55ffff>(2 BARS)</> _D_DF_F_-^A/^B/^C
+   <#bbbbbb>An invincible command grab. Can be used in combos.</>
+<#008928>GUARDIAN'S DISPLAY</>	-		<#55ffff>(2 BARS)</> _D_DB_B_-^A/^B/^C
+   <#bbbbbb>An overhead attack. Landing this move will put Sahkive into
+   a special state with a new moveset. You must successfully perform
+   one of the followups to finish this move.</>
+_!<#bbbbbb>GRAND FINISHER</>		^A_-^C_-_D^C_-_B^C_-_B^A_-_B^B_-^Y_-^Y
+_!<#bbbbbb>NOT DONE WITH YOU YET</>		^B_-^B_-^Z_-_D^Z_-_D^A_-_D^B_-_D^Y_-^Y
+        <#bbbbbb>Continues combos.</>
+_!<#008928>THE ORIGINAL HORIZON BUSTER</>		<#55ffff>(2 BARS) </> _B^A_-_B^Z_-^Z_-
+        <#bbbbbb>A very familiar attack.</>		^B_-^C_-^Z_-_B^Y_-^Y
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	UNIVERSAL MOVES
+OVERHEAD	-		_F^B
+   <#bbbbbb>Puts you in the air and hits overhead.</>
+ANTI-AIR	-		_D^C
+   <#bbbbbb>This move has invulnerability to airborne enemies.</>
+GRAB	-		ANY 2 NORMALS </>
+   <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.</>
+FORCE BLOCK (WHILE BLOCKING)	-		<#55ffff>(1/4 BAR)</> _B^X
+   <#bbbbbb>Can push the enemy backwards while you block.</>
+RECOIL GUARD (WHILE BLOCKING)	-		<#55ffff>(2 BARS)</> _F^X
+   <#bbbbbb>A fullscreen-ranged reversal that knocks the
+   enemy down and beats projectiles. Refunds 1 BAR on hit.</>
+RECORD SCRATCH (WHILE ATTACKING)		<#55ffff>(1 BAR/2 BARS ON BLOCK)</> ^X
+   <#bbbbbb>Can be used to instantly cancel most attacks.</>
+BURST (WHILE GETTING HIT)	-		^X+^A/^B/^C
+   <#bbbbbb>A large reversal that can be used while you're getting hit.</>
+PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(4 BARS)</> ^X+^A/^B/^C
+   <#bbbbbb>An extra burst that can be used in an emergency.</>
+   <#ff0000>Using this PERMANENTLY limits your meter to a max of 1 BAR
+   for the rest of the game.</>
+
+
+_D	_D		_D
+ 
+	2V2 MODE
+SWITCH CHARACTERS	-		ASSIST </>
+ACTIVE SWITCH (WHILE ATTACKING)	-		<#55ffff>(2 BARS)</>ASSIST </>
+ASSIST ATTACK	-		_B/_D/_F+ASSIST </>
+   <#bbbbbb>Each character has 3 assist attacks.</>
+TAG SUPER (DURING A SUPER)		<#55ffff>(2 BARS)</>_D_DF_F+ASSIST OR _D_DB_B+ASSIST </>
+
+</>

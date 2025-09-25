@@ -1,0 +1,226 @@
+{
+  "AIRamping": true,
+  "AIRandomColor": false,
+  "AISurvivalColor": true,
+  "AudioDucking": false,
+  "AudioSampleRate": 44100,
+  "AutoGuard": false,
+  "BarGuard": false,
+  "BarRedLife": true,
+  "BarStun": false,
+  "Borderless": false,
+  "ComboExtraFrameWindow": 0,
+  "CommonAir": [
+    "data/common.air",
+    "data/Add004/common.air"
+  ],
+  "CommonCmd": [
+    "data/common.cmd"
+  ],
+  "CommonConst": [
+    "data/common.const",
+    "data/Add004/common.const"
+  ],
+  "CommonFx": [],
+  "CommonLua": [
+    "loop()"
+  ],
+  "CommonStates": [
+    "data/Add004/NegativeStates.cns",
+    "data/Add004/common2.cns",
+    "data/Add004/NegativeStates.zss",
+    "data/training.zss",
+    "data/dramaticzoom.zss"
+  ],
+  "ControllerStickSensitivity": 0.4,
+  "Credits": 10,
+  "DebugClipboardRows": 2,
+  "DebugClsnDarken": true,
+  "DebugConsoleRows": 0,
+  "DebugFont": "font/default-3x5.def",
+  "DebugFontScale": 2,
+  "DebugKeys": true,
+  "DebugMode": true,
+  "Difficulty": 8,
+  "EscOpensMenu": true,
+  "ExternalShaders": [],
+  "FirstRun": false,
+  "FontShaderVer": 120,
+  "ForceStageZoomin": 0,
+  "ForceStageZoomout": 0,
+  "Framerate": 60,
+  "Fullscreen": false,
+  "FullscreenRefreshRate": 60,
+  "FullscreenWidth": -1,
+  "FullscreenHeight": -1,
+  "GameWidth": 960,
+  "GameHeight": 720,
+  "GameFramerate": 60,
+  "InputButtonAssistWindow": 1,
+  "InputSOCDResolution": 1,
+  "IP": {},
+  "LifeMul": 100,
+  "ListenPort": "7500",
+  "LoseSimul": true,
+  "LoseTag": false,
+  "MaxAfterImage": 128,
+  "MaxBgmVolume": 100,
+  "MaxDrawGames": -2,
+  "MaxExplod": 512,
+  "MaxHelper": 56,
+  "MaxPlayerProjectile": 256,
+  "Modules": [],
+  "Motif": "data/system.def",
+  "MSAA": false,
+  "NumSimul": [
+    2,
+    4
+  ],
+  "NumTag": [
+    2,
+    2
+  ],
+  "NumTurns": [
+    2,
+    4
+  ],
+  "PanningRange": 0,
+  "Players": 2,
+  "PngSpriteFilter": true,
+  "PostProcessingShader": 0,
+  "QuickContinue": true,
+  "RatioAttack": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "RatioLife": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "RatioRecoveryBase": 0,
+  "RatioRecoveryBonus": 20,
+  "RoundsNumSimul": 2,
+  "RoundsNumSingle": 2,
+  "RoundsNumTag": 1,
+  "RoundTime": 120,
+  "ScreenshotFolder": "",
+  "StartStage": "stages/stage1.def",
+  "StereoEffects": false,
+  "System": "external/script/main.lua",
+  "Team1VS2Life": 100,
+  "TeamDuplicates": false,
+  "TeamLifeShare": false,
+  "TeamPowerShare": true,
+  "TrainingChar": "",
+  "TurnsRecoveryBase": 0,
+  "TurnsRecoveryBonus": 20,
+  "VolumeBgm": 50,
+  "VolumeMaster": 100,
+  "VolumeSfx": 75,
+  "VRetrace": 0,
+  "WavChannels": 32,
+  "WindowCentered": true,
+  "WindowIcon": [
+    "external/icons/IkemenCylia_256.png",
+    "external/icons/IkemenCylia_96.png",
+    "external/icons/IkemenCylia_48.png"
+  ],
+  "WindowTitle": "KNOversion",
+  "XinputTriggerSensitivity": 0,
+  "ZoomActive": true,
+  "ZoomDelay": false,
+  "ZoomSpeed": 1,
+  "KeyConfig": [
+    {
+      "Joystick": -1,
+      "Buttons": [
+        "w",
+        "s",
+        "a",
+        "d",
+        "j",
+        "k",
+        "l",
+        "u",
+        "i",
+        "o",
+        "RSHIFT",
+        "SEMICOLON",
+        "p",
+        "RETURN"
+      ]
+    },
+    {
+      "Joystick": -1,
+      "Buttons": [
+        "UP",
+        "DOWN",
+        "LEFT",
+        "RIGHT",
+        "f",
+        "g",
+        "h",
+        "r",
+        "t",
+        "y",
+        "c",
+        "v",
+        "b",
+        "TAB"
+      ]
+    }
+  ],
+  "JoystickConfig": [
+    {
+      "Joystick": 0,
+      "Buttons": [
+        "-3",
+        "-4",
+        "-1",
+        "-2",
+        "0",
+        "5",
+        "-12",
+        "2",
+        "3",
+        "1",
+        "6",
+        "4",
+        "-10",
+        "7"
+      ]
+    },
+    {
+      "Joystick": 1,
+      "Buttons": [
+        "10",
+        "12",
+        "13",
+        "11",
+        "0",
+        "1",
+        "5",
+        "2",
+        "3",
+        "-12",
+        "7",
+        "4",
+        "-10",
+        "6"
+      ]
+    }
+  ],
+  "RollbackConfig": {
+    "frameDelay": 2,
+    "disconnectNotifyStart": 1000,
+    "disconnectTimeout": 3000,
+    "logsEnabled": false,
+    "desyncTest": false,
+    "desyncTestFrames": 0,
+    "DesyncTestAI": false
+  }
+}

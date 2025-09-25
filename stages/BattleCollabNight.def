@@ -1,0 +1,240 @@
+[Info]
+name = "BATTLE COLLAB -NIGHT-"
+
+[Camera]
+startx = 0
+starty = 0
+boundleft = -150
+boundright = 150
+boundhigh = -1000
+boundlow = 0
+verticalfollow = 0
+floortension = 180
+tension = 100
+
+[PlayerInfo]
+;--- Player 1 ---
+p1startx = -70          
+p1starty = 0            
+p1startz = 0            
+p1facing = 1            
+
+;--- Player 2 ---
+p2startx = 70
+p2starty = 0
+p2startz = 0
+p2facing = -1
+
+;--- Common ---
+leftbound  = -1000 
+rightbound =  1000 
+topbound  =  0     
+botbound  =  0     
+
+[Scaling]
+topz     = 0       
+botz     = 50      
+topscale = 1       
+botscale = 1.2     
+
+[Bound]
+screenleft = 15   
+screenright = 15
+
+[StageInfo]
+zoffset = 200
+autoturn = 1
+resetBG = 1
+
+[shadow]
+Intensity = 100
+color = 0,0,0
+yscale = .5
+fade.range = -400,-100
+
+[Reflection]
+intensity = 0
+
+
+[BGdef]
+spr = battlecollabnight.sff
+debugbg = 0
+
+
+[BG sky]
+type  = normal
+spriteno = 0, 8
+start = 0, 380
+delta = 0.1, 0.1
+mask = 1
+velocity = 0, 0
+tile = 0, 0
+tilespacing = 0, 0
+
+
+[BG 0 trees]
+type  = normal
+spriteno = 0, 7
+start = 0, 400
+delta = 0.05,0.05
+mask = 1
+velocity = 0, 0
+tile = 0, 0
+tilespacing = 0, 0
+
+[BG Heaven]
+type  =normal
+spriteno=3011,0
+start = -40, 80
+delta = 0.07,.07
+mask = 1
+velocity = -1, 0
+tile = 1, 0
+id=3
+
+[BG Mist]
+type = normal
+spriteno = 10,6
+layerno = 0
+start = 0,130
+delta = 0.1,.1
+velocity = -.15,0
+tile = 1,0
+trans = add
+alpha = 200,256
+
+
+
+[BG light ground]
+type  = normal
+spriteno = 0, 6
+start = 300, 380
+delta = 0.1,.1
+mask = 1
+velocity = 0, 0
+tile = 0, 0
+tilespacing = 0, 0
+
+
+
+
+[BG mid]
+type  = normal
+spriteno = 0, 5
+start = 380, 382
+delta = 0.2,.2
+mask = 1
+velocity = 0, 0
+tile = 0, 0
+tilespacing = 0, 0
+
+[BG Heaven]
+type  =normal
+spriteno=3011,0
+start = -40, 120
+delta =  0.25,.25
+mask = 1
+velocity = 3, 0
+tile = 1, 0
+id=2
+trans=add
+alpha=256,100
+
+[BG dark]
+type  = normal
+spriteno = 0, 4
+start = 200, 375
+delta = 0.3, 0.3
+mask = 1
+velocity = 0, 0
+tile = 0, 0
+tilespacing = 0, 0
+
+
+
+[BG hills]
+type  = normal
+spriteno = 0,3
+start = -120, 370
+delta = 0.5, 0.5
+mask = 1
+velocity = 0, 0
+tile = 0, 0
+tilespacing = 0, 0
+
+[BG Heaven]
+type  =normal
+spriteno=3011,0
+start = -40, 160
+delta = .57, .57
+mask = 1
+velocity = -10, 0
+tile = 1, 0
+id=1
+trans=add
+alpha=256,200
+
+[BG rocks 1]
+type  = normal
+spriteno = 0, 2
+start = 0, 330
+delta = 0.65, 0.65
+mask = 1
+velocity = 0, 0
+tile = 0, 0
+tilespacing = 0, 0
+
+[BG rocks 2]
+type  = normal
+spriteno = 0, 1
+start = 0, 330
+delta = 0.7, 0.7
+mask = 1
+velocity = 0, 0
+tile = 0, 0
+tilespacing = 0, 0
+
+
+;[BG Mist]
+;type = normal
+;spriteno = 10,6
+;layerno = 0
+;start = 310,200;
+;delta = 0.40,0.40
+;velocity = -.35,0
+;tile = 1,0
+;trans = add
+;alpha = 50,80
+
+[BGCtrlDef Heaven]
+looptime = -1
+ctrlID = 1,2,3
+[BGCtrl Heaven]
+type = enable
+time = 0,1,1
+value=0
+sctrlid=1
+
+
+
+[BG 2 Floor]
+type  =anim
+actionno=2
+start = -3, 185
+delta = 1, 1
+mask = 1
+velocity = 0, 0
+tile = 1, 0
+
+
+
+[Begin Action 2]
+100,0, 0,0, 15
+20,0, 0,0, 15
+20,1, 0,0, 15
+20,2, 0,0, 15
+20,3, 0,0, 15
+20,4, 0,0, 15
+20,5, 0,0, 15
+20,6, 0,0, 15
+

@@ -1,0 +1,177 @@
+	<#bbbbbb>This move list assumes you are facing to the right.</>
+
+	<#0f43ff>UNIQUE TRAIT: ONLY ONE</>
+	One has a different set of moves when he isn't holding his sword.
+	His Remix Moves make him throw his sword, and he can pick it back up
+	by touching it. Alternatively, you can hold the Remix button while
+	One isn't holding his sword to keep him from picking it up.
+
+	<#24ff24>SWORD UNIQUE MOVES</>
+HIGH KICK	-		<#65b5ff>(AIR ONLY)</> ^A_-^A
+VERTICAL	-		_B^B
+LOW KICK	-		_D^A_-^A
+SWEEP	-		_DF^C
+SPIKE	-		<#65b5ff>(AIR ONLY)</> _D^C
+
+	<#0f43ff>SWORDLESS UNIQUE MOVE</>
+SWEEP	-		_DF^C
+
+
+
+
+
+
+_D	_D		_D
+
+	<#24ff24>SWORD SPECIAL MOVES</>
+ACID FLIP	-		<#aaffff>(GROUND OR AIR)</> ^Y
+   <#bbbbbb>Has unique followup attacks.</>
+_!PEDESTAL	-		^A
+_!CUT	-		^B
+        <#bbbbbb>Can be jump canceled on hit.</>
+_!GRAPPLE	-		^C
+        <#bbbbbb>An airborne command grab. Can be used in combos.</>
+ACID DASH	-		<#aaffff>(GROUND OR AIR)</> _F^Y
+RAPID	-		_B^Y
+SHREDDER	-		<#65b5ff>(AIR ONLY)</> _B^Y
+RISE	-		<#aaffff>(GROUND OR AIR)</> _D^Y
+
+	<#0f43ff>SWORDLESS SPECIAL MOVES</>
+FLIP	-		<#aaffff>(GROUND OR AIR)</> ^Y
+SLIDE	-		(CAN BE HELD) _F^Y
+   <#bbbbbb>Holding the button makes One run forward.</>
+_!HOP	-		_D
+
+
+
+
+_D	_D		_D
+
+	<#24ff24>SWORD REMIX MOVES</>
+SWORD THROW	-		^Z
+   <#bbbbbb>Can be canceled into other ^Z moves.</>
+DOWN THROW	-		<#65b5ff>(AIR ONLY)</> ^Z
+_!FLYING PEDESTAL	-		<#65b5ff>(AIR ONLY)</> _F^Z
+   <#bbbbbb>Can be canceled into special moves on hit.</>
+ROUNDABOUT	-		(HOLD) ^Z
+_!AIM		(HOLD ANY DIRECTION AS THE MOVE STARTS) </>
+UP THROW	-		_D^Z
+   <#bbbbbb>Can be canceled into other ^Z moves.</>
+
+
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#0f43ff>SWORDLESS REMIX MOVES</>
+TACKLE	-		^Z
+AXE	-		<#65b5ff>(AIR ONLY)</> ^Z
+PASS	-		_F^Z
+   <#bbbbbb>This move can pass through the enemy.</>
+LUNGE	-		<#65b5ff>(AIR ONLY)</> _F^Z
+LAUNCH	-		_D^Z
+   <#bbbbbb>Has unique followups when used to catch his sword out of the air.</>
+_!AXE	-		<#65b5ff>(AIR ONLY)</> ^Z
+_!FLYING PEDESTAL	-		<#65b5ff>(AIR ONLY)</> _F^Z
+   <#bbbbbb>Can be canceled into special moves on hit.</>
+_!PEDESTAL	-		<#65b5ff>(AIR ONLY)</> _D^Z
+DROP	-		<#65b5ff>(AIR ONLY)</> _D^Z
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#ffef0f>EX MOVES</>
+_EX ACID FLIP	-		<#aaffff>(GROUND OR AIR)<#55ffff>(1 BAR)</> ^Y
+   <#bbbbbb>Has unique followup attacks.</>
+_!PEDESTAL	-		^A
+_!CUT	-		^B
+_!_EX GRAPPLE	-		^C
+        <#bbbbbb>An airborne command grab. Can be used in combos.</>
+_EX ACID DASH	-		<#65b5ff>(AIR ONLY)<#55ffff>(1 BAR)</> _F^Y+^Z
+_EX RAPID	-		<#55ffff>(1 BAR)</> _B^Y+^Z
+_EX SHREDDER	-		<#65b5ff>(AIR ONLY)<#55ffff>(1 BAR)</> _B^Y+^Z
+_EX RISE	-		<#aaffff>(GROUND OR AIR)<#55ffff>(1 BAR)</> _D^Y+^Z
+   <#bbbbbb>An anti-air invulnerable uppercut that can start combos.
+   The airborne version has no invelnerability.</>
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#55ffff>SWORD SUPERS</>
+<#24ff24>ACIDIC REVENGE</>		<#aaffff>(GROUND OR AIR)<#55ffff>(2 BARS)</> _D_DF_F_-^A/^B/^C
+   <#bbbbbb>An invincible multi-hitting sword barrage.
+   The airborne version has no invincibility.</>
+<#24ff24>TIME STOP</>	-		<#55ffff>(4 BARS)</> _D_DB_B_-^A/^B/^C
+   <#bbbbbb>One raises his sword and stops time for a few moments.
+   At close range, this move is unblockable.</>
+
+	<#55ffff>SWORDLESS SUPER</>
+<#0f43ff>REVENGE</>		<#aaffff>(GROUND OR AIR)<#55ffff>(2 BARS)</> _D_DF_F_-^A/^B/^C
+   <#bbbbbb>An multi-hitting sword barrage.
+   Can be used to insantly get your sword back.</>
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	UNIVERSAL MOVES
+OVERHEAD	-		_F^B
+   <#bbbbbb>Puts you in the air and hits overhead.</>
+ANTI-AIR	-		_D^C
+   <#bbbbbb>This move has invulnerability to airborne enemies.</>
+GRAB	-		ANY 2 NORMALS </>
+   <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.</>
+FORCE BLOCK (WHILE BLOCKING)	-		<#55ffff>(1/4 BAR)</> _B^X
+   <#bbbbbb>Can push the enemy backwards while you block.</>
+RECOIL GUARD (WHILE BLOCKING)	-		<#55ffff>(2 BARS)</> _F^X
+   <#bbbbbb>A fullscreen-ranged reversal that knocks the
+   enemy down and beats projectiles. Refunds 1 BAR on hit.</>
+RECORD SCRATCH (WHILE ATTACKING)		<#55ffff>(1 BAR/2 BARS ON BLOCK)</> ^X
+   <#bbbbbb>Can be used to instantly cancel most attacks.</>
+BURST (WHILE GETTING HIT)	-		^X+^A/^B/^C
+   <#bbbbbb>A large reversal that can be used while you're getting hit.</>
+PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(4 BARS)</> ^X+^A/^B/^C
+   <#bbbbbb>An extra burst that can be used in an emergency.</>
+   <#ff0000>Using this PERMANENTLY limits your meter to a max of 1 BAR
+   for the rest of the game.</>
+
+
+_D	_D		_D
+ 
+	2V2 MODE
+SWITCH CHARACTERS	-		ASSIST </>
+ACTIVE SWITCH (WHILE ATTACKING)	-		<#55ffff>(2 BARS)</>ASSIST </>
+ASSIST ATTACK	-		_B/_D/_F+ASSIST </>
+   <#bbbbbb>Each character has 3 assist attacks.</>
+TAG SUPER (DURING A SUPER)		<#55ffff>(2 BARS)</>_D_DF_F+ASSIST OR _D_DB_B+ASSIST </>
+
+</>

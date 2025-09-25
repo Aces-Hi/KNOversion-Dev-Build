@@ -1,0 +1,153 @@
+	<#bbbbbb>This move list assumes you are facing to the right.</>
+
+	<#7f7f7f>UNIQUE TRAIT: FREE AS THE WIND</>
+	Excluding a few exceptions, Arzon can freely cancel Special Moves
+	and Remix Moves into other Special and Remix Moves up to
+	3 times in a sequence, so long as he doesn't try to use
+	any specific move more than once in that sequence.
+
+	<#7f7f7f>UNIQUE MOVES</>
+STORM WINDS	-		<#aaffff>(GROUND OR AIR)</> _DF^C
+TYPHOON WAVE	-		_D(HOLD)^C
+
+
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#7f7f7f>SPECIAL MOVES</>
+TYPHOON SHOT	-		<#aaffff>(GROUND OR AIR)</> ^Y
+_!TYPHOON FOLLOWUP	-		^Y
+TYPHOON DISK		<#aaffff>(GROUND OR AIR)</> _F^Y/+^A/+^B/+^C
+   <#bbbbbb>Holding ^A,^B, or ^C changes it's speed and direction.</>
+TORNADO TRAP	-		_B^Y/+^A/+^B/+^C
+   <#bbbbbb>Holding ^A,^B, or ^C changes it's placement.</>
+_!TYPHOON UPPERCUT	-		<#aaffff>(GROUND OR AIR)</> _B^Y
+TYPHOON SHIELD	-		_D^Y
+   <#bbbbbb>A large move that gains invincibility after it begins.</>
+WHIRLWIND HOVER	-		<#65b5ff>(AIR ONLY)</> _D^Y
+   <#bbbbbb>This move stops Arzon's vertical movement, allowing
+   him to hover and drift side-to-side for a moment.
+   This move does not obey Arzon's FREE AS THE WIND trait.</>
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#7f7f7f>REMIX MOVES</>
+JETSTREAM	-		^Z/_F^Z/_B^Z/_D^Z
+   <#bbbbbb>Creates a gust of wind that moves enemies.
+   Can also manipulate TYPHOON SHOT and WIND BOOMERANG projectiles.</>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#ffef0f>EX MOVES</>
+_EX WIND BOOMERANG	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> ^Y+^Z
+_!BOOMERANG GUIDANCE	-		(AS THE MOVE STARTS) _U/_F/_B/_D
+        <#bbbbbb>Holding a direction as the move comes out
+        can change the speed and direction of the projectile.</>
+_EX TYPHOON DISK		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _F^Y+^Z/+^A/+^B/+^C
+   <#bbbbbb>Holding ^A,^B, or ^C changes it's speed and direction.</>
+_EX TORNADO TRAP	-		<#55ffff>(1 BAR)</> _B^Y+^Z/+^A/+^B/+^C
+   <#bbbbbb>Holding ^A,^B, or ^C changes it's placement.</>
+_EX TYPHOON SHIELD	-		<#55ffff>(1 BAR)</> _D^Y+^Z
+  <#bbbbbb>A large, invincible reversal. You can only cancel into this move
+  if the enemy is currently getting hit. Cannot be canceled on block.</>
+_EX WHIRLWIND HOVER	-		<#65b5ff>(AIR ONLY)</><#55ffff>(1 BAR)</> _D^Y+^Z
+   <#bbbbbb>This move allows you to hold any direction to freely
+   move Arzon through the air.
+   This move does not obey Arzon's FREE AS THE WIND trait.</>
+
+
+
+
+
+
+_D	_D		_D
+
+	<#55ffff>SUPERS</>
+<#7f7f7f>WIND PALM</>	-		<#55ffff>(2 BARS)</> _D_DF_F_-^A/^B/^C
+   <#bbbbbb>The projectile moves faster when used in a combo.</>
+<#7f7f7f>TYPHOON STRIKE</>	-		<#55ffff>(4 BARS)</> _D_DB_B_-^A/^B/^C
+   <#bbbbbb>An invincible, powerful, fullscreen barrage.</>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	UNIVERSAL MOVES
+OVERHEAD	-		_F^B
+   <#bbbbbb>Puts you in the air and hits overhead.</>
+ANTI-AIR	-		_D^C
+   <#bbbbbb>This move has invulnerability to airborne enemies.</>
+GRAB	-		ANY 2 NORMALS </>
+   <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.</>
+FORCE BLOCK (WHILE BLOCKING)	-		<#55ffff>(1/4 BAR)</> _B^X
+   <#bbbbbb>Can push the enemy backwards while you block.</>
+RECOIL GUARD (WHILE BLOCKING)	-		<#55ffff>(2 BARS)</> _F^X
+   <#bbbbbb>A fullscreen-ranged reversal that knocks the
+   enemy down and beats projectiles. Refunds 1 BAR on hit.</>
+RECORD SCRATCH (WHILE ATTACKING)		<#55ffff>(1 BAR/2 BARS ON BLOCK)</> ^X
+   <#bbbbbb>Can be used to instantly cancel most attacks.</>
+BURST (WHILE GETTING HIT)	-		^X+^A/^B/^C
+   <#bbbbbb>A large reversal that can be used while you're getting hit.</>
+PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(4 BARS)</> ^X+^A/^B/^C
+   <#bbbbbb>An extra burst that can be used in an emergency.</>
+   <#ff0000>Using this PERMANENTLY limits your meter to a max of 1 BAR
+   for the rest of the game.</>
+
+
+_D	_D		_D
+ 
+	2V2 MODE
+SWITCH CHARACTERS	-		ASSIST </>
+ACTIVE SWITCH (WHILE ATTACKING)	-		<#55ffff>(2 BARS)</>ASSIST </>
+ASSIST ATTACK	-		_B/_D/_F+ASSIST </>
+   <#bbbbbb>Each character has 3 assist attacks.</>
+TAG SUPER (DURING A SUPER)		<#55ffff>(2 BARS)</>_D_DF_F+ASSIST OR _D_DB_B+ASSIST </>
+
+</>

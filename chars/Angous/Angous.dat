@@ -1,0 +1,153 @@
+	<#bbbbbb>This move list assumes you are facing to the right.</>
+
+	<#790909>UNIQUE TRAIT: EXPLOSIVE RAGE</>
+	Angous has a powered-up form that he can access by using his
+	EXPLOSIVE RAGE super. This form increases his speed and power, while
+	also giving him access to new moves. Moves that can only be used
+	in this form are marked with (RAGE).
+
+	<#790909>UNIQUE MOVES</>
+PRIMAL	-		_F^C
+WORLD DESTROYER	-		(CAN BE HELD) _DF^C
+   <#bbbbbb>Gains armor and becomes unblockable when fully held.</>
+MOVE THE GROUND	-		(HOLD)_D^C
+   <#bbbbbb>Can be used after landing _D^C.</>
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#790909>SPECIAL MOVES</>
+RAGE WAVE	-		(CAN BE HELD) ^Y
+   <#bbbbbb>Fires a multi-hitting projectile when fully held.</>
+METEOR DIVE	-		<#65b5ff>(AIR ONLY)</> ^Y
+   <#bbbbbb>This move cannot be blocked by airborne enemies.</>
+BRAWLER RUSH	-		_F^Y
+   <#bbbbbb>On hit, it can be canceled into other specials, or _F^Z, or _B^Z.</>
+_!UPPER RUSH	-		_F^Y
+        <#bbbbbb> Can be canceled into other specials, or _F^Z, or _B^Z.</>
+   _!DEMOLITION RUSH	-		(CAN BE HELD) _F^Y
+           <#bbbbbb>Gains armor and causes a wall bounce when held.</>
+STRONG GRAPPLE	-		_B^Y
+   <#bbbbbb>A command grab.</>
+RAGING UPPER	-		_D^Y
+   <#bbbbbb>A rising, invincible uppercut.</>
+UPPER RUSH <#ff0000>(RAGE)</>	-		_DB^Y
+   <#bbbbbb>An anti-air reversal. On hit, it can be
+   canceled into other specials, or _F^Z, or _B^Z.</>
+DEMOLITION RUSH <#ff0000>(RAGE)</>	-		(CAN BE HELD) _DF^Y
+   <#bbbbbb>Has armor, and causes a wall bounce when held.</>
+
+
+_D	_D		_D
+
+	<#790909>REMIX MOVES</>
+RAGE CHARGE	-		(HOLD)^Z
+   <#bbbbbb>Angous will gain <#55ffff>Meter<#bbbbbb> as long as he holds ^Z.</>
+FADE	-		(CAN BE HELD) _F^Z
+   <#bbbbbb>A movement option that can pass through enemies.
+   Holding ^Z will keep Angous from passing through.</>
+_!OUT	-		(CAN BE HELD) ^A
+_!IN	-		(CAN BE HELD) ^B
+_!THROUGH	-		(CAN BE HELD) ^C
+        <#bbbbbb>This move ignores projectiles.</>
+RAW POWER	-		_B^Z
+   <#bbbbbb>A slow, unblockable attack with armor.</>
+_!CANCEL	-		(BEFORE IT HITS) _F_F/_B_B
+_!UPPERCUT	-		(AFTER IT HITS) _D^C
+RAMPAGE	-		_D^Z
+_!RAMPAGE ENDER	-		(HOLD)^Z
+        <#bbbbbb>Can be canceled into _F^Z, _B^Z, or any Special Move on hit.</>
+FLYING FIST <#ff0000>(RAGE)</>	-		<#65b5ff>(AIR ONLY)</> ^Z
+
+
+
+
+_D	_D		_D
+
+	<#ffef0f>EX MOVES</>
+_EX RAGE WAVE	-		<#55ffff>(1 BAR)</> ^Y+^Z
+_EX METEOR DIVE	-		<#65b5ff>(AIR ONLY)<#55ffff>(1 BAR)</> ^Y+^Z
+   <#bbbbbb>This move cannot be blocked by airborne enemies.</>
+_EX BRAWLER RUSH	-		<#55ffff>(1 BAR)</> _F^Y+^Z
+   <#bbbbbb>On hit, it can be canceled into other specials, or _F^Z, or _B^Z.</>
+_!_EX UPPER RUSH	-		_F^Y
+        <#bbbbbb>Can be canceled into other specials, or _F^Z, or _B^Z.</>
+   _!_EX DEMOLITION RUSH	-		(CAN BE HELD) _F^Y
+           <#bbbbbb>Has armor.</>
+_EX STRONG GRAPPLE	-		<#55ffff>(1 BAR)</> _B^Y+^Z
+   <#bbbbbb>A command grab. Can be used in combos.</>
+_EX RAGING UPPER	-		<#55ffff>(1 BAR)</> _D^Y+^Z
+   <#bbbbbb>A rising, invincible uppercut with a followup dive punch.</>
+_EX UPPER RUSH <#ff0000>(RAGE)</>	-		<#55ffff>(1 BAR)</> _DB^Y+^Z
+   <#bbbbbb>An anti-air reversal. On hit, it can be
+   canceled into other specials, or _F^Z, or _B^Z.</>
+_EX DEMOLITION RUSH <#ff0000>(RAGE)</>	-		(CAN BE HELD)<#55ffff>(1 BAR)</> _DF^Y+^Z
+   <#bbbbbb>Has armor.</>
+
+
+
+_D	_D		_D
+
+	<#55ffff>SUPERS</>
+<#790909>HORIZON BUSTER</>	-		<#55ffff>(2 BARS)</> _D_DF_F_-^A/^B/^C
+   <#bbbbbb>A fullscreen, invincible punch.</>
+<#790909>EXPLOSIVE RAGE</>	-		<#55ffff>(2 BARS)</> _D_DB_B_-^A/^B/^C
+   <#bbbbbb>This move puts Angous in <#ff0000>RAGE <#bbbbbb>for the rest of
+   the round. Can also be used to continue combos.</>
+<#790909>TRUE HORIZON BUSTER <#ff0000>(RAGE)</>	-		<#55ffff>(4 BARS)</> _D_DF_F_-^Y
+   <#bbbbbb>An unblockable <#ff0000>Instant Kill Move.
+   <#bbbbbb>Cannot be used in a combo unless the enemy is at 25% health or less.</>
+
+
+
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	UNIVERSAL MOVES
+OVERHEAD	-		_F^B
+   <#bbbbbb>Puts you in the air and hits overhead.</>
+ANTI-AIR	-		_D^C
+   <#bbbbbb>This move has invulnerability to airborne enemies.</>
+GRAB	-		ANY 2 NORMALS </>
+   <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.</>
+FORCE BLOCK (WHILE BLOCKING)	-		<#55ffff>(1/4 BAR)</> _B^X
+   <#bbbbbb>Can push the enemy backwards while you block.</>
+RECOIL GUARD (WHILE BLOCKING)	-		<#55ffff>(2 BARS)</> _F^X
+   <#bbbbbb>A fullscreen-ranged reversal that knocks the
+   enemy down and beats projectiles. Refunds 1 BAR on hit.</>
+RECORD SCRATCH (WHILE ATTACKING)		<#55ffff>(1 BAR/2 BARS ON BLOCK)</> ^X
+   <#bbbbbb>Can be used to instantly cancel most attacks.</>
+BURST (WHILE GETTING HIT)	-		^X+^A/^B/^C
+   <#bbbbbb>A large reversal that can be used while you're getting hit.</>
+PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(4 BARS)</> ^X+^A/^B/^C
+   <#bbbbbb>An extra burst that can be used in an emergency.</>
+   <#ff0000>Using this PERMANENTLY limits your meter to a max of 1 BAR
+   for the rest of the game.</>
+
+ 
+_D	_D		_D
+
+	2V2 MODE
+SWITCH CHARACTERS	-		ASSIST </>
+ACTIVE SWITCH (WHILE ATTACKING)	-		<#55ffff>(2 BARS)</>ASSIST </>
+ASSIST ATTACK	-		_B/_D/_F+ASSIST </>
+   <#bbbbbb>Each character has 3 assist attacks.</>
+TAG SUPER (DURING A SUPER)		<#55ffff>(2 BARS)</>_D_DF_F+ASSIST OR _D_DB_B+ASSIST </>
+
+</>

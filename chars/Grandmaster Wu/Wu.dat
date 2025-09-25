@@ -1,0 +1,153 @@
+	<#bbbbbb>This move list assumes you are facing to the right.</>
+
+	<#c63d3d>UNIQUE TRAIT: SPIRITUAL CHARGE</>
+	Wu has a powered-up form that he can access by using
+	any EX Move or any Super Move. While he's charged,
+	all of his special moves are more powerful and have enhanced properties. 
+	He loses his charge whenever he gets knocked down.
+
+	<#c63d3d>UNIQUE MOVES</>
+DIVEKICK	-		<#65b5ff>(AIR ONLY)</> _D^B
+DOUBLE KICK	-		_F^C
+DUST KICK	-		_DF^C
+
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#ff771c>UNCHARGED SPECIAL MOVES</>
+ENERGY BALL	-		^Y
+TATSU KATA	-		<#aaffff>(GROUND OR AIR)</> _F^Y
+_!TATSU KATA 2	-		<#65b5ff>(AIR ONLY)</> ^Y
+PALM	-		_B^Y
+RISING WU	-		_D^Y
+
+	<#a454ff>CHARGED SPECIAL MOVES</>
+SPIRIT BALL	-		^Y
+_!SPIRIT TUNER	-		(HOLD)_F/(HOLD)_B
+        <#bbbbbb>The SPIRIT BALL changes direction
+        depending on what you hold.</>
+TATSU KATA	-		<#aaffff>(GROUND OR AIR)</> _F^Y
+_!TATSU KATA 2	-		<#65b5ff>(AIR ONLY)</> ^Y
+   _!TATSU KATA 3	-		<#65b5ff>(AIR ONLY)</> ^Y
+      _!TATSU KATA 4	-		<#65b5ff>(AIR ONLY)</> ^Y
+FORCE PALM	-		_B^Y
+RISING MASTER	-		_D^Y
+   <#bbbbbb>An anti-air invulnerable upward kick.</>
+
+
+
+_D	_D		_D
+
+	<#c63d3d>REMIX MOVES</>
+ASTRAL KICK	-		^Z
+ASTRAL PALM	-		_F^Z
+ASTRAL VOLLEY	-		_B^Z
+ASTRAL DIVE	-		_D^Z
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#ffef0f>EX MOVES</>
+_EX SPIRIT BALL	-		<#55ffff>(1 BAR)</> ^Y
+   <#bbbbbb>The SPIRIT BALL automatically tracks the opponent.</>
+_EX TATSU KATA	-		<#aaffff>(GROUND OR AIR)<#55ffff>(1 BAR)</> _F^Y
+_!TATSU KATA EXTENSION	-		<#65b5ff>(AIR ONLY)</> ^Y
+_EX FORCE PALM	-		<#55ffff>(1 BAR)</> _B^Y
+_EX RISING MASTER	-		<#55ffff>(1 BAR)</> _D^Y
+   <#bbbbbb>An invincible upward kick.</>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#55ffff>SUPERS</>
+<#c63d3d>SOBRIETY</>	-		<#55ffff>(2 BARS)</> _D_DF_F_-^A/^B/^C
+   <#bbbbbb>A long-ranged reversal attack with unscaled damage.
+   Does more damage on counter-hit.</>
+<#c63d3d>SOLEMNITY</>		<#65b5ff>(AIR ONLY)<#55ffff>(2 BARS)</> _D_DF_F_-^A/^B/^C
+<#c63d3d>EQUANIMITY</>	-		<#55ffff>(4 BARS)</> _D_DB_B_-^A/^B/^C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	UNIVERSAL MOVES
+OVERHEAD	-		_F^B
+   <#bbbbbb>Puts you in the air and hits overhead.</>
+ANTI-AIR	-		_D^C
+   <#bbbbbb>This move has invulnerability to airborne enemies.</>
+GRAB	-		ANY 2 NORMALS </>
+   <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.</>
+FORCE BLOCK (WHILE BLOCKING)	-		<#55ffff>(1/4 BAR)</> _B^X
+   <#bbbbbb>Can push the enemy backwards while you block.</>
+RECOIL GUARD (WHILE BLOCKING)	-		<#55ffff>(2 BARS)</> _F^X
+   <#bbbbbb>A fullscreen-ranged reversal that knocks the
+   enemy down and beats projectiles. Refunds 1 BAR on hit.</>
+RECORD SCRATCH (WHILE ATTACKING)		<#55ffff>(1 BAR/2 BARS ON BLOCK)</> ^X
+   <#bbbbbb>Can be used to instantly cancel most attacks.</>
+BURST (WHILE GETTING HIT)	-		^X+^A/^B/^C
+   <#bbbbbb>A large reversal that can be used while you're getting hit.</>
+PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(4 BARS)</> ^X+^A/^B/^C
+   <#bbbbbb>An extra burst that can be used in an emergency.</>
+   <#ff0000>Using this PERMANENTLY limits your meter to a max of 1 BAR
+   for the rest of the game.</>
+
+
+_D	_D		_D
+ 
+	2V2 MODE
+SWITCH CHARACTERS	-		ASSIST </>
+ACTIVE SWITCH (WHILE ATTACKING)	-		<#55ffff>(2 BARS)</>ASSIST </>
+ASSIST ATTACK	-		_B/_D/_F+ASSIST </>
+   <#bbbbbb>Each character has 3 assist attacks.</>
+TAG SUPER (DURING A SUPER)		<#55ffff>(2 BARS)</>_D_DF_F+ASSIST OR _D_DB_B+ASSIST </>
+
+</>

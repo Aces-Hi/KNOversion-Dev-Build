@@ -1,0 +1,115 @@
+[Info]
+name = "KNO select"
+
+[Characters]
+
+Blank
+Blank
+Deus
+Angous
+Eddy
+One
+Roger
+Vile
+Blank
+Blank
+
+Blank
+Blank
+Grandmaster Wu
+Arzon
+JV/JV.def
+Sahkive
+Jojo
+Z
+Blank
+Blank
+
+Blank
+Blank
+Blank
+Blank
+JV/FJV.def,hidden=1
+Blank
+Blank
+Blank
+Blank
+Blank
+
+[ExtraStages]
+
+stages/Heaven.def,zoom=0,music = sound/Heaven.mp3,music = sound/Heaven2.mp3,music = sound/Heaven3.mp3
+stages/kno.def,zoom=0,music = sound/kno.mp3,music = sound/kno2.mp3,music = sound/kno3.mp3
+stages/ring.def,zoom=0,music = sound/ring.mp3,music = sound/ring2.mp3,music = sound/ring3.mp3
+stages/hyuns.def, zoom=0,music = sound/dojo.mp3,music = sound/dojo2.mp3,music = sound/dojo3.mp3
+stages/aegis.def, zoom=0, music=sound/Aegis.mp3, music=sound/Aegis2.mp3, music=sound/Aegis3.mp3
+stages/watercave.def,  zoom=0, music=sound/watercave.mp3, music=sound/watercave2.mp3, music=sound/watercave3.mp3
+stages/BattleCollab.def,  zoom=0, music=sound/battlecollab.mp3, music=sound/battlecollab2.mp3, music=sound/battlecollab3.mp3
+stages/OneVMany.def, zoom=0, music=sound/onevmany.mp3,music=sound/onevmany2.mp3,music=sound/onevmany3.mp3
+stages/acid.def, zoom=0,music = sound/acid.mp3,music = sound/acid2.mp3,music = sound/acid3.mp3
+stages/falls.def, zoom=0,music=sound/falls.mp3, music=sound/falls2.mp3, music=sound/falls3.mp3
+stages/sakura.def, zoom=0,music=sound/sakura.mp3, music=sound/sakura2.mp3, music=sound/sakura3.mp3
+stages/garden.def, zoom=0,music=sound/garden.mp3, music=sound/garden2.mp3, music=sound/garden3.mp3
+stages/yuri.def, zoom=0,music=sound/yuri.mp3, music=sound/yuri2.mp3,music=sound/yuri3.mp3
+stages/eternity.def, zoom=0,music=sound/eternity.mp3, music=sound/eternity2.mp3, music=sound/eternity3.mp3
+stages/CTEAlley.def, zoom=0,music=sound/CTE.mp3, music=sound/CTE2.mp3, music=sound/CTE3.mp3
+stages/CTENO.def, zoom=0,music=sound/CTENO.mp3, music=sound/CTENO2.mp3, music=sound/CTENO3.mp3
+stages/wafflehouse.def, zoom=0,music=sound/wafflehouse.mp3, music=sound/wafflehouse2.mp3, music=sound/wafflehouse3.mp3
+stages/ava.def, zoom=0,music=sound/ava.mp3, music=sound/ava2.mp3, music=sound/ava3.mp3
+stages/ballin.def, zoom=0,music=sound/ballin.mp3, music=sound/ballin2.mp3, music=sound/ballin3.mp3
+stages/mind.def, zoom=0,music=sound/mind.mp3, music=sound/mind2.mp3, music=sound/mind3.mp3
+stages/false.def, zoom=0,music=sound/false.mp3, music=sound/false2.mp3, music=sound/false3.mp3,music = sound/false4.mp3
+
+;---------------------------------------------------------------------
+[Options]
+ ;Here you set the maximum number of matches to fight before game ends
+ ;in Arcade Mode. The first number is the number of matches against
+ ;characters with order=1, followed by order=2 and order=3 respectively.
+ ;For example, for 4,3,1 you will fight up to 4 randomly-picked
+ ;characters who have order=1, followed by 3 with order=2 and 1 with
+ ;order=3.
+ ;IKEMEN feature: Max 30 orders limitation is lifted.
+arcade.maxmatches = 6,1,0,0,0,0,0,0,0,0
+
+ ;Maximum number of matches to fight before game ends in Team Mode.
+ ;Like arcade.maxmatches, but applies to Team Battle.
+team.maxmatches = 4,1,0,0,0,0,0,0,0,0
+
+ ;IKEMEN feature: AI ramping settings has been moved here from mugen.cfg
+ ;You can view AI ramping output for all battles from the last chosen mode
+ ;via debug/t_aiRamp.txt (useful reference also for vanilla mugen).
+ ;Arcade Mode AI ramping. For both parameters below, the first number
+ ;corresponds to the number of matches won, and the second number to the
+ ;AI difficulty offset. The actual difficulty is the sum of the AI
+ ;difficulty level (set in the options menu) and the value of the offset
+ ;at a particular match.
+ ;  AIramp.start = start_match, start_diff
+ ;  AIramp.end   = end_match, end_diff
+ ;The difficulty offset function is a constant value of start_diff from
+ ;the first match until start_match matches have been won. From then the
+ ;offset value increases linearly from start_diff to end_diff. After
+ ;end_diff matches have been won, the offset value is end_diff.
+ ;  e_d            /----------
+ ;               /
+ ;  s_d _______/
+ ;     ^      ^     ^        ^
+ ;   1st_m   s_m   e_m     last_m
+ ;For example, if you have:
+ ;  AIramp.start = 2,0
+ ;  AIramp.end   = 4,2
+ ;For 6 matches at level 4, the difficulty will be (by match):
+ ;  4,4,4,5,6,6
+arcade.AIramp.start = 2, 0
+arcade.AIramp.end   = 4, 2
+
+ ;Team Mode AI ramping
+ ;For 4 matches at level 4 and default values, the difficulty will be:
+ ;  4,4,5,6
+team.AIramp.start = 1, 0
+team.AIramp.end   = 3, 2
+
+ ;Survival Mode AI ramping
+ ;For 16 matches at level 4 and default values, the difficulty will be:
+ ;  1,1,1,2,2,3,3,4,4,4,5,5,6,6,7,7,8
+survival.AIramp.start = 0, -3
+survival.AIramp.end   = 16, 4

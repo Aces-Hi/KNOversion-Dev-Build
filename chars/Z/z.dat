@@ -1,0 +1,153 @@
+	<#bbbbbb>This move list assumes you are facing to the right.</>
+
+	<#19cf2c>UNIQUE TRAIT: VOLT BAR</>
+	Z's Remix Moves are fueled by his Volt Bar.
+	Not only are his Remix Moves powerful movement options, but he can
+	cancel Normal Moves and airborne Special Moves into them on hit.
+	The Volt Bar automatically refills over time.
+
+	<#19cf2c>UNIQUE MOVES</>
+SECOND STRIKE	-		^B_-^B
+SUDDEN FLASH	-		_B_-^B
+ROLLING THUNDER	-		_DF^C
+
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#19cf2c>SPECIAL MOVES</>
+BOLT PRIMER	-		<#aaffff>(GROUND OR AIR)</> ^Y
+   <#bbbbbb>Using this move gives you a Z Charge.</>
+BOLT SHOT	-		<#aaffff>(GROUND OR AIR)</> ^Y
+   <#bbbbbb>This move requires a Z Charge to use.
+   Air version can be canceled into _F^Y on hit.</>
+STATIC WAVE	-		_F^Y
+_!DETONATE	-		^Y
+THUNDER CRASH	-		<#65b5ff>(AIR ONLY)</> _F^Y
+CAPACITOR TURNOUT	-		<#aaffff>(GROUND OR AIR)</> _B^Y
+   <#bbbbbb>A Z charge can be used to cast this move a second time.</>
+BREWING SHOCKWAVE	-		_D^Y
+   <#bbbbbb>A counter. Does not beat projectiles or grabs.
+   Creates a bolt where the enemy lands after it hits.</>
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#19cf2c>REMIX MOVES</>
+SONIC JUMP	-		^Z/_D^Z
+   <#bbbbbb>Holding down makes Z jump lower.
+   This move launches enemies during combos.</>
+STATIC HOVER	-		<#65b5ff>(AIR ONLY)</> (HOLD) ^Z
+   <#bbbbbb>This move requires Volt Bar to use.</>
+IMPETUS SURGE	-		<#65b5ff>(AIR ONLY)</> (ANY DIRECTION)+^Z
+   <#bbbbbb>This move requires Volt Bar to use.</>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#ffef0f>EX MOVES</>
+_EX BOLT PRIMER	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> ^Y+^Z
+   <#bbbbbb>Using this move gives you a Z Charge and
+   refills the Volt Bar.</>
+_EX BOLT SHOT	-		<#aaffff>(GROUND OR AIR)<#55ffff>(1 BAR)</> ^Y+^Z
+   <#bbbbbb>This move requires a Z Charge to use.
+   Air version can be canceled into _F^Y on hit.</>
+_EX STATIC WAVE	-		<#55ffff>(1 BAR)</> _F^Y+^Z
+_!DETONATE	-		<#aaffff>(GROUND OR AIR)</> _F^Y+^Z
+_EX THUNDER CRASH	-		<#65b5ff>(AIR ONLY)<#55ffff>(1 BAR)</> _F^Y+^Z
+_EX CAPACITOR TURNOUT	-		<#aaffff>(GROUND OR AIR)<#55ffff>(1 BAR)</> _B^Y+^Z
+   <#bbbbbb>This move is faster when used during a combo.</>
+_EX ACTIVE SHOCKWAVE	-		<#55ffff>(1 BAR)</> _D^Y+^Z
+   <#bbbbbb>An invincible reversal attack.
+   Creates a bolt where the enemy lands after it hits.</>
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#55ffff>SUPERS</>
+<#19cf2c>BLOWN FUSE</>		<#aaffff>(GROUND OR AIR)<#55ffff>(2 BARS)</> _D_DF_F_-^A/^B/^C
+<#19cf2c>RISING CURRENT</>	-		<#55ffff>(2 BARS)</> _D_DB_B_-^A/^B/^C
+   <#bbbbbb>An anti-air invulnerable super.</>
+<#19cf2c>THE FINAL STRIKE</>		<#aaffff>(GROUND OR AIR)<#55ffff>(4 BARS)</> _D_DF_F_-^Y
+   <#bbbbbb>A powerful, invincible attack.</>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	UNIVERSAL MOVES
+OVERHEAD	-		_F^B
+   <#bbbbbb>Puts you in the air and hits overhead.</>
+ANTI-AIR	-		_D^C
+   <#bbbbbb>This move has invulnerability to airborne enemies.</>
+GRAB	-		ANY 2 NORMALS </>
+   <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.</>
+FORCE BLOCK (WHILE BLOCKING)	-		<#55ffff>(1/4 BAR)</> _B^X
+   <#bbbbbb>Can push the enemy backwards while you block.</>
+RECOIL GUARD (WHILE BLOCKING)	-		<#55ffff>(2 BARS)</> _F^X
+   <#bbbbbb>A fullscreen-ranged reversal that knocks the
+   enemy down and beats projectiles. Refunds 1 BAR on hit.</>
+RECORD SCRATCH (WHILE ATTACKING)		<#55ffff>(1 BAR/2 BARS ON BLOCK)</> ^X
+   <#bbbbbb>Can be used to instantly cancel most attacks.</>
+BURST (WHILE GETTING HIT)	-		^X+^A/^B/^C
+   <#bbbbbb>A large reversal that can be used while you're getting hit.</>
+PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(4 BARS)</> ^X+^A/^B/^C
+   <#bbbbbb>An extra burst that can be used in an emergency.</>
+   <#ff0000>Using this PERMANENTLY limits your meter to a max of 1 BAR
+   for the rest of the game.</>
+
+
+_D	_D		_D
+ 
+	2V2 MODE
+SWITCH CHARACTERS	-		ASSIST </>
+ACTIVE SWITCH (WHILE ATTACKING)	-		<#55ffff>(2 BARS)</>ASSIST </>
+ASSIST ATTACK	-		_B/_D/_F+ASSIST </>
+   <#bbbbbb>Each character has 3 assist attacks.</>
+TAG SUPER (DURING A SUPER)		<#55ffff>(2 BARS)</>_D_DF_F+ASSIST OR _D_DB_B+ASSIST </>
+
+</>

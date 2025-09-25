@@ -347,12 +347,12 @@ command = a
 [Command]
 name = "b"
 command = b
-
+buffer.time = 5
 
 [Command]
 name = "c"
 command = c
-
+buffer.time = 5
 [Command]
 name = "nobuffer_a"
 command = a
@@ -812,16 +812,16 @@ buffer.time = 4
 name = "EX"
 command = b+c
 
-buffer.time = 4
+buffer.time = 5
 [Command]
 name = "EX"
 command = c+b
 
-buffer.time = 4
+buffer.time = 5
 [Command]
 name = "EX"
 command = d
-
+buffer.time = 5
 
 [Command]
 name = "nobuffer_EX"

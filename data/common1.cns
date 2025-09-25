@@ -3478,12 +3478,6 @@ sprpriority = 1
 ownpal = 1
 removeongethit = 1
 
-[State 0, Turn]
-type = Turn
-trigger1 = animtime = -1
-trigger1 = facing = enemynear, facing
-trigger2 =  time = 0 && facing = enemynear, facing
-
 [State -3, Win Voices] ;Win
 type = PlaySnd
 trigger1 = time = 1 && Random <= 249 && life <=300
@@ -3517,6 +3511,23 @@ type = NotHitBy
 trigger1 = 1
 value = SCA
 time = 1
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = NoHardcodedKeys
+persistent = 1
+
+
+[State 0, CtrlSet]
+type = CtrlSet
+trigger1 = time>17
+value = 1
+[State 5120, 6] ;Can't be hit right after getting up (short time)
+type = NotHitBy
+trigger1 = AnimTime = 0
+value2 = SCA
+time = 3
 
 [State 5120, 7]
 type = selfstate

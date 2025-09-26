@@ -1944,7 +1944,7 @@ ignorehitpause = 1
 
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = command = "c" && time > 8
+trigger1 = command = "nobuffer_c" && time > 8
 trigger2=time>120
 value = 632
 ctrl = 0
@@ -2002,7 +2002,7 @@ trans = add
 
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = command = "c" && time > 2
+trigger1 = command = "nobuffer_c" && time > 2
 trigger2=time>120
 value = 632
 ctrl = 0
@@ -2720,9 +2720,9 @@ ground.type = Trip
 ground.slidetime = 12
 ground.hittime  = 22
 air.hittime  = 22
-ground.velocity = -3.8,-6
-air.velocity = 0.5,-6
-down.velocity = 0.5,-6
+ground.velocity = -3.8,-7
+air.velocity = 0.5,-7
+down.velocity = 0.5,-7
 air.fall = 1
 fall.yvelocity = 0
 envshake.time = 20

@@ -37,7 +37,7 @@
   "DebugClipboardRows": 2,
   "DebugClsnDarken": true,
   "DebugConsoleRows": 0,
-  "DebugFont": "font/default-3x5.def",
+  "DebugFont": "font/default-3x5-bold.def",
   "DebugFontScale": 2,
   "DebugKeys": true,
   "DebugMode": true,

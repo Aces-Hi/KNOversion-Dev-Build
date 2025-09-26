@@ -1058,7 +1058,7 @@ physics = N
 type = VelSet
 trigger1 = Time = 0
 x = 0
-y=-2
+y=-3
 
 
 [State 1028, Gravity]

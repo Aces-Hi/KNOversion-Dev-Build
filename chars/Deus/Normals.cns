@@ -747,7 +747,7 @@ type = VarAdd
 trigger1 = combocount<=1
 trigger1 = movehit=1=1
 fv = 25  
-value = 0
+value = -1
 ignorehitpause = 1
 persistent = 0
 [State Stun Scaling]
@@ -755,9 +755,26 @@ type = VarAdd
 trigger1 = combocount>1
 trigger1 = movehit=1=1
 fv = 25  
-value = 2
+value = 1
 ignorehitpause = 1
 persistent = 0
+[State Stale Move]
+type = VarAdd
+trigger1 = combocount>1
+trigger1 = movehit=1
+trigger1 = map(stales)>1
+fv = 25  
+value = 2+map(stales)
+ignorehitpause = 1
+persistent = 0
+[State Stale Move]
+type = MapAdd
+trigger1 = movehit=1
+map = "stales"
+value = 1
+ignorehitpause = 1
+persistent = 0
+
 
 [State Starter Damage Scaling]
 type = VarAdd
@@ -952,7 +969,7 @@ trigger1 = map(smashattack)<40 || map(fullfsmash)>0
 attr = S, NA
 animtype  = Hard
 air.animtype = back
-damage = ceil(cond(fvar(11) *(70+map(smashattack)) < (70+map(smashattack))/10, (70+map(smashattack))/10, fvar(11) * (70+map(smashattack)))), 7
+damage = ceil(cond(fvar(11) *(60+map(smashattack)) < (60+map(smashattack))/10, (60+map(smashattack))/10, fvar(11) * (60+map(smashattack)))), 7
 hitflag = MAFD
 guardflag = MA
 pausetime = 12,12
@@ -984,7 +1001,7 @@ trigger1 = movecontact = 0 && map(fullfsmash)=0 && map(smashattack)>=40
 attr = S, NA
 animtype  = Hard
 air.animtype = back
-damage = ceil(cond(fvar(11) *(70+map(smashattack)) < (70+map(smashattack))/10, (70+map(smashattack))/10, fvar(11) * (70+map(smashattack)))), 7
+damage = ceil(cond(fvar(11) *(60+map(smashattack)) < (60+map(smashattack))/10, (60+map(smashattack))/10, fvar(11) * (60+map(smashattack)))), 7
 hitflag = MAFD
 guardflag = MA
 pausetime = 12,12
@@ -1347,7 +1364,7 @@ type = VarAdd
 trigger1 = combocount<=1
 trigger1 = movehit=1
 fv = 25  
-value = 0
+value = -1
 ignorehitpause = 1
 persistent = 0
 [State Stun Scaling]
@@ -1356,10 +1373,32 @@ trigger1 = combocount>1
 trigger1 = movehit=1
 trigger1 = map(multihits)=0
 fv = 25  
-value = 2
+value = 1
 ignorehitpause = 1
 persistent = 0
-
+[State Stale Move]
+type = VarAdd
+trigger1 = combocount>1
+trigger1 = movehit=1
+fv = 25  
+value = 2+map(stalec)
+ignorehitpause = 1
+persistent = 0
+[State Stale Move]
+type = VarAdd
+trigger1 = combocount>1
+trigger1 = movehit=2
+fv = 25  
+value = 2+map(stalec)
+ignorehitpause = 1
+persistent = 0
+[State Stale Move]
+type = MapAdd
+trigger1 = movehit=1
+map = "stalec"
+value = 1
+ignorehitpause = 1
+persistent = 0
 
 [State Damage Scaling]
 type = VarAdd
@@ -1552,7 +1591,7 @@ trigger1 = animelem=8
 attr = S, NA
 animtype  = up
 air.animtype = up
-damage = ceil(cond(fvar(11) *30 < 3, 3, fvar(11) * 30)), 3
+damage = ceil(cond(fvar(11) *20 < 3, 3, fvar(11) * 30)), 3
 hitflag = MAFD
 guardflag = LA
 pausetime = 8,4
@@ -2133,7 +2172,7 @@ trigger1 = map(fair)=0
 attr = A, NA
 animtype  = Hard
 air.animtype = back
-damage = ceil(cond(fvar(11) *70 < 10, 10, fvar(11) * 70)), 7
+damage = ceil(cond(fvar(11) *60 < 10, 10, fvar(11) * 60)), 7
 hitflag = MAF
 guardflag = HA
 pausetime = 10,12
@@ -2172,7 +2211,7 @@ trigger1 = map(fair)>0
 attr = A, NA
 animtype  = Hard
 air.animtype = back
-damage = ceil(cond(fvar(11) *70 < 10, 10, fvar(11) * 70)), 7
+damage = ceil(cond(fvar(11) *60 < 10, 10, fvar(11) * 60)), 7
 hitflag = MAF
 guardflag = HA
 pausetime = 10,12
@@ -2678,7 +2717,7 @@ trigger1 = map(bair)=0
 attr = A, NA
 animtype  = Hard
 air.animtype = back
-damage = ceil(cond(fvar(11) *75 < 15, 15, fvar(11) * 75)), 8
+damage = ceil(cond(fvar(11) *70 < 15, 15, fvar(11) * 75)), 8
 hitflag = MAF
 guardflag = HA
 pausetime = 12,12
@@ -2722,7 +2761,7 @@ trigger1 = map(bair)>0
 attr = A, NA
 animtype  = Hard
 air.animtype = back
-damage = ceil(cond(fvar(11) *75 < 15, 15, fvar(11) * 75)), 8
+damage = ceil(cond(fvar(11) *70 < 15, 15, fvar(11) * 75)), 8
 hitflag = MAF
 guardflag = HA
 pausetime = 12,12
@@ -2732,7 +2771,7 @@ guardsound = S300, 2
 ground.type = high
 ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *20 < 8, 8, fvar(15) * 20))
-air.hittime  = ceil(cond(fvar(15) *40 < 10, 10, fvar(15) * 40))
+air.hittime  = ceil(cond(fvar(15) *40 < 12, 12, fvar(15) * 40))
 down.hittime = ceil(cond(fvar(15) *40 < 10, 10, fvar(15) * 40))
 ground.velocity = 6,-3
 air.velocity = 6,-6+(map(bair)*2)

@@ -120,7 +120,6 @@ victory1 = "私は私のベルトで長年の経験を持っています、あ�
 [Statedef 170]
 type = S
 ctrl = 0
-anim = 170
 velset = 0,0
 
 [State 170, 1]
@@ -2337,8 +2336,8 @@ value = 0
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "facing %f stun %f  dmg %f smash %f mh %f D %f vel %f rina %f bmh %f"
-params = map(animcheck), fvar(25), fvar(13), map(smashattack), map(multihits), map(fulldsmash), map(vel), map(rina), map(bmhit)
+text = "stale s %f stale c %f stun %f  dmg %f smash %f mh %f D %f vel %f rina %f bmh %f"
+params = map(stales),map(stalec), fvar(25), fvar(13), map(smashattack), map(multihits), map(fulldsmash), map(vel), map(rina), map(bmhit)
 
 
 
@@ -2719,6 +2718,24 @@ persistent = 1
 type = MapSet
 trigger1 = combocount=0
 map = "fullfsmash"
+value = 0
+ignorehitpause = 1
+persistent = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = combocount=0
+trigger2 = movetype=A&&stateno!=[2000,2010]
+trigger2 = stateno!=220&&stateno!=420
+map = "stales"
+value = 0
+ignorehitpause = 1
+persistent = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = combocount=0
+trigger2 = movetype=A&&stateno!=[2000,2010]
+trigger2 = stateno!=420
+map = "stalec"
 value = 0
 ignorehitpause = 1
 persistent = 1

@@ -835,6 +835,7 @@ guard.velocity = -8
 guard.dist = 2
 down.bounce = 2
 air.fall = 1
+fall.yvelocity=-5
 getpower = (100)*(cond(var(var(2)) = 1, 1, 1))
 
 [State 230, 1]
@@ -4607,7 +4608,9 @@ persistent = 1
 type = ChangeState
 ;triggerall = command !="holddown"
 trigger1= command = "buffer_x" && time = [7,20]
-trigger2= command = "hold_x" && time = [10,20]
+trigger2= command = "hold_x" && time = [7,20]
+trigger3= command = "buffer_x" && time = [3,20]&&combocount>0
+trigger4= command = "hold_x" && time = [3,20] &&combocount>0
 value = 1071
 ctrl = 0
 
@@ -4615,15 +4618,19 @@ ctrl = 0
 type = ChangeState
 ;triggerall = command !="holddown"
 trigger1= command = "buffer_z" && time = [7,20]
-trigger2= command = "hold_z" && time = [8,20]
+trigger2= command = "hold_z" && time = [7,20]
+trigger3= command = "buffer_z" && time = [3,20]&&combocount>0
+trigger4= command = "hold_z" && time = [3,20]&&combocount>0
 value = 1072
 ctrl = 0
 
 [State 0, ChangeState] ;6R^M
 type = ChangeState
 ;triggerall = command !="holddown"
-trigger1= command = "buffer_y" && time = [6,20]
-trigger2= command = "hold_y" && time = [5,20]
+trigger1= command = "buffer_y" && time = [7,20]
+trigger2= command = "hold_y" && time = [7,20]
+trigger3= command = "buffer_y" && time = [3,20]&&combocount>0
+trigger4= command = "hold_y" && time = [3,20]&&combocount>0
 value = 1073
 ctrl = 0
 

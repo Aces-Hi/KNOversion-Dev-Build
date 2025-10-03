@@ -888,7 +888,8 @@ sprpriority = 2
 [State -3, ThrowTech Announcer]
 type = PlaySnd
 trigger1 = time=0
-value = 7411, (0+(Random%2))
+value = F7411, (0+(Random%2))
+
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time = 0
@@ -897,10 +898,6 @@ value = F6,2
 type = PlaySnd
 trigger1 = time = 0
 value = F6,2
-[State 0, PlaySnd]
-type = PlaySnd
-trigger1 = time = 5
-value = 672,0
 [State 0, Explod]
 type = Explod
 trigger1 = time = 0
@@ -1199,9 +1196,9 @@ p2facing=1
 type = PlaySnd
 triggerall= name = "roger"
 trigger1 = animelem=2
-value = 8000,8+random%2
+value = 900,0+random%2
 ignorehitpause =1 
-volumescale = 75
+volumescale = 175
 
 [State 0, ChangeState]
 type = ChangeState
@@ -1944,6 +1941,13 @@ value = 5000, (0+(Random%50))
 volumescale=150
 lowpriority=1
 channel=7
+[State -3, Win Voices] 
+type = PlaySnd
+triggerall = name = "roger"
+trigger1 = time = 1
+value = 5000, (0+(Random%20))
+lowpriority=1
+channel=7
 
 ;The stand phuckin dies (graphic/gone sexually paranormal)
 [State 0, HitOverride]
@@ -2174,6 +2178,13 @@ value = 5000, (0+(Random%50))
 volumescale=150
 lowpriority=1
 channel=7
+[State -3, Win Voices] 
+type = PlaySnd
+triggerall = name = "roger"
+trigger1 = time = 1
+value = 5000, (0+(Random%20))
+lowpriority=1
+channel=7
 
 ;The stand phuckin dies (graphic/gone sexually paranormal)
 [State 0, HitOverride]
@@ -2364,6 +2375,13 @@ triggerall = prevstateno!=812
 trigger1 = time = 1
 value = 5000, (0+(Random%50))
 volumescale=150
+lowpriority=1
+channel=7
+[State -3, Win Voices] 
+type = PlaySnd
+triggerall = name = "roger"
+trigger1 = time = 1
+value = 5000, (0+(Random%20))
 lowpriority=1
 channel=7
 
@@ -2885,6 +2903,13 @@ triggerall = prevstateno!=812
 trigger1 = time = 1
 value = 5000, (0+(Random%50))
 volumescale=150
+lowpriority=1
+channel=7
+[State -3, Win Voices] 
+type = PlaySnd
+triggerall = name = "roger"
+trigger1 = time = 1
+value = 5000, (0+(Random%20))
 lowpriority=1
 channel=7
 
@@ -4022,6 +4047,13 @@ triggerall = prevstateno!=812
 trigger1 = time = 1
 value = 5000, (0+(Random%50))
 volumescale=150
+lowpriority=1
+channel=7
+[State -3, Win Voices] 
+type = PlaySnd
+triggerall = name = "roger"
+trigger1 = time = 1
+value = 5000, (0+(Random%20))
 lowpriority=1
 channel=7
 
@@ -5427,6 +5459,7 @@ value =0
 [State -2, Explod];Counter Explod for P1 Side.
 type = Explod
 triggerall = numexplod(13000) = 0 && teamside = 1 ;Counter Ok, Explod has not played, P1 Side
+triggerall = combocount<=2
 triggerall = movecountered = 1 ;Enemy was indeed HIT, otherwise this'd be retarded.
 trigger1 = movehit ;Move hits
 trigger2 = projhit = 1 ;Projectile Hits
@@ -5448,6 +5481,7 @@ pausemovetime = -1
 [State 0, PlaySnd]
 type = PlaySnd
 triggerall = movecountered = 1 
+triggerall = combocount<=1
 triggerall=stateno!=[900,901]
 trigger1 = movehit ;Move hits
 trigger2 = projhit = 1 ;Projectile Hits
@@ -5460,6 +5494,7 @@ lowpriority=1
 [State -2, Explod];Counter Explod for P2 Side.
 type = Explod
 triggerall = numexplod(13000) = 0 && teamside = 2 ;Counter Ok, Explod has not played, P2 Side
+triggerall = combocount<=2
 triggerall = movecountered = 1 ;Enemy was indeed HIT, otherwise this'd be retarded.
 trigger1 = movehit ;Move hits
 trigger2 = projhit = 1 ;Projectile Hits

@@ -393,6 +393,13 @@ align = 0
 pos = 230,44
 ignorehitpause = 1
 
+;Throw Tech SFX & FX
+[State -3, ThrowTech Announcer]
+type = PlaySnd
+trigger1 = time=0
+value = F1030, (0+(Random%2))
+volumescale=75
+
 [state 0]
 	type=screenbound
 	trigger1=1

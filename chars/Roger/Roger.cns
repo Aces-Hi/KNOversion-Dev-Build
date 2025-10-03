@@ -177,7 +177,7 @@ value = F1000,0
 
 [State 0, Explod]
 type = Explod
-trigger1 = time=0
+trigger1 = time=0&& palno !=8
 anim = 184
 ID = 184
 pos = -45,-2
@@ -203,16 +203,49 @@ volumescale = 70
 
 [State -3, Win Announcer]
 type = PlaySnd
-trigger1 = time=0&& palno != 9
-trigger1 = time=0&& palno != 7
-value = 8000, (10+(Random%2))
-volumescale = 70
+trigger1 = enemynear,name!="sahkive"&&enemynear,name!="angous"&&enemynear,name!="tui"&&enemynear,name!="deus"
+triggerall = time=0&& palno != 9&& palno != 7&& palno !=8
+value = 180,0+random%5
+volumescale = 200
+[State -3, Win Announcer]
+type = PlaySnd
+trigger1 = enemynear,name="sahkive"||enemynear,name="angous"||enemynear,name="tui"
+trigger1 = time=0&& palno != 9&& palno != 7&& palno !=8
+value = 181,0+random%2
+volumescale = 200
+[State -3, Win Announcer]
+type = PlaySnd
+trigger1 = enemynear,name="deus"
+trigger1 = time=0&& palno != 9&& palno != 7&& palno !=8
+value = 182,0+random%2
+volumescale = 200
 
 [State -3, Win Announcer]
 type = PlaySnd
-trigger1 = time=0&& palno = 7
-value = 8000,16
-volumescale = 70
+trigger1 = enemynear,name!="jojo"&&enemynear,name!="sahkive"
+trigger2 = enemynear,name="jojo"&&enemynear,palno!=7
+trigger3 = enemynear,name="sahkive"&&enemynear,map(RAGA)<=0
+triggerall = time=0&& palno = 7
+value = 185,0+random%2
+volumescale = 200
+[State -3, Win Announcer]
+type = PlaySnd
+trigger1 = enemynear,name="jojo"&&enemynear,palno=7
+triggerall = time=0&& palno = 7
+value = 183,0+random%2
+volumescale = 200
+[State -3, Win Announcer]
+type = PlaySnd
+trigger1 = enemynear,name="sahkive"&&enemynear,map(RAGA)>0
+triggerall = time=0&& palno = 7
+value = 183,2
+volumescale = 200
+
+[State -3, Win Announcer]
+type = PlaySnd
+trigger1 = time=0&& palno =8
+value = 184,0+random%2
+volumescale = 200
 
 [State 8990, AssertSpecial]
 type = AssertSpecial
@@ -328,7 +361,7 @@ value = F1000,0
 
 [State 0, Explod]
 type = Explod
-trigger1 = time=0
+trigger1 = time=0&& palno !=8
 anim = 184
 ID = 184
 pos = -45,-2
@@ -354,16 +387,49 @@ volumescale = 70
 
 [State -3, Win Announcer]
 type = PlaySnd
-trigger1 = time=0&& palno != 9
-trigger1 = time=0&& palno != 7
-value = 8000, (10+(Random%2))
-volumescale = 70
+trigger1 = enemynear,name!="sahkive"&&enemynear,name!="angous"&&enemynear,name!="tui"&&enemynear,name!="deus"
+trigger1 = time=0&& palno != 9&& palno != 7&& palno !=8
+value = 180,0+random%5
+volumescale = 200
+[State -3, Win Announcer]
+type = PlaySnd
+trigger1 = enemynear,name="sahkive"||enemynear,name="angous"||enemynear,name="tui"
+trigger1 = time=0&& palno != 9&& palno != 7&& palno !=8
+value = 181,0+random%2
+volumescale = 200
+[State -3, Win Announcer]
+type = PlaySnd
+trigger1 = enemynear,name="deus"
+trigger1 = time=0&& palno != 9&& palno != 7&& palno !=8
+value = 182,0+random%2
+volumescale = 200
 
 [State -3, Win Announcer]
 type = PlaySnd
-trigger1 = time=0&& palno = 7
-value = 8000,16
-volumescale = 70
+trigger1 = enemynear,name!="jojo"&&enemynear,name!="sahkive"
+trigger2 = enemynear,name="jojo"&&enemynear,palno!=7
+trigger3 = enemynear,name="sahkive"&&enemynear,map(RAGA)<=0
+triggerall = time=0&& palno = 7
+value = 185,0+random%2
+volumescale = 200
+[State -3, Win Announcer]
+type = PlaySnd
+trigger1 = enemynear,name="jojo"&&enemynear,palno=7
+triggerall = time=0&& palno = 7
+value = 183,0+random%2
+volumescale = 200
+[State -3, Win Announcer]
+type = PlaySnd
+trigger1 = enemynear,name="sahkive"&&enemynear,map(RAGA)>0
+triggerall = time=0&& palno = 7
+value = 183,2
+volumescale = 200
+
+[State -3, Win Announcer]
+type = PlaySnd
+trigger1 = time=0&& palno =8
+value = 184,0+random%2
+volumescale = 200
 
 [State 8990, AssertSpecial]
 type = AssertSpecial
@@ -482,7 +548,7 @@ value = F1000,0
 
 [State 0, Explod]
 type = Explod
-trigger1 = time=0
+trigger1 = time=0&& palno !=8
 anim = 184
 ID = 184
 pos = -45,-2
@@ -508,16 +574,49 @@ volumescale = 70
 
 [State -3, Win Announcer]
 type = PlaySnd
-trigger1 = time=0&& palno != 9
-trigger1 = time=0&& palno != 7
-value = 8000, (10+(Random%2))
-volumescale = 70
+trigger1 = enemynear,name!="sahkive"&&enemynear,name!="angous"&&enemynear,name!="tui"&&enemynear,name!="deus"
+trigger1 = time=0&& palno != 9&& palno != 7&& palno !=8
+value = 180,0+random%5
+volumescale = 200
+[State -3, Win Announcer]
+type = PlaySnd
+trigger1 = enemynear,name="sahkive"||enemynear,name="angous"||enemynear,name="tui"
+trigger1 = time=0&& palno != 9&& palno != 7&& palno !=8
+value = 181,0+random%2
+volumescale = 200
+[State -3, Win Announcer]
+type = PlaySnd
+trigger1 = enemynear,name="deus"
+trigger1 = time=0&& palno != 9&& palno != 7&& palno !=8
+value = 182,0+random%2
+volumescale = 200
 
 [State -3, Win Announcer]
 type = PlaySnd
-trigger1 = time=0&& palno = 7
-value = 8000,16
-volumescale = 70
+trigger1 = enemynear,name!="jojo"&&enemynear,name!="sahkive"
+trigger2 = enemynear,name="jojo"&&enemynear,palno!=7
+trigger3 = enemynear,name="sahkive"&&enemynear,map(RAGA)<=0
+triggerall = time=0&& palno = 7
+value = 185,0+random%2
+volumescale = 200
+[State -3, Win Announcer]
+type = PlaySnd
+trigger1 = enemynear,name="jojo"&&enemynear,palno=7
+triggerall = time=0&& palno = 7
+value = 183,0+random%2
+volumescale = 200
+[State -3, Win Announcer]
+type = PlaySnd
+trigger1 = enemynear,name="sahkive"&&enemynear,map(RAGA)>0
+triggerall = time=0&& palno = 7
+value = 183,2
+volumescale = 200
+
+[State -3, Win Announcer]
+type = PlaySnd
+trigger1 = time=0&& palno =8
+value = 184,0+random%2
+volumescale = 200
 
 [State 8990, AssertSpecial]
 type = AssertSpecial
@@ -636,7 +735,7 @@ value = 191+(random%3)
 
 [State 0, Explod]
 type = Explod
-trigger1 = time=0
+trigger1 = time=0&& palno !=8
 anim = 191
 ID = 191
 pos = -45,-2
@@ -658,6 +757,16 @@ removeongethit = 0
 type = PlaySnd
 trigger1 = time = 0 && palno = 9
 value = 7615,3
+[State 0, PlaySnd] ;what can I say.
+type = PlaySnd
+trigger1 = time = 0 && palno = 8
+value = 199,0+random%2
+volumescale=125
+[State 0, PlaySnd] ;what can I say.
+type = PlaySnd
+trigger1 = time = 0 && palno = 4
+value = 199,2+random%2
+volumescale=200
 
 [State 0, PlaySnd] ;what can I say.
 type = PlaySnd
@@ -666,29 +775,55 @@ trigger1 = enemy,name !="Angous"
 trigger2 = enemy,name ="Angous"
 trigger2 = enemy,palno=6
 value = 8000,14+random%2
-volumescale = 50
+volumescale = 100
+
 [State 0, PlaySnd] ;what can I say.
 type = PlaySnd
 triggerall = palno = 7 &&  time = 40
 trigger1 = enemy,name ="Angous"
 trigger1 = enemy,palno!=6
 value = 8000,14+random%2
-volumescale = 50
+volumescale = 100
+
 
 [State 0, PlaySnd] ;what can I say.
 type = PlaySnd
-triggerall = enemynear,name!="one"
-triggerall = time = 0 && palno != 9
-triggerall = time = 0 && palno != 7
+triggerall = enemynear,name!="one"&& enemynear,name!="angous"&& enemynear,name!="sahkive"&& enemynear,name!="tui"&& enemynear,name!="deus"
+triggerall = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
 trigger1=teamside=1
 trigger1=enemynear,name!="Roger"
 trigger2=teamside=2
 trigger2=enemynear,name!="Roger"
 trigger3=teamside=2
 trigger3=enemynear,name="Roger"
-trigger3=enemynear,palno!=9&&enemynear,palno!=7
-value = 8000,12+random%2
-volumescale = 40
+trigger3=enemynear,palno!=9&&enemynear,palno!=7&& palno != 8&& palno != 4
+value = 190,0+random%3
+volumescale = 150
+
+[State 0, PlaySnd] ;what can I say.
+type = PlaySnd
+triggerall = enemynear,name="angous"
+trigger1 = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
+value = 191,0+random%5
+volumescale = 150
+[State 0, PlaySnd] ;what can I say.
+type = PlaySnd
+triggerall = enemynear,name="sahkive"
+trigger1 = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
+value = 192,0+random%4
+volumescale = 150
+[State 0, PlaySnd] ;what can I say.
+type = PlaySnd
+triggerall = enemynear,name="tui"
+trigger1 = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
+value = 193,0+random%5
+volumescale = 150
+[State 0, PlaySnd] ;what can I say.
+type = PlaySnd
+triggerall = enemynear,name="deus"
+trigger1 = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
+value = 194,0+random%2
+volumescale = 150
 
 [State 0, VarSet]
 type = VarSet
@@ -787,7 +922,7 @@ trigger2=enemynear,name!="Roger"
 triggerall = animelem=2
 value = 8, 3
 channel=2
-
+volumescale=50
 [State -3, Win Voices] ;Win
 type = PlaySnd
 trigger1=teamside=1
@@ -796,6 +931,7 @@ trigger2=enemynear,name!="Roger"
 triggerall = animelem=15
 value = 7070, 0
 channel=2
+volumescale=50
 
 ;---------------------------------------------------------------------------
 ; Intro 2
@@ -813,7 +949,7 @@ flag2 = nomusic
 
 [State 0, Explod]
 type = Explod
-trigger1 = time=0
+trigger1 = time=0&& palno !=8
 anim = 191
 ID = 191
 pos = -45,-2
@@ -855,6 +991,16 @@ removeongethit = 0
 type = PlaySnd
 trigger1 = time = 0 && palno = 9
 value = 7615,3
+[State 0, PlaySnd] ;what can I say.
+type = PlaySnd
+trigger1 = time = 0 && palno = 8
+value = 199,0+random%2
+volumescale=125
+[State 0, PlaySnd] ;what can I say.
+type = PlaySnd
+trigger1 = time = 0 && palno = 4
+value = 199,2+random%2
+volumescale=200
 
 [State 0, PlaySnd] ;what can I say.
 type = PlaySnd
@@ -863,29 +1009,53 @@ trigger1 = enemy,name !="Angous"
 trigger2 = enemy,name ="Angous"
 trigger2 = enemy,palno=6
 value = 8000,14+random%2
-volumescale = 50
+volumescale = 100
 [State 0, PlaySnd] ;what can I say.
 type = PlaySnd
 triggerall = palno = 7 &&  time = 40
 trigger1 = enemy,name ="Angous"
 trigger1 = enemy,palno!=6
 value = 8000,14+random%2
-volumescale = 50
+volumescale = 100
 
 [State 0, PlaySnd] ;what can I say.
 type = PlaySnd
-triggerall = enemynear,name!="one"
-triggerall = time = 0 && palno != 9
-triggerall = time = 0 && palno != 7
+triggerall = enemynear,name!="one"&& enemynear,name!="angous"&& enemynear,name!="sahkive"&& enemynear,name!="tui"&& enemynear,name!="deus"
+triggerall = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
 trigger1=teamside=1
 trigger1=enemynear,name!="Roger"
 trigger2=teamside=2
 trigger2=enemynear,name!="Roger"
 trigger3=teamside=2
 trigger3=enemynear,name="Roger"
-trigger3=enemynear,palno!=9&&enemynear,palno!=7
-value = 8000,12+random%2
-volumescale = 40
+trigger3=enemynear,palno!=9&&enemynear,palno!=7&& palno != 8&& palno != 4
+value = 190,0+random%3
+volumescale = 150
+
+[State 0, PlaySnd] ;what can I say.
+type = PlaySnd
+triggerall = enemynear,name="angous"
+trigger1 = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
+value = 191,0+random%5
+volumescale = 150
+[State 0, PlaySnd] ;what can I say.
+type = PlaySnd
+triggerall = enemynear,name="sahkive"
+trigger1 = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
+value = 192,0+random%4
+volumescale = 150
+[State 0, PlaySnd] ;what can I say.
+type = PlaySnd
+triggerall = enemynear,name="tui"
+trigger1 = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
+value = 193,0+random%5
+volumescale = 150
+[State 0, PlaySnd] ;what can I say.
+type = PlaySnd
+triggerall = enemynear,name="deus"
+trigger1 = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
+value = 194,0+random%2
+volumescale = 150
 
 [State 0, VarSet]
 type = VarSet
@@ -984,7 +1154,7 @@ trigger2=enemynear,name!="Roger"
 triggerall = animelem=2
 value = 8, 3
 channel=2
-
+volumescale=50
 [State -3, Win Voices] ;Win
 type = PlaySnd
 trigger1=teamside=1
@@ -993,7 +1163,7 @@ trigger2=enemynear,name!="Roger"
 triggerall = animelem=12
 value = 7070, 0
 channel=2
-
+volumescale=50
 ;---------------------------------------------------------------------------
 ; Intro 3
 [Statedef 193]
@@ -1010,7 +1180,7 @@ flag2 = nomusic
 
 [State 0, Explod]
 type = Explod
-trigger1 = time=0
+trigger1 = time=0&& palno !=8
 anim = 191
 ID = 191
 pos = -45,-2
@@ -1032,6 +1202,16 @@ removeongethit = 0
 type = PlaySnd
 trigger1 = time = 0 && palno = 9
 value = 7615,3
+[State 0, PlaySnd] ;what can I say.
+type = PlaySnd
+trigger1 = time = 0 && palno = 8
+value = 199,0+random%2
+volumescale=125
+[State 0, PlaySnd] ;what can I say.
+type = PlaySnd
+trigger1 = time = 0 && palno = 4
+value = 199,2+random%2
+volumescale=200
 
 [State 0, PlaySnd] ;what can I say.
 type = PlaySnd
@@ -1040,29 +1220,55 @@ trigger1 = enemy,name !="Angous"
 trigger2 = enemy,name ="Angous"
 trigger2 = enemy,palno=6
 value = 8000,14+random%2
-volumescale = 50
+volumescale = 100
+
 [State 0, PlaySnd] ;what can I say.
 type = PlaySnd
 triggerall = palno = 7 &&  time = 40
 trigger1 = enemy,name ="Angous"
 trigger1 = enemy,palno!=6
 value = 8000,14+random%2
-volumescale = 50
+volumescale = 100
+
 
 [State 0, PlaySnd] ;what can I say.
 type = PlaySnd
-triggerall = enemynear,name!="one"
-triggerall = time = 0 && palno != 9
-triggerall = time = 0 && palno != 7
+triggerall = enemynear,name!="one"&& enemynear,name!="angous"&& enemynear,name!="sahkive"&& enemynear,name!="tui"&& enemynear,name!="deus"
+triggerall = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
 trigger1=teamside=1
 trigger1=enemynear,name!="Roger"
 trigger2=teamside=2
 trigger2=enemynear,name!="Roger"
 trigger3=teamside=2
 trigger3=enemynear,name="Roger"
-trigger3=enemynear,palno!=9&&enemynear,palno!=7
-value = 8000,12+random%2
-volumescale = 40
+trigger3=enemynear,palno!=9&&enemynear,palno!=7&& palno != 8&& palno != 4
+value = 190,0+random%3
+volumescale = 150
+
+[State 0, PlaySnd] ;what can I say.
+type = PlaySnd
+triggerall = enemynear,name="angous"
+trigger1 = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
+value = 191,0+random%5
+volumescale = 150
+[State 0, PlaySnd] ;what can I say.
+type = PlaySnd
+triggerall = enemynear,name="sahkive"
+trigger1 = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
+value = 192,0+random%4
+volumescale = 150
+[State 0, PlaySnd] ;what can I say.
+type = PlaySnd
+triggerall = enemynear,name="tui"
+trigger1 = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
+value = 193,0+random%5
+volumescale = 150
+[State 0, PlaySnd] ;what can I say.
+type = PlaySnd
+triggerall = enemynear,name="deus"
+trigger1 = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
+value = 194,0+random%2
+volumescale = 150
 
 [State 0, VarSet]
 type = VarSet
@@ -1161,7 +1367,7 @@ trigger2=enemynear,name!="Roger"
 triggerall = animelem=2
 value = 8, 3
 channel=2
-
+volumescale=50
 [State -3, Win Voices] ;Win
 type = PlaySnd
 trigger1=teamside=1
@@ -1170,6 +1376,7 @@ trigger2=enemynear,name!="Roger"
 triggerall = animelem=14
 value = 7070, 0
 channel=2
+volumescale=50
 
 ;--------------------
 ; KO Scream
@@ -1380,15 +1587,6 @@ v = 43
 value = 0
 ignorehitpause = 1
 
-[State 0, PalFX] ;Magic Pixel Check
-type = PalFX
-trigger1 = life = 1
-time = 2
-add = (80 + 20 + 50 * sin(2 * pi * gametime / 160)),0,0 ;sinadd but manual
-mul = 256,256,256
-sinadd = 50,0,0,120 ;this part doesn't work and it's gonna make me fucking cry holy shit
-invertall = 0
-color = 256
 
 ;4R Lv1 SKD Limiter
 [State 0, RemoveExplod]
@@ -1937,11 +2135,11 @@ value = fvar(6)
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = map(DIE)=1
-value = 7618,0
+value = 9000,0+random%2
 channel = -1
 loop = 0
 persistent = 0
-volumescale=40
+volumescale=75
 ignorehitpause=1
 
 [State 0, VarAdd]

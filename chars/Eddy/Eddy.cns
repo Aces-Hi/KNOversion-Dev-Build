@@ -188,11 +188,22 @@ type = PlaySnd
 triggerall=palno=11
 trigger1 = animelem = 16
 value = 668, 0
+
 [State Eddy Voices]
 type = PlaySnd
 triggerall=palno!=11
+triggerall=enemynear,name!="deus"&&enemynear,name!="akira"&&enemynear,name!="alicia"&&enemynear,name!="crow"
 trigger1 = animelem = 1
 value = 180,0+random%2
+volumescale=150
+
+[State Eddy Voices]
+type = PlaySnd
+triggerall=palno!=11
+triggerall=enemynear,name="deus"||enemynear,name="akira"||enemynear,name="alicia"||enemynear,name="crow"
+trigger1 = animelem = 1
+value = 181,0+random%3
+volumescale=150
 
 [State 200, 2]
 type = PlaySnd
@@ -247,11 +258,22 @@ type = PlaySnd
 triggerall=palno=11
 trigger1 = animelem = 17
 value = 668, 0
+
 [State Eddy Voices]
 type = PlaySnd
 triggerall=palno!=11
+triggerall=enemynear,name!="deus"&&enemynear,name!="akira"&&enemynear,name!="alicia"&&enemynear,name!="crow"
 trigger1 = animelem = 1
 value = 180,0+random%2
+volumescale=150
+
+[State Eddy Voices]
+type = PlaySnd
+triggerall=palno!=11
+triggerall=enemynear,name="deus"||enemynear,name="akira"||enemynear,name="alicia"||enemynear,name="crow"
+trigger1 = animelem = 1
+value = 181,0+random%3
+volumescale=150
 
 [State 200, 2]
 type = PlaySnd
@@ -359,11 +381,22 @@ type = PlaySnd
 triggerall=palno=11
 trigger1 = animelem = 17
 value = 668, 0
+
 [State Eddy Voices]
 type = PlaySnd
 triggerall=palno!=11
+triggerall=enemynear,name!="deus"&&enemynear,name!="akira"&&enemynear,name!="alicia"&&enemynear,name!="crow"
 trigger1 = animelem = 1
 value = 180,0+random%2
+volumescale=150
+
+[State Eddy Voices]
+type = PlaySnd
+triggerall=palno!=11
+triggerall=enemynear,name="deus"||enemynear,name="akira"||enemynear,name="alicia"||enemynear,name="crow"
+trigger1 = animelem = 1
+value = 181,0+random%3
+volumescale=150
 
 [State 200, 2]
 type = PlaySnd
@@ -401,16 +434,42 @@ value = 191+random%3
 [State 0, PlaySnd]
 type = PlaySnd
 triggerall=palno=11
-trigger1 = animelem = 18
+trigger1 = animelem = 17
 value = 666,0
+
 [State Eddy Voices]
 type = PlaySnd
 triggerall=palno!=11
 triggerall = animelem = 17
-trigger1=teamside=1
-trigger2=teamside=2&&(enemy,name!="eddy"||(enemy,name="eddy"&&enemy,palno=11))
+triggerall = enemynear,name!="angous"&&enemynear,name!="deus"
+triggerall = enemynear,name!="jv"&&enemynear,name!="wu"&&enemynear,name!="sahkive"&&enemynear,name!="vile"&&enemynear,name!="dreyvon"&&enemynear,name!="roger"
+trigger1=(enemynear,name!="eddy"||(enemynear,name="eddy"&&enemynear,palno=11))
 value = 190,0+random%4
 
+[State Eddy Voices]
+type = PlaySnd
+triggerall=palno!=11&&time=10
+trigger1 = enemynear,name="angous"
+value = 191,0
+
+[State Eddy Voices]
+type = PlaySnd
+triggerall=palno!=11&&animelem = 17
+trigger1=enemynear,name="eddy"&&enemynear,palno!=11&&teamside=1
+trigger2 = enemynear,name="jv"||enemynear,name="wu"
+value = 192,0+random%2
+
+[State Eddy Voices]
+type = PlaySnd
+triggerall=palno!=11&&animelem = 17
+trigger1 = enemynear,name="deus"
+value = 193,0
+
+[State Eddy Voices]
+type = PlaySnd
+triggerall=palno!=11&&animelem = 17
+trigger1 = enemynear,name="sahkive"||enemynear,name="vile"||enemynear,name="dreyvon"||enemynear,name="roger"
+value = 194,0+random%2
 
 [State 200, 2]
 type = PlaySnd
@@ -473,13 +532,40 @@ type = PlaySnd
 triggerall=palno=11
 trigger1 = time = 30
 value = 666,0
+
 [State Eddy Voices]
 type = PlaySnd
 triggerall=palno!=11
-triggerall = time = 30
-trigger1=teamside=1
-trigger2=teamside=2&&(enemy,name!="eddy"||(enemy,name="eddy"&&enemy,palno=11))
+triggerall = time=30
+triggerall = enemynear,name!="angous"&&enemynear,name!="deus"
+triggerall = enemynear,name!="jv"&&enemynear,name!="wu"&&enemynear,name!="sahkive"&&enemynear,name!="vile"&&enemynear,name!="dreyvon"&&enemynear,name!="roger"
+trigger1=(enemynear,name!="eddy"||(enemynear,name="eddy"&&enemynear,palno=11))
 value = 190,0+random%4
+
+[State Eddy Voices]
+type = PlaySnd
+triggerall=palno!=11&&time=10
+trigger1 = enemynear,name="angous"
+value = 191,0
+
+[State Eddy Voices]
+type = PlaySnd
+triggerall=palno!=11&& time=30
+trigger1=enemynear,name="eddy"&&enemynear,palno!=11&&teamside=1
+trigger2 = enemynear,name="jv"||enemynear,name="wu"
+value = 192,0+random%2
+
+[State Eddy Voices]
+type = PlaySnd
+triggerall=palno!=11&&time=30
+trigger1 = enemynear,name="deus"
+value = 193,0
+
+[State Eddy Voices]
+type = PlaySnd
+triggerall=palno!=11&&time=30
+trigger1 = enemynear,name="sahkive"||enemynear,name="vile"||enemynear,name="dreyvon"||enemynear,name="roger"
+value = 194,0+random%2
 
 [State 191, 1] ;Freeze animation until PreIntro is over
 type = ChangeAnim
@@ -566,13 +652,40 @@ type = PlaySnd
 triggerall=palno=11
 trigger1 = animelem = 1
 value = 666,0
+
 [State Eddy Voices]
 type = PlaySnd
 triggerall=palno!=11
 triggerall = animelem = 1
-trigger1=teamside=1
-trigger2=teamside=2&&(enemy,name!="eddy"||(enemy,name="eddy"&&enemy,palno=11))
+triggerall = enemynear,name!="angous"&&enemynear,name!="deus"
+triggerall = enemynear,name!="jv"&&enemynear,name!="wu"&&enemynear,name!="sahkive"&&enemynear,name!="vile"&&enemynear,name!="dreyvon"&&enemynear,name!="roger"
+trigger1=(enemynear,name!="eddy"||(enemynear,name="eddy"&&enemynear,palno=11))
 value = 190,0+random%4
+
+[State Eddy Voices]
+type = PlaySnd
+triggerall=palno!=11&&time=10
+trigger1 = enemynear,name="angous"
+value = 191,0
+
+[State Eddy Voices]
+type = PlaySnd
+triggerall=palno!=11&&animelem = 1
+trigger1=enemynear,name="eddy"&&enemynear,palno!=11&&teamside=1
+trigger2 = enemynear,name="jv"||enemynear,name="wu"
+value = 192,0+random%2
+
+[State Eddy Voices]
+type = PlaySnd
+triggerall=palno!=11&&animelem = 1
+trigger1 = enemynear,name="deus"
+value = 193,0
+
+[State Eddy Voices]
+type = PlaySnd
+triggerall=palno!=11&&animelem = 1
+trigger1 = enemynear,name="sahkive"||enemynear,name="vile"||enemynear,name="dreyvon"||enemynear,name="roger"
+value = 194,0+random%2
 
 [State 0, VarSet]
 type = VarSet
@@ -812,16 +925,6 @@ ctrl = 0
 
 ;==================================================================================================
 
-[State 0, PalFX] ;Magic Pixel Check
-type = PalFX
-triggerall = roundstate = 2 ;only attack during the round
-trigger1 = life = 1
-time = 2
-add = (80 + 20 + 50 * sin(2 * pi * gametime / 160)),0,0 ;sinadd but manual
-mul = 256,256,256
-sinadd = 50,0,0,120 ;this part doesn't work and it's gonna make me fucking cry holy shit
-invertall = 0
-color = 256
 
 [State -2, Dampener] 
 type = VarSet 

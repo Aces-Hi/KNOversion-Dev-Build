@@ -187,6 +187,12 @@ ctrl = 0
 anim = 1
 velset = 0,0
 
+[State -3, Win Announcer]
+type = PlaySnd
+triggerall=teammode!=Tag
+trigger1 = time=0
+value = 7410, 1
+
 [State 0, AssertSpecial]
 type = AssertSpecial
 trigger1 = 1
@@ -245,9 +251,9 @@ trigger2 = map(specialoutro)=1
 trigger2 = palno=5||palno=6||palno=7||palno=8||palno=9
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall = time=5
-triggerall=enemynear,name!="Roger"&&enemynear,name!="Vile"&&enemynear,name!="JoJo"
-value = 170, (0+(Random%5))
+triggerall = time=30
+triggerall=enemynear,name!="Roger"&&enemynear,name!="Vile"&&enemynear,name!="JoJo"&&enemynear,name!="Dreyvon"&&enemynear,name!="JV"&&enemynear,name!="Akira"&&enemynear,name!="Alicia"&&enemynear,name!="Crow"
+value = 170, (1+(Random%5))
 volumescale=200
 channel=7
 [State Voice From Above]
@@ -257,8 +263,8 @@ trigger2 = map(specialoutro)=1
 trigger2 = palno=5||palno=6||palno=7||palno=8||palno=9
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall = time=5
-triggerall=enemynear,name="Roger"||enemynear,name="Alicia"
+triggerall = time=30
+triggerall=enemynear,name="Roger"||enemynear,name="Dreyvon"
 value = 170, (0+(Random%6))
 volumescale=200
 channel=7
@@ -269,9 +275,9 @@ trigger2 = map(specialoutro)=1
 trigger2 = palno=5||palno=6||palno=7||palno=8||palno=9
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall = time=5
-triggerall=enemynear,name="Vile"
-value = 170, (5+(Random%3))
+triggerall = time=30
+triggerall=enemynear,name="Alicia"||enemynear,name="Akira"||enemynear,name="JV"||enemynear,name="Crow"
+value = 170, 6
 volumescale=200
 channel=7
 [State Voice From Above]
@@ -281,9 +287,9 @@ trigger2 = map(specialoutro)=1
 trigger2 = palno=5||palno=6||palno=7||palno=8||palno=9
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall = time=5
-triggerall=enemynear,name="JoJo"
-value = 170, (6+(Random%2))
+triggerall = time=30
+triggerall=enemynear,name="JoJo"||enemynear,name="Vile"
+value = 170, (7+(Random%2))
 volumescale=200
 channel=7
 
@@ -293,7 +299,7 @@ trigger1 = map(specialoutro)=0
 trigger2 = map(specialoutro)=1
 trigger2 = palno=5||palno=6||palno=7||palno=8||palno=9
 triggerall=map(december)=0
-triggerall= time=5
+triggerall= time=30
 triggerall=enemy,name="Deus"
 value = 177, (0+(Random%3))
 volumescale=200
@@ -338,7 +344,7 @@ removeonchangestate=1
 [State Voice From Above]
 type = PlaySnd
 trigger1 = map(specialoutro)=1
-trigger1 = time=15
+trigger1 = time=25
 trigger1 = palno=4
 value = 171, (0+(Random%2))
 volumescale=200
@@ -456,7 +462,7 @@ removeonchangestate=1
 [State Voice From Above]
 type = PlaySnd
 trigger1 = map(specialoutro)=1
-trigger1 = time=15
+trigger1 = time=25
 trigger1 = palno=10
 value = 172, (0+(Random%2))
 volumescale=200
@@ -561,7 +567,7 @@ removeonchangestate=1
 [State Voice From Above]
 type = PlaySnd
 trigger1 = map(specialoutro)=1
-trigger1 = time=15
+trigger1 = time=25
 trigger1 = palno=11
 value = 173, (0+(Random%2))
 volumescale=200
@@ -580,11 +586,6 @@ trigger1 = time=15
 trigger1 = map(december)=1
 y = -10
 
-[State -3, Win Announcer]
-type = PlaySnd
-trigger1 = time=0
-value = 7410, (0+(Random%2))
-
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = Roundstate > 3
@@ -596,6 +597,11 @@ type = S
 ctrl = 0
 anim = 3100
 velset = 0,0
+
+[State -3, Win Announcer]
+type = PlaySnd
+trigger1 = time=0
+value = 7410, 1
 
 [State 0, PlaySnd]
 type = PlaySnd
@@ -765,11 +771,6 @@ flag2 = noFG
 flag3 = noBG
 ignorehitpause=1
 
-[State -3, Win Announcer]
-type = PlaySnd
-trigger1 = time=0
-value = 7410, (0+(Random%2))
-
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = Roundstate > 3
@@ -793,6 +794,16 @@ trigger1 = time=5
 trigger1 = roundstate=2
 value = 185,0+random%5
 volumescale=200
+channel=7
+lowpriority=1
+
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=1
+trigger1 = time=5
+trigger1 = roundstate=2
+value = 1225,1
+volumescale=150
 channel=7
 lowpriority=1
 
@@ -852,8 +863,8 @@ value = 194
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name!="Angous"&&player(map(enemyteamlead)),name!="Eddy"&&player(map(enemyteamlead)),name!="One"
-triggerall=player(map(enemyteamlead)),name!="Roger"&&player(map(enemyteamlead)),name!="Vile"&&player(map(enemyteamlead)),name!="Sahkive"&&player(map(enemyteamlead)),name!="JoJo"
+triggerall=player(map(enemyteamlead)),name!="Angous"&&player(map(enemyteamlead)),name!="Eddy"&&player(map(enemyteamlead)),name!="One"&&player(map(enemyteamlead)),name!="Roger"
+triggerall=player(map(enemyteamlead)),name!="Roger"&&player(map(enemyteamlead)),name!="Vile"&&player(map(enemyteamlead)),name!="Sahkive"&&player(map(enemyteamlead)),name!="JoJo"&&player(map(enemyteamlead)),name!="Dreyvon"&&player(map(enemyteamlead)),name!="Alicia"
 triggerall=player(map(enemyteamlead)),name!="Arzon"&&player(map(enemyteamlead)),name!="JV"&&player(map(enemyteamlead)),name!="Alicia"&&player(map(enemyteamlead)),name!="Crow"&&player(map(enemyteamlead)),name!="Akira"
 trigger1 = time=45
 value = 190, (1+(Random%5))
@@ -875,19 +886,9 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Sahkive"
+triggerall=player(map(enemyteamlead)),name="Sahkive"||player(map(enemyteamlead)),name="Dreyvon"
 trigger1 = time=45
 value = 190, (1+(Random%6))
-volumescale=175
-channel=7
-lowpriority=1
-[State Voice From Above]
-type = PlaySnd
-triggerall=map(december)=0
-triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Roger"
-trigger1 = time=45
-value = 190, (1+(Random%7))
 volumescale=175
 channel=7
 lowpriority=1
@@ -917,9 +918,9 @@ type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="Arzon"
-trigger1 = time=30
+trigger1 = time=0
 value = 191, (0+(Random%2))
-volumescale=175
+volumescale=200
 channel=7
 lowpriority=1
 [State Voice From Above]
@@ -928,7 +929,7 @@ triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="JV"
 trigger1 = time=45
-value = 192, 0
+value = 192, (0+(Random%2))
 volumescale=175
 channel=7
 lowpriority=1
@@ -960,6 +961,15 @@ triggerall=player(map(enemyteamlead)),name="Akira"
 trigger1 = time=45
 value = 195, (0+(Random%2))
 volumescale=175
+channel=7
+lowpriority=1
+
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=1
+trigger1 = time=0
+value = 1225,0
+volumescale=200
 channel=7
 lowpriority=1
 
@@ -1088,6 +1098,23 @@ flag = globalnoshadow
 flag2 = noFG
 flag3 = noBG
 ignorehitpause=1
+[State 650, 2]
+type = Explod
+trigger1 = time=0
+trigger1 = map(december)
+anim = 3112
+pos = 0,0
+id = 3112
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = -9
+ownpal = 0
+scale=1,1
+ontop=0
+facing=1
+removetime=170
+removeonchangestate=1
 
 [State 191, 3] ;Change to stand state when done
 type = ChangeState
@@ -1113,8 +1140,8 @@ value = 194
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name!="Angous"&&player(map(enemyteamlead)),name!="Eddy"&&player(map(enemyteamlead)),name!="One"
-triggerall=player(map(enemyteamlead)),name!="Roger"&&player(map(enemyteamlead)),name!="Vile"&&player(map(enemyteamlead)),name!="Sahkive"&&player(map(enemyteamlead)),name!="JoJo"
+triggerall=player(map(enemyteamlead)),name!="Angous"&&player(map(enemyteamlead)),name!="Eddy"&&player(map(enemyteamlead)),name!="One"&&player(map(enemyteamlead)),name!="Roger"
+triggerall=player(map(enemyteamlead)),name!="Roger"&&player(map(enemyteamlead)),name!="Vile"&&player(map(enemyteamlead)),name!="Sahkive"&&player(map(enemyteamlead)),name!="JoJo"&&player(map(enemyteamlead)),name!="Dreyvon"&&player(map(enemyteamlead)),name!="Alicia"
 triggerall=player(map(enemyteamlead)),name!="Arzon"&&player(map(enemyteamlead)),name!="JV"&&player(map(enemyteamlead)),name!="Alicia"&&player(map(enemyteamlead)),name!="Crow"&&player(map(enemyteamlead)),name!="Akira"
 trigger1 = time=60
 value = 190, (1+(Random%5))
@@ -1136,19 +1163,9 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Sahkive"
+triggerall=player(map(enemyteamlead)),name="Sahkive"||player(map(enemyteamlead)),name="Dreyvon"
 trigger1 = time=60
 value = 190, (1+(Random%6))
-volumescale=175
-channel=7
-lowpriority=1
-[State Voice From Above]
-type = PlaySnd
-triggerall=map(december)=0
-triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Roger"
-trigger1 = time=60
-value = 190, (1+(Random%7))
 volumescale=175
 channel=7
 lowpriority=1
@@ -1178,9 +1195,9 @@ type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="Arzon"
-trigger1 = time=60
+trigger1 = time=0
 value = 191, (0+(Random%2))
-volumescale=175
+volumescale=200
 channel=7
 lowpriority=1
 [State Voice From Above]
@@ -1189,7 +1206,7 @@ triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="JV"
 trigger1 = time=60
-value = 192, 0
+value = 192, (0+(Random%2))
 volumescale=175
 channel=7
 lowpriority=1
@@ -1233,6 +1250,15 @@ trigger1 = teamside=1
 trigger1 = time=60
 value = 77, (0+(Random%4))
 volumescale=175
+channel=7
+lowpriority=1
+
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=1
+trigger1 = time=0
+value = 1225,0
+volumescale=200
 channel=7
 lowpriority=1
 
@@ -1512,14 +1538,14 @@ persistent=0
 type = PlaySnd
 trigger1 =time=20
 value = 1300,1
-volumescale = 100
+volumescale = 50
 persistent=0
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time=25
 trigger2 = time=35
 value = 1800,3
-volumescale = 175
+volumescale = 50
 ignorehitpause=1
 
 
@@ -1846,8 +1872,8 @@ value = 194
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name!="Angous"&&player(map(enemyteamlead)),name!="Eddy"&&player(map(enemyteamlead)),name!="One"
-triggerall=player(map(enemyteamlead)),name!="Roger"&&player(map(enemyteamlead)),name!="Vile"&&player(map(enemyteamlead)),name!="Sahkive"&&player(map(enemyteamlead)),name!="JoJo"
+triggerall=player(map(enemyteamlead)),name!="Angous"&&player(map(enemyteamlead)),name!="Eddy"&&player(map(enemyteamlead)),name!="One"&&player(map(enemyteamlead)),name!="Roger"
+triggerall=player(map(enemyteamlead)),name!="Roger"&&player(map(enemyteamlead)),name!="Vile"&&player(map(enemyteamlead)),name!="Sahkive"&&player(map(enemyteamlead)),name!="JoJo"&&player(map(enemyteamlead)),name!="Dreyvon"&&player(map(enemyteamlead)),name!="Alicia"
 triggerall=player(map(enemyteamlead)),name!="Arzon"&&player(map(enemyteamlead)),name!="JV"&&player(map(enemyteamlead)),name!="Alicia"&&player(map(enemyteamlead)),name!="Crow"&&player(map(enemyteamlead)),name!="Akira"
 trigger1 = time=5
 value = 190, (1+(Random%5))
@@ -1869,19 +1895,9 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Sahkive"
+triggerall=player(map(enemyteamlead)),name="Sahkive"||player(map(enemyteamlead)),name="Dreyvon"
 trigger1 = time=5
 value = 190, (1+(Random%6))
-volumescale=175
-channel=7
-lowpriority=1
-[State Voice From Above]
-type = PlaySnd
-triggerall=map(december)=0
-triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Roger"
-trigger1 = time=5
-value = 190, (1+(Random%7))
 volumescale=175
 channel=7
 lowpriority=1
@@ -1911,9 +1927,9 @@ type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="Arzon"
-trigger1 = time=5
+trigger1 = time=0
 value = 191, (0+(Random%2))
-volumescale=175
+volumescale=200
 channel=7
 lowpriority=1
 [State Voice From Above]
@@ -1922,7 +1938,7 @@ triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="JV"
 trigger1 = time=5
-value = 192, 0
+value = 192, (0+(Random%2))
 volumescale=175
 channel=7
 lowpriority=1
@@ -1966,6 +1982,15 @@ trigger1 = teamside=1
 trigger1 = time=60
 value = 77, (0+(Random%4))
 volumescale=175
+channel=7
+lowpriority=1
+
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=1
+trigger1 = time=0
+value = 1225,0
+volumescale=200
 channel=7
 lowpriority=1
 
@@ -2145,6 +2170,15 @@ value = 1400,1
 volumescale = 200
 persistent=0
 
+[State Voice From Above]
+type = PlaySnd
+triggerall=map(december)=1
+trigger1 = time=0
+value = 1225,0
+volumescale=200
+channel=7
+lowpriority=1
+
 [State 650, 2]
 type = Explod
 trigger1 = time=0&&teamside=1
@@ -2159,7 +2193,14 @@ ownpal = 0
 scale=.84,.84
 ontop=0
 facing=1
+removetime = -1
+[State 0, ModifyExplod]
+type = ModifyExplod
+trigger1 = time=127&&teamside=1
+ID = 194
+anim = 155
 removetime = -2
+
 [State 650, 2]
 type = Explod
 trigger1 = time=0&&teamside=2
@@ -2175,6 +2216,13 @@ scale=.84,.84
 ontop=0
 facing=-1
 removetime = -2
+[State 0, ModifyExplod]
+type = ModifyExplod
+trigger1 = enemy,time=127&&teamside=2
+ID = 194
+anim = 156
+removetime = -2
+
 [State 0, ChangeAnim]
 type = ChangeAnim
 Trigger1 = time=137

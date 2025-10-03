@@ -177,7 +177,7 @@ value = 21
 
 
 
-----------
+;----------
 ;B Air Dash
 [Statedef 903]
 type    = A
@@ -198,10 +198,10 @@ v =  45   ;fv =
 value = -1
 
 [State 0, VarAdd]
-type = VarAdd
+type = MapSet
 trigger1 = time =0
-v = 29     ;fv = 
-value = -1
+map = "airdash"
+value = 1
 
 [State 0, VelSet]
 type = VelSet
@@ -210,17 +210,17 @@ x = -3
 
 [State 0, VelSet]
 type = VelSet
-trigger1 = time<3
+trigger1 = animelemtime(7)<0
 trigger1 = command!="holdup"&&command!="holddown"
 y = 0
 [State 0, VelSet]
 type = VelSet
-trigger1 = time<3
+trigger1 = animelemtime(7)<0
 trigger1 = command="holdup"
-y = -3
+y = -4
 [State 0, VelSet]
 type = VelSet
-trigger1 = time<3
+trigger1 = animelemtime(7)<0
 trigger1 = command="holddown"
 y = 5
 
@@ -300,10 +300,10 @@ v =  45   ;fv =
 value = -1
 
 [State 0, VarAdd]
-type = VarAdd
+type = MapSet
 trigger1 = time =0
-v = 29     ;fv = 
-value = -1
+map = "airdash"
+value = 1
 
 [State 0]
 type = MapSet
@@ -1316,6 +1316,11 @@ value = -1
 ;ignorehitpause = 
 ;persistent = 
 
+[State 0, VarAdd]
+type = MapSet
+trigger1 = time =0
+map = "djump"
+value = 1
 
 [State 45, 1]
 type = ChangeAnim

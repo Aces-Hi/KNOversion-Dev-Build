@@ -169,7 +169,7 @@ sprpriority = 2
 type = PlaySnd
 triggerall=teammode!=Tag
 trigger1 = time=0
-value = 7410, (0+(Random%2))
+value = 7410, 0
 [State -3, Win Announcer]
 type = PlaySnd
 triggerall=teammode!=Tag
@@ -183,22 +183,51 @@ flag = Nobardisplay
 
 [State -3, Angous Voices]
 type = PlaySnd
-triggerall=palno!=6
-trigger1 = enemynear,name!="Arzon"
+triggerall=palno!=8
+trigger1 = enemynear,name!="Arzon"&&enemynear,name!="Sahkive"&&enemynear,name!="Tui"
+trigger1 = enemynear,name!="One"&&enemynear,name!="JV"&&enemynear,name!="Deus"
 trigger1 = animelem = 1
-value = 180, (0+(Random%3))
+value = 180, (0+(Random%4))
 volumescale = 150
 [State -3, Angous Voices]
 type = PlaySnd
-triggerall=palno!=6
+triggerall=palno!=8
 trigger1 = enemynear,name="Arzon"
 trigger1 = animelem = 1
 value = 180,0
 volumescale = 150
+[State -3, Angous Voices]
+type = PlaySnd
+triggerall=palno!=8
+trigger1 = enemynear,name="Sahkive"
+trigger1 = animelem = 1
+value = 181, (0+(Random%2))
+volumescale = 200
+[State -3, Angous Voices]
+type = PlaySnd
+triggerall=palno!=8
+trigger1 = enemynear,name="Dreyvon"
+trigger1 = animelem = 1
+value = 180,4
+volumescale = 150
+[State -3, Angous Voices]
+type = PlaySnd
+triggerall=palno!=8
+trigger1 = enemynear,name="One"||enemynear,name="JV"||enemynear,name="Deus"
+trigger1 = animelem = 1
+value = 182, (0+(Random%2))
+volumescale = 150
+[State -3, Angous Voices]
+type = PlaySnd
+triggerall=palno!=8
+trigger1 = enemynear,name="Tui"
+trigger1 = animelem = 1
+value = 183, (0+(Random%2))
+volumescale = 150
 
 [State -3, Angous Voices]
 type = PlaySnd
-triggerall=palno=6
+triggerall=palno=8
 trigger1 = time=0
 value = 3013,10
 
@@ -216,7 +245,7 @@ sprpriority = 2
 type = PlaySnd
 triggerall=teammode!=Tag
 trigger1 = time=0
-value = 7410, (0+(Random%2))
+value = 7410, 0
 [State -3, Win Announcer]
 type = PlaySnd
 triggerall=teammode!=Tag
@@ -237,22 +266,51 @@ freq = 120   ;A frequency of 180 shakes the screen rapidly
 
 [State -3, Angous Voices]
 type = PlaySnd
-triggerall=palno!=6
-trigger1 = enemynear,name!="Arzon"
+triggerall=palno!=8
+trigger1 = enemynear,name!="Arzon"&&enemynear,name!="Sahkive"&&enemynear,name!="Tui"
+trigger1 = enemynear,name!="One"&&enemynear,name!="JV"&&enemynear,name!="Deus"
 trigger1 = animelem = 1
-value = 180, (0+(Random%3))
+value = 180, (0+(Random%4))
 volumescale = 150
 [State -3, Angous Voices]
 type = PlaySnd
-triggerall=palno!=6
+triggerall=palno!=8
 trigger1 = enemynear,name="Arzon"
 trigger1 = animelem = 1
 value = 180,0
 volumescale = 150
+[State -3, Angous Voices]
+type = PlaySnd
+triggerall=palno!=8
+trigger1 = enemynear,name="Sahkive"
+trigger1 = animelem = 1
+value = 181, (0+(Random%2))
+volumescale = 200
+[State -3, Angous Voices]
+type = PlaySnd
+triggerall=palno!=8
+trigger1 = enemynear,name="Dreyvon"
+trigger1 = animelem = 1
+value = 180,4
+volumescale = 150
+[State -3, Angous Voices]
+type = PlaySnd
+triggerall=palno!=8
+trigger1 = enemynear,name="One"||enemynear,name="JV"||enemynear,name="Deus"
+trigger1 = animelem = 1
+value = 182, (0+(Random%2))
+volumescale = 150
+[State -3, Angous Voices]
+type = PlaySnd
+triggerall=palno!=8
+trigger1 = enemynear,name="Tui"
+trigger1 = animelem = 1
+value = 183, (0+(Random%2))
+volumescale = 150
 
 [State -3, Angous Voices]
 type = PlaySnd
-triggerall=palno=6
+triggerall=palno=8
 trigger1 = time=0
 value = 3013,10
 
@@ -341,7 +399,7 @@ sprpriority = 2
 type = PlaySnd
 triggerall=teammode!=Tag
 trigger1 = time=0
-value = 7410, (0+(Random%2))
+value = 7410, 0
 [State -3, Win Announcer]
 type = PlaySnd
 triggerall=teammode!=Tag
@@ -355,22 +413,51 @@ flag = Nobardisplay
 
 [State -3, Angous Voices]
 type = PlaySnd
-triggerall=palno!=6
-trigger1 = enemynear,name!="Arzon"
+triggerall=palno!=8
+trigger1 = enemynear,name!="Arzon"&&enemynear,name!="Sahkive"&&enemynear,name!="Tui"
+trigger1 = enemynear,name!="One"&&enemynear,name!="JV"&&enemynear,name!="Deus"
 trigger1 = animelem = 1
-value = 180, (0+(Random%3))
+value = 180, (0+(Random%4))
 volumescale = 150
 [State -3, Angous Voices]
 type = PlaySnd
-triggerall=palno!=6
+triggerall=palno!=8
 trigger1 = enemynear,name="Arzon"
 trigger1 = animelem = 1
 value = 180,0
 volumescale = 150
+[State -3, Angous Voices]
+type = PlaySnd
+triggerall=palno!=8
+trigger1 = enemynear,name="Sahkive"
+trigger1 = animelem = 1
+value = 181, (0+(Random%2))
+volumescale = 200
+[State -3, Angous Voices]
+type = PlaySnd
+triggerall=palno!=8
+trigger1 = enemynear,name="Dreyvon"
+trigger1 = animelem = 1
+value = 180,4
+volumescale = 150
+[State -3, Angous Voices]
+type = PlaySnd
+triggerall=palno!=8
+trigger1 = enemynear,name="One"||enemynear,name="JV"||enemynear,name="Deus"
+trigger1 = animelem = 1
+value = 182, (0+(Random%2))
+volumescale = 150
+[State -3, Angous Voices]
+type = PlaySnd
+triggerall=palno!=8
+trigger1 = enemynear,name="Tui"
+trigger1 = animelem = 1
+value = 183, (0+(Random%2))
+volumescale = 150
 
 [State -3, Angous Voices]
 type = PlaySnd
-triggerall=palno=6
+triggerall=palno=8
 trigger1 = time=0
 value = 3013,10
 
@@ -458,17 +545,24 @@ flag = Nobardisplay
 
 [State -3, Voices]
 type = PlaySnd
-triggerall=palno!=6
+triggerall=palno!=8
 triggerall = animelem = 9
+triggerall = enemy,name != "Roger"&&enemynear,name != "eddy"
 trigger1 = enemy,name != "Angous"
-trigger1 = enemy,name != "Roger"
 trigger2 = teamside = 1
 trigger2 = enemy,name = "Angous"
 trigger3=time=120
 trigger3 = enemynear,name = "Sahkive"
-trigger4 = enemy,name = "Roger"
-trigger4 = enemy,palno != 7 
 value = 190, (0+(Random%4))
+volumescale=150
+
+[State -3, Voices]
+type=playsnd
+triggerall=palno!=8
+triggerall = animtime=0
+trigger1 = enemy,name = "Roger"
+trigger1 = enemy,palno != 7 
+value = 193, (0+(Random%2))
 volumescale=150
 
 [State -3, Voices]
@@ -476,13 +570,30 @@ type = PlaySnd
 trigger1 = time=0
 trigger1 = enemy,name = "Roger"
 trigger1 = enemy,palno = 7 
-triggerall=palno!=6
+triggerall=palno!=8
 value = 190, 1
+volumescale=150
+
+[State -3, Voices]
+type=playsnd
+triggerall=palno!=8
+triggerall = time=90
+trigger1 = enemynear,name = "eddy"
+trigger1 = enemynear,palno != 11
+value = 194, (0+(Random%2))
+volumescale=200
+[State -3, Voices]
+type=playsnd
+triggerall=palno!=8
+triggerall = animelem = 9
+trigger1 = enemynear,name = "eddy"
+trigger1 = enemynear,palno = 11
+value = 190, (0+(Random%4))
 volumescale=150
 
 [State -3, Gabe Voices]
 type = PlaySnd
-triggerall=palno=6
+triggerall=palno=8
 trigger1 = animelem = 11
 trigger2=time=120
 trigger2 = enemynear,name = "Sahkive"
@@ -514,15 +625,24 @@ flag2 = nomusic
 
 [State -3, Voices]
 type = PlaySnd
-triggerall=palno!=6
-triggerall = animelem = 2
+triggerall=palno!=8
+triggerall = animelem = 9
+triggerall = enemy,name != "Roger"&&enemynear,name != "eddy"
 trigger1 = enemy,name != "Angous"
-trigger1 = enemy,name != "Roger"
 trigger2 = teamside = 1
 trigger2 = enemy,name = "Angous"
-trigger3 = enemy,name = "Roger"
-trigger3 = enemy,palno != 7 
+trigger3=time=120
+trigger3 = enemynear,name = "Sahkive"
 value = 190, (0+(Random%4))
+volumescale=150
+
+[State -3, Voices]
+type=playsnd
+triggerall=palno!=8
+triggerall = animtime=0
+trigger1 = enemy,name = "Roger"
+trigger1 = enemy,palno != 7 
+value = 193, (0+(Random%2))
 volumescale=150
 
 [State -3, Voices]
@@ -530,13 +650,30 @@ type = PlaySnd
 trigger1 = time=0
 trigger1 = enemy,name = "Roger"
 trigger1 = enemy,palno = 7 
-triggerall=palno!=6
+triggerall=palno!=8
 value = 190, 1
+volumescale=150
+
+[State -3, Voices]
+type=playsnd
+triggerall=palno!=8
+triggerall = time=90
+trigger1 = enemynear,name = "eddy"
+trigger1 = enemynear,palno != 11
+value = 194, (0+(Random%2))
+volumescale=200
+[State -3, Voices]
+type=playsnd
+triggerall=palno!=8
+triggerall = animelem = 9
+trigger1 = enemynear,name = "eddy"
+trigger1 = enemynear,palno = 11
+value = 190, (0+(Random%4))
 volumescale=150
 
 [State -3, Gabe Voices]
 type = PlaySnd
-triggerall=palno=6
+triggerall=palno=8
 trigger1 = time=0
 value = 3013,8
 
@@ -584,15 +721,24 @@ flag2 = nomusic
 
 [State -3, Voices]
 type = PlaySnd
-triggerall=palno!=6
-triggerall = animelem = 20
+triggerall=palno!=8
+triggerall = animelem = 9
+triggerall = enemy,name != "Roger"&&enemynear,name != "eddy"
 trigger1 = enemy,name != "Angous"
-trigger1 = enemy,name != "Roger"
 trigger2 = teamside = 1
 trigger2 = enemy,name = "Angous"
-trigger3 = enemy,name = "Roger"
-trigger3 = enemy,palno != 7 
+trigger3=time=120
+trigger3 = enemynear,name = "Sahkive"
 value = 190, (0+(Random%4))
+volumescale=150
+
+[State -3, Voices]
+type=playsnd
+triggerall=palno!=8
+triggerall = animtime=0
+trigger1 = enemy,name = "Roger"
+trigger1 = enemy,palno != 7 
+value = 193, (0+(Random%2))
 volumescale=150
 
 [State -3, Voices]
@@ -600,13 +746,30 @@ type = PlaySnd
 trigger1 = time=0
 trigger1 = enemy,name = "Roger"
 trigger1 = enemy,palno = 7 
-triggerall=palno!=6
+triggerall=palno!=8
 value = 190, 1
+volumescale=150
+
+[State -3, Voices]
+type=playsnd
+triggerall=palno!=8
+triggerall = time=90
+trigger1 = enemynear,name = "eddy"
+trigger1 = enemynear,palno != 11
+value = 194, (0+(Random%2))
+volumescale=200
+[State -3, Voices]
+type=playsnd
+triggerall=palno!=8
+triggerall = animelem = 9
+trigger1 = enemynear,name = "eddy"
+trigger1 = enemynear,palno = 11
+value = 190, (0+(Random%4))
 volumescale=150
 
 [State -3, Gabe Voices]
 type = PlaySnd
-triggerall=palno=6
+triggerall=palno=8
 trigger1 = animelem =1
 value = 3013,8
 
@@ -738,14 +901,14 @@ sprpriority = 2
 
 [State -3, Voices] ;Win
 type = PlaySnd
-triggerall=palno!=6
+triggerall=palno!=8
 trigger1 = time=0
 value = 190, (1+(Random%2))
 volumescale=150
 
 [State -3, Voices] ;Win
 type = PlaySnd
-triggerall=palno=6
+triggerall=palno=8
 trigger1 = time=0
 value = 3013,9
 
@@ -812,8 +975,8 @@ trigger1 = animtime=0
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "intro %f meter %f lead %f enemy %f nj %f"
-params = map(moveintro),map(meter),map(teamlead),map(enemyteamlead),map(noblockjump)
+text = "intro %f meter %f lead %f enemy %f nj %f arm %f"
+params = map(moveintro),map(meter),map(teamlead),map(enemyteamlead),map(noblockjump),map(armed)
 ignorehitpause = 1
 
 ;==================================================================================================
@@ -1062,16 +1225,6 @@ type = RemoveExplod
 trigger1 = !numtarget
 id = 90102
 
-[State 0, PalFX] ;Magic Pixel Check
-type = PalFX
-trigger1 = life = 1
-time = 2
-add = (80 + 20 + 50 * sin(2 * pi * gametime / 160)),0,0 ;sinadd but manual
-mul = 256,256,256
-sinadd = 50,0,0,120 ;this part doesn't work and it's gonna make me fucking cry holy shit
-invertall = 0
-color = 256
-
 [State 0, VarSet]
 type = VarSet
 trigger1 = 1
@@ -1172,7 +1325,7 @@ loop = 1
 type = PlayBgm
 triggerall=enemynear,var(28)>0
 triggerall=RoundType=3
-triggerall = palno = 5
+triggerall = palno = 9
 triggerall=enemynear,palno!=12
 trigger1=animelem=4
 trigger1=stateno=3010
@@ -1184,7 +1337,7 @@ loop = 1
 type = PlayBgm
 triggerall=enemynear,var(28)=0
 triggerall=RoundType=3
-triggerall = palno = 5
+triggerall = palno = 9
 trigger1=animelem=4
 trigger1=stateno=3010
 ignorehitpause=1
@@ -1850,7 +2003,7 @@ value = fvar(6)
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = map(DIE)=1
-trigger1 = palno!=6
+trigger1 = palno!=8
 value = 9000,0+(random%4)
 channel = -1
 loop = 0
@@ -1860,7 +2013,7 @@ ignorehitpause=1
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = map(DIE)=1
-trigger1 = palno=6
+trigger1 = palno=8
 value = 3013,5+(random%3)
 channel = -1
 loop = 0
@@ -1948,6 +2101,13 @@ value = 0
 type = VarSet
 trigger1 = combocount=0
 v = 39  
+value = 0
+
+[State 0, VarSet]
+type = MapSet
+trigger1 = combocount=0
+trigger1 = stateno!=[3000,3010]
+map="armed" 
 value = 0
 
 [State 0, VarSet]

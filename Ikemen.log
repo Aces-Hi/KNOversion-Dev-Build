@@ -1,5 +1,5 @@
-.\external\script\start.lua:1403: data/common1.cns:9222:
-Invalid data: *
+.\external\script\start.lua:1403: chars\Roger/Roger.cns:697:
+Missing trigger1
 stack traceback:
 	[G]: in function 'game'
 	.\external\script\start.lua:1403: in function 'f_game'

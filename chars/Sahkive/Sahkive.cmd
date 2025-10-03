@@ -55,14 +55,14 @@ value = 45
 triggerall = statetype = A 
 triggerall = command = "holdupb"
 triggerall = stateno!=45 && stateno!=46 && stateno!= 434 && (stateno!=[4000,4099])
-triggerall = var(45)>0
-;triggerall = var(29)>0
-trigger1 = ctrl && stateno!=45 && stateno!=46 && stateno!=50 && stateno!=40 && stateno!= 434
+triggerall = map(djump)=0
+triggerall = map(airdash)=0
+trigger1 = ctrl && stateno!=45 && stateno!=46 && stateno!=50 && stateno!=40 && stateno!= 434&& stateno!= 903
 trigger2 = movecontact  && enemynear, movetype = H
 trigger2 = hitdefattr = A, NA
 trigger3 =  stateno=45 || stateno=46|| stateno=50
 trigger3 = vel y>.1
-
+trigger4 = stateno= 903&&animelemtime(7)<0
 ;---------------------------------------------------------------------------
 ;Aerial Dash
 [State -1, Airdash]
@@ -73,7 +73,8 @@ triggerall = command != "holdback"
 trigger1 = statetype = A
 trigger1 = ctrl
 triggerall = stateno!=904
-triggerall = var(29)>0
+triggerall = map(djump)=0
+triggerall = map(airdash)=0
 triggerall = (pos y<-30 && vel y < 0) || (vel y >=0)
 ;Aerial Backdash
 [State -1, Air Backdash]
@@ -84,7 +85,8 @@ triggerall = command = "holdback"
 trigger1 = statetype = A
 trigger1 = ctrl
 triggerall = stateno!=903
-triggerall = var(29)>0
+triggerall = map(djump)=0
+triggerall = map(airdash)=0
 triggerall = (pos y<-30 && vel y < 0) || (vel y >=0)
 
 ;---------------------------------------------------------------------------

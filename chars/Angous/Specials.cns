@@ -3872,7 +3872,12 @@ ctrl = 0
 anim =10323
 velset = 0,0 
 sprpriority = 2
-facep2 = 1
+facep2 = 0
+
+[State 0, CtrlSet]
+type = CtrlSet
+trigger1 = combocount>0
+value = 1
 
 [State 0, Explod]
 type = Explod

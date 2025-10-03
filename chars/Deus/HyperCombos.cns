@@ -1780,6 +1780,41 @@ ground.cornerpush.veloff=0
 fall = 1
 air.fall=1
 getpower = 0
+[State 200, 1]
+type = HitDef 
+p2facing = -1
+trigger1 = time=141
+attr = S, HA
+animtype  = Hard
+air.animtype = back
+damage = 40, 10
+hitflag = MAFD
+guardflag = MA
+pausetime = 1,12
+guard.pausetime=1,1
+sparkno = 2
+sparkxy = -15,-45
+hitsound   = 5,3
+guardsound = S300, 2
+ground.type = trip
+ground.slidetime = 12
+ground.hittime  = ceil(cond(fvar(15) *40 < 9, 9, fvar(15) * 40))
+air.hittime  = ceil(cond(fvar(15) *40 < 15, 15, fvar(15) * 40))
+down.hittime = ceil(cond(fvar(15) *40 < 15, 15, fvar(15) * 40))
+ground.velocity = 20,-3
+air.velocity = 20,-3
+envshake.time = 12
+envshake.freq = 90
+envshake.ampl = 3
+envshake.phase = 1
+guard.hittime = 5
+guard.slidetime = 1
+guard.ctrltime = 5
+guard.velocity = 1
+ground.cornerpush.veloff=0
+fall = 1
+air.fall=1
+getpower = 0
 
 ;=======================================
 [State 0, PlaySnd]

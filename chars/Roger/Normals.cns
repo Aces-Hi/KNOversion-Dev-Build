@@ -488,6 +488,13 @@ ctrl = 0
 velset = 0,0
 sprpriority = -1
 
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem=5
+value = 200,0+random%6
+volumescale = 100
+channel=10
+lowpriority=1
 ;COUNTER ZOOM ================================================
 [State 0]
 type = MapSet
@@ -1272,6 +1279,14 @@ juggle = 0 ;  = 5
 ctrl = 0
 sprpriority = 2
 
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem=4
+value = 200,0+random%6
+volumescale = 100
+channel=10
+lowpriority=1
+
 [State 0, NotHitBy]
 type = NotHitBy
 triggerall=enemynear,stateno!=900
@@ -1431,6 +1446,14 @@ physics = C
 juggle = 0 ;  = 5
 ctrl = 0
 sprpriority = 2
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem=5
+value = 200,0+random%6
+volumescale = 100
+channel=10
+lowpriority=1
 
 ;Throw Tech not allowed
 [State 1060, Explod]
@@ -1901,6 +1924,14 @@ juggle = 0 ;  = 0
 ctrl = 0
 sprpriority = 2
 
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem=7
+value = 200,0+random%6
+volumescale = 100
+channel=10
+lowpriority=1
+
 [State 0, VelSet]
 type = VelSet
 trigger1 = combocount>0
@@ -2008,7 +2039,7 @@ type = HitDef
 p2facing = 1
 trigger1 = Time = 0 && (enemynear, stateno!= [5110,5119])
 attr = A, NA
-damage = ceil(cond(fvar(11) *50 < 35, 35, fvar(11) * 50)), 0
+damage = ceil(cond(fvar(11) *50 < 25, 25, fvar(11) * 50)), 0
 guardflag = HA
 hitflag = MAFD
 ;priority = 4
@@ -2309,13 +2340,13 @@ ignorehitpause = 1
 
 [State 0, ChangeState]
 type = ChangeState
-triggerall = time>20
+triggerall = time>19
 trigger1 =command!= "hold_c"
 value = 501
 
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = var(55)>49 || animtime = 1 || animtime = 0
+trigger1 = var(55)>34 || animtime = 1 || animtime = 0
 value = 503
 
 ;-----------------------------
@@ -2447,7 +2478,7 @@ attr = S, SA
 ;priority = 3
 animtype  = Light
 damage = ceil(cond(fvar(11) *50 < 5, 5, fvar(11) * 50)),0
-hitflag = MAFDP
+hitflag = MAFD
 guardflag = MA
 pausetime = 12,12
 sparkno = 3
@@ -2458,10 +2489,10 @@ ground.type = low
 ground.slidetime = 12
 ground.hittime  = 15
 ground.velocity = -2.5
-air.velocity = -1.5,-0.5
+air.velocity = -1.5,2
 down.velocity = -1.5,0
 fall.yvelocity=0
-ground.velocity = -2,-2
+ground.velocity = -2,0
 palfx.time = 12
 palfx.add = 100, 0,20
 envshake.time = 7
@@ -2632,8 +2663,8 @@ trigger1 = time %2 = 0
 attr = S, SA
 animtype  = Light
 ;priority = 5
-damage = ceil(cond(fvar(11) *75 < 60, 60, fvar(11) * 75)), 20
-hitflag = MAFP
+damage = ceil(cond(fvar(11) *35 < 10, 10, fvar(11) * 35)),10
+hitflag = MAFD
 guardflag = MA
 pausetime = 2,2
 sparkno = 3
@@ -3356,7 +3387,7 @@ trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
 damage = ceil(cond(fvar(11) *125 < 25, 25, fvar(11) * 125)),10
-hitflag = MAF
+hitflag = MAFD
 guardflag = MA
 pausetime = 12,12
 sparkno = 3
@@ -3396,7 +3427,7 @@ trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
 damage = ceil(cond(fvar(11) *125 < 25, 25, fvar(11) * 125)),10
-hitflag = MAF
+hitflag = MAFD
 guardflag = MA
 pausetime = 12,12
 sparkno = 3
@@ -3547,7 +3578,7 @@ trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
 damage = ceil(cond(fvar(11) *200 < 88, 88, fvar(11) * 200)),20
-hitflag = MAFP
+hitflag = MAFD
 guardflag = MA
 pausetime = 15,15
 sparkno = 3
@@ -3585,7 +3616,7 @@ trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
 damage = ceil(cond(fvar(11) *200 < 88, 88, fvar(11) * 200)),20
-hitflag = MAFP
+hitflag = MAFD
 guardflag = MA
 pausetime = 15,15
 sparkno = 3
@@ -3626,7 +3657,7 @@ trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
 damage = ceil(cond(fvar(11) *200 < 88, 88, fvar(11) * 200)),20
-hitflag = MAF
+hitflag = MAFD
 guardflag = MA
 pausetime = 22,22
 sparkno = 3
@@ -3668,7 +3699,7 @@ trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
 damage = ceil(cond(fvar(11) *200 < 88, 88, fvar(11) * 200)),20
-hitflag = MAF
+hitflag = MAFD
 guardflag = MA
 pausetime = 22,22
 sparkno = 3
@@ -3913,7 +3944,7 @@ trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
 damage = ceil(cond(fvar(11) *330 < 150, 150, fvar(11) * 330)), 30
-hitflag = MAFP
+hitflag = MAFD
 guardflag = MA
 pausetime = 15,15
 sparkno = 3
@@ -3953,7 +3984,7 @@ trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
 damage = ceil(cond(fvar(11) *330 < 150, 150, fvar(11) * 330)), 30
-hitflag = MAFP
+hitflag = MAFD
 guardflag = MA
 pausetime = 15,15
 sparkno = 3
@@ -3995,7 +4026,7 @@ trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
 damage = ceil(cond(fvar(11) *330 < 150, 150, fvar(11) * 330)), 30
-hitflag = MAFP
+hitflag = MAFD
 guardflag = MA
 pausetime = 26,26
 sparkno = 3
@@ -4035,7 +4066,7 @@ trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
 damage = ceil(cond(fvar(11) *330 < 150, 150, fvar(11) * 330)), 30
-hitflag = MAFP
+hitflag = MAFD
 guardflag = MA
 pausetime = 26,26
 sparkno = 3

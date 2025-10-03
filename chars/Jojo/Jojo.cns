@@ -163,7 +163,7 @@ velset = 0,0
 type = PlaySnd
 triggerall=teammode!=Tag
 trigger1 = time=0
-value = 7410, (0+(Random%2))
+value = 7410, 0
 [State -3, Win Announcer]
 type = PlaySnd
 triggerall=teammode!=Tag

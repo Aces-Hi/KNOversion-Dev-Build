@@ -168,10 +168,27 @@ value = F1000,0
 
 [State Arzon Voices]
 type = PlaySnd
-trigger1=enemynear,name!="tui"
-trigger1=enemynear,name!="one"
+trigger1=enemynear,name!="tui"&&enemynear,name!="sahkive"&&enemynear,name!="vile"&&enemynear,name!="roger"&&enemynear,name!="alicia"
+trigger1=enemynear,name!="one"&&enemynear,name!="tentionmaru"&&enemynear,name!="dreyvon"
+trigger1=enemynear,name!="eddy"&&enemynear,name!="jv"&&enemynear,name!="wu"
+trigger1=palno!=3
 trigger1 = animelem = 1
 value = 180, (0+(Random%3))
+volumescale=160
+[State Arzon Voices]
+type = PlaySnd
+trigger1=enemynear,name!="one"&&enemynear,name!="tentionmaru"&&enemynear,name!="dreyvon"
+trigger1=palno=3
+trigger1 = animelem = 1
+value = 183, (0+(Random%2))
+volumescale=160
+
+[State Arzon Voices]
+type = PlaySnd
+trigger1=enemynear,name="tui"||enemynear,name="sahkive"||enemynear,name="vile"||enemynear,name="roger"||enemynear,name="alicia"
+trigger1 = animelem = 1
+trigger1=palno!=3
+value = 180, (0+(Random%4))
 volumescale=160
 
 [State Arzon Voices]
@@ -185,7 +202,26 @@ type = PlaySnd
 trigger1=enemynear,name="one"
 trigger1 = animelem = 1
 value = 182, (0+(Random%2))
-volumescale=200
+volumescale=160
+[State Arzon Voices]
+type = PlaySnd
+trigger1=enemynear,name="eddy"||enemynear,name="jv"||enemynear,name="wu"
+trigger1 = animelem = 1
+value = 184, (0+(Random%2))
+volumescale=160
+[State Arzon Voices]
+type = PlaySnd
+trigger1=enemynear,name="tentionmaru"
+trigger1 = animelem = 1
+value = 185, (0+(Random%2))
+volumescale=160
+[State Arzon Voices]
+type = PlaySnd
+trigger1=enemynear,name="dreyvon"
+trigger1 = animelem = 1
+value = 186, (0+(Random%2))
+volumescale=160
+
 
 [State -3, Misc SFX]
 type = PlaySnd
@@ -268,7 +304,7 @@ removeongethit = 0
 type = PlaySnd
 trigger1 = animelem = 1
 value = 1051,0
-volumescale=50
+volumescale=25
 
 [State -3, Arzon Hop/Appear Sound]
 type = PlaySnd
@@ -279,19 +315,19 @@ volumescale=50
 type = PlaySnd
 trigger1 = animelem = 17
 value = 0,7
-volumescale=50
+volumescale=25
 
 
 [State Arzon Voices]
 type = PlaySnd
-triggerall=enemynear,name!="angous"
-triggerall=enemynear,name!="one"
+triggerall=enemynear,name!="angous"&&enemynear,name!="deus"
+triggerall=enemynear,name!="one"&&enemynear,name!="tentionmaru"
 triggerall=enemynear,name!="sahkive"
 triggerall = animelem = 14
 trigger1 = enemy,name != "arzon"
 trigger2 = enemy,name = "arzon"
 trigger2 = teamside = 1
-value = 190, (0+(Random%2))
+value = 190, (0+(Random%3))
 volumescale=130
 
 [State Arzon Voices]
@@ -306,6 +342,18 @@ trigger1=enemynear,name="one"
 trigger1 = animelem = 14
 value = 192, (0+(Random%2))
 volumescale=150
+[State Arzon Voices]
+type = PlaySnd
+trigger1=enemynear,name="deus"
+trigger1 = animelem = 29
+value = 193, (0+(Random%2))
+volumescale=130
+[State Arzon Voices]
+type = PlaySnd
+trigger1=enemynear,name="tentionmaru"
+trigger1 = animelem = 29
+value = 194, 0
+volumescale=130
 
  [State 1200, Shake Screen]
 type = EnvShake
@@ -537,16 +585,6 @@ triggerall = map(_iksys_trainingMash) = 4
 value = 3500
 ctrl = 0
 ;==================================================================================================
-
-[State 0, PalFX] ;Magic Pixel Check
-type = PalFX
-trigger1 = life = 1
-time = 2
-add = (80 + 20 + 50 * sin(2 * pi * gametime / 160)),0,0 ;sinadd but manual
-mul = 256,256,256
-sinadd = 50,0,0,120 ;this part doesn't work and it's gonna make me fucking cry holy shit
-invertall = 0
-color = 256
 
 ;j.5H Limita
 [State 630, jH Limiter]

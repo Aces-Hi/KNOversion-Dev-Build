@@ -160,7 +160,7 @@ velset = 0,0
 type = PlaySnd
 triggerall=teammode!=Tag
 trigger1 = time=0
-value = 7410, (0+(Random%2))
+value = 7410, 0
 [State -3, Win Announcer]
 type = PlaySnd
 triggerall=teammode!=Tag
@@ -188,7 +188,7 @@ triggerall = time=0
 triggerall = enemynear,name="angous"
 trigger1 = palno!=11
 trigger2 = palno=11&&roundtype<=1
-value = 180, (0+(Random%11))
+value = 182, (0+(Random%3))
 volumescale=200
 
 [State 8990, AssertSpecial]
@@ -208,7 +208,7 @@ sprpriority = 2
 type = PlaySnd
 triggerall=teammode!=Tag
 trigger1 = time=0
-value = 7410, (0+(Random%2))
+value = 7410, 0
 [State -3, Win Announcer]
 type = PlaySnd
 triggerall=teammode!=Tag
@@ -236,7 +236,7 @@ triggerall = time=0
 triggerall = enemynear,name="angous"
 trigger1 = palno!=11
 trigger2 = palno=11&&roundtype<=1
-value = 180, (0+(Random%11))
+value = 182, (0+(Random%3))
 volumescale=200
 
 [State 8990, AssertSpecial]
@@ -335,7 +335,7 @@ velset = 0,0
 type = PlaySnd
 triggerall=teammode!=Tag
 trigger1 = time=0
-value = 7410, (0+(Random%2))
+value = 7410, 0
 [State -3, Win Announcer]
 type = PlaySnd
 triggerall=teammode!=Tag
@@ -346,7 +346,7 @@ value = F1000,0
 type = PlaySnd
 triggerall = time=0
 triggerall = enemynear,name!="angous"
-triggerall = enemynear,name!="alicia"&&enemynear,name!="deus"&&enemynear,name!="crow"
+triggerall = enemynear,name!="alicia"&&enemynear,name!="deus"&&enemynear,name!="crow"&&enemynear,name!="akira"
 trigger1 = palno!=11
 trigger2 = palno=11&&roundtype<=1
 value = 180, (0+(Random%7))
@@ -364,13 +364,13 @@ triggerall = time=0
 triggerall = enemynear,name="angous"
 trigger1 = palno!=11
 trigger2 = palno=11&&roundtype<=1
-value = 180, (0+(Random%11))
+value = 182, (0+(Random%3))
 volumescale=200
 
 [State Sahkive Voices]
 type = PlaySnd
 triggerall = time=0
-triggerall = enemynear,name="alicia"||enemynear,name="deus"||enemynear,name="crow"
+triggerall = enemynear,name="alicia"||enemynear,name="deus"||enemynear,name="crow"||enemynear,name="akira"
 trigger1 = palno!=11
 trigger2 = palno=11&&roundtype<=1
 value = 180,0
@@ -425,11 +425,50 @@ value = 194
 [State Sahkive Voices]
 type = PlaySnd
 triggerall = time=0
+triggerall = enemynear,name != "deus"&&enemynear,name != "vile"&&enemynear,name != "jojo"&&enemynear,name != "roger"&&enemynear,name != "tui"&&enemynear,name != "dreyvon"
 trigger1=teamside=1
 trigger2=teamside=2
 trigger2 = enemynear,name != "Sahkive"
 value = 190, (0+(Random%3))
-
+volumescale=150
+[State Sahkive Voices]
+type = PlaySnd
+triggerall = time=0
+trigger1 = enemynear,name = "jojo"||enemynear,name = "vile"
+value = 190, (0+(Random%4))
+volumescale=150
+[State Sahkive Voices]
+type = PlaySnd
+triggerall = time=0
+trigger1 = enemynear,name = "deus"
+value = 195, (0+(Random%2))
+volumescale=150
+[State Sahkive Voices]
+type = PlaySnd
+triggerall = animtime=0
+trigger1 = enemynear,name = "roger"
+trigger1 = enemynear,palno!=7&&enemynear,palno!=4&&enemynear,palno!=9
+value = 196, (0+(Random%2))
+volumescale=150
+[State Sahkive Voices]
+type = PlaySnd
+triggerall = time=0
+trigger1 = enemynear,name = "roger"
+trigger1 = enemynear,palno=7||enemynear,palno!=4||enemynear,palno!=9
+value = 190, (0+(Random%3))
+volumescale=150
+[State Sahkive Voices]
+type = PlaySnd
+triggerall = time=0
+trigger1 = enemynear,name = "tui"
+value = 197, (0+(Random%3))
+volumescale=150
+[State Sahkive Voices]
+type = PlaySnd
+triggerall = time=0
+trigger1 = enemynear,name = "dreyvon"
+value = 198, (0+(Random%2))
+volumescale=150
 
 [State 0, PlaySnd]
 type = PlaySnd
@@ -486,7 +525,7 @@ flag2 = nomusic
 type = PlaySnd
 trigger1= time=0
 value = 194,0
-
+volumescale=150
 [State 0, VarSet]
 type = VarSet
 trigger1 = time = 0
@@ -519,10 +558,50 @@ flag2 = nomusic
 [State Sahkive Voices]
 type = PlaySnd
 triggerall = time=0
+triggerall = enemynear,name != "deus"&&enemynear,name != "vile"&&enemynear,name != "jojo"&&enemynear,name != "roger"&&enemynear,name != "tui"&&enemynear,name != "dreyvon"
 trigger1=teamside=1
 trigger2=teamside=2
 trigger2 = enemynear,name != "Sahkive"
 value = 190, (0+(Random%3))
+volumescale=150
+[State Sahkive Voices]
+type = PlaySnd
+triggerall = time=0
+trigger1 = enemynear,name = "jojo"||enemynear,name = "vile"
+value = 190, (0+(Random%4))
+volumescale=150
+[State Sahkive Voices]
+type = PlaySnd
+triggerall = time=0
+trigger1 = enemynear,name = "deus"
+value = 195, (0+(Random%2))
+volumescale=150
+[State Sahkive Voices]
+type = PlaySnd
+triggerall = animtime=0
+trigger1 = enemynear,name = "roger"
+trigger1 = enemynear,palno!=7&&enemynear,palno!=4&&enemynear,palno!=9
+value = 196, (0+(Random%2))
+volumescale=150
+[State Sahkive Voices]
+type = PlaySnd
+triggerall = time=0
+trigger1 = enemynear,name = "roger"
+trigger1 = enemynear,palno=7||enemynear,palno!=4||enemynear,palno!=9
+value = 190, (0+(Random%3))
+volumescale=150
+[State Sahkive Voices]
+type = PlaySnd
+triggerall = time=0
+trigger1 = enemynear,name = "tui"
+value = 197, (0+(Random%3))
+volumescale=150
+[State Sahkive Voices]
+type = PlaySnd
+triggerall = time=0
+trigger1 = enemynear,name = "dreyvon"
+value = 198, (0+(Random%2))
+volumescale=150
 
 [State 0, EnvShake]
 type = EnvShake
@@ -622,8 +701,8 @@ value = 0
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "toss %f stun %f damage %f red %f R %f tst %f"
-params = map(toss),fvar(25),fvar(13),map(truth),map(raga),map(TENSHADOWS)
+text = "toss %f stun %f damage %f red %f R %f tst %f djump %f"
+params = map(toss),fvar(25),fvar(13),map(truth),map(raga),map(TENSHADOWS),map(djump)
 ;ignorehitpause = 
 ;persistent = 
 
@@ -759,15 +838,6 @@ trigger1 = !numtarget
 v = 2
 value = 1
 
-[State 0, PalFX] ;Magic Pixel Check
-type = PalFX
-trigger1 = life = 1
-time = 2
-add = (80 + 20 + 50 * sin(2 * pi * gametime / 160)),0,0 ;sinadd but manual
-mul = 256,256,256
-sinadd = 50,0,0,120 ;this part doesn't work and it's gonna make me fucking cry holy shit
-invertall = 0
-color = 256
 
 ;j.R SKD Limiter
 [State 0, RemoveExplod]
@@ -1231,6 +1301,14 @@ add=-10,-10,-10
 color = 1
 ignorehitpause = 1
 
+[State Sahkive Voices]
+type = PlaySnd
+trigger1 =  enemynear,name="angous"
+trigger1 = enemynear,stateno=3010&&enemynear,animelemtime(30)=1
+value = 3600, (0+(Random%2))
+volumescale=200
+persistent=0
+
 [State 0, VarAdd]
 type = MapSet
 triggerall=roundsexisted=0
@@ -1270,7 +1348,19 @@ trigger1 = combocount=0
 map = "toss"
 value = 0
 ignorehitpause = 1
-;persistent = 
+
+[State 0, VarAdd]
+type = MapSet
+trigger1 = statetype!=A
+map = "airdash"
+value = 0
+ignorehitpause = 1
+[State 0, VarAdd]
+type = MapSet
+trigger1 = statetype!=A
+map = "djump"
+value = 0
+ignorehitpause = 1
 
 [State 0, VarAdd]
 type = MapSet
@@ -1312,71 +1402,3 @@ map = "airgrab"
 value = 0
 ignorehitpause = 1
 ;persistent = 
-
-;==============================================
-; KILL SWTICH GODE
-;==============================================
-[State 200, VarAdd]
-type = VarAdd
-trigger1 = var(8)>0
-v = 8   
-value = -1
-ignorehitpause = 1
-[State 200, VarSet]
-type = VarSet
-trigger1 = var(8)>600
-v = 8   
-value = 600
-[State 200, VarSet]
-type = VarSet
-trigger1 = var(8)<0
-v = 8   
-value = 0
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = !numtarget
-v = 23    ;fv = 10
-value = 0
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = !numtarget
-v = 25    ;fv = 10
-value = 0
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = !numtarget
-v = 27    ;fv = 10
-value = 0
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = statetype=S
-trigger2 = statetype=C
-v = 29    ;fv = 10
-value = 1
-[State 0, VarRangeSet]
-type = VarRangeSet
-trigger1 = !numtarget
-fvalue = 0
-first = 20
-last = 27 ;
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = statetype=S
-trigger2 = statetype=C
-v = 45    ;fv = 10
-value = 1
-;ignorehitpause = 
-;persistent = 
-;This controller plays a sound everytime KFM lands from a jump, or
-;from his back-dash.
-[State -3, Landing Sound]
-type = PlaySnd
-triggerall = Time = 1
-trigger1 = stateno = 52 ;Jump land
-trigger2 = stateno = 106 ;Run-back land
-value = 41, 0

@@ -2678,12 +2678,12 @@ ampl=1+0.15*time
 
 [State 12, ChangeState]
 type = ChangeState
-trigger1 = command !="hold_c" && time = [21,36]
+trigger1 = command !="hold_c" && time = [15,25]
 value = 511
 
 [State 13, ChangeState]
 type = changestate
-trigger1 = command ="hold_c" && time >= 36
+trigger1 = time > 25
 value = 512
 
 ;-----------------------------------------------
@@ -3043,8 +3043,8 @@ ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *115< 20, 20, fvar(15) * 115))
 air.hittime  = ceil(cond(fvar(15) *115< 20, 20, fvar(15) * 115))
 down.hittime =ceil(cond(fvar(15) *115< 20, 20, fvar(15) * 115))
-ground.velocity = -20,-3
-air.velocity = -20,-3
+ground.velocity = -20,-2
+air.velocity = -20,-2
 airguard.velocity = -6,0
 fall.yvelocity = 0
 fall  = 1

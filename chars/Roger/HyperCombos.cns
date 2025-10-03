@@ -194,15 +194,15 @@ trigger1 = time = 0
 trigger1 = palno!=9
 trigger1 = palno!=7
 trigger1 = palno!=4
-value = 8000,6
+value = 3100,0+random%2
 channel=17
-volumescale = 75
+volumescale = 150
 
 [State 0, PlaySnd] ;cursed palette sound lol
 type = PlaySnd
 trigger1 = time = 0 && palno = 7
 value = 7619,0
-volumescale = 75
+volumescale = 100
 [State 0, PlaySnd] ;cursed palette sound lol
 type = PlaySnd
 trigger1 = time = 0 && palno = 9
@@ -347,7 +347,15 @@ anim =10003
 sprpriority =-5
 velset = 0,-29
 
-
+[State 0, PlaySnd] ;cursed palette sound lol
+type = PlaySnd
+trigger1 = time = 0
+trigger1 = palno!=9
+trigger1 = palno!=7
+trigger1 = palno!=4
+value = 3101,0+random%2
+channel=17
+volumescale = 125
 
 [State 0, ScreenBound]
 type = ScreenBound
@@ -434,17 +442,6 @@ type = PlaySnd
 trigger1 = animelem = 4 && palno = 9
 value = 7614,1
 volumescale = 65
-
-
-
-[State 0, PlaySnd]
-type = PlaySnd
-trigger1 = animelem = 4 
-trigger1 = palno!=7
-trigger1 = palno!=9
-trigger1 = palno!=4
-value = 7613,2
-volumescale = 50
 
 [State 0, PlaySnd]
 type = PlaySnd
@@ -1249,8 +1246,8 @@ persistent=0
 [State 0, PlaySnd] ;stay still.
 type = PlaySnd
 trigger1 = time = 0 
-value = 7615,0
-volumescale = 75
+value = 3050,0
+volumescale = 125
 
 [State 4000, NotHitBy]
 type = NotHitBy
@@ -1433,14 +1430,6 @@ type = VelSet
 trigger1 = animelem = 23
 x = 0
 y = 5
-
-
-[State 0, PlaySnd]
-type = PlaySnd
-trigger1 = animelem = 7
-value = 700,11
-channel = 2
-
 [State 10, Bind 1]
 type = TargetBind
 trigger1 = AnimElem = 1

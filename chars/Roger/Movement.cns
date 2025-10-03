@@ -265,17 +265,17 @@ persistent = 1
 
 [State 20, 1]
 type = VelSet
-triggerall=vel x <10
+triggerall=vel x <8
 trigger1 = command != "holdback"
 trigger1 = command = "holdfwd"
 x = const(velocity.walk.fwd.x)+(map(accel)*0.02)
 
 [State 20, 1]
 type = VelSet
-triggerall=vel x >=10
+triggerall=vel x >=8
 trigger1 = command != "holdback"
 trigger1 = command = "holdfwd"
-x =10
+x =8
 
 [State 20, 2]
 type = VelSet

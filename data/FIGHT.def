@@ -371,14 +371,40 @@ draw.displaytime = 540
 666,20, 0,0, 3
 
 "ROUND 2" Animation
-; Life Bar P1
-[Begin Action 98]
-41,0, 0,0, 14
 
-;Meter P2
-[Begin Action 99]
-41,1, 0,0, 14
+;"Fight!" Animation
+[Begin Action 6]
+6,5, 0,0, 1
+6,5, 0,0, 1, , AS200D256
+6,5, 0,0, 1, , AS150D256
+6,5, 0,0, 1, , AS100D256
+6,5, 0,0, 1, , AS50D256
+6,5, 0,0, 1, , AS40D256
+6,5, 0,0, 1, , AS30D256
+6,5, 0,0, 1, , AS20D256
+6,5, 0,0, 1, , AS10D256
 
+;"K.O." Animation
+[Begin Action 8]
+700,0, 0,0, 1
+700,1, 0,0, 1
+700,0, 0,0, 1
+700,2, 0,0, 80
+700,3, 0,0, 4
+700,4, 0,0, 4
+700,5, 0,0, 4
+700,6, 0,0, 4
+700,7, 0,0, 4
+700,8, 0,0, 4
+700,9, 0,0, 4
+700,10, 0,0, 4
+700,11, 0,0, 4
+700,12, 0,0, 4
+700,13, 0,0, 4
+700,14, 0,0, 4
+700,15, 0,0, 4
+700,16, 0,0, 4
+-1,0, 0,0, -1
 
 [Begin Action 12]
 -1,0, 0,0, 10
@@ -464,96 +490,6 @@ draw.displaytime = 540
 669,25, 0,0, 3
 669,26, 0,0, 3
 
-;"Fight!" Animation
-[Begin Action 6]
-6,5, 0,0, 1
-6,5, 0,0, 1, , AS200D256
-6,5, 0,0, 1, , AS150D256
-6,5, 0,0, 1, , AS100D256
-6,5, 0,0, 1, , AS50D256
-6,5, 0,0, 1, , AS40D256
-6,5, 0,0, 1, , AS30D256
-6,5, 0,0, 1, , AS20D256
-6,5, 0,0, 1, , AS10D256
-
-;"K.O." Animation
-[Begin Action 8]
-700,0, 0,0, 1
-700,1, 0,0, 1
-700,0, 0,0, 1
-700,2, 0,0, 80
-700,3, 0,0, 4
-700,4, 0,0, 4
-700,5, 0,0, 4
-700,6, 0,0, 4
-700,7, 0,0, 4
-700,8, 0,0, 4
-700,9, 0,0, 4
-700,10, 0,0, 4
-700,11, 0,0, 4
-700,12, 0,0, 4
-700,13, 0,0, 4
-700,14, 0,0, 4
-700,15, 0,0, 4
-700,16, 0,0, 4
--1,0, 0,0, -1
-
-;-----------------------------------------------------------
-[WinIcon]
-p1.pos = 130,11    ;1P側の表示開始位置指定
-p2.pos = 190,11    ;2P側の表示開始位置指定
-
-; Offset for next icon (x,y) [次のアイコンの位置]
-p1.iconoffset = -16,0      ;1P側のWinIconの表示開始位置指定
-p2.iconoffset = 16,0       ;2P側のWinIconの表示開始位置指定
-
-; Counter text font and offset for representing wins
-p1.counter.offset = -31,0  ;1P側のWin数の表示開始位置指定
-p1.counter.font = 5,0      ;1P側のWin数用フォントの指定
-p2.counter.offset = 33,0   ;2P側のWin数の表示開始位置指定
-p2.counter.font = 5,1      ;2P側のWin数用フォントの指定
-
-; Win by normal [通常技で勝利]
-p1.n.spr = 100,0
-p2.n.spr = 100,0
-
-; Win by special [必殺技で勝利]
-p1.s.spr = 101,0
-p2.s.spr = 101,0
-
-; Win by hyper (super) [超必殺技で勝利]
-p1.h.spr = 102,0
-p2.h.spr = 102,0
-
-; Win by normal throw [通常投げで勝利]
-p1.throw.spr = 103,0
-p2.throw.spr = 103,0
-
-; Win by cheese [削り勝利]
-p1.c.spr = 104,0
-p2.c.spr = 104,0
-
-; Win by time over [時間切れで勝利]
-p1.t.spr = 105,0
-p2.t.spr = 105,0
-
-; Win by suicide (here's a fun one) [F1押しで勝利]
-p1.suicide.spr = 106,0
-p2.suicide.spr = 106,0
-
-; Opponent beaten by his own teammate (another fun one)
-; [相手が相手のチームメイトに倒された場合]
-p1.teammate.spr = 107,0
-p2.teammate.spr = 107,0
-
-; Win by perfect (overlay icon) [パーフェクトで勝利]
-p1.perfect.spr = 110,0
-p2.perfect.spr = 110,0
-
-; Use icons up until this number of wins [最大表示数]
-useiconupto = 4
-
-
 ; [KO] Ready...
 [Begin Action 69]
 6969,0, 0,0, 3
@@ -621,3 +557,94 @@ LoopStart
 89,4, -8,-19, 1, , A
 7979,0, 0,0, 10
 -1,0, 0,0, -1
+; Life Bar P1
+[Begin Action 98]
+41,0, 0,0, 14
+
+;Meter P2
+[Begin Action 99]
+41,1, 0,0, 14
+
+
+; Throw Tech P1
+[Begin Action 13102]
+24001,0, 0,10, 2
+24001,1, 0,-10, 2
+24001,0, 0,5, 2
+24001,1, 0,-5, 2
+24001,0, 0,1, 2
+24001,0, 0,-1, 2
+24001,0, 0,0, 1
+24001,0, 0,0, 40
+24001,0, 0,0, 4, , A
+24001,0, 0,0, 4, , AS80D256
+
+; Throw Tech P2
+[Begin Action 13103]
+24001,0, 0,10, 2
+24001,1, 0,-10, 2
+24001,0, 0,5, 2
+24001,1, 0,-5, 2
+24001,0, 0,1, 2
+24001,0, 0,-1, 2
+24001,0, 0,0, 1
+24001,0, 0,0, 40
+24001,0, 0,0, 4, , A
+24001,0, 0,0, 4, , AS80D256
+
+;-----------------------------------------------------------
+[WinIcon]
+p1.pos = 130,11    ;1P側の表示開始位置指定
+p2.pos = 190,11    ;2P側の表示開始位置指定
+
+; Offset for next icon (x,y) [次のアイコンの位置]
+p1.iconoffset = -16,0      ;1P側のWinIconの表示開始位置指定
+p2.iconoffset = 16,0       ;2P側のWinIconの表示開始位置指定
+
+; Counter text font and offset for representing wins
+p1.counter.offset = -31,0  ;1P側のWin数の表示開始位置指定
+p1.counter.font = 5,0      ;1P側のWin数用フォントの指定
+p2.counter.offset = 33,0   ;2P側のWin数の表示開始位置指定
+p2.counter.font = 5,1      ;2P側のWin数用フォントの指定
+
+; Win by normal [通常技で勝利]
+p1.n.spr = 100,0
+p2.n.spr = 100,0
+
+; Win by special [必殺技で勝利]
+p1.s.spr = 101,0
+p2.s.spr = 101,0
+
+; Win by hyper (super) [超必殺技で勝利]
+p1.h.spr = 102,0
+p2.h.spr = 102,0
+
+; Win by normal throw [通常投げで勝利]
+p1.throw.spr = 103,0
+p2.throw.spr = 103,0
+
+; Win by cheese [削り勝利]
+p1.c.spr = 104,0
+p2.c.spr = 104,0
+
+; Win by time over [時間切れで勝利]
+p1.t.spr = 105,0
+p2.t.spr = 105,0
+
+; Win by suicide (here's a fun one) [F1押しで勝利]
+p1.suicide.spr = 106,0
+p2.suicide.spr = 106,0
+
+; Opponent beaten by his own teammate (another fun one)
+; [相手が相手のチームメイトに倒された場合]
+p1.teammate.spr = 107,0
+p2.teammate.spr = 107,0
+
+; Win by perfect (overlay icon) [パーフェクトで勝利]
+p1.perfect.spr = 110,0
+p2.perfect.spr = 110,0
+
+; Use icons up until this number of wins [最大表示数]
+useiconupto = 4
+
+

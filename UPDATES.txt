@@ -1,0 +1,44 @@
+universal
+++crumple
++more meter
++buffering after wakeup is much easier
++pushblock distance
+~meter mechanics
+-pushblock 1 bar
+
+angous
++r followups faster in combos
++2s no landing lag in combos
++6h bounce higher
++5m min damage
++5h min damage
++2m min damage
++2h min damage
++3h min damage
++jH min damage
+-6ss ending lag
+
+roger
++very slight movement on ex5s
++4r hits skd
++5r startup
++h5r startup
++h5r hits skd
+~2h launch height reduced on grounded
+-jH min damage
+-h5r damage
+-5r launch height
+/M>2M>M>3H
+
+jv
++665s launch height
++66RL launch height
++6s launch height
++666s launch height
++wallbounce height
+
+sahkive
++5r charges faster
++charge 5r launch height reduced
++qcf 1 damage
+-qcb min damage

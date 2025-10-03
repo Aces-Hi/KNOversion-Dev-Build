@@ -3846,7 +3846,7 @@ Trigger1 = !movecontact
 attr = S, HA          ;Attributes: Standing, Normal Throw
 hitflag = MAFD        ;Affect only ground people who are not being hit
 guardflag=HA
-damage = 60, 10
+damage = 110, 10
 priority = 3,Hit    ;Throw has low priority, must be miss or dodge type.
 sparkno = 3         ;No spark
 sparkxy = -30,-50
@@ -5746,7 +5746,7 @@ type = hitdef
 p2facing = 1
 trigger1 = animelem=85
 attr = S, HT
-damage =ceil(cond(fvar(11) *60 < 50, 50, fvar(11) * 60))
+damage =ceil(cond(fvar(11) *60 < 10, 10, fvar(11) * 60))
 animtype  = Hard
 hitflag = MAF
 guardflag = HA

@@ -166,7 +166,7 @@ velset = 0,0
 type = PlaySnd
 triggerall=teammode!=Tag
 trigger1 = time=0
-value = 7410, (0+(Random%2))
+value = 7410, 0
 [State -3, Win Announcer]
 type = PlaySnd
 triggerall=teammode!=Tag
@@ -175,16 +175,40 @@ value = F1000,0
 
 [State -3, Win Voices] 
 type = PlaySnd
-triggerall = enemynear,name!="roger"&&enemynear,name!="vile"&&enemynear,name!="Z"&&enemynear,name!="one"&&enemynear,name!="sahkive"
+triggerall = enemynear,name!="roger"&&enemynear,name!="vile"&&enemynear,name!="Z"&&enemynear,name!="one"&&enemynear,name!="sahkive"&&enemynear,name!="wu"&&enemynear,name!="deus"&&enemynear,name!="jv"
 trigger1 = time = 60
-value = 180, 0+(Random%3)
+value = 180, 0+(Random%4)
+volumescale=200
+[State -3, Win Voices] 
+type = PlaySnd
+triggerall = enemynear,name="wu"
+trigger1 = time = 60
+value = 180, 0+(Random%5)
 volumescale=200
 
 [State -3, Win Voices] 
 type = PlaySnd
-triggerall = enemynear,name="roger"||enemynear,name="vile"||enemynear,name="Z"||enemynear,name="one"||enemynear,name="sahkive"
+triggerall = enemynear,name="roger"||enemynear,name="vile"||enemynear,name="Z"||enemynear,name="sahkive"
 trigger1 = time = 60
 value = 181, 0+(Random%2)
+volumescale=200
+[State -3, Win Voices] 
+type = PlaySnd
+triggerall =enemynear,name="one"
+trigger1 = time = 60
+value = 181, 0+(Random%3)
+volumescale=200
+[State -3, Win Voices] 
+type = PlaySnd
+triggerall =enemynear,name="deus"
+trigger1 = time = 60
+value = 182, 0+(Random%2)
+volumescale=200
+[State -3, Win Voices] 
+type = PlaySnd
+triggerall =enemynear,name="jv"
+trigger1 = time = 60
+value = 183, 0+(Random%2)
 volumescale=200
 
 [State 0, PlaySnd]
@@ -210,7 +234,7 @@ velset = 0,0
 type = PlaySnd
 triggerall=teammode!=Tag
 trigger1 = time=0
-value = 7410, (0+(Random%2))
+value = 7410, 0
 [State -3, Win Announcer]
 type = PlaySnd
 triggerall=teammode!=Tag
@@ -219,16 +243,40 @@ value = F1000,0
 
 [State -3, Win Voices] 
 type = PlaySnd
-triggerall = enemynear,name!="roger"&&enemynear,name!="vile"&&enemynear,name!="Z"&&enemynear,name!="one"&&enemynear,name!="sahkive"
+triggerall = enemynear,name!="roger"&&enemynear,name!="vile"&&enemynear,name!="Z"&&enemynear,name!="one"&&enemynear,name!="sahkive"&&enemynear,name!="wu"&&enemynear,name!="deus"&&enemynear,name!="jv"
 trigger1 = time = 60
-value = 180, 0+(Random%3)
+value = 180, 0+(Random%4)
+volumescale=200
+[State -3, Win Voices] 
+type = PlaySnd
+triggerall = enemynear,name="wu"
+trigger1 = time = 60
+value = 180, 0+(Random%5)
 volumescale=200
 
 [State -3, Win Voices] 
 type = PlaySnd
-triggerall = enemynear,name="roger"||enemynear,name="vile"||enemynear,name="Z"||enemynear,name="one"||enemynear,name="sahkive"
+triggerall = enemynear,name="roger"||enemynear,name="vile"||enemynear,name="Z"||enemynear,name="sahkive"
 trigger1 = time = 60
 value = 181, 0+(Random%2)
+volumescale=200
+[State -3, Win Voices] 
+type = PlaySnd
+triggerall =enemynear,name="one"
+trigger1 = time = 60
+value = 181, 0+(Random%3)
+volumescale=200
+[State -3, Win Voices] 
+type = PlaySnd
+triggerall =enemynear,name="deus"
+trigger1 = time = 60
+value = 182, 0+(Random%2)
+volumescale=200
+[State -3, Win Voices] 
+type = PlaySnd
+triggerall =enemynear,name="jv"
+trigger1 = time = 60
+value = 183, 0+(Random%2)
 volumescale=200
 
 [State 0, Explod]
@@ -307,7 +355,7 @@ velset = 0,0
 type = PlaySnd
 triggerall=teammode!=Tag
 trigger1 = time=0
-value = 7410, (0+(Random%2))
+value = 7410, 0
 [State -3, Win Announcer]
 type = PlaySnd
 triggerall=teammode!=Tag
@@ -316,16 +364,40 @@ value = F1000,0
 
 [State -3, Win Voices] 
 type = PlaySnd
-triggerall = enemynear,name!="roger"&&enemynear,name!="vile"&&enemynear,name!="Z"&&enemynear,name!="one"&&enemynear,name!="sahkive"
+triggerall = enemynear,name!="roger"&&enemynear,name!="vile"&&enemynear,name!="Z"&&enemynear,name!="one"&&enemynear,name!="sahkive"&&enemynear,name!="wu"&&enemynear,name!="deus"&&enemynear,name!="jv"
 trigger1 = time = 60
-value = 180, 0+(Random%3)
+value = 180, 0+(Random%4)
+volumescale=200
+[State -3, Win Voices] 
+type = PlaySnd
+triggerall = enemynear,name="wu"
+trigger1 = time = 60
+value = 180, 0+(Random%5)
 volumescale=200
 
 [State -3, Win Voices] 
 type = PlaySnd
-triggerall = enemynear,name="roger"||enemynear,name="vile"||enemynear,name="Z"||enemynear,name="one"||enemynear,name="sahkive"
+triggerall = enemynear,name="roger"||enemynear,name="vile"||enemynear,name="Z"||enemynear,name="sahkive"
 trigger1 = time = 60
 value = 181, 0+(Random%2)
+volumescale=200
+[State -3, Win Voices] 
+type = PlaySnd
+triggerall =enemynear,name="one"
+trigger1 = time = 60
+value = 181, 0+(Random%3)
+volumescale=200
+[State -3, Win Voices] 
+type = PlaySnd
+triggerall =enemynear,name="deus"
+trigger1 = time = 60
+value = 182, 0+(Random%2)
+volumescale=200
+[State -3, Win Voices] 
+type = PlaySnd
+triggerall =enemynear,name="jv"
+trigger1 = time = 60
+value = 183, 0+(Random%2)
 volumescale=200
 
 ;---------------------------------------------------------------------------
@@ -353,6 +425,7 @@ value = 191+random%3
 type = PlaySnd
 triggerall = time=0
 trigger1 = enemynear,name!="angous"&&enemynear,name!="roger"&&enemynear,name!="arzon"&&enemynear,name!="jojo"&&enemynear,name!="tui"&&enemynear,name!="vile"&&enemynear,name!="vile"&&enemynear,name!="one"
+trigger1 =  enemynear,name!="deus"&&enemynear,name!="jv"&&enemynear,name!="z"&&enemynear,name!="tentionmaru"
 value = 190,0+random%3
 volumescale=150
 
@@ -374,7 +447,6 @@ triggerall = time=0
 trigger1 = enemynear,name="arzon"
 value = 193,0+random%2
 volumescale=150
-
 [State 200, 2]
 type = PlaySnd
 triggerall = time=20
@@ -392,6 +464,30 @@ type = PlaySnd
 triggerall = time=60
 trigger1 = enemynear,name="vile"
 value = 196,0+random%2
+volumescale=150
+[State 200, 2]
+type = PlaySnd
+triggerall = animtime=0
+trigger1 = enemynear,name="deus"
+value = 197,0+random%2
+volumescale=200
+[State 200, 2]
+type = PlaySnd
+triggerall = time=0
+trigger1 = enemynear,name="jv"
+value = 198,0+random%2
+volumescale=150
+[State 200, 2]
+type = PlaySnd
+triggerall = time=0
+trigger1 = enemynear,name="tentionmaru"
+value = 199,0
+volumescale=150
+[State 200, 2]
+type = PlaySnd
+triggerall = time=0
+trigger1 = enemynear,name="z"
+value = 200,0
 volumescale=150
 
 [State 0, VarSet]
@@ -447,6 +543,7 @@ sprpriority=2
 type = PlaySnd
 triggerall = time=0
 trigger1 = enemynear,name!="angous"&&enemynear,name!="roger"&&enemynear,name!="arzon"&&enemynear,name!="jojo"&&enemynear,name!="tui"&&enemynear,name!="vile"&&enemynear,name!="vile"&&enemynear,name!="one"
+trigger1 =  enemynear,name!="deus"&&enemynear,name!="jv"&&enemynear,name!="z"&&enemynear,name!="tentionmaru"
 value = 190,0+random%3
 volumescale=150
 
@@ -468,7 +565,6 @@ triggerall = time=0
 trigger1 = enemynear,name="arzon"
 value = 193,0+random%2
 volumescale=150
-
 [State 200, 2]
 type = PlaySnd
 triggerall = time=20
@@ -487,6 +583,31 @@ triggerall = time=60
 trigger1 = enemynear,name="vile"
 value = 196,0+random%2
 volumescale=150
+[State 200, 2]
+type = PlaySnd
+triggerall = animtime=0
+trigger1 = enemynear,name="deus"
+value = 197,0+random%2
+volumescale=200
+[State 200, 2]
+type = PlaySnd
+triggerall = time=0
+trigger1 = enemynear,name="jv"
+value = 198,0+random%2
+volumescale=150
+[State 200, 2]
+type = PlaySnd
+triggerall = time=0
+trigger1 = enemynear,name="tentionmaru"
+value = 199,0
+volumescale=150
+[State 200, 2]
+type = PlaySnd
+triggerall = time=0
+trigger1 = enemynear,name="z"
+value = 200,0
+volumescale=150
+
 
 [State 0, VarSet]
 type = VarSet
@@ -523,6 +644,7 @@ flag2 = nomusic
 type = PlaySnd
 triggerall = time=0
 trigger1 = enemynear,name!="angous"&&enemynear,name!="roger"&&enemynear,name!="arzon"&&enemynear,name!="jojo"&&enemynear,name!="tui"&&enemynear,name!="vile"&&enemynear,name!="vile"&&enemynear,name!="one"
+trigger1 =  enemynear,name!="deus"&&enemynear,name!="jv"&&enemynear,name!="z"&&enemynear,name!="tentionmaru"
 value = 190,0+random%3
 volumescale=150
 
@@ -544,7 +666,6 @@ triggerall = time=0
 trigger1 = enemynear,name="arzon"
 value = 193,0+random%2
 volumescale=150
-
 [State 200, 2]
 type = PlaySnd
 triggerall = time=20
@@ -563,6 +684,31 @@ triggerall = time=60
 trigger1 = enemynear,name="vile"
 value = 196,0+random%2
 volumescale=150
+[State 200, 2]
+type = PlaySnd
+triggerall = animtime=0
+trigger1 = enemynear,name="deus"
+value = 197,0+random%2
+volumescale=200
+[State 200, 2]
+type = PlaySnd
+triggerall = time=0
+trigger1 = enemynear,name="jv"
+value = 198,0+random%2
+volumescale=150
+[State 200, 2]
+type = PlaySnd
+triggerall = time=0
+trigger1 = enemynear,name="tentionmaru"
+value = 199,0
+volumescale=150
+[State 200, 2]
+type = PlaySnd
+triggerall = time=0
+trigger1 = enemynear,name="z"
+value = 200,0
+volumescale=150
+
 
 [State 0, VarSet]
 type = VarSet
@@ -873,17 +1019,6 @@ value = 3050
 ctrl = 0
 
 ;==================================================================================================
-
-[State 0, PalFX] ;Magic Pixel Check
-type = PalFX
-triggerall = roundstate = 2 ;only attack during the round
-trigger1 = life = 1
-time = 2
-add = (80 + 20 + 50 * sin(2 * pi * gametime / 160)),0,0 ;sinadd but manual
-mul = 256,256,256
-sinadd = 50,0,0,120 ;this part doesn't work and it's gonna make me fucking cry holy shit
-invertall = 0
-color = 256
 
 [State 45, Explod]
 type = Explod

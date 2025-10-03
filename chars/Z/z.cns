@@ -1201,16 +1201,6 @@ trigger1 = map(cock)=-1
 value = 0
 v =5
 ;-------------------------------
-[State 0, PalFX] ;Magic Pixel Check
-type = PalFX
-trigger1 = life = 1
-time = 2
-add = (80 + 20 + 50 * sin(2 * pi * gametime / 160)),0,0 ;sinadd but manual
-mul = 256,256,256
-sinadd = 50,0,0,120 ;this part doesn't work and it's gonna make me fucking cry holy shit
-invertall = 0
-color = 256
-
 [State 0, Pause]
 type = Pause
 trigger1 = time%2 = 0

@@ -150,7 +150,7 @@ p2facing = 1
 trigger1 = time=0
 attr = S, NA
 animtype  = Light
-damage = ceil(cond(fvar(11) *60 < 5, 5, fvar(11) * 60)), 0
+damage = ceil(cond(fvar(11) *60 < 10, 10, fvar(11) * 60)), 0
 hitflag = MAFD
 guardflag = MA
 pausetime = 10,10
@@ -298,7 +298,7 @@ p2facing = 1
 trigger1 = time = 0
 attr = S, NA
 animtype  = hard
-damage = ceil(cond(fvar(11) *100 < 10, 10, fvar(11) * 100)), 0
+damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 0
 hitflag = MAFD
 guardflag = MA
 pausetime = 12,12
@@ -390,8 +390,14 @@ persistent = 0
 
 [State 0, PlaySnd]
 type = PlaySnd
-trigger1 = animelem = 1
+trigger1 = animelem = 1&&palno!=3
 value = 225, (0+(Random%3))
+volumescale=150
+channel=9
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 1&&palno=3
+value = 226, (0+(Random%2))
 volumescale=150
 channel=9
 
@@ -489,8 +495,14 @@ trigger1 = animelem = 4
 value = 9509,1
 [State 0, PlaySnd]
 type = PlaySnd
-trigger1 = animelem = 1
+trigger1 = animelem = 1&&palno!=3
 value = 225, (0+(Random%3))
+volumescale=150
+channel=9
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 1&&palno=3
+value = 226, (0+(Random%2))
 volumescale=150
 channel=9
 
@@ -573,8 +585,16 @@ ignorehitpause = 1
 
 [State -3, Angous Voices]
 type = PlaySnd
-trigger1 = movehit
+trigger1 = movehit&&palno!=3
 value = 220, (0+(Random%4))
+volumescale=150
+channel=9
+ignorehitpause=1
+persistent=0
+[State -3, Angous Voices]
+type = PlaySnd
+trigger1 = movehit&&palno=3
+value = 226, (2+(Random%2))
 volumescale=150
 channel=9
 ignorehitpause=1
@@ -1046,7 +1066,7 @@ type = hitdef
 p2facing = 1
 trigger1 = time = 0
 attr = C, NA
-damage = ceil(cond(fvar(11) *60 < 4, 4, fvar(11) * 60)), 0
+damage = ceil(cond(fvar(11) *60 < 10, 10, fvar(11) * 60)), 0
 animtype  = Light
 hitflag = MAFD
 guardflag = LA
@@ -1185,7 +1205,7 @@ value = 220, (0+(Random%6))
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = map(DIE)=2
-trigger1 = palno!=6
+trigger1 = palno!=8
 value = 9000,0+(random%4)
 channel = -1
 loop = 0
@@ -1193,7 +1213,7 @@ persistent = 0
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = map(DIE)=2
-trigger1 = palno=6
+trigger1 = palno=8
 value = 3013,5+(random%3)
 channel = -1
 loop = 0
@@ -1253,7 +1273,7 @@ p2facing = 1
 trigger1 = time = 0 
 attr = S, NA
 ;damage = ceil(cond(fvar(11) * 70+var(10)*2 < 4, 4, fvar(11) * 70+var(10)*2)),10+var(10)
-damage = ceil(cond(fvar(11) *85 < 8, 8, fvar(11) * 85)), 0
+damage = ceil(cond(fvar(11) *85 < 15, 15, fvar(11) * 85)), 0
 animtype  = hard
 air.animtype = up
 hitflag = MAFD
@@ -1536,7 +1556,7 @@ type = hitdef
 p2facing = 1
 trigger1 = time = 0 
 attr = S, NA
-damage = ceil(cond(fvar(11) *90 < 15, 15, fvar(11) * 90)), 0
+damage = ceil(cond(fvar(11) *90 < 20, 20, fvar(11) * 90)), 0
 animtype  = Medium
 hitflag = MAFDP
 guardflag = LA
@@ -1957,7 +1977,7 @@ p2facing = 1
 trigger1 = numexplod(90101) <= 1
 trigger1 = !movecontact && var(10)<=15
 attr = S, NA
-damage = ceil(cond(fvar(11) * 65 < 5, 5, fvar(11) * 65)),10+var(10)/4
+damage = ceil(cond(fvar(11) * 65 < 10, 10, fvar(11) * 65)),10+var(10)/4
 animtype  = Medium
 hitflag = MAF
 guardflag = LA
@@ -1994,7 +2014,7 @@ p2facing = 1
 trigger1 = numexplod(90101) > 1
 trigger1 =  !movecontact && var(10)<=15
 attr = S, NA
-damage = ceil(cond(fvar(11) * 100 < 13, 13, fvar(11) * 100)),10+var(10)/4
+damage = ceil(cond(fvar(11) * 100 < 15, 15, fvar(11) * 100)),10+var(10)/4
 animtype  = Medium
 hitflag = MAF
 guardflag = LA
@@ -2481,7 +2501,7 @@ triggerall = enemynear,map(armor)=0
 trigger1 = !NumExplod(910311)
 trigger1 = !movecontact
 attr = A, NA
-damage = ceil(cond(fvar(11) *95 < 8, 8, fvar(11) * 95)), 0
+damage = ceil(cond(fvar(11) *95 < 15, 15, fvar(11) * 95)), 0
 animtype = hard
 hitflag = MAFD
 guardflag = HA
@@ -2527,7 +2547,7 @@ triggerall = enemynear,map(armor)>0
 trigger1 = !NumExplod(910311)
 trigger1 = !movecontact
 attr = A, NA
-damage = ceil(cond(fvar(11) *95 < 8, 8, fvar(11) * 95)), 0
+damage = ceil(cond(fvar(11) *95 < 15, 15, fvar(11) * 95)), 0
 animtype = hard
 hitflag = MAFD
 guardflag = HA
@@ -2573,7 +2593,7 @@ p2facing = 1
 trigger1 = NumExplod(910311)
 trigger1 = time = 0
 attr = A, NA
-damage = ceil(cond(fvar(11) *95 < 8, 8, fvar(11) * 95)), 0
+damage = ceil(cond(fvar(11) *95 < 15, 15, fvar(11) * 95)), 0
 animtype = hard
 hitflag = MAFD
 guardflag = HA

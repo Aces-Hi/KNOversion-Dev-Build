@@ -1213,7 +1213,7 @@ type    = A
 movetype= A
 physics = N
 juggle  = 4
-poweradd= -4000
+poweradd= -5000
 ctrl = 0
 anim = 900
 sprpriority = 2
@@ -1269,7 +1269,7 @@ value = 1
 type = mapadd
 trigger1 = time = 0
 map = "meter"
-value = -4000
+value = -5000
 
  [State 1200, Shake Screen]
 type = EnvShake
@@ -5048,54 +5048,33 @@ y = 0
 ignorehitpause = 1
 persistent = 1
 
-[State 0, VelMul]
-type = VelAdd
-triggerall=vel x !=0
-trigger1 = time<=1
-x = cond (vel x >0,1,-1)
-ignorehitpause = 1
-
-[State 0, VelMul]
-type = VelAdd
-triggerall=vel x =0
-trigger1 = time<=1
-x = 2
-ignorehitpause = 1
-
-[State 0, VelMul]
-type = VelMul
-triggerall=vel x <4
-triggerall=vel x >-4
-trigger1 = time=1
-x = 4
-ignorehitpause = 1
-
-[State 0, VelMul]
-type = VelMul
-trigger1=vel x >4
-trigger2=vel x <-4
-triggerall = time=1
-x = 1.5
-ignorehitpause = 1
-
 [State 0, PosSet]
 type = VelSet
-trigger1=vel x >25
-x = 25
+triggerall=time<5
+trigger1=command="holdfwd"&&command!="holdback"
+x = 12
+ignorehitpause = 1
+persistent = 1
+[State 0, PosSet]
+type = VelSet
+triggerall=time<5
+trigger1=command="holdback"&&command!="holdfwd"
+x = -8
 ignorehitpause = 1
 persistent = 1
 
 [State 0, VelMul]
-type = VelSet
+type = VelMul
 trigger1=p2bodydist x < -10
 trigger1=vel x >0
-x = 0
+x = .95
 ignorehitpause = 1
 
 [State 200, 2]
 type = PlaySnd
 trigger1 = time = 0
 value = 7400,0
+
 [State 200, 2]
 type = PlaySnd
 trigger1 = time = 0
@@ -5199,6 +5178,36 @@ type = VelAdd
 trigger1 = time > 4
 y = .26
 
+[State 0, PosSet]
+type = VelSet
+triggerall=time<5
+trigger1=command="holdfwd"&&command!="holdback"
+x = 7
+ignorehitpause = 1
+persistent = 1
+[State 0, PosSet]
+type = VelSet
+triggerall=time<5
+trigger1=command="holdback"&&command!="holdfwd"
+x = -6
+ignorehitpause = 1
+persistent = 1
+
+[State 0, PosSet]
+type = VelSet
+triggerall=time<5
+trigger1=command="holdup"&&command!="holddown"
+y = -4
+ignorehitpause = 1
+persistent = 1
+[State 0, PosSet]
+type = VelSet
+triggerall=time<5
+trigger1=command="holddown"&&command!="holdup"
+y = 10
+ignorehitpause = 1
+persistent = 1
+
 [State 0, Explod]
 type = Explod
 trigger1 = time = 0
@@ -5236,6 +5245,7 @@ value = 1
 [State 0, StateTypeSet]
 type = StateTypeSet
 trigger1 = time = 10
+trigger2 = pos y>=0
 statetype = A       ;S,A,C,L
 movetype = A       ;I,A,H
 physics = A         ;A,C,S,N
@@ -5296,49 +5306,28 @@ y = 0
 ignorehitpause = 1
 persistent = 1
 
-[State 0, VelMul]
-type = VelAdd
-triggerall=vel x !=0
-trigger1 = time<=1
-x = cond (vel x >0,1,-1)
-ignorehitpause = 1
-
-[State 0, VelMul]
-type = VelAdd
-triggerall=vel x =0
-trigger1 = time<=1
-x = 2
-ignorehitpause = 1
-
-[State 0, VelMul]
-type = VelMul
-triggerall=vel x <4
-triggerall=vel x >-4
-trigger1 = time=1
-x = 4
-ignorehitpause = 1
-
-[State 0, VelMul]
-type = VelMul
-trigger1=vel x >4
-trigger2=vel x <-4
-triggerall = time=1
-x = 1.5
-ignorehitpause = 1
-
 [State 0, PosSet]
 type = VelSet
-trigger1=vel x >25
-x = 25
+triggerall=time<5
+trigger1=command="holdfwd"&&command!="holdback"
+x = 12
+ignorehitpause = 1
+persistent = 1
+[State 0, PosSet]
+type = VelSet
+triggerall=time<5
+trigger1=command="holdback"&&command!="holdfwd"
+x = -8
 ignorehitpause = 1
 persistent = 1
 
 [State 0, VelMul]
-type = VelSet
+type = VelMul
 trigger1=p2bodydist x < -10
 trigger1=vel x >0
-x = 0
+x = .95
 ignorehitpause = 1
+
 
 [State 200, 2]
 type = PlaySnd
@@ -5445,6 +5434,36 @@ type = VelAdd
 trigger1 = time > 4
 y = .26
 
+[State 0, PosSet]
+type = VelSet
+triggerall=time<5
+trigger1=command="holdfwd"&&command!="holdback"
+x = 7
+ignorehitpause = 1
+persistent = 1
+[State 0, PosSet]
+type = VelSet
+triggerall=time<5
+trigger1=command="holdback"&&command!="holdfwd"
+x = -6
+ignorehitpause = 1
+persistent = 1
+
+[State 0, PosSet]
+type = VelSet
+triggerall=time<5
+trigger1=command="holdup"&&command!="holddown"
+y = -4
+ignorehitpause = 1
+persistent = 1
+[State 0, PosSet]
+type = VelSet
+triggerall=time<5
+trigger1=command="holddown"&&command!="holdup"
+y = 10
+ignorehitpause = 1
+persistent = 1
+
 [State 0, Explod]
 type = Explod
 trigger1 = time = 0
@@ -5482,10 +5501,12 @@ value = 1
 [State 0, StateTypeSet]
 type = StateTypeSet
 trigger1 = time = 10
+trigger2 = pos y>=0
 statetype = A       ;S,A,C,L
 movetype = A       ;I,A,H
 physics = A         ;A,C,S,N
 ignorehitpause = 1
+
 
 [State 0, PosSet]
 type = PosSet
@@ -10097,7 +10118,7 @@ triggerall = alive
 triggerall = statetype != L
 triggerall = map(burst)=1
 triggerall = map(panic)=0
-triggerall = power>=4000
+triggerall = power>=5000
 triggerall = command = "burst"
 triggerall = movetype = H 
 triggerall = stateno!=[140,160]

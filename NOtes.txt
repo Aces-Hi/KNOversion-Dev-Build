@@ -1,9 +1,8 @@
 universal
-speed up anti airs lmao
-make buttons faster for not fast characters
-make panic burst 5 bars
-drama zooms
-aimable rc
+drama zooms (will do when i add more shit to put it on)
+stage verticality
+lighting
+shading override...
 
 vile
 make razor hittable like arzon's balls.

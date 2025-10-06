@@ -5,10 +5,12 @@ universal
 +buffering after wakeup is much easier
 +pushblock distance
 +backdash recovery
++aimable drift rc
 ~meter mechanics
 -pushblock 1 bar
 -no bdc
 -bd invuln
+-panic burst 5 bars
 --recoil guard
 
 angous
@@ -19,8 +21,10 @@ angous
 +5h min damage
 +2m min damage
 +2h min damage
++2h hitbox
 +3h min damage
 +jH min damage
+-2h hurtbox
 -6ss ending lag
 
 roger
@@ -30,34 +34,45 @@ roger
 +5r startup
 +h5r startup
 +h5r hits skd
++2h hitbox
 ~2h launch height reduced on grounded
 -jH min damage
 -h5r damage
 -5r launch height
+-2h hurtbox
 /M>2M>M>3H
 
 eddy
 /no more super jc
 
 one
++2H hitbox
++j2H hitbox
 -5l hurtbox
 -5m hurtbox
 -5h hurtbox
 -2m hurtbox
 -2h hurtbox
+-2h startup
 -3h hitbox
 -3h hurtbox
 -jM hurtbox
 -jH hurtbox
 -j2H hurtbox
 
+vile
++2h hitbox
+-2h hurtbox
+
 wu
 +r float
 +r endlag reduced during combos
++2h hitbox
 ~ANOTHER WU REWORK YES! YES!!!!!
 -r endlag
 
 arzon
++2h hitbox
 -j5s endlag
 
 jv
@@ -71,7 +86,10 @@ sahkive
 +5r charges faster
 +charge 5r launch height reduced
 +qcb1 damage
++2H hitbox
 -qcf min damage
 
+jojo
++2h hitbox
 
 

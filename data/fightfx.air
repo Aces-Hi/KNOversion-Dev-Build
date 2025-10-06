@@ -1,4 +1,4 @@
-czceeeeeeeeczeqczeqzl; Animation data for Fight Effects
+eeczceeeeeeeeczeqczeqzl; Animation data for Fight Effects
 
 ; groupno, imageno, offx, offy, duration [, [flipflags] [, drawtype]]
 ; if duration is -1, then frame is displayed indefinitely.
@@ -91,6 +91,28 @@ czceeeeeeeeczeqczeqzl; Animation data for Fight Effects
 6900,3, 0,0, 2
 6900,4, 0,0, 2
 
+; Pushblock
+[Begin Action 41]
+6015,0,0,0,2,,A
+6015,1,0,0,2,,A
+6015,2,0,0,2,,A
+6015,3,0,0,3,,A
+6015,4,0,0,4,,A
+
+
+; Parry
+[Begin Action 42]
+45,1, 0,0, 1, , A
+45,2, 0,0, 1, , A
+45,3, 0,0, 1, , A
+45,4, 0,0, 2, , A
+45,5, 0,0, 2, , A
+45,6, 0,0, 1, , A
+45,7, 0,0, 1, , A
+45,8, 0,0, 1, , A
+45,9, 0,0, 1, , A
+45,10, 0,0, 1, , A
+
 ; Small ground shockwave
 [Begin Action 60]
 500,0, 0,0, 3
@@ -160,15 +182,6 @@ czceeeeeeeeczeqczeqzl; Animation data for Fight Effects
 6950,4, 0,79, 3
 6950,5, 0,79, 3
 6950,6, 0,0, 3
-
-
-; Pushblock
-[Begin Action 41]
-6015,0,0,0,2,,A
-6015,1,0,0,2,,A
-6015,2,0,0,2,,A
-6015,3,0,0,3,,A
-6015,4,0,0,4,,A
 
 
 ; Level 2 super effect
@@ -340,6 +353,17 @@ czceeeeeeeeczeqczeqzl; Animation data for Fight Effects
 900,6, 0,0, 3, , AS45D256
 900,7, 0,0, 3, , AS20D256
 
+[Begin Action 901]
+901,0, 0,0, 2, , 
+901,1, 0,0, 3, , 
+901,2, 0,0, 3, , 
+901,3, 0,0, 4, , 
+901,4, 0,0, 5, , 
+901,5, 0,0, 5, , 
+901,6, 0,0, 6, , 
+901,7, 0,0, 6, , 
+901,8, 0,0, 6, , 
+
 ; BURST P1
 [Begin Action 905]
 905,0, -200,0, 4, , AS50D256
@@ -394,17 +418,6 @@ czceeeeeeeeczeqczeqzl; Animation data for Fight Effects
 900,7, 0,0, 5, , A
 900,8, 0,0, 5, , A
 
-
-[Begin Action 901]
-901,0, 0,0, 2, , 
-901,1, 0,0, 3, , 
-901,2, 0,0, 3, , 
-901,3, 0,0, 4, , 
-901,4, 0,0, 5, , 
-901,5, 0,0, 5, , 
-901,6, 0,0, 6, , 
-901,7, 0,0, 6, , 
-901,8, 0,0, 6, , 
 
 ; FX: Dash
 [Begin Action 6951]

@@ -1,10 +1,15 @@
 universal
 ++crumple
+++parry
 +more meter
 +buffering after wakeup is much easier
 +pushblock distance
++backdash recovery
 ~meter mechanics
 -pushblock 1 bar
+-no bdc
+-bd invuln
+--recoil guard
 
 angous
 +r followups faster in combos
@@ -19,6 +24,7 @@ angous
 -6ss ending lag
 
 roger
+++va
 +very slight movement on ex5s
 +4r hits skd
 +5r startup
@@ -29,6 +35,30 @@ roger
 -h5r damage
 -5r launch height
 /M>2M>M>3H
+
+eddy
+/no more super jc
+
+one
+-5l hurtbox
+-5m hurtbox
+-5h hurtbox
+-2m hurtbox
+-2h hurtbox
+-3h hitbox
+-3h hurtbox
+-jM hurtbox
+-jH hurtbox
+-j2H hurtbox
+
+wu
++r float
++r endlag reduced during combos
+~ANOTHER WU REWORK YES! YES!!!!!
+-r endlag
+
+arzon
+-j5s endlag
 
 jv
 +665s launch height
@@ -42,3 +72,5 @@ sahkive
 +charge 5r launch height reduced
 +qcf 1 damage
 -qcb min damage
+
+

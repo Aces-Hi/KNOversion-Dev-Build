@@ -124,7 +124,6 @@ triggerall = stateno !=420
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3 = stateno = 105
 
 ;EX j6S Air Detonation
 [State -1, Light Kung Fu Palm]
@@ -158,7 +157,6 @@ triggerall = stateno != 420
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3 = stateno = 105
 ;-----------------------------------------------------------------
 ;EX 6S: Static Wave
 [State -1, Light Kung Fu Palm]
@@ -181,7 +179,6 @@ triggerall = stateno !=420
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3 = stateno = 105
 ;------------------------------------------------------------------------
 ;EX 2S: Brewing Shockwave
 [State -1, Light Kung Fu Palm]
@@ -195,7 +192,6 @@ triggerall = stateno != 420
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3 = stateno = 105
 ;---------------------------------------------------------------------------
 ;EX 5S-1: Bolt Primer
 [State -1, Light Kung Fu Palm]
@@ -213,7 +209,6 @@ triggerall = stateno != 420
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3 = stateno = 105
 ;---------------------------------------------------------------------------
 ;EX 5S-2: Bolt Shot
 [State -1, Light Kung Fu Palm]
@@ -231,7 +226,6 @@ triggerall = stateno != 420
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3 = stateno = 105
 
 ;-------------------------------------------------------------------------------
 ;EX j6S: Meteor Crash
@@ -577,8 +571,6 @@ triggerall = stateno != 420
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3 = stateno = 105
-
 ;---------------------------------------------------------------------------
 ;4S: Capacitor Discharge
 [State -1, Light Kung Fu Palm]
@@ -595,7 +587,6 @@ triggerall = stateno != 420
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3 = stateno = 105
 ;---------------------------------------------------------------------------
 ;6S: Static Wave
 [State -1, Light Kung Fu Palm]
@@ -610,7 +601,6 @@ triggerall = stateno !=420
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3 = stateno = 105
 
 ;---------------------------------------------------------------------------
 ;2S: Brewing Shockwave
@@ -624,7 +614,6 @@ triggerall = stateno != 420
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3 = stateno = 105
 ;---------------------------------------------------------------------------
 ;5S-1: Bolt Primer
 [State -1, Light Kung Fu Palm]
@@ -640,7 +629,6 @@ triggerall = command != "holddown"
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3 = stateno = 105
 
 ;---------------------------------------------------------------------------
 ;5S-2: Bolt Shot
@@ -657,7 +645,6 @@ triggerall = stateno != 420
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3 = stateno = 105
 
 ;---------------------------------------------------------------------------
 ;j4S: Capacitor Turnout

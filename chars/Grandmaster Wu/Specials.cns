@@ -205,6 +205,12 @@ anim = 1002                       ;Change animation (Def: no change)
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
 facep2 = 1
 
+[State 0, VarAdd]
+type = VarSet
+trigger1 = time = 0
+fv = 19     
+value = 0
+
 [State Wu Voices]
 type = PlaySnd
 trigger1 = time=0
@@ -1028,12 +1034,6 @@ trigger1 = time=0
 value = 1000, (0+(Random%6))
 volumescale=80
 
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = time = 0
-fv = 19     
-value = 200
-
 ;------------------------------------
 ;Either he techs throws or he doesnt it depends
 [State -2, RemoveExplod]
@@ -1755,6 +1755,12 @@ velset = 4,-2                     ;Set velocity (x,y) (Def: no change)
 ctrl = 0                         ;Set ctrl (Def: no change)
 anim = 1022                       ;Change animation (Def: no change)
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
+
+[State 0, VarAdd]
+type = VarSet
+trigger1 = time = 0
+fv = 19     
+value = 0
 
 [State Wu Voices]
 type = PlaySnd
@@ -2502,12 +2508,6 @@ type = PlaySnd
 trigger1 = time=0
 value = 1000, (0+(Random%5))
 volumescale=80
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = time = 0
-fv = 19     
-value = 200
 
 ;-----
 ;LIMITER // Only Allowed ONCE During a combo // Find in -2
@@ -3268,7 +3268,7 @@ value = 0.75
 [State 410, 2]
 type = HitDef
 trigger1 = time %5= 0
-attr = S, SP
+attr = A, SP
 damage = ceil(cond(root, fvar(11) * 40< 4, 4, root, fvar(11) * 40)), 2
 hitflag = MAF
 air.animtype = back
@@ -3296,7 +3296,7 @@ envshake.time = 5
 yaccel = .21
 forcenofall = 1
 guard.dist=0
-
+ground.cornerpush.veloff=0
 [State 0, VarSet]
 type = VarSet
 trigger1 = prevstateno !=10312
@@ -3442,6 +3442,12 @@ poweradd= 0
 ctrl = 0
 anim =10300
 sprpriority = 2
+
+[State 0, VarAdd]
+type = VarSet
+trigger1 = time = 0
+fv = 19     
+value = 0
 
 [State Wu Voices]
 type = PlaySnd
@@ -3969,12 +3975,6 @@ trigger1 = time=0
 value = 1030, (0+(Random%5))
 volumescale=90
 
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = time = 0
-fv = 19     
-value = 200
-
 ;-----
 ;LIMITER // Only Allowed ONCE During a combo // Find in -2
 [State 0, VarAdd]
@@ -4145,7 +4145,6 @@ anim = 1017
 velset = 0,0
 ctrl = 0
 
-
 [State 200, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
@@ -4235,13 +4234,6 @@ map = "EXlimiter1"
 value = 1
 ignorehitpause=1
 persistent=1
-
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = time = 0
-fv = 19     
-value = 200
 
 [State 200, VarAdd]
 type = VarAdd
@@ -4518,6 +4510,12 @@ velset = 0,0                     ;Set velocity (x,y) (Def: no change)
 ctrl = 0                         ;Set ctrl (Def: no change)
 anim = 101555                       ;Change animation (Def: no change)                   
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
+
+[State 0, VarAdd]
+type = VarSet
+trigger1 = time = 0
+fv = 19     
+value = 0
 
 [State Wu Voices]
 type = PlaySnd

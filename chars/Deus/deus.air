@@ -1,4 +1,4 @@
-qeqcc.zeecqzzccqeze1aaazczzeeeeeeeeeqeeeqeeqqeqqqqqqeeeeeeeeeeeecqeeceqeeeeqeqqeqqqqqeeqqeeeeeqeeqqqqqqqeqeeccqqqqqqzczczqqqzzecqaqcezqqzqsssqezecqeeeeqeeqeeeqccqeeeeqeeccadazcddzqqeqeeqqzzzzeczczzccqqeqqzzzzzsseqqeeqqqqqeeezezqqzqeqqqeeeeee3eqeqqqezzzeqeczzcczezqeqeeeqeeeqeeqjjkkkkkkkkkkkkkk31011,,klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
+qeqeeeeqeqqqeqcc.zeecqzzccqeze1aaazczzeeeeeeeeeqeeeqeeqqeqqqqqqeeeeeeeeeeeecqeeceqeeeeqeqqeqqqqqeeqqeeeeeqeeqqqqqqqeqeeccqqqqqqzczczqqqzzecqaqcezqqzqsssqezecqeeeeqeeqeeeqccqeeeeqeeccadazcddzqqeqeeqqzzzzeczczzccqqeqqzzzzzsseqqeeqqqqqeeezezqqzqeqqqeeeeee3eqeqqqezzzeqeczzcczezqeqeeeqeeeqeeqjjkkkkkkkkkkkkkk31011,,klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
 ..,......,,,...j,,,./..kl,,----..,,.,,,,,,,,,,,.; KFM's animation data
 ; see docs/air.txt for more information
 
@@ -20,6 +20,7 @@ Clsn2Default: 1
 0,12, 0,1, 8
 0,2, 0,1, 5
 0,2, 0,0, 45
+
 ; Blank
 [Begin Action 1]
 -1,0, 0,0, 10
@@ -226,9 +227,10 @@ Clsn2Default: 1
 Clsn2Default: 1
   Clsn2[0] = -28, -111, 26, -1
 105,-1, 0,0, 5
-105,2, 0,0, 11
+105,2, 0,0, 9
 105,3, 0,0, 2
-105,4, 0,0, 5
+LoopStart
+105,4, 0,0, 2
 
 ; RF1
 [Begin Action 106]
@@ -1069,6 +1071,26 @@ Clsn2Default: 1
 400,0, 0,0, 3
 10,2, 0,0, 3
 10,1, 0,0, 3
+
+; Parry
+[Begin Action 910]
+Clsn1: 1
+  Clsn1[0] = -43, -100, 51, 0
+Clsn2Default: 1
+  Clsn2[0] = -43, -100, 51, 0
+120,1, 0,0, 8
+120,2, 0,0, 10
+
+;Air Parry
+[Begin Action 911]
+Clsn1: 1
+  Clsn1[0] = -43, -100, 51, 0
+Clsn2Default: 1
+  Clsn2[0] = -43, -100, 51, 0
+122,1, 0,0, 8
+122,2, 0,0, 6
+LoopStart
+122,3, 0,0, 6
 
 ; 5s grab
 [Begin Action 1000]

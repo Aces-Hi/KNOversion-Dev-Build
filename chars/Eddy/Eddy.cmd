@@ -21,8 +21,7 @@ trigger2 = stateno = [200,499]
 trigger2 = movecontact ;&& enemynear, movetype = H
 trigger2 = stateno!=421
 trigger3 = stateno = 1330 ;From blocking
-trigger4 = stateno = 105 && time > 10
-trigger5 = stateno = 1203
+trigger4 = stateno = 1203
 var(1) = 1
 
 [State -1, Grab]
@@ -145,6 +144,7 @@ triggerall = command = "holdup"
 triggerall = movehit 
 triggerall = stateno!=[1300,1313]
 trigger1 = stateno = 220||210||211||420||1101
+triggerall=stateno!=[3000,3015]
 
 ;---------------------------------------------------------------------------
 [State -1, EX 6S]
@@ -160,7 +160,7 @@ triggerall = command != "holddown"
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
+
 ;---------------------------------------------------------------------------
 [State -1, 6S]
 type = ChangeState
@@ -174,7 +174,6 @@ triggerall = command != "holddown"
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
 ;trigger3 = stateno = 100
 
 ;---------------------------------------------------------------------------
@@ -191,7 +190,6 @@ triggerall = command != "holdback"
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
 
 ;---------------------------------------------------------------------------
 [State -1, EX j2S]
@@ -221,8 +219,6 @@ triggerall = command != "holdback"
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
-;trigger3 = stateno = 100
 
 ;---------------------------------------------------------------------------
 [State -1, j2S]
@@ -251,8 +247,7 @@ triggerall = command = "holdback"
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
-;trigger4 = stateno = 100
+
 ;---------------------------------------------------------------------------
 [State -1, 4S]
 type = ChangeState
@@ -265,8 +260,7 @@ triggerall = command = "holdback"
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
-;trigger3 = stateno = 100
+
 
 ;---------------------------------------------------------------------------
 [State -1, EX 5S]
@@ -280,10 +274,7 @@ triggerall = command = "EX"
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
-;trigger3 = stateno = 1001 || stateno = 1002 || stateno = 1101|| stateno = 1102
-;trigger3 = movecontact ;&& enemynear, movetype = H
-;trigger4 = stateno = 100
+
 ;---------------------------------------------------------------------------
 
 [State -1, 5S]
@@ -296,8 +287,7 @@ triggerall = command != "c"
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
-;trigger3 = stateno = 100
+
 
 [State -1, 2R: Comb Toss]
 type = ChangeState

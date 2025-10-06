@@ -26,7 +26,6 @@ trigger2 = (stateno = [200,299]) || (stateno = [400,499]) || stateno = 656
 trigger2 = movecontact
 trigger2 = stateno!=421 ;&& stateno!=210 
 trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
-trigger4 = stateno = 105 && time > 15
 var(1) = 1
 
 ;===========================================================================
@@ -135,7 +134,6 @@ triggerall = command != "holdfwd"
 triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
 
 [State -1, EX Revelation Lv3]
 type = ChangeState
@@ -153,7 +151,6 @@ trigger3 = stateno = 210 && movecontact
 trigger4 = stateno = 610 && movecontact
 trigger5 = stateno = 630 && movecontact
 trigger6 = stateno = 640 && movecontact
-trigger7=stateno=105
 
 [State -1, EX Ascension Lv3]
 type = ChangeState
@@ -167,7 +164,6 @@ triggerall = command = "holdback"
 triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
 
 [State -1, EX Holy Flame Lv3]
 type = ChangeState
@@ -181,8 +177,6 @@ triggerall = command = "EX"
 triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
-
 
 [State -1, Ascension Lv3]
 type = ChangeState
@@ -195,7 +189,6 @@ triggerall = command = "holdback"
 triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
 
 [State -1, Ascension Lv2]
 type = ChangeState
@@ -209,7 +202,6 @@ triggerall = command = "holdback"
 triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
 
 [State -1, Ascension Palm]
 type = ChangeState
@@ -221,7 +213,6 @@ triggerall = command = "holdback"
 triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
 
 [State -1, 2S: Astral Rise Lv1]
 type = ChangeState
@@ -234,7 +225,6 @@ triggerall = command = "b"
 triggerall=command!="c"
 trigger1 = ctrl
 trigger2 = var(1)
-trigger6=stateno=105
 
 [State -1, Revelation Lv3]
 type = ChangeState
@@ -250,8 +240,7 @@ trigger3 = stateno = 210 && movecontact
 trigger4 = stateno = 610 && movecontact
 trigger5 = stateno = 630 && movecontact
 trigger6 = stateno = 640 && movecontact
-trigger7=stateno=105
-trigger8 = stateno = 600 && movehit
+trigger7= stateno = 600 && movehit
 
 [State -1, Revelation Lv2]
 type = ChangeState
@@ -268,8 +257,7 @@ trigger3 = stateno = 210 && movecontact
 trigger4 = stateno = 610 && movecontact
 trigger5 = stateno = 630 && movecontact
 trigger6 = stateno = 640 && movecontact
-trigger7=stateno=105
-trigger8 = stateno = 600 && movehit
+trigger7 = stateno = 600 && movehit
 
 [State -1, Revelation]
 type = ChangeState
@@ -283,8 +271,7 @@ trigger2 = var(1)
 trigger3 = stateno = 210 && movecontact
 trigger4 = stateno = 610 && movecontact
 trigger5 = stateno = 630 && movecontact
-trigger6=stateno=105
-trigger7 = stateno = 600 && movehit
+trigger6 = stateno = 600 && movehit
 
 [State -1, Holy Flame Lv3]
 type = ChangeState
@@ -301,7 +288,6 @@ triggerall = command != "holddown"
 triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
 
 [State -1, Holy Flame Lv2]
 type = ChangeState
@@ -315,10 +301,9 @@ triggerall=command!="c"
 triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
-trigger4 = fvar(19) >100
-trigger4 = helper(10322),stateno=10322
-trigger4=ctrl
+trigger3= fvar(19) >100
+trigger3 = helper(10322),stateno=10322
+trigger3=ctrl
 
 [State -1, 5R]
 type = ChangeState

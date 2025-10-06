@@ -1528,15 +1528,11 @@ physics = S         ;A,C,S,N
 ignorehitpause = 1
 
 [State 0, NotHitBy]
-type = NotHitBy
-trigger1 = time <10
-value = SCA,NA,SA,HA,NP,SP,HP
-time = 1
-
-[State 0, CtrlSet]
-type = CtrlSet
-trigger1 = time>20
-value = 1
+type 	= NotHitBy
+trigger1 	= time <= 7
+value 	= SCA
+time 	= 1
+ignorehitpause = 1
 
 [State 0, Explod]
 type = Explod
@@ -1627,7 +1623,7 @@ flag = NoAutoTurn
 
 [State 100, 4]
 type = selfstate
-trigger1 = time > 20
+trigger1 = animtime=0
 value = 0
 ctrl = 1
 
@@ -1674,12 +1670,6 @@ movetype = I        ;I,A,H
 physics = S         ;A,C,S,N
 ignorehitpause = 1
 
-[State 0, NotHitBy]
-type = NotHitBy
-trigger1 = time <=15
-value = SCA,NA,SA,HA,NP,SP,HP
-time = 1
-
 [State 0, Explod]
 type = Explod
 trigger1 = time=0
@@ -1712,11 +1702,6 @@ scale = .84,.84
 sprpriority = 2
 ownpal = 1
 removeongethit = 1
-
-[State 0, CtrlSet]
-type = CtrlSet
-trigger1 = time>20
-value = 1
 
 [State 0, Explod]
 type = Explod
@@ -1774,7 +1759,7 @@ flag = NoAutoTurn
 
 [State 100, 4]
 type = selfstate
-trigger1 = time > 20
+trigger1 = animtime=0
 value = 0
 ctrl = 1
 
@@ -1803,10 +1788,11 @@ trigger1 = time<10
 value = 0
 
 [State 0, NotHitBy]
-type = NotHitBy
-trigger1 = time <=15
-value = SCA,NA,SA,HA,NP,SP,HP
-time = 1
+type 	= NotHitBy
+trigger1 	= time <= 7
+value 	= SCA
+time 	= 1
+ignorehitpause = 1
 
 [State 0, 2]
 type = VelSet
@@ -1821,11 +1807,6 @@ y = 0
 type = VelSet
 trigger1 = 1
 x = 0
-
-[State 0, CtrlSet]
-type = CtrlSet
-trigger1 = time>20
-value = 1
 
 [State 0, Explod]
 type = Explod
@@ -1871,7 +1852,7 @@ flag = NoAutoTurn
 
 [State 100, 4]
 type = selfstate
-trigger1 = time > 20
+trigger1 = animtime=0
 value = 0
 ctrl = 1
 

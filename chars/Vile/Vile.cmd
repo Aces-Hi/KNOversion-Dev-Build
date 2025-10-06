@@ -20,7 +20,6 @@ trigger2 = (stateno = [200,299]) || (stateno = [400,499]) || stateno = 656
 trigger2 = movecontact ;&& enemynear, movetype = H
 trigger2 = stateno!=421
 trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
-trigger4 = stateno = 105 && time > 15
 var(1) = 1
 
 
@@ -151,7 +150,6 @@ trigger2 = var(1)
 ;trigger3 = !ishelper
 ;trigger4 = stateno = 5120
 trigger3 = stateno = 1017 && movecontact ;&& enemynear, movetype = H
-trigger4=stateno=105
 
 [State -1, EX 6S: Rising Knee (Air)]
 type = ChangeState
@@ -213,7 +211,7 @@ trigger3 = stateno = 100
 trigger4 = stateno = 1010
 trigger4 = movecontact ;&& enemynear, movetype = H
 trigger5 = stateno = 1017 && movecontact ;&& enemynear, movetype = H
-trigger6=stateno=105
+
 ;-------------------------------------------------------------------------
 
 [State -1, EX 2S: Acid Stomp]
@@ -245,7 +243,6 @@ trigger2 = var(1)
 ;trigger3 = movecontact ;&& enemynear, movetype = H
 ;trigger3 = stateno = 1010
 trigger3 = stateno = 1017 && movecontact ;&& enemynear, movetype = H
-trigger4=stateno=105
 
 
 [State -1, 2S: Acid Stomp]
@@ -261,7 +258,6 @@ triggerall = command != "holdback"
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
 
 [State -1, 2S: Acid Stomp]
 type = ChangeState
@@ -276,7 +272,6 @@ triggerall = command != "holdback"
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
 
 ;-------------------------------------------------------------------------
 
@@ -303,7 +298,6 @@ trigger1 = ctrl
 trigger2 = var(1)
 trigger3 = stateno = 1010
 trigger3 = movecontact ;&& enemynear, movetype = H
-trigger4=stateno=105
 
 [State -1, 4S: Acid Grab]
 type = ChangeState
@@ -313,7 +307,6 @@ triggerall = command = "b" && command="holdback"
 triggerall=command!="c"
 trigger1 = statetype != A
 trigger1 = ctrl
-trigger2=stateno=105
 
 ;-------------------------------------------------------------------------
 
@@ -378,7 +371,6 @@ trigger2 = var(1)
 ;trigger3 = movecontact ;&& enemynear, movetype = H
 ;trigger4 = stateno=1000
 trigger3 = stateno=1017 && movecontact ;&& enemynear, movetype = H
-trigger4=stateno=105
 
 [State -1, 5S: Acid Razor]
 type = ChangeState
@@ -395,7 +387,6 @@ triggerall=command!="c"
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
 
 ;===========================================================================
 ;===========================================================================

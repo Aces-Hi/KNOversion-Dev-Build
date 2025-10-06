@@ -3183,7 +3183,7 @@ type = S
 movetype = A
 physics = N
 anim = 1010
-velset = 0,0
+velset = vel x,vel y
 ctrl = 0
 
 [State 0, StateTypeSet]
@@ -3367,7 +3367,7 @@ type = S
 movetype =A
 physics = N
 anim = 1011
-velset = vel x,0
+velset = vel x,vel y/2
 ctrl = 0
 
 
@@ -3386,10 +3386,6 @@ anim = 999999
 id = 893
 ownpal = 1
 
-[State 1028, Gravity]
-type = VelAdd
-trigger1 = !pos y>= 0
-y = .04
 
 [State 0, VelMul]
 type = VelMul
@@ -3568,10 +3564,53 @@ trigger1 = pos y>= 0
 statetype = S       ;S,A,C,L
 physics = S    
 
+
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = command="hold_c"&command="holdfwd"
+x = .12
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = command="hold_c"&command="holdback"
+x = -.12
+[State 0, VelAdd]
+type = VelAdd
+triggerall=pos y >-100
+trigger1 = command="hold_c"&command="holdup"
+y = -.12
+[State 0, Veladd]
+type = VelMul
+triggerall=pos y <=-90
+trigger1 = command != "holddown"
+y = .95
+persistent=1
+[State 0, VelAdd]
+type = VelAdd
+triggerall=pos y <-10
+trigger1 = command="hold_c"&command="holddown"
+y = .12
+[State 0, Veladd]
+type = VelSet
+triggerall=pos y >=-10
+trigger1 = command != "holdup"
+y = 0
+persistent=1
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = time = 15
+fv = 19     
+value = 200
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 15
+value = 3040,0
+
 [State 0, ChangeState] ;wu astral timer
 type = ChangeState
-trigger1 = time>15
+trigger1 = time>15&&command!="hold_c"
 trigger2 = winKO
+trigger3=time>60
 value = 2003
 ctrl = 0
 ;-----------------------------
@@ -3659,14 +3698,16 @@ physics = S
 [State 0, ChangeState]
 type = ChangeState
 triggerall = Pos Y >= 0
-trigger1 = animtime = 0
+trigger1 = animtime = 0&&combocount=0
+trigger2 = animelemtime(3)>=0&&combocount>0
 value = 0
 ctrl = 1
 
 [State 0, ChangeState]
 type = ChangeState
 triggerall = statetype = A
-trigger1 = animtime = 0
+trigger1 = animtime = 0&&combocount=0
+trigger2 = animelemtime(3)>=0&&combocount>0
 value = 69000
 ctrl = 1
 

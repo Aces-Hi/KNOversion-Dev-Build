@@ -975,8 +975,8 @@ trigger1 = animtime=0
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "intro %f meter %f lead %f enemy %f nj %f arm %f"
-params = map(moveintro),map(meter),map(teamlead),map(enemyteamlead),map(noblockjump),map(armed)
+text = "intro %f meter %f lead %f enemy %f nj %f hl %f ap %f tracker %f"
+params = map(moveintro),map(meter),map(teamlead),map(enemyteamlead),map(noblockjump),map(hardlimit),map(afterparry),map(hardlimittracker)
 ignorehitpause = 1
 
 ;==================================================================================================

@@ -1,4 +1,4 @@
-eeqqeeqeeeqqqqqqqqqqqqqqqqeqqee; KFM's animation data
+qeeeeqqeeqeeeqqqqqqqqqqqqqqqqeqqee; KFM's animation data
 ; see docs/air.txt for more information
 
 ;---------------------------------------------------------------------------
@@ -230,8 +230,8 @@ LoopStart
 [Begin Action 106]
 Clsn2Default: 1
   Clsn2[0] = -35, -75, 34, -1
-150,0, 0,0, 3
-150,1, 0,0, 3
+150,0, 0,0, 2
+150,1, 0,0, 2
 150,2, 0,0, 3
 150,3, 0,0, 3
 150,4, 0,0, 3
@@ -1303,6 +1303,25 @@ Clsn2Default: 2
 700,2, 0,0, 4
 700,3, 0,0, 4
 700,4, 0,0, 4
+
+; Parry
+[Begin Action 910]
+Clsn1: 1
+  Clsn1[0] = -43, -100, 51, 0
+Clsn2Default: 1
+  Clsn2[0] = -43, -100, 51, 0
+120,1, 0,0, 8
+120,2, 0,0, 10
+
+;Air Parry
+[Begin Action 911]
+Clsn1: 1
+  Clsn1[0] = -43, -100, 51, 0
+Clsn2Default: 1
+  Clsn2[0] = -43, -100, 51, 0
+122,2, -1,45, 8
+122,3, -1,45, 6
+40,15, -13,40, 6
 
 ;-----------------------------------
 ; 6S: BrawlerRush A

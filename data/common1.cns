@@ -1444,6 +1444,310 @@ type = ChangeState
 trigger1 = animtime = 0
 value = 0
 ctrl = 1
+
+;---------------------------------------------------------------------------
+;Parry
+[Statedef 910]
+type    = S
+movetype= I
+physics = S
+velset = vel x * 0.5,0
+anim = 910
+ctrl = 0
+poweradd = -1000
+sprpriority = 2
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = var(50)&&name="one"&&time=0
+value = 912
+ignorehitpause = 1
+
+[State 0, PalFX]
+type = PalFX
+triggerall = time < 10
+trigger1 = animelemno(0) = 1
+time = 1
+add = 100, 100, 100
+invertall = 0
+color = 0
+ignorehitpause = 1
+persistent = 1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = animelem = 1
+value = SCA
+time = 1
+
+[State 0, Helper]
+type = Helper
+trigger1 = !time
+name = "Parry Spark"
+ID = 915
+stateno = 915
+pos = 15,-45
+size.xscale = 0.15
+size.yscale = 0.30
+postype = p1    ;p2,front,back,left,right
+ownpal = 1
+
+[State 0, ReversalDef]
+type = ReversalDef
+trigger1 = 1
+reversal.attr = SCA,NA,SA,HA,NP,SP,HP,AP
+pausetime = 0,0
+hitsound = S2,0
+p1stateno = 912
+ignorehitpause = 1
+
+[State 1000, 7]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+;Air Parry
+[Statedef 911]
+type    = A
+movetype= A
+physics = A
+velset = vel x,vel y + 1
+anim = 911
+ctrl = 0
+sprpriority = 2
+poweradd = -1000
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = var(50)&&name="one"&&time=0
+value = 914
+ignorehitpause = 1
+
+[State 0, PalFX]
+type = PalFX
+triggerall = time < 10
+trigger1 = animelemno(0) = 1
+time = 1
+add = 100, 100, 100
+invertall = 0
+color = 0
+ignorehitpause = 1
+persistent = 1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = animelem = 1
+value = SCA
+time = 1
+
+[State 0, Helper]
+type = Helper
+trigger1 = !time
+name = "Parry Spark"
+ID = 915
+stateno = 915
+pos = 15,-45
+size.xscale = 0.15
+size.yscale = 0.30
+postype = p1    ;p2,front,back,left,right
+ownpal = 1
+
+[State 0, ReversalDef]
+type = ReversalDef
+trigger1 = 1
+reversal.attr = SCA,NA,SA,HA,NP,SP,HP
+pausetime = 0,0
+hitsound = S2,0
+p1stateno = 913
+ignorehitpause = 1
+
+
+;---------------------------------------------------------------------------
+;Parry - Success
+[Statedef 912] ;Redline guard success
+type    = S
+movetype= A
+physics = S
+velset = vel x * 0.5, 0
+ctrl = 1
+facep2 = 1
+sprpriority = 10
+
+[State 0, PowerSet]
+type = PowerSet
+trigger1 = time=0
+value = map(hardlimittracker)
+ignorehitpause = 1
+
+[State consequences.]
+type = mapset
+trigger1 = 1
+map = "afterparry"
+value = 60
+ignorehitpause=1
+persistent=1
+
+[State 700, Snd]
+type = playsnd
+triggerall = !time
+trigger1 = name!="eddy"
+trigger2 = name="eddy"&&palno!=11
+value = S6700, 0
+
+[State 700, Snd]
+type = playsnd
+triggerall = !time
+triggerall = name="eddy"
+trigger1 = palno=11
+value = S6700, 2
+volumescale=50
+
+[State 52, Assert: NoWalk]
+type = AssertSpecial
+trigger1 = 1
+flag = NoWalk
+ignoreHitPause = 1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 3
+
+[State 0, Pause]
+type = Pause
+triggerall = enemy, hitdefattr != SCA,NP, SP, HP
+trigger1 = !time
+time = 15
+movetime = 1
+ignorehitpause = 1
+[State 0, Pause]
+type = Pause
+triggerall = enemy, hitdefattr = SCA,NP, SP, HP
+trigger1 = !time
+time = 5
+movetime = 1
+ignorehitpause = 1
+[State 0, PalFX]
+type = PalFX
+trigger1 = !time
+time = 10
+add = 100, 100, 100
+invertall = 0
+color = 0
+ignorehitpause = 1
+[State 0, PalFX]
+type = BGPalFX
+trigger1 = !time
+time = 15
+add = -20, -20, -20
+invertall = 0
+color = 0
+ignorehitpause = 1
+
+[State 0, EnvShake]
+type = EnvShake
+trigger1 = !time
+time = 20
+freq = 20
+ampl = -6
+phase = 120
+ignorehitpause = 1
+persistent = 1
+
+[State 1000, 7]
+type = ChangeState
+trigger1 = !animtime
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+;Air Parry - Success
+[Statedef 913]
+type    = A
+movetype= I
+physics = A
+velset = vel x * 0.75, -3 
+ctrl = 1
+sprpriority = 2
+
+[State 0, PowerSet]
+type = PowerSet
+trigger1 = time=0
+value = map(hardlimittracker)
+ignorehitpause = 1
+
+[State consequences.]
+type = mapset
+trigger1 = 1
+map = "afterparry"
+value = 60
+ignorehitpause=1
+persistent=1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 3
+
+[State 700, Snd]
+type = playsnd
+trigger1 = !time
+value = S6700, 0
+
+[State 0, Pause]
+type = Pause
+trigger1 = !time
+time = 15
+movetime = 1
+ignorehitpause = 1
+[State 0, PalFX]
+type = PalFX
+trigger1 = !time
+time = 10
+add = 100, 100, 100
+invertall = 0
+color = 0
+ignorehitpause = 1
+[State 0, PalFX]
+type = BGPalFX
+trigger1 = !time
+time = 15
+add = -20, -20, -20
+invertall = 0
+color = 0
+ignorehitpause = 1
+
+[State 0, EnvShake]
+type = EnvShake
+trigger1 = !time
+time = 20
+freq = 20
+ampl = -6
+phase = 120
+ignorehitpause = 1
+persistent = 1
+
+;---------------------------------------------------------------------------
+;Red Guard - Helper
+[Statedef 915]
+type    = A
+movetype= I
+physics = N
+velset = 0, 0
+anim = F42
+ctrl = 0
+sprpriority = 10
+
+
+[State 1000, 7]
+type = DestroySelf
+trigger1 = !animtime
+trigger2 = root, movetype = H
+
 ;---------------------------------------------------------------------------
 ;Recoil Guard
 [Statedef 7000]
@@ -5298,20 +5602,26 @@ trigger4 = parent, stateno = 5301
 
 ;=============================================================================
 [Statedef -1]
-;Alpha Counter
-[State -1, RC Jasta]
+
+;Parry
+[State -1, Parry]
 type = ChangeState
-value = 7000
-triggerall = statetype != A
-triggerall = command = "holdfwd" 
-triggerall = command = "a"
-triggerall = stateno=[140,160]
-trigger1 = power>=2000
+value = 910 + 1 * statetype = A
+triggerall = power >= 1000
+triggerall = hitshakeover && teammode != Tag
+trigger1 = command = "holdfwd" || command = "fwd"
+triggerall = command = "nobuffer_a" || (stateno = [120,155] || stateno = 912 || stateno = 5120) && (command = "a")
+triggerall = ctrl ||   stateno = 912 && time > 2
+trigger2 = name="deus"
+trigger2 = command = "holdback" || command = "back"
+ignorehitpause = 1
 
 ;RC Jasta
 [State -1, RC Jasta]
 type = ChangeState
 value = 690000
+triggerall = prevstateno!=[910,914]
+triggerall = stateno!=[910,914]
 triggerall = map(norc)=0
 triggerall = name!="angous"
 triggerall = stateno!=800&&stateno!=803&&stateno!=820&&stateno!=821
@@ -5329,6 +5639,8 @@ ignorehitpause=0
 [State -1, RC Jasta Air]
 type = ChangeState
 value = 690001
+triggerall = prevstateno!=[910,914]
+triggerall = stateno!=[910,914]
 triggerall = map(norc)=0
 triggerall = name!="angous"
 triggerall=enemy,stateno!=7000
@@ -5346,6 +5658,8 @@ ignorehitpause=0
 [State -1, RC Jasta]
 type = ChangeState
 value = 690002
+triggerall = prevstateno!=[910,914]
+triggerall = stateno!=[910,914]
 triggerall = map(norc)=0
 triggerall = name!="angous"
 triggerall = stateno!=800&&stateno!=803&&stateno!=820&&stateno!=821
@@ -5360,6 +5674,8 @@ ignorehitpause=0
 [State -1, RC Jasta Air]
 type = ChangeState
 value = 690003
+triggerall = prevstateno!=[910,914]
+triggerall = stateno!=[910,914]
 triggerall = map(norc)=0
 triggerall = name!="angous"
 triggerall = !ishelper
@@ -5441,14 +5757,6 @@ flag = nojump
 ignorehitpause = 1
 persistent = 1
 
-[State consequences.]
-type = mapset
-trigger1 = combocount=0
-trigger2 = roundstate=0
-map = "hardlimit"
-value = 0
-ignorehitpause=1
-persistent=1
 
 [State 0, Varadd]
 type = Mapset
@@ -9617,9 +9925,19 @@ persistent=1
 
 [State consequences.]
 type = mapset
+triggerall=stateno!=910
 trigger1 = map(hardlimit)=0
 map = "hardlimittracker"
 value = power
+ignorehitpause=1
+persistent=1
+
+[State consequences.]
+type = mapset
+triggerall=stateno=[910,912]
+trigger1 = map(hardlimit)=0
+map = "hardlimittracker"
+value = power+1000
 ignorehitpause=1
 persistent=1
 
@@ -9632,13 +9950,58 @@ value = power
 ignorehitpause=1
 persistent=1
 
+
 [State consequences.]
 type = mapset
+triggerall=map(afterparry)=0
 trigger1 = combocount=0
+trigger2 = roundstate=0
+trigger3=stateno=[910,911]
 map = "hardlimit"
 value = 0
 ignorehitpause=1
 persistent=1
+
+[State consequences.]
+type = mapset
+triggerall=stateno!=[910,911]
+trigger1 = prevstateno=[912,913]
+trigger1 = combocount>0
+map = "hardlimit"
+value = 1
+ignorehitpause=1
+persistent=1
+
+
+[State consequences.]
+type = mapadd
+triggerall=stateno!=[910,913]
+trigger1=map(afterparry)>0&&combocount=0
+trigger2=map(afterparry)>1&&combocount>0
+map = "afterparry"
+value = -1
+ignorehitpause=1
+persistent=1
+[State consequences.]
+type = mapset
+trigger1=stateno=[910,911]
+map = "afterparry"
+value = 0
+ignorehitpause=1
+persistent=1
+
+[State 0, AttackMulSet]
+type = AttackMulSet
+trigger1=map(afterparry)>0
+value = .7
+ignorehitpause = 1
+persistent = 1
+[State 0, AttackMulSet]
+type = AttackMulSet
+trigger1=map(afterparry)=0
+value = 1
+ignorehitpause = 1
+persistent = 1
 
 [State 0, PowerSet]
 type = PowerSet

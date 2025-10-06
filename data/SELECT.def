@@ -58,7 +58,7 @@ stages/wafflehouse.def, zoom=0,music=sound/wafflehouse.mp3, music=sound/waffleho
 stages/ava.def, zoom=0,music=sound/ava.mp3, music=sound/ava2.mp3, music=sound/ava3.mp3
 stages/ballin.def, zoom=0,music=sound/ballin.mp3, music=sound/ballin2.mp3, music=sound/ballin3.mp3
 stages/mind.def, zoom=0,music=sound/mind.mp3, music=sound/mind2.mp3, music=sound/mind3.mp3
-stages/false.def, zoom=0,music=sound/false.mp3, music=sound/false2.mp3, music=sound/false3.mp3,music = sound/false4.mp3
+stages/false.def, zoom=0,music=sound/false.mp3, music=sound/false2.mp3, music=sound/false3.mp3
 
 ;---------------------------------------------------------------------
 [Options]

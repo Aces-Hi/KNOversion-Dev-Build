@@ -20,7 +20,6 @@ trigger2 = (stateno = [200,299]) || (stateno = [400,499]) || stateno = 656
 trigger2 = movecontact
 trigger2 = stateno!=421
 trigger3 = stateno = 1310 || (stateno = 1330&&ctrl)
-trigger4 = stateno = 105
 var(1) = 1
 
 
@@ -213,8 +212,6 @@ triggerall = command != "holdback"
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
-
 
 [State -1, Dynamo Slammer]
 type = ChangeState
@@ -228,7 +225,6 @@ triggerall = command != "holdback"
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
 
 [State -1, 2R]
 type = ChangeState

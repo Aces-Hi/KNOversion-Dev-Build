@@ -19,7 +19,6 @@ trigger1 = ctrl
 trigger2 = (stateno = [200,299]) || (stateno = [400,420]) || (stateno = [500,510])
 trigger2 = movecontact ;&& enemynear, movetype = H
 trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
-trigger4 = stateno = 105 && time > 16
 var(1) = 1
 
 
@@ -154,7 +153,7 @@ triggerall = command != "holdback"
 triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3 = stateno = [300, 305] || stateno = [100, 105]
+trigger3 = stateno = [300, 305] || stateno = [100, 102]
 trigger4=movecontact
 trigger4= stateno = 511|| stateno =512
 trigger5=stateno=442&&movecontact
@@ -169,7 +168,7 @@ triggerall = command != "holdback"
 triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3 = stateno = [300, 305] || stateno = [100, 105]
+trigger3 = stateno = [300, 305] || stateno = [100, 102]
 trigger4=movecontact
 trigger4= stateno = 511|| stateno =512
 trigger5=stateno=442&&movecontact
@@ -184,7 +183,7 @@ triggerall = command = "holddown"
 triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3 = stateno = [300, 305] || stateno = [100, 105]
+trigger3 = stateno = [300, 305] || stateno = [100, 102]
 trigger4=movecontact
 trigger4= stateno = 511|| stateno =512
 trigger5=stateno=442&&movecontact
@@ -197,7 +196,7 @@ triggerall = command = "holddown"
 triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3 = stateno = [300, 305] || stateno = [100, 105]
+trigger3 = stateno = [300, 305] || stateno = [100, 102]
 trigger4=movecontact
 trigger4= stateno = 511|| stateno =512
 trigger5=stateno=442&&movecontact
@@ -214,7 +213,7 @@ triggerall = command != "holdback"
 triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3 = stateno = [300, 305] || stateno = [100, 105]
+trigger3 = stateno = [300, 305] || stateno = [100, 102]
 trigger4=stateno=442&&movecontact
 
 
@@ -229,7 +228,7 @@ triggerall = command != "holddown"
 triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3 = stateno = [300, 305] || stateno = [100, 105]
+trigger3 = stateno = [300, 305] || stateno = [100, 102]
 trigger4=movecontact
 trigger4= stateno = 511|| stateno =512
 trigger5=stateno=442&&movecontact
@@ -245,7 +244,7 @@ triggerall = command != "holddown"
 triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3 = stateno = [300, 305] || stateno = [100, 105]
+trigger3 = stateno = [300, 305] || stateno = [100, 102]
 trigger4=movecontact
 trigger4= stateno = 511|| stateno =512
 trigger5=stateno=442&&movecontact
@@ -263,7 +262,7 @@ triggerall = command != "holddown"
 triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3 = stateno = [300, 305] || stateno = [100, 105]
+trigger3 = stateno = [300, 305] || stateno = [100, 102]
 trigger4=movecontact
 trigger4= stateno = 511|| stateno =512
 trigger5=stateno=442&&movecontact

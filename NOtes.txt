@@ -1,17 +1,9 @@
 universal
-make air projectiles have landing lag
-copy af backdashes tbh
-reduce block pushback on all buttons
 speed up anti airs lmao
 make buttons faster for not fast characters
 make panic burst 5 bars
 drama zooms
 aimable rc
-
-deus
-fix sweetspot sound not working right
-make sure jab isnt overhead
-double check ex2s invuln
 
 vile
 make razor hittable like arzon's balls.
@@ -22,6 +14,8 @@ make him actually weak with no puddle, hes just stronger and even stronger now
 Z
 fix jS land cancel
 rejump infinite
+qcf reversal
+qcb damage
 
 eddy
 new side EXs
@@ -38,6 +32,7 @@ make full 4r plus
 
 arzon
 increase ground hitstun on fireballs
+6sr
 
 angous
 no skd on 3s

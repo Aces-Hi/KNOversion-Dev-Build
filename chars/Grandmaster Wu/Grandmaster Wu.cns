@@ -793,7 +793,7 @@ trigger1 = roundstate=2
 trigger1 = teamside = 1
 anim =7050
 ID = 7050
-pos = 123,198.5
+pos = 25,190
 postype = left  ;p2,front,back,left,right
 facing = 1
 vfacing = 1
@@ -812,7 +812,7 @@ trigger1 = roundstate=2
 trigger1 = teamside = 2
 anim =7050
 ID = 7050
-pos = -123,198.5
+pos = -25,190
 postype = right  ;p2,front,back,left,right
 facing = 1
 vfacing = 1

@@ -19,7 +19,6 @@ trigger1 = ctrl
 trigger2 = (stateno = [200,299]) || (stateno = [400,503]) || stateno = 656 || stateno = 670 || stateno = 630|| stateno = 610|| stateno = 600
 trigger2 = movecontact ;&& enemynear, movetype = H
 trigger2 = stateno!=421
-trigger4 = stateno = 105 && time > 16
 var(1) = 1
 ;---------------------------------------------------------------------------
 ;Wind Palm
@@ -152,7 +151,6 @@ trigger1 = ctrl
 trigger2 = var(1)
 trigger3=enemy,movetype=H
 trigger3 = numexplod(1000) && (var(5) <= 2)
-trigger4=stateno=105
 
 [State -1, 2S] ; lol whats this called
 type = ChangeState
@@ -167,7 +165,6 @@ trigger1 = ctrl
 trigger2 = var(1)
 trigger3 = numexplod(1000) && (var(5) <= 2)
 trigger3 = !numexplod(10000)
-trigger4=stateno=105
 
 [State -1, j2S] 
 type = ChangeState
@@ -215,7 +212,6 @@ triggerall=command!="c"
 triggerall = command = "holddown"
 triggerall = statetype != A
 trigger1 = stateno = 100 && time >= 9
-trigger2=stateno=105
 
 [State -1, 4EX]
 type = ChangeState
@@ -232,7 +228,6 @@ triggerall = statetype != A
 trigger1 = var(1)
 trigger2 = ctrl
 trigger3 = numexplod(1000) && (var(5) <= 2)
-trigger4=stateno=105
 
 [State -1, 4Sset] ; trap metal
 type = ChangeState
@@ -247,7 +242,6 @@ triggerall = !numexplod(1300)
 trigger1 = var(1)
 trigger2 = ctrl
 trigger3 = numexplod(1000) && (var(5) <= 2)
-trigger4=stateno=105
 
 [State -1, 4S] 
 type = ChangeState
@@ -263,7 +257,6 @@ trigger2 = var(1)
 trigger3 = numexplod(1000) && (var(5) <= 2)
 trigger3 = stateno != 1300
 trigger3 = stateno != 1301
-trigger4=stateno=105
 
 [State -1, j4S] 
 type = ChangeState
@@ -293,8 +286,6 @@ triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
 trigger3 = numexplod(1000) && (var(5) <= 2)
-trigger4=stateno=105
-
 [State -1, 5S]
 type = ChangeState
 value = 1200
@@ -308,7 +299,6 @@ triggerall = !numexplod(1200)
 trigger1 = ctrl
 trigger2 = var(1)
 trigger3 = numexplod(1000) && (var(5) <= 2)
-trigger4=stateno=105
 
 [State -1, 5SS] 
 type = ChangeState
@@ -324,7 +314,6 @@ trigger1 = ctrl
 trigger2 = var(1)
 trigger3 = numexplod(1000) && (var(5) <= 2)
 trigger3 = !numexplod(1201)
-trigger4=stateno=105
 
 [State -1, 6S] ; Painwheel!
 type = ChangeState
@@ -341,7 +330,6 @@ triggerall = !numexplod(1100)
 trigger1 = ctrl
 trigger2 = var(1)
 trigger3 = numexplod(1000) && (var(5) <= 2)
-trigger4=stateno=105
 
 [State -1, EX 6S] ; Now THIS is a real painwheel!
 type = ChangeState
@@ -358,7 +346,6 @@ triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
 trigger3 = numexplod(1000) && (var(5) <= 2)
-trigger4=stateno=105
 
 [State -1, j6S] ; Painwheel!
 type = ChangeState

@@ -20,7 +20,6 @@ trigger2 = (stateno = [200,299]) || (stateno = [400,499]) || stateno = 656
 trigger2 = movecontact
 trigger2 = stateno!=421
 trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
-trigger4 = stateno = 105
 var(1) = 1
 
 [State -1, Combo condition Check]

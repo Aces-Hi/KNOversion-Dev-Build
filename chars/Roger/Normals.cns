@@ -2253,8 +2253,9 @@ persistent = 1
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time = 0
-value = 700,17
-channel = 1
+value = 700,17+random%2
+volumescale=125
+channel=1
 
 
 [State 0, PlaySnd]
@@ -2360,6 +2361,11 @@ juggle = 0 ;  = 2
 ctrl = 0
 anim =501
 sprpriority = 2
+
+[State 0, Stopsnd]
+type = Stopsnd
+trigger1 = time=0
+channel = 1
 
 [State 0, NotHitBy]
 type = NotHitBy
@@ -2744,8 +2750,9 @@ persistent = 1
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time = 0
-value = 700,17
-channel = 1
+value = 700,17+random%2
+volumescale=125
+channel=1
 
 
 [State 0, PlaySnd]
@@ -3195,9 +3202,10 @@ persistent = 1
 
 [State 0, PlaySnd]
 type = PlaySnd
-trigger1 = time = 0
-value = 700,18
-channel = 1
+trigger1 = time = 10
+value = 700,17+random%2
+volumescale=125
+channel=1
 
 [State 0, PlaySnd]
 type = PlaySnd
@@ -3299,6 +3307,11 @@ juggle = 0 ;  = 2
 ctrl = 0
 anim =1011
 sprpriority = 2
+
+[State 0, Stopsnd]
+type = Stopsnd
+trigger1 = time=0
+channel = 1
 
 [State 0, VarSet]
 type = MapAdd
@@ -4155,13 +4168,9 @@ persistent = 1
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time = 0
-value = 700,17
-channel = 1
-
-[State 0, Stopsnd]
-type = Stopsnd
-trigger1 = time = 20
-channel = 1
+value = 700,17+random%2
+volumescale=125
+channel=1
 
 [State 0, PlaySnd]
 type = PlaySnd
@@ -4528,6 +4537,11 @@ ctrl = 0
 sprpriority = 2
 anim = 552
 
+[State 0, Stopsnd]
+type = Stopsnd
+trigger1 = time = 0
+channel = 1
+
 [State 0, PlaySnd] ;SIKE
 type = PlaySnd
 trigger1 = time = 0 && palno = 9
@@ -4571,13 +4585,9 @@ persistent = 1
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time = 0
-value = 700,17
-channel = 1
-
-[State 0, Stopsnd]
-type = Stopsnd
-trigger1 = time = 20
-channel = 1
+value = 700,17+random%2
+volumescale=125
+channel=1
 
 [State 0, PlaySnd]
 type = PlaySnd
@@ -4917,7 +4927,6 @@ trigger1 = movehit
 v = 43    ;fv = 10
 value = 1
 ignorehitpause = 1
-
 
 [State 0, EnvShake]
 type = EnvShake

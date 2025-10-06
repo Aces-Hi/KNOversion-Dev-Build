@@ -11,7 +11,6 @@ type = VarSet
 trigger1 = ctrl
 trigger2 = hitdefattr = SCA, NA
 trigger2 = movecontact
-trigger3 = stateno = 105||stateno = 106||stateno = 107
 var(1) = 1
 ;===========================================================================
 ;===========================================================================
@@ -66,61 +65,6 @@ trigger1 = command = "throwtech"
 trigger1 = statetype != A
 trigger1 = ctrl
 
-[State Alpha Counter]
-type = ChangeState
-value = 7000
-triggerall = statetype != A
-triggerall = command = "holdfwd" 
-triggerall = command = "a"
-triggerall = stateno=[140,160]
-trigger1 = power>=1000
-
-[State RC]
-type = ChangeState
-value = 690000
-triggerall = !ishelper
-triggerall = stateno!=900&&stateno!=901&&stateno!=69002&&stateno!=902
-triggerall = command = "a"
-triggerall = statetype != A
-triggerall = movetype = A
-triggerall = power>=1000
-trigger1 = movehit
-ignorehitpause=1
-
-[State RC Air]
-type = ChangeState
-value = 690001
-triggerall = !ishelper
-triggerall = stateno!=900&&stateno!=901&&stateno!=69002&&stateno!=902
-triggerall = command = "a"
-triggerall = statetype = A
-triggerall = movetype = A
-triggerall = power>=1000
-trigger1 = movehit
-ignorehitpause=1
-
-[State RC]
-type = ChangeState
-value = 690002
-triggerall = !ishelper
-triggerall = command = "rc"
-triggerall = statetype != A
-triggerall = movetype = A
-triggerall = power>=2000
-trigger1 = moveguarded
-ignorehitpause=1
-
-[State RC Air]
-type = ChangeState
-value = 690003
-triggerall = !ishelper
-triggerall = stateno!=900&&stateno!=901
-triggerall = command = "rc"
-triggerall = statetype = A
-triggerall = movetype = A
-triggerall = power>=2000
-trigger1 = moveguarded
-ignorehitpause=1
 
 ;===========================================================================
 

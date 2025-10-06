@@ -1447,10 +1447,11 @@ trigger1 = 1
 id = 4
 
 [State 0, NotHitBy]
-type = NotHitBy
-trigger1 = time <10
-value = SCA,NA,SA,HA,NP,SP,HP
-time = 1
+type 	= NotHitBy
+trigger1 	= time <= 7
+value 	= SCA
+time 	= 1
+ignorehitpause = 1
 
 [State 0, CtrlSet]
 type = CtrlSet
@@ -1544,7 +1545,7 @@ flag = NoAutoTurn
 
 [State 100, 4]
 type = selfstate
-trigger1 = command !="holdback" && time > 25
+trigger1 = command !="holdback" && time > 18
 value = 102
 ctrl = 1
 

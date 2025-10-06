@@ -21,8 +21,7 @@ trigger2 = (stateno = [200,299]) || (stateno = [400,499]) || (stateno = 401)
 trigger2 = movecontact ;&& enemynear, movetype = H
 trigger2 = stateno!=421 && stateno!= 453
 trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
-trigger4 = stateno = 105 && time > 16
-trigger5 = stateno = 434
+trigger4 = stateno = 434
 var(1) = 1
 
 
@@ -157,8 +156,7 @@ triggerall = command != "holdback"
 triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
-trigger4 = (stateno = [600,650]) && movecontact
+trigger3 = (stateno = [600,650]) && movecontact
 
 [State 1030, 2S: Shoryu]
 type = ChangeState
@@ -175,8 +173,7 @@ triggerall = command != "holdback"
 triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
-trigger4 = (stateno = [600,650]) && movecontact
+trigger3 = (stateno = [600,650]) && movecontact
 
 
 
@@ -257,8 +254,7 @@ triggerall = command = "holdfwd"
 triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
-trigger4 = stateno = 643&&movecontact
+trigger3 = stateno = 643&&movecontact
 
 [State 1240, j6EX: EX Dash Slash]
 type = ChangeState
@@ -287,8 +283,7 @@ triggerall = command = "holdfwd"
 triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
-trigger4 = (stateno = [600,650]) && movecontact
+trigger3 = (stateno = [600,650]) && movecontact
 
 [State 1040, j6S: Dash Slash]
 type = ChangeState
@@ -317,7 +312,6 @@ triggerall = command = "holdfwd"
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
 
 [State 1010, 4EX: EX Slashes]
 type = ChangeState
@@ -332,8 +326,7 @@ triggerall = command = "holdback"
 triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
-trigger4 = (stateno = [600,650]) && movecontact
+trigger3 = (stateno = [600,650]) && movecontact
 
 [State 100, 4S: Slashes]
 type = ChangeState
@@ -349,8 +342,7 @@ trigger1 = ctrl
 trigger2 = var(1)
 trigger3 = stateno = 101
 trigger4 = stateno = 100
-trigger5=stateno=105
-trigger6 = (stateno = [600,650]) && movecontact
+trigger5= (stateno = [600,650]) && movecontact
 
 [State 12251, jEX: EX Air Flip]
 type = ChangeState
@@ -399,8 +391,7 @@ triggerall = command != "holdback"
 triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3=stateno=105
-trigger4 = (stateno = [600,650]) && movecontact
+trigger3 = (stateno = [600,650]) && movecontact
 
 [State 1050, 5S: Flip]
 type = ChangeState
@@ -417,8 +408,6 @@ trigger1 = ctrl
 trigger2 = var(1)
 trigger3 = stateno = 101
 trigger4 = (stateno = [600,650]) && movecontact
-trigger5=stateno=105
-
 ;---------------------------------------------------------------------------
 
 ;Aerial Dash

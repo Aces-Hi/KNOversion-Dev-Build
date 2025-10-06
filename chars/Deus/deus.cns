@@ -886,8 +886,10 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Sahkive"||player(map(enemyteamlead)),name="Dreyvon"
-trigger1 = time=45
+trigger1=player(map(enemyteamlead)),name="Sahkive"||player(map(enemyteamlead)),name="Dreyvon"
+triggerall = time=45
+trigger2=player(map(enemyteamlead)),name="Roger"
+trigger2=player(map(enemyteamlead)),palno=4||player(map(enemyteamlead)),palno=7||player(map(enemyteamlead)),palno=8||player(map(enemyteamlead)),palno=9
 value = 190, (1+(Random%6))
 volumescale=175
 channel=7
@@ -1163,8 +1165,10 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Sahkive"||player(map(enemyteamlead)),name="Dreyvon"
-trigger1 = time=60
+trigger1=player(map(enemyteamlead)),name="Sahkive"||player(map(enemyteamlead)),name="Dreyvon"
+triggerall = time=45
+trigger2=player(map(enemyteamlead)),name="Roger"
+trigger2=player(map(enemyteamlead)),palno=4||player(map(enemyteamlead)),palno=7||player(map(enemyteamlead)),palno=8||player(map(enemyteamlead)),palno=9
 value = 190, (1+(Random%6))
 volumescale=175
 channel=7
@@ -1895,8 +1899,10 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Sahkive"||player(map(enemyteamlead)),name="Dreyvon"
-trigger1 = time=5
+trigger1=player(map(enemyteamlead)),name="Sahkive"||player(map(enemyteamlead)),name="Dreyvon"
+triggerall = time=45
+trigger2=player(map(enemyteamlead)),name="Roger"
+trigger2=player(map(enemyteamlead)),palno=4||player(map(enemyteamlead)),palno=7||player(map(enemyteamlead)),palno=8||player(map(enemyteamlead)),palno=9
 value = 190, (1+(Random%6))
 volumescale=175
 channel=7

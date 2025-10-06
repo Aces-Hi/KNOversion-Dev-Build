@@ -70,7 +70,8 @@ jv
 sahkive
 +5r charges faster
 +charge 5r launch height reduced
-+qcf 1 damage
--qcb min damage
++qcb1 damage
+-qcf min damage
+
 
 

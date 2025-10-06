@@ -27,12 +27,6 @@ volumescale=120
 
 [State 0, VarAdd]
 type = VarAdd
-trigger1 = time = 0
-fv = 19     
-value = 200
-
-[State 0, VarAdd]
-type = VarAdd
 trigger1 = movehit
 trigger1=animelem=34
 fv =13     ;fv = 
@@ -327,12 +321,6 @@ type = PlaySnd
 trigger1 = time=0
 value = 3010, (0+(Random%3))
 volumescale=120
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = time = 0
-fv = 19     
-value = 200
 
 [State 0, VarAdd]
 type = VarAdd
@@ -983,12 +971,6 @@ type = PlaySnd
 trigger1 = time=80
 value = 3021, (0+(Random%2))
 volumescale=140
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = time = 0
-fv = 19     
-value = 200
 
 [State 0, SuperPause]
 type = SuperPause

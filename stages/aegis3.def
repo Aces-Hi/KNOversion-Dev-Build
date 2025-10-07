@@ -2,16 +2,32 @@
 name = "Aegis Fields (Dawn)"
 author = "Bonehouse"
 
+
+attachedchar = data/dynamiclight/DynamicLight.def
+
+[Constants]
+DynamicLighting = 1
+DynamicR = 255
+DynamicG = 150
+DynamicB = 200
+DynamicAlpha =150
+
+StaticShadow = 1
+DynamicShadow = 0 
+ShadowMulValue = -0.1
+ShadowRComponent = -20
+ShadowGComponent = -10
+ShadowBComponent = -15
+
 [Camera]
 startx = 85
 starty = 0
 boundleft = -50
 boundright = 220
-boundhigh = -185
+boundhigh = -40
 boundlow = 0
-verticalfollow = 0
-floortension = 0
-tension = 100
+verticalfollow = .1
+tension = 200
 
 [PlayerInfo]
 ;--- Player 1 ---

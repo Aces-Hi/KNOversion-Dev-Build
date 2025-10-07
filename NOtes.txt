@@ -39,6 +39,7 @@ make sure his 4r can be canceled into the same way 6r can
 increase 6ss endlag
 make 6sss wallstick freeze the camera
 DUDE. CHARGE 5H.
+6h max ground hitstun
 
 sahkive
 jR no skd on grounded

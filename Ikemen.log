@@ -1,5 +1,5 @@
-.\external\script\start.lua:1403: chars\Deus/deus.cns:892:
-Invalid data: ||
+.\external\script\start.lua:1403: chars\Angous/Specials.cns:8504:
+Command doesn't exist: hold_ex
 stack traceback:
 	[G]: in function 'game'
 	.\external\script\start.lua:1403: in function 'f_game'

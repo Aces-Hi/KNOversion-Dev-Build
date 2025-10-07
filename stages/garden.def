@@ -1,6 +1,15 @@
 [Info]
 name = "TEMPLE GARDENS"
 
+[Constants]
+
+StaticShadow = 0
+DynamicShadow = 1
+ShadowMulValue = -0.1
+ShadowRComponent = -20
+ShadowGComponent = -10
+ShadowBComponent = 0
+
 [Camera]
 startx = 0
 starty = 0
@@ -65,7 +74,7 @@ delta=.2,.2
 type  =normal
 spriteno=3011,0
 start = -40, 80
-delta = 0.5, 0.35
+delta = 0.5, 0.2
 mask = 1
 velocity = -1, 0
 tile = 1, 0
@@ -93,7 +102,7 @@ delta=.9,1
 type  =normal
 spriteno=3011,0
 start = -40, 105
-delta =  0.9, 0.37
+delta =  0.9, 1
 mask = 1
 velocity = 3, 0
 tile = 1, 0
@@ -132,6 +141,7 @@ type = enable
 time = 0,1,1
 value=0
 sctrlid=1
+
 [BG Heaven]
 type  =normal
 spriteno=3011,0

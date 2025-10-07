@@ -429,7 +429,7 @@ ignorehitpause=1
 type = PalFX
 trigger1 = time = 0
 time = 10
-add = 200,120,0
+add = 100,60,0
 mul = 256,256,256
 sinadd = 100,60,0,4
 invertall = 0
@@ -1263,7 +1263,7 @@ ignorehitpause=1
 type = PalFX
 trigger1 = time = 0
 time = 10
-add = 200,120,0
+add = 100,60,0
 mul = 256,256,256
 sinadd = 100,60,0,4
 invertall = 0
@@ -2065,7 +2065,7 @@ ignorehitpause=1
 type = PalFX
 trigger1 = time = 0
 time = 10
-add = 200,120,0
+add = 100,60,0
 mul = 256,256,256
 sinadd = 100,60,0,4
 invertall = 0
@@ -2163,7 +2163,7 @@ ignorehitpause=1
 type = PalFX
 trigger1 = time = 0
 time = 10
-add = 200,120,0
+add = 100,60,0
 mul = 256,256,256
 sinadd = 100,60,0,4
 invertall = 0
@@ -2993,7 +2993,7 @@ ignorehitpause=1
 type = PalFX
 trigger1 = time = 0
 time = 10
-add = 200,120,0
+add = 100,60,0
 mul = 256,256,256
 sinadd = 100,60,0,4
 invertall = 0
@@ -3725,7 +3725,7 @@ ignorehitpause=1
 type = PalFX
 trigger1 = time = 0
 time = 10
-add = 200,120,0
+add = 100,60,0
 mul = 256,256,256
 sinadd = 100,60,0,4
 invertall = 0

@@ -1787,7 +1787,7 @@ trigger1 = time=141
 attr = S, HA
 animtype  = Hard
 air.animtype = back
-damage = 40, 10
+damage = 90, 10
 hitflag = MAFD
 guardflag = MA
 pausetime = 1,12

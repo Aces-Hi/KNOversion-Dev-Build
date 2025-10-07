@@ -10,6 +10,14 @@ versiondate = 09,30,2009    ;Version date of stage (MM,DD,YYYY or X.XX)
 mugenversion = 1.0          ;Version of M.U.G.E.N stage works on (X.XX)
 author = "Art by J4RMS31"         ;Stage author name
 
+[Constants]
+StaticShadow = 0
+DynamicShadow = 1
+ShadowMulValue = -0.07
+ShadowRComponent = -6
+ShadowGComponent = -12
+ShadowBComponent = -12
+
 ;--------------------------------------------------------
 [Camera]
  ;Camera starting position: Usually 0 for both
@@ -29,40 +37,10 @@ boundright = 540
  ;Low should usually be 0.
  ;If omitted, defaults to -25 and 0 respectively
  ;***
-boundhigh = -229
+boundhigh = -40
 boundlow = 0
-
- ;This is how much the camera will move vertically towards the
- ;highest player. Valid values are from 0 to 1. A value of 0 will mean
- ;the camera does not move up at all. A value of 1 will makes the camera
- ;follow the highest player.
- ;Typically .2 for normal-sized backgrounds. You may need to pull this
- ;value up for taller backgrounds.
-verticalfollow = 0
- ;Minimum vertical distance the highest player has to be from the floor,
- ;before the camera starts to move up to follow him. For extremely
- ;tall stages, a floor tension of about 20-30 coupled with a
- ;vertical-follow of .8 allows the camera to follow the action.
-floortension = 180
-
- ;Horizontal distance player is from edge before camera starts to move
- ;left or right. Typically 50 or 60.
+verticalfollow = .1
 tension = 200
-
- ;Number of pixels beyond the top and bottom of the screen that may
- ;be drawn.  Overdraw specifies the how much can be seen during an
- ;EnvShake.  Overdraw pixels will also be used when the screen aspect
- ;is taller than the stage aspect.
-;overdrawhigh = 0
-;overdrawlow = 0
-
- ;Number of pixels into the top and bottom of the screen that may be
- ;cut from drawing when the screen aspect is shorter than the stage
- ;aspect.  These parameters suggest a guideline, and the actual
- ;number of pixels cut depends on the difference in aspect.
-;cuthigh = 35
-;cutlow = 25
-
 
 ;--------------------------------------------------------
 [PlayerInfo]
@@ -205,6 +183,38 @@ debugbg = 0
 
 ;-------------------------------------------------------------------------------------------------------------------------
 ;
+
+[BG sky]
+type  = normal
+spriteno = 100,2
+start = 32, -300
+delta = 0.2,0.2
+mask  = 1
+tile  = 0, 0
+tilespacing = 0,0
+
+[BG Heaven]
+type  =normal
+spriteno=3011,0
+start = -100, 30
+delta =  0.5, .5
+mask = 1
+velocity = 3, 0
+tile = 1, 0
+id=2
+trans=add
+alpha=256,100
+
+[BG city]
+type  = normal
+spriteno = 100,1
+start = 32, -300
+delta = .5, .5
+mask  = 1
+tile  = 0, 0
+tilespacing = 0,0
+
+
 [BG 1]
 type  = normal
 spriteno = 100,0
@@ -217,7 +227,7 @@ tilespacing = 0,0
 [BG Itaci]
 type = normal
 spriteno = 3,0
-start = 10, -300
+start = 16, -300
 delta = 1, 1
 mask  = 1
 tile  = 0, 0
@@ -227,7 +237,7 @@ tilespacing = 0,0
 [BG Mayyro]
 type = anim
 actionno = 3
-start = 20, -300
+start = 25, -300
 delta = 1, 1
 mask  = 1
 tile  = 0, 0
@@ -266,7 +276,7 @@ tilespacing = 0,0
 type  =normal
 spriteno=3011,0
 start = -40, 100
-delta =  0.37, 0.37
+delta =  0.37, 1
 mask = 1
 velocity = 3, 0
 tile = 1, 0
@@ -291,6 +301,7 @@ mask = 1
 velocity = -10, 0
 tile = 1, 0
 id=1
+
 
 [Begin Action 1]
 1,0, 0,0, 10

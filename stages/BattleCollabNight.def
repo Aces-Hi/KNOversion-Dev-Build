@@ -1,15 +1,29 @@
 [Info]
 name = "BATTLE COLLAB -NIGHT-"
+attachedchar = data/dynamiclight/DynamicLight.def
+
+[Constants]
+DynamicLighting = 1
+DynamicR = 200
+DynamicG = 200
+DynamicB = 255
+DynamicAlpha =150
+
+StaticShadow = 1
+DynamicShadow = 0
+ShadowMulValue = -0.1
+ShadowRComponent = 0
+ShadowGComponent = 0
+ShadowBComponent = -6
 
 [Camera]
 startx = 0
 starty = 0
 boundleft = -150
 boundright = 150
-boundhigh = -1000
+boundhigh = -20
 boundlow = 0
-verticalfollow = 0
-floortension = 180
+verticalfollow = .1
 tension = 100
 
 [PlayerInfo]

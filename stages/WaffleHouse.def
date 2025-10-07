@@ -3,15 +3,30 @@
 
 [Info]
 name = "WAFFLE HOUSE PARKING LOT"
+attachedchar = data/dynamiclight/DynamicLight.def
+
+[Constants]
+DynamicLighting = 1
+DynamicR = 255
+DynamicG = 255
+DynamicB = 255
+DynamicAlpha =200
+
+StaticShadow = 0
+DynamicShadow = 1
+ShadowMulValue = -0.1
+ShadowRComponent = -15
+ShadowGComponent = -15
+ShadowBComponent = -15
 
 [Camera]
 startx = -0
 starty = 0
 boundleft = -315
 boundright = 315
-boundhigh = -62
+boundhigh = -20
 boundlow = 0
-verticalfollow = 0
+verticalfollow = .1
 tension = 100
 
 [PlayerInfo]
@@ -76,14 +91,14 @@ tile=1,0
 [BG glow]
 type  = normal
 spriteno = 0,7
-delta=.5,.5
+delta=.5,.15
 start = 0, 0
 trans=add
 
 [BG ball]
 type  = normal
 spriteno = 0,6
-delta=.5,.5
+delta=.5,.15
 start = 0, 0
 
 [BG Clouds]
@@ -118,7 +133,7 @@ delta=.7,.7
 type  =normal
 spriteno=3011,0
 start = -40, 90
-delta =  0.25,.25
+delta =  0.25,.7
 mask = 1
 velocity = 3, 0
 tile = 1, 0
@@ -142,7 +157,7 @@ start = -15, 0
 type  =normal
 spriteno=3011,0
 start = -40, 135
-delta = .57, .57
+delta = .57, 1
 mask = 1
 velocity = -10, 0
 tile = 1, 0

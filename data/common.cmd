@@ -579,13 +579,18 @@ buffer.time=1
 [Command]
 name = "hold_c"
 command = /c
-
 buffer.time=1
+
 [Command]
 name = "hold_d"
 command = /d
-
 buffer.time=1
+
+[Command]
+name = "hold_ex"
+command = /d
+buffer.time=1
+
 [Command]
 name = "hold_start"
 command = /s

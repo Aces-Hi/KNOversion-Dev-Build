@@ -9,12 +9,13 @@
 type = Explod				;Will be triggered based on stage.
 triggerall = player(1), stateno < 3000 && (player(2), stateno < 3000 || player(2), movetype != A || player(2), !movehit)
 trigger1 = StageConst(DynamicLighting) && !movetype = H
+triggerall =  numexplod(909090)=0
 anim = Player(1), anim
 animelem = Player(1),  animelemno(0)
 ID = 909090
 pos	= 0, -1
 postype = p1
-bindtime = 1
+bindtime = -1
 facing = 1
 supermovetime = 0
 pausemovetime = 0
@@ -26,11 +27,12 @@ removetime = 1
 palfx.time = 40
 palfx.add = StageConst(DynamicR),StageConst(DynamicG),StageConst(DynamicB)
 alpha = StageConst(DynamicAlpha)
-removeonchangestate = 1
-removeongethit = 1
+removeonchangestate = 0
 ignorehitpause = 1
 persistent = 1
 redirectid = Player(1), id
+
+
 ;===============================================================================
 ;------- DYNAMIC LIGHTING - DEPRECATED EXPLOD VERSION --------
 ;===============================================================================
@@ -38,9 +40,11 @@ redirectid = Player(1), id
 type = Explod				;Will be triggered based on stage.
 triggerall = player(2), stateno < 3000 && (player(1), stateno < 3000 || player (1), movetype != A || player(1), !movehit)
 trigger1 = StageConst(DynamicLighting) && !movetype = H
+triggerall =  numexplod(909091)=0
+triggerall =  !numexplod(909091)
 anim = Player(2),  anim
 animelem = Player(2),  animelemno(0)
-ID = 909090
+ID = 909091
 pos	= 0, -1
 postype = p1
 bindtime = 1

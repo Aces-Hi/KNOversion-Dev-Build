@@ -364,8 +364,8 @@ persistent = 0
 [State 0, PalFXWiz]
 type = PalFX
 trigger1 = time = 0
-time = 25
-add = 200,120,0
+time = 10
+add = 100,60,0
 mul = 256,256,256
 sinadd = 100,60,0,4
 invertall = 0
@@ -1027,8 +1027,8 @@ value = 1010, 1
 [State 0, PalFXWiz]
 type = PalFX
 trigger1 = time = 0
-time = 20
-add = 200,120,0
+time = 10
+add = 100,60,0
 mul = 256,256,256
 sinadd = 100,60,0,4
 invertall = 0
@@ -2808,8 +2808,8 @@ persistent = 1
 [State 0, PalFXWiz]
 type = PalFX
 trigger1 = time = 0
-time = 20
-add = 200,120,0
+time = 10
+add = 100,60,0
 mul = 256,256,256
 sinadd = 100,60,0,4
 invertall = 0
@@ -4465,8 +4465,8 @@ persistent = 1
 [State 0, PalFXWiz]
 type = PalFX
 trigger1 = time = 0
-time = 20
-add = 200,120,0
+time = 10
+add = 100,60,0
 mul = 256,256,256
 sinadd = 100,60,0,4
 invertall = 0
@@ -5231,8 +5231,8 @@ persistent = 1
 [State 0, PalFXWiz]
 type = PalFX
 trigger1 = time = 0
-time = 20
-add = 200,120,0
+time = 10
+add = 100,60,0
 mul = 256,256,256
 sinadd = 100,60,0,4
 invertall = 0
@@ -5635,8 +5635,8 @@ persistent = 1
 [State 0, PalFXWiz]
 type = PalFX
 trigger1 = time = 0
-time = 20
-add = 200,120,0
+time = 10
+add = 100,60,0
 mul = 256,256,256
 sinadd = 100,60,0,4
 invertall = 0
@@ -6278,8 +6278,8 @@ physics = A        ;A,C,S,N
 [State 0, PalFXWiz]
 type = PalFX
 trigger1 = time = 0
-time = 20
-add = 200,120,0
+time = 10
+add = 100,60,0
 mul = 256,256,256
 sinadd = 100,60,0,4
 invertall = 0

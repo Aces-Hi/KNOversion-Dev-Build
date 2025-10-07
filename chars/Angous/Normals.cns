@@ -1424,6 +1424,18 @@ trigger1 = time = 0
 fv = 6  ;fv = 10
 value = 421 ;State of this attack
 
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;Shadow Override
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0]
+type = MapSet
+trigger1 = time<20
+map = "ShadowOverride"
+value=3
+persistent=1
+ignorehitpause=1
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 [State 0, PalFXWiz]
 type = PalFX
 trigger1 = animelem=1
@@ -1692,6 +1704,18 @@ type = VarSet
 trigger1 = time = 0
 fv = 6  ;fv = 10
 value = 430 ;State of this attack
+
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;Shadow Override
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0]
+type = MapSet
+trigger1 = animelemtime(6)>=0&&animelemtime(6)<20
+map = "ShadowOverride"
+value=3
+persistent=1
+ignorehitpause=1
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [State 0, PalFXWiz]
 type = PalFX
@@ -3395,6 +3419,17 @@ removeongethit = 1
 ignorehitpause = 1
 facing = -1
 
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;Shadow Override
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0]
+type = MapSet
+trigger1 = time<10
+map = "ShadowOverride"
+value=3
+persistent=1
+ignorehitpause=1
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [State 0, PalFXWiz]
 type = PalFX
 trigger1 = time=0
@@ -3696,6 +3731,76 @@ velset = 0,0
 ;anim = 1052
 sprpriority = -1
 
+;COUNTER ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+trigger1 = enemy,HitShakeOver = 0
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-10
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+trigger1 = enemy,HitShakeOver = 0
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-10
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = movehit
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+trigger1 = enemy,HitShakeOver = 0
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
+
+[State 0, Explod]
+type = Explod
+trigger1 = animelem = 4
+anim = 1055
+ID = 1055
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 52
+pausemovetime = 0
+;vel = 0,0
+;accel = 0,0
+;random = 0,0
+scale =0.84,0.84
+sprpriority = 4
+;ontop = 0
+;shadow = 0,0,0
+;ownpal = 0
+removeongethit = 1
+ignorehitpause = 0
+
 [State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
@@ -3746,6 +3851,17 @@ trigger1 = time = 0
 fv = 6  ;fv = 10
 value = 1062 ;State of this attack
 
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;Shadow Override
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0]
+type = MapSet
+trigger1 = time>=7&&time<27
+map = "ShadowOverride"
+value=3
+persistent=1
+ignorehitpause=1
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [State 0, PalFXWiz]
 type = PalFX
 trigger1 = time=7
@@ -3834,27 +3950,7 @@ trigger1 = animelem = 11
 time = 15    ;Time to shake screen
 ampl = 2     ;Amount to shake
 freq = 80  ;A frequency of 180 shakes the screen rapidly
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 4
-anim = 1055
-ID = 1055
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 52
-pausemovetime = 0
-;vel = 0,0
-;accel = 0,0
-;random = 0,0
-scale =0.84,0.84
-sprpriority = 4
-;ontop = 0
-;shadow = 0,0,0
-;ownpal = 0
-removeongethit = 1
-ignorehitpause = 0
+
 
 [State 0, Explod]
 type = Explod
@@ -4111,6 +4207,78 @@ velset = 0,0
 ;anim = 1052
 sprpriority = -1
 
+
+;COUNTER ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+trigger1 = enemy,HitShakeOver = 0
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-10
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+trigger1 = enemy,HitShakeOver = 0
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-10
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = movehit
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+trigger1 = enemy,HitShakeOver = 0
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
+
+[State 0, Explod]
+type = Explod
+trigger1 = animelem = 4
+anim = 1055
+ID = 1055
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 52
+pausemovetime = 0
+;vel = 0,0
+;accel = 0,0
+;random = 0,0
+scale =0.84,0.84
+sprpriority = 4
+;ontop = 0
+;shadow = 0,0,0
+;ownpal = 0
+removeongethit = 1
+ignorehitpause = 0
+
+
 [State 0, RemoveExplod]
 type = RemoveExplod
 trigger1 = 1
@@ -4154,6 +4322,18 @@ type = VarSet
 trigger1 = time = 0
 fv = 6  ;fv = 10
 value = 1063 ;State of this attack
+
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;Shadow Override
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0]
+type = MapSet
+trigger1 = time>=7&&time<27
+map = "ShadowOverride"
+value=3
+persistent=1
+ignorehitpause=1
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [State 0, PalFXWiz]
 type = PalFX
@@ -4242,27 +4422,7 @@ trigger1 = animelem = 11
 time = 15    ;Time to shake screen
 ampl = 2     ;Amount to shake
 freq = 80  ;A frequency of 180 shakes the screen rapidly
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 4
-anim = 1055
-ID = 1055
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 52
-pausemovetime = 0
-;vel = 0,0
-;accel = 0,0
-;random = 0,0
-scale =0.84,0.84
-sprpriority = 4
-;ontop = 0
-;shadow = 0,0,0
-;ownpal = 0
-removeongethit = 1
-ignorehitpause = 0
+
 
 [State 0, Explod]
 type = Explod
@@ -4890,16 +5050,6 @@ type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
 value = 1.25
-
-[State 0, PalFXWiz]
-type = PalFX
-trigger1 = time = 40
-time = 30
-add = 150,100,0
-mul = 256,256,256
-sinadd = 150,100,0,30
-invertall = 0
-color = 256
 
  [State 1200, Shake Screen]
 type = EnvShake

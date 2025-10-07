@@ -5,16 +5,25 @@ round1def = stages/aegis.def
 round2def = stages/aegis2.def
 round3def = stages/aegis3.def
 
+attachedchar = data/dynamiclight/DynamicLight.def
+
+[Constants]
+StaticShadow = 0
+DynamicShadow = 1
+ShadowMulValue = -0.1
+ShadowRComponent = -12
+ShadowGComponent = -9
+ShadowBComponent = -5
+
 [Camera]
 startx = 85
 starty = 0
 boundleft = -67
 boundright = 237
-boundhigh = -185
+boundhigh = -40
 boundlow = 0
-verticalfollow = 0
-floortension = 0
-tension = 100
+verticalfollow = .1
+tension = 200
 
 [PlayerInfo]
 ;--- Player 1 ---

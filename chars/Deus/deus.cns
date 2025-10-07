@@ -868,7 +868,7 @@ triggerall=player(map(enemyteamlead)),name!="Roger"&&player(map(enemyteamlead)),
 triggerall=player(map(enemyteamlead)),name!="Arzon"&&player(map(enemyteamlead)),name!="JV"&&player(map(enemyteamlead)),name!="Alicia"&&player(map(enemyteamlead)),name!="Crow"&&player(map(enemyteamlead)),name!="Akira"
 trigger1 = time=45
 value = 190, (1+(Random%5))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 
@@ -879,7 +879,7 @@ triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="Angous"||player(map(enemyteamlead)),name="Eddy"||player(map(enemyteamlead)),name="One"
 trigger1 = time=45
 value = 190, (0+(Random%6))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 [State Voice From Above]
@@ -891,7 +891,7 @@ triggerall = time=45
 trigger2=player(map(enemyteamlead)),name="Roger"
 trigger2=player(map(enemyteamlead)),palno=4||player(map(enemyteamlead)),palno=7||player(map(enemyteamlead)),palno=8||player(map(enemyteamlead)),palno=9
 value = 190, (1+(Random%6))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 [State Voice From Above]
@@ -901,7 +901,7 @@ triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="Vile"
 trigger1 = time=45
 value = 190, (7+(Random%3))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 [State Voice From Above]
@@ -911,7 +911,7 @@ triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="JoJo"
 trigger1 = time=45
 value = 190, (8+(Random%2))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 
@@ -932,7 +932,7 @@ triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="JV"
 trigger1 = time=45
 value = 192, (0+(Random%2))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 [State Voice From Above]
@@ -942,7 +942,7 @@ triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="Alicia"
 trigger1 = time=45
 value = 193, (0+(Random%2))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 [State Voice From Above]
@@ -952,7 +952,7 @@ triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="Crow"
 trigger1 = time=45
 value = 194, (0+(Random%2))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 [State Voice From Above]
@@ -962,7 +962,7 @@ triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="Akira"
 trigger1 = time=45
 value = 195, (0+(Random%2))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 
@@ -1147,7 +1147,7 @@ triggerall=player(map(enemyteamlead)),name!="Roger"&&player(map(enemyteamlead)),
 triggerall=player(map(enemyteamlead)),name!="Arzon"&&player(map(enemyteamlead)),name!="JV"&&player(map(enemyteamlead)),name!="Alicia"&&player(map(enemyteamlead)),name!="Crow"&&player(map(enemyteamlead)),name!="Akira"
 trigger1 = time=60
 value = 190, (1+(Random%5))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 
@@ -1158,7 +1158,7 @@ triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="Angous"||player(map(enemyteamlead)),name="Eddy"||player(map(enemyteamlead)),name="One"
 trigger1 = time=60
 value = 190, (0+(Random%6))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 [State Voice From Above]
@@ -1170,7 +1170,7 @@ triggerall = time=45
 trigger2=player(map(enemyteamlead)),name="Roger"
 trigger2=player(map(enemyteamlead)),palno=4||player(map(enemyteamlead)),palno=7||player(map(enemyteamlead)),palno=8||player(map(enemyteamlead)),palno=9
 value = 190, (1+(Random%6))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 [State Voice From Above]
@@ -1180,7 +1180,7 @@ triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="Vile"
 trigger1 = time=60
 value = 190, (7+(Random%3))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 [State Voice From Above]
@@ -1190,7 +1190,7 @@ triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="JoJo"
 trigger1 = time=60
 value = 190, (8+(Random%2))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 
@@ -1211,7 +1211,7 @@ triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="JV"
 trigger1 = time=60
 value = 192, (0+(Random%2))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 [State Voice From Above]
@@ -1221,7 +1221,7 @@ triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="Alicia"
 trigger1 = time=60
 value = 193, (0+(Random%2))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 [State Voice From Above]
@@ -1231,7 +1231,7 @@ triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="Crow"
 trigger1 = time=60
 value = 194, (0+(Random%2))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 [State Voice From Above]
@@ -1241,7 +1241,7 @@ triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="Akira"
 trigger1 = time=60
 value = 195, (0+(Random%2))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 
@@ -1253,7 +1253,7 @@ triggerall=player(map(enemyteamlead)),map(december)=0
 trigger1 = teamside=1
 trigger1 = time=60
 value = 77, (0+(Random%4))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 
@@ -1881,7 +1881,7 @@ triggerall=player(map(enemyteamlead)),name!="Roger"&&player(map(enemyteamlead)),
 triggerall=player(map(enemyteamlead)),name!="Arzon"&&player(map(enemyteamlead)),name!="JV"&&player(map(enemyteamlead)),name!="Alicia"&&player(map(enemyteamlead)),name!="Crow"&&player(map(enemyteamlead)),name!="Akira"
 trigger1 = time=5
 value = 190, (1+(Random%5))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 
@@ -1892,7 +1892,7 @@ triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="Angous"||player(map(enemyteamlead)),name="Eddy"||player(map(enemyteamlead)),name="One"
 trigger1 = time=5
 value = 190, (0+(Random%6))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 [State Voice From Above]
@@ -1904,7 +1904,7 @@ triggerall = time=45
 trigger2=player(map(enemyteamlead)),name="Roger"
 trigger2=player(map(enemyteamlead)),palno=4||player(map(enemyteamlead)),palno=7||player(map(enemyteamlead)),palno=8||player(map(enemyteamlead)),palno=9
 value = 190, (1+(Random%6))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 [State Voice From Above]
@@ -1914,7 +1914,7 @@ triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="Vile"
 trigger1 = time=5
 value = 190, (7+(Random%3))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 [State Voice From Above]
@@ -1924,7 +1924,7 @@ triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="JoJo"
 trigger1 = time=5
 value = 190, (8+(Random%2))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 
@@ -1945,7 +1945,7 @@ triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="JV"
 trigger1 = time=5
 value = 192, (0+(Random%2))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 [State Voice From Above]
@@ -1955,7 +1955,7 @@ triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="Alicia"
 trigger1 = time=5
 value = 193, (0+(Random%2))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 [State Voice From Above]
@@ -1965,7 +1965,7 @@ triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="Crow"
 trigger1 = time=5
 value = 194, (0+(Random%2))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 [State Voice From Above]
@@ -1975,7 +1975,7 @@ triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="Akira"
 trigger1 = time=5
 value = 195, (0+(Random%2))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 
@@ -1987,7 +1987,7 @@ triggerall=player(map(enemyteamlead)),map(december)=0
 trigger1 = teamside=1
 trigger1 = time=60
 value = 77, (0+(Random%4))
-volumescale=175
+volumescale=150
 channel=7
 lowpriority=1
 

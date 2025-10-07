@@ -2,16 +2,31 @@
 name = "Aegis Fields (Night)"
 author = "Bonehouse"
 
+attachedchar = data/dynamiclight/DynamicLight.def
+
+[Constants]
+DynamicLighting = 1
+DynamicR = 255
+DynamicG = 255
+DynamicB = 255
+DynamicAlpha =255
+
+StaticShadow = 0
+DynamicShadow = 1
+ShadowMulValue = -0.1
+ShadowRComponent = 0
+ShadowGComponent = 0
+ShadowBComponent = -6
+
 [Camera]
 startx = 85
 starty = 0
 boundleft = -50
 boundright = 220
-boundhigh = -185
+boundhigh = -40
 boundlow = 0
-verticalfollow = 0
-floortension = 0
-tension = 100
+verticalfollow = .1
+tension = 200
 
 [PlayerInfo]
 ;--- Player 1 ---
@@ -102,6 +117,17 @@ mask = 1
 velocity = 0.2, 0
 tile = 1, 0
 tilespacing = 0, 0
+
+[BG Heaven]
+type  =normal
+spriteno=3011,0
+start = -40, 120
+delta = 0.1,.1
+mask = 1
+velocity = -1, 0
+tile = 1, 0
+id=3
+
 [BG ground]
 type  = normal
 spriteno = 0, 77
@@ -123,6 +149,18 @@ velocity = 0, 0
 tile = 1, 0
 tilespacing = 0, 0
 
+[BG Heaven]
+type  =normal
+spriteno=3011,0
+start = -40, 150
+delta =  0.5,.5
+mask = 1
+velocity = 3, 0
+tile = 1, 0
+id=2
+trans=add
+alpha=256,100
+
 [BG ground]
 type  = anim
 actionno = 9
@@ -141,6 +179,19 @@ mask = 1
 velocity = 0, 0
 tile = 1, 0
 tilespacing = 0, 0
+
+[BG Heaven]
+type  =normal
+spriteno=3011,0
+start = -40, 180
+delta = .9, .9
+mask = 1
+velocity = -10, 0
+tile = 1, 0
+id=1
+trans=add
+alpha=256,200
+
 [BG ground]
 type  = normal
 spriteno = 0, 10

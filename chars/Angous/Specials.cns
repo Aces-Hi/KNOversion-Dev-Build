@@ -636,6 +636,17 @@ trigger1 = time = 0
 fv = 6  ;fv = 10
 value = 1002 ;State of this attack
 
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;Shadow Override
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0]
+type = MapSet
+trigger1 = time<20
+map = "ShadowOverride"
+value=3
+persistent=1
+ignorehitpause=1
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [State 0, PalFXWiz]
 type = PalFX
 trigger1 = time=0
@@ -2153,17 +2164,6 @@ trigger1 = 1
 value = 0
 
 
-
-[State 0, PalFXWiz]
-type = PalFX
-trigger1 = time = 0
-time = 18
-add = 150,100,0
-mul = 256,256,256
-sinadd = 150,100,0,30
-invertall = 0
-color = 256
-
 [State 0, VarSet]
 type = VarSet
 trigger1 = prevstateno!=(666999) ;&& time = 0
@@ -2211,12 +2211,26 @@ facing = 1
 scale = 0.9,0.5
 ownpal = 0
 removeongethit = 0
-[State 8000, flash]
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;Shadow Override
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0]
+type = MapSet
+trigger1 = time<10
+map = "ShadowOverride"
+value=3
+persistent=1
+ignorehitpause=1
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0, PalFXWiz]
 type = PalFX
-trigger1 = 1
-add = 40, 30, -40
-time = 1
-ignorehitpause = 1
+trigger1 = time = 0
+time = 10
+add = 100,60,0
+mul = 256,256,256
+sinadd = 100,60,0,4
+invertall = 0
+color = 256
 [State 3120, Train]
 type = AfterImage
 trigger1 = Time = 0
@@ -5565,13 +5579,24 @@ trigger1 = time = 0 && anim!=1002 ;Animation of this state
 value = 1002
 elem = 1
 
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;Shadow Override
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0]
+type = MapSet
+trigger1 = time<10
+map = "ShadowOverride"
+value=3
+persistent=1
+ignorehitpause=1
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [State 0, PalFXWiz]
 type = PalFX
-trigger1 = time=0
-time = 20
-add = 150,100,0
+trigger1 = time = 0
+time = 10
+add = 100,60,0
 mul = 256,256,256
-sinadd = 150,100,0,30
+sinadd = 100,60,0,4
 invertall = 0
 color = 256
 
@@ -7145,13 +7170,26 @@ ontop = 0
 shadow = 0,0,0
 ownpal = 0
 removeongethit = 0
-
-[State 8000, flash]
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;Shadow Override
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0]
+type = MapSet
+trigger1 = time<10
+map = "ShadowOverride"
+value=3
+persistent=1
+ignorehitpause=1
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0, PalFXWiz]
 type = PalFX
-trigger1 = 1
-add = 40, 30, -40
-time=1
-ignorehitpause = 1
+trigger1 = time = 0
+time = 10
+add = 100,60,0
+mul = 256,256,256
+sinadd = 100,60,0,4
+invertall = 0
+color = 256
 [State 3120, Train]
 type = AfterImage
 trigger1 = Time = 0
@@ -7757,7 +7795,17 @@ slot = 0
 stateno = 666999 
 time = 1
 forceair = 0
-
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;Shadow Override
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0]
+type = MapSet
+trigger1 = time<10
+map = "ShadowOverride"
+value=3
+persistent=1
+ignorehitpause=1
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [State 0, PalFXWiz]
 type = PalFX
 trigger1 = time = 0
@@ -7849,12 +7897,26 @@ ontop = 0
 shadow = 0,0,0
 ownpal = 0
 removeongethit = 0
-[State 8000, flash]
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;Shadow Override
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0]
+type = MapSet
+trigger1 = time<10
+map = "ShadowOverride"
+value=3
+persistent=1
+ignorehitpause=1
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0, PalFXWiz]
 type = PalFX
-trigger1 = 1
-add = 40, 30, -40
-time=1
-ignorehitpause = 1
+trigger1 = time = 0
+time = 10
+add = 100,60,0
+mul = 256,256,256
+sinadd = 100,60,0,4
+invertall = 0
+color = 256
 [State 3120, Train]
 type = AfterImage
 trigger1 = Time = 0
@@ -7984,12 +8046,6 @@ value = 1001,0
 volumescale=150
 
 
-[State 8000, flash]
-type = PalFX
-trigger1 = 1
-add = 40, 30, -40
-time=1
-ignorehitpause = 1
 [State 3120, Train]
 type = AfterImage
 trigger1 = Time = 0
@@ -8147,6 +8203,12 @@ anim = 1001
 sprpriority = 2
 facep2 = 1
 
+[State -3, Angous Voices]
+type = PlaySnd
+trigger1 = animelem = 4
+value = 1001,0
+volumescale=150
+
 [State EX Limiters]
 type = mapset
 trigger1 = time=0
@@ -8237,12 +8299,28 @@ ontop = 0
 shadow = 0,0,0
 ownpal = 0
 removeongethit = 0
-[State 8000, flash]
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;Shadow Override
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0]
+type = MapSet
+trigger1 = time<10
+map = "ShadowOverride"
+value=3
+persistent=1
+ignorehitpause=1
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;EX EFfects
+;-------------------------------
+[State 0, PalFXWiz]
 type = PalFX
-trigger1 = 1
-add = 40, 30, -40
-time=1
-ignorehitpause = 1
+trigger1 = time = 0
+time = 10
+add = 100,60,0
+mul = 256,256,256
+sinadd = 100,60,0,4
+invertall = 0
+color = 256
 [State 3120, Train]
 type = AfterImage
 trigger1 = Time = 0
@@ -8251,18 +8329,6 @@ palbright = 40,30,-40
 palcontrast = 256,206,206
 trans = add1
 ignorehitpause = 1
-
-
-[State 0, HitOverride]
-type = HitOverride
-triggerall = var(28)>0
-triggerall = movetype != H
-trigger1=  1
-attr = SCA,NA,SA,NP,SP
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
 
 [State 0, Explod]
 type = Explod
@@ -8504,14 +8570,14 @@ ampl = 2
 [State 12, ChangeState]
 type = ChangeState
 triggerall = var(41)=[12,60]
-trigger1 = command!="hold_b"
-trigger2 = prevstateno = 666999 && command!= "hold_b"
+trigger1 = command!="hold_b"&&command!="hold_ex"
+trigger2 = prevstateno = 666999 && command!= "hold_b"&&command!="hold_ex"
 value = 9003
 
 [State 13, ChangeState]
 type = changestate
 trigger1 = var(41)>60 || time > 60
-trigger2 = var(41)>60 && prevstateno = 666999 && command!= "hold_b"
+trigger2 = var(41)>60 && prevstateno = 666999 && command!= "hold_b"&&command!="hold_ex"
 value = 90033
 ;---------------------------------------------------------------------------
 
@@ -8631,12 +8697,28 @@ ontop = 0
 shadow = 0,0,0
 ownpal = 0
 removeongethit = 0
-[State 8000, flash]
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;Shadow Override
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0]
+type = MapSet
+trigger1 = time<10
+map = "ShadowOverride"
+value=3
+persistent=1
+ignorehitpause=1
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;EX EFfects
+;-------------------------------
+[State 0, PalFXWiz]
 type = PalFX
-trigger1 = 1
-add = 40, 30, -40
-time=1
-ignorehitpause = 1
+trigger1 = time = 0
+time = 10
+add = 100,60,0
+mul = 256,256,256
+sinadd = 100,60,0,4
+invertall = 0
+color = 256
 [State 3120, Train]
 type = AfterImage
 trigger1 = Time = 0
@@ -8767,12 +8849,7 @@ shadow = 0,0,0
 ownpal = 0
 removeongethit = 0
 ignorehitpause = 0
-[State 8000, flash]
-type = PalFX
-trigger1 = 1
-add = 40, 30, -40
-time=1
-ignorehitpause = 1
+
 [State 3120, Train]
 type = AfterImage
 trigger1 = Time = 0
@@ -8988,12 +9065,7 @@ shadow = 0,0,0
 ownpal = 0
 removeongethit = 0
 ignorehitpause = 0
-[State 8000, flash]
-type = PalFX
-trigger1 = 1
-add = 40, 30, -40
-time=1
-ignorehitpause = 1
+
 [State 3120, Train]
 type = AfterImage
 trigger1 = Time = 0
@@ -9129,6 +9201,13 @@ anim = 1003
 sprpriority = 2
 facep2 = 1
 
+[State -3, Angous Voices]
+type = PlaySnd
+trigger1 = animelem = 3
+value = 1002,0
+volumescale=150
+
+
 [State Meter Burn State, VarSet]
 type = VarSet
 trigger1 = movehit = 1
@@ -9197,12 +9276,28 @@ shadow = 0,0,0
 ownpal = 0
 removeongethit = 0
 ignorehitpause = 0
-[State 8000, flash]
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;Shadow Override
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0]
+type = MapSet
+trigger1 = time<10
+map = "ShadowOverride"
+value=3
+persistent=1
+ignorehitpause=1
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;EX EFfects
+;-------------------------------
+[State 0, PalFXWiz]
 type = PalFX
-trigger1 = 1
-add = 40, 30, -40
-time=1
-ignorehitpause = 1
+trigger1 = time = 0
+time = 10
+add = 100,60,0
+mul = 256,256,256
+sinadd = 100,60,0,4
+invertall = 0
+color = 256
 [State 3120, Train]
 type = AfterImage
 trigger1 = Time = 0
@@ -9710,12 +9805,26 @@ ontop = 0
 shadow = 0,0,0
 ownpal = 0
 removeongethit = 0
-[State 8000, flash]
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;Shadow Override
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0]
+type = MapSet
+trigger1 = time<10
+map = "ShadowOverride"
+value=3
+persistent=1
+ignorehitpause=1
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0, PalFXWiz]
 type = PalFX
-trigger1 = 1
-add = 40, 30, -40
-time=1
-ignorehitpause = 1
+trigger1 = time = 0
+time = 10
+add = 100,60,0
+mul = 256,256,256
+sinadd = 100,60,0,4
+invertall = 0
+color = 256
 [State 3120, Train]
 type = AfterImage
 trigger1 = Time = 0
@@ -10602,12 +10711,26 @@ ontop = 0
 shadow = 0,0,0
 ownpal = 0
 removeongethit = 0
-[State 8000, flash]
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;Shadow Override
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0]
+type = MapSet
+trigger1 = time<10
+map = "ShadowOverride"
+value=3
+persistent=1
+ignorehitpause=1
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0, PalFXWiz]
 type = PalFX
-trigger1 = 1
-add = 40, 30, -40
-time=1
-ignorehitpause = 1
+trigger1 = time = 0
+time = 10
+add = 100,60,0
+mul = 256,256,256
+sinadd = 100,60,0,4
+invertall = 0
+color = 256
 [State 3120, Train]
 type = AfterImage
 trigger1 = Time = 0
@@ -10995,16 +11118,6 @@ value=2
 ignorehitpause = 1
 persistent = 1
 
-[State 0, PalFXWiz]
-type = PalFX
-trigger1 = time=0
-time = 20
-add = 150,100,0
-mul = 256,256,256
-sinadd = 150,100,0,30
-invertall = 0
-color = 256
-
 
 [State 0, HitOverride]
 type = HitOverride
@@ -11064,12 +11177,26 @@ ontop = 0
 shadow = 0,0,0
 ownpal = 0
 removeongethit = 0
-[State 8000, flash]
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;Shadow Override
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0]
+type = MapSet
+trigger1 = time<10
+map = "ShadowOverride"
+value=3
+persistent=1
+ignorehitpause=1
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0, PalFXWiz]
 type = PalFX
-trigger1 = time>0
-add = 40, 30, -40
-time=1
-ignorehitpause = 1
+trigger1 = time = 0
+time = 10
+add = 100,60,0
+mul = 256,256,256
+sinadd = 100,60,0,4
+invertall = 0
+color = 256
 [State 3120, Train]
 type = AfterImage
 trigger1 = Time = 0
@@ -11238,13 +11365,6 @@ trigger1 = animelem = 6
 time = 4    ;Time to shake screen
 ampl = 3     ;Amount to shake
 freq = 30
-
-[State 8000, flash]
-type = PalFX
-trigger1 = time>0
-add = 40, 30, -40
-time=1
-ignorehitpause = 1
 [State 3120, Train]
 type = AfterImage
 trigger1 = Time = 0
@@ -11261,36 +11381,6 @@ type = ChangeAnim
 trigger1 = time = 0 && anim!=10011 ;Animation of this state
 value = 10011
 elem = 1
-
-[State 0]
-type = MapSet
-trigger1 = 1
-map = "armor"
-value=2
-ignorehitpause = 1
-persistent = 1
-
-[State 0, PalFXWiz]
-type = PalFX
-trigger1 = time=0
-time = 20
-add = 150,100,0
-mul = 256,256,256
-sinadd = 150,100,0,30
-invertall = 0
-color = 256
-
-
-[State 0, HitOverride]
-type = HitOverride
-triggerall = var(28)>0
-triggerall = movetype != H
-trigger1=  1
-attr = SCA,NA,SA,NP,SP
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
 
 [State -3, Angous Voices]
 type = PlaySnd
@@ -11736,16 +11826,6 @@ value=2
 ignorehitpause = 1
 persistent = 1
 
-[State 0, PalFXWiz]
-type = PalFX
-trigger1 = time=0
-time = 20
-add = 150,100,0
-mul = 256,256,256
-sinadd = 150,100,0,30
-invertall = 0
-color = 256
-
 
 [State 0, VarSet]
 type = VarSet
@@ -12001,12 +12081,6 @@ time = 4    ;Time to shake screen
 ampl = 3     ;Amount to shake
 freq = 50
 
-[State 8000, flash]
-type = PalFX
-trigger1 = 1
-add = 40, 30, -40
-time=1
-ignorehitpause = 1
 [State 3120, Train]
 type = AfterImage
 trigger1 = Time = 0
@@ -12256,12 +12330,6 @@ time = 4    ;Time to shake screen
 ampl = 3     ;Amount to shake
 freq = 70
 
-[State 8000, flash]
-type = PalFX
-trigger1 = 1
-add = 40, 30, -40
-time=1
-ignorehitpause = 1
 [State 3120, Train]
 type = AfterImage
 trigger1 = Time = 0

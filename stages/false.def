@@ -2,6 +2,21 @@
 ;--------------------------------------------------------
 [Info]
 name = "FROM THE OTHER SIDE"
+attachedchar = data/dynamiclight/DynamicLight.def
+
+[Constants]
+DynamicLighting = 1
+DynamicR = 100
+DynamicG = 0
+DynamicB = 0
+DynamicAlpha =255
+
+StaticShadow = 1
+DynamicShadow = 0
+ShadowMulValue = -0.07
+ShadowRComponent = -10
+ShadowGComponent = 0
+ShadowBComponent = 0
 
 [Camera]
  ;Camera starting position: Usually 0 for both
@@ -10,10 +25,9 @@ startx = 0
 starty = 0
 boundleft = -400
 boundright = 400
-boundhigh = -300
+boundhigh = -40
 boundlow = 0
-verticalfollow = 0
-floortension = 180
+verticalfollow = .1
 tension = 200
 
 ;--------------------------------------------------------
@@ -129,7 +143,7 @@ type  = normal
 spriteno = 8,0
 start = 0, -30
 velocity=0,0
-delta = .15,.80
+delta = .15,1
 layerno = 0
 trans=add1
 [BG Black]
@@ -139,7 +153,7 @@ start = 220, -300
 velocity=-0.3,0.3
 tile= 1,1
 tilespacing = 2000,9000
-delta = .15,.80
+delta = .15,1
 layerno = 0
 trans=add
 
@@ -147,7 +161,7 @@ trans=add
 type = normal
 spriteno=1,1
 start = 0.3,0.9
-delta = .21,1.2
+delta = .21,1
 tile = 1,1
 velocity = -0.1,0.1
 TRANS=add
@@ -156,7 +170,7 @@ TRANS=add
 type = anim
 actionno=1
 start = 0,340
-delta = 0,1.4
+delta = 0,1.2
 tile = 1,0
 velocity = 0,0
 mask = 1
@@ -175,7 +189,7 @@ type  = normal
 spriteno = 8,1
 start = 0, -30
 velocity=0,0
-delta = .15,.80
+delta = .15,1
 layerno = 0
 mask=1
 [BG Heaven]

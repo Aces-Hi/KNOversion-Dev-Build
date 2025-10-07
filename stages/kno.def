@@ -13,7 +13,7 @@ DynamicAlpha =255
 
 StaticShadow = 0
 DynamicShadow = 1
-ShadowMulValue = -0.1
+ShadowMulValue = -0.07
 ShadowRComponent = 0
 ShadowGComponent = 0
 ShadowBComponent = 0
@@ -25,10 +25,9 @@ startx = 0
 starty = 0
 boundleft = -400
 boundright = 400
-boundhigh = -300
+boundhigh = -40
 boundlow = 0
-verticalfollow = 0
-floortension = 180
+verticalfollow = .1
 tension = 200
 
 ;--------------------------------------------------------
@@ -139,26 +138,26 @@ start = 0, 0
 delta = 0,0
 layerno = 0
 tile=1,1
-[BG Black]
+[BG Shine]
 type  = normal
 spriteno = 8,0
 start = 0, -30
 velocity=0,0
-delta = .15,.80
+delta = .15,1
 layerno = 0
 trans=add
-[BG Black]
+[BG Star]
 type  = anim
 actionno=15
 start = -220, -300
 velocity=0.3,0.3
 tile= 1,1
 tilespacing = 2000,9000
-delta = .15,.80
+delta = .15,1
 layerno = 0
 trans=add
 
-[BG 1]
+[BG Stars]
 type = normal
 spriteno=1,1
 start = 0.3,0.9
@@ -167,15 +166,16 @@ tile = 1,1
 velocity = 0.1,0.1
 TRANS=add
 
-[BG 1]
+[BG Glow]
 type = anim
 actionno=1
 start = 0,340
-delta = 0,1.4
+delta = 0,1.2
 tile = 1,0
 velocity = 0,0
 mask = 1
 TRANS=add
+
 [BG 1]
 type = normal
 spriteno=6,0
@@ -185,19 +185,21 @@ tile = 1,0
 velocity = 0,0
 mask = 1
 TRANS=add
-[BG White]
+
+[BG Moon]
 type  = normal
 spriteno = 8,1
 start = 0, -30
 velocity=0,0
-delta = .15,.80
+delta = .15,1
 layerno = 0
 mask=1
+
 [BG Heaven]
 type  =normal
 spriteno=3011,0
 start = -40, 310
-delta = 0.2,0
+delta = 0.2,1
 mask = 1
 velocity = 1, 0
 tile = 1, 0

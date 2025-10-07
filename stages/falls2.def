@@ -4,15 +4,23 @@
 [Info]
 name = "--Mountaintop Falls 2--"
 
+[Constants]
+StaticShadow = 1
+DynamicShadow = 0
+ShadowMulValue = -0.1
+ShadowRComponent = 0
+ShadowGComponent = 0
+ShadowBComponent = -6
+
 [Camera]
 startx = 0
 starty = 0
 boundleft = -330
 boundright = 330
-boundhigh = -62
+boundhigh = -20
 boundlow = 0
-verticalfollow = 0
-tension =100
+verticalfollow = .1
+tension = 100
 
 [PlayerInfo]
 p1startx = -70
@@ -91,39 +99,73 @@ delta=0.15,0
 type  = normal
 spriteno = 10,0
 start = 0, 0
-delta=0.37,0
+delta=0.37,0.05
+
+[BG Heaven]
+type  =normal
+spriteno=3011,0
+start = -40,70
+delta = 0.38,.05
+mask = 1
+velocity = -1.2, 0
+tile = 1, 0
+id=3
 
 [BG falls]
 type  = anim
 actionno=1
 start = 0, 0
-delta=0.4,0
+delta=0.4,0.1
+
+[BG Heaven]
+type  =normal
+spriteno=3011,0
+start = -40, 150
+delta =  0.45,0.1
+mask = 1
+velocity = 3, 0
+tile = 1, 0
+id=2
+trans=add
+alpha=256,100
 
 [BG backmist]
 type  = normal
 spriteno = 0,3
 start = 0, 0
-velocity = -.8,0
+velocity = -.4,0
 tile = 1,0
 trans = add
 alpha = 150,100
-delta=0.5,0
+delta=0.5,0.1
 
 [BG fmist]
 type  = normal
 spriteno = 0,4
-start = 0, 0
-velocity = 1,0
+start = 0, 10
+velocity = .5,0
 tile = 1,0
 trans = add
 alpha = 130,150
-delta=0.5,0
+delta=0.5,0.2
 
 [BG cliffs]
 type  = normal
 spriteno = 0,5
-start = 0, 0
-delta=0.6,0
+start = 0, 5
+delta=0.6,0.2
+
+[BG Heaven]
+type  =normal
+spriteno=3011,0
+start = -40, 170
+delta = .8, 0.8
+mask = 1
+velocity = -10, 0
+tile = 1, 0
+id=1
+trans=add
+alpha=256,200
 
 [BG ground]
 type  = normal

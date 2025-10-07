@@ -1555,16 +1555,6 @@ ctrl = 0
 anim = 262
 sprpriority = 2
 
-[State 0, PalFXWiz]
-type = PalFX
-trigger1 = time%20=0
-time = 6
-add = 200,200,200
-mul = 256,256,256
-sinadd = 200,200,200,6
-invertall = 0
-color = 256
-
 [State 0, VelMul]
 type = VelMul
 trigger1 = 1

@@ -4,14 +4,23 @@
 [Info]
 name = "BALLIN'"
 
+[Constants]
+
+StaticShadow = 0
+DynamicShadow = 1
+ShadowMulValue = -0.07
+ShadowRComponent = -15
+ShadowGComponent = -5
+ShadowBComponent = -15
+
 [Camera]
 startx = -0
 starty = 0
 boundleft = -315
 boundright = 315
-boundhigh = -62
+boundhigh = -20
 boundlow = 0
-verticalfollow = 0
+verticalfollow = .1
 tension = 100
 
 [PlayerInfo]
@@ -67,7 +76,6 @@ spriteno = 0, 1
 type  =normal
 spriteno=3011,0
 start = -40, 90
-delta =  0.25,.25
 mask = 1
 velocity = 3, 0
 tile = 1, 0
@@ -95,7 +103,6 @@ actionno = 3
 type  =normal
 spriteno=3011,0
 start = -40, 140
-delta = .57, .57
 mask = 1
 velocity = -10, 0
 tile = 1, 0

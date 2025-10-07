@@ -1,14 +1,29 @@
 [Info]
 name = "Hyun's Dojo3"
+attachedchar = data/dynamiclight/DynamicLight.def
+
+[Constants]
+DynamicLighting = 1
+DynamicR = 255
+DynamicG = 220
+DynamicB = 120
+DynamicAlpha =200
+
+StaticShadow = 0
+DynamicShadow = 1
+ShadowMulValue = -0.1
+ShadowRComponent = 0
+ShadowGComponent = 0
+ShadowBComponent = -6
 
 [Camera]
 startx = 0
 starty = 0
 boundleft = -152
 boundright = 152
-boundhigh = -62
+boundhigh = -20
 boundlow = 0
-verticalfollow = 0
+verticalfollow = .1
 tension = 100
 
 [PlayerInfo]
@@ -62,12 +77,12 @@ delta=0,0
 [BG mountains]
 type  = normal
 spriteno = 0,6
-delta=.15,0
+delta=.15,0.2
 
 [BG clouds]
 type  = normal
 spriteno = 0,5
-delta=.4,0
+delta=.4,0.2
 velocity=-.05,0
 tile=1,0
 
@@ -75,7 +90,7 @@ tile=1,0
 type  =normal
 spriteno=3011,0
 start = -40, 60
-delta = 0.55,0
+delta = 0.55,0.2
 mask = 1
 velocity = -1, 0
 tile = 1, 0
@@ -84,13 +99,13 @@ id=3
 [BG backdojo]
 type  = normal
 spriteno = 0,4
-delta=.7,0
+delta=.7,0.8
 
 [BG Heaven]
 type  =normal
 spriteno=3011,0
 start = -40, 85
-delta =  0.5,0
+delta =  0.5,.8
 mask = 1
 velocity = 3, 0
 tile = 1, 0

@@ -988,12 +988,15 @@ ontop = 0
 shadow = 0,0,0
 ownpal = 0
 removeongethit = 0
-[State 8000, flash]
+[State 0, PalFXWiz]
 type = PalFX
-trigger1 = 1
-add = 40, 30, -40
-time=1
-ignorehitpause = 1
+trigger1 = time = 0
+time = 10
+add = 100,60,0
+mul = 256,256,256
+sinadd = 100,60,0,4
+invertall = 0
+color = 256
 [State 3120, Train]
 type = AfterImage
 trigger1 = Time = 0
@@ -1932,12 +1935,15 @@ ontop = 0
 shadow = 0,0,0
 ownpal = 0
 removeongethit = 0
-[State 8000, flash]
+[State 0, PalFXWiz]
 type = PalFX
-trigger1 = 1
-add = 40, 30, -40
-time=1
-ignorehitpause = 1
+trigger1 = time = 0
+time = 10
+add = 100,60,0
+mul = 256,256,256
+sinadd = 100,60,0,4
+invertall = 0
+color = 256
 [State 3120, Train]
 type = AfterImage
 trigger1 = Time = 0
@@ -3061,12 +3067,15 @@ ontop = 0
 shadow = 0,0,0
 ownpal = 0
 removeongethit = 0
-[State 8000, flash]
+[State 0, PalFXWiz]
 type = PalFX
-trigger1 = 1
-add = 40, 30, -40
-time=1
-ignorehitpause = 1
+trigger1 = time = 0
+time = 10
+add = 100,60,0
+mul = 256,256,256
+sinadd = 100,60,0,4
+invertall = 0
+color = 256
 [State 3120, Train]
 type = AfterImage
 trigger1 = Time = 0
@@ -4169,12 +4178,15 @@ ontop = 0
 shadow = 0,0,0
 ownpal = 0
 removeongethit = 0
-[State 8000, flash]
+[State 0, PalFXWiz]
 type = PalFX
-trigger1 = 1
-add = 40, 30, -40
-time=1
-ignorehitpause = 1
+trigger1 = time = 0
+time = 10
+add = 100,60,0
+mul = 256,256,256
+sinadd = 100,60,0,4
+invertall = 0
+color = 256
 [State 3120, Train]
 type = AfterImage
 trigger1 = Time = 0

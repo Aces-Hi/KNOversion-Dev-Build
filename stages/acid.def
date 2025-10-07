@@ -1,17 +1,31 @@
 ;Art by J4RMS31
 ;Implementation by Ace's Hi
-
 [Info]
 name = "ACID TOWN"
+attachedchar = data/dynamiclight/DynamicLight.def
+
+[Constants]
+DynamicLighting = 1
+DynamicR = 200
+DynamicG = 255
+DynamicB = 60
+DynamicAlpha =200
+
+StaticShadow = 0
+DynamicShadow = 1
+ShadowMulValue = -0.1
+ShadowRComponent = 0
+ShadowGComponent = -7
+ShadowBComponent = 0
 
 [Camera]
 startx = 0
 starty = 0
 boundleft = -215
 boundright = 215
-boundhigh = -62
+boundhigh = -20
 boundlow = 0
-verticalfollow = 0
+verticalfollow = .1
 tension = 100
 
 [PlayerInfo]
@@ -67,7 +81,7 @@ delta=0,0
 [BG bclouds]
 type  = normal
 spriteno = 0,17
-delta=.2,0
+delta=.2,-.05
 velocity=-2,0
 tile=1,0
 start=0,20
@@ -75,14 +89,14 @@ start=0,20
 [BG bcity]
 type  = normal
 spriteno = 0,16
-delta=.4,0
+delta=.4,-.05
 start=0,15
 
 [BG Heaven]
 type  =normal
 spriteno=3011,0
-start = -40, 80
-delta = 0.45, 0.35
+start = -40, 90
+delta = 0.45, .05
 mask = 1
 velocity = -1, 0
 tile = 1, 0
@@ -91,36 +105,38 @@ id=3
 [BG glo]
 type  = anim
 actionno=5
-delta=.5,0
+delta=.5,0.1
 
 [BG mclouds]
 type  = normal
 spriteno = 0,25
-delta=.6,0
+delta=.6,0.1
 velocity=2,0
 tile=1,0
+start=0,-5
 
 [BG fcity]
 type  = normal
 spriteno = 0,20
-delta=.6,0
+delta=.6,0.2
 
 [BG fclouds]
 type  = normal
 spriteno = 0,21
 velocity=4,0
 tile=1,0
-
+delta=0,.3
+start=0,-10
 [BG IDK]
 type  = normal
 spriteno = 0,15
-delta=.6,0
+delta=.6,.2
 
 [BG Heaven]
 type  =normal
 spriteno=3011,0
 start = -40, 120
-delta =  0.6, 0.37
+delta =  0.6, 0.3
 mask = 1
 velocity = 3, 0
 tile = 1, 0
@@ -135,13 +151,13 @@ velocity=.4,0
 trans=add
 tile =1,0
 start=0,-13
-delta=.6,.6
+delta=.6,.4
 
 [BG acid]
 type  = anim
 actionno = 4
 start=0,-5
-delta=.7,.7
+delta=.7,.4
 
 [BGCtrlDef Heaven]
 looptime = -1

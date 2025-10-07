@@ -3,15 +3,30 @@
 
 [Info]
 name = "INTO THE MIND"
+attachedchar = data/dynamiclight/DynamicLight.def
+
+[Constants]
+DynamicLighting = 1
+DynamicR = 255
+DynamicG = 150
+DynamicB = 0
+DynamicAlpha =255
+
+StaticShadow = 0
+DynamicShadow = 1
+ShadowMulValue = -0.07
+ShadowRComponent = -25
+ShadowGComponent = -12
+ShadowBComponent = -22
 
 [Camera]
 startx = 0
 starty = 0
 boundleft = -300
 boundright = 300
-boundhigh = -62
+boundhigh = -20
 boundlow = 0
-verticalfollow = 0
+verticalfollow = .1
 tension = 100
 
 [PlayerInfo]
@@ -60,7 +75,8 @@ spr = Mind.sff
 [BG sky]
 type  = anim
 actionno = 3
-delta = .11,.11
+start=0,-5
+delta = .11,-.02
 [BG Heaven]
 type  =normal
 spriteno=3011,0
@@ -82,6 +98,7 @@ delta = .1,.1
 [BG Moon]
 type  = normal
 spriteno = 0,2
+start=0,-10
 delta = .12,.12
 
 [BG Heaven]
@@ -108,7 +125,7 @@ delta = .3,.3
 type  = anim
 actionno = 1
 start = 0, -158
-
+delta = 1, 0.45
 [BG OceanGlow]
 type  = anim
 actionno = 2

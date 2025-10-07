@@ -443,7 +443,7 @@ triggerall=palno!=11
 triggerall = animelem = 17
 triggerall = enemynear,name!="angous"&&enemynear,name!="deus"
 triggerall = enemynear,name!="jv"&&enemynear,name!="wu"&&enemynear,name!="sahkive"&&enemynear,name!="vile"&&enemynear,name!="dreyvon"&&enemynear,name!="roger"
-trigger1=(enemynear,name!="eddy"||(enemynear,name="eddy"&&enemynear,palno=11))
+trigger1=enemynear,name!="eddy"
 value = 190,0+random%4
 
 [State Eddy Voices]
@@ -455,8 +455,9 @@ value = 191,0
 [State Eddy Voices]
 type = PlaySnd
 triggerall=palno!=11&&animelem = 17
-trigger1=enemynear,name="eddy"&&enemynear,palno!=11&&teamside=1
+trigger1=enemynear,name="eddy"&&teamside=1
 trigger2 = enemynear,name="jv"||enemynear,name="wu"
+trigger3=enemynear,name="eddy"&&teamside=2&&enemynear,palno=11
 value = 192,0+random%2
 
 [State Eddy Voices]
@@ -516,6 +517,12 @@ type = S
 ctrl = 0
 anim = 0
 
+[State 0, ScreenBound]
+type = ScreenBound
+trigger1 = 1
+value = 1
+movecamera = 1,0
+
 [State 193, 1]
 type = AssertSpecial
 trigger1 = 1
@@ -536,10 +543,10 @@ value = 666,0
 [State Eddy Voices]
 type = PlaySnd
 triggerall=palno!=11
-triggerall = time=30
+triggerall =time=30
 triggerall = enemynear,name!="angous"&&enemynear,name!="deus"
 triggerall = enemynear,name!="jv"&&enemynear,name!="wu"&&enemynear,name!="sahkive"&&enemynear,name!="vile"&&enemynear,name!="dreyvon"&&enemynear,name!="roger"
-trigger1=(enemynear,name!="eddy"||(enemynear,name="eddy"&&enemynear,palno=11))
+trigger1=enemynear,name!="eddy"
 value = 190,0+random%4
 
 [State Eddy Voices]
@@ -550,9 +557,10 @@ value = 191,0
 
 [State Eddy Voices]
 type = PlaySnd
-triggerall=palno!=11&& time=30
-trigger1=enemynear,name="eddy"&&enemynear,palno!=11&&teamside=1
+triggerall=palno!=11&&time=30
+trigger1=enemynear,name="eddy"&&teamside=1
 trigger2 = enemynear,name="jv"||enemynear,name="wu"
+trigger3=enemynear,name="eddy"&&teamside=2&&enemynear,palno=11
 value = 192,0+random%2
 
 [State Eddy Voices]
@@ -566,6 +574,11 @@ type = PlaySnd
 triggerall=palno!=11&&time=30
 trigger1 = enemynear,name="sahkive"||enemynear,name="vile"||enemynear,name="dreyvon"||enemynear,name="roger"
 value = 194,0+random%2
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = time=1
+y = -300
 
 [State 191, 1] ;Freeze animation until PreIntro is over
 type = ChangeAnim
@@ -656,10 +669,10 @@ value = 666,0
 [State Eddy Voices]
 type = PlaySnd
 triggerall=palno!=11
-triggerall = animelem = 1
+triggerall = animelem = 17
 triggerall = enemynear,name!="angous"&&enemynear,name!="deus"
 triggerall = enemynear,name!="jv"&&enemynear,name!="wu"&&enemynear,name!="sahkive"&&enemynear,name!="vile"&&enemynear,name!="dreyvon"&&enemynear,name!="roger"
-trigger1=(enemynear,name!="eddy"||(enemynear,name="eddy"&&enemynear,palno=11))
+trigger1=enemynear,name!="eddy"
 value = 190,0+random%4
 
 [State Eddy Voices]
@@ -670,9 +683,10 @@ value = 191,0
 
 [State Eddy Voices]
 type = PlaySnd
-triggerall=palno!=11&&animelem = 1
-trigger1=enemynear,name="eddy"&&enemynear,palno!=11&&teamside=1
+triggerall=palno!=11&&animelem = 17
+trigger1=enemynear,name="eddy"&&teamside=1
 trigger2 = enemynear,name="jv"||enemynear,name="wu"
+trigger3=enemynear,name="eddy"&&teamside=2&&enemynear,palno=11
 value = 192,0+random%2
 
 [State Eddy Voices]

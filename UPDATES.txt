@@ -26,6 +26,7 @@ angous
 +jH min damage
 -2h hurtbox
 -6ss ending lag
+-install ex6ss armor
 
 roger
 ++va
@@ -92,4 +93,7 @@ sahkive
 jojo
 +2h hitbox
 
+z
++j6s distance
++EXj6s distance
 

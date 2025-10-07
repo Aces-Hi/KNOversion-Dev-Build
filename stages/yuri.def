@@ -4,14 +4,22 @@
 [Info]
 name = "SKYDROP CARRIER"
 
+[Constants]
+StaticShadow = 1
+DynamicShadow = 0
+ShadowMulValue = -0.1
+ShadowRComponent = -6
+ShadowGComponent = -8
+ShadowBComponent = -10
+
 [Camera]
 startx = 0
 starty = 0
 boundleft = -215
 boundright = 215
-boundhigh = -62
+boundhigh = -20
 boundlow = 0
-verticalfollow = 0
+verticalfollow = .1
 tension = 100
 
 [PlayerInfo]
@@ -60,15 +68,15 @@ spr = yuri.sff
 [BG sky]
 type  = normal
 spriteno = 1,4
-start = 0, -5
+start = 0, -10
 sin.y=5,2000,0
-delta=.1,.1
+delta=.1,.05
 
 [BG Heaven]
 type  =normal
 spriteno=3011,0
 start = -40,70
-delta = 0.1,0
+delta = 0.1,0.1
 mask = 1
 velocity = -1, 0
 tile = 1, 0

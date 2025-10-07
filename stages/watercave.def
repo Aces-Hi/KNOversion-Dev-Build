@@ -5,17 +5,31 @@
 ;--------------------------------------------------------
 [Info]
 name = "WATER CAVE"
+attachedchar = data/dynamiclight/DynamicLight.def
+
+[Constants]
+DynamicLighting = 1
+DynamicR = 100
+DynamicG = 255
+DynamicB = 255
+DynamicAlpha =255
+
+StaticShadow = 1
+DynamicShadow = 0
+ShadowMulValue = -0.1
+ShadowRComponent = 0
+ShadowGComponent = -4
+ShadowBComponent = -5
 
 [camera]
 startx 		= 0
 starty 		= 0
 boundleft 	= -220
 boundright 	= 220
-boundhigh 	= -300
-boundlow 	= 0
-verticalfollow 	= 0
-tension 	= 100
-floortension 	= 180
+boundhigh = -20
+boundlow = 0
+verticalfollow = .1
+tension = 100e
 
 ;--------------------------------------------------------
 [playerinfo]
@@ -118,107 +132,124 @@ start = 0, 170
 delta = 0.1,0
 mask = 0
 layerno = 0
+
 [bg suelo]
 type = normal
 spriteno = 0,5
-start = 10, 130
+start = -50, 200
 delta = 0.1,0.1
 tile = 0,0
 mask = 1
 layerno = 0
+
 [BG Heaven]
 type  =normal
 spriteno=3011,0
 start = -40, 126
-delta = 0.1, 0.35
+delta = 0.1, 0.1
 mask = 1
 velocity = -1, 0
 tile = 1, 0
 id=3
+
 [bg suelo]
 type = normal
 spriteno = 26,0
 start = -120, 120
-delta = 0.1,0.4
+delta = 0.1,0.2
 tile = 1,0
 mask = 1
 layerno = 0
+
 [bg suelo]
 type = normal
 spriteno = 5,0
-start = 30, 130
-delta = 0.1,0.4
+start = 30, 140
+delta = 0.1,0.2
 tile = 0,0
 mask = 1
 layerno = 0
+
+
 [BG tero3]
 type = anim
 actionno = 3
-start = 0,130
+start = 0,150
 delta = 0.3,0.4
 layerno = 0
 [BG tero3]
 type = anim
 actionno = 11
-start = 0,130
+start = 0,150
 delta = 0.3,0.4
 layerno = 0
 [BG tero3]
 type = anim
 actionno = 7
-start = 0,130
+start = 0,150
 delta = 0.3,0.4
 layerno = 0
+
+
 [BG tero3]
 type = anim
 actionno = 1
 start = 0,130
-delta = 0.3,0.4
+delta = 0.3,0.6
 layerno = 0
+
+
 [BG tero3]
 type = anim
 actionno = 4
 start = 90,130
-delta = 0.3,0.4
+delta = 0.3,0.7
 layerno = 0
 [BG tero3]
 type = anim
 actionno = 12
 start = 90,130
-delta = 0.3,0.4
+delta = 0.3,0.7
 layerno = 0
+
+
+
 [BG Heaven]
 type  =normal
 spriteno=3011,0
 start = -40, 160
-delta =  0.3, 0.37
+delta =  0.3, 0.7
 mask = 1
 velocity = 3, 0
 tile = 1, 0
 id=2
 trans=add
 alpha=256,100
+
+
+
 [BG tero3]
 type = normal
 spriteno = 14,0
 start = 0,130
-delta = 0.3,1
+delta = 0.3,.5
 mask = 1
 layerno = 0
 [BG tero3]
 type = anim
 actionno = 6
 start = 0,130
-delta = 0.3,1
+delta = 0.3,.5
 layerno = 0
 trans = add
 [BG tero3]
 type = anim
 actionno = 10
 start = 0,130
-delta = 0.3,1
+delta = 0.3,.5
 layerno = 0
 trans = add
+
 [BG tero3]
 type = anim
 actionno = 5
@@ -236,6 +267,8 @@ type = enable
 time = 0,1,1
 value=0
 sctrlid=1
+
+
 [BG Heaven]
 type  =normal
 spriteno=3011,0
@@ -248,6 +281,8 @@ id=1
 trans=add
 alpha=256,200
 
+
+
 [BG clouds 3.1 medium]
 type = normal
 spriteno = 27,0
@@ -257,9 +292,6 @@ layerno = 0
 mask = 0
 trans = sub
 alpha = 1,1
-
-
-
 [BG tero3]
 type = anim
 actionno = 2
@@ -277,8 +309,7 @@ type = anim
 actionno = 9
 start = 0,130
 delta = 1,1
-layerno = 0]
-
+layerno = 0
 
 
 [bg suelo]
@@ -291,11 +322,10 @@ mask = 1
 layerno = 0
 
 
-
 [bg suelo]
 type = normal
 spriteno = 0,2
-start = 0, 120
+start = 0, 130
 delta = 1.1,1
 mask = 1
 layerno = 1

@@ -4606,7 +4606,7 @@ volumescale=200
 [State Sahkive Voices]
 type = PlaySnd
 trigger1=time=0
-value = 1120,2+random%2
+value = 1120,0+random%4
 volumescale=150
 ignorehitpause=1
 persistent=0

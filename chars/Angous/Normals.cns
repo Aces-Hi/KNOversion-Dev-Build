@@ -3731,7 +3731,7 @@ velset = 0,0
 ;anim = 1052
 sprpriority = -1
 
-;COUNTER ZOOM ================================================
+;DEATH ZOOM ================================================
 [State 0]
 type = MapSet
 trigger1 = time=0
@@ -3743,6 +3743,7 @@ type = zoom
 triggerall=map(nozoom)=0
 triggerall=backedgebodydist<=100
 trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit
 scale = 1.5
 lag = 0.8
 stagebound = 1
@@ -3754,6 +3755,7 @@ type = zoom
 triggerall=map(nozoom)=0
 triggerall=backedgebodydist>100
 trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit
 scale = 1.5
 lag = 0.8
 stagebound = 1
@@ -3770,6 +3772,7 @@ ignorehitpause = 0
 type = BGPalFX
 triggerall=map(nozoom)=0
 trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit
 time = 1
 ;add = 0,0,0
 mul = 50,50,50
@@ -3983,6 +3986,7 @@ value = 0
 [State 610, 3]
 type = hitdef 
 p2facing = 1
+triggerall = enemynear,map(armor)=0
 trigger1 = !movecontact
 trigger1 = enemynear,statetype!=A
 trigger1 = enemynear,movetype!=H
@@ -4022,6 +4026,50 @@ palfx.time = 35
 palfx.add = 100, 0,20
 ground.cornerpush.veloff = -1
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
+[State 610, 3]
+type = hitdef 
+p2facing = 1
+triggerall = enemynear,map(armor)>0
+trigger1 = !movecontact
+trigger1 = enemynear,statetype!=A
+trigger1 = enemynear,movetype!=H
+attr = S, ST
+damage = ceil(cond(fvar(11) * 250 < 20, 20, fvar(11) * 250)),11
+animtype = hard
+hitflag = MAFD
+;priority = 3
+pausetime = 35,35
+sparkno = 3
+sparkxy = -19, -22
+hitsound   = 5,4
+ground.slidetime = 0
+ground.hittime  = 30
+ground.velocity = -1,22
+airguard.velocity = -1,-.8
+air.type = high
+air.velocity = -1,22
+air.hittime = 12
+air.fall = 1
+fall = 1 
+fall.yvelocity = cond(var(18)=0, -9,-0)
+down.bounce = 9
+envshake.time = 35
+envshake.freq = 90
+envshake.ampl = -6
+envshake.phase = 100
+  palfx.time = 16
+  palfx.add = 40, 30, -40
+palfx.sinadd = 50,50,50,16
+p2facing = 1
+;ground.cornerpush.veloff = -7
+;air.cornerpush.veloff = -7
+;p2stateno = 43211
+guard.dist = 0
+palfx.time = 35
+palfx.add = 100, 0,20
+ground.cornerpush.veloff = -1
+getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
+
 [State 610, 3]
 type = hitdef 
 p2facing = 1
@@ -4073,6 +4121,50 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 type = hitdef 
 p2facing = 1
 trigger1 = !movecontact
+triggerall = enemynear,map(armor)=0
+trigger1 = enemynear,statetype=A
+trigger1 = enemynear,movetype!=H
+attr = S, SA
+damage = ceil(cond(fvar(11) * 250 < 20, 20, fvar(11) * 250)),11
+animtype = hard
+hitflag = MAFD
+;priority = 3
+pausetime = 35,35
+sparkno = 3
+sparkxy = -19, -22
+hitsound   = 5,4
+ground.slidetime = 0
+ground.hittime  = 30
+ground.velocity = -1,22
+airguard.velocity = -1,-.8
+air.type = high
+air.velocity = -1,22
+air.hittime = 12
+air.fall = 1
+fall = 1 
+fall.yvelocity = cond(var(18)=0, -9,-0)
+down.bounce = 9
+envshake.time = 35
+envshake.freq = 90
+envshake.ampl = -6
+envshake.phase = 100
+  palfx.time = 16
+  palfx.add = 40, 30, -40
+palfx.sinadd = 50,50,50,16
+p2facing = 1
+;ground.cornerpush.veloff = -7
+;air.cornerpush.veloff = -7
+;p2stateno = 43211
+guard.dist = 0
+palfx.time = 35
+palfx.add = 100, 0,20
+ground.cornerpush.veloff = -1
+getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
+[State 610, 3]
+type = hitdef 
+p2facing = 1
+trigger1 = !movecontact
+triggerall = enemynear,map(armor)>0
 trigger1 = enemynear,statetype=A
 trigger1 = enemynear,movetype!=H
 attr = S, ST
@@ -4111,6 +4203,7 @@ palfx.time = 35
 palfx.add = 100, 0,20
 ground.cornerpush.veloff = -1
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
+
 [State 610, 3]
 type = hitdef 
 p2facing = 1
@@ -4208,7 +4301,7 @@ velset = 0,0
 sprpriority = -1
 
 
-;COUNTER ZOOM ================================================
+;DEATH ZOOM ================================================
 [State 0]
 type = MapSet
 trigger1 = time=0
@@ -4479,6 +4572,7 @@ value = 0
 [State 610, 3]
 type = hitdef 
 p2facing = 1
+triggerall = enemynear,map(armor)=0
 trigger1 = !movecontact
 trigger1 = enemynear,statetype!=A
 trigger1 = enemynear,movetype!=H
@@ -4518,6 +4612,51 @@ palfx.time = 35
 palfx.add = 100, 0,20
 ground.cornerpush.veloff = -1
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
+[State 610, 3]
+type = hitdef 
+p2facing = 1
+triggerall = enemynear,map(armor)>0
+trigger1 = !movecontact
+trigger1 = enemynear,statetype!=A
+trigger1 = enemynear,movetype!=H
+attr = S, ST
+damage = ceil(cond(fvar(11) * 250 < 20, 20, fvar(11) * 250)),11
+animtype = hard
+hitflag = MAFD
+;priority = 3
+pausetime = 35,35
+sparkno = 3
+sparkxy = -19, -22
+hitsound   = 5,4
+ground.type = l
+ground.slidetime = 0
+ground.hittime  = 30
+ground.velocity = -1,22
+airguard.velocity = -1,-.8
+air.type = high
+air.velocity = -1,22
+air.hittime = 12
+fall = 1 
+fall.yvelocity = cond(var(18)=0, -9,-0)
+down.bounce = 9
+envshake.time = 35
+envshake.freq = 90
+envshake.ampl = -6
+envshake.phase = 100
+  palfx.time = 16
+  palfx.add = 40, 30, -40
+palfx.sinadd = 50,50,50,16
+p2facing = 1
+;ground.cornerpush.veloff = -7
+;air.cornerpush.veloff = -7
+;p2stateno = 43211
+guard.dist = 0
+palfx.time = 35
+palfx.add = 100, 0,20
+ground.cornerpush.veloff = -1
+getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
+
+
 [State 610, 3]
 type = hitdef 
 p2facing = 1
@@ -4565,6 +4704,50 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 [State 610, 3]
 type = hitdef 
 p2facing = 1
+triggerall = enemynear,map(armor)=0
+trigger1 = !movecontact
+trigger1 = enemynear,statetype=A
+trigger1 = enemynear,movetype!=H
+attr = S, SA
+damage = ceil(cond(fvar(11) * 250 < 20, 20, fvar(11) * 250)),11
+animtype = hard
+hitflag = MAFD
+;priority = 3
+pausetime = 35,35
+sparkno = 3
+sparkxy = -19, -22
+hitsound   = 5,4
+ground.type = l
+ground.slidetime = 0
+ground.hittime  = 30
+ground.velocity = -1,22
+airguard.velocity = -1,-.8
+air.type = high
+air.velocity = -1,22
+air.hittime = 12
+fall = 1 
+fall.yvelocity = cond(var(18)=0, -9,-0)
+down.bounce = 9
+envshake.time = 35
+envshake.freq = 90
+envshake.ampl = -6
+envshake.phase = 100
+  palfx.time = 16
+  palfx.add = 40, 30, -40
+palfx.sinadd = 50,50,50,16
+p2facing = 1
+;ground.cornerpush.veloff = -7
+;air.cornerpush.veloff = -7
+;p2stateno = 43211
+guard.dist = 0
+palfx.time = 35
+palfx.add = 100, 0,20
+ground.cornerpush.veloff = -1
+getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
+[State 610, 3]
+type = hitdef 
+p2facing = 1
+triggerall = enemynear,map(armor)>0
 trigger1 = !movecontact
 trigger1 = enemynear,statetype=A
 trigger1 = enemynear,movetype!=H
@@ -4604,6 +4787,9 @@ palfx.time = 35
 palfx.add = 100, 0,20
 ground.cornerpush.veloff = -1
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
+
+
+
 [State 610, 3]
 type = hitdef 
 p2facing = 1
@@ -5168,6 +5354,7 @@ ignorehitpause = 0
 type = zoom
 triggerall=map(nozoom)=0
 triggerall=backedgebodydist<=100
+trigger1 = enemynear,movetype!=A&&enemynear,stateno!=666999
 trigger1 = movecountered
 trigger1 = enemy,HitShakeOver = 0
 scale = 1.5
@@ -5180,6 +5367,7 @@ ignorehitpause=1
 type = zoom
 triggerall=map(nozoom)=0
 triggerall=backedgebodydist>100
+trigger1 = enemynear,movetype!=A&&enemynear,stateno!=666999
 trigger1 = movecountered
 trigger1 = enemy,HitShakeOver = 0
 scale = 1.5
@@ -5199,6 +5387,7 @@ type = BGPalFX
 triggerall=map(nozoom)=0
 trigger1=movecountered
 trigger1 = enemy,HitShakeOver = 0
+trigger1 = enemynear,movetype!=A&&enemynear,stateno!=666999
 time = 1
 ;add = 0,0,0
 mul = 50,50,50

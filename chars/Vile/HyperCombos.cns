@@ -1073,7 +1073,9 @@ value = 6007
 [State -2, ChangeState]
 type = ChangeState
 trigger1 = var(2)>5
+trigger2 = root,stateno=3060&&root,animelem=6
 value = 6007
+ignorehitpause=1
 
 ;[State -2, ChangeState]
 ;type = ChangeState
@@ -1279,7 +1281,9 @@ value = 6007
 [State -2, ChangeState]
 type = ChangeState
 trigger1 = var(2)>5
+trigger2 = root,stateno=3060&&root,animelem=6
 value = 6007
+ignorehitpause=1
 
 ;[State -2, ChangeState]
 ;type = ChangeState
@@ -1378,6 +1382,7 @@ guard.dist=0
 type = destroyself
 trigger1 = parent,var(2)>5
 trigger2 = root, movetype = H
+trigger3 = root,stateno=3060&&root,animelem=6
 
 ;---------------------------------------------------------------------------
 ;Back Orb Hitbox
@@ -1471,6 +1476,7 @@ guard.dist=0
 type = destroyself
 trigger1 = parent,var(2)>5
 trigger2 = root, movetype = H
+trigger3 = root,stateno=3060&&root,animelem=6
 
 ;---------------------------------------------------------------------------
 ;Null
@@ -1488,6 +1494,82 @@ velset = 0,0
 [State 0, DestroySelf]
 type = DestroySelf
 trigger1 = animtime = 0
+
+;---------------------------------------------------------------------------
+;OuroBoom
+[Statedef 3060]
+type    = S
+movetype= A
+physics = S
+juggle  = 0
+ctrl = 0
+anim = 3600
+sprpriority = 2
+
+[State -3, Vile Voices]
+type = PlaySnd
+trigger1 = animelem = 6
+value = 1030, (0+(Random%2))
+ignorehitpause=1
+[State -3, Vile Voices]
+type = PlaySnd
+trigger1 = animelem = 5
+value = 3011, (0+(Random%6))
+ [State 1200, Shake Screen]
+type = EnvShake
+trigger1 = animelem = 6
+time = 10    ;Time to shake screen
+ampl = 3     ;Amount to shake
+freq = 120   ;A frequency of 180 shakes the screen rapidly
+
+[State 0]
+type = HitDef
+trigger1 = !movecontact
+attr = S, HA
+animtype  = up
+air.animtype = back
+damage = ceil(cond(root,fvar(11) * 100 < 10, 10, root,fvar(11) * 100)),20
+hitflag = MAFD
+guardflag = MA
+pausetime = 18,18
+sparkno = 3
+sparkxy = -10,-60
+hitsound   = 5,3
+guardsound = 6,2
+ground.type = high
+ground.slidetime = 12
+ground.hittime  = ceil(cond(fvar(15) *34 < 9, 9, fvar(15) * 34))
+air.hittime  = ceil(cond(fvar(15) *45 < 9, 9, fvar(15) * 45))
+down.hittime = ceil(cond(fvar(15) *45 < 9, 9, fvar(15) * 45))
+ground.velocity = -2,-8
+air.velocity = -2,-8
+down.velocity = -2,-8
+ground.cornerpush.veloff = -8
+down.cornerpush.veloff = 0
+air.cornerpush.veloff = 0
+;envshake.freq =
+;envshake.ampl = 
+;envshake.phase =
+guard.ctrltime = 11
+guard.hittime = 11
+guard.velocity = -7
+guard.slidetime = 30;
+envshake.time = 8
+envshake.time = 9
+envshake.freq = 90
+envshake.ampl = 2
+fall = 1
+getpower = 0
+p2facing = 1
+fall.yvelocity=0
+p2stateno = 30000
+
+[State 200, 3]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
 ;-------------------------------
 ;Fetid Furball H Start up
 [Statedef 4000]

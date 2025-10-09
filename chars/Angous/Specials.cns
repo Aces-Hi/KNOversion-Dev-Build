@@ -5860,7 +5860,6 @@ persistent = 1
 [State 410, 2]
 type = hitdef
 p2facing = 1
-triggerall = enemynear,map(armor)=0
 triggerall=map(hdc)=0
 trigger1 = !NumExplod(99856)
 trigger1 = time = 0
@@ -5896,48 +5895,8 @@ guard.hittime = 28
 guard.slidetime = 19
 guard.ctrltime = 27
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
-id = 99856
-p2stateno = 915020
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-triggerall = enemynear,map(armor)>0
-triggerall=map(hdc)=0
-trigger1 = !NumExplod(99856)
-trigger1 = time = 0
-attr = S, SA
-damage = ceil(cond(fvar(11) * 140+var(10)*0.5888 < 75, 75, fvar(11) * 140+var(10)*0.5888)),13+var(10)*0.5
-animtype  = Medium
-hitflag = MAFDP
-guardflag = MA
-pausetime = 15,15
-sparkno = 3
-sparkxy = -10,-50
-hitsound   = 5,4
-guardsound = 6,2
-ground.type = Low
-ground.slidetime = 14
-ground.hittime  = 999
-air.hittime = 999
-down.hittime = 999
-ground.velocity = -8,-2.8
-air.velocity = -8,-2.8
-fall.yvelocity = 0
-fall  = 1
-air.fall = 1
-envshake.time = 13
-envshake.freq = 90
-envshake.ampl = 8
-fall.envshake.time = 0
-fall.envshake.freq = 0
-fall.envshake.ampl = 0
-palfx.time = 28
-palfx.add = 100, 0,20
-guard.hittime = 28
-guard.slidetime = 19
-guard.ctrltime = 27
-getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
-id = 99856
+fall.yvelocity=0
+
 
 
 

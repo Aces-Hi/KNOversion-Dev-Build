@@ -79,10 +79,10 @@ guardsound = 6, 2                ;Sound to play on guard
 ground.type = high           ;Type: High, Low, Trip (def: Normal)
 ground.slidetime = 5             ;Time that the opponent slides back
 ground.hittime  = 25             ;Time opponent is in hit state
-ground.velocity = 0,-3             ;Velocity at which opponent is pushed
+ground.velocity = 0,(cond(root,combocount=0, -3, -4.5))
 airguard.velocity = -1.9,-.8     ;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
-air.velocity = 0,-3             ;Type: High, Low, Trip (def: same as ground.type)
-down.velocity = 0,-3
+air.velocity = 0,(cond(root,combocount=0, -3, -4.5))           ;Type: High, Low, Trip (def: same as ground.type)
+down.velocity = 0,(cond(root,combocount=0, -3, -4.5))
 ;Y-velocity at which opponent is pushed
 air.hittime = 60
 down.hittime = 60                 ;Time before opponent regains control in air
@@ -216,10 +216,10 @@ guardsound = 6, 2                ;Sound to play on guard
 ground.type = high           ;Type: High, Low, Trip (def: Normal)
 ground.slidetime = 5             ;Time that the opponent slides back
 ground.hittime  = 25             ;Time opponent is in hit state
-ground.velocity = -2,-3             ;Velocity at which opponent is pushed
+ground.velocity = -2,(cond(root,combocount=0, -3, -4.5))          ;Velocity at which opponent is pushed
 airguard.velocity = -1.9,-.8     ;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
-air.velocity = -2,-3             ;Type: High, Low, Trip (def: same as ground.type)
-down.velocity = -2,-3.1
+air.velocity = -2,(cond(root,combocount=0, -3, -4.5))              ;Type: High, Low, Trip (def: same as ground.type)
+down.velocity = -2,(cond(root,combocount=0, -3, -4.5))  
 ;Y-velocity at which opponent is pushed
 air.hittime = 45
 down.hittime = 45                 ;Time before opponent regains control in air

@@ -2205,3 +2205,76 @@ type = ChangeState
 trigger1 = HitOver
 value = 0
 ctrl = 1
+;-----------------------------------------------------------------------------
+;Horizon Buster Custom State (Shaking)
+[Statedef 30000]
+type    = A
+movetype= H
+physics = N
+ctrl = 0
+velset=0,0
+sprpriority=2
+
+[State 30000, Width]
+type = Width
+trigger1 = 1
+edge = 25,-25
+player = 25,0
+
+[State 30000, ChangeAnim]
+type = ChangeAnim
+trigger1 = !Time
+value = 5030
+
+[State 30000, Bounce]
+type = ChangeState
+trigger1 = hitshakeover
+value = 30001
+
+;Horizon Buster Custom State (Flipping)
+[Statedef 30001]
+type = A
+movetype = H
+physics = N
+velset = 0,0
+
+[State 1027, No scroll]
+type = ScreenBound
+trigger1 = 1
+value = 1
+movecamera = 1,0
+
+;[State 1317, Muteki]
+;type = NotHitBy
+;trigger1 = AnimElemTime(2)<0
+;value = SCA
+
+[State 30001, ChangeAnim]
+type = ChangeAnim
+trigger1 = !Time
+value = 6160
+
+[State 30001, Velset]
+type = VelSet
+trigger1 = time = 0 ;AnimElemTime(2)=0
+x = -1
+y = -8
+
+
+[State 30001, AngleDraw]
+type = AngleDraw
+trigger1 = 1
+[State 30001, AngleAdd]
+type = AngleAdd
+trigger1 = Time%2 = 0
+value = 25
+
+[State 30001, Gravity]
+type = VelAdd
+trigger1 = 1
+y = 0.35
+
+[State 30001, ChangeState]
+type = selfstate
+trigger1 = pos y>=0  && vel y>=0
+value = 5100

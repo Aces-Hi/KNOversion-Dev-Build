@@ -9,6 +9,13 @@ ctrl = 0
 anim = 3000                                     
 sprpriority = 0 
 
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 1
+ignorehitpause = 1
+
 [State LTG]
 type = PlaySnd
 triggerall=palno=11
@@ -476,6 +483,13 @@ ctrl = 0
 anim = 3006                                     
 sprpriority = 0 
 
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = anim=3001&&prevstateno=3000
+value = SCA
+time = 1
+ignorehitpause = 1
+
 [State LTG]
 type = PlaySnd
 triggerall=palno=11
@@ -924,11 +938,18 @@ type = A
 movetype = A
 physics = N
 anim = 3050
-poweradd = -4000
+poweradd = -6000
 juggle = 0
 ctrl = 0
 velset = 0,0
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "norc"
+value = 1
+ignorehitpause = 1
+persistent = 1
 
 [State LTG]
 type = PlaySnd
@@ -1094,7 +1115,7 @@ type = HitDef
 triggerall = anim = 3051
 trigger1 = !movecontact
 attr = A, HA
-damage = ceil(cond(fvar(11) *100 < 50, 50, fvar(11) * 100)), 30
+damage = ceil(cond(fvar(11) *150 < 100, 100, fvar(11) * 150)), 30
 animtype = up
 guardflag = MA
 hitflag = MAF
@@ -1237,12 +1258,20 @@ juggle = 0
 ctrl = 0
 velset = 0,0
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "norc"
+value = 1
+ignorehitpause = 1
+persistent = 1
+
 [State 200, 1]  
 type = HitDef
 triggerall = anim = 3052
 trigger1 = animelem=73
 attr = A, HA
-damage = ceil(cond(fvar(11) *200 < 100, 100, fvar(11) * 200)), 30
+damage = ceil(cond(fvar(11) *250 < 150, 150, fvar(11) * 250)), 30
 animtype = Hard
 guardflag = MA
 hitflag = MAF
@@ -1277,7 +1306,7 @@ type = HitDef
 triggerall = anim = 3052
 trigger1 = animelem=168
 attr = A, HA
-damage = ceil(cond(fvar(11) *342 < 200, 200, fvar(11) * 342)), 30
+damage = ceil(cond(fvar(11) *457< 300, 300, fvar(11) * 457)), 30
 animtype = Hard
 guardflag = MA
 hitflag = MAF

@@ -1,4 +1,4 @@
-qeqeeqzezceeeqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqeqeeqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqcqqdeeqqqqqqqqqqqqeqeeeeqqeeeeqqeqeeqqqqqqqqqccqcqqqqzzczczceqcqqqqqqqqqqqqqqqzeeeceeeeeeeeeeezqezeeeqqqcezzeeecczcceeqqeezqqeqzzqqqeeqeeeqeeqjjkkkkkkkkkkkkkk31011,,klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
+qeqeqeeqzezceeeqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqeqeeqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqcqqdeeqqqqqqqqqqqqeqeeeeqqeeeeqqeqeeqqqqqqqqqccqcqqqqzzczczceqcqqqqqqqqqqqqqqqzeeeceeeeeeeeeeezqezeeeqqqcezzeeecczcceeqqeezqqeqzzqqqeeqeeeqeeqjjkkkkkkkkkkkkkk31011,,klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
 ..,......,,,...j,,,./..kl,,----..,,.,,,,,,,,,,,.; KFM's animation data
 ; see docs/air.txt for more information
 
@@ -2937,18 +2937,18 @@ Clsn1: 1
 3041,170, 0,0, 4
 3041,171, 0,0, 4
 3041,172, 0,0, 4
-3041,173, 0,0, 4
-3041,174, 0,0, 4
-3041,175, 0,0, 4
-3041,176, 0,0, 4
-3041,177, 0,0, 4
-3041,178, 0,0, 4
-3041,179, 0,0, 4
-3041,180, 0,0, 4
-3041,181, 0,0, 4
-3041,182, 0,0, 4
-3041,183, 0,0, 4
-3041,184, 0,0, 4
+3041,173, 0,0, 2
+3041,174, 0,0, 2
+3041,175, 0,0, 2
+3041,176, 0,0, 2
+3041,177, 0,0, 2
+3041,178, 0,0, 2
+3041,179, 0,0, 2
+3041,180, 0,0, 2
+3041,181, 0,0, 2
+3041,182, 0,0, 2
+3041,183, 0,0, 2
+3041,184, 0,0, 2
 
 ; kick fx
 [Begin Action 3053]

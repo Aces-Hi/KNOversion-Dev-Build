@@ -1422,6 +1422,12 @@ velset = vel x,0
 anim = 3500
 sprpriority = 0
 
+[State 0, VarAdd]
+type = MapSet
+trigger1 = 1
+map = "projc"
+value = 1
+ignorehitpause = 1
 
 [State 0, PlaySnd]
 type = PlaySnd

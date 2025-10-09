@@ -1667,7 +1667,8 @@ ignorehitpause = 1
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = player(map(enemyteamlead)),movetype!=A
+trigger1 = enemynear,map(projc)=0&player(map(enemyteamlead)),movetype!=A
+trigger2 = enemynear,map(projc)>0&player(map(enemyteamlead)),movetype=A
 animtype  = Light
 air.animtype = back
 hitonce = 1
@@ -1685,7 +1686,7 @@ guardsound = S1,3
 ground.type = high
 animtype = medium
 ground.slidetime = 14
-ground.hittime  = 20
+ground.hittime  = 34
 ground.velocity = -3.75,0
 ;fall.xvelocity = -1.5
 fall.yvelocity = 0
@@ -1772,7 +1773,8 @@ time = 1
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = player(map(enemyteamlead)),movetype!=A
+trigger1 = enemynear,map(projc)=0&player(map(enemyteamlead)),movetype!=A
+trigger2 = enemynear,map(projc)>0&player(map(enemyteamlead)),movetype=A
 animtype  = Light
 air.animtype = back
 hitonce = 1
@@ -1790,7 +1792,7 @@ guardsound = S1,3
 ground.type = high
 animtype = medium
 ground.slidetime = 14
-ground.hittime  = 20
+ground.hittime  = 34
 ground.velocity = -5,0
 fall.xvelocity = -1.5
 fall.yvelocity = 0
@@ -1890,7 +1892,8 @@ ignorehitpause = 1
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = player(map(enemyteamlead)),movetype!=A
+trigger1 = enemynear,map(projc)=0&player(map(enemyteamlead)),movetype!=A
+trigger2 = enemynear,map(projc)>0&player(map(enemyteamlead)),movetype=A
 animtype  = Light
 air.animtype = back
 hitonce = 1
@@ -1908,7 +1911,7 @@ guardsound = S1,3
 ground.type = high
 animtype = medium
 ground.slidetime = 14
-ground.hittime  = 20
+ground.hittime  = 34
 ground.velocity = -3.75,0
 ;fall.xvelocity = -1.5
 fall.yvelocity = 0
@@ -2003,7 +2006,8 @@ ignorehitpause = 1
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = player(map(enemyteamlead)),movetype!=A
+trigger1 = enemynear,map(projc)=0&player(map(enemyteamlead)),movetype!=A
+trigger2 = enemynear,map(projc)>0&player(map(enemyteamlead)),movetype=A
 animtype  = Light
 air.animtype = back
 hitonce = 1
@@ -2021,7 +2025,7 @@ guardsound = S1,3
 ground.type = high
 animtype = medium
 ground.slidetime = 14
-ground.hittime  = 20
+ground.hittime  = 34
 ground.velocity = -5,0
 fall.xvelocity = -1.5
 fall.yvelocity = 0
@@ -2119,7 +2123,8 @@ time = 1
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = player(map(enemyteamlead)),movetype!=A
+trigger1 = enemynear,map(projc)=0&player(map(enemyteamlead)),movetype!=A
+trigger2 = enemynear,map(projc)>0&player(map(enemyteamlead)),movetype=A
 animtype  = Light
 air.animtype = back
 hitonce = 1
@@ -2137,7 +2142,7 @@ guardsound = S1,3
 ground.type = high
 animtype = medium
 ground.slidetime = 14
-ground.hittime  = 20
+ground.hittime  = 34
 ground.velocity = -3.75,0
 ;fall.xvelocity = -1.5
 air.fall = 1
@@ -2234,7 +2239,8 @@ ignorehitpause = 1
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = player(map(enemyteamlead)),movetype!=A
+trigger1 = enemynear,map(projc)=0&player(map(enemyteamlead)),movetype!=A
+trigger2 = enemynear,map(projc)>0&player(map(enemyteamlead)),movetype=A
 animtype  = Light
 air.animtype = back
 hitonce = 1
@@ -2252,7 +2258,7 @@ guardsound = S1,3
 ground.type = high
 animtype = medium
 ground.slidetime = 14
-ground.hittime  = 20
+ground.hittime  = 34
 ground.velocity = -5,0
 fall.xvelocity = -1.5
 fall.yvelocity = 0
@@ -2350,7 +2356,8 @@ ignorehitpause = 1
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = player(map(enemyteamlead)),movetype!=A
+trigger1 = enemynear,map(projc)=0&player(map(enemyteamlead)),movetype!=A
+trigger2 = enemynear,map(projc)>0&player(map(enemyteamlead)),movetype=A
 animtype  = Light
 air.animtype = back
 hitonce = 1
@@ -2368,7 +2375,7 @@ guardsound = S1,3
 ground.type = high
 animtype = medium
 ground.slidetime = 14
-ground.hittime  = 29
+ground.hittime  = 34
 ground.velocity = 2.5,-4
 ;fall.xvelocity = -1.5
 fall.yvelocity = 0
@@ -2464,7 +2471,8 @@ ignorehitpause = 1
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = player(map(enemyteamlead)),movetype!=A
+trigger1 = enemynear,map(projc)=0&player(map(enemyteamlead)),movetype!=A
+trigger2 = enemynear,map(projc)>0&player(map(enemyteamlead)),movetype=A
 animtype  = Light
 air.animtype = back
 hitonce = 1
@@ -2482,7 +2490,7 @@ guardsound = S1,3
 ground.type = high
 animtype = medium
 ground.slidetime = 14
-ground.hittime  = 20
+ground.hittime  = 34
 ground.velocity = -5,0
 fall.xvelocity = -1.5
 fall.yvelocity = 0
@@ -2572,7 +2580,8 @@ ignorehitpause = 1
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = player(map(enemyteamlead)),movetype!=A
+trigger1 = enemynear,map(projc)=0&player(map(enemyteamlead)),movetype!=A
+trigger2 = enemynear,map(projc)>0&player(map(enemyteamlead)),movetype=A
 animtype  = Light
 air.animtype = back
 hitonce = 1
@@ -2590,7 +2599,7 @@ guardsound = S1,3
 ground.type = high
 animtype = medium
 ground.slidetime = 14
-ground.hittime  = 20
+ground.hittime  = 34
 ground.velocity = -3.75,0
 ;fall.xvelocity = -1.5
 fall.yvelocity = 0
@@ -2680,7 +2689,8 @@ ignorehitpause = 1
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = player(map(enemyteamlead)),movetype!=A
+trigger1 = enemynear,map(projc)=0&player(map(enemyteamlead)),movetype!=A
+trigger2 = enemynear,map(projc)>0&player(map(enemyteamlead)),movetype=A
 animtype  = Light
 air.animtype = back
 hitonce = 1
@@ -2698,7 +2708,7 @@ guardsound = S1,3
 ground.type = high
 animtype = medium
 ground.slidetime = 14
-ground.hittime  = 20
+ground.hittime  = 34
 ground.velocity = -5,0
 fall.xvelocity = -1.5
 fall.yvelocity = 0
@@ -3104,9 +3114,10 @@ ignorehitpause = 1
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = player(map(enemyteamlead)),movetype!=A
-trigger1 = var(36)>1
-trigger1 = time %7= 0
+trigger1 = enemynear,map(projc)=0&player(map(enemyteamlead)),movetype!=A
+trigger2 = enemynear,map(projc)>0&player(map(enemyteamlead)),movetype=A
+triggerall = var(36)>1
+triggerall = time %7= 0
 animtype  = Light
 air.animtype = back
 attr = S, SP
@@ -3253,9 +3264,10 @@ ignorehitpause = 1
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = player(map(enemyteamlead)),movetype!=A
+trigger1 = enemynear,map(projc)=0&player(map(enemyteamlead)),movetype!=A
+trigger2 = enemynear,map(projc)>0&player(map(enemyteamlead)),movetype=A
 triggerall = enemynear,map(armor)=0
-trigger1 = !movecontact
+triggerall = !movecontact
 attr = S, NP
 animtype  = Hard
 air.animtype = back
@@ -3382,9 +3394,10 @@ ignorehitpause = 1
 
 [State 2, Counter Hit]
 type = HitDef 
-trigger1 = player(map(enemyteamlead)),movetype!=A
+trigger1 = enemynear,map(projc)=0&player(map(enemyteamlead)),movetype!=A
+trigger2 = enemynear,map(projc)>0&player(map(enemyteamlead)),movetype=A
 triggerall = enemynear,map(armor)=0
-trigger1 = !movecontact
+triggerall = !movecontact
 attr = S, SA
 damage = ceil(cond(parent, fvar(11) *150 < 30, 30, parent, fvar(11) * 150)), 25
 hitflag = MAF
@@ -3512,8 +3525,9 @@ ignorehitpause = 1
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = player(map(enemyteamlead)),movetype!=A
-trigger1 = !movecontact
+trigger1 = enemynear,map(projc)=0&player(map(enemyteamlead)),movetype!=A
+trigger2 = enemynear,map(projc)>0&player(map(enemyteamlead)),movetype=A
+triggerall = !movecontact
 animtype  = Light
 air.animtype = back
 attr = S, SP
@@ -3618,9 +3632,10 @@ ignorehitpause = 1
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = player(map(enemyteamlead)),movetype!=A
+trigger1 = enemynear,map(projc)=0&player(map(enemyteamlead)),movetype!=A
+trigger2 = enemynear,map(projc)>0&player(map(enemyteamlead)),movetype=A
 triggerall = enemynear,map(armor)=0
-trigger1 = !movecontact
+triggerall = !movecontact
 attr = S, NP
 animtype  = Hard
 air.animtype = back
@@ -4092,17 +4107,52 @@ trigger1 =time%2=0
 x = .94
 y=0.98
 
-
-
 [State 0, VelSet]
 type = VelSet
-trigger1 = pos y >=-5
+triggerall = pos y >=-5
+trigger1 = root, stateno != 1550
 y = 0
 
-;[State 3005, hitvar]
-;type=varadd
-;trigger1= !time
-;var(2)=1
+[State 0, ChangeState]
+type = MapSet
+trigger1 = time=0&&prevstateno!=1102
+map = "slowdown"
+value = 0
+[State 0, ChangeState]
+type = MapSet
+trigger1 = root, stateno = 1560&&root,animelem=3
+trigger2 = root, stateno = 1550&&root,animelem=3
+trigger3 = root, stateno = 1520&&root,animelem=3
+trigger4 = root, stateno = 1540&&root,animelem=3
+map = "slowdown"
+value = 1
+[State 0, VelAdd]
+type = Velmul
+trigger1 =map(slowdown)
+x = .95
+y = .95
+
+[State 0, ChangeState]
+type = VelSet
+trigger1 = root, stateno = 1560&&root,animelem=3
+x = 7
+y = 0
+[State 0, ChangeState]
+type = VelSet
+trigger1 = root, stateno = 1550&&root,animelem=3
+x = 0
+y = -4
+[State 0, ChangeState]
+type = VelSet
+triggerall = pos y <-5
+trigger1 = root, stateno = 1520&&root,animelem=3
+x = 0
+y = 4
+[State 0, ChangeState]
+type = VelSet
+trigger1 = root, stateno = 1540&&root,animelem=3
+x = -3
+y = 0
 
 [State 410, 2]
 type = HitDef
@@ -4359,6 +4409,53 @@ removeongethit = 0
 ;persistent =
 ;supermove = 0
 ;pausemove = 0
+
+[State 0, VelSet]
+type = VelSet
+triggerall = pos y >=-5
+trigger1 = root, stateno != 1550
+y = 0
+
+[State 0, ChangeState]
+type = MapSet
+trigger1 = time=0&&prevstateno!=1102
+map = "slowdown"
+value = 0
+[State 0, ChangeState]
+type = MapSet
+trigger1 = root, stateno = 1560&&root,animelem=3
+trigger2 = root, stateno = 1550&&root,animelem=3
+trigger3 = root, stateno = 1520&&root,animelem=3
+trigger4 = root, stateno = 1540&&root,animelem=3
+map = "slowdown"
+value = 1
+[State 0, VelAdd]
+type = Velmul
+trigger1 =map(slowdown)
+x = .95
+y = .95
+
+[State 0, ChangeState]
+type = VelSet
+trigger1 = root, stateno = 1560&&root,animelem=3
+x = 7
+y = 0
+[State 0, ChangeState]
+type = VelSet
+trigger1 = root, stateno = 1550&&root,animelem=3
+x = 0
+y = -4
+[State 0, ChangeState]
+type = VelSet
+triggerall = pos y <-5
+trigger1 = root, stateno = 1520&&root,animelem=3
+x = 0
+y = 4
+[State 0, ChangeState]
+type = VelSet
+trigger1 = root, stateno = 1540&&root,animelem=3
+x = -7
+y = 0
 
 [State 0, ChangeState]
 type = ChangeState
@@ -4778,13 +4875,50 @@ y=0.98
 
 [State 0, VelSet]
 type = VelSet
-trigger1 = pos y >=-5
+triggerall = pos y >=-5
+trigger1 = root, stateno != 1550
 y = 0
 
-;[State 3005, hitvar]
-;type=varadd
-;trigger1= !time
-;var(2)=1
+[State 0, ChangeState]
+type = MapSet
+trigger1 = time=0&&prevstateno!=1102
+map = "slowdown"
+value = 0
+[State 0, ChangeState]
+type = MapSet
+trigger1 = root, stateno = 1560&&root,animelem=3
+trigger2 = root, stateno = 1550&&root,animelem=3
+trigger3 = root, stateno = 1520&&root,animelem=3
+trigger4 = root, stateno = 1540&&root,animelem=3
+map = "slowdown"
+value = 1
+[State 0, VelAdd]
+type = Velmul
+trigger1 =map(slowdown)
+x = .95
+y = .95
+
+[State 0, ChangeState]
+type = VelSet
+trigger1 = root, stateno = 1560&&root,animelem=3
+x = 7
+y = 0
+[State 0, ChangeState]
+type = VelSet
+trigger1 = root, stateno = 1550&&root,animelem=3
+x = 0
+y = -4
+[State 0, ChangeState]
+type = VelSet
+triggerall = pos y <-5
+trigger1 = root, stateno = 1520&&root,animelem=3
+x = 0
+y = 4
+[State 0, ChangeState]
+type = VelSet
+trigger1 = root, stateno = 1540&&root,animelem=3
+x = -3
+y = 0
 
 [State 410, 2]
 type = HitDef
@@ -5561,7 +5695,8 @@ ignorehitpause = 1
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = player(map(enemyteamlead)),movetype!=A
+trigger1 = enemynear,map(projc)=0&player(map(enemyteamlead)),movetype!=A
+trigger2 = enemynear,map(projc)>0&player(map(enemyteamlead)),movetype=A
 animtype  = Light
 air.animtype = back
 hitonce = 1
@@ -5579,7 +5714,7 @@ guardsound = S1,3
 ground.type = high
 animtype = medium
 ground.slidetime = 14
-ground.hittime  = 20
+ground.hittime  = 34
 ground.velocity = -3.75,0
 ;fall.xvelocity = -1.5
 air.fall = 1
@@ -5609,6 +5744,11 @@ trigger1 = root, stateno = 1550
 value = 1256
 ctrl = 0 
 
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = root, stateno = 1520
+value = 1225
+ctrl = 0 
 
 [State 0, ChangeState]
 type = ChangeState
@@ -5957,9 +6097,10 @@ ignorehitpause = 1
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = player(map(enemyteamlead)),movetype!=A
-trigger1 = var(36)>1
-trigger1 = time %7= 0
+trigger1 = enemynear,map(projc)=0&player(map(enemyteamlead)),movetype!=A
+trigger2 = enemynear,map(projc)>0&player(map(enemyteamlead)),movetype=A
+triggerall = var(36)>1
+triggerall = time %7= 0
 animtype  = Light
 air.animtype = back
 attr = S, SP

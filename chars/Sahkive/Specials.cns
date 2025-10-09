@@ -1403,7 +1403,6 @@ movetype= A                      ;Move-type: A-attack, I-idle, H-gethit
 physics = S                      ;Physics: S-stand, C-crouch, A-air                    ;Number of air juggle points move takes
 ;Commonly-used controllers:
 ctrl = 0                         ;Set ctrl (Def: no change)
-anim = 1020                       ;Change animation (Def: no change)                 ;Power to add (Def: 0)
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
 facep2 = 1
 
@@ -1576,6 +1575,104 @@ guard.hittime = 12
 guard.ctrltime = 11
 guard.slidetime = 15
 
+;Armament Haki------------------------------------------------------------------------------------------------------------------------------
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;Shadow Override
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0]
+type = MapSet
+trigger1 = map(haki)&&prevstateno = 100
+triggerall = time<20
+trigger2 = prevstateno=666999
+map = "ShadowOverride"
+value=3
+persistent=1
+ignorehitpause=1
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0, PalFXWiz]
+type = PalFX
+trigger1 = map(haki)&&prevstateno = 100
+trigger1 = time=0
+trigger1 = prevstateno!=666999
+time = 20
+add = 20,0,20
+mul = 120,100,110
+sinadd = 100,100,100,-10
+invertall = 0
+color = 100
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time = 0 && anim!=1020&& anim!=1023 ;Animation of this state
+value = 1020
+elem = 1
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = time = 0
+fv = 6  ;fv = 10
+value = 1020 ;State of this attack
+
+[State 0]
+type = MapSet
+trigger1 = map(haki)=2&& time=0&&prevstateno = 100
+map = "Haki"
+value=1
+persistent=1
+ignorehitpause=1
+
+[State 0]
+type = MapSet
+trigger1 = map(haki)&&prevstateno = 100
+trigger1 = time=0
+trigger1 = prevstateno!=666999
+map = "armorlimit"
+value=0
+ignorehitpause = 1
+persistent = 1
+[State 0]
+type = Mapadd
+trigger1 = map(haki)&&prevstateno = 100
+trigger1 = time=0
+trigger1 = prevstateno=666999
+map = "armorlimit"
+value=1
+ignorehitpause = 1
+persistent = 1
+[State 0]
+type = MapSet
+trigger1 = map(haki)&&prevstateno = 100
+triggerall = (AnimElemTime (8) < 0)
+trigger1 = time>=0
+trigger2 = prevstateno=666999
+map = "armor"
+value=2
+ignorehitpause = 1
+persistent = 1
+[State 0, HitOverride]
+type = HitOverride
+trigger1 = map(haki)&&prevstateno = 100
+triggerall = (AnimElemTime (8) < 0)
+triggerall = map(armorlimit)=0
+trigger1 = time>=0
+trigger2 = prevstateno=666999
+attr = SCA,NA,SA,NP,SP
+slot = 0
+stateno = 666999 
+time = 1
+forceair = 0
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = prevstateno!=(666999) && time = 0
+v = 41    ;fv = 10
+value = 0
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = prevstateno=(666999)
+v = 41
+value = 1
+;---------------------------------------------------------------------------------------------------------------------------------------
 
 [State 0, ChangeState]
 type = ChangeState

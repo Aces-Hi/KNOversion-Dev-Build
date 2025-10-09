@@ -2723,6 +2723,13 @@ value = 1
 ignorehitpause = 1
 persistent = 0
 
+[State 0, VarAdd]
+type = MapSet
+trigger1 = combocount=0&&movetype!=A
+map = "projc"
+value = 0
+ignorehitpause = 1
+
 [State 0, VarSet]
 type = MapSet
 triggerall = palno=11
@@ -2915,14 +2922,14 @@ type = AfterImage
 trigger1=map(december)=1
 trigger1=time=0
 time = -1
-length = 8
+length = 18
 palcolor = 1
 palinvertall = 0
 palbright =0,0,0
 palcontrast = 256,256,256
-paladd = 256,256,256
+paladd = 0,0,0
 palmul = .5,.5,.5
-framegap = 1
+framegap = 3
 trans = "none"
 persistent =1
 ignorehitpause=1

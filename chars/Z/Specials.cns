@@ -1580,6 +1580,11 @@ anim = 1200
 poweradd = 0                   
 sprpriority = 0  
 
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = time=0
+x = 3
+
 [State 0, ParentVarAdd]
 type = MapSet
 trigger1 = time=0
@@ -1946,6 +1951,12 @@ ctrl = 0
 anim = 1210                       
 poweradd = -1000                   
 sprpriority = 0  
+
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = time=0
+x = 3
+
 [State EX Limiters]
 type = mapset
 trigger1 = time=0
@@ -2107,7 +2118,7 @@ attr = S, SA
 animtype  = hard
 air.animtype = back
 damage = ceil(cond(fvar(11) *30 < 5, 5, fvar(11) * 30)), 0
-hitflag = MAF
+hitflag = MAFD
 guardflag = MA
 pausetime = 14,20
 guard.pausetime = 14,14
@@ -2117,12 +2128,12 @@ hitsound   = 5,3
 guardsound = 6,1
 ground.type = high
 ground.slidetime = 12
-ground.hittime  = 32
-air.hittime  = 36
-down.hittime = 36
+ground.hittime  = 50
+air.hittime  = 50
+down.hittime = 50
 ground.velocity = -7
-air.velocity = -1.5,-4
-down.velocity = -1.5,-4
+air.velocity = -1.5,-6
+down.velocity = -1.5,-6
 envshake.time = 8
 envshake.freq = 10
 envshake.ampl = 2
@@ -2131,7 +2142,7 @@ guard.hittime = 24
 guard.slidetime = 6
 guard.ctrltime = 24
 guard.cornerpush.veloff = -10
-forcenofall = 1
+air.fall = 1
 yaccel = .26
 getpower = (100)*(cond(var(var(2)) = 1, 1, .65)) 
 palfx.color=256
@@ -2139,6 +2150,7 @@ palfx.mul=128,128,128
 palfx.add=0,0,0
 palfx.sinadd=256,256,256,10
 palfx.time=54
+fall.yvelocity=0
 
 [State 0, CtrlSet]
 type = CtrlSet

@@ -21,7 +21,7 @@ trigger2 = stateno = [200,499]
 trigger2 = movecontact ;&& enemynear, movetype = H
 trigger2 = stateno!=421
 trigger3 = stateno = 1330 ;From blocking
-trigger4 = stateno = 1203
+trigger4 = movecontact&&stateno=[1200,1205]
 var(1) = 1
 
 [State -1, Grab]
@@ -145,6 +145,7 @@ triggerall = movehit
 triggerall = stateno!=[1300,1313]
 trigger1 = stateno = 220||210||211||420||1101
 triggerall=stateno!=[3000,3015]
+triggerall=stateno!=[1200,1205]
 
 ;---------------------------------------------------------------------------
 [State -1, EX 6S]
@@ -239,7 +240,7 @@ trigger2 = hitdefattr = A, NA
 type = ChangeState
 value = 1200
 triggerall=map(EXLimiter2)=0
-triggerall=stateno!=40
+triggerall=stateno!=[1200,1205]
 triggerall = roundstate = 2 ;only attack during the round
 triggerall = power>=1000
 triggerall = command = "EX"
@@ -306,11 +307,10 @@ trigger3 = (stateno = 210) && movecontact ;&& enemynear, movetype = H
 trigger4 = (stateno = 211) && movecontact ;&& enemynear, movetype = H
 trigger5 = (stateno = 220) 
 trigger5 = movecontact ;&& enemynear, movetype = H
-trigger6 = (stateno = 1203) 
-trigger7 = stateno = 100 
-trigger8 = (stateno = [400,499]) 
-trigger8 = movecontact ;&& enemynear, movetype = H
-trigger9 = stateno = 1102 && movehit =1 ;&& enemynear, movetype = H
+trigger6 = stateno = 100 
+trigger7 = (stateno = [400,499]) 
+trigger7 = movecontact ;&& enemynear, movetype = H
+trigger8 = stateno = 1102 && movehit =1 ;&& enemynear, movetype = H
 
 [State -1, 5R]
 type = ChangeState
@@ -327,10 +327,22 @@ trigger3 = (stateno = 210) && movecontact ;&& enemynear, movetype = H
 trigger4 = (stateno = 211) && movecontact ;&& enemynear, movetype = H
 trigger5 = (stateno = 220) 
 trigger5 = movecontact ;&& enemynear, movetype = H
-trigger6 = (stateno = 1203) 
-trigger7 = stateno = 100 
-trigger8 = (stateno = [400,499]) 
-trigger8 = movecontact ;&& enemynear, movetype = H
+trigger6 = stateno = 100 
+trigger7 = (stateno = [400,499]) 
+trigger7 = movecontact ;&& enemynear, movetype = H
+
+;---------------------------------------------------------------------------
+[State -1, jR]
+type = ChangeState
+value = 260
+triggerall = stateno!=40
+triggerall = roundstate = 2 ;only attack during the round
+triggerall = command != "b"
+triggerall = command = "c"
+trigger1 = statetype = A
+trigger1 = ctrl
+trigger2 =movecontact
+trigger2 = hitdefattr = A, NA
 
 ;---------------------------------------------------------------------------
 ;Forward Dash
@@ -401,10 +413,9 @@ trigger2 = command = "x"
 trigger2 = movecontact ;&& enemynear, movetype = H
 trigger2 = (stateno = 200)
 trigger2 = movecontact ;&& enemynear, movetype = H
-trigger3 = (stateno = 1203) && time > 5
-trigger4 = stateno = 100 && time > 11 ;&& command = "bufferedx"  ;|| stateno = 40
- trigger5 = stateno = 400 && movecontact && prevstateno!=200
-trigger5 = command = "x"
+trigger3 = stateno = 100 && time > 11 ;&& command = "bufferedx"  ;|| stateno = 40
+ trigger4 = stateno = 400 && movecontact && prevstateno!=200
+trigger4 = command = "x"
 ;---------------------------------------------------------------------------
 ;Stand Strong Punch
 [State -1, Stand Strong Punch]
@@ -419,9 +430,8 @@ trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = (stateno = 200) && movecontact ;&& enemynear, movetype = H
 trigger3 = (stateno = 205) && movecontact ;&& enemynear, movetype = H
-trigger4 = (stateno = 1203) && time > 5
-trigger5 = stateno = 100 && time > 11 || stateno = 110 && time > 11  ;|| stateno = 40
-trigger6 = stateno = 400 && movecontact ;&& enemynear, movetype = H
+trigger4 = stateno = 100 && time > 11 || stateno = 110 && time > 11  ;|| stateno = 40
+trigger5 = stateno = 400 && movecontact ;&& enemynear, movetype = H
 
 
 ;---------------------------------------------------------------------------
@@ -437,10 +447,9 @@ trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = (stateno = 200) && movecontact ;&& enemynear, movetype = H
 trigger3 = (stateno = 210) && movecontact ;&& enemynear, movetype = H
-trigger4 = (stateno = 1203) && time > 5
-trigger5 = stateno = 100 && time > 11 || stateno = 110 && time > 11  ;|| stateno = 40
-trigger6 = (stateno = 410) && movecontact && prevstateno!=211
-trigger7 = (stateno = 400) && movecontact && prevstateno!=211
+trigger4 = stateno = 100 && time > 11 || stateno = 110 && time > 11  ;|| stateno = 40
+trigger5 = (stateno = 410) && movecontact && prevstateno!=211
+trigger6 = (stateno = 400) && movecontact && prevstateno!=211
 
 [State -1, Stand Strong Punch]
 type = ChangeState
@@ -455,10 +464,9 @@ trigger1 = ctrl
 trigger2 = (stateno = 200) && movecontact ;&& enemynear, movetype = H
 trigger3 = (stateno = 210) && movecontact ;&& enemynear, movetype = H
 trigger4 = (stateno = 211) && movecontact ;&& enemynear, movetype = H
-trigger5 = (stateno = 1203) && time > 5
-trigger6 = stateno = 100 && time > 11 || stateno = 110 && time > 11  ;|| stateno = 40
-trigger7 =(stateno = [400,499])  && movecontact && time > 5 &&stateno!=420
-trigger8 = (stateno = 420) && movecontact && prevstateno!=220
+trigger5 = stateno = 100 && time > 11 || stateno = 110 && time > 11  ;|| stateno = 40
+trigger6 =(stateno = [400,499])  && movecontact && time > 5 &&stateno!=420
+trigger7 = (stateno = 420) && movecontact && prevstateno!=220
 
 ;---------------------------------------------------------------------------
 ;---------------------------------------------------------------------------
@@ -477,8 +485,7 @@ trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = stateno = 200 && movecontact && prevstateno!=400
 trigger3 = stateno = 400 && movecontact ;&& enemynear, movetype = H
-trigger4 = (stateno = 1203) && time > 5
-trigger5 = stateno = 100 && time > 11 || stateno = 110 && time > 11  ;|| stateno = 40
+trigger4 = stateno = 100 && time > 11 || stateno = 110 && time > 11  ;|| stateno = 40
 
 ;---------------------------------------------------------------------------
 ;Crouching Strong Punch
@@ -494,9 +501,8 @@ trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = (stateno = 400) || (stateno = 200)|| (stateno = 210)
 trigger2 = (movecontact) ;&& enemynear, movetype = H
-trigger3 = (stateno = 1203) && time > 5
-trigger4 = stateno = 100 && time > 11 || stateno = 110 && time > 11 ;|| stateno = 40
-trigger5 = (stateno = 211) && movecontact && prevstateno!=410
+trigger3 = stateno = 100 && time > 11 || stateno = 110 && time > 11 ;|| stateno = 40
+trigger4 = (stateno = 211) && movecontact && prevstateno!=410
 
 ;---------------------------------------------------------------------------
 ;Crouching Light Kick
@@ -513,9 +519,8 @@ trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = (stateno = 400) || (stateno = 200)|| (stateno = 210)||(stateno = 211)|| (stateno = 410)
 trigger2 = (movecontact) ;&& enemynear, movetype = H
-trigger3 = (stateno = 1203) && time > 5
-trigger4 = stateno = 100 && time > 11 || stateno = 110 && time > 11  ;|| stateno = 40
-trigger5 = (stateno = 420) && movecontact && prevstateno!=220
+trigger3 = stateno = 100 && time > 11 || stateno = 110 && time > 11  ;|| stateno = 40
+trigger4 = (stateno = 420) && movecontact && prevstateno!=220
 
 ;---------------------------------------------------------------------------
 ;Crouching Light Kick
@@ -531,9 +536,8 @@ trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = (stateno = 400) || (stateno = 200)|| (stateno = 210)||(stateno = 211)|| (stateno = 410)
 trigger2 = (movecontact) ;&& enemynear, movetype = H
-trigger3 = (stateno = 1203) && time > 5
-trigger4 = stateno = 100 && time > 11  || stateno = 110 && time > 11 ;|| stateno = 40
-trigger5 = (stateno = 220) && movecontact && prevstateno!=420&& prevstateno!=430
+trigger3 = stateno = 100 && time > 11  || stateno = 110 && time > 11 ;|| stateno = 40
+trigger4 = (stateno = 220) && movecontact && prevstateno!=420&& prevstateno!=430
 
 
 
@@ -607,6 +611,7 @@ triggerall = movehit
 triggerall = statetype != A
 triggerall = map(dc)=0
 trigger1 = stateno = [1001,1002] || stateno = [1101,1102] || stateno = 1500 || stateno = 1300
+triggerall=stateno!=[1200,1205]
 [State 100, Back Dash Cancel]
 type = ChangeState
 value = 105
@@ -616,6 +621,7 @@ triggerall = movehit
 triggerall = statetype != A
 triggerall = map(dc)=0
 trigger1 = stateno = [1001,1002] || stateno = [1101,1102] || stateno = 1500 || stateno = 1300
+triggerall=stateno!=[1200,1205]
 [State 100, Forward Dash Cancel]
 type = ChangeState
 value = 904
@@ -626,6 +632,7 @@ triggerall = statetype = A
 triggerall = map(dc)=0
 triggerall = map(g2s)=0
 trigger1 = stateno = 1305 || stateno = 1301 || stateno = 1304
+triggerall=stateno!=[1200,1205]
 [State 100, Forward Dash Cancel]
 type = ChangeState
 value = 903
@@ -636,6 +643,7 @@ triggerall = statetype = A
 triggerall = map(dc)=0
 triggerall = map(g2s)=0
 trigger1 = stateno = 1305 || stateno = 1301 || stateno = 1304
+triggerall=stateno!=[1200,1205]
 
 
 [State 100, Forward Dash Cancel]
@@ -647,6 +655,7 @@ triggerall = movehit
 triggerall = statetype != A
 triggerall = map(ndc)=0
 trigger1 = hitdefattr = SCA,NA
+triggerall=stateno!=[1200,1205]
 [State 100, Back Dash Cancel]
 type = ChangeState
 value = 105
@@ -656,7 +665,7 @@ triggerall = movehit
 triggerall = statetype != A
 triggerall = map(ndc)=0
 trigger1 = hitdefattr = SCA,NA
-
+triggerall=stateno!=[1200,1205]
 [State 100, Forward Dash Cancel]
 type = ChangeState
 value = 904
@@ -666,6 +675,7 @@ triggerall = movehit
 triggerall = statetype = A
 triggerall = map(ndc)=0
 trigger1 = hitdefattr = SCA,NA
+triggerall=stateno!=[1200,1205]
 [State 100, Forward Dash Cancel]
 type = ChangeState
 value = 903
@@ -675,35 +685,41 @@ triggerall = movehit
 triggerall = statetype = A
 triggerall = map(ndc)=0
 trigger1 = hitdefattr = SCA,NA
+triggerall=stateno!=[1200,1205]
 
-
-;[State -1, Standing Parry]
-;type = HitOverRide
-;trigger1 = roundstate = 2 && (statetype != A || stateno = 5120)
-;trigger1 = command = "fwd" && command != "back" && command != "up" && command != "down"
-;trigger1 = ctrl || (stateno = [700, 701]) || stateno = 5120
-;attr = SA, AA, AP, HP, HA, NA, SA, SP, NP
-;stateno = 700
-;slot = 0
-;time = 8
-
-;[State -1, Crouching Parry]
-;type = hitoverride
-;trigger1 = roundstate = 2 && statetype != A
-;trigger1 = command = "down" && command != "fwd" && command != "back" && command != "up"
-;trigger1 = ctrl || (stateno = [700, 701]) || stateno = 5120
-;attr = C, AA, AP, HP, HA, NA, SA
-;stateno = 701
-;slot = 0
-;time = 8
-
-;[State -1, Air Parry]
-;type = hitoverride
-;trigger1 = roundstate = 2 && statetype = A
-;trigger1 = command = "fwd" && command != "back" && command != "up" && command != "down"
-;trigger1 = ctrl || stateno = 702
-;attr = SA, AA, AP, HP, HA, NA, SA
-;stateno = 702
-;forceair = 1
-;slot = 0
-;time = 7
+[State 100, Forward Dash Cancel]
+type = ChangeState
+value = 100
+triggerall = command = "FF" || (command = "dash"&&teammode!=tag) || (command = "dash"&&teammode=tag && partner,stateno=5150)
+triggerall = command != "holdback"
+triggerall = movehit
+triggerall = statetype != A
+triggerall = map(rdc)=0
+trigger1 = map(rdccheck)
+[State 100, Back Dash Cancel]
+type = ChangeState
+value = 105
+triggerall = command = "BB" || (command = "dash"&&teammode!=tag) || (command = "dash"&&teammode=tag && partner,stateno=5150)
+triggerall = command = "holdback"
+triggerall = movehit
+triggerall = statetype != A
+triggerall = map(rdc)=0
+trigger1 = map(rdccheck)
+[State 100, Forward Dash Cancel]
+type = ChangeState
+value = 904
+triggerall = command = "aFF" || (command = "dash"&&teammode!=tag) || (command = "dash"&&teammode=tag && partner,stateno=5150)
+triggerall = command != "holdback"
+triggerall = movehit
+triggerall = statetype = A
+triggerall = map(rdc)=0
+trigger1 = map(rdccheck)
+[State 100, Forward Dash Cancel]
+type = ChangeState
+value = 903
+triggerall = command = "aBB" || (command = "dash"&&teammode!=tag) || (command = "dash"&&teammode=tag && partner,stateno=5150)
+triggerall = command = "holdback"
+triggerall = movehit
+triggerall = statetype = A
+triggerall = map(rdc)=0
+trigger1 = map(rdccheck)

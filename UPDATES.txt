@@ -1,6 +1,9 @@
 universal
+++Deus
+++Heaven
 ++crumple
 ++parry
+++delay wakeup
 +more meter
 +buffering after wakeup is much easier
 +pushblock distance
@@ -12,6 +15,7 @@ universal
 -bd invuln
 -panic burst 5 bars
 --recoil guard
+--One vs Many
 
 angous
 +r followups faster in combos
@@ -24,9 +28,12 @@ angous
 +2h hitbox
 +3h min damage
 +jH min damage
++ex6sss enemy stays in place after wallbounce
++4R breaks armor
 -2h hurtbox
 -6ss ending lag
 -install ex6ss armor
+-3s skd
 
 roger
 ++va
@@ -36,14 +43,24 @@ roger
 +h5r startup
 +h5r hits skd
 +2h hitbox
++3h crumples when starting a combo
++full4R blockstun
++full4r startup
 ~2h launch height reduced on grounded
 -jH min damage
 -h5r damage
 -5r launch height
 -2h hurtbox
+-2l sends down
 /M>2M>M>3H
+/js rc doesnt freeze enemies
 
 eddy
+++4EX
+++jR
++rdc
++j2EX falls forward fast after
++6ss crumple
 /no more super jc
 
 one
@@ -60,9 +77,14 @@ one
 -jM hurtbox
 -jH hurtbox
 -j2H hurtbox
+/fixed jR causing bounce after ono jR
 
 vile
+++maw of ourobubble
 +2h hitbox
+~5r det sound
+-jM startup
+-jH startup
 -2h hurtbox
 
 wu
@@ -74,7 +96,12 @@ wu
 
 arzon
 +2h hitbox
++5s ground hitstun
++j5s ground hitstun
++6sR
++EX6sR
 -j5s endlag
+/j5s>2r
 
 jv
 +665s launch height
@@ -84,11 +111,16 @@ jv
 +wallbounce height
 
 sahkive
+++Haki
 +5r charges faster
 +charge 5r launch height reduced
 +qcb1 damage
 +2H hitbox
++jR doesnt skd standing
++jM max air hitstun
++jH air hitstun when it starts a combo
 -qcf min damage
+-6r proj invuln
 
 jojo
 +2h hitbox
@@ -96,4 +128,15 @@ jojo
 z
 +j6s distance
 +EXj6s distance
-
++236x invuln
++236s damage
++5ss launches higher in combos
++ex6s hitstun
++ex6s launch height
++6s slide
++ex6s slide
++ex6s otg
+-236s 6 bars
+-jl hitstun on grounded
+-jm hitstun on grounded
+-jh min hitstun on grounded

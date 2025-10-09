@@ -701,8 +701,8 @@ value = 0
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "toss %f stun %f damage %f red %f R %f tst %f djump %f"
-params = map(toss),fvar(25),fvar(13),map(truth),map(raga),map(TENSHADOWS),map(djump)
+text = "toss %f stun %f damage %f red %f R %f tst %f djump %f oh %f"
+params = map(toss),fvar(25),fvar(13),map(truth),map(raga),map(TENSHADOWS),map(djump),map(observation)
 ;ignorehitpause = 
 ;persistent = 
 
@@ -1239,8 +1239,118 @@ trigger1 = combocount=0
 fvar(2) = 0 
 ignoreHitPause = 1
 ;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;----------------------------------------------------------------------
+;Armor State
+[Statedef 666999]
+movetype= H
+poweradd= 0
+
+
+[State 0, SuperPause]
+type = SuperPause
+trigger1 = time = 0 
+time = 5
+anim = 15998
+sound = -1
+pos = 0,0
+movetime = 5
+darken = 0
+p2defmul = 1
+poweradd = 0
+unhittable = 1
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0 
+value = S666,999
+volumescale=200
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = 7030
+ID = 7030
+pos = 4,-40
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -2
+pausemovetime = 0
+ignorehitpause = 1
+scale = 1,1
+sprpriority = 0
+ontop = 0
+shadow = 0,0,0
+ownpal = 1
+removeongethit = 0
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = time = 0
+v =   45
+value = 1
+;ignorehitpause = 
+;persistent = 
+
+[State 0, LifeAdd]
+type = LifeAdd
+trigger1 = time=1
+value = map(HEALINGFACTOR)/2
+ignorehitpause = 1
+persistent = 1
+
 ;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;Shadow Override
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0]
+type = MapSet
+trigger1 = 1
+map = "ShadowOverride"
+value=3
+persistent=1
+ignorehitpause=1
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0, PalFXWiz]
+type = PalFX
+trigger1 = time=0
+time = 20
+add = 20,0,20
+mul = 120,100,110
+sinadd = 100,100,100,-10
+invertall = 0
+color = 100
+
+;Keeps You in place
+[State 666, PosFreeze]
+type = PosFreeze
+trigger1 = 1
+value = 1
+
+;Invincible during the state
+[State 666, NotHitBy]
+type = NotHitBy 
+trigger1 = 1
+value = SCA, AA, AP
+time = 1
+
+;;Specifies which animelem to go to
+[State 666, ChangeAnim]
+type = ChangeAnim
+trigger1 = Time < floor(gethitvar(hittime) * 0.8)
+value = Anim
+elem = AnimElemNo(0)
+
+;
+[State 666, End]
+type = ChangeState
+trigger1 = Time >0;floor(gethitvar(hittime) * 0.8)
+value = fvar(6)
  
+
 [Statedef -3]
 
 ;THE GREAT EQUALIZER is DEATH!!!!!!!
@@ -1269,6 +1379,15 @@ value = 0
 ignorehitpause=0
 
 ;------------------------------------------------
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = movetype=H
+trigger1 = gethitvar(damage)>0
+map =  "HEALINGFACTOR"
+value = gethitvar(damage)/3
+ignorehitpause = 1
+persistent = 1
 
 [State 0, AfterImage]
 type = AfterImage
@@ -1319,6 +1438,17 @@ map = "TENSHADOWS"
 value = 1
 ignorehitpause = 1
 
+[State 0]
+type = MapSet
+trigger1 = roundstate=0
+trigger2 = map(haki)=1
+trigger2 = stateno!=250&&stateno!=1020&&stateno!=[510,515]&&stateno!=666999&&stateno!=500&&stateno!=650&&stateno!=[1100,1105]
+map = "Haki"
+value=0
+persistent=1
+ignorehitpause=1
+
+
 [State 0, RemapPal]
 type = RemapPal
 triggerall=roundstate=0&&time<=1
@@ -1341,6 +1471,35 @@ trigger1=map(grabtimer)>0
 map="grabtimer"
 value=-1
 ignorehitpause = 0
+
+[State 0, VarAdd]
+type = MapAdd
+trigger1 = map(observation)>0
+map = "observation"
+value = -1
+ignorehitpause = 0
+[State 0, NotHitBy]
+type = NotHitBy
+triggerall = map(observation)>0
+trigger1 = movetype!=H
+trigger2 = movetype=H&&stateno=666999
+value2 = ,AP
+time = 1
+ignorehitpause = 1
+
+[State 0, VarAdd]
+type = MapSet
+trigger1 = combocount=0
+map = "rskd"
+value = 0
+ignorehitpause = 1
+
+[State 0, VarAdd]
+type = MapSet
+trigger1 = combocount=0&&movetype!=A
+map = "projc"
+value = 0
+ignorehitpause = 1
 
 [State 0, VarAdd]
 type = MapSet

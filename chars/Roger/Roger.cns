@@ -2019,17 +2019,7 @@ unhittable = 1
 type = PlaySnd
 trigger1 = time = 0 
 value = S666,999
-channel = 3
-[State 0, PlaySnd]
-type = PlaySnd
-trigger1 = time = 0
-value = S666,999
-channel = 4
-[State 0, PlaySnd]
-type = PlaySnd
-trigger1 = time = 0
-value = S666,999
-channel = 5
+volumescale=200
 
 [State 0, Explod]
 type = Explod
@@ -2156,6 +2146,15 @@ map = "DIE"
 value = 0
 ignorehitpause=0
 ;------------------------------------------------
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = movetype=H
+trigger1 = gethitvar(damage)>0
+map =  "HEALINGFACTOR"
+value = gethitvar(damage)/3
+ignorehitpause = 1
+persistent = 1
 
 [State 0, AttackDist]
 type = AttackDist

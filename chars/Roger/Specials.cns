@@ -5465,6 +5465,7 @@ value = 5050
 [State 0, ChangeState]
 type = SelfState
 trigger1 = time = 400
+trigger2 = stateowner,stateno=690001
 value = 5041
 ctrl = 0
 
@@ -6224,6 +6225,7 @@ value = 5050
 [State 0, ChangeState]
 type = SelfState
 trigger1 = time = 400
+trigger2 = stateowner,stateno=690001
 value = 5041
 ctrl = 0
 

@@ -418,6 +418,12 @@ triggerall = time = 0
 trigger1 = map(ndccheck)=1
 map = "ndc"
 value = 1
+[State 0, Explod]
+type = MapSet
+triggerall = time = 0
+trigger1 = map(rdccheck)=1
+map = "rdc"
+value = 1
 
 [State 0, AssertSpecial]
 type = AssertSpecial
@@ -492,6 +498,12 @@ type = MapSet
 triggerall = time = 0
 trigger1 = map(ndccheck)=1
 map = "ndc"
+value = 1
+[State 0, Explod]
+type = MapSet
+triggerall = time = 0
+trigger1 = map(rdccheck)=1
+map = "rdc"
 value = 1
 
 [State 0, AssertSpecial]
@@ -1032,6 +1044,12 @@ triggerall = time = 0
 trigger1 = map(ndccheck)=1
 map = "ndc"
 value = 1
+[State 0, Explod]
+type = MapSet
+triggerall = time = 0
+trigger1 = map(rdccheck)=1
+map = "rdc"
+value = 1
 
 [State 100, 1]
 type = VelSet
@@ -1236,6 +1254,12 @@ type = MapSet
 triggerall = time = 0
 trigger1 = map(ndccheck)=1
 map = "ndc"
+value = 1
+[State 0, Explod]
+type = MapSet
+triggerall = time = 0
+trigger1 = map(rdccheck)=1
+map = "rdc"
 value = 1
 
 [State 0, VarSet]

@@ -356,6 +356,7 @@ down.velocity = 0,10
 forcenofall = 1
 getpower = (100)*(cond(var(var(2)) = 1, 1, 1)) 
 p2stateno=6150
+p2getp1state=0
 
 [State 0, PlaySnd]
 type = PlaySnd

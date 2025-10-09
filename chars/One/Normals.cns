@@ -4789,6 +4789,7 @@ envshake.freq = 0
 envshake.ampl = 0
 getpower = (100)*(cond(var(var(3)) = 1, 1, .5))
 guard.dist=0
+forcenofall=1
 [State 0, ChangeState]
 type = ChangeState
 trigger1 = movecontact = 1 || frontedgedist<-14 || pos y>=-10

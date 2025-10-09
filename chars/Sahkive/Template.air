@@ -1,4 +1,4 @@
-qqqeqqqqqeeeqqqeeeeeeeeqczzeqeqeeeqdzzzzzzzzzzz31011,,klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
+eeqqqeqqqeqzzqeeq1qqqqqeqqqqqeeeqqqeeeeeeeeqczzeqeqeeeqdzzzzzzzzzzz31011,,klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
 ..,......,,,...j,,,./..kl,,----..,,.,,,,,,,,,,,.; KFM's animation data
 ; see docs/air.txt for more information
 
@@ -2042,6 +2042,79 @@ Clsn1: 1
 1044,1, 0,0, 8
 1044,2, 0,0, 8
 1044,3, 0,0, 8
+
+; Haki Starter
+[Begin Action 1100]
+Clsn2Default: 1
+  Clsn2[0] = -47, -117, 43, -1
+Clsn1: 1
+  Clsn1[0] = -63, -117, 65, -1
+190,13, 0,0, 4
+Clsn2Default: 1
+  Clsn2[0] = -47, -117, 43, -1
+Clsn1: 1
+  Clsn1[0] = -63, -117, 65, -1
+190,14, 0,0, 4
+Clsn2Default: 1
+  Clsn2[0] = -47, -117, 43, -1
+Clsn1: 1
+  Clsn1[0] = -63, -117, 65, -1
+190,15, 0,0, 4
+Clsn2Default: 1
+  Clsn2[0] = -47, -117, 43, -1
+190,16, 0,0, 3
+190,17, 0,0, 3
+LoopStart
+190,18, 0,0, 3
+
+; Haki Charge
+[Begin Action 1102]
+Clsn2Default: 1
+  Clsn2[0] = -47, -117, 43, -1
+3000,51, 0,0, 2
+3000,50, 0,0, 3
+3000,49, 0,0, 1
+LoopStart
+3000,49, 0,0, 4
+3000,50, 0,0, 5
+
+; CONQUEROR'S
+[Begin Action 1103]
+Clsn2Default: 1
+  Clsn2[0] = -47, -117, 43, -1
+195,10, 0,0, 5
+Clsn1: 1
+  Clsn1[0] = -625, -530, 726, 215
+195,11, 0,0, 4
+Clsn1: 1
+  Clsn1[0] = -625, -530, 726, 215
+195,12, 0,0, 4
+Clsn1: 1
+  Clsn1[0] = -625, -530, 726, 215
+195,13, 0,0, 4
+195,14, 0,0, 4
+195,15, 0,0, 4
+195,1, 0,0, 4
+195,2, 0,0, 4
+195,3, 0,0, 4
+195,4, 0,0, 4
+195,5, 0,0, 4
+195,6, 0,0, 4
+195,7, 0,0, 4
+195,10, 0,0, 4
+181,2, 0,0, 4
+181,1, 0,0, 4
+
+; ARMAMENT
+[Begin Action 1104]
+Clsn2Default: 1
+  Clsn2[0] = -47, -117, 43, -1
+181,6, 0,0, 3
+181,7, 0,0, 4
+181,8, 0,0, 3
+181,9, 0,0, 6
+181,4, 0,0, 2
+181,2, 0,0, 2
 
 ; dubstep fart blast
 [Begin Action 2999]

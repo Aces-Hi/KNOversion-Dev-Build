@@ -4958,6 +4958,20 @@ value = 5
 ignorehitpause=1
 persistent=0
 
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = movehit
+value = S1,2
+ignorehitpause=0
+persistent=0
+volumescale=200
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = movehit
+value = S6969,0
+ignorehitpause=0
+persistent=0
+volumescale=200
 [State 77]
 type = bgpalfx
 trigger1 = 1

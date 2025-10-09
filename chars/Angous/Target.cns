@@ -1037,7 +1037,7 @@ value = 1027
 type = VelSet
 trigger1 = Time = 0
 y = -8
-
+x=0
 
 
 

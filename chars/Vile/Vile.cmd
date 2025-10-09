@@ -58,6 +58,20 @@ trigger2 = hitdefattr = SC, NA, SA, HA
 trigger2 = movecontact ;&& enemynear, movetype = H
 ;trigger3 = (stateno = [200,499]) && movecontact
 
+;OuroBoom
+[State -1, Ourobubbles]
+type = ChangeState
+value = 3060
+triggerall=stateno!=3060&&prevstateno!=3060
+triggerall = command = "SmashKFUpper"
+triggerall = numhelper(3051)
+trigger1 = statetype != A
+trigger1 = ctrl
+trigger2 = statetype != A
+trigger2 = hitdefattr = SC, NA, SA, HA
+trigger2 = movecontact ;&& enemynear, movetype = H
+;trigger3 = (stateno = [200,499]) && movecontact
+
 ;Fetid Furball
 [State -1, Fetid Furball]
 type = ChangeState

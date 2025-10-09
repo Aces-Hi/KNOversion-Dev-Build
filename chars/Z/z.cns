@@ -1248,8 +1248,8 @@ value = 0
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "at = %f, Z =%f, Battery Test =%d, 5S cock =%f cokc = %f"
-params = map(autotech),map(zexception), var(5), map(cock), map(cokc)
+text = "at = %f, Z =%f, Battery Test =%d, 5S cock =%f cokc = %f norc %f"
+params = map(autotech),map(zexception), var(5), map(cock), map(cokc),map(norc)
 
 
 
@@ -1455,7 +1455,7 @@ channel=10
 
 [State 0, VarAdd]
 type = mapset
-trigger1 = stateno!=1200&& stateno!=1201
+trigger1 = stateno!=1200&& stateno!=1201&& stateno!=3050&&stateno!=3051
 map =  "norc"
 value = 0
 ignorehitpause = 0

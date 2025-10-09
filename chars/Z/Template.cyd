@@ -49,7 +49,7 @@ trigger3 = enemy,movetype=H
 type = ChangeState
 value = 3050
 triggerall = command="lvl4"
-triggerall = power >= 4000
+triggerall = power >= 6000
 triggerall = statetype != A
 triggerall=stateno!=750
 trigger1 = ctrl
@@ -62,7 +62,7 @@ trigger3 = enemy,movetype=H
 type = ChangeState
 value = 3050
 triggerall = command="lvl4"
-triggerall = power >= 4000
+triggerall = power >= 6000
 trigger1 = statetype = A
 triggerall=stateno!=750
 trigger1 = ctrl

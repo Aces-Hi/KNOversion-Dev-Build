@@ -721,6 +721,7 @@ ignorehitpause = 0
 type = zoom
 triggerall=map(nozoom)=0
 triggerall=backedgebodydist<=100
+trigger1 = enemynear,movetype!=A&&enemynear,stateno!=666999
 trigger1 = movecountered
 trigger1 = enemy,HitShakeOver = 0
 scale = 1.5
@@ -733,6 +734,7 @@ ignorehitpause=1
 type = zoom
 triggerall=map(nozoom)=0
 triggerall=backedgebodydist>100
+trigger1 = enemynear,movetype!=A&&enemynear,stateno!=666999
 trigger1 = movecountered
 trigger1 = enemy,HitShakeOver = 0
 scale = 1.5
@@ -752,6 +754,7 @@ type = BGPalFX
 triggerall=map(nozoom)=0
 trigger1=movecountered
 trigger1 = enemy,HitShakeOver = 0
+trigger1 = enemynear,movetype!=A&&enemynear,stateno!=666999
 time = 1
 ;add = 0,0,0
 mul = 50,50,50
@@ -1105,6 +1108,77 @@ value = 0
 ctrl = 1
 
 ;---------------------------------------------------------------------------
+; jR
+[Statedef 260]
+facep2 = 1
+type    = A
+movetype= A
+physics = A
+juggle  =0
+poweradd= 0
+ctrl = 0
+anim = 260
+sprpriority = -1
+
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 0.2; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 24   
+value = 0.2; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv =13     ;fv = 
+value = .5
+
+[State 0, VelAdd]
+type = VelMul
+trigger1 = animelem=4
+x=.6
+
+[State 630, 2]
+type = HitDef 
+p2facing = 1 
+trigger1 = time %4= 0
+hitonce = 1
+attr = A, SA
+damage = ceil(cond(fvar(11) *15 < 3, 3, fvar(11) * 15)), 1
+hitflag = MAFD
+guardflag = MA
+;priority = 3
+getpower = (0)*(cond(var(var(2)) = 1, 1, .5))
+pausetime = 3,3
+guard.pausetime = 0,3
+sparkno = 1
+sparkxy = -random%30,-30-random%50
+hitsound   = 5,1
+guardsound = 6,1
+ground.type = high
+animtype = medium
+air.animtype = back
+ground.slidetime = 14
+ground.hittime  = ceil(cond(fvar(14) *24 < 2, 2, fvar(14) * 24))
+air.hittime  = ceil(cond(fvar(14) *24 < 2, 2, fvar(14) * 24))
+down.hittime = ceil(cond(fvar(14) *24 < 2, 2, fvar(14) * 24))
+ground.velocity = -1,-5
+air.velocity = -0.2,-2
+down.velocity = 0, -1
+guard.hittime=1
+forcenofall=1
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = pos y>=-6&&combocount=0
+value = 1303
 
 ;---------------------------------------------------------------------------
 ; Assist Counter
@@ -3149,6 +3223,7 @@ ignorehitpause = 0
 type = zoom
 triggerall=map(nozoom)=0
 triggerall=backedgebodydist<=100
+trigger1 = enemynear,movetype!=A&&enemynear,stateno!=666999
 trigger1 = movecountered
 trigger1 = enemy,HitShakeOver = 0
 scale = 1.5
@@ -3161,6 +3236,7 @@ ignorehitpause=1
 type = zoom
 triggerall=map(nozoom)=0
 triggerall=backedgebodydist>100
+trigger1 = enemynear,movetype!=A&&enemynear,stateno!=666999
 trigger1 = movecountered
 trigger1 = enemy,HitShakeOver = 0
 scale = 1.5
@@ -3180,6 +3256,7 @@ type = BGPalFX
 triggerall=map(nozoom)=0
 trigger1=movecountered
 trigger1 = enemy,HitShakeOver = 0
+trigger1 = enemynear,movetype!=A&&enemynear,stateno!=666999
 time = 1
 ;add = 0,0,0
 mul = 50,50,50

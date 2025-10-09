@@ -7693,6 +7693,13 @@ anim = 2003                      ;Change animation (Def: no change)
 poweradd = 0                    ;Power to add (Def: 0)
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
 
+[State -3, Vile Voices]
+type = PlaySnd
+trigger1 = time=0
+trigger1 = combocount=0
+value = 6000,0
+volumescale=200
+
 [State 0, ChangeAnim]
 type = ChangeAnim
 trigger1 = time=0&&combocount>0

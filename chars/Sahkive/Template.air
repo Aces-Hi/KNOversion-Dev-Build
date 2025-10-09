@@ -1,4 +1,4 @@
-eeqqqeqqqeqzzqeeq1qqqqqeqqqqqeeeqqqeeeeeeeeqczzeqeqeeeqdzzzzzzzzzzz31011,,klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
+eqeeeqqqeqqqeqzzqeeq1qqqqqeqqqqqeeeqqqeeeeeeeeqczzeqeqeeeqdzzzzzzzzzzz31011,,klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
 ..,......,,,...j,,,./..kl,,----..,,.,,,,,,,,,,,.; KFM's animation data
 ; see docs/air.txt for more information
 
@@ -2082,15 +2082,12 @@ LoopStart
 [Begin Action 1103]
 Clsn2Default: 1
   Clsn2[0] = -47, -117, 43, -1
-195,10, 0,0, 5
+195,9, 0,0, 4
+195,10, 0,0, 8
 Clsn1: 1
   Clsn1[0] = -625, -530, 726, 215
 195,11, 0,0, 4
-Clsn1: 1
-  Clsn1[0] = -625, -530, 726, 215
 195,12, 0,0, 4
-Clsn1: 1
-  Clsn1[0] = -625, -530, 726, 215
 195,13, 0,0, 4
 195,14, 0,0, 4
 195,15, 0,0, 4

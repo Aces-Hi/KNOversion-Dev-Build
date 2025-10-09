@@ -1892,7 +1892,7 @@ p2facing = 1
 trigger1 = Time = 0
 attr = C, NA
 damage = ceil(cond(fvar(11) *70 < 4, 4, fvar(11) * 70)), 0
-hitflag = MAF
+hitflag = MAFD
 guardflag = LA
 pausetime = 12,12
 sparkno = 2

@@ -60,7 +60,9 @@ eddy
 ++jR
 +rdc
 +j2EX falls forward fast after
++j2EX no landing lag in combos
 +6ss crumple
++3h otg
 /no more super jc
 
 one

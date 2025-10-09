@@ -1657,7 +1657,7 @@ ignoreHitPause = 1
 type = NotHitBy
 trigger1 = 1
 value = SCA
-time = 3
+time = 5
 
 [State 0, Pause]
 type = Pause
@@ -1745,7 +1745,7 @@ persistent=1
 type = NotHitBy
 trigger1 = 1
 value = SCA
-time = 3
+time = 5
 
 [State 700, Snd]
 type = playsnd

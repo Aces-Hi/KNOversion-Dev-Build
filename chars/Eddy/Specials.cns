@@ -3830,6 +3830,11 @@ anim =1053
 sprpriority = 2
 velset = 0,0
 
+[State 0, CtrlSet]
+type = CtrlSet
+trigger1 = map(fastfall)
+value = 1
+
 [State 0, PosSet]
 type = PosSet
 trigger1 = 1

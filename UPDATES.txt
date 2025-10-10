@@ -54,6 +54,7 @@ roger
 +full4R blockstun
 +full4r startup
 ~2h launch height reduced on grounded
+-full4r damage
 -jH min damage
 -h5r damage
 -5r launch height

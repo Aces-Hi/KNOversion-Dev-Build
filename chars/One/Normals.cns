@@ -1359,12 +1359,82 @@ value = 2
 [State 0, VelSet]
 type = VelSet
 trigger1 = map(y)=1&& time = 0
-y = -5
+y = -6
 
 [State 0, VelSet]
 type = VelSet
 trigger1 = map(y)=2 && time = 0
 y = 5
+[State 0, VelSet]
+type = VelAdd
+trigger1 = map(x)!=2&& map(x)!=1 && time = 0
+trigger1 =map(y)=2 && time = 0
+x = 10
+
+[State 0, VelSet]
+type = VelAdd
+trigger1 = map(x)=2&& time = 0
+trigger1 =map(y)=2 
+x = 4
+
+[State 0, VelSet]
+type = VelAdd
+trigger1 = map(x)=2
+trigger1 =map(y)=1 && time = 0
+x = -4
+[State 0, VelSet]
+type = VelAdd
+trigger1 = map(x)=1
+trigger1 =map(y)=2 && time = 0
+x = 18
+
+[State 0, VelSet]
+type = VelMul
+trigger1 =map(y)=2
+trigger1 =time>5&&time<60
+x = .25
+
+[State 0, VelSet]
+type = VelMul
+trigger1 =map(y)=1
+trigger1 =time>10&&time<60
+y = .85
+[State 0, VelSet]
+type = VelMul
+trigger1 =map(y)=1
+trigger1 =time>10&&time<60
+x = .25
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = map(y)=1&&time>60
+y = 3
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = map(y)=1&&time>60
+trigger1 = map(x)=2
+x = -1
+[State 0, VelSet]
+type = VelSet
+trigger1 = map(y)=1&&time>60
+trigger1 = map(x)=0
+x = -3
+[State 0, VelSet]
+type = VelSet
+trigger1 = map(y)=1&&time>60
+trigger1 = map(x)=1
+x = -5
+
+[State 0, VelSet]
+type = VelAdd
+trigger1 = map(y)=1&&map(x)=1&& time = 0
+x = 4
+
+[State 0, VelSet]
+type = VelAdd
+trigger1 = map(y)=2&& time = 60
+x = -8
 
 [State 0, VelSet]
 type = VelAdd
@@ -1378,13 +1448,20 @@ x = -4
 
 [State 0, VelSet]
 type = VelSet
-trigger1 = vel x<0 && vel y!=0
+trigger1 = map(x)!=2 
+triggerall = map(y)!=1
+triggerall = vel x<0 && vel y!=0
+trigger2 = map(x)=2 &&time>30
 y = 5
+[State 0, VelSet]
+type = VelSet
+trigger1 = map(x)=2 &&time>15&&time<60
+x = 0
 
 [State 0, VelSet]
 type = VelSet
 trigger1 = pos y >=0 && vel y>0
-y = -5
+y = 0
 
 
 [State 0, Explod]
@@ -1421,7 +1498,7 @@ value = -vel x
 
 [State 0, VelMul]
 type = VelAdd
-trigger1 = 1
+trigger1 = map(y)!=1
 x = -.3
 
 [State 410, 2]
@@ -1490,6 +1567,7 @@ time = 1
 [State 0, ChangeState]
 type = ChangeState
 trigger1 = time>150 || backedgedist<0
+trigger2 = map(y)=1 && pos y >0
 value = 261
 ctrl = 0
 
@@ -4644,7 +4722,7 @@ poweradd= 0
 ctrl = 0
 anim = 259
 sprpriority = 2
-velset = 10,0
+velset = 25,0
 
 [State 0, NotHitBy]
 type = NotHitBy

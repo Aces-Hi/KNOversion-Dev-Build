@@ -19,9 +19,10 @@ trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = (stateno = [200,299]) || (stateno = [400,499]) || (stateno = 401)
 trigger2 = movecontact ;&& enemynear, movetype = H
-trigger2 = stateno!=421 && stateno!= 453
+trigger2 = stateno!=421 && stateno!= 453&&stateno!=253
 trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
 trigger4 = stateno = 434
+trigger5= stateno=253&&movehit
 var(1) = 1
 
 

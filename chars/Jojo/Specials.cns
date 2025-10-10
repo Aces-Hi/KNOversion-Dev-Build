@@ -336,9 +336,9 @@ guardsound = 6,2
 ground.type = Low
 ground.slidetime = 15
 ground.hittime  = 20
-ground.velocity = -3,-5.5
+ground.velocity = -3,-6
 guard.velocity = -6
-air.velocity = -3,-5.5
+air.velocity = -3,-6
 airguard.velocity = -4,-4.5
 p2facing = 1
 fall = 1
@@ -408,8 +408,8 @@ ground.slidetime = 15
 ground.hittime  = 20
 ground.velocity = -4,-4.5
 guard.velocity = -6
-air.velocity = -4,-4.5
-airguard.velocity = -4,-4.5
+air.velocity = -4,-5
+airguard.velocity = -4,-5
 p2facing = 1
 fall = 1
 fall.recovertime = 50
@@ -476,9 +476,9 @@ guardsound = 6,2
 ground.type = Low
 ground.slidetime = 15
 ground.hittime  = 20
-ground.velocity = -4,-3
+ground.velocity = -4,-4
 guard.velocity = -6
-air.velocity = -4,-3
+air.velocity = -4,-4
 airguard.velocity = -4,-4.5
 p2facing = 1
 fall = 1
@@ -1909,7 +1909,7 @@ persistent=0
 
 [State JoJo Voices]
 type = PlaySnd
-trigger1 = animelem=6
+trigger1 = animelem=3
 value = 50,1
 ignorehitpause=1
 persistent=0
@@ -1965,6 +1965,7 @@ hitflag = MAFD                    ;Flags of conditions that move can hit
 ;priority = 3, Hit                ;Attack ;priority: 0 (least) to 7 (most), 4 default
 ;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 8, 8                ;Time attacker pauses, time opponent shakes
+guard.pausetime=4,4
 sparkno = 0                      ;Spark anim no (Def: set above)
 sparkxy = -14, -54               ;X-offset for the "hit spark" rel. to p2,
 ;Y-offset for the spark rel. to p1
@@ -2100,7 +2101,7 @@ ignorehitpause=0
 
 [State JoJo Voices]
 type = PlaySnd
-trigger1 = animelem=4
+trigger1 = animelem=2
 value = 2000,0+random%3
 ignorehitpause=1
 persistent=0

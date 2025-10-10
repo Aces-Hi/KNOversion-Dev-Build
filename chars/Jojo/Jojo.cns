@@ -459,8 +459,8 @@ value = 0
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "EWGF %f punctime %f EW %f ex6s %f up %f"
-params = map(EWGF), map(punchtime), map(EW), map(EX6),map(resetj)
+text = "EWGF %f punctime %f EW %f ex6s %f up %f grav %f timer %f"
+params = map(EWGF), map(punchtime), map(EW), map(EX6),map(resetj),map(grav),map(gravtimer)
 ;persistent = 
 
 
@@ -812,6 +812,28 @@ trigger1 = command ="holdup"
 map = "resetj"
 value = 1
 ignorehitpause=0
+
+[State -2, 6s]
+type = mapset
+trigger1 =(combocount=0)
+map = "gravtimer"
+value=0
+[State -2, 6s]
+type = mapset
+trigger1 =(combocount=0)
+map = "grav"
+value=0
+
+[State -2, 6s]
+type = mapadd
+trigger1 =(combocount>0)
+map = "gravtimer"
+value=1
+[State -2, 6s]
+type = mapadd
+trigger1 =map(gravtimer)>60
+map = "grav"
+value=.01
 
 [State 0, AfterImageTime]
 type = AfterImageTime

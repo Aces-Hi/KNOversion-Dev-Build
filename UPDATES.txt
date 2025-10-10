@@ -18,6 +18,7 @@ universal
 --One vs Many
 
 angous
+++hold jS
 +r followups faster in combos
 +2s no landing lag in combos
 +6h bounce higher
@@ -30,6 +31,11 @@ angous
 +jH min damage
 +ex6sss enemy stays in place after wallbounce
 +4R breaks armor
++jS hits overhead
++EXjS hits overhead
++EXjS projectile
+-jS not air unblockable
+-EXjS not air unblockable
 -2h hurtbox
 -6ss ending lag
 -install ex6ss armor
@@ -37,6 +43,7 @@ angous
 
 roger
 ++va
+++hold jH
 +very slight movement on ex5s
 +4r hits skd
 +5r startup
@@ -68,6 +75,10 @@ eddy
 one
 +2H hitbox
 +j2H hitbox
++roundtrip angles
++roundtrip startup
++r sword speed
+-ono r not cancellable on block
 -5l hurtbox
 -5m hurtbox
 -5h hurtbox
@@ -126,6 +137,44 @@ sahkive
 
 jojo
 +2h hitbox
++successive electrics launch height
++5l launch height
++5ll launch height
++6l launch height
++6lm launch height
++5m launch height
++5mm launch height
++4m launch height
++5h launch height
++6h launch height
++4h launch height
++2l launch height
++2m launch height
++2h launch height
++jl launch height
++jm launch height
++jh launch height on second use
+~6s anim speed
+~EX6s anim speed
+-5l gravity
+-5ll gravity
+-5ll extra gravity
+-6l gravity
+-6lm gravity
+-5m gravity
+-5mm gravity
+-4m gravity on second use
+-5h gravity
+-6h gravity on second use
+-4h gravity on second use
+-2l gravity
+-2l extra gravity
+-2m gravity
+-2h gravity
+-jl gravity
+-jl extra gravity
+-jm gravity
+-jh gravity gravity on second use
 
 z
 +j6s distance

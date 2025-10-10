@@ -2239,6 +2239,11 @@ type = MapSet
 trigger1 = (combocount=0)
 map = "bigpunch"
 value = 0
+[State 0, VarSet]
+type = MapSet
+trigger1 = (combocount=0)
+map = "deathpunch"
+value = 0
 
 [State 0, VarSet]
 type = MapSet

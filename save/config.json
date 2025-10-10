@@ -148,10 +148,10 @@
         "u",
         "i",
         "o",
-        "RSHIFT",
+        "RETURN",
         "SEMICOLON",
         "p",
-        "RETURN"
+        "BACKSPACE"
       ]
     },
     {

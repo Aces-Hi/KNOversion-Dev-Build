@@ -928,6 +928,8 @@ fall.envshake.freq = 0
 fall.envshake.ampl = 0
 fall.yvelocity = 0
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5)) 
+p2stateno=6150
+p2getp1state=0
 
 [State 210, 5]
 type = ChangeState
@@ -1100,6 +1102,8 @@ fall.envshake.freq = 0
 fall.envshake.ampl = 0
 fall.yvelocity = 0
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5)) 
+p2stateno=6150
+p2getp1state=0
 
 [State 210, 5]
 type = ChangeState

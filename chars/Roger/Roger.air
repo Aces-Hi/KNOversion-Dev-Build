@@ -1,4 +1,4 @@
-qeeeeqeeqsqeeeeeqeeqeczccccccccceeqqczcczcqeqeeeeeeeeeeeeq11fff,,..,,,,,..505,,,lf,,, ,,, .,kl610
+qeqeeeeqeeqsqeeeeeqeeqeczccccccccceeqqczcczcqeqeeeeeeeeeeeeq11fff,,..,,,,,..505,,,lf,,, ,,, .,kl610
 ..,......,,,...j,,,./..kl,,----..,,.,,,,,,,,,,,.; KFM's animation data
 ; see docs/air.txt for more information
 
@@ -3927,11 +3927,11 @@ Clsn1: 1
 10000,36, 0,0, 10
 10000,37, 0,0, 10
 10000,38, 0,0, 10
-10000,39, 1,0, 7
-10000,40, 0,0, 7
-10000,41, 0,0, 6
-10000,42, 0,0, 5
-10000,43, 0,0, 5
+10000,39, 1,0, 9
+10000,40, 0,0, 9
+10000,41, 0,0, 8
+10000,42, 0,0, 7
+10000,43, 0,0, 7
 10000,44, 0,0, 8
 
 ; new 5S effect 1

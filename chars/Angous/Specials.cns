@@ -6775,16 +6775,32 @@ ctrl = 1
 [Statedef 9969]
 type    = A
 movetype= A
-physics = A
+physics = N
 poweradd= 0
 ctrl = 0
-velset = 1, -4
+velset = vel x, -4
 anim = 10337
 sprpriority = -1
 
+[State 0, StateTypeSet]
+type = StateTypeSet
+trigger1 = animelem=5
+statetype = A    ;S,A,C,L
+movetype = A        ;I,A,H
+physics = A         ;A,C,S,N
+ignorehitpause = 1
+
+[State 0, VelMul]
+type = VelMul
+trigger1 = animelemtime(5) <0
+x = .9
+y = .9
+ignorehitpause = 1
+
 [State 0, VelSet]
 type = VelSet
-trigger1 = animelem = 5
+trigger1 = animelemtime(5)>=0
+trigger1 = animelemtime(5) <=1
 x = 12
 y = 10
 ;ignorehitpause = 
@@ -6795,7 +6811,11 @@ type = PlaySnd
 trigger1 = animelem=1
 value = 1000, (0+(Random%3))
 volumescale=150
-
+[State 200, 3]
+type = MapSet
+trigger1 = time=0
+map = "airwave"
+value = 0
 
 [State 2, Ground Hit]
 type = hitdef 
@@ -6842,6 +6862,7 @@ attr = A, ST
 animtype  = hard 
 damage = ceil(cond(fvar(11) *40 < 13, 13, fvar(11) * 40)), 7
 hitflag = MAF
+guardflag=HA
 pausetime = 0,0
 sparkno = 1000
 sparkxy = -15,-20
@@ -6875,7 +6896,7 @@ attr = A, ST
 animtype  = hard 
 damage = ceil(cond(fvar(11) *40 < 13, 13, fvar(11) * 40)), 7
 hitflag = MAF
-guardflag = MA
+guardflag=HA
 pausetime = 0,0
 sparkno = 1000
 sparkxy = -15,-20
@@ -6906,6 +6927,21 @@ time = 99
 id = -1
 pos = 30,-15
 
+[State 200, 3]
+type = MapSet
+trigger1 = time=0
+map = "airwave"
+value = 0
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = command!="hold_b"&&time>12
+value = 10337
+elem = 5
+[State 200, 3]
+type = MapSet
+trigger1 = animelemtime(5)=-1
+map = "airwave"
+value = 1
 
 [State 1055, 6] ;Change state when KFM is close to ground
 type = ChangeState
@@ -7041,6 +7077,60 @@ forcenofall = 1
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 
 
+[State -3, Vile Voices]
+type = PlaySnd
+trigger1 = map(airwave)=1
+trigger1 = animelem = 1
+value = 1031, (0+(Random%4))
+ [State 1200, Shake Screen]
+type = EnvShake
+trigger1 = animelem = 1
+time = 15    ;Time to shake screen
+ampl = 5     ;Amount to shake
+freq = 90   ;A frequency of 180 shakes the screen rapidly
+[state 3054]
+type = Explod
+trigger1 = map(airwave)=1
+trigger1 = animelem = 1
+anim = 1095
+ID = 1095
+pos = 50,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -2
+pausemovetime = 0
+scale = 0.68,0.68
+sprpriority = 0
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 0
+
+[State 0, Helper]
+type = Helper
+trigger1 = animelem = 2 && numhelper(1093)=0
+trigger1 = map(airwave)=1
+trigger1 = map(wavecheck)=0
+helpertype = normal ;player
+name = "wave"
+ID = 1093
+stateno = 1093
+pos = 30,2
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+ownpal = 1
+supermovetime = 0
+pausemovetime = 0
+size.xscale = .7
+size.yscale = .8
+
 [State 200, 3]
 type = ChangeState
 trigger1 = AnimTime = 0
@@ -7168,7 +7258,7 @@ attr = S, SA
 animtype  = hard 
 damage = ceil(cond(fvar(11) *50 < 13, 13, fvar(11) * 40)), 7
 hitflag = MAF
-guardflag=MA
+guardflag=HA
 pausetime = 0,0
 sparkno = 1000
 sparkxy = -15,-20
@@ -7203,6 +7293,7 @@ attr = S, ST
 animtype  = hard 
 damage = ceil(cond(fvar(11) *50 < 13, 13, fvar(11) * 40)), 7
 hitflag = MAF
+guardflag=HA
 pausetime = 0,0
 sparkno = 1000
 sparkxy = -15,-20
@@ -7237,7 +7328,7 @@ attr = S, ST
 animtype  = hard 
 damage = ceil(cond(fvar(11) *50 < 13, 13, fvar(11) * 40)), 7
 hitflag = MAF
-guardflag = MA
+guardflag=HA
 pausetime = 0,0
 sparkno = 1000
 sparkxy = -15,-20
@@ -7357,7 +7448,7 @@ hitonce = 1
 attr = S, SA
 damage = ceil(cond(fvar(11) *50 < 13, 13, fvar(11) * 40)), 7
 hitflag = MAFDP
-guardflag = MA
+guardflag=HA
 ;priority = 3
 pausetime = 0,20
 guard.pausetime = 18,18
@@ -7384,7 +7475,7 @@ envshake.time = 18
 envshake.freq = 90
 envshake.ampl = 8
 getpower = 0
-p2stateno=915020
+
 [State 200, 1]
 type = hitdef 
 p2facing = 1
@@ -7394,7 +7485,7 @@ hitonce = 1
 attr = S, SA
 damage = ceil(cond(fvar(11) *50 < 13, 13, fvar(11) * 40)), 7
 hitflag = MAFDP
-guardflag = MA
+guardflag=HA
 ;priority = 3
 pausetime = 0,20
 guard.pausetime = 18,18
@@ -7424,12 +7515,63 @@ getpower = 0
 
 
 
+[State -3, Vile Voices]
+type = PlaySnd
+trigger1 = animelem = 1
+value = 1031, (0+(Random%4))
+ [State 1200, Shake Screen]
+type = EnvShake
+trigger1 = animelem = 1
+time = 15    ;Time to shake screen
+ampl = 5     ;Amount to shake
+freq = 90   ;A frequency of 180 shakes the screen rapidly
+[state 3054]
+type = Explod
+trigger1 = animelem = 1
+anim = 1095
+ID = 1095
+pos = 50,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -2
+pausemovetime = 0
+scale = 0.68,0.68
+sprpriority = 0
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause = 0
+
+[State 0, Helper]
+type = Helper
+trigger1 = animelem = 6
+helpertype = normal ;player
+name = "exwave"
+ID = 1093
+stateno = 9091
+pos = 30,2
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+ownpal = 1
+supermovetime = 0
+pausemovetime = 0
+size.xscale = .7
+size.yscale = .8
+
+
 [State 0, TargetBind]
 type = TargetBind
 trigger1 = movehit = 1
 time = 1
 id = -1
-pos = 20,15
+pos = 40,-15
 
 [State 200, 3]
 type = ChangeState

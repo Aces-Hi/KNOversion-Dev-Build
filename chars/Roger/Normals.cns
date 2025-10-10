@@ -1960,20 +1960,20 @@ lowpriority=1
 type = VelSet
 trigger1 = combocount>0
 trigger1 = time=0
-y = -4
+y = -6
 
 [State 0, VelSet]
 type = VelSet
 trigger1 = combocount=0
 trigger1 = time=0
 x = 0
-y = -4
+y = -6
 
 [State 0, VelSet]
 type = VelSet
 trigger1 = animelem = 7
 x = 0
-y = 5.5
+y = 7.5
 
 [State 200, VarAdd]
 type = VarAdd
@@ -2030,6 +2030,22 @@ trigger1 = time = 0 && anim!=615 ;Animation of this state
 value = 615
 elem = 1
 
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = animelem=5&&command="hold_z"
+value = 615
+elem = 2
+[State 0, VelSet]
+type = VelAdd
+triggerall = animelemtime(5)<0&&command="hold_z"&&animelemtime(2)>=0
+trigger1 = command="holdfwd"&&vel x < 4
+x = .5
+[State 0, VelSet]
+type = VelAdd
+triggerall = animelemtime(5)<0&&command="hold_z"&&animelemtime(2)>=0
+trigger1 = command="holdback"&&vel x > -4
+x = -.5
+
 [State 0, HitOverride]
 type = HitOverride
 triggerall = var(30)>0
@@ -2045,13 +2061,7 @@ forceair = 0
 [State 0, VelAdd]
 type = VelAdd
 trigger1 = 1
-y = .44
-
-;[State 0, VarAdd]
-;type = VarAdd
-;trigger1 = time = 0
-;v = 23
-;value = 3
+y = .4
 
 [State 600, 1]
 type = PlaySnd
@@ -3322,12 +3332,14 @@ type = ChangeState
 triggerall = var(41)=[11,60]
 trigger1 = command != "hold_c" 
 trigger2 = prevstateno = 666999 && command!= "hold_c"
+trigger3 = time>55&&map(deathpunch)>0
 value = 552
 
 [State 0, ChangeState]
 type = ChangeState
+triggerall = map(deathpunch)=0
 trigger2 = var(41)>60
-trigger1 = time>50
+trigger1 = time>55
 trigger2 = prevstateno = 666999 && command!= "hold_c"
 value = 553
 
@@ -3909,6 +3921,14 @@ ctrl = 0
 sprpriority = 2
 anim=1011
 
+[State 0, VarSet]
+type = MapAdd
+trigger1 = movehit=1
+map = "deathpunch" 
+value = 1
+ignorehitpause=1
+persistent=0
+
 [State 0, PlaySnd] ;cursed palette sound lol
 type = PlaySnd
 trigger1 = time = 5
@@ -3991,7 +4011,7 @@ triggerall=var(25)=0
 trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
-damage = ceil(cond(fvar(11) *330 < 150, 150, fvar(11) * 330)), 30
+damage = ceil(cond(fvar(11) *250 < 100, 100, fvar(11) * 250)),30
 hitflag = MAFD
 guardflag = MA
 pausetime = 15,15
@@ -4030,7 +4050,7 @@ triggerall=var(25)=0
 trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
-damage = ceil(cond(fvar(11) *330 < 150, 150, fvar(11) * 330)), 30
+damage = ceil(cond(fvar(11) *250 < 100, 100, fvar(11) * 250)),30
 hitflag = MAFD
 guardflag = MA
 pausetime = 15,15
@@ -4071,7 +4091,7 @@ triggerall=var(25)>0
 trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
-damage = ceil(cond(fvar(11) *330 < 150, 150, fvar(11) * 330)), 30
+damage = ceil(cond(fvar(11) *250 < 100, 100, fvar(11) * 250)),30
 hitflag = MAFD
 guardflag = MA
 pausetime = 26,26
@@ -4111,7 +4131,7 @@ triggerall=var(25)>0
 trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
-damage = ceil(cond(fvar(11) *330 < 150, 150, fvar(11) * 330)), 30
+damage = ceil(cond(fvar(11) *250 < 100, 100, fvar(11) * 250)),30
 hitflag = MAFD
 guardflag = MA
 pausetime = 26,26

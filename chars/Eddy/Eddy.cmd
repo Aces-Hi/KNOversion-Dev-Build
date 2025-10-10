@@ -17,7 +17,7 @@ var(1) = 0
 type = VarSet
 trigger1 = statetype != A
 trigger1 = ctrl
-trigger2 = stateno = [200,499]
+trigger2 = stateno = [200,499]&&stateno!=260
 trigger2 = movecontact ;&& enemynear, movetype = H
 trigger2 = stateno!=421
 trigger3 = stateno = 1330 ;From blocking

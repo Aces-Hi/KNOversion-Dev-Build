@@ -6,11 +6,10 @@ startx 		= 0
 starty 		= 0
 boundleft 	= -200
 boundright 	= 200
-boundhigh 	= -300
-boundlow 	= 0
-verticalfollow 	= 0
-tension 	= 100
-floortension 	= 180
+boundhigh = -20
+boundlow = 0
+verticalfollow = .1
+tension = 100
 
 ;--------------------------------------------------------
 [playerinfo]
@@ -62,6 +61,13 @@ yscale = 0.3
 spr = stages/Heaven.sff
 debugbg = 0
 
+[bg Sky]
+type = normal
+spriteno = 1,0
+start = 0, 125
+delta = .2,.2
+tile = 1,0
+mask = 1
 
 [BG Heaven]
 type  =normal
@@ -95,6 +101,52 @@ time = 0,1,1
 value=0
 sctrlid=1
 
+[bg bClouds]
+type = normal
+spriteno = 8,0
+start = 20, 140
+delta = .3,.3
+tile = 1,0
+mask = 1
+velocity=-.1,0
+
+[bg The Tower of Heaven]
+type = normal
+spriteno = 5,0
+start = -40, 140
+delta = .5,.5
+tile = 1,0
+mask = 1
+
+[bg tree]
+type = normal
+spriteno = 4,0
+start = 80, 125
+delta = .7,.7
+tile = 1,0
+mask = 1
+sin.x=-2,4000,0
+sin.y=4,8000,0
+
+[bg Clouds]
+type = normal
+spriteno = 7,0
+start = 20, 140
+delta = .7,.7
+tile = 1,0
+mask = 1
+velocity=-.2,0
+
+[bg Fountain]
+type = anim
+actionno=1
+start = -35, 125
+delta = .8,.8
+tile = 1,0
+mask = 1
+sin.x=2,2000,0
+sin.y=-5,4000,0
+
 [BG Heaven]
 type  =normal
 spriteno=3011,0
@@ -107,11 +159,25 @@ id=1
 trans=add
 alpha=256,200
 
-[bg Floor]
+[bg Big Cloud]
 type = normal
-spriteno = 1,0
+spriteno = 3,0
+start = 0, 125
+delta = .9,.9
+tile = 1,0
+mask = 1
+sin.x=10,2000,0
+sin.y=-12,4000,0
+
+[bg Grass]
+type = normal
+spriteno = 2,0
 start = 0, 130
 delta = 1,1
 tile = 1,0
 mask = 1
 
+[Begin Action 1]
+6,0, 0,0, 10
+6,1, 0,0, 10
+6,2, 0,0, 10

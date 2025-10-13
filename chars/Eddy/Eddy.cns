@@ -1473,12 +1473,12 @@ value = 0
 
 [State 0, VarSet]
 type = MapSet
-trigger1 = stateno=[251,260]
+trigger1 = stateno=[251,260] || stateno=1050
 map = "rdccheck"    ;fv = 10
 value = 1
 [State 0, VarSet]
 type = MapSet
-trigger1 = stateno!=[251,260]
+trigger1 = stateno!=[251,260] && stateno!=1050
 map = "rdccheck"    ;fv = 10
 value = 0
 
@@ -1496,7 +1496,7 @@ value = 0
 
 [State 0, VarSet]
 type = MapSet
-trigger1 =combocount=0 
+trigger1 =combocount=0&&numhelper(1051)=0
 map = "rdc"    ;fv = 10
 value = 0
 

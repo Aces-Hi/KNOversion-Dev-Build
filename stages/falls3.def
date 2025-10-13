@@ -197,7 +197,7 @@ start = 0, -2
 trans=add
 alpha = 130,150
 layerno=1
-
+delta=1,0
 [BGCtrlDef Heaven]
 looptime = -1
 ctrlID = 1,2,3

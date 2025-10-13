@@ -692,19 +692,21 @@ type = ChangeState
 value = 100
 triggerall = command = "FF" || (command = "dash"&&teammode!=tag) || (command = "dash"&&teammode=tag && partner,stateno=5150)
 triggerall = command != "holdback"
-triggerall = movehit
 triggerall = statetype != A
 triggerall = map(rdc)=0
-trigger1 = map(rdccheck)
+triggerall= map(rdccheck)
+trigger1 = movehit
+trigger2 = stateno=1050&&animelemtime(6)>0
 [State 100, Back Dash Cancel]
 type = ChangeState
 value = 105
 triggerall = command = "BB" || (command = "dash"&&teammode!=tag) || (command = "dash"&&teammode=tag && partner,stateno=5150)
 triggerall = command = "holdback"
-triggerall = movehit
 triggerall = statetype != A
 triggerall = map(rdc)=0
-trigger1 = map(rdccheck)
+triggerall= map(rdccheck)
+trigger1 = movehit
+trigger2 = stateno=1050&&animelemtime(6)>0
 [State 100, Forward Dash Cancel]
 type = ChangeState
 value = 904

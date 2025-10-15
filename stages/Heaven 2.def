@@ -58,7 +58,7 @@ yscale = 0.3
 [Music]
  
 [BGdef]
-spr = stages/Heaven.sff
+spr = stages/Heaven 2.sff
 debugbg = 0
 
 [bg Sky]

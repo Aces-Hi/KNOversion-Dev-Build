@@ -1444,8 +1444,6 @@ ctrl = 1
 
 [State 0, ReversalDef]
 type = ReversalDef
-triggerall=enemynear,stateno!=900
-triggerall=enemynear,stateno!=901
 trigger1 = time<=40
 reversal.attr = SCA,AA,AP
 pausetime = 5,30
@@ -1455,8 +1453,6 @@ persistent = 1
 
 [State 0, HitOverride]
 type = HitOverride
-triggerall=enemynear,stateno!=900
-triggerall=enemynear,stateno!=901
 trigger1 = time<=40
 attr = SCA,AA,AP
 stateno = 3501

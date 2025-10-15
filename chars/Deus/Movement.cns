@@ -3,7 +3,6 @@
 type = S
 physics = N
 sprpriority = 0
-
 [State Voice From Above]
 type = PlaySnd
 triggerall=map(december)=0
@@ -42,6 +41,7 @@ persistent=1
 type = ChangeAnim
 trigger1=anim=100&&animelemtime(2)>=0&&time=0
 value=101
+
 [State 0, ChangeAnim]
 type = ChangeAnim
 trigger1=anim=100&&animelemtime(2)<0&&time=0
@@ -63,6 +63,7 @@ triggerall = command ="hold_c"
 triggerall = command="holdback"
 trigger1 = anim!=[4,5]
 trigger2 = anim=[4,5]&&animtime=0
+trigger3 = anim=140&&animtime=0
 value = 21
 ignorehitpause = 1
 
@@ -74,6 +75,7 @@ triggerall = command ="hold_c"
 triggerall = command="holdfwd"
 trigger1 = anim!=[4,5]
 trigger2 = anim=[4,5]&&animtime=0
+trigger3 = anim=140&&animtime=0
 value = 20
 ignorehitpause = 1
 persistent=1
@@ -96,8 +98,8 @@ ignorehitpause = 1
 persistent = 1
 [state 1]
 type = mapset
-triggerall=ctrl=1
-trigger1 = command="hold_c"
+trigger1=ctrl=1
+triggerall = command="hold_c"
 map = "lockin"
 value=1
 ignorehitpause = 1

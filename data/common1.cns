@@ -5751,8 +5751,6 @@ triggerall = hitshakeover && teammode != Tag
 trigger1 = command = "holdfwd" || command = "fwd"
 triggerall = command = "nobuffer_a" || (stateno = [120,155] || stateno = 912 || stateno = 5120) && (command = "a")
 triggerall = ctrl ||   stateno = 912 && time > 2
-trigger2 = name="deus"
-trigger2 = command = "holdback" || command = "back"
 ignorehitpause = 1
 
 ;RC Jasta

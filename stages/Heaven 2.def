@@ -1,7 +1,5 @@
 [Info]
 name = "HEAVEN"
-round1def = stages/Heaven.def
-round2def = stages/Heaven 2.def
 
 [camera]
 startx 		= 0
@@ -66,7 +64,7 @@ debugbg = 0
 [bg Sky]
 type = normal
 spriteno = 1,0
-start = 0, 125
+start = 0, 110
 delta = .2,.2
 tile = 1,0
 mask = 1
@@ -103,41 +101,104 @@ time = 0,1,1
 value=0
 sctrlid=1
 
-[bg bClouds]
+[bg bPillar]
 type = normal
-spriteno = 8,0
-start = 20, 140
-delta = .3,.3
-tile = 1,0
+spriteno = 9,2
+start = 35, 129
+delta = .45,.45
+tile = 0,0
 mask = 1
-velocity=-.1,0
+sin.y=3,1000,0
+[bg bBanner]
+type = anim
+actionno = 6
+start = 35, 129
+delta = .45,.45
+tile = 0,0
+mask = 1
+sin.y=3,1000,0
+[bg bPillar]
+type = normal
+spriteno = 9,2
+start = -35, 129
+delta = .45,.45
+tile = 0,0
+mask = 1
+sin.y=-3,1000,0
+[bg bBanner]
+type = anim
+actionno = 7
+start = -35, 129
+delta = .45,.45
+tile = 0,0
+mask = 1
+sin.y=-3,1000,0
 
-[bg The Tower of Heaven]
+[bg mPillar]
 type = normal
-spriteno = 5,0
-start = -40, 140
-delta = .5,.5
-tile = 1,0
+spriteno = 9,1
+start = 73, 129
+delta = .6,.6
+tile = 0,0
 mask = 1
+sin.y=6,1000,50
+[bg mBanner]
+type = anim
+actionno = 4
+start = 73, 129
+delta = .6,.6
+tile = 0,0
+mask = 1
+sin.y=6,1000,50
+[bg mPillar]
+type = normal
+spriteno = 9,1
+start = -73, 129
+delta = .6,.6
+tile = 0,0
+mask = 1
+sin.y=-6,1000,50
+[bg mBanner]
+type = anim
+actionno = 5
+start = -73, 129
+delta = .6,.6
+tile = 0,0
+mask = 1
+sin.y=-6,1000,50
 
-[bg tree]
+[bg fPillar]
 type = normal
-spriteno = 4,0
-start = 80, 125
-delta = .7,.7
-tile = 1,0
+spriteno = 9,0
+start = 125, 129
+delta = .8,.8
+tile = 0,0
 mask = 1
-sin.x=-2,4000,0
-sin.y=4,8000,0
-
-[bg Clouds]
+sin.y=12,1000,100
+[bg fBanner]
+type = anim
+actionno = 2
+start = 125, 129
+delta = .8,.8
+tile = 0,0
+mask = 1
+sin.y=12,1000,100
+[bg fPillar]
 type = normal
-spriteno = 7,0
-start = 20, 140
-delta = .7,.7
-tile = 1,0
+spriteno = 9,0
+start = -125, 129
+delta = .8,.8
+tile = 0,0
 mask = 1
-velocity=-.2,0
+sin.y=-12,1000,100
+[bg fBanner]
+type = anim
+actionno = 3
+start = -125, 129
+delta = .8,.8
+tile = 0,0
+mask = 1
+sin.y=-12,1000,100
 
 [bg Fountain]
 type = anim
@@ -164,9 +225,9 @@ alpha=256,200
 [bg Big Cloud]
 type = normal
 spriteno = 3,0
-start = 0, 125
+start = -180, 120
 delta = .9,.9
-tile = 1,0
+tile = 0,0
 mask = 1
 sin.x=10,2000,0
 sin.y=-12,4000,0
@@ -183,3 +244,43 @@ mask = 1
 6,0, 0,0, 10
 6,1, 0,0, 10
 6,2, 0,0, 10
+
+; fb1
+[Begin Action 2]
+10,0, 0,0, 8
+10,1, 0,0, 8
+10,2, 0,0, 8
+
+; fb2
+[Begin Action 3]
+10,1, 0,0, 4
+10,2, 0,0, 8
+10,0, 0,0, 8
+10,1, 0,0, 4
+
+; mb1
+[Begin Action 4]
+11,1, 0,0, 12
+11,2, 0,0, 12
+11,0, 0,0, 12
+
+; mb2
+[Begin Action 5]
+11,2, 1,0, 6
+11,0, 0,0, 12
+11,1, 0,0, 12
+11,2, 0,0, 6
+
+; bb1
+[Begin Action 6]
+12,2, 0,0, 18
+12,0, 0,0, 18
+12,1, 0,0, 18
+
+; bb2
+[Begin Action 7]
+12,0, 0,0, 9
+12,1, 0,0, 18
+12,2, 0,0, 18
+12,0, 0,0, 9
+

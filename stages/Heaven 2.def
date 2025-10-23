@@ -1,5 +1,13 @@
 [Info]
-name = "HEAVEN"
+name = "HEAVEN 2"
+
+[Constants]
+StaticShadow = 1
+DynamicShadow = 0
+ShadowMulValue = -0.1
+ShadowRComponent = -6
+ShadowGComponent = -8
+ShadowBComponent = -10
 
 [camera]
 startx 		= 0

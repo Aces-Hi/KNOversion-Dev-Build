@@ -34,6 +34,8 @@ angous
 +jS hits overhead
 +EXjS hits overhead
 +EXjS projectile
++6rH distance
+~jS air blockstun
 -jS not air unblockable
 -EXjS not air unblockable
 -2h hurtbox

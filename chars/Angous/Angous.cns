@@ -2107,6 +2107,12 @@ map="hdc"
 value = 0
 
 [State 0, VarSet]
+type = MapSet
+trigger1 = combocount=0
+map="punchskd"  
+value = 0
+
+[State 0, VarSet]
 type = VarSet
 trigger1 = statetype=S
 trigger2 = statetype=C

@@ -277,7 +277,7 @@ triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
 triggerall = time=30
 triggerall=enemynear,name="Alicia"||enemynear,name="Akira"||enemynear,name="JV"||enemynear,name="Crow"
-value = 170, 6
+value = 170, (3+(Random%4))
 volumescale=200
 channel=7
 [State Voice From Above]
@@ -795,7 +795,6 @@ trigger1 = roundstate=2
 value = 185,0+random%5
 volumescale=200
 channel=7
-lowpriority=1
 
 [State Voice From Above]
 type = PlaySnd
@@ -805,7 +804,6 @@ trigger1 = roundstate=2
 value = 1225,1
 volumescale=150
 channel=7
-lowpriority=1
 
 [State Voice From Above]
 type = PlaySnd
@@ -818,7 +816,6 @@ trigger1 = roundstate=2
 value = 187,0
 volumescale=200
 channel=7
-lowpriority=1
 
 [State 0, ChangeAnim]
 type = ChangeAnim
@@ -920,11 +917,12 @@ type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="Arzon"
-trigger1 = time=0
+trigger1 = time=2
 value = 191, (0+(Random%2))
 volumescale=200
 channel=7
 lowpriority=1
+
 [State Voice From Above]
 type = PlaySnd
 triggerall=map(december)=0
@@ -1199,11 +1197,12 @@ type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="Arzon"
-trigger1 = time=0
+trigger1 = time=2
 value = 191, (0+(Random%2))
 volumescale=200
 channel=7
 lowpriority=1
+
 [State Voice From Above]
 type = PlaySnd
 triggerall=map(december)=0
@@ -1933,11 +1932,12 @@ type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
 triggerall=player(map(enemyteamlead)),name="Arzon"
-trigger1 = time=0
+trigger1 = time=2
 value = 191, (0+(Random%2))
 volumescale=200
 channel=7
 lowpriority=1
+
 [State Voice From Above]
 type = PlaySnd
 triggerall=map(december)=0

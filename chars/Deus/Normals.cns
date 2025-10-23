@@ -736,7 +736,7 @@ sprpriority = 2
 type = PlaySnd
 triggerall=map(december)=0
 trigger1 = animelem=5
-value = 410, (0+(Random%26))
+value = 410, (0+(Random%36))
 volumescale=200
 channel=7
 lowpriority=1
@@ -1353,7 +1353,7 @@ sprpriority = 2
 type = PlaySnd
 triggerall=map(december)=0
 trigger1 = animelem=6
-value = 410, (0+(Random%26))
+value = 410, (0+(Random%36))
 volumescale=200
 channel=7
 lowpriority=1
@@ -2099,7 +2099,7 @@ sprpriority = 2
 type = PlaySnd
 triggerall=map(december)=0
 trigger1 = animelem=3
-value = 410, (0+(Random%26))
+value = 410, (0+(Random%36))
 volumescale=200
 channel=7
 lowpriority=1

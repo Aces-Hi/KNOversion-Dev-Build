@@ -5551,6 +5551,19 @@ poweradd= 0
 ctrl = 0
 sprpriority = 2
 
+[State 0, VarAdd]
+type = MapSet
+trigger1 = prevstateno=2001
+map = "skdtrigger"
+value = 1
+ignorehitpause=1
+[State 0, VarAdd]
+type = MapSet
+trigger1 = prevstateno!=2001
+map = "skdtrigger"
+value = 0
+ignorehitpause=1
+
 [State 0, VarSet]
 type = VarSet
 trigger1 = time =  0
@@ -5584,7 +5597,7 @@ elem = 1
 ;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [State 0]
 type = MapSet
-trigger1 = time<10
+trigger1 = time<20
 map = "ShadowOverride"
 value=3
 persistent=1
@@ -5592,14 +5605,13 @@ ignorehitpause=1
 ;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [State 0, PalFXWiz]
 type = PalFX
-trigger1 = time = 0
-time = 10
-add = 100,60,0
+trigger1 = time=0
+time = 20
+add = 150,100,0
 mul = 256,256,256
-sinadd = 100,60,0,4
+sinadd = 150,100,0,30
 invertall = 0
 color = 256
-
 
 [State 0]
 type = MapSet
@@ -5856,59 +5868,21 @@ removetime = -1
 removeongethit = 1
 persistent = 1
 
+[State 0, VarAdd]
+type = MapAdd
+trigger1 = map(skdtrigger)&&movehit
+map = "punchskd"  
+value = 1
+ignorehitpause=1
 
 [State 410, 2]
 type = hitdef
 p2facing = 1
-triggerall=map(hdc)=0
-trigger1 = !NumExplod(99856)
-trigger1 = time = 0
+triggerall = enemynear,map(armor)=0
+trigger1 = map(punchskd)=0&&map(skdtrigger)
+trigger1 = !movecontact
 attr = S, SA
 damage = ceil(cond(fvar(11) * 140+var(10)*0.5888 < 75, 75, fvar(11) * 140+var(10)*0.5888)),13+var(10)*0.5
-animtype  = Medium
-hitflag = MAFDP
-guardflag = MA
-pausetime = 15,15
-sparkno = 3
-sparkxy = -10,-50
-hitsound   = 5,4
-guardsound = 6,2
-ground.type = Low
-ground.slidetime = 14
-ground.hittime  = 999
-air.hittime = 999
-down.hittime = 999
-ground.velocity = -8,-2.8
-air.velocity = -8,-2.8
-fall.yvelocity = 0
-fall  = 1
-air.fall = 1
-envshake.time = 13
-envshake.freq = 90
-envshake.ampl = 8
-fall.envshake.time = 0
-fall.envshake.freq = 0
-fall.envshake.ampl = 0
-palfx.time = 28
-palfx.add = 100, 0,20
-guard.hittime = 28
-guard.slidetime = 19
-guard.ctrltime = 27
-getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
-fall.yvelocity=0
-
-
-
-
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-triggerall = enemynear,map(armor)=0
-triggerall=map(hdc)>0
-trigger1 = !NumExplod(99856)
-trigger1 = time = 0
-attr = S, SA
-damage = ceil(cond(fvar(11) * 140+var(10)*0.5888 < 37, 37, fvar(11) * 140+var(10)*0.5888)),13+var(10)*0.5
 animtype  = Medium
 hitflag = MAFDP
 guardflag = MA
@@ -5945,11 +5919,10 @@ p2stateno = 915020
 type = hitdef 
 p2facing = 1
 triggerall = enemynear,map(armor)>0
-triggerall=map(hdc)>0
-trigger1 = !NumExplod(99856)
-trigger1 = time = 0
+trigger1 = map(punchskd)=0&&map(skdtrigger)
+trigger1 = !movecontact
 attr = S, SA
-damage = ceil(cond(fvar(11) * 140+var(10)*0.5888 < 37, 37, fvar(11) * 140+var(10)*0.5888)),13+var(10)*0.5
+damage = ceil(cond(fvar(11) * 140+var(10)*0.5888 < 75, 75, fvar(11) * 140+var(10)*0.5888)),13+var(10)*0.5
 animtype  = Medium
 hitflag = MAFDP
 guardflag = MA
@@ -5982,12 +5955,12 @@ guard.ctrltime = 27
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 id = 99856
 
-
 [State 410, 2]
 type = hitdef 
 p2facing = 1
-trigger1 = NumExplod(99856)
-trigger1 = !movecontact
+trigger1 = map(punchskd)>0
+trigger2 = map(skdtrigger)=0
+triggerall = !movecontact
 attr = S, SA
 damage = ceil(cond(fvar(11) * 140+var(10)*0.5888 < 75, 75, fvar(11) * 140+var(10)*0.5888)),13+var(10)*0.5
 animtype  = Medium
@@ -6778,7 +6751,7 @@ movetype= A
 physics = N
 poweradd= 0
 ctrl = 0
-velset = vel x, -4
+velset = vel x/2, -1
 anim = 10337
 sprpriority = -1
 
@@ -6793,8 +6766,8 @@ ignorehitpause = 1
 [State 0, VelMul]
 type = VelMul
 trigger1 = animelemtime(5) <0
-x = .9
-y = .9
+x = .95
+y = .95
 ignorehitpause = 1
 
 [State 0, VelSet]
@@ -6827,7 +6800,7 @@ attr = A, SA
 animtype  = hard 
 damage = ceil(cond(fvar(11) *40 < 13, 13, fvar(11) * 40)), 7
 hitflag = MAF
-guardflag=MA
+guardflag=HA
 pausetime = 0,0
 sparkno = 1000
 sparkxy = -15,-20
@@ -6839,6 +6812,7 @@ ground.hittime  = 50
 air.hittime  = 50
 ground.velocity = -3.5,-6
 air.velocity = -2.2,-6
+airguard.velocity = -2.2,1
 guard.velocity = -7
 guard.slidetime = 16
 guard.hittime = 20
@@ -6874,6 +6848,9 @@ ground.hittime  = 50
 air.hittime  = 50
 ground.velocity = -3.5,-6
 air.velocity = -2.2,-6
+airguard.velocity = -2.2,-4
+airguard.hittime = 40
+airguard.ctrltime = 32
 guard.velocity = -7
 guard.slidetime = 16
 guard.hittime = 20
@@ -6908,6 +6885,9 @@ ground.hittime  = 50
 air.hittime  = 50
 ground.velocity = -3.5,-6
 air.velocity = -2.2,-6
+airguard.velocity = -2.2,-4
+airguard.hittime = 40
+airguard.ctrltime = 32
 guard.velocity = -7
 guard.slidetime = 16
 guard.hittime = 20
@@ -6934,7 +6914,7 @@ map = "airwave"
 value = 0
 [State 0, ChangeAnim]
 type = ChangeAnim
-trigger1 = command!="hold_b"&&time>12
+trigger1 = command!="hold_b"&&time>12&&time<30
 value = 10337
 elem = 5
 [State 200, 3]
@@ -7071,15 +7051,16 @@ envshake.phase = 1
 palfx.time = 12
 palfx.add = 100, 0,20
 guard.hittime =7
+guard.ctrltime=7
 guard.velocity = -3.5
 air.fall = 0
 forcenofall = 1
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
-
+airguard.hittime = 40
+airguard.ctrltime = 32
 
 [State -3, Vile Voices]
 type = PlaySnd
-trigger1 = map(airwave)=1
 trigger1 = animelem = 1
 value = 1031, (0+(Random%4))
  [State 1200, Shake Screen]
@@ -8589,6 +8570,17 @@ trigger1 = time = 0
 fv = 6  ;fv = 10
 value = 9002 ;State of this attack
 
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;Shadow Override
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[State 0]
+type = MapSet
+trigger1 = time<20
+map = "ShadowOverride"
+value=3
+persistent=1
+ignorehitpause=1
+;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [State 0, PalFXWiz]
 type = PalFX
 trigger1 = time=0

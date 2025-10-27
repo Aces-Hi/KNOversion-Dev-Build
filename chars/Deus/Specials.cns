@@ -3479,6 +3479,21 @@ anim = 1801
 sprpriority = 3
 velset=0,0
 
+[State 0, StateTypeSet]
+type = StateTypeSet
+trigger1 = animelem=1&&enemynear,movetype=A
+statetype = A       ;S,A,C,L
+movetype = A        ;I,A,H
+physics = S       ;A,C,S,N
+Ignorehitpause = 1
+[State 0, StateTypeSet]
+type = StateTypeSet
+trigger1 = animelem=2
+statetype = S       ;S,A,C,L
+movetype = A        ;I,A,H
+physics = S       ;A,C,S,N
+Ignorehitpause = 1
+
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time=0
@@ -3834,6 +3849,21 @@ ctrl = 0
 anim = 1901
 sprpriority = 3
 velset=0,0
+
+[State 0, StateTypeSet]
+type = StateTypeSet
+trigger1 = animelem=1&&enemynear,movetype=A
+statetype = A       ;S,A,C,L
+movetype = A        ;I,A,H
+physics = S       ;A,C,S,N
+Ignorehitpause = 1
+[State 0, StateTypeSet]
+type = StateTypeSet
+trigger1 = animelem=2
+statetype = S       ;S,A,C,L
+movetype = A        ;I,A,H
+physics = S       ;A,C,S,N
+Ignorehitpause = 1
 
 [State 0, PlaySnd]
 type = PlaySnd

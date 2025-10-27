@@ -304,7 +304,7 @@ fadeout.time = 10
 rows = 3
 columns = 10
 wrapping = 1              ;1 to let cursor wrap around
-pos = 17,170              ;Position to draw to
+pos = 17,158    ;Position to draw to
 showemptyboxes = 0        ;1 to show empty boxes
 moveoveremptyboxes = 0    ;1 to allow cursor to move over empty boxes
 cell.size = 27,27         ;x,y size of each cell (in pixels)
@@ -333,7 +333,7 @@ cancel.snd = 100,2
 portrait.spr = 9000,0     ;Do not change from 9000,0
 portrait.offset = -1,-1
 portrait.scale = 0.95,0.95
-title.offset = 159,13     ;Position of title (Arcade Mode, etc)
+title.offset = 159,22    ;Position of title (Arcade Mode, etc)
 title.font = 3,0,0        ;Font of title (-1 for none)
 p1.select.snd=7410,0
 p2.select.snd=7410,0
@@ -350,13 +350,13 @@ p1.face.num = 2
 ;Player 1's Main Character
 p1.member1.face.anim = 11110 
 p1.member1.face.done.anim = 11111
-p1.member1.face.offset = 70,155
-p1.member1.face.scale = 1.2,1.2
+p1.member1.face.offset = 70,145
+p1.member1.face.scale = 1.15,1.15
 ;Player 1's Main Character
 p1.member2.face.anim = 11110 
 p1.member2.face.done.anim = 11111
-p1.member2.face.offset = 30,155
-p1.member2.face.scale = 1.2,1.2
+p1.member2.face.offset = 30,145
+p1.member2.face.scale = 1.15,1.15
 
 ;p2.face2.spr = 9000,1
 p2.face2.offset = 0,0
@@ -366,31 +366,30 @@ p2.face.num = 2
 ;Player 2's Main Character
 p2.member1.face.anim = 11110
 p2.member1.face.done.anim = 11111
-p2.member1.face.offset = 250,155
-p2.member1.face.scale = 1.2,1.2
+p2.member1.face.offset = 250,145
+p2.member1.face.scale = 1.15,1.15
 p2.member1.face.facing = -1
 ;Player 2's Main Character
 p2.member2.face.anim = 11110
 p2.member2.face.done.anim = 11111
-p2.member2.face.offset = 290,155
-p2.member2.face.scale = 1.2,1.2
+p2.member2.face.offset = 290,145
+p2.member2.face.scale = 1.15,1.15
 p2.member2.face.facing = -1
 ;Name
-p1.name.offset = 10,162   ;Position to put name
+p1.name.offset = 15,154 ;Position to put name
 p1.name.font = 3,4,1      ;Set to -1 for no display
-p2.name.offset = 309,162
+p2.name.offset = 304,154
 p2.name.font = 3,1,-1
 ;Stage select
 stage.portrait.spr = 0,0
-stage.portrait.offset = -160, -171
-stage.pos = 160,237
+stage.portrait.offset = -160, -160
+stage.pos = 160,225
 stage.active.font = 3,0,0
 stage.active2.font = 3,2  ;Second font color for blinking
 stage.done.font = 3,0
-stage.portrait.layerno=0
-stage.portrait.window = 0,66, 330,127
+stage.portrait.window = 0,65, 330,126
 stage.portrait.random.spr = 1,2
-stage.portrait.random.offset =-160, -171
+stage.portrait.random.offset =-160, -160
 stage.text = "%s"
 stage.random.text = "RANDOM [DOESN'T WORK ONLINE]"
 
@@ -405,16 +404,16 @@ p1.teammenu.enemytitle.text =
 p1.teammenu.move.snd = 100,0
 p1.teammenu.value.snd = 100,0
 p1.teammenu.done.snd = 100,1
-p1.teammenu.item.offset = 0,20
+p1.teammenu.item.offset = 5,20
 p1.teammenu.item.spacing = 0,15
 p1.teammenu.item.font = 3,0, 1
 p1.teammenu.item.active.font = 3,3, 1
 p1.teammenu.item.active2.font = 3,0, 1 ;Second font color for blinking
-p1.teammenu.item.cursor.offset = -10, 0
+p1.teammenu.item.cursor.offset = -5, 0
 p1.teammenu.item.cursor.anim = 180
-p1.teammenu.value.icon.offset = 60,1
+p1.teammenu.value.icon.offset = 65,1
 p1.teammenu.value.icon.spr = 181,0
-p1.teammenu.value.empty.icon.offset = 60,1
+p1.teammenu.value.empty.icon.offset = 65,1
 p1.teammenu.value.empty.icon.spr = 182,0
 p1.teammenu.value.spacing = 6,0
 
@@ -553,7 +552,7 @@ tile  = 0,0
 type  = normal
 spriteno = 100,1
 layerno = 0
-start = 0, 166
+start = 0, 155
 delta = 0,0
 tile  = 1,0
 trans = sub
@@ -588,6 +587,14 @@ delta = 0,0
 tile  = 1,0
 trans = add
 velocity = -6, 0
+
+[SelectBG 1] ;Border
+type  = normal
+spriteno = 110,0
+layerno = 0
+start = 0, 0
+delta = 0,0
+tile  = 1,0
 
 ;-------------------------------------------------------------------
 [VS Screen]

@@ -255,21 +255,21 @@ trigger1 = hitdefattr = A,NA
 type = ChangeState
 value = 1000
 triggerall=map(ggta)=0
-triggerall = command = "b"
+trigger1 = command = "nobuffer_b"
 triggerall = command != "EX"
 triggerall = command != "QCFs"&&command != "QCBs"
 triggerall = command !="holddown"
 triggerall = command !="holdfwd"
 triggerall = command !="holdback"
 triggerall = statetype != A
-trigger1 = var(1)
+triggerall = var(1)
 
 ;---------------------------------------------------------------------------
 [State EX 5S]
 type = ChangeState
 value = 1100
 triggerall=map(EXLimiter1)=0
-triggerall = command = "EX"
+triggerall = command = "nobuffer_EX"
 triggerall = command != "QCFs"&&command != "QCBs"
 triggerall = power>=1000
 triggerall = command !="holddown"

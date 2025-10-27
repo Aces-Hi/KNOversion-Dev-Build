@@ -780,12 +780,15 @@ x = -10
 
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = command!="hold_c" && time>12
+triggerall = time>12
+trigger1 = command!="hold_c"
 value = 111250
 
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = animtime = 0
+triggerall=animtime = 0
+trigger1 = map(roundtrip)=0
+trigger2 = enemynear,stateno=5120
 value = 111251
 
 ;---------------------------------------------------------------------------
@@ -878,6 +881,12 @@ ctrl = 0
 velset = 0,0
 anim = 11256
 sprpriority = 5
+
+[State 1060, Explod]
+type = MapSet
+trigger1 = 1 
+map = "roundtrip"
+value=1
 
 ;Throw Tech not allowed
 [State 1060, Explod]
@@ -1297,6 +1306,12 @@ ctrl = 0
 anim = 260
 sprpriority = 2
 velset = 11,0
+
+[State 1060, Explod]
+type = ParentMapSet
+trigger1 = 1 
+map = "roundtrip"
+value=1
 
 [State -3, Win Voices] 
 type = PlaySnd

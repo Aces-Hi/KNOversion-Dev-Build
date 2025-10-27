@@ -440,21 +440,57 @@ posType = P2
 ownPal = 1
 ignoreHitPause = 1
 
-[State -3, Hyper Finish Background]
-type = Helper
-triggerall = WinKO && RoundState = 3 && NumHelper(8990) = 0
+;=======================================
+[State 0, PlaySnd]
+type = PlaySnd
 trigger1 = WinKO
-name = "Hyper Finish B.G."
+value = 8991,0
+channel = 0
+ignorehitpause = 1
+persistent=0
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = WinKO
+flag = Nobardisplay
+flag2 = NoFG
+flag3 = Noshadow
+ignorehitpause=1
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = WinKO
+flag = Nomusic
+ignorehitpause=1
+[State 8990, Explod]
+type = Explod
+trigger1 = WinKO
+anim = F8990
 id = 8990
 pos = 0,0
-postype = p1
-facing = 0
-stateno = 8990
-keyctrl = 0
+scale = 1,1
+postype = back
+bindtime = -1
+removetime = -2
+sprpriority = -10
 ownpal = 1
-supermovetime = 1000
-pausemovetime = 1000
-ignorehitpause = 1
+supermovetime = -1
+persistent=0
+ignorehitpause=1
+[State 8990, Explod]
+type = Explod
+trigger1 = WinKO
+anim = F8991
+id = 8991
+pos = 0,0
+scale = 1,1
+postype = Left
+bindtime = -1
+removetime = -2
+sprpriority = -9
+ownpal = 1
+supermovetime = -1
+persistent=0
+ignorehitpause=1
+;=======================================
 
 
 [State 0, StateTypeSet]
@@ -900,21 +936,57 @@ posType = P2
 ownPal = 1
 ignoreHitPause = 1
 
-[State -3, Hyper Finish Background]
-type = Helper
-triggerall = WinKO && RoundState = 3 && NumHelper(8990) = 0
+;=======================================
+[State 0, PlaySnd]
+type = PlaySnd
 trigger1 = WinKO
-name = "Hyper Finish B.G."
+value = 8991,0
+channel = 0
+ignorehitpause = 1
+persistent=0
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = WinKO
+flag = Nobardisplay
+flag2 = NoFG
+flag3 = Noshadow
+ignorehitpause=1
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = WinKO
+flag = Nomusic
+ignorehitpause=1
+[State 8990, Explod]
+type = Explod
+trigger1 = WinKO
+anim = F8990
 id = 8990
 pos = 0,0
-postype = p1
-facing = 0
-stateno = 8990
-keyctrl = 0
+scale = 1,1
+postype = back
+bindtime = -1
+removetime = -2
+sprpriority = -10
 ownpal = 1
-supermovetime = 1000
-pausemovetime = 1000
-ignorehitpause = 1
+supermovetime = -1
+persistent=0
+ignorehitpause=1
+[State 8990, Explod]
+type = Explod
+trigger1 = WinKO
+anim = F8991
+id = 8991
+pos = 0,0
+scale = 1,1
+postype = Left
+bindtime = -1
+removetime = -2
+sprpriority = -9
+ownpal = 1
+supermovetime = -1
+persistent=0
+ignorehitpause=1
+;=======================================
 
 [State 0, StateTypeSet]
 type = StateTypeSet
@@ -1476,21 +1548,57 @@ value = 8000,3504
 volumescale=200
 channel=10
 
-[State -3, Hyper Finish Background]
-type = Helper
-triggerall = WinKO && RoundState = 3 && NumHelper(8990) = 0
+;=======================================
+[State 0, PlaySnd]
+type = PlaySnd
 trigger1 = WinKO
-name = "Hyper Finish B.G."
+value = 8991,0
+channel = 0
+ignorehitpause = 1
+persistent=0
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = WinKO
+flag = Nobardisplay
+flag2 = NoFG
+flag3 = Noshadow
+ignorehitpause=1
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = WinKO
+flag = Nomusic
+ignorehitpause=1
+[State 8990, Explod]
+type = Explod
+trigger1 = WinKO
+anim = F8990
 id = 8990
 pos = 0,0
-postype = p1
-facing = 0
-stateno = 8990
-keyctrl = 0
+scale = 1,1
+postype = back
+bindtime = -1
+removetime = -2
+sprpriority = -10
 ownpal = 1
-supermovetime = 1000
-pausemovetime = 1000
-ignorehitpause = 1
+supermovetime = -1
+persistent=0
+ignorehitpause=1
+[State 8990, Explod]
+type = Explod
+trigger1 = WinKO
+anim = F8991
+id = 8991
+pos = 0,0
+scale = 1,1
+postype = Left
+bindtime = -1
+removetime = -2
+sprpriority = -9
+ownpal = 1
+supermovetime = -1
+persistent=0
+ignorehitpause=1
+;=======================================
 
 [State 650, 2]
 type = Explod
@@ -1500,10 +1608,10 @@ pos = 120,180
 postype = back
 ignorehitpause = 0
 persistent = 0
-sprpriority = -1
+sprpriority = 9
 ownpal = 1
 scale=.84,.84
-ontop=1
+ontop=0
 
 [State 0, AssertSpecial]
 type = AssertSpecial
@@ -1529,10 +1637,10 @@ pos = 120,140
 postype = back
 ignorehitpause = 0
 persistent = 0
-sprpriority = -1
+sprpriority = 10
 ownpal = 1
 scale=.55,.55
-ontop=1
+ontop=0
 [State 650, 2]
 type = Explod
 trigger1 = anim = 3052
@@ -1542,10 +1650,10 @@ pos = 144,100
 postype = back
 ignorehitpause = 0
 persistent = 0
-sprpriority = -1
+sprpriority = 10
 ownpal = 1
 scale=.3,.3
-ontop=1
+ontop=0
 [State 650, 2]
 type = Explod
 trigger1 = anim = 3052
@@ -1555,10 +1663,10 @@ pos = 135,60
 postype = back
 ignorehitpause = 0
 persistent = 0
-sprpriority = -1
+sprpriority = 10
 ownpal = 1
 scale=.4,.4
-ontop=1
+ontop=0
 [State 650, 2]
 type = Explod
 trigger1 = anim = 3052
@@ -1568,10 +1676,10 @@ pos = 147,0
 postype = back
 ignorehitpause = 0
 persistent = 0
-sprpriority = -1
+sprpriority = 10
 ownpal = 1
 scale=.55,.55
-ontop=1
+ontop=0
 [State 650, 2]
 type = Explod
 trigger1 = anim = 3052
@@ -1581,10 +1689,10 @@ pos = 148,30
 postype = back
 ignorehitpause = 0
 persistent = 0
-sprpriority = -1
+sprpriority = 10
 ownpal = 1
 scale=.55,.55
-ontop=1
+ontop=0
 
 [state 4000, nothitby]
 type = nothitby
@@ -2325,21 +2433,57 @@ removeongethit = 0
 ignorehitpause=1
 persistent=0
 
-[State -3, Hyper Finish Background]
-type = Helper
-triggerall = WinKO && RoundState = 3 && NumHelper(8990) = 0
+;=======================================
+[State 0, PlaySnd]
+type = PlaySnd
 trigger1 = WinKO
-name = "Hyper Finish B.G."
+value = 8991,0
+channel = 0
+ignorehitpause = 1
+persistent=0
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = WinKO
+flag = Nobardisplay
+flag2 = NoFG
+flag3 = Noshadow
+ignorehitpause=1
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = WinKO
+flag = Nomusic
+ignorehitpause=1
+[State 8990, Explod]
+type = Explod
+trigger1 = WinKO
+anim = F8990
 id = 8990
 pos = 0,0
-postype = p1
-facing = 0
-stateno = 8990
-keyctrl = 0
+scale = 1,1
+postype = back
+bindtime = -1
+removetime = -2
+sprpriority = -10
 ownpal = 1
-supermovetime = 1000
-pausemovetime = 1000
-ignorehitpause = 1
+supermovetime = -1
+persistent=0
+ignorehitpause=1
+[State 8990, Explod]
+type = Explod
+trigger1 = WinKO
+anim = F8991
+id = 8991
+pos = 0,0
+scale = 1,1
+postype = Left
+bindtime = -1
+removetime = -2
+sprpriority = -9
+ownpal = 1
+supermovetime = -1
+persistent=0
+ignorehitpause=1
+;=======================================
 
 ;boom
 [State 200, 2]

@@ -612,7 +612,7 @@ persistent=0
 [State 650, 2]
 type = Explod
 trigger1 = time=0
-trigger1 = map(december)=0
+trigger1 = map(december)=0&&map(rina)!=3
 anim = 3111
 pos = 0,0
 id = 3111
@@ -632,6 +632,22 @@ trigger1 = map(december)=1
 anim = 3112
 pos = 0,0
 id = 3112
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = -1
+ownpal = 0
+scale=1,1
+ontop=1
+facing=1
+removetime=-1
+[State 650, 2]
+type = Explod
+trigger1 = time=0
+trigger1 = palno=11&&map(rina)=3
+anim = 3113
+pos = 0,0
+id = 3113
 postype = back
 ignorehitpause = 0
 persistent = 0
@@ -2572,6 +2588,7 @@ loop = 0
 persistent = 0
 volumescale=100
 ignorehitpause=1
+channel=7
 
 [State 0, VarAdd]
 type = MapAdd

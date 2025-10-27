@@ -6940,6 +6940,21 @@ velset = 0,0
 anim = 9970
 sprpriority = -1
 
+[State 0, StateTypeSet]
+type = StateTypeSet
+trigger1 = animelem=1&&enemynear,movetype=A
+statetype = A       ;S,A,C,L
+movetype = A        ;I,A,H
+physics = S       ;A,C,S,N
+Ignorehitpause = 1
+[State 0, StateTypeSet]
+type = StateTypeSet
+trigger1 = animelem=2
+statetype = S       ;S,A,C,L
+movetype = A        ;I,A,H
+physics = S       ;A,C,S,N
+Ignorehitpause = 1
+
 [State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
@@ -7362,6 +7377,21 @@ ctrl = 0
 velset = 0,0
 anim = 9970
 sprpriority = -1
+
+[State 0, StateTypeSet]
+type = StateTypeSet
+trigger1 = animelem=1&&enemynear,movetype=A
+statetype = A       ;S,A,C,L
+movetype = A        ;I,A,H
+physics = S       ;A,C,S,N
+Ignorehitpause = 1
+[State 0, StateTypeSet]
+type = StateTypeSet
+trigger1 = animelem=2
+statetype = S       ;S,A,C,L
+movetype = A        ;I,A,H
+physics = S       ;A,C,S,N
+Ignorehitpause = 1
 
 [State 52, 2]
 type = PosSet

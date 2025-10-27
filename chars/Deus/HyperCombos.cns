@@ -337,31 +337,26 @@ value = 8991,0
 channel = 0
 ignorehitpause = 1
 persistent=0
-[State 0, PlaySnd]
-type = PlaySnd
-trigger1 = WinKO
-value = 8991,10
-channel = 1
-ignorehitpause = 1
-persistent=0
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = WinKO
 flag = Nobardisplay
 flag2 = NoFG
 flag3 = Noshadow
+ignorehitpause=1
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = WinKO
 flag = Nomusic
+ignorehitpause=1
 [State 8990, Explod]
 type = Explod
 trigger1 = WinKO
-anim = 8992
+anim = F8990
 id = 8990
-pos = 160,120
-scale = .5,.5
-postype = Left
+pos = 0,0
+scale = 1,1
+postype = back
 bindtime = -1
 removetime = -2
 sprpriority = -10
@@ -372,10 +367,10 @@ ignorehitpause=1
 [State 8990, Explod]
 type = Explod
 trigger1 = WinKO
-anim = 8991
+anim = F8991
 id = 8991
-pos = 160,120
-scale = .5,.5
+pos = 0,0
+scale = 1,1
 postype = Left
 bindtime = -1
 removetime = -2
@@ -716,31 +711,26 @@ value = 8991,0
 channel = 0
 ignorehitpause = 1
 persistent=0
-[State 0, PlaySnd]
-type = PlaySnd
-trigger1 = WinKO
-value = 8991,10
-channel = 1
-ignorehitpause = 1
-persistent=0
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = WinKO
 flag = Nobardisplay
 flag2 = NoFG
 flag3 = Noshadow
+ignorehitpause=1
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = WinKO
 flag = Nomusic
+ignorehitpause=1
 [State 8990, Explod]
 type = Explod
 trigger1 = WinKO
-anim = 8992
+anim = F8990
 id = 8990
-pos = 160,120
-scale = .5,.5
-postype = Left
+pos = 0,0
+scale = 1,1
+postype = back
 bindtime = -1
 removetime = -2
 sprpriority = -10
@@ -751,10 +741,10 @@ ignorehitpause=1
 [State 8990, Explod]
 type = Explod
 trigger1 = WinKO
-anim = 8991
+anim = F8991
 id = 8991
-pos = 160,120
-scale = .5,.5
+pos = 0,0
+scale = 1,1
 postype = Left
 bindtime = -1
 removetime = -2
@@ -869,6 +859,23 @@ ontop=0
 facing=1
 removetime=264
 removeonchangestate=1
+[State 650, 2]
+type = Explod
+trigger1 = time=17
+trigger1 = palno=11&&map(rina)=3
+anim = 3113
+pos = 0,0
+id = 3113
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = -4
+ownpal = 0
+scale=1,1
+ontop=0
+facing=1
+removetime=264
+removeonchangestate=1
 
 [State 0, ModifyExplod]
 type = ModifyExplod
@@ -946,31 +953,26 @@ value = 8991,0
 channel = 0
 ignorehitpause = 1
 persistent=0
-[State 0, PlaySnd]
-type = PlaySnd
-trigger1 = WinKO
-value = 8991,10
-channel = 1
-ignorehitpause = 1
-persistent=0
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = WinKO
 flag = Nobardisplay
 flag2 = NoFG
 flag3 = Noshadow
+ignorehitpause=1
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = WinKO
 flag = Nomusic
+ignorehitpause=1
 [State 8990, Explod]
 type = Explod
 trigger1 = WinKO
-anim = 8992
+anim = F8990
 id = 8990
-pos = 160,120
-scale = .5,.5
-postype = Left
+pos = 0,0
+scale = 1,1
+postype = back
 bindtime = -1
 removetime = -2
 sprpriority = -10
@@ -981,10 +983,10 @@ ignorehitpause=1
 [State 8990, Explod]
 type = Explod
 trigger1 = WinKO
-anim = 8991
+anim = F8991
 id = 8991
-pos = 160,120
-scale = .5,.5
+pos = 0,0
+scale = 1,1
 postype = Left
 bindtime = -1
 removetime = -2
@@ -1064,6 +1066,22 @@ trigger1 = map(december)=1
 anim = 3112
 pos = 0,0
 id = 3112
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = -1
+ownpal = 0
+scale=1,1
+ontop=1
+facing=1
+removetime=-1
+[State 650, 2]
+type = Explod
+trigger1 = time=0
+trigger1 = palno=11&&map(rina)=3
+anim = 3113
+pos = 0,0
+id = 3113
 postype = back
 ignorehitpause = 0
 persistent = 0
@@ -1593,8 +1611,8 @@ facing = 1
 vfacing = 1
 bindtime = 1
 removetime = 60
-sprpriority = 0
-ontop = 1
+sprpriority = 10
+ontop = 0
 shadow = 0,0,0
 ownpal = 1
 removeonchangestate=1
@@ -1718,8 +1736,8 @@ bindtime = -1
 removetime = -2
 pausemovetime = 0
 scale = .84,.84
-sprpriority = 5
-ontop = 1
+sprpriority = 9
+ontop = 0
 shadow = 0,0,0
 ownpal = 0
 removeonchangestate = 1
@@ -1739,8 +1757,8 @@ bindtime = -1
 removetime = -2
 pausemovetime = 0
 scale = .84,.84
-sprpriority = 5
-ontop = 1
+sprpriority = 9
+ontop = 0
 shadow = 0,0,0
 ownpal = 0
 removeonchangestate = 1
@@ -1826,31 +1844,26 @@ value = 8991,0
 channel = 0
 ignorehitpause = 1
 persistent=0
-[State 0, PlaySnd]
-type = PlaySnd
-trigger1 = WinKO
-value = 8991,10
-channel = 1
-ignorehitpause = 1
-persistent=0
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = WinKO
 flag = Nobardisplay
 flag2 = NoFG
 flag3 = Noshadow
+ignorehitpause=1
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = WinKO
 flag = Nomusic
+ignorehitpause=1
 [State 8990, Explod]
 type = Explod
 trigger1 = WinKO
-anim = 8992
+anim = F8990
 id = 8990
-pos = 160,120
-scale = .5,.5
-postype = Left
+pos = 0,0
+scale = 1,1
+postype = back
 bindtime = -1
 removetime = -2
 sprpriority = -10
@@ -1861,10 +1874,10 @@ ignorehitpause=1
 [State 8990, Explod]
 type = Explod
 trigger1 = WinKO
-anim = 8991
+anim = F8991
 id = 8991
-pos = 160,120
-scale = .5,.5
+pos = 0,0
+scale = 1,1
 postype = Left
 bindtime = -1
 removetime = -2

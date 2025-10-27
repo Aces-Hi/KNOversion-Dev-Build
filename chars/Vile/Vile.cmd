@@ -59,7 +59,7 @@ trigger2 = movecontact ;&& enemynear, movetype = H
 ;trigger3 = (stateno = [200,499]) && movecontact
 
 ;OuroBoom
-[State -1, Ourobubbles]
+[State -1, OuroBoom]
 type = ChangeState
 value = 3060
 triggerall=stateno!=3060&&prevstateno!=3060
@@ -831,6 +831,7 @@ triggerall=stateno!=40
 triggerall = statetype != A
 triggerall = command = "z"
 triggerall = command != "holddown"
+triggerall = command != "SmashKFUpper"
 trigger1 = ctrl
 trigger2 = (stateno = 200) && movecontact && enemynear, movetype = H
 trigger3 = (stateno = 210) && movecontact && enemynear, movetype = H

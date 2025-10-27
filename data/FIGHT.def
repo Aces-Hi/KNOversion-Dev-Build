@@ -33,14 +33,14 @@ common.snd = common.snd
 ;-----------------------------------------------------------
 [Lifebar]
 ;Player 1
-p1.pos    = 140,8
+p1.pos    = 139,10
 p1.bg0.spr = 999,1
 p1.bg1.spr = 11,0
 p1.mid.spr = 12,0
 p1.front.spr = 13,0
-p1.range.x  = 2,-130
+p1.range.x  = 3,-130
 ;Player 2
-p2.pos    = 180,8
+p2.pos    = 180,10
 p2.bg0.spr = 999,1
 p2.bg0.facing = -1
 p2.bg1.spr = 11,0
@@ -49,19 +49,19 @@ p2.mid.spr = 12,0
 p2.mid.facing = -1
 p2.front.spr = 13,0
 p2.front.facing = -1
-p2.range.x = -1,128
+p2.range.x = -1,132
 
 
 [Simul Lifebar]
 ;Player 1
-p1.pos    = 140,8
+p1.pos    = 140,10
 p1.bg0.spr = 999,1
 p1.bg1.spr = 11,1
 p1.mid.spr = 12,1
 p1.front.spr = 13,1
-p1.range.x  = 2,-130
+p1.range.x  =3,-130
 ;Player 2
-p2.pos    = 180,8
+p2.pos    = 180,10
 p2.bg0.spr = 999,1
 p2.bg0.facing = -1
 p2.bg1.spr = 11,1
@@ -70,19 +70,19 @@ p2.mid.spr = 12,1
 p2.mid.facing = -1
 p2.front.spr = 13,1
 p2.front.facing = -1
-p2.range.x =  -1,128
+p2.range.x =  -1,132
 ;Player 3
-p3.pos    = 140,8
+p3.pos    = 140,10
 p3.mid.spr = 12,2
 p3.front.spr = 13,2
-p3.range.x  = 2,-130
+p3.range.x  = 3,-130
 ;Player 4
-p4.pos    = 180,8
+p4.pos    = 180,10
 p4.mid.spr = 12,2
 p4.mid.facing = -1
 p4.front.spr = 13,2
 p4.front.facing = -1
-p4.range.x =  -1,128
+p4.range.x = -1,132
 
 [Turns Lifebar]
 ;Player 1
@@ -141,7 +141,21 @@ p2.counter.font = 4,0, 0
 level6.snd = 21,0
 ;-----------------------------------------------------------
 [Face]
-
+;Player 1
+p1.pos    = 140,10
+;p1.bg.spr = 60,0
+p1.face.spr = 9000,2
+p1.face.scale = 1,1
+p1.face.facing = 1
+p1.face.layerno = -1
+;Player 2
+p2.pos    = 179,10
+;p2.bg.spr = 60,0
+p2.bg.facing = -1
+p2.face.spr =  9000,2
+p2.face.scale = 1,1
+p2.face.facing = -1
+p2.face.layerno = -1
 
 [Simul Face]
 ;Player 1
@@ -177,6 +191,7 @@ p4.face.layerno = 1
 ;Player 1
 p1.pos    = 10,209
 ;p1.bg.spr = 50,0
+p1.FACE.pos    = 10,209
 p1.face.spr = 9000,0
 p1.face.layerno = 1
 p1.face.facing = 1
@@ -207,21 +222,21 @@ p2.teammate.face.offset = -1,0
 
 ;-----------------------------------------------------------
 [Name]
-p1.pos = 20,20
+p1.pos = 11,22
 ;p1.bg. =
 p1.name.font = 3,0, 1
 ;p2.bg. =
-p2.pos = 300,20
+p2.pos = 309,22
 p2.name.font = 3,0, -1
 
 [Simul Name]
-p1.pos = 16,14
+p1.pos = 11,15
 p1.name.font = 3,0, 1
-p2.pos = 300,14
+p2.pos = 309,15
 p2.name.font = 3,0, -1
-p3.pos = 20,25
+p3.pos = 11,26
 p3.name.font = 3,0, 1
-p4.pos = 296,25
+p4.pos = 309,26
 p4.name.font = 3,0, -1
 
 [Turns Name]
@@ -258,12 +273,12 @@ team2.displaytime = 120    ;Time to show text
 team2.text.layerno =0
 ; Ikemen feature
 [WinCount]
-p1.pos = 101,8
+p1.pos = 55,8
 ;p1.bg.spr = 
 p1.text.font = 3,0, -1
 p1.text.text = WINS %s
 
-p2.pos = 218,8
+p2.pos = 264,8
 ;p2.bg.spr = 
 p2.text.font = 3,0, 1
 p2.text.text = WINS %s
@@ -492,71 +507,81 @@ draw.displaytime = 540
 
 ; [KO] Ready...
 [Begin Action 69]
-6969,0, 0,0, 3
-6969,1, 0,0, 3, , A
-6969,2, 0,0, 60
-6969,3, 0,0, 1
-6969,4, 0,0, 1
-6969,5, 0,0, 1
-6969,6, 0,0, 1
-6969,2, 0,0, 1, , AS100D256
-6969,1, 0,0, 3, , A
+69,0, 0,0, 4
+69,1, 0,0, 4
+69,2, 0,0, 4
+69,3, 0,0, 4
+69,4, 0,0, 4
+69,5, 0,0, 4
+69,6, 0,0, 4
+69,7, 0,0, 4
+69,8, 0,0, 4
+69,9, 0,0, 4
+69,10, 0,0, 4
+69,11, 0,0, 4
+69,12, 0,0, 4
+69,13, 0,0, 4
+69,14, 0,0, 4
+69,15, 0,0, 4
+69,16, 0,0, 4
+69,17, 0,0, 4
+69,18, 0,0, 4
+69,19, 0,0, 4
+69,20, 0,0, 4
+69,21, 0,0, 4
 LoopStart
--1,0, 0,0, 3
+-1,0, 0,0, 4
 
 ; [KO] Fight
 [Begin Action 79]
-7979,0, 0,0, 3
-7979,1, 0,0, 1
-7979,2, 0,0, 1
-7979,3, 0,0, 3
-7979,4, 0,0, 3
-7979,5, 0,0, 3
-7979,6, 0,0, 3
-7979,7, 0,0, 3
-7979,8, 0,0, 3
-7979,4, 0,0, 3
-7979,5, 0,0, 3
-7979,6, 0,0, 3
-7979,7, 0,0, 3
-7979,8, 0,0, 3
-7979,4, 0,0, 3
-7979,5, 0,0, 3
-7979,6, 0,0, 3
-7979,7, 0,0, 3
-7979,8, 0,0, 3
-7979,2, 0,0, 1
-7979,9, 0,0, 1
-7979,0, 0,0, 3
-
+79,0, 0,0, 3
+79,1, 0,0, 3
+79,2, 0,0, 3
+79,3, 0,0, 3
+79,4, 0,0, 3
+79,5, 0,0, 3
+79,6, 0,0, 3
+79,7, 0,0, 3
+79,8, 0,0, 3
+79,9, 0,0, 3
+79,10, 0,0, 3
+79,11, 0,0, 3
+79,12, 0,0, 3
+79,13, 0,0, 3
+79,14, 0,0, 3
+79,15, 0,0, 3
+79,16, 0,0, 3
+79,17, 0,0, 3
+79,18, 0,0, 3
+79,19, 0,0, 3
+79,20, 0,0, 3
 
 ; [KO] K.O!
 [Begin Action 89]
-7979,0, 0,0, 10
-89,3, 0,10, 1, , A
-89,3, 0,-10, 1
-89,3, 0,5, 1
-89,3, 0,-5, 1
-89,3, 0,2, 1
-89,3, 0,-2, 1
-89,3, 0,1, 1
-89,3, 0,-1, 1
-89,3, 0,0, 30
-89,2, 0,0, 2
-89,1, 0,15, 1, , A
-89,1, 0,-14, 1
-89,1, 0,10, 1
-89,1, 0,-9, 1
-89,1, 0,5, 1
-89,1, 0,-4, 1
-89,1, 0,3, 1
-89,1, 0,-2, 1
-89,1, 0,1, 1
-89,1, 0,0, 80
-89,0, 0,0, 1
-89,4, -8,-19, 1, , A
-7979,0, 0,0, 10
--1,0, 0,0, -1
+89,0, 0,0, 4
+89,1, 0,0, 4
+89,2, 0,0, 4
+89,3, 0,0, 4
+89,4, 0,0, 4
+89,5, 0,0, 4
+89,6, 0,0, 4
+89,7, 0,0, 4
+89,8, 0,0, 4
+89,9, 0,0, 4
+89,10, 0,0, 4
+89,11, 0,0, 4
+89,12, 0,0, 4
+89,13, 0,0, 4
+89,14, 0,0, 4
+89,15, 0,0, 4
+89,16, 0,0, 4
+89,17, 0,0, 4
+89,18, 0,0, 4
+89,19, 0,0, 4
+89,20, 0,0, 4
+LoopStart
+-1,0, 0,0, 10
+
 ; Life Bar P1
 [Begin Action 98]
 41,0, 0,0, 14
@@ -566,36 +591,10 @@ LoopStart
 41,1, 0,0, 14
 
 
-; Throw Tech P1
-[Begin Action 13102]
-24001,0, 0,10, 2
-24001,1, 0,-10, 2
-24001,0, 0,5, 2
-24001,1, 0,-5, 2
-24001,0, 0,1, 2
-24001,0, 0,-1, 2
-24001,0, 0,0, 1
-24001,0, 0,0, 40
-24001,0, 0,0, 4, , A
-24001,0, 0,0, 4, , AS80D256
-
-; Throw Tech P2
-[Begin Action 13103]
-24001,0, 0,10, 2
-24001,1, 0,-10, 2
-24001,0, 0,5, 2
-24001,1, 0,-5, 2
-24001,0, 0,1, 2
-24001,0, 0,-1, 2
-24001,0, 0,0, 1
-24001,0, 0,0, 40
-24001,0, 0,0, 4, , A
-24001,0, 0,0, 4, , AS80D256
-
 ;-----------------------------------------------------------
 [WinIcon]
-p1.pos = 130,11    ;1P側の表示開始位置指定
-p2.pos = 190,11    ;2P側の表示開始位置指定
+p1.pos = 130,34    ;1P側の表示開始位置指定
+p2.pos = 190,34   ;2P側の表示開始位置指定
 
 ; Offset for next icon (x,y) [次のアイコンの位置]
 p1.iconoffset = -16,0      ;1P側のWinIconの表示開始位置指定
@@ -612,37 +611,37 @@ p1.n.spr = 100,0
 p2.n.spr = 100,0
 
 ; Win by special [必殺技で勝利]
-p1.s.spr = 101,0
-p2.s.spr = 101,0
+p1.s.spr = 100,0
+p2.s.spr = 100,0
 
 ; Win by hyper (super) [超必殺技で勝利]
-p1.h.spr = 102,0
-p2.h.spr = 102,0
+p1.h.spr = 100,1
+p2.h.spr = 100,1
 
 ; Win by normal throw [通常投げで勝利]
-p1.throw.spr = 103,0
-p2.throw.spr = 103,0
+p1.throw.spr = 100,0
+p2.throw.spr = 100,0
 
-; Win by cheese [削り勝利]
-p1.c.spr = 104,0
-p2.c.spr = 104,0
+; Win by chip
+p1.c.spr = 100,4
+p2.c.spr = 100,4
 
 ; Win by time over [時間切れで勝利]
-p1.t.spr = 105,0
-p2.t.spr = 105,0
+p1.t.spr = 100,2
+p2.t.spr = 100,2
 
 ; Win by suicide (here's a fun one) [F1押しで勝利]
-p1.suicide.spr = 106,0
-p2.suicide.spr = 106,0
+p1.suicide.spr = 100,0
+p2.suicide.spr = 100,0
 
 ; Opponent beaten by his own teammate (another fun one)
 ; [相手が相手のチームメイトに倒された場合]
-p1.teammate.spr = 107,0
-p2.teammate.spr = 107,0
+p1.teammate.spr = 100,0
+p2.teammate.spr = 100,0
 
 ; Win by perfect (overlay icon) [パーフェクトで勝利]
-p1.perfect.spr = 110,0
-p2.perfect.spr = 110,0
+p1.perfect.spr = 100,3
+p2.perfect.spr = 100,3
 
 ; Use icons up until this number of wins [最大表示数]
 useiconupto = 4

@@ -70,14 +70,14 @@ spr = AvA.sff
 [BG sky]
 type  = normal
 spriteno = 0,5
-start = 0, 0
+start = 0, -6
 delta=.1,.1
 
 [BG Back Clouds]
 type  = normal
 spriteno = 0, 1
-start = 0, 0
-delta=.1,.1
+start = 0, -10
+delta=.2,.2
 velocity=.15,0
 tile=1,0
 
@@ -101,7 +101,7 @@ delta=.3,.3
 [BG Front Clouds]
 type  = normal
 spriteno = 0, 2
-start = 0, 0
+start = 0, -10
 delta=.35,.15
 velocity=.05,0
 tile=1,0

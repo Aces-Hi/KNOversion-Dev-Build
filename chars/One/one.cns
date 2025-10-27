@@ -1647,6 +1647,11 @@ type = MapSet
 trigger1 =combocount=0
 map="airgrab"
 value=0
+[State -2, Dampener] 
+type = MapSet
+trigger1 =combocount=0
+map="roundtrip"
+value=0
 [State 0, AttackDist]
 type = AttackDist
 trigger1 = 1

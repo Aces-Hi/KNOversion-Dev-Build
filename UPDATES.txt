@@ -37,6 +37,7 @@ angous
 +6rH distance
 ~jS air blockstun
 -jS not air unblockable
+-js landing can be anti-aired
 -EXjS not air unblockable
 -2h hurtbox
 -6ss ending lag
@@ -93,6 +94,7 @@ one
 -jM hurtbox
 -jH hurtbox
 -j2H hurtbox
+-5sL landing can be anti-aired
 /fixed jR causing bounce after ono jR
 
 vile
@@ -107,6 +109,7 @@ wu
 +r float
 +r endlag reduced during combos
 +2h hitbox
++jH air juggle
 ~ANOTHER WU REWORK YES! YES!!!!!
 -r endlag
 

@@ -946,8 +946,8 @@ movetime = 0
 type = Explod
 trigger1=teamside=2
 trigger1 = time = 0
-anim = 13102
-pos = 30,170
+anim = F13102
+pos = 20,183
 postype = left  ;p2,front,back,left,right
 removetime = -2
 supermove = 1
@@ -963,8 +963,8 @@ pausemovetime = -1
 type = Explod
 trigger1=teamside=1
 trigger1 = time = 0
-anim = 13103
-pos = -120,170
+anim = F13102
+pos = -110,183
 postype = right  ;p2,front,back,left,right
 removetime = -2
 supermove = 1
@@ -1383,6 +1383,12 @@ airguard.velocity = 0,0
 guard.slidetime = 0;
 p2facing=1
  
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1 = time=0
+id = 900
+ignorehitpause = 1
+
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = animelem=2
@@ -2071,27 +2077,7 @@ type = Explod
 trigger1 = time = 0
 anim =F41 
 ID = 41
-pos = 0,-45
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-removetime = -2
-pausemovetime = 0
-scale = .6,.6
-sprpriority = 8
-ontop = 1
-removeongethit = 0
-
-[State 0, Explod]
-type = Explod
-trigger1 = time = 0
-anim =6700
-ID = 41
-pos = 100,0
+pos = 40,-45
 postype = p1  ;p2,front,back,left,right
 facing = -1
 vfacing = 1
@@ -2101,7 +2087,7 @@ accel = 0,0
 random = 0,0
 removetime = -2
 pausemovetime = 0
-scale = .6,.6
+scale = 1,1
 sprpriority = 8
 ontop = 1
 removeongethit = 0
@@ -5212,7 +5198,7 @@ value = 5
 [State 0, Explod]
 type = Explod
 trigger1 = time = 0
-anim = F1905
+anim = F900
 ID = 1905
 pos = 0,-45
 postype = p1  ;p2,front,back,left,right
@@ -5223,13 +5209,14 @@ vel = 0,0
 accel = 0,0
 random = 0,0
 removetime = -2
-pausemovetime = 0
-scale = .3,.3
+pausemovetime = -1
+scale = 1,1
 sprpriority = -4
 ontop = 0
 shadow = 0,0,0
 ownpal = 0
 removeongethit = 0
+ignorehitpause=1
 
 [State 0, Pause]
 type = Pause
@@ -5329,7 +5316,7 @@ persistent = 1
 [State 0, Explod]
 type = Explod
 trigger1 = time = 0
-anim = F1905
+anim = F900
 ID = 1905
 pos = 0,-45
 postype = p1  ;p2,front,back,left,right
@@ -5340,13 +5327,15 @@ vel = 0,0
 accel = 0,0
 random = 0,0
 removetime = -2
-pausemovetime = 0
-scale = .3,.3
+pausemovetime = -1
+scale = 1,1
 sprpriority = -4
 ontop = 0
 shadow = 0,0,0
 ownpal = 0
 removeongethit = 0
+ignorehitpause=1
+
 
 [State 0, Pause]
 type = Pause
@@ -5909,12 +5898,12 @@ triggerall = movecountered = 1 ;Enemy was indeed HIT, otherwise this'd be retard
 trigger1 = movehit ;Move hits
 trigger2 = projhit = 1 ;Projectile Hits
 triggerall=stateno!=[900,901]
-anim = 13000
-pos = 65,170
+anim = F13000
+pos = 20,183
 postype = left  ;p2,front,back,left,right
 removetime = -2
 supermove = 1
-scale = 0.5,0.5
+scale = 0.53,0.53
 sprpriority = 10
 id = 13000
 bindtime = -1
@@ -5944,12 +5933,12 @@ triggerall = movecountered = 1 ;Enemy was indeed HIT, otherwise this'd be retard
 trigger1 = movehit ;Move hits
 trigger2 = projhit = 1 ;Projectile Hits
 triggerall=stateno!=[900,901]
-anim = 13001
-pos = -100,170
+anim = F13000
+pos = -110,183
 postype = right  ;p2,front,back,left,right
 removetime = -2
 supermove = 1
-scale = 0.5,0.5
+scale = 0.53,0.53
 sprpriority = 10
 id = 13000
 bindtime = -1
@@ -5958,8 +5947,170 @@ ownpal = 1
 ignorehitpause = 1
 pausemovetime = -1
 
+[State 0, Explod] ;BURST EXPLOD
+type = Explod
+triggerall = !numexplod(900)
+triggerall=roundstate=2
+trigger1 = map(burst) = 0 && playerno = 1&&teammode!=tag
+anim =F905
+ID = 900
+pos =2,19
+postype = left  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = -1
+pausemovetime = 0
+scale =1,1
+sprpriority = -10
+ontop = 0
+ignorehitpause = 1
+ownpal=1
+[State 0, Explod]
+type = Explod
+triggerall = !numexplod(900)
+triggerall=roundstate=2
+trigger1 = map(burst) = 0 && playerno = 2&&teammode!=tag
+anim =F906
+ID = 900
+pos = -42,19
+postype = right  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = -1
+pausemovetime = 0
+scale = 1,1
+sprpriority = -10
+ontop = 0
+ignorehitpause = 1
+ownpal=1
 
 
+[State 0, Explod] ;PBURST EXPLOD
+type = Explod
+triggerall = !numexplod(900)
+triggerall=roundstate=2
+trigger1 = map(burst) = 1 && playerno = 1&&teammode!=tag&&power>=5000
+anim =F907
+ID = 900
+pos =2,21
+postype = left  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = -1
+pausemovetime = 0
+scale =1,1
+sprpriority = -10
+ontop = 0
+ignorehitpause = 1
+ownpal=1
+[State 0, Explod]
+type = Explod
+triggerall = !numexplod(900)
+triggerall=roundstate=2
+trigger1 = map(burst) = 1 && playerno = 2&&teammode!=tag&&power>=5000
+anim =F908
+ID = 900
+pos = -42,21
+postype = right  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = -1
+pausemovetime = 0
+scale = 1,1
+sprpriority = -10
+ontop = 0
+ignorehitpause = 1
+ownpal=1
+
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1 = map(burst) = 1 &&power<5000
+id = 900
+ignorehitpause = 1
+
+
+
+[State 0, Explod] ;BURST EXPLOD
+type = Explod
+triggerall = !numexplod(900)
+triggerall=roundstate=2
+trigger1 = map(burst) = 0 && playerno = 1&&teammode=tag
+anim =F905
+ID = 900
+pos =2,21
+postype = left  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = -1
+pausemovetime = 0
+scale =1,1
+sprpriority = -10
+ontop = 0
+ignorehitpause = 1
+ownpal=1
+[State 0, Explod]
+type = Explod
+triggerall = !numexplod(900)
+triggerall=roundstate=2
+trigger1 = map(burst) = 0 && playerno = 2&&teammode=tag
+anim =F906
+ID = 900
+pos = -42,21
+postype = right  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = -1
+pausemovetime = 0
+scale = 1,1
+sprpriority = -10
+ontop = 0
+ignorehitpause = 1
+ownpal=1
+
+[State 0, Explod]
+type = Explod
+triggerall = !numexplod(900)
+triggerall=roundstate=2
+trigger1 = map(burst) = 0 && playerno = 3
+anim =F906
+ID = 900
+pos = 85,19
+postype = left  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = -1
+pausemovetime = 0
+scale = 1,1
+sprpriority = -10
+ontop = 0
+ignorehitpause = 1
+ownpal=1
+[State 0, Explod]
+type = Explod
+triggerall = !numexplod(900)
+triggerall=roundstate=2
+trigger1 = map(burst) = 0 && playerno = 4
+anim =F905
+ID = 900
+pos = -125,19
+postype = right  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = -1
+pausemovetime = 0
+scale = 1,1
+sprpriority = -10
+ontop = 0
+ignorehitpause = 1
+ownpal=1
 
 ;==================================================================================================
 ;TRAINING MODE SHIT
@@ -9612,7 +9763,7 @@ trigger1=roundtype=3
 trigger2=roundno=3
 triggerall = map(panic)=1
 map = "Meter"
-value = 2000
+value = 1000
 ignorehitpause = 1
 persistent = 1
 
@@ -9920,6 +10071,11 @@ type = AssertSpecial
 trigger1= enemynear,name="Z"
 trigger1 = enemynear,anim = 3052
 flag = noshadow
+ignorehitpause = 1
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = WinKO
+flag = Nobardisplay
 ignorehitpause = 1
 
 [State 0, AssertSpecial]

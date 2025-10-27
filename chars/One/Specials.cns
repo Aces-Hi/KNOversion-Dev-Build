@@ -5245,6 +5245,21 @@ velset = 0,0
 poweradd =0
 sprpriority = 2
 
+[State 0, StateTypeSet]
+type = StateTypeSet
+trigger1 = animelem=1&&enemynear,movetype=A
+statetype = A       ;S,A,C,L
+movetype = A        ;I,A,H
+physics = S       ;A,C,S,N
+Ignorehitpause = 1
+[State 0, StateTypeSet]
+type = StateTypeSet
+trigger1 = animelem=2
+statetype = S       ;S,A,C,L
+movetype = A        ;I,A,H
+physics = S       ;A,C,S,N
+Ignorehitpause = 1
+
 [State 0, TargetBind]
 type = TargetBind
 trigger1 = movehit

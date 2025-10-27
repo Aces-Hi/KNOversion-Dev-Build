@@ -8,7 +8,5 @@ ikemenversion	= 0.99
 [Files]
 cmd     		= common.cmd      
 cns     		= common1.cns       
-st      		= common.cns       
-sprite		= common.sff         
-anim		= common.air        
+st      		= common.cns                  
 sound		= common.snd   

@@ -3743,7 +3743,7 @@ type = zoom
 triggerall=map(nozoom)=0
 triggerall=backedgebodydist<=100
 trigger1 = enemy,HitShakeOver = 0
-trigger1 = movehit
+trigger1 = movehit&&time>5
 scale = 1.5
 lag = 0.8
 stagebound = 1
@@ -3755,7 +3755,7 @@ type = zoom
 triggerall=map(nozoom)=0
 triggerall=backedgebodydist>100
 trigger1 = enemy,HitShakeOver = 0
-trigger1 = movehit
+trigger1 = movehit&&time>5
 scale = 1.5
 lag = 0.8
 stagebound = 1
@@ -3772,7 +3772,7 @@ ignorehitpause = 0
 type = BGPalFX
 triggerall=map(nozoom)=0
 trigger1 = enemy,HitShakeOver = 0
-trigger1 = movehit
+trigger1 = movehit&&time>5
 time = 1
 ;add = 0,0,0
 mul = 50,50,50
@@ -4313,6 +4313,7 @@ type = zoom
 triggerall=map(nozoom)=0
 triggerall=backedgebodydist<=100
 trigger1 = enemy,HitShakeOver = 0
+trigger1 = time>5
 scale = 1.5
 lag = 0.8
 stagebound = 1
@@ -4324,6 +4325,7 @@ type = zoom
 triggerall=map(nozoom)=0
 triggerall=backedgebodydist>100
 trigger1 = enemy,HitShakeOver = 0
+trigger1 = time>5
 scale = 1.5
 lag = 0.8
 stagebound = 1
@@ -4340,6 +4342,7 @@ ignorehitpause = 0
 type = BGPalFX
 triggerall=map(nozoom)=0
 trigger1 = enemy,HitShakeOver = 0
+trigger1 = time>5
 time = 1
 ;add = 0,0,0
 mul = 50,50,50

@@ -244,7 +244,14 @@ trigger1= MoveHit =1 && NumTarget(3000) && !ishelper
 ;ID = 3000
 value = 3001
 ignorehitpause=0
-
+[State 3000, P1 Custom State]
+type = Changestate
+triggerall =animtime=0
+triggerall = anim=3001
+trigger1= !MoveHit
+value =0
+ignorehitpause=0
+ctrl=1
  [State 1200, Shake Screen]
 type = EnvShake
 trigger1 = time = 1
@@ -252,90 +259,63 @@ time = 30    ;Time to shake screen
 ampl = 2     ;Amount to shake
 freq = 120   ;A frequency of 180 shakes the screen rapidly
 
+;=======================================
 [State 0, PlaySnd]
 type = PlaySnd
-triggerall = WinKO
-trigger1 = time = 93
-value = 8991,5
+trigger1 = WinKO
+value = 8991,0
 channel = 0
 ignorehitpause = 1
-
-[State 0, PlaySnd]
-type = PlaySnd
-triggerall = WinKO
-trigger1 = time = 94
-value = 8991,5
-channel = 1
-ignorehitpause = 1
-
+persistent=0
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = WinKO
 flag = Nobardisplay
 flag2 = NoFG
 flag3 = Noshadow
-
+ignorehitpause=1
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = WinKO
 flag = Nomusic
-
+ignorehitpause=1
 [State 8990, Explod]
 type = Explod
-triggerall = WinKO
-trigger1 = Time = 0
-anim = 8990
+trigger1 = WinKO
+anim = F8990
 id = 8990
-pos = 160,120
-scale = .5,.5
-postype = Left
+pos = 0,0
+scale = 1,1
+postype = back
 bindtime = -1
-removetime = 35
-sprpriority = -16
+removetime = -2
+sprpriority = -10
 ownpal = 1
 supermovetime = -1
-
+persistent=0
+ignorehitpause=1
 [State 8990, Explod]
 type = Explod
-triggerall = WinKO
-trigger1 = time = 128
-anim = 8991
+trigger1 = WinKO
+anim = F8991
 id = 8991
-pos = 160,120
-scale = .5,.5
+pos = 0,0
+scale = 1,1
 postype = Left
 bindtime = -1
 removetime = -2
-sprpriority = -15
+sprpriority = -9
 ownpal = 1
 supermovetime = -1
+persistent=0
+ignorehitpause=1
+;=======================================
 
 [State 8990, DestroySelf]
 type = DestroySelf
 trigger1 = RoundState > 3
 ;---------------------------------------------------------------------------
-[State -3, Hyper Finish Background]
-type = Helper
-triggerall = WinKO && RoundState = 3 && NumHelper(8990) = 0
-trigger1 = WinKO
-name = "Hyper Finish B.G."
-id = 8990
-pos = 0,0
-postype = p1
-facing = 0
-stateno = 8990
-keyctrl = 0
-ownpal = 1
-supermovetime = 1000
-pausemovetime = 1000
-ignorehitpause = 1
 
-[State 200, 3]
-type = ChangeState
-trigger1 = AnimTime = 0
-triggerall = anim=3001
-value = 0
-ctrl = 1
 ;---------------------------------------------------------------------------------------------
 ;Buster Hitframe
 [Statedef 3001]
@@ -364,89 +344,57 @@ ID = 3000
 value = 30000
 ignorehitpause=0
 
+;=======================================
 [State 0, PlaySnd]
 type = PlaySnd
-triggerall = WinKO
-trigger1 = time = 5
-value = 8991,5
+trigger1 = WinKO
+value = 8991,0
 channel = 0
 ignorehitpause = 1
-
-[State 0, PlaySnd]
-type = PlaySnd
-triggerall = WinKO
-trigger1 = time = 6
-value = 8991,5
-channel = 1
-ignorehitpause = 1
-
+persistent=0
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = WinKO
 flag = Nobardisplay
 flag2 = NoFG
 flag3 = Noshadow
-
+ignorehitpause=1
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = WinKO
 flag = Nomusic
-
+ignorehitpause=1
 [State 8990, Explod]
 type = Explod
-triggerall = WinKO
-trigger1 = Time = 0
-anim = 8990
+trigger1 = WinKO
+anim = F8990
 id = 8990
-pos = 160,120
-scale = .5,.5
-postype = Left
+pos = 0,0
+scale = 1,1
+postype = back
 bindtime = -1
-removetime = 35
-sprpriority = -16
+removetime = -2
+sprpriority = -10
 ownpal = 1
 supermovetime = -1
-
+persistent=0
+ignorehitpause=1
 [State 8990, Explod]
 type = Explod
-triggerall = WinKO
-trigger1 = time = 40
-anim = 8991
+trigger1 = WinKO
+anim = F8991
 id = 8991
-pos = 160,120
-scale = .5,.5
+pos = 0,0
+scale = 1,1
 postype = Left
 bindtime = -1
 removetime = -2
-sprpriority = -15
+sprpriority = -9
 ownpal = 1
 supermovetime = -1
-
-[State 0, NotHitBy]
-type = NotHitBy
-trigger1 = 1
-value = SCA,NP,SP,HP
-time = 2
-
-[State 8990, DestroySelf]
-type = DestroySelf
-trigger1 = RoundState > 3
-;---------------------------------------------------------------------------
-[State -3, Hyper Finish Background]
-type = Helper
-triggerall = WinKO && RoundState = 3 && NumHelper(8990) = 0
-trigger1 = WinKO
-name = "Hyper Finish B.G."
-id = 8990
-pos = 0,0
-postype = p1
-facing = 0
-stateno = 8990
-keyctrl = 0
-ownpal = 1
-supermovetime = 1000
-pausemovetime = 1000
-ignorehitpause = 1
+persistent=0
+ignorehitpause=1
+;=======================================
 
 [State 200, 3]
 type = ChangeState
@@ -763,7 +711,14 @@ trigger1= MoveHit =1 && NumTarget(3000) && !ishelper
 ;ID = 3000
 value = 3006
 ignorehitpause=0
-
+[State 3000, P1 Custom State]
+type = Changestate
+triggerall =animtime=0
+triggerall = anim=3004
+trigger1= !MoveHit
+value =0
+ignorehitpause=0
+ctrl=1
 
  [State 1200, Shake Screen]
 type = EnvShake
@@ -773,83 +728,57 @@ ampl = 9     ;Amount to shake
 freq = 10   ;A frequency of 180 shakes the screen rapidly
 
 
+;=======================================
 [State 0, PlaySnd]
 type = PlaySnd
-triggerall = WinKO
-trigger1 = time = 111
-value = 8991,5
+trigger1 = WinKO
+value = 8991,0
 channel = 0
 ignorehitpause = 1
-
-[State 0, PlaySnd]
-type = PlaySnd
-triggerall = WinKO
-trigger1 = time = 112
-value = 8991,5
-channel = 1
-ignorehitpause = 1
-
+persistent=0
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = WinKO
 flag = Nobardisplay
 flag2 = NoFG
 flag3 = Noshadow
-
+ignorehitpause=1
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = WinKO
 flag = Nomusic
-
+ignorehitpause=1
 [State 8990, Explod]
 type = Explod
-triggerall = WinKO
-trigger1 = Time = 0
-anim = 8990
+trigger1 = WinKO
+anim = F8990
 id = 8990
-pos = 160,120
-scale = .5,.5
-postype = Left
+pos = 0,0
+scale = 1,1
+postype = back
 bindtime = -1
-removetime = 35
-sprpriority = -16
+removetime = -2
+sprpriority = -10
 ownpal = 1
 supermovetime = -1
-
+persistent=0
+ignorehitpause=1
 [State 8990, Explod]
 type = Explod
-triggerall = WinKO
-trigger1 = time = 146
-anim = 8991
+trigger1 = WinKO
+anim = F8991
 id = 8991
-pos = 160,120
-scale = .5,.5
+pos = 0,0
+scale = 1,1
 postype = Left
 bindtime = -1
 removetime = -2
-sprpriority = -15
+sprpriority = -9
 ownpal = 1
 supermovetime = -1
-
-[State 8990, DestroySelf]
-type = DestroySelf
-trigger1 = RoundState > 3
-;---------------------------------------------------------------------------
-[State -3, Hyper Finish Background]
-type = Helper
-triggerall = WinKO && RoundState = 3 && NumHelper(8990) = 0
-trigger1 = WinKO
-name = "Hyper Finish B.G."
-id = 8990
-pos = 0,0
-postype = p1
-facing = 0
-stateno = 8990
-keyctrl = 0
-ownpal = 1
-supermovetime = 1000
-pausemovetime = 1000
-ignorehitpause = 1
+persistent=0
+ignorehitpause=1
+;=======================================
 
 
 [State 200, 3]
@@ -895,89 +824,57 @@ ID = 3000
 value = 30000
 ignorehitpause=0
 
+;=======================================
 [State 0, PlaySnd]
 type = PlaySnd
-triggerall = WinKO
-trigger1 = time = 5
-value = 8991,5
+trigger1 = WinKO
+value = 8991,0
 channel = 0
 ignorehitpause = 1
-
-[State 0, PlaySnd]
-type = PlaySnd
-triggerall = WinKO
-trigger1 = time = 6
-value = 8991,5
-channel = 1
-ignorehitpause = 1
-
+persistent=0
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = WinKO
 flag = Nobardisplay
 flag2 = NoFG
 flag3 = Noshadow
-
+ignorehitpause=1
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = WinKO
 flag = Nomusic
-
+ignorehitpause=1
 [State 8990, Explod]
 type = Explod
-triggerall = WinKO
-trigger1 = Time = 0
-anim = 8990
+trigger1 = WinKO
+anim = F8990
 id = 8990
-pos = 160,120
-scale = .5,.5
-postype = Left
+pos = 0,0
+scale = 1,1
+postype = back
 bindtime = -1
-removetime = 35
-sprpriority = -16
+removetime = -2
+sprpriority = -10
 ownpal = 1
 supermovetime = -1
-
+persistent=0
+ignorehitpause=1
 [State 8990, Explod]
 type = Explod
-triggerall = WinKO
-trigger1 = time = 40
-anim = 8991
+trigger1 = WinKO
+anim = F8991
 id = 8991
-pos = 160,120
-scale = .5,.5
+pos = 0,0
+scale = 1,1
 postype = Left
 bindtime = -1
 removetime = -2
-sprpriority = -15
+sprpriority = -9
 ownpal = 1
 supermovetime = -1
-
-[State 0, NotHitBy]
-type = NotHitBy
-trigger1 = 1
-value = SCA,NP,SP,HP
-time = 2
-
-[State 8990, DestroySelf]
-type = DestroySelf
-trigger1 = RoundState > 3
-;---------------------------------------------------------------------------
-[State -3, Hyper Finish Background]
-type = Helper
-triggerall = WinKO && RoundState = 3 && NumHelper(8990) = 0
-trigger1 = WinKO
-name = "Hyper Finish B.G."
-id = 8990
-pos = 0,0
-postype = p1
-facing = 0
-stateno = 8990
-keyctrl = 0
-ownpal = 1
-supermovetime = 1000
-pausemovetime = 1000
-ignorehitpause = 1
+persistent=0
+ignorehitpause=1
+;=======================================
 
 [State 200, 3]
 type = ChangeState
@@ -1046,89 +943,57 @@ type = PlaySnd
 trigger1 = animelem = 1
 value = S6969,0
 
+;=======================================
 [State 0, PlaySnd]
 type = PlaySnd
-triggerall = WinKO
-trigger1 = time = 5
-value = 8991,5
+trigger1 = WinKO
+value = 8991,0
 channel = 0
 ignorehitpause = 1
-
-[State 0, PlaySnd]
-type = PlaySnd
-triggerall = WinKO
-trigger1 = time = 6
-value = 8991,5
-channel = 1
-ignorehitpause = 1
-
+persistent=0
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = WinKO
 flag = Nobardisplay
 flag2 = NoFG
 flag3 = Noshadow
-
+ignorehitpause=1
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = WinKO
 flag = Nomusic
-
+ignorehitpause=1
 [State 8990, Explod]
 type = Explod
-triggerall = WinKO
-trigger1 = Time = 0
-anim = 8992
-id = 8992
-pos = 160,120
-scale = .5,.5
-postype = Left
+trigger1 = WinKO
+anim = F8990
+id = 8990
+pos = 0,0
+scale = 1,1
+postype = back
 bindtime = -1
-removetime = 35
-sprpriority = -16
+removetime = -2
+sprpriority = -10
 ownpal = 1
 supermovetime = -1
-
+persistent=0
+ignorehitpause=1
 [State 8990, Explod]
 type = Explod
-triggerall = WinKO
-trigger1 = time = 40
-anim = 8991
+trigger1 = WinKO
+anim = F8991
 id = 8991
-pos = 160,120
-scale = .5,.5
+pos = 0,0
+scale = 1,1
 postype = Left
 bindtime = -1
 removetime = -2
-sprpriority = -15
+sprpriority = -9
 ownpal = 1
 supermovetime = -1
-
-[State 0, NotHitBy]
-type = NotHitBy
-trigger1 = 1
-value = SCA,NP,SP,HP
-time = 2
-
-[State 8990, DestroySelf]
-type = DestroySelf
-trigger1 = RoundState > 3
-;---------------------------------------------------------------------------
-[State -3, Hyper Finish Background]
-type = Helper
-triggerall = WinKO && RoundState = 3 && NumHelper(8990) = 0
-trigger1 = WinKO
-name = "Hyper Finish B.G."
-id = 8992
-pos = 0,0
-postype = p1
-facing = 0
-stateno = 8990
-keyctrl = 0
-ownpal = 1
-supermovetime = 1000
-pausemovetime = 1000
-ignorehitpause = 1
+persistent=0
+ignorehitpause=1
+;=======================================
 
 
 [State 200, 3]
@@ -1681,83 +1546,57 @@ trigger1= MoveHit =1 && NumTarget(3000) && !ishelper
 value = 3025
 ignorehitpause=0
 
+;=======================================
 [State 0, PlaySnd]
 type = PlaySnd
-triggerall = WinKO
-trigger1 = time = 5
-value = 8991,5
+trigger1 = WinKO
+value = 8991,0
 channel = 0
 ignorehitpause = 1
-
-[State 0, PlaySnd]
-type = PlaySnd
-triggerall = WinKO
-trigger1 = time = 6
-value = 8991,5
-channel = 1
-ignorehitpause = 1
-
+persistent=0
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = WinKO
 flag = Nobardisplay
 flag2 = NoFG
 flag3 = Noshadow
-
+ignorehitpause=1
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = WinKO
 flag = Nomusic
-
+ignorehitpause=1
 [State 8990, Explod]
 type = Explod
-triggerall = WinKO
-trigger1 = Time = 0
-anim = 8990
+trigger1 = WinKO
+anim = F8990
 id = 8990
-pos = 160,120
-scale = .5,.5
-postype = Left
+pos = 0,0
+scale = 1,1
+postype = back
 bindtime = -1
-removetime = 35
-sprpriority = -16
+removetime = -2
+sprpriority = -10
 ownpal = 1
 supermovetime = -1
-
+persistent=0
+ignorehitpause=1
 [State 8990, Explod]
 type = Explod
-triggerall = WinKO
-trigger1 = time = 40
-anim = 8991
+trigger1 = WinKO
+anim = F8991
 id = 8991
-pos = 160,120
-scale = .5,.5
+pos = 0,0
+scale = 1,1
 postype = Left
 bindtime = -1
 removetime = -2
-sprpriority = -15
+sprpriority = -9
 ownpal = 1
 supermovetime = -1
-
-[State 8990, DestroySelf]
-type = DestroySelf
-trigger1 = RoundState > 3
-;---------------------------------------------------------------------------
-[State -3, Hyper Finish Background]
-type = Helper
-triggerall = WinKO && RoundState = 3 && NumHelper(8990) = 0
-trigger1 = WinKO
-name = "Hyper Finish B.G."
-id = 8990
-pos = 0,0
-postype = p1
-facing = 0
-stateno = 8990
-keyctrl = 0
-ownpal = 1
-supermovetime = 1000
-pausemovetime = 1000
-ignorehitpause = 1
+persistent=0
+ignorehitpause=1
+;=======================================
 
 
 [State 200, 3]
@@ -2685,31 +2524,54 @@ type = NotHitBy
 trigger1 = 1
 value = SCA
 time = 2
+;=======================================
 [State 0, PlaySnd]
 type = PlaySnd
-triggerall = WinKO
-trigger1 = time = 5
-value = 8991,5
+trigger1 = WinKO
+value = 8991,0
 channel = 0
 ignorehitpause = 1
-
-[State 0, PlaySnd]
-type = PlaySnd
-triggerall = WinKO
-trigger1 = time = 6
-value = 8991,5
-channel = 1
-ignorehitpause = 1
-
+persistent=0
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = WinKO
 flag = Nobardisplay
 flag2 = NoFG
 flag3 = Noshadow
-
+ignorehitpause=1
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = WinKO
 flag = Nomusic
-;---------------------------------------------------------------------------
+ignorehitpause=1
+[State 8990, Explod]
+type = Explod
+trigger1 = WinKO
+anim = F8990
+id = 8990
+pos = 0,0
+scale = 1,1
+postype = back
+bindtime = -1
+removetime = -2
+sprpriority = -10
+ownpal = 1
+supermovetime = -1
+persistent=0
+ignorehitpause=1
+[State 8990, Explod]
+type = Explod
+trigger1 = WinKO
+anim = F8991
+id = 8991
+pos = 0,0
+scale = 1,1
+postype = Left
+bindtime = -1
+removetime = -2
+sprpriority = -9
+ownpal = 1
+supermovetime = -1
+persistent=0
+ignorehitpause=1
+;=======================================

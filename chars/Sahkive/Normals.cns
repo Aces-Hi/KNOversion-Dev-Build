@@ -4359,7 +4359,7 @@ velset = 0,0
 type = PlaySnd
 trigger1=anim=1104&&animelem=2
 value = 1111,0+random%2
-volumescale=150
+volumescale=200
 [State 100, 4]
 type = ChangeAnim
 trigger1 = time>10&&time<94
@@ -4433,16 +4433,16 @@ trigger1 = map(hakitime)=20&&anim=1102
 time = 90
 add = 100,0,50
 mul = 256,256,256
-sinadd = 200,0,100,700
+sinadd = 100,0,50,700
 invertall = 0
-color = 256
+color = 100
 [State 0, PalFXWiz]
 type = PalFX
 trigger1 = map(hakitime)=94&&anim=1102
 time = -1
 add = 250,0,150
 mul = 256,256,256
-sinadd = 200,0,100,20
+sinadd = 250,0,150,15
 invertall = 0
 color = 256
 [State 0, PalFXWiz]
@@ -4451,7 +4451,7 @@ trigger1 = prevstateno=666999&&map(hakitime)>=94&&anim=1102
 time = -1
 add = 250,0,150
 mul = 256,256,256
-sinadd = 200,0,100,20
+sinadd = 250,0,150,15
 invertall = 0
 color = 256
 persistent=0
@@ -4607,7 +4607,7 @@ volumescale=200
 type = PlaySnd
 trigger1=time=0
 value = 1120,0+random%4
-volumescale=150
+volumescale=200
 ignorehitpause=1
 persistent=0
 

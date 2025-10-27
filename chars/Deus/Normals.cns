@@ -1591,7 +1591,7 @@ trigger1 = animelem=8
 attr = S, NA
 animtype  = up
 air.animtype = up
-damage = ceil(cond(fvar(11) *20 < 3, 3, fvar(11) * 30)), 3
+damage = ceil(cond(fvar(11) *20 < 3, 3, fvar(11) * 20)), 3
 hitflag = MAFD
 guardflag = LA
 pausetime = 8,4
@@ -1689,7 +1689,7 @@ trigger1 = map(smashattack)>=40 && map(fulldsmash)<=1
 attr = S, NA
 animtype  = up
 air.animtype = up
-damage = ceil(cond(fvar(11) *(51+map(smashattack)) < 4+(map(smashattack)/10), 4+(map(smashattack)/10), fvar(11) * (51+map(smashattack)))), 7
+damage = ceil(cond(fvar(11) *(40+map(smashattack)) < 4+(map(smashattack)/10), 4+(map(smashattack)/10), fvar(11) * (51+map(smashattack)))), 7
 hitflag = MAFD
 guardflag = LA
 pausetime = 12,12

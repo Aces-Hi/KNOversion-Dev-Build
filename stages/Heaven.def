@@ -122,13 +122,13 @@ mask = 1
 [bg Crowd]
 type = normal
 spriteno = 9,8
-start = -700, 100
+start = -650, 100
 delta = .6,.6
 tile = 1,0
 mask = 1
 sin.y=4,800,0
 tilespacing = 1000,0
-velocity = .1, 0
+velocity = .15, 0
 
 [bg tree]
 type = normal
@@ -158,7 +158,7 @@ tile = 1,0
 mask = 1
 sin.y=-7,800,0
 tilespacing = 1000,0
-velocity = -.08, 0
+velocity = -.15, 0
 
 [BG Heaven]
 type  =normal
@@ -190,7 +190,7 @@ delta = .82,.82
 tile = 1,0
 mask = 1
 sin.y=7,1300,0
-velocity = .07, 0
+velocity = .1, 0
 tilespacing = 1000,0
 
 [bg Purple]
@@ -201,8 +201,8 @@ delta = .85,.85
 tile = 1,0
 mask = 1
 sin.y=-8,400,0
-velocity = -.3, 0
-tilespacing = 1500,0
+velocity = -.35, 0
+tilespacing = 1000,0
 
 [bg Big Cloud]
 type = normal
@@ -222,7 +222,7 @@ delta = .95,.95
 tile = 1,0
 tilespacing = 1000,0
 mask = 1
-velocity = .2, 0
+velocity = .25, 0
 sin.y=-5,500,0
 
 [bg Cyan]
@@ -233,7 +233,7 @@ delta = .95,.95
 tile = 1,0
 mask = 1
 tilespacing = 1000,0
-velocity = .2, 0
+velocity = .25, 0
 sin.y=5,500,0
 
 [bg Green]
@@ -244,7 +244,7 @@ delta = 1,1
 tile = 1,0
 mask = 1
 sin.y=-5,200,0
-velocity = -.7, 0
+velocity = -.75, 0
 tilespacing = 3000,0
 [bg Yellow]
 type = normal
@@ -254,7 +254,7 @@ delta = 1,1
 tile = 1,0
 mask = 1
 sin.y=5,200,0
-velocity = -.7, 0
+velocity = -.75, 0
 tilespacing = 3000,0
 
 [BG Heaven]
@@ -280,13 +280,13 @@ mask = 1
 [bg Lesbiabs]
 type = normal
 spriteno = 9,1
-start = -1200, 130
+start = -1100, 130
 delta = 1,1
 tile = 1,0
 mask = 1
-velocity = .4, 0
+velocity = .45, 0
 sin.y=4,300,0
-tilespacing = 1500,0
+tilespacing = 1000,0
 
 [Begin Action 1]
 6,0, 0,0, 10

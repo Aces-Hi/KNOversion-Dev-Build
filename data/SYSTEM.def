@@ -215,64 +215,48 @@ bgclearcolor = 0,0,0
 
 [TitleBG 2]
 type  = normal
-spriteno = 5,0
+spriteno = 7,0
 start = 0, 0
 tile = 1,2
 velocity = 0
 mask = 0
 
-[TitleBG 1]
-type = normal
-spriteno=1,1
-start = 0,145
-tile = 1,1
-velocity = 0.1,0.1
-TRANS=add
-
-[TitleBG Sun]
+[TitleBG 2]
 type  = normal
-spriteno = 8,0
-start = 0, 145
-mask=1
-trans=add
-[TitleBG 1]
-type = normal
-spriteno=1,0
-actionno=1
-start = 0,180
-mask = 1
-TRANS=add
-[TitleBG Sun]
+spriteno = 7,4
+start = 0, 0
+tile = 1,2
+velocity=-.2,0
+mask = 0
+
+[TitleBG 2]
 type  = normal
-spriteno = 8,1
-start = 0, 145
-mask=1
+spriteno = 7,3
+start = 0, 0
+tile = 1,2
+velocity = 0
+mask = 0
 
 
-[TitleBG 1] ; Floor
-type  = parallax
-spriteno = 4,1
-start = 32.5,145
-delta = .25, 1;.25, .35
-tile = 1, 1
-velocity=-0.4,0
-yscalestart = 150
-tilespacing = 0, 0
-width = 65, 330
-;yscalestart = 100
-[TitleBG 1] ; Floor
-type  = parallax
-spriteno = 4,2
-start = 32.5,145
-delta = .25, 1;.25, .35
-tile = 1, 0
-velocity=0,0
-yscalestart = 150
-tilespacing = 0, 0
-width = 65, 330
-mask=1
-;yscalestart = 100
-; 0
+[TitleBG 2]
+type  = normal
+spriteno = 7,2
+start = 0, 0
+tile = 1,2
+velocity = 0
+mask = 0
+sin.x=-10,2000,0
+sin.y=12,4000,0
+
+[TitleBG 2]
+type  = normal
+spriteno = 7,1
+start = 0, 0
+tile = 1,2
+velocity = 0
+mask = 0
+sin.x=10,2500,0
+sin.y=-12,4500,0
 
 [TitleBG 1]
 type  = normal
@@ -280,6 +264,14 @@ spriteno = 5, 2
 start = -160, 145
 trans = sub
 
+[TitleBG 0]
+type  = normal
+spriteno = 7,5
+scale = 0.5, 0.5
+start = 0, -30
+tile = 0, 1
+velocity = 0, -0.15
+mask = 1
 
 [TitleBG 3]
 type  = anim
@@ -290,7 +282,6 @@ type  = normal
 spriteno = 0,0
 start = 0, 0
 mask = 0
-
 
 ;-------------------------------------------------------------------
 ;Character select definition
@@ -540,13 +531,67 @@ teammenu.itemname.ratio =    ;Ikemen feature
 [SelectBGdef]
 ;spr = graphics/selectbg.sff  ;Filename of sprite data
 
-[SelectBG 0] ;Scrolling background
+[SelectBG 2]
 type  = normal
-spriteno = 100,0
-layerno = 0
-start = 0,0
-tile  = 0,0
+spriteno = 5,0
+start = 0, 0
+tile = 1,2
+velocity = 0
+mask = 0
 
+[SelectBG 1]
+type = normal
+spriteno=1,1
+start = 0,145
+tile = 1,1
+velocity = 0.1,0.1
+TRANS=add
+
+[SelectBG Sun]
+type  = normal
+spriteno = 8,0
+start = 0, 110
+mask=1
+trans=add
+[SelectBG 1]
+type = normal
+spriteno=1,0
+actionno=1
+start = 0,145
+mask = 1
+TRANS=add
+[SelectBG Sun]
+type  = normal
+spriteno = 8,1
+start = 0, 110
+mask=1
+
+
+
+[SelectBG 1] ; Floor
+type  = parallax
+spriteno = 4,1
+start = 32.5,110
+delta = .25, 1;.25, .35
+tile = 1, 1
+velocity=-0.4,0
+yscalestart = 150
+tilespacing = 0, 0
+width = 65, 330
+;yscalestart = 100
+[SelectBG 1] ; Floor
+type  = parallax
+spriteno = 4,2
+start = 32.5,110
+delta = .25, 1;.25, .35
+tile = 1, 0
+velocity=0,0
+yscalestart = 150
+tilespacing = 0, 0
+width = 65, 330
+mask=1
+;yscalestart = 100
+; 0
 
 [SelectBG 1] ;Dark box
 type  = normal
@@ -629,7 +674,7 @@ type  = normal
 spriteno = 100,2
 start = 0,0
 tile  = 1,1
-velocity = 0,1.5
+velocity = 0,0
 
 [VersusBG 2] ;VS Screen
 type  = normal

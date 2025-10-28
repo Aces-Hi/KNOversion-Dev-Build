@@ -1549,6 +1549,14 @@ ignorehitpause = 1
 [State 0, VarAdd]
 type = MapSet
 trigger1 = combocount=0
+map = "supergrab"
+value = 0
+ignorehitpause = 1
+;persistent = 
+
+[State 0, VarAdd]
+type = MapSet
+trigger1 = combocount=0
 map = "scoop"
 value = 0
 ignorehitpause = 1

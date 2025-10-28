@@ -4575,7 +4575,24 @@ physics = S
 ctrl = 0
 sprpriority = 1
 velset = 0,0
-poweradd=2000
+poweradd=1000
+
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv =13     ;fv = 
+value = 1.5
+
+
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 1
+ignorehitpause = 1
+persistent = 0
+
 
 ;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ;Shadow Override
@@ -4681,7 +4698,7 @@ guard.hittime = 28
 guard.ctrltime = 19
 guard.slidetime = 18
 forcenofall=1
-getpower = (100)*(cond(var(var(2)) = 1, 1, 1))
+getpower = 0
 P2STATENO=cond(combocount = 0, 6150,5070)
 P2GETP1STATE=0
 

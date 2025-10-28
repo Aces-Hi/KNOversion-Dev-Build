@@ -4699,7 +4699,7 @@ fall = 1
 [State 0]
 type = MapSet
 trigger1 = time=0
-map="sgrab"
+map="supergrab"
 value=1
 ignorehitpause = 1
 
@@ -5064,6 +5064,7 @@ shadow = 0,0,0
 ownpal = 0
 removeongethit = 0
 ignorehitpause =1
+removeonchangestate=1
 [State 0, RemoveExplod]
 type = RemoveExplod
 trigger1 = animelem=8

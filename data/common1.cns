@@ -2047,7 +2047,7 @@ juggle  = 0
 poweradd= -1000
 ctrl = 0
 anim = 9999
-velset = 15
+velset = 12
 
 [State 0, PosSet]
 type = PosSet
@@ -6010,7 +6010,7 @@ ownpal=1
 type = Explod
 triggerall = !numexplod(900)
 triggerall=roundstate=2
-trigger1 = map(burst) = 1 && playerno = 2&&teammode!=tag&&power>=5000
+trigger1 = map(burst) = 1 && playerno = 2&&teammode!=tag&&power>=5000&&gamemode!="training"
 anim =F908
 ID = 900
 pos = -42,21

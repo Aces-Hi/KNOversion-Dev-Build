@@ -4,6 +4,8 @@ drama zooms (will do when i add more shit to put it on)
 make sure 6m doesnt overtake qcf inputs
 1 button tech
 new superko 
+finish recoloring smash fx across the roster
+dont forget the movelists!
 
 eddy
 finish jr animation
@@ -24,8 +26,8 @@ make downback L 2l not 4l
 sahkive
 universal mahoraga
 4s startup
-make it so that if he procs obs while its active it doesnt screen freeze or play sounds
-lose armament on knockdown
+make it so that if he procs obvhaki while its active it doesnt screen freeze or play sounds
+lose armament on hurt
 make sure 6r armament works
 make charge r less safe
 fix float after jumpins hit
@@ -35,6 +37,3 @@ make sure horizon buster is actually a reversal
 
 wu
 reverse divekick
-
-deus
-burst animation lmfao

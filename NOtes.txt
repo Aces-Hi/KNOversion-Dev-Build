@@ -6,3 +6,6 @@ finish jr animation
 
 z
 ball super
+
+roger
+remove install 2l speed spam

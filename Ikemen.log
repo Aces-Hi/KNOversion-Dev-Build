@@ -1,9 +1,11 @@
-external/script/main.lua:713: <game end>
+.\external\script\start.lua:1403: chars\Sahkive/Normals.cns:1740:
+Missing trigger1
 stack traceback:
-	[G]: in function 'refresh'
-	external/script/main.lua:713: in function 'f_refresh'
-	.\external\script\start.lua:2246: in function 'f_selectScreen'
-	.\external\script\start.lua:1421: in function 'f'
+	[G]: in function 'game'
+	.\external\script\start.lua:1403: in function 'f_game'
+	.\external\script\start.lua:1836: in function 'launchFight'
+	external/script/default.lua:2: in function <external/script/default.lua:0>
+	.\external\script\start.lua:1457: in function 'f'
 	external/script/main.lua:3097: in function 'loop'
 	external/script/main.lua:4148: in main chunk
 	[G]: ?

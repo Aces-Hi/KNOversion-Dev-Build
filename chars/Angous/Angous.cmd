@@ -63,6 +63,23 @@ triggerall = power>=1000
 trigger1 = movehit
 trigger1 = stateno!=9969&&stateno!=9971
 ignorehitpause=0
+;RC Jasta Air
+[State -1, RC Jasta Air]
+type = ChangeState
+value = 690001
+triggerall = prevstateno!=[910,914]
+triggerall = stateno!=[910,914]
+triggerall = map(norc)=0
+triggerall=enemy,stateno!=7000
+triggerall = !ishelper
+triggerall = stateno=750
+triggerall = command = "a"
+triggerall = statetype = A
+triggerall = movetype = A
+triggerall = power>=1000
+trigger1 = movehit
+trigger2 = map(zexception)
+ignorehitpause=1
 
 ;True Buster
 [State -1, BH]
@@ -834,6 +851,9 @@ triggerall = command = "y"
 triggerall = command = "holdfwd"
 triggerall = command !="holddown"
 triggerall = command !="holdup"
+triggerall = command != "TripleKFPalm"
+triggerall = command != "QCF"
+triggerall = command != "236x"
 triggerall=stateno!=110
 trigger1 = ctrl
 trigger2 = (stateno = 200) && movecontact ;&& enemynear, movetype = H 

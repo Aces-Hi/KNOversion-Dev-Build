@@ -22,6 +22,16 @@ velset = 0,0
 anim = 2070
 sprpriority = 2
 
+[State 0, NotHitBy]
+type = NotHitBy
+triggerall=enemy,stateno!=900
+triggerall=enemy,stateno!=901
+trigger1 = animelemtime(6)<0
+value = A
+time = 1
+ignorehitpause = 1
+persistent = 1
+
 [State JoJo Voices]
 type = PlaySnd
 trigger1 = animelem=4
@@ -149,6 +159,16 @@ velset = 0,0
 anim = 2071
 sprpriority = 2
 
+[State 0, NotHitBy]
+type = NotHitBy
+triggerall=enemy,stateno!=900
+triggerall=enemy,stateno!=901
+trigger1 = animelemtime(6)<0
+value = A
+time = 1
+ignorehitpause = 1
+persistent = 1
+
 [State JoJo Voices]
 type = PlaySnd
 trigger1 =  movehit
@@ -246,6 +266,46 @@ x = 19
 type = PlaySnd
 trigger1 = animelem = 4
 value = 0,4
+
+;DEATH ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+
+[State 0]
+type = MapAdd
+trigger1 = movehit
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0&&map(DAMN)=2
+trigger1 = enemy,HitShakeOver = 0&&movehit
+time = 1
+mul = 200,200,200
+ignorehitpause = 1
+persistent = 1
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0&&map(DAMN)=3
+trigger1 = enemy,HitShakeOver = 0&&movehit
+time = 1
+mul = 150,150,150
+ignorehitpause = 1
+persistent = 1
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0&&map(DAMN)>3
+trigger1 = enemy,HitShakeOver = 0&&movehit
+time = 1
+mul = 100,100,100
+ignorehitpause = 1
+persistent = 1
+;==============================================================
 
 [State 1110, 3]
 type = HitDef
@@ -1274,7 +1334,7 @@ damage = ceil(cond(fvar(11) *120 < 40, 40, fvar(11) * 120)), 15
 animtype  = Medium
 hitflag = MAFD
 guardflag = HA
-pausetime = 15,15
+pausetime = 25,25
 sparkno = 3
 sparkxy = -10,-50
 hitsound   = 5,4
@@ -1311,7 +1371,7 @@ damage = ceil(cond(fvar(11) *120 < 40, 40, fvar(11) * 120)), 0
 animtype  = Medium
 hitflag = MAFD
 guardflag = HA
-pausetime = 15,15
+pausetime = 25,25
 sparkno = 3
 sparkxy = -10,-50
 hitsound   = 5,4
@@ -1338,7 +1398,53 @@ guard.slidetime = 19
 guard.ctrltime = 27
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 
-
+;DEATH ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+trigger1 = enemy,HitShakeOver = 0&&movehit
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-10
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+trigger1 = enemy,HitShakeOver = 0&&movehit
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-10
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = movehit
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+trigger1 = enemy,HitShakeOver = 0&&movehit
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
 
 [State 0, ChangeState]
 type = ChangeState

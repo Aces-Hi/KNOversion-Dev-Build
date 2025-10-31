@@ -701,8 +701,8 @@ value = 0
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "toss %f stun %f damage %f red %f R %f tst %f djump %f oh %f"
-params = map(toss),fvar(25),fvar(13),map(truth),map(raga),map(TENSHADOWS),map(djump),map(observation)
+text = "toss %f stun %f damage %f red %f R %f tst %f djump %f haki %f"
+params = map(toss),fvar(25),fvar(13),map(truth),map(raga),map(TENSHADOWS),map(djump),map(haki)
 ;ignorehitpause = 
 ;persistent = 
 
@@ -716,7 +716,7 @@ triggerall=teamside=2
 triggerall = GameMode = "Training"
 trigger1 = ctrl = 1
 trigger1 = statetype!=A
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 2
 value = 1050
 ctrl = 0
@@ -726,7 +726,7 @@ triggerall=teamside=2
 triggerall = GameMode = "Training"
 trigger1 = ctrl = 1
 trigger1 = statetype=A
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 2
 value = 650
 ctrl = 0
@@ -736,7 +736,7 @@ triggerall=teamside=2
 triggerall = statetype!=A
 triggerall = GameMode = "Training"
 trigger1 = ctrl = 1
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 3
 value = 3100
 ctrl = 0
@@ -746,7 +746,7 @@ triggerall=teamside=2
 triggerall = statetype!=A
 triggerall = GameMode = "Training"
 trigger1 = ctrl = 1
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 4
 value = 3000
 ctrl = 0
@@ -1433,7 +1433,6 @@ type = MapSet
 triggerall=roundsexisted=0
 triggerall=roundstate<=1
 trigger1 = command = "holds"
-trigger1 = palno=1
 map = "TENSHADOWS"
 value = 1
 ignorehitpause = 1
@@ -1442,7 +1441,8 @@ ignorehitpause = 1
 type = MapSet
 trigger1 = roundstate=0
 trigger2 = map(haki)=1
-trigger2 = stateno!=250&&stateno!=1020&&stateno!=[510,515]&&stateno!=666999&&stateno!=500&&stateno!=650&&stateno!=[1100,1105]
+trigger2 = stateno!=250&&stateno!=1020&&stateno!=[510,515]&&stateno!=666999&&stateno!=500&&stateno!=650&&stateno!=[1100,1105]&&stateno!=300
+trigger3 = movetype=H
 map = "Haki"
 value=0
 persistent=1
@@ -1478,6 +1478,20 @@ trigger1 = map(observation)>0
 map = "observation"
 value = -1
 ignorehitpause = 0
+
+[State 0, VarAdd]
+type = MapSet
+trigger1 = map(observation)>0&&stateno!=1101
+map = "observationactive"
+value = 1
+ignorehitpause = 0
+[State 0, VarAdd]
+type = MapSet
+trigger1 = map(observation)=0
+map = "observationactive"
+value = 0
+ignorehitpause = 0
+
 [State 0, NotHitBy]
 type = NotHitBy
 triggerall = map(observation)>0

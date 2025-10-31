@@ -847,7 +847,7 @@ animtype  = Light
 damage = 750, 0
 hitflag = MAFD
 guardflag = MA
-pausetime = 20,20
+pausetime = 25,25
 sparkno = 2
 sparkxy = -10,-34
 hitsound   = 5,3
@@ -869,6 +869,57 @@ guard.ctrltime = 16
 envshake.time = 30
 envshake.freq = 200
 envshake.ampl = 5
+
+;DEATH ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit&& prevstateno = 10014
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-10
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit&& prevstateno = 10014
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-10
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = movehit
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit&& prevstateno = 10014
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
 
 [State 0, VarAdd]
 type = VarAdd
@@ -5124,7 +5175,7 @@ sprpriority = 2
 type = VelSet
 triggerall = command= "holdfwd"
 trigger1 = time = 0 
-x = 6
+x = 6+cond(map(Install),5,0)
 y =-6
 
 [State 0, AttackDist]
@@ -5619,7 +5670,7 @@ value = 4
 type = VelSet
 triggerall = command= "holdfwd"
 trigger1 = time = 0 
-x = 5
+x = 5+cond(map(Install),5,0)
 y =-6
 
 [State 0, StateTypeSet]
@@ -6317,7 +6368,7 @@ physics = A
 juggle  = 2
 ctrl = 0
 anim =1099
-velset = 3,-3
+velset = 3+cond(map(Install),3,0),-3
 sprpriority = 2
 
 
@@ -6390,7 +6441,7 @@ juggle  = 2
 poweradd= -1000
 ctrl = 0
 anim =1101
-velset = 3.3,-3
+velset = 3.3+cond(map(Install),3,0),-3
 sprpriority = 2
 
 
@@ -6685,7 +6736,7 @@ x = 7
 [State 0, VelSet]
 type = VelSet
 trigger1 = animelem = 5
-x = 7
+x = 7+cond(map(Install),4,0)
 
 [State 0, ChangeState]
 type = ChangeState
@@ -6703,7 +6754,7 @@ poweradd= 0
 ctrl = 0
 anim =1301
 sprpriority = 2
-velset = 9,0
+velset = 10+cond(map(Install),4,0),0
 
 [State Meter Burn State, VarSet]
 type = VarSet
@@ -6846,7 +6897,7 @@ physics = N
 ctrl = 0
 anim =1301
 sprpriority = 2
-velset = 7,0
+velset = 7+cond(map(Install),4,0),0
 
 [State 0, PlaySnd] ;ISN'T THIS
 type = PlaySnd
@@ -7015,7 +7066,7 @@ physics = N
 ctrl = 0
 anim =1301
 sprpriority = 2
-velset = -7,0
+velset = -7-cond(map(Install),4,0),0
 
 [State 0, Turn]
 type = Turn
@@ -7398,7 +7449,7 @@ x = 7
 [State 0, VelSet]
 type = VelSet
 trigger1 = animelem = 5
-x = 7
+x = 7+cond(map(Install),4,0)
 
 [State 0, ChangeState]
 type = ChangeState
@@ -7420,7 +7471,7 @@ poweradd= 0
 ctrl = 0
 anim =1301
 sprpriority = 2
-velset = 10,0
+velset = 10+cond(map(Install),4,0),0
 
 [State 0, AttackDist]
 type = AttackDist
@@ -7584,7 +7635,7 @@ poweradd= (100)*(cond(var(var(2)) = 1, 1, 1))
 ctrl = 0
 anim =1301
 sprpriority = 2
-velset = 7,0
+velset = 7+cond(map(Install),4,0),0
 
 [State RogerVoice]
 type = PlaySnd

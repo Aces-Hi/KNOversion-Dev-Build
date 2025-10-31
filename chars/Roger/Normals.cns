@@ -4,9 +4,13 @@ movetype= A                      ;Move-type: A-attack, I-idle, H-gethit
 physics = S                      ;Physics: S-stand, C-crouch, A-air
 juggle = 0 ;  = 1                      ;Number of air juggle = 0 ; points move takes
 ;Commonly-used controllers:
-velset = 0,0                     ;Set velocity (x,y) (Def: no change)
 ctrl = 0                         ;Set ctrl (Def: no change)                 
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
+
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = time=0
+x =cond(map(Install),3,0)
 
 [State 200, VarAdd]
 type = VarAdd
@@ -113,9 +117,13 @@ movetype= A                      ;Move-type: A-attack, I-idle, H-gethit
 physics = S                      ;Physics: S-stand, C-crouch, A-air
 juggle = 0 ;  = 1                      ;Number of air juggle = 0 ; points move takes
 ;Commonly-used controllers:
-velset = 0,0                     ;Set velocity (x,y) (Def: no change)
 ctrl = 0                         ;Set ctrl (Def: no change)
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
+
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = time=0
+x =cond(map(Install),3,0)
 
 [State 0, VarAdd]
 type = VarAdd
@@ -232,8 +240,12 @@ movetype= A
 physics = S
 juggle = 0 ;  = 4
 ctrl = 0
-velset = 0,0
 sprpriority = -1
+
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = time=0
+x =cond(map(Install),4,0)
 
 [State 200, VarAdd]
 type = VarAdd
@@ -366,7 +378,6 @@ movetype= A
 physics = S
 juggle = 0 ;  = 4
 ctrl = 0
-velset = 0,0
 sprpriority = -1
 
 [State 0, VarAdd]
@@ -485,8 +496,8 @@ movetype= A
 physics = S
 juggle = 0 ;  = 4
 ctrl = 0
-velset = 0,0
 sprpriority = -1
+
 
 [State 0, PlaySnd]
 type = PlaySnd
@@ -553,7 +564,7 @@ persistent = 1
 [State 0, VelSet]
 type = VelSet
 trigger1 = animelem = 5
-x = 5.6
+x = 5.6+cond(map(Install),7,0)
 
 [State 0, VarSet]
 type = VarSet
@@ -616,7 +627,7 @@ trigger1 = prevstateno!=666999
 time = 20
 add = 150,100,0
 mul = 256,256,256
-sinadd = 150,100,0,30
+sinadd = 150,100,0,40
 invertall = 0
 color = 256
 
@@ -891,6 +902,11 @@ juggle = 0 ;  = 5
 ctrl = 0
 sprpriority = 2
 
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = time=0
+x =cond(map(Install),3,0)
+
 [State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
@@ -997,6 +1013,11 @@ physics = C
 juggle = 0 ;  = 6
 ctrl = 0
 sprpriority = 2
+
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = time=0
+x =cond(map(Install),4,0)
 
 [State 0, VarAdd]
 type = VarAdd
@@ -1149,6 +1170,11 @@ physics = C
 juggle = 0 ;  = 6
 ctrl = 0
 sprpriority = 2
+
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = time=0
+x =cond(map(Install),4,0)
 
 [State 0, VarAdd]
 type = VarAdd
@@ -1314,9 +1340,14 @@ time = 1
 ignorehitpause = 1
 persistent = 1
 
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = time=0
+x =1+cond(map(Install),4,0)
+
 [State 0, VelSet]
 type = VelSet
-trigger1 = time = 0
+trigger1 = time = 0&&map(install)=0
 x = 1
 
 [State 0, VarSet]
@@ -1530,13 +1561,9 @@ value = 0, 0
 type = PlaySnd
 trigger1 =ANIMELEM=6
 value = 5, 2
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 2
-x = 9
-y = 0
-;ignorehitpause = 
-;persistent = 
+
+
+
 [State 0, EnvShake]
 type = EnvShake
 trigger1 = animelem = 6
@@ -1587,10 +1614,9 @@ ownpal = 0
 removeongethit = 0
 
 [State 0, VelSet]
-type = VelSet
+type = VelAdd
 trigger1 = animelem = 2
-x = 4.35
-
+x = 4.35+cond(map(Install),7,0)
 
 [State 430, 2]
 type = HitDef 
@@ -1973,7 +1999,7 @@ y = -6
 type = VelSet
 trigger1 = animelem = 7
 x = 0
-y = 7.5
+y = 9
 
 [State 200, VarAdd]
 type = VarAdd
@@ -2038,13 +2064,13 @@ elem = 2
 [State 0, VelSet]
 type = VelAdd
 triggerall = animelemtime(5)<0&&command="hold_z"&&animelemtime(2)>=0
-trigger1 = command="holdfwd"&&vel x < 4
-x = .5
+trigger1 = command="holdfwd"&&vel x < 4+cond(map(Install),1,0)
+x = .5+cond(map(Install),2,0)
 [State 0, VelSet]
 type = VelAdd
 triggerall = animelemtime(5)<0&&command="hold_z"&&animelemtime(2)>=0
-trigger1 = command="holdback"&&vel x > -4
-x = -.5
+trigger1 = command="holdback"&&vel x > -4-cond(map(Install),1,0)
+x = -.5-cond(map(Install),2,0)
 
 [State 0, HitOverride]
 type = HitOverride
@@ -2267,9 +2293,8 @@ value = 1
 [Statedef 500]
 type    = S
 movetype=A
-physics = N
+physics = S
 poweradd = 0
-velset = 0,0
 ctrl = 0
 sprpriority = 2
 anim = 500
@@ -2745,7 +2770,7 @@ ctrl = 1
 [Statedef 505]
 type    = S
 movetype=A
-physics = N
+physics = S
 poweradd = 0
 velset = 0,0
 ctrl = 0
@@ -3218,9 +3243,8 @@ trigger1 = animtime = 0
 [Statedef 550]
 type    = S
 movetype= I
-physics = N
+physics = S
 juggle = 0 ;  = 2
-velset = 0,0
 ctrl = 0
 sprpriority = 2
 
@@ -4014,7 +4038,7 @@ animtype  = Light
 damage = ceil(cond(fvar(11) *250 < 100, 100, fvar(11) * 250)),30
 hitflag = MAFD
 guardflag = MA
-pausetime = 15,15
+pausetime = 25,25
 sparkno = 3
 sparkxy = -10,-55
 hitsound   = S8,2
@@ -4053,7 +4077,7 @@ animtype  = Light
 damage = ceil(cond(fvar(11) *250 < 100, 100, fvar(11) * 250)),30
 hitflag = MAFD
 guardflag = MA
-pausetime = 15,15
+pausetime = 25,25
 sparkno = 3
 sparkxy = -10,-55
 hitsound   = S8,2
@@ -4094,7 +4118,7 @@ animtype  = Light
 damage = ceil(cond(fvar(11) *250 < 100, 100, fvar(11) * 250)),30
 hitflag = MAFD
 guardflag = MA
-pausetime = 26,26
+pausetime = 25,25
 sparkno = 3
 sparkxy = -10,-55
 hitsound   = S8,2
@@ -4134,7 +4158,7 @@ animtype  = Light
 damage = ceil(cond(fvar(11) *250 < 100, 100, fvar(11) * 250)),30
 hitflag = MAFD
 guardflag = MA
-pausetime = 26,26
+pausetime = 25,25
 sparkno = 3
 sparkxy = -10,-55
 hitsound   = S8,2
@@ -4164,7 +4188,56 @@ ground.cornerpush.veloff = -30
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 
 
-
+;DEATH ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-10
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-10
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = movehit
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
 
 [State 0, VarSet]
 type = VarAdd
@@ -4201,9 +4274,8 @@ ctrl = 1
 [Statedef 560]
 type    = S
 movetype=A
-physics = N
+physics = S
 juggle = 0
-velset = 0,0
 ctrl = 0
 sprpriority = 2
 anim = 550
@@ -5074,7 +5146,7 @@ physics = A         ;A,C,S,N
 [State 0, VelSet]
 type = VelSet
 trigger1 = animelem = 3
-x = 2.2
+x = 2.2+cond(map(Install),3,0)
 y = -6
 
 [State 0, StateTypeSet]
@@ -5327,7 +5399,7 @@ ignorehitpause = 1
 [State 0, ChangeState]
 type = ChangeState
 trigger1 = map(gcounter)=0
-trigger1 = time<=12 && target, command = "throwtech"
+trigger1 = time<=10 && target, command = "techthrow"
 value = 820
 ctrl = 0
 

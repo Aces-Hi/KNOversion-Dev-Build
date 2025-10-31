@@ -408,7 +408,7 @@ ground.hittime  = 17
 ground.velocity = -0.5,-1
 fall.xvelocity = -2
 fall.yvelocity = -3
-air.velocity = -3,0.1
+air.velocity = -2,0
 down.velocity = -3,0.1
 air.hittime = 34
 fall = 1
@@ -471,7 +471,7 @@ attr = S, HP
 damage = ceil(cond(root,fvar(11) *175 < 33, 33, root,fvar(11) * 175)), 2
 hitflag = MAFDP
 guardflag = MA
-pausetime = 23,23
+pausetime = 25,25
 sparkno = 13
 guard.sparkno = 40
 sparkxy = 0,-40
@@ -487,15 +487,65 @@ guard.ctrltime = 12
 guard.hittime = 12
 guard.slidetime = 16
 guard.velocity = -6
-ground.velocity = -6,-2
+ground.velocity = -6,-2.5
 fall.xvelocity = -2
 fall.yvelocity = 0
-air.velocity = -6,-1
+air.velocity = -6,-2.5
 p2sprpriority = 1
 p1sprpriority = 4
 p2facing = 1
 getpower = 0
 guard.dist=0
+
+;DEATH ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+trigger1 = enemy,HitShakeOver = 0&&movehit
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-10
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+trigger1 = enemy,HitShakeOver = 0&&movehit
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-10
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = movehit
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+trigger1 = enemy,HitShakeOver = 0&&movehit
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
+
+
 [State 0, Explod]
 type = Explod
 trigger1 = time = 0
@@ -1505,7 +1555,7 @@ air.animtype = back
 damage = ceil(cond(root,fvar(11) * 100 < 10, 10, root,fvar(11) * 100)),20
 hitflag = MAFD
 guardflag = MA
-pausetime = 18,18
+pausetime = 25,25
 sparkno = 3
 sparkxy = -10,-60
 hitsound   = 5,3
@@ -1537,6 +1587,54 @@ getpower = 0
 p2facing = 1
 fall.yvelocity=0
 p2stateno = 30000
+
+;DEATH ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+trigger1 = enemy,HitShakeOver = 0&&movehit
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-10
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+trigger1 = enemy,HitShakeOver = 0&&movehit
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-10
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = movehit
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+trigger1 = enemy,HitShakeOver = 0&&movehit
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
 
 ;=======================================
 [State 0, PlaySnd]

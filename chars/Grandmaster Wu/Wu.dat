@@ -2,15 +2,15 @@
 
 	<#c63d3d>UNIQUE TRAIT: SPIRITUAL CHARGE</>
 	Wu has a powered-up form that he can access by using
-	any EX Move or any Super Move. While he's charged,
-	all of his special moves are more powerful and have enhanced properties. 
+	any Remix Move. While he's charged, all of his special moves
+	are more powerful and have enhanced properties. 
 	He loses his charge whenever he gets knocked down.
 
 	<#c63d3d>UNIQUE MOVES</>
 DIVEKICK	-		<#65b5ff>(AIR ONLY)</> _D^B
+DIVEKICK R	-		<#65b5ff>(AIR ONLY)</> _DB^B
 DOUBLE KICK	-		_F^C
 DUST KICK	-		_DF^C
-
 
 
 
@@ -48,12 +48,12 @@ RISING MASTER	-		_D^Y
 _D	_D		_D
 
 	<#c63d3d>REMIX MOVES</>
-ASTRAL KICK	-		^Z
-ASTRAL PALM	-		_F^Z
-ASTRAL VOLLEY	-		_B^Z
-ASTRAL DIVE	-		_D^Z
-
-
+ASTRAL KICK	-		(CAN BE HELD) ^Z
+   <#bbbbbb>While holding ^Z, Wu can input any direction to fly.
+   This applies to all of his Remix moves.</>
+ASTRAL PALM	-		(CAN BE HELD) _F^Z
+ASTRAL VOLLEY	-		(CAN BE HELD) _B^Z
+ASTRAL DIVE	-		(CAN BE HELD) _D^Z
 
 
 
@@ -125,24 +125,24 @@ OVERHEAD	-		_F^B
 ANTI-AIR	-		_D^C
    <#bbbbbb>This move has invulnerability to airborne enemies.</>
 GRAB	-		ANY 2 NORMALS </>
-   <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.</>
-FORCE BLOCK (WHILE BLOCKING)	-		<#55ffff>(1/4 BAR)</> _B^X
+   <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.
+   Enemies can break this by pressing ^A/^B/^C.</>
+FORCE BLOCK (WHILE BLOCKING)	-		<#55ffff>(1 BAR)</> _B^X
    <#bbbbbb>Can push the enemy backwards while you block.</>
-RECOIL GUARD (WHILE BLOCKING)	-		<#55ffff>(2 BARS)</> _F^X
-   <#bbbbbb>A fullscreen-ranged reversal that knocks the
-   enemy down and beats projectiles. Refunds 1 BAR on hit.</>
+NO PARRY	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _F^X
+   <#bbbbbb>A reversal option that gives you the advantage
+   if the enemy hits you. Refunds 1 BAR on hit.</>
 RECORD SCRATCH (WHILE ATTACKING)		<#55ffff>(1 BAR/2 BARS ON BLOCK)</> ^X
    <#bbbbbb>Can be used to instantly cancel most attacks.</>
 BURST (WHILE GETTING HIT)	-		^X+^A/^B/^C
    <#bbbbbb>A large reversal that can be used while you're getting hit.</>
-PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(4 BARS)</> ^X+^A/^B/^C
+PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(5 BARS)</> ^X+^A/^B/^C
    <#bbbbbb>An extra burst that can be used in an emergency.</>
-   <#ff0000>Using this PERMANENTLY limits your meter to a max of 1 BAR
+   <#ff0000>Using this PERMANENTLY lowers your max meter
    for the rest of the game.</>
 
-
 _D	_D		_D
- 
+
 	2V2 MODE
 SWITCH CHARACTERS	-		ASSIST </>
 ACTIVE SWITCH (WHILE ATTACKING)	-		<#55ffff>(2 BARS)</>ASSIST </>

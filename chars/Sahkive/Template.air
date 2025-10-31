@@ -1,4 +1,4 @@
-eqeeeqqqeqqqeqzzqeeq1qqqqqeqqqqqeeeqqqeeeeeeeeqczzeqeqeeeqdzzzzzzzzzzz31011,,klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
+qeqeeeqqqeqqqeqzzqeeq1qqqqqeqqqqqeeeqqqeeeeeeeeqczzeqeqeeeqdzzzzzzzzzzz31011,,klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
 ..,......,,,...j,,,./..kl,,----..,,.,,,,,,,,,,,.; KFM's animation data
 ; see docs/air.txt for more information
 
@@ -1295,16 +1295,16 @@ Clsn2Default: 2
 100,1, 0,0, 2
 Clsn2: 1
   Clsn2[0] = -70, -104, 37, 0
-100,2, 0,0, 3, , AS100D100
+100,2, 0,0, 3
 Clsn2: 1
   Clsn2[0] = -70, -104, 37, 0
-100,3, 0,0, 4, , AS100D100
+100,3, 0,0, 4
 Clsn2: 1
   Clsn2[0] = -70, -104, 37, 0
-100,4, 0,0, 3, , AS100D100
+100,4, 0,0, 3
 Clsn2: 1
   Clsn2[0] = -43, -104, 37, 0
-100,5, 0,0, 6, , AS100D100
+100,5, 0,0, 6
 
 ; 4R Dash
 [Begin Action 652]
@@ -1929,15 +1929,15 @@ Clsn2: 1
 [Begin Action 1040]
 Clsn2Default: 1
   Clsn2[0] = -19, -105, 22, 1
-1040,0, 0,0, 4
+1040,0, 0,0, 2
 Clsn2: 2
   Clsn2[0] = -39, -102, 19, -62
   Clsn2[1] = -14, -61, 30, 1
-1040,1, -5,0, 4
+1040,1, -5,0, 3
 Clsn2: 2
   Clsn2[0] = -39, -102, 19, -62
   Clsn2[1] = -14, -61, 30, 1
-1040,2, -8,0, 4
+1040,2, -8,0, 3
 Clsn2: 3
   Clsn2[0] = -11, -83, 14, -56
   Clsn2[1] = -20, -68, 6, -34

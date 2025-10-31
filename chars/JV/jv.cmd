@@ -316,6 +316,9 @@ triggerall = command = "y"
 triggerall = command = "holdfwd"
 triggerall = command !="holddown"
 triggerall = command !="holdup"
+triggerall = command != "TripleKFPalm"
+triggerall = command != "QCF"
+triggerall = command != "236x"
 trigger1 = ctrl
 trigger2 = (stateno = 200) && movecontact ;&& enemynear, movetype = H
 trigger3 = (stateno = 210) && movecontact ;&& enemynear, movetype = H

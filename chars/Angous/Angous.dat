@@ -24,10 +24,8 @@ MOVE THE GROUND	-		(HOLD)_D^C
 _D	_D		_D
 
 	<#790909>SPECIAL MOVES</>
-RAGE WAVE	-		(CAN BE HELD) ^Y
+RAGE WAVE	-		(CAN BE HELD)<#aaffff>(GROUND OR AIR)</> ^Y
    <#bbbbbb>Fires a multi-hitting projectile when fully held.</>
-METEOR DIVE	-		<#65b5ff>(AIR ONLY)</> ^Y
-   <#bbbbbb>This move cannot be blocked by airborne enemies.</>
 BRAWLER RUSH	-		_F^Y
    <#bbbbbb>On hit, it can be canceled into other specials, or _F^Z, or _B^Z.</>
 _!UPPER RUSH	-		_F^Y
@@ -45,6 +43,8 @@ DEMOLITION RUSH <#ff0000>(RAGE)</>	-		(CAN BE HELD) _DF^Y
    <#bbbbbb>Has armor, and causes a wall bounce when held.</>
 
 
+
+
 _D	_D		_D
 
 	<#790909>REMIX MOVES</>
@@ -56,7 +56,7 @@ FADE	-		(CAN BE HELD) _F^Z
 _!OUT	-		(CAN BE HELD) ^A
 _!IN	-		(CAN BE HELD) ^B
 _!THROUGH	-		(CAN BE HELD) ^C
-        <#bbbbbb>This move ignores projectiles.</>
+        <#bbbbbb>This move crumples on counter-hit and ignores projectiles.</>
 RAW POWER	-		_B^Z
    <#bbbbbb>A slow, unblockable attack with armor.</>
 _!CANCEL	-		(BEFORE IT HITS) _F_F/_B_B
@@ -72,9 +72,7 @@ FLYING FIST <#ff0000>(RAGE)</>	-		<#65b5ff>(AIR ONLY)</> ^Z
 _D	_D		_D
 
 	<#ffef0f>EX MOVES</>
-_EX RAGE WAVE	-		<#55ffff>(1 BAR)</> ^Y+^Z
-_EX METEOR DIVE	-		<#65b5ff>(AIR ONLY)<#55ffff>(1 BAR)</> ^Y+^Z
-   <#bbbbbb>This move cannot be blocked by airborne enemies.</>
+_EX RAGE WAVE	-		<#aaffff>(GROUND OR AIR)<#55ffff>(1 BAR)</> ^Y+^Z
 _EX BRAWLER RUSH	-		<#55ffff>(1 BAR)</> _F^Y+^Z
    <#bbbbbb>On hit, it can be canceled into other specials, or _F^Z, or _B^Z.</>
 _!_EX UPPER RUSH	-		_F^Y
@@ -90,6 +88,8 @@ _EX UPPER RUSH <#ff0000>(RAGE)</>	-		<#55ffff>(1 BAR)</> _DB^Y+^Z
    canceled into other specials, or _F^Z, or _B^Z.</>
 _EX DEMOLITION RUSH <#ff0000>(RAGE)</>	-		(CAN BE HELD)<#55ffff>(1 BAR)</> _DF^Y+^Z
    <#bbbbbb>Has armor.</>
+
+
 
 
 
@@ -125,22 +125,22 @@ OVERHEAD	-		_F^B
 ANTI-AIR	-		_D^C
    <#bbbbbb>This move has invulnerability to airborne enemies.</>
 GRAB	-		ANY 2 NORMALS </>
-   <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.</>
-FORCE BLOCK (WHILE BLOCKING)	-		<#55ffff>(1/4 BAR)</> _B^X
+   <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.
+   Enemies can break this by pressing ^A/^B/^C.</>
+FORCE BLOCK (WHILE BLOCKING)	-		<#55ffff>(1 BAR)</> _B^X
    <#bbbbbb>Can push the enemy backwards while you block.</>
-RECOIL GUARD (WHILE BLOCKING)	-		<#55ffff>(2 BARS)</> _F^X
-   <#bbbbbb>A fullscreen-ranged reversal that knocks the
-   enemy down and beats projectiles. Refunds 1 BAR on hit.</>
+NO PARRY	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _F^X
+   <#bbbbbb>A reversal option that gives you the advantage
+   if the enemy hits you. Refunds 1 BAR on hit.</>
 RECORD SCRATCH (WHILE ATTACKING)		<#55ffff>(1 BAR/2 BARS ON BLOCK)</> ^X
    <#bbbbbb>Can be used to instantly cancel most attacks.</>
 BURST (WHILE GETTING HIT)	-		^X+^A/^B/^C
    <#bbbbbb>A large reversal that can be used while you're getting hit.</>
-PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(4 BARS)</> ^X+^A/^B/^C
+PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(5 BARS)</> ^X+^A/^B/^C
    <#bbbbbb>An extra burst that can be used in an emergency.</>
-   <#ff0000>Using this PERMANENTLY limits your meter to a max of 1 BAR
+   <#ff0000>Using this PERMANENTLY lowers your max meter
    for the rest of the game.</>
 
- 
 _D	_D		_D
 
 	2V2 MODE

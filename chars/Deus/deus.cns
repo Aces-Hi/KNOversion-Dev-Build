@@ -86,10 +86,10 @@ down.bounce.groundlevel = -4          ;Y-position at which player bouncing off t
 down.friction.threshold = .05     ;If the player's speed drops below this threshold while lying down, stop his movement **MUGEN 1.0**
 
 [Constants]
-StateTagAssistF = 515
-StateTagAssistD = 1036
-StateTagAssistB = 450
-StateTagSuperAssist = 3100
+StateTagAssistB = 1111
+StateTagAssistD = 1200
+StateTagAssistF = 1402
+StateTagSuperAssist = 3000
 StateTagSuperAssist2  = 3000
 MVCIActiveSwitch  = 1
 
@@ -2351,6 +2351,130 @@ ignorehitpause = 1
 persistent = 1
 
 ;give praise and be thankful.
+
+;==================================================================================================
+;TRAINING MODE MASH
+;==================================================================================================
+
+[State 0, ChangeState]
+type = ChangeState
+triggerall=teamside=2
+triggerall = GameMode = "Training"
+trigger1 = ctrl = 1
+trigger1 = statetype!=A
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
+trigger1 = map(_iksys_trainingPunish) = 2
+value = 1700
+ctrl = 0
+[State 0, ChangeState]
+type = ChangeState
+triggerall=teamside=2
+triggerall = GameMode = "Training"
+trigger1 = ctrl = 1
+trigger1 = statetype=A
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
+trigger1 = map(_iksys_trainingPunish) = 2
+value = 1900
+ctrl = 0
+[State 0, ChangeState]
+type = ChangeState
+triggerall=teamside=2
+triggerall = GameMode = "Training"
+trigger1 = ctrl = 1
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
+trigger1 = map(_iksys_trainingPunish) = 3
+value = 3000
+ctrl = 0
+[State 0, ChangeState]
+type = ChangeState
+triggerall=teamside=2
+triggerall = statetype!=A
+triggerall = GameMode = "Training"
+trigger1 = ctrl = 1
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
+trigger1 = map(_iksys_trainingPunish) = 4
+value = 3500
+ctrl = 0
+
+[State 0, ChangeState]
+type = AssertInput
+triggerall=teamside=2
+triggerall = GameMode = "Training"
+triggerall = ctrl = 1
+trigger1 = prevstateno = 5001
+trigger2 = prevstateno = 5011
+trigger3 = prevstateno = 5120
+trigger4 = prevstateno = 5041
+trigger5 = prevstateno = 5201
+trigger6 = stateno = 5041
+trigger7 = stateno = 5201
+triggerall = map(_iksys_trainingMash) = 1
+flag = x
+[State 0, ChangeState]
+type = ChangeState
+triggerall=teamside=2
+triggerall = GameMode = "Training"
+triggerall = statetype!=A
+triggerall = ctrl = 1
+trigger1 = prevstateno = 5001
+trigger2 = prevstateno = 5011
+trigger3 = prevstateno = 5120
+trigger4 = prevstateno = 5041
+trigger5 = prevstateno = 5201
+trigger6 = stateno = 5041
+trigger7 = stateno = 5201
+triggerall = map(_iksys_trainingMash) = 2
+value = 1700
+ctrl = 0
+[State 0, ChangeState]
+type = ChangeState
+triggerall=teamside=2
+triggerall = GameMode = "Training"
+triggerall = statetype=A
+triggerall = ctrl = 1
+trigger1 = prevstateno = 5001
+trigger2 = prevstateno = 5011
+trigger3 = prevstateno = 5120
+trigger4 = prevstateno = 5041
+trigger5 = prevstateno = 5201
+trigger6 = stateno = 5041
+trigger7 = stateno = 5201
+triggerall = map(_iksys_trainingMash) = 2
+value = 1900
+ctrl = 0
+[State 0, ChangeState]
+type = ChangeState
+triggerall=teamside=2
+triggerall = GameMode = "Training"
+triggerall = ctrl = 1
+trigger1 = prevstateno = 5001
+trigger2 = prevstateno = 5011
+trigger3 = prevstateno = 5120
+trigger4 = prevstateno = 5041
+trigger5 = prevstateno = 5201
+trigger6 = stateno = 5041
+trigger7 = stateno = 5201
+triggerall = map(_iksys_trainingMash) = 3
+value = 3000
+ctrl = 0
+[State 0, ChangeState]
+type = ChangeState
+triggerall=teamside=2
+triggerall = GameMode = "Training"
+triggerall = statetype!=A
+triggerall = ctrl = 1
+trigger1 = prevstateno = 5001
+trigger2 = prevstateno = 5011
+trigger3 = prevstateno = 5120
+trigger4 = prevstateno = 5041
+trigger5 = prevstateno = 5201
+trigger6 = stateno = 5041
+trigger7 = stateno = 5201
+triggerall = map(_iksys_trainingMash) = 4
+value = 3500
+ctrl = 0
+
+;==================================================================================================
 
 [State 0, Pause]
 type = Pause

@@ -389,7 +389,7 @@ animtype  = hard
 air.animtype = back               ;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA                   ;Flags on how move is to be guarded against
 hitflag = MAFDP                    ;Flags of conditions that move can hit
-pausetime = 10, 10               ;Time attacker pauses, time opponent shakes
+pausetime = 25, 25               ;Time attacker pauses, time opponent shakes
 sparkno = 13
 sparkxy = 0,ceil(p2dist y-55);-10-random%20,-random%20            ;X-offset for the "hit spark" rel. to p2,
 hitsound = 5,2                
@@ -423,6 +423,57 @@ palfx.add=0,0,0
 palfx.sinadd=256,256,256,10
 palfx.time=32
 p2facing = 1
+
+;DEATH ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit&&animelemtime(1)>=0&&animelemtime(2)<0&&anim=3002
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-50
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit&&animelemtime(1)>=0&&animelemtime(2)<0&&anim=3002
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-50
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = animelem=2&&anim=3002
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit&&animelemtime(1)>=0&&animelemtime(2)<0&&anim=3002
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
 
 [State 1006, Shock Particles]
 type = Helper
@@ -920,6 +971,57 @@ palfx.add=0,0,0
 palfx.sinadd=256,256,256,10
 palfx.time=32
 
+;DEATH ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit&&animelemtime(1)>=0&&animelemtime(2)<0&&anim=3002
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-50
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit&&animelemtime(1)>=0&&animelemtime(2)<0&&anim=3002
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-50
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = animelem=2&&anim=3002
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit&&animelemtime(1)>=0&&animelemtime(2)<0&&anim=3002
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
+
 [State 1006, Shock Particles]
 type = Helper
 ;trigger1 = !(EnemyNear, SelfAnimExist(7696)) && !(EnemyNear, SelfAnimExist(9010))
@@ -1004,7 +1106,7 @@ trigger1 = movehit
 value = 1
 
 ;---------------------------------------------------------------------------------------------------------------------------------------------
-;LVL4
+;LVL6
 [Statedef 3050]
 type = A 
 movetype = A
@@ -1320,7 +1422,7 @@ trigger1 = pos y >=0
 value = 3069
 ctrl=0
 ;--------------------------------------------------------------------------
-;LVL4 confirm
+;LVL6 confirm
 [Statedef 3051]
 type = A 
 movetype = A
@@ -1748,7 +1850,7 @@ value = 0
 ctrl = 1
 
 ;---------------------------------------------------------------------------
-;LVL4 p2 hit
+;LVL6 p2 hit
 [statedef 3060]
 type = A
 movetype = H
@@ -2371,7 +2473,7 @@ air.animtype = up
 damage = ceil(cond(fvar(11) *300 < 120, 120, fvar(11) * 300)), 5
 hitflag = MAFD
 guardflag = MA
-pausetime = 0,20
+pausetime = 25,45
 sparkno = 99
 sparkxy = -10,-60
 hitsound   = 5,2
@@ -2408,6 +2510,34 @@ palfx.time=32
 getpower = 0
 p2facing=1
 snap=0,-250
+
+;DEATH ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+
+[State 0]
+type = MapAdd
+trigger1 = movehit
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+trigger1 = enemy,HitShakeOver = 0&&anim=3102
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
+
 [State 0, Explod]
 type = Explod
 trigger1 = anim=3102

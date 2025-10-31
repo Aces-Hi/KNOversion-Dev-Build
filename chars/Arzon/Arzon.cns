@@ -471,7 +471,7 @@ triggerall=teamside=2
 triggerall = GameMode = "Training"
 trigger1 = ctrl = 1
 trigger1 = statetype!=A
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 2
 value = 1010
 ctrl = 0
@@ -481,7 +481,7 @@ triggerall=teamside=2
 triggerall = GameMode = "Training"
 trigger1 = ctrl = 1
 trigger1 = statetype=A
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 2
 value = 1430
 ctrl = 0
@@ -491,7 +491,7 @@ triggerall=teamside=2
 triggerall = statetype!=A
 triggerall = GameMode = "Training"
 trigger1 = ctrl = 1
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 3
 value = 3000
 ctrl = 0
@@ -501,7 +501,7 @@ triggerall=teamside=2
 triggerall = statetype!=A
 triggerall = GameMode = "Training"
 trigger1 = ctrl = 1
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 4
 value = 3500
 ctrl = 0

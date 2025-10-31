@@ -1,6 +1,105 @@
 ;---------------------------------------------------------------------------
 
+;------------------------------------------------------------------------------------------
+;Install Bar
+[Statedef 3510]
+type = U
+physics = N
+anim =15999
+ctrl = 0
+sprpriority = 5
 
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = roundstate!=2
+trigger2=root,!alive
+flag = invisible
+persistent=1
+
+[State 0, RemapPal]
+type = RemapPal
+trigger1 = time=0
+source =  1,1
+dest =2,palno
+ignorehitpause = 1
+persistent = 1
+
+[State -2, Explod];Volt Bar Meter
+type = Explod
+triggerall = teamside = 1
+triggerall=root,alive
+;TriggerAll=Root,NumExplod(991901)=0 && Enemy,NumExplod(991901)=0
+trigger1 = !NumExplod(7001)
+anim = 3051
+pos = 21,194
+postype = left
+removetime = -1
+scale = .601,.6
+sprpriority = 0
+id = 7001
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+
+[State -2, Explod];Scaling The Inside Bar
+type =ModifyExplod
+Trigger1=TeamSide=1
+triggerall=root,alive
+trigger1 = NumExplod(7001)
+scale = .6 * Root,Map(Install)/900,.6
+id = 7001
+PauseMoveTime=999999999999
+SuperMoveTime=99999999999999
+ignorehitpause = 1
+
+;p2 side
+[State -2, Explod];Volt Bar Meter
+type = Explod
+triggerall = teamside = 2
+triggerall=root,alive
+;TriggerAll=Root,NumExplod(991901)=0 && Enemy,NumExplod(991901)=0
+trigger1 = !NumExplod(7001)
+anim = 3051
+pos =  -110,194
+;pos = 120,39;13+(root,var(45)),250-(root,var(46))
+postype = right
+removetime = -1
+scale = .601,.6
+sprpriority = 0
+id = 7001
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+
+
+[State -2, Explod];Scaling The Inside Bar
+type =ModifyExplod
+Trigger1=TeamSide=2
+trigger1 = NumExplod(7001)
+scale = .6 * Root,Map(Install)/900,.6
+id = 7001
+PauseMoveTime=999999999999
+SuperMoveTime=99999999999999
+ignorehitpause = 1
+
+[State 0]
+Type=RemoveExplod
+Trigger1 = RoundState != [2,3]
+trigger2 = winko
+trigger3=enemy,name="Angous"
+trigger3 = enemy,stateno = 3016
+trigger4=enemynear,name="Z"
+trigger4 = enemynear,stateno = 3051&&enemynear,anim=3052
+trigger5 = root,stateno = 3051&&root,anim=3052
+trigger6=root,!alive
+ignorehitpause=1
+persistent=1
 
 ;===============================================================================================
 ;===============================================================================================

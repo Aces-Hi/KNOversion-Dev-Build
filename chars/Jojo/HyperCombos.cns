@@ -785,7 +785,7 @@ damage = ceil(cond(fvar(11) *100 < 30, 30, fvar(11) * 100)), 0
 animtype = light
 guardflag = HA
 hitflag = MAFD
-pausetime = 15,15
+pausetime = 25,25
 guard.pausetime = 16,19
 sparkno = 3
 sparkxy = -26, -22
@@ -814,6 +814,57 @@ palfx.color = 0
 palfx.invertall = 1
 p2stateno = 30000
 getpower = 0
+
+;DEATH ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit&&animelemtime(68)>=0&&animelemtime(69)<0
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-10
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit&&animelemtime(68)>=0&&animelemtime(69)<0
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-10
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = animelem=69
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit&&animelemtime(68)>=0&&animelemtime(69)<0
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
 
 [State 200, 3]
 type = ChangeState
@@ -1007,7 +1058,7 @@ animtype  = Up
 damage = ceil(cond(fvar(11) *54< 10, 10, fvar(11) * 54)), 0
 guardflag = MA
 hitflag = MAFD
-pausetime = 10,15
+pausetime = 25,30
 guard.pausetime = 18,18
 sparkxy = 0,-60
 sparkno=2
@@ -1034,6 +1085,57 @@ envshake.phase = 1
 getpower = 0
 fall.yvelocity = -5
 
+;DEATH ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit&&animelemtime(4)>=0&&animelemtime(5)<0&&anim=1003
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-50
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit&&animelemtime(4)>=0&&animelemtime(5)<0&&anim=1003
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-50
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = animelem=5&&anim=1003
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit&&animelemtime(4)>=0&&animelemtime(5)<0&&anim=1003
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
+\
 [State 0, TargetBind]
 type = TargetBind
 trigger1 = movehit = 1

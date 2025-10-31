@@ -2221,7 +2221,7 @@ value =812
 [State 0, ChangeState]
 type = ChangeState
 trigger1 = map(gcounter)=0
-trigger1 = time<=12 && target, command = "throwtech"
+trigger1 = time<=10 && target, command = "techthrow"
 value = 820
 ctrl = 0
 

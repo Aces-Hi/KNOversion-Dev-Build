@@ -1442,7 +1442,7 @@ trigger1 = animelem=1
 time = 20
 add = 150,100,0
 mul = 256,256,256
-sinadd = 150,100,0,30
+sinadd = 150,100,0,40
 invertall = 0
 color = 256
 
@@ -1723,7 +1723,7 @@ trigger1 = animelem=6
 time = 20
 add = 150,100,0
 mul = 256,256,256
-sinadd = 150,100,0,30
+sinadd = 150,100,0,40
 invertall = 0
 color = 256
 
@@ -2152,7 +2152,7 @@ attr = S, NA
 damage = ceil(cond(fvar(11) * 76+var(10)*2 < 30, 30, fvar(11) * 76+var(10)*2)),10+var(10)
 animtype  = Medium
 hitflag = MAFD
-pausetime = 15,15
+pausetime = 25,25
 sparkno = 3
 sparkxy = -10,-5
 hitsound   = 5,4
@@ -2185,7 +2185,7 @@ damage = ceil(cond(fvar(11) * 76+var(10)*2 < 30, 30, fvar(11) * 76+var(10)*2)),1
 animtype  = Medium
 hitflag = MAFD
 guardflag=LA
-pausetime = 15,15
+pausetime = 25,25
 sparkno = 3
 sparkxy = -10,-5
 hitsound   = 5,4
@@ -2208,6 +2208,57 @@ fall.envshake.freq = 0
 fall.envshake.ampl = 0
 fall.yvelocity = 0
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
+
+;DEATH ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit&&time>5&&var(10)>55
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-10
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit&&time>5&&var(10)>55
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-10
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = movehit
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit&&time>5&&var(10)>55
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
 
 [State 0, ChangeState]
 type = ChangeState
@@ -3158,7 +3209,7 @@ pos = 50,0
 [State 0, ChangeState]
 type = ChangeState
 trigger1 = map(gcounter)=0
-trigger1 = time<=12 && target, command = "throwtech"
+trigger1 = time<=10 && target, command = "techthrow"
 value = 820
 ctrl = 0
 
@@ -3871,7 +3922,7 @@ trigger1 = time=7
 time = 20
 add = 150,100,0
 mul = 256,256,256
-sinadd = 150,100,0,30
+sinadd = 150,100,0,40
 invertall = 0
 color = 256
 
@@ -4437,7 +4488,7 @@ trigger1 = time=7
 time = 20
 add = 150,100,0
 mul = 256,256,256
-sinadd = 150,100,0,30
+sinadd = 150,100,0,40
 invertall = 0
 color = 256
 

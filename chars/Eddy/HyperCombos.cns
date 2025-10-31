@@ -532,6 +532,54 @@ envshake.ampl = 4
 envshake.phase = 1
 getpower = 0
 
+;DEATH ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+trigger1 = enemy,HitShakeOver = 0
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-10
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+trigger1 = enemy,HitShakeOver = 0
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-10
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = movehit
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+trigger1 = enemy,HitShakeOver = 0
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
+
 [State 0, VelSet]
 type = VelSet
 trigger1 = animelem = 1
@@ -1090,6 +1138,63 @@ envshake.time = 45
 envshake.freq = 10
 envshake.ampl = 2
 envshake.phase = 1
+
+;DEATH ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+triggerall = enemy,HitShakeOver = 0
+triggerall = movehit&&animelemtime(15)>=0&&animelemtime(16)<0
+trigger1=movecountered=1
+trigger2=var(20)=1
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-70
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+triggerall = enemy,HitShakeOver = 0
+triggerall = movehit&&animelemtime(15)>=0&&animelemtime(16)<0
+trigger1=movecountered=1
+trigger2=var(20)=1
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-70
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = animelem=16
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+triggerall = enemy,HitShakeOver = 0
+triggerall = movehit&&animelemtime(15)>=0&&animelemtime(16)<0
+trigger1=movecountered=1
+trigger2=var(20)=1
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
 
 ;=======================================
 [State 0, PlaySnd]

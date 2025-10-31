@@ -1985,7 +1985,7 @@ ground.hittime  = ceil(cond(fvar(15) *21 < 9, 9, fvar(15) * 21))
 air.hittime  = ceil(cond(fvar(15) *45 < 9, 9, fvar(15) * 45))
 down.hittime = ceil(cond(fvar(15) *45 < 9, 9, fvar(15) * 45))
 ground.velocity = -3
-air.velocity = -2,0;
+air.velocity = -2,-1
 envshake.time = 12
 envshake.freq = 80
 envshake.ampl = 2
@@ -2207,6 +2207,10 @@ sprpriority = 2
 facep2 = prevstateno = [1042,1043]
 velset = 2,-1
 
+[State 0, Turn]
+type = Turn
+trigger1 = time=0&&command="holdback"
+
 [State Wu Voices]
 type = PlaySnd
 trigger1 = time=0
@@ -2323,7 +2327,7 @@ ground.hittime  = ceil(cond(fvar(15) *25 < 9, 9, fvar(15) * 25))
 air.hittime  = ceil(cond(fvar(15) *70 < 9, 9, fvar(15) * 70))
 down.hittime = ceil(cond(fvar(15) *60 < 9, 9, fvar(15) *60))
 ground.velocity = -5
-air.velocity = -2,0.5;cond(ishelper(750), 6, -3)
+air.velocity = -2,-1;cond(ishelper(750), 6, -3)
 ground.cornerpush.veloff = 0
 down.cornerpush.veloff = 0
 air.cornerpush.veloff = 0
@@ -2842,7 +2846,7 @@ value =812
 [State 0, ChangeState]
 type = ChangeState
 trigger1 = map(gcounter)=0
-trigger1 = time<=12 && target, command = "throwtech"
+trigger1 = time<=10 && target, command = "techthrow"
 value = 820
 ctrl = 0
 

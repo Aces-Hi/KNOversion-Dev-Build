@@ -9,13 +9,17 @@ universal
 +pushblock distance
 +backdash recovery
 +aimable drift rc
++1button throw tech
 ~meter mechanics
+-throw tech window
 -pushblock 1 bar
 -no bdc
 -bd invuln
 -panic burst 5 bars
 --recoil guard
 --One vs Many
+/6m rc
+/qcf take prio over 6m
 
 angous
 ++hold jS
@@ -35,6 +39,7 @@ angous
 +EXjS hits overhead
 +EXjS projectile
 +6rH distance
++6rH counter
 ~jS air blockstun
 -jS not air unblockable
 -js landing can be anti-aired
@@ -47,6 +52,7 @@ angous
 roger
 ++va
 ++hold jH
+++qcfS
 +very slight movement on ex5s
 +4r hits skd
 +5r startup
@@ -65,6 +71,7 @@ roger
 -2l sends down
 /M>2M>M>3H
 /js rc doesnt freeze enemies
+/2l takes priority over 4l
 
 eddy
 ++4EX
@@ -74,6 +81,7 @@ eddy
 +j2EX no landing lag in combos
 +6ss crumple
 +3h otg
++rr stagger ch
 /no more super jc
 
 one
@@ -95,23 +103,29 @@ one
 -jH hurtbox
 -j2H hurtbox
 -5sL landing can be anti-aired
+-2s hurtbox
 /fixed jR causing bounce after ono jR
 
 vile
 ++maw of ourobubble
 +2h hitbox
++4h hitbox
 ~5r det sound
 -jM startup
 -jH startup
 -2h hurtbox
 
 wu
+++j1M
 +r float
 +r endlag reduced during combos
 +2h hitbox
 +jH air juggle
++jM air juggle
++j2M air juggle
 ~ANOTHER WU REWORK YES! YES!!!!!
 -r endlag
+-j236x double bounce
 
 arzon
 +2h hitbox
@@ -123,14 +137,21 @@ arzon
 /j5s>2r
 
 jv
+++6H6H
+++6H3H
++665s dc
 +665s launch height
 +66RL launch height
 +6s launch height
 +666s launch height
 +wallbounce height
++2H startup
+-2H movement
+-qcb doesnt start combos/no dc
 
 sahkive
 ++Haki
++mahoraga
 +5r charges faster
 +charge 5r launch height reduced
 +qcb1 damage
@@ -138,10 +159,16 @@ sahkive
 +jR doesnt skd standing
 +jM max air hitstun
 +jH air hitstun when it starts a combo
++4s startup
++EX4s startup
+-5r blockstun
+-charge5r blockstun
 -qcf min damage
 -6r proj invuln
+/fixed float jumpins
 
 jojo
+++j2M
 +2h hitbox
 +successive electrics launch height
 +5l launch height
@@ -151,17 +178,23 @@ jojo
 +5m launch height
 +5mm launch height
 +4m launch height
++4m hitbox
 +5h launch height
 +6h launch height
 +4h launch height
 +2l launch height
 +2m launch height
 +2h launch height
++3h movement
 +jl launch height
 +jm launch height
 +jh launch height on second use
++5s aa
++EWGF aa
++hold r stagger ch
 ~6s anim speed
 ~EX6s anim speed
+~j2H
 -5l gravity
 -5ll gravity
 -5ll extra gravity
@@ -193,6 +226,9 @@ z
 +6s slide
 +ex6s slide
 +ex6s otg
++flight gauge drain
++4s stagger ch
++2h startup
 -236s 6 bars
 -jl hitstun on grounded
 -jm hitstun on grounded

@@ -284,7 +284,7 @@ damage = ceil(cond(parent, fvar(11) *300 < 80, 80, parent,fvar(11) * 300)), 15
 hitflag = MAF
 guardflag = MA
 ;priority = 3
-pausetime = 15,15
+pausetime = 25,25
 sparkno = 3
 sparkxy = random%20,10-random%20
 hitsound   = 5,3
@@ -303,6 +303,53 @@ fall = 1
 envshake.time = 5
 guard.dist=0
 
+;DEATH ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+trigger1 = enemy,HitShakeOver = 0&&movehit
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-10
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+trigger1 = enemy,HitShakeOver = 0&&movehit
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-10
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = movehit
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+trigger1 = enemy,HitShakeOver = 0&&movehit
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
 
 ;=======================================
 [State 0, PlaySnd]
@@ -746,7 +793,7 @@ damage = 111
 hitflag = MAFD
 guardflag = MA
 ;priority = 1
-pausetime = 10,18
+pausetime = 25,25
 sparkno = 3
 sparkxy = 20,-80
 hitsound   = 5,3
@@ -773,6 +820,57 @@ type = PlaySnd
 trigger1 = animelem = 54
 value = 3004, 2
 volumescale=80
+
+;DEATH ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit&&animelemtime(54)>=0&&animelemtime(55)<0
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-10
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit&&animelemtime(54)>=0&&animelemtime(55)<0
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-10
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = animelem=55
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit&&animelemtime(54)>=0&&animelemtime(55)<0
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
 
 ;=======================================
 [State 0, PlaySnd]

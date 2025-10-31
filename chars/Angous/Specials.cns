@@ -653,7 +653,7 @@ trigger1 = time=0
 time = 20
 add = 150,100,0
 mul = 256,256,256
-sinadd = 150,100,0,30
+sinadd = 150,100,0,40
 invertall = 0
 color = 256
 
@@ -2228,7 +2228,7 @@ trigger1 = time = 0
 time = 10
 add = 100,60,0
 mul = 256,256,256
-sinadd = 100,60,0,4
+sinadd = 100,60,0,5
 invertall = 0
 color = 256
 [State 3120, Train]
@@ -5609,7 +5609,7 @@ trigger1 = time=0
 time = 20
 add = 150,100,0
 mul = 256,256,256
-sinadd = 150,100,0,30
+sinadd = 150,100,0,40
 invertall = 0
 color = 256
 
@@ -7232,7 +7232,7 @@ trigger1 = time = 0
 time = 10
 add = 100,60,0
 mul = 256,256,256
-sinadd = 100,60,0,4
+sinadd = 100,60,0,5
 invertall = 0
 color = 256
 [State 3120, Train]
@@ -7924,7 +7924,7 @@ trigger1 = time = 0
 time = 18
 add = 150,100,0
 mul = 256,256,256
-sinadd = 150,100,0,30
+sinadd = 150,100,0,36
 invertall = 0
 color = 256
 
@@ -8026,7 +8026,7 @@ trigger1 = time = 0
 time = 10
 add = 100,60,0
 mul = 256,256,256
-sinadd = 100,60,0,4
+sinadd = 100,60,0,5
 invertall = 0
 color = 256
 [State 3120, Train]
@@ -8430,7 +8430,7 @@ trigger1 = time = 0
 time = 10
 add = 100,60,0
 mul = 256,256,256
-sinadd = 100,60,0,4
+sinadd = 100,60,0,5
 invertall = 0
 color = 256
 [State 3120, Train]
@@ -8617,7 +8617,7 @@ trigger1 = time=0
 time = 20
 add = 150,100,0
 mul = 256,256,256
-sinadd = 150,100,0,30
+sinadd = 150,100,0,40
 invertall = 0
 color = 256
 
@@ -8839,7 +8839,7 @@ trigger1 = time = 0
 time = 10
 add = 100,60,0
 mul = 256,256,256
-sinadd = 100,60,0,4
+sinadd = 100,60,0,5
 invertall = 0
 color = 256
 [State 3120, Train]
@@ -9418,7 +9418,7 @@ trigger1 = time = 0
 time = 10
 add = 100,60,0
 mul = 256,256,256
-sinadd = 100,60,0,4
+sinadd = 100,60,0,5
 invertall = 0
 color = 256
 [State 3120, Train]
@@ -9945,7 +9945,7 @@ trigger1 = time = 0
 time = 10
 add = 100,60,0
 mul = 256,256,256
-sinadd = 100,60,0,4
+sinadd = 100,60,0,5
 invertall = 0
 color = 256
 [State 3120, Train]
@@ -10851,7 +10851,7 @@ trigger1 = time = 0
 time = 10
 add = 100,60,0
 mul = 256,256,256
-sinadd = 100,60,0,4
+sinadd = 100,60,0,5
 invertall = 0
 color = 256
 [State 3120, Train]
@@ -11317,7 +11317,7 @@ trigger1 = time = 0
 time = 10
 add = 100,60,0
 mul = 256,256,256
-sinadd = 100,60,0,4
+sinadd = 100,60,0,5
 invertall = 0
 color = 256
 [State 3120, Train]

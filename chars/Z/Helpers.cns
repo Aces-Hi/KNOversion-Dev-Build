@@ -1374,6 +1374,7 @@ ignorehitpause = 1
 type = HitDef
 trigger1 = !movecontact 
 trigger1 = root,combocount=0
+triggerall=enemy,movetype!=A
 attr = A, SP                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(root,fvar(15) * 75 < 5, 5, root,fvar(15) * 75)),15
 air.animtype = back
@@ -1413,10 +1414,112 @@ palfx.sinadd=256,256,256,10
 palfx.time=32
 getpower = 0
 guard.dist=0
+
+
+[State 200, 1]
+type = HitDef
+trigger1 = !movecontact 
+triggerall=enemy,movetype=A
+attr = A, SP                     ;Attribute: Standing, Normal Attack
+damage = ceil(cond(root,fvar(15) * 75 < 5, 5, root,fvar(15) * 75)),15
+air.animtype = back
+animtype = hard                ;Animation type: Light, Medium, Heavy, Back (def: Light)
+guardflag = MA                   ;Flags on how move is to be guarded against
+hitflag = MAFDP                    ;Flags of conditions that move can hit
+priority = 2, Hit                ;Attack priority: 0 (least) to 7 (most), 4 default
+;Hit/Miss/Dodge type (Def: Hit)
+pausetime = 25, 25                ;Time attacker pauses, time opponent shakes
+sparkno = 3
+sparkxy = -20,-60             ;X-offset for the "hit spark" rel. to p2,
+hitsound = 5,2                
+guardsound = 6, 2                
+ground.type = trip        
+ground.slidetime = 5             
+ground.hittime  = 28             
+ground.velocity = -5 ,3            
+airguard.velocity = -1.9,-.8     
+air.type = trip    
+air.velocity = -1.4,3             
+down.velocity = -1.4,-3.1
+air.hittime = 60
+down.hittime = 60                 
+envshake.time = 15
+envshake.freq = 90
+envshake.ampl = 2
+yaccel = .26
+forcenofall = 1
+ground.cornerpush.veloff = 0
+guard.cornerpush.veloff = 0
+air.cornerpush.veloff = 0
+airguard.cornerpush.veloff = 0
+palfx.color=256
+palfx.mul=128,128,128
+palfx.add=0,0,0
+palfx.sinadd=256,256,256,10
+palfx.time=32
+getpower = 0
+guard.dist=0
+P2STATENO= 6150
+P2GETP1STATE=0
+;COUNTER ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+trigger1 = enemynear,movetype!=A&&enemynear,stateno!=666999
+trigger1 = movecountered
+trigger1 = enemy,HitShakeOver = 0
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-10
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+trigger1 = enemynear,movetype!=A&&enemynear,stateno!=666999
+trigger1 = movecountered
+trigger1 = enemy,HitShakeOver = 0
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-10
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = movecountered
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+trigger1=movecountered
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = enemynear,movetype!=A&&enemynear,stateno!=666999
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
+
 [State 200, 1]
 type = HitDef
 trigger1 = !movecontact 
 trigger1 = root,combocount>0
+triggerall=enemy,movetype!=A
 attr = A, SP                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(root,fvar(15) * 75 < 5, 5, root,fvar(15) * 75)),15
 air.animtype = back
@@ -1979,7 +2082,7 @@ triggerall=root,alive
 ;TriggerAll=Root,NumExplod(991901)=0 && Enemy,NumExplod(991901)=0
 trigger1 = !NumExplod(7002)
 anim = 9052
-pos = 28,191;13+(root,var(45)),250-(root,var(46))
+pos = 28,195;13+(root,var(45)),250-(root,var(46))
 ;pos = 120,39;13+(root,var(45)),250-(root,var(46))
 postype = left
 removetime = -1
@@ -1999,12 +2102,12 @@ triggerall=root,alive
 ;TriggerAll=Root,NumExplod(991901)=0 && Enemy,NumExplod(991901)=0
 trigger1 = !NumExplod(7001)
 anim = 9051
-pos = 28,191;13+(root,var(45)),250-(root,var(46))
+pos = 28,195;13+(root,var(45)),250-(root,var(46))
 ;pos = 120,39;13+(root,var(45)),250-(root,var(46))
 postype = left
 removetime = -1
 scale = .601,.6
-sprpriority = 2
+sprpriority = 1
 id = 7001
 bindtime = -1
 ontop = 1
@@ -2012,6 +2115,7 @@ ownpal = 1
 ignorehitpause = 1
 pausemovetime = 999999
 supermovetime = 999999
+
 [State -2, Explod];Volt Bar Frame
 type = Explod
 triggerall = teamside = 1
@@ -2019,12 +2123,12 @@ triggerall=root,alive
 ;TriggerAll=Root,NumExplod(991901)=0 && Enemy,NumExplod(991901)=0
 trigger1 = !NumExplod(7000)
 anim = 9050
-pos = 28,191;13+(root,var(45)),250-(root,var(46))
+pos = 28,195;13+(root,var(45)),250-(root,var(46))
 ;pos = 120,39;13+(root,var(45)),250-(root,var(46))
 postype = left
 removetime = -1
 scale = .601,.6
-sprpriority = 2
+sprpriority = 1
 id = 7000
 bindtime = -1
 ontop = 1
@@ -2051,7 +2155,7 @@ triggerall=root,alive
 ;TriggerAll=Root,NumExplod(991901)=0 && Enemy,NumExplod(991901)=0
 trigger1 = !NumExplod(7002)
 anim = 9052
-pos =  -115.5,191;13+(root,var(45)),250-(root,var(46))
+pos =  -115.5,195;13+(root,var(45)),250-(root,var(46))
 ;pos = 120,39;13+(root,var(45)),250-(root,var(46))
 postype = right
 removetime = -1
@@ -2071,12 +2175,12 @@ triggerall=root,alive
 ;TriggerAll=Root,NumExplod(991901)=0 && Enemy,NumExplod(991901)=0
 trigger1 = !NumExplod(7001)
 anim = 9051
-pos =  -115.5,191;13+(root,var(45)),250-(root,var(46))
+pos =  -115.5,195;13+(root,var(45)),250-(root,var(46))
 ;pos = 120,39;13+(root,var(45)),250-(root,var(46))
 postype = right
 removetime = -1
 scale = .601,.6
-sprpriority = 2
+sprpriority = 1
 id = 7001
 bindtime = -1
 ontop = 1
@@ -2091,12 +2195,12 @@ triggerall=root,alive
 ;TriggerAll=Root,NumExplod(991901)=0 && Enemy,NumExplod(991901)=0
 trigger1 = !NumExplod(7000)
 anim = 9050
-pos = -115.5,191;13+(root,var(45)),250-(root,var(46))
+pos = -115.5,195;13+(root,var(45)),250-(root,var(46))
 ;pos = 120,39;13+(root,var(45)),250-(root,var(46))
 postype = right
 removetime = -1
 scale = .601,.6
-sprpriority = 2
+sprpriority = 1
 id = 7000
 bindtime = -1
 ontop = 1

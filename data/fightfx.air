@@ -423,6 +423,17 @@ zqqEEQEQECZeeczceeeeeeeeczeqczeqzl; Animation data for Fight Effects
 906,1, 0,0, 4, , AS256D50
 906,1, 0,0, -1
 
+;BURST FX
+[Begin Action 910]
+910,0, 0,0, 2, , A
+910,1, 0,0, 2, , A
+910,2, 0,0, 2, , A
+910,3, 0,0, 3, , A
+910,4, 0,0, 3, , AS180D256
+910,5, 0,0, 3, , AS96D256
+910,6, 0,0, 3, , AS45D256
+910,7, 0,0, 3, , AS20D256
+
 ; Parry FX
 [Begin Action 1000]
 1000,0, 0,0, 2

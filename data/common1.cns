@@ -912,7 +912,7 @@ accel = 0,0
 random = 0,0
 removetime = -2
 scale = 0.70,0.70
-sprpriority = 2
+sprpriority = 10
 shadow = 0,0,0
 ownpal = 1
 removeongethit = 0
@@ -942,23 +942,6 @@ trigger1 = time = 0
 time = 5
 movetime = 0
 
-[State -2, Explod];THROW TECH Explod for P1 Side.
-type = Explod
-trigger1=teamside=2
-trigger1 = time = 0
-anim = F13102
-pos = 20,183
-postype = left  ;p2,front,back,left,right
-removetime = -2
-supermove = 1
-scale = 0.53,0.53
-sprpriority = 0
-id = 13102
-bindtime = -1
-ontop = 1
-ownpal = 1
-ignorehitpause = 1
-pausemovetime = -1
 [State -2, Explod];throw tech Explod for P2 Side.
 type = Explod
 trigger1=teamside=1
@@ -969,7 +952,7 @@ postype = right  ;p2,front,back,left,right
 removetime = -2
 supermove = 1
 scale = 0.53,0.53
-sprpriority = 0
+sprpriority = 10
 id = 13103
 bindtime = -1
 ontop = 1
@@ -1020,6 +1003,24 @@ value = SCA
 time = 1
 ignorehitpause = 1
 persistent = 1
+
+[State -2, Explod];THROW TECH Explod for P1 Side.
+type = Explod
+trigger1=teamside=1
+trigger1 = time = 0
+anim = F13102
+pos = 20,183
+postype = left  ;p2,front,back,left,right
+removetime = -2
+supermove = 1
+scale = 0.53,0.53
+sprpriority = 10
+id = 13102
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = -1
 
 [State 0, VarAdd]
 type = VarAdd
@@ -1155,7 +1156,7 @@ value = F9174,1
 [State 0, Explod]
 type = Explod
 trigger1 = animelem = 2
-anim =F900
+anim =F910
 ID = 900
 pos = 0,-50
 postype = p1  ;p2,front,back,left,right
@@ -1335,7 +1336,7 @@ value = F9174,1
 [State 0, Explod]
 type = Explod
 trigger1 = animelem = 2
-anim =F900
+anim =F910
 ID = 900
 pos = 0,-50
 postype = p1  ;p2,front,back,left,right
@@ -1620,9 +1621,40 @@ type    = S
 movetype= A
 physics = S
 velset = vel x * 0.5, 0
-ctrl = 1
+ctrl = 0
 facep2 = 1
 sprpriority = 10
+
+[State 0, Helper]
+type = Helper
+trigger1 = !time&&numhelper(915)=0
+name = "Parry Spark"
+ID = 915
+stateno = 915
+pos = 15,-45
+size.xscale = 0.15
+size.yscale = 0.30
+postype = p1    ;p2,front,back,left,right
+ownpal = 1
+
+[State 0, CtrlSet]
+type = CtrlSet
+trigger1 = time>=5
+value = 1
+[State 0, ChangeAnim]
+type = ChangeAnim
+triggerall=prevstateno!=910
+trigger1=time=0
+trigger2 = var(50)=0&&name="one"&&time=0
+value = 910
+ignorehitpause = 1
+[State 0, ChangeAnim]
+type = ChangeAnim
+triggerall=prevstateno!=910
+trigger1=time=0
+trigger1 = var(50)&&name="one"
+value = 912
+ignorehitpause = 1
 
 [State 0, PowerSet]
 type = PowerSet
@@ -1669,12 +1701,11 @@ time = 5
 type = Pause
 triggerall = enemy, hitdefattr != SCA,NP, SP, HP
 trigger1 = !time
-time = 15
+time = 10
 movetime = 1
 ignorehitpause = 1
 [State 0, Pause]
 type = Pause
-triggerall = enemy, hitdefattr = SCA,NP, SP, HP
 trigger1 = !time
 time = 5
 movetime = 1
@@ -1730,8 +1761,39 @@ type    = A
 movetype= I
 physics = A
 velset = vel x * 0.75, -3 
-ctrl = 1
+ctrl = 0
 sprpriority = 2
+
+[State 0, Helper]
+type = Helper
+trigger1 = !time&&numhelper(915)=0
+name = "Parry Spark"
+ID = 915
+stateno = 915
+pos = 15,-45
+size.xscale = 0.15
+size.yscale = 0.30
+postype = p1    ;p2,front,back,left,right
+ownpal = 1
+
+[State 0, CtrlSet]
+type = CtrlSet
+trigger1 = time>=5
+value = 1
+[State 0, ChangeAnim]
+type = ChangeAnim
+triggerall=prevstateno!=911
+trigger1=time=0
+trigger2 = var(50)=0&&name="one"&&time=0
+value = 911
+ignorehitpause = 1
+[State 0, ChangeAnim]
+type = ChangeAnim
+triggerall=prevstateno!=911
+trigger1=time=0
+trigger1 = var(50)&&name="one"
+value = 914
+ignorehitpause = 1
 
 [State 0, PowerSet]
 type = PowerSet
@@ -5334,7 +5396,7 @@ ontop = 0
 shadow = 0,0,0
 ownpal = 0
 removeongethit = 0
-ignorehitpause=1
+ignorehitpause=0
 
 
 [State 0, Pause]
@@ -5459,7 +5521,7 @@ value = 5
 [State 0, Explod]
 type = Explod
 trigger1 = time = 0
-anim = F1905
+anim = F900
 ID = 1905
 pos = 0,-45
 postype = p1  ;p2,front,back,left,right
@@ -5470,13 +5532,14 @@ vel = 0,0
 accel = 0,0
 random = 0,0
 removetime = -2
-pausemovetime = 0
-scale = .3,.3
+pausemovetime = -1
+scale = 1,1
 sprpriority = -4
 ontop = 0
 shadow = 0,0,0
 ownpal = 0
 removeongethit = 0
+ignorehitpause=0
 
 [State 0, Pause]
 type = Pause
@@ -5574,7 +5637,7 @@ persistent = 1
 [State 0, Explod]
 type = Explod
 trigger1 = time = 0
-anim = F1905
+anim = F900
 ID = 1905
 pos = 0,-45
 postype = p1  ;p2,front,back,left,right
@@ -5585,13 +5648,14 @@ vel = 0,0
 accel = 0,0
 random = 0,0
 removetime = -2
-pausemovetime = 0
-scale = .3,.3
+pausemovetime = -1
+scale = 1,1
 sprpriority = -4
 ontop = 0
 shadow = 0,0,0
 ownpal = 0
 removeongethit = 0
+ignorehitpause=0
 
 [State 0, Pause]
 type = Pause
@@ -5780,6 +5844,26 @@ trigger1 = movehit
 trigger2 = map(zexception)
 ignorehitpause=0
 
+
+;RC Jasta Air
+[State -1, RC Jasta Air]
+type = ChangeState
+value = 690001
+triggerall = prevstateno!=[910,914]
+triggerall = stateno!=[910,914]
+triggerall = map(norc)=0
+triggerall = name!="angous"
+triggerall=enemy,stateno!=7000
+triggerall = !ishelper
+triggerall = command = "a"
+triggerall = statetype = A
+triggerall = movetype = A
+triggerall = power>=1000
+trigger1 = movehit&&stateno=750&& name!="grandmaster wu"
+trigger2 = map(zexception)
+ignorehitpause=1
+trigger3 = movehit&&stateno=7501&& name="grandmaster wu"
+
 ;RC Jasta
 [State -1, RC Jasta]
 type = ChangeState
@@ -5787,7 +5871,6 @@ value = 690002
 triggerall = prevstateno!=[910,914]
 triggerall = stateno!=[910,914]
 triggerall = map(norc)=0
-triggerall = name!="angous"
 triggerall = stateno!=800&&stateno!=803&&stateno!=820&&stateno!=821
 triggerall = !ishelper
 triggerall = command = "rc"
@@ -5803,7 +5886,6 @@ value = 690003
 triggerall = prevstateno!=[910,914]
 triggerall = stateno!=[910,914]
 triggerall = map(norc)=0
-triggerall = name!="angous"
 triggerall = !ishelper
 triggerall = stateno!=900&&stateno!=901
 triggerall = command = "rc"
@@ -6119,7 +6201,7 @@ ownpal=1
 [State 0, ENEMYCTRL]
 type = text
 triggerall = map(_iksys_trainingAtkDataDisp) = 0
-trigger1 = map(_iksys_trainingGuardMode) =1||map(_iksys_trainingGuardMode) =2
+trigger1 = map(_iksys_trainingGuardMode) =1||map(_iksys_trainingGuardMode) =2||map(_iksys_trainingGuardMode) =3
 triggerall = teamside = 2
 triggerall = GameMode = "Training"
 trigger1 = 1
@@ -6135,16 +6217,15 @@ ignorehitpause = 1
 [State 0, ChangeState]
 type = AssertInput
 triggerall=teamside=2
-triggerall = statetype!=A
 triggerall = GameMode = "Training"
 triggerall = ctrl = 1
 trigger1 = prevstateno = [120, 155]
 trigger2 = stateno = 140
+trigger3 = stateno=[912, 913]
 triggerall =  map(_iksys_trainingPunish) = 1 
 flag = x
 ignorehitpause = 1
 persistent = 1
-
 ;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ;Shadow Override
 ;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -6635,39 +6716,22 @@ ignorehitpause = 1
 persistent = 1
 
 
-
-[State 0, AssertSpecial]
-type = AssertSpecial
+[State 0, HitOverride]
+type = HitOverride
+trigger1 = ctrl&&statetype!=A
 trigger1 = map(_iksys_trainingGuardMode) = 3
-flag =autoguard
+attr = SCA,AA,AP      ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+stateno = 912
+time = 1
 ignorehitpause = 1
-persistent = 1
-[State 0, AssertSpecial]
-type = AssertInput
-trigger1=enemynear,statetype=C
-trigger1=enemynear,movetype=A
+[State 0, HitOverride]
+type = HitOverride
+trigger1 = ctrl&&statetype=A
 trigger1 = map(_iksys_trainingGuardMode) = 3
-flag =D
+attr = SCA,AA,AP      ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+stateno = 913
+time = 1
 ignorehitpause = 1
-persistent = 1
-[State 0, AssertSpecial]
-type = AssertInput
-trigger1 = map(_iksys_trainingGuardMode) = 3
-trigger1=enemynear,moveguarded
-trigger1 = facing=1
-flag =a
-flag2 =R
-ignorehitpause = 1
-persistent = 1
-[State 0, AssertSpecial]
-type = AssertInput
-trigger1 = map(_iksys_trainingGuardMode) = 3
-trigger1=enemynear,moveguarded
-trigger1 = facing=-1
-flag =a
-flag2 =L
-ignorehitpause = 1
-persistent = 1
 
 [State 0, AssertSpecial]
 type = AssertInput
@@ -6731,7 +6795,7 @@ font=F3
 align=0
 pos=160,200
 ignorehitpause = 1
-color=0,256,256
+color=0,256,0
 [State 0]
 type = text
 triggerall = map(_iksys_trainingAtkDataDisp) = 0
@@ -6747,7 +6811,7 @@ font=F3
 align=0
 pos=160,200
 ignorehitpause = 1
-color=0,256,256
+color=0,256,0
 [State 0]
 type = text
 triggerall = map(_iksys_trainingAtkDataDisp) = 0
@@ -6763,7 +6827,7 @@ font=F3
 align=0
 pos=160,200
 ignorehitpause = 1
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = RoundTimeSet
@@ -7034,7 +7098,7 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmup)
 removetime=1
 layerno=2  
-text="Overflow (Sabrina's Version)"
+text="Poptimism"
 scale=1,1
 font=F1
 align=0
@@ -7049,14 +7113,14 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmup)
 removetime=1
 layerno=2  
-text="Rina Ryukami ft. Een Glish"
+text="Rina Ryukami"
 scale=.6,.6
 font=F1
 align=0
 pos=160,52
 ignorehitpause = 1
 persistent=1
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -7066,7 +7130,7 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmside)
 removetime=1
 layerno=2  
-text="Check Again"
+text="Overflow (Sabrina's Version)"
 scale=1,1
 font=F1
 align=0
@@ -7088,7 +7152,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=1
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -7120,7 +7184,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=1
-color=0,256,256
+color=0,256,0
 
 ;============================================================================
 
@@ -7161,7 +7225,7 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmup)
 removetime=1
 layerno=2  
-text="Mama Said Knock You Out"
+text="Take That!"
 scale=1,1
 font=F1
 align=0
@@ -7176,14 +7240,14 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmup)
 removetime=1
 layerno=2  
-text="LL COOL J"
+text="Netchu"
 scale=.6,.6
 font=F1
 align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -7191,6 +7255,38 @@ triggerall=roundstate=2
 triggerall = StageVar(info.name) = "Knockout Ring"
 triggerall = map(bgmtimer)
 trigger1 = map(bgmside)
+removetime=1
+layerno=2  
+text="Mama Said Knock You Out"
+scale=1,1
+font=F1
+align=0
+pos=160,45
+ignorehitpause = 1
+persistent=0
+[State 0]
+type = text
+triggerall=roundstate=2
+triggerall = StageVar(info.name) = "Knockout Ring"
+triggerall = map(bgmtimer)
+trigger1 = map(bgmside)
+removetime=1
+layerno=2  
+text="LL COOL J"
+scale=.6,.6
+font=F1
+align=0
+pos=160,52
+ignorehitpause = 1
+persistent=0
+color=0,256,0
+
+[State 0]
+type = text
+triggerall=roundstate=2
+triggerall = StageVar(info.name) = "Knockout Ring"
+triggerall = map(bgmtimer)
+trigger1 = map(bgmdown)
 removetime=1
 layerno=2  
 text="The Only Thing They Fear Is You"
@@ -7205,7 +7301,7 @@ type = text
 triggerall=roundstate=2
 triggerall = StageVar(info.name) = "Knockout Ring"
 triggerall = map(bgmtimer)
-trigger1 = map(bgmside)
+trigger1 = map(bgmdown)
 removetime=1
 layerno=2  
 text="Mick Gordon"
@@ -7215,39 +7311,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
-
-[State 0]
-type = text
-triggerall=roundstate=2
-triggerall = StageVar(info.name) = "Knockout Ring"
-triggerall = map(bgmtimer)
-trigger1 = map(bgmdown)
-removetime=1
-layerno=2  
-text="SAMP1"
-scale=1,1
-font=F1
-align=0
-pos=160,45
-ignorehitpause = 1
-persistent=0
-[State 0]
-type = text
-triggerall=roundstate=2
-triggerall = StageVar(info.name) = "Knockout Ring"
-triggerall = map(bgmtimer)
-trigger1 = map(bgmdown)
-removetime=1
-layerno=2  
-text="NANORAY"
-scale=.6,.6
-font=F1
-align=0
-pos=160,52
-ignorehitpause = 1
-persistent=0
-color=0,256,256
+color=0,256,0
 
 ;============================================================================
 
@@ -7310,7 +7374,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -7342,7 +7406,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -7374,7 +7438,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 ;============================================================================
 
@@ -7438,7 +7502,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -7448,7 +7512,7 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmside)
 removetime=1
 layerno=2  
-text="Crawl"
+text="Marionette"
 scale=1,1
 font=F1
 align=0
@@ -7463,14 +7527,14 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmside)
 removetime=1
 layerno=2  
-text="NAOKI & Daisuke Ishiwatari"
+text="Daisuke Ishiwatari"
 scale=.6,.6
 font=F1
 align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -7502,7 +7566,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 ;============================================================================
 
@@ -7566,7 +7630,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -7598,7 +7662,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -7630,7 +7694,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 ;============================================================================
 
@@ -7694,7 +7758,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -7726,7 +7790,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -7736,7 +7800,7 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmdown)
 removetime=1
 layerno=2  
-text="tv off"
+text="N95"
 scale=1,1
 font=F1
 align=0
@@ -7758,7 +7822,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 ;============================================================================
 
@@ -7821,7 +7885,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -7853,7 +7917,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -7885,7 +7949,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 ;============================================================================
 
@@ -7949,7 +8013,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -7981,7 +8045,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -8013,7 +8077,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 ;============================================================================
 
@@ -8076,7 +8140,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -8108,7 +8172,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -8140,7 +8204,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 ;============================================================================
 
@@ -8203,7 +8267,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -8235,7 +8299,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -8267,7 +8331,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 ;============================================================================
 
@@ -8330,7 +8394,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -8362,7 +8426,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -8372,7 +8436,7 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmdown)
 removetime=1
 layerno=2  
-text="New Face"
+text="1,000,001 MOLA"
 scale=1,1
 font=F1
 align=0
@@ -8394,7 +8458,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 ;============================================================================
 
@@ -8457,7 +8521,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -8489,7 +8553,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -8521,7 +8585,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 ;============================================================================
 
@@ -8584,7 +8648,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -8616,7 +8680,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -8648,7 +8712,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 ;============================================================================
 
@@ -8711,7 +8775,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -8743,7 +8807,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -8753,7 +8817,7 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmdown)
 removetime=1
 layerno=2  
-text="Fete Foraine - Stage Battle"
+text="Crimson Butterfly"
 scale=1,1
 font=F1
 align=0
@@ -8768,14 +8832,14 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmdown)
 removetime=1
 layerno=2  
-text="Haruki Yamada"
+text="MintJam"
 scale=.6,.6
 font=F1
 align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 ;============================================================================
 
@@ -8839,7 +8903,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -8871,7 +8935,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -8903,7 +8967,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 ;============================================================================
 
@@ -8982,7 +9046,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -8992,7 +9056,7 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmside)
 removetime=1
 layerno=2  
-text="Thousand March"
+text="Masquerade"
 scale=1,1
 font=F1
 align=0
@@ -9007,14 +9071,14 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmside)
 removetime=1
 layerno=2  
-text="Mr. Sauceman"
+text="Sadder Days"
 scale=.6,.6
 font=F1
 align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -9046,7 +9110,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 ;============================================================================
 
@@ -9110,7 +9174,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -9142,7 +9206,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -9174,7 +9238,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 ;============================================================================
 
@@ -9238,7 +9302,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -9270,7 +9334,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -9302,7 +9366,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 ;============================================================================
 
@@ -9366,7 +9430,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -9398,7 +9462,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -9430,7 +9494,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 ;============================================================================
 
@@ -9514,7 +9578,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -9546,7 +9610,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -9578,7 +9642,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=0,256,0
 
 [State 0]
 type = text
@@ -9610,7 +9674,7 @@ align=0
 pos=160,52
 ignorehitpause = 1
 persistent=0
-color=0,256,256
+color=256,0,0
 
 
 
@@ -10065,6 +10129,25 @@ absolute = 0
 ignorehitpause = 1
 persistent = 1
 ;===============================================================================
+
+[State 0, RemapPal]
+type = RemapPal
+triggerall = name = "Roger"
+triggerall = !ishelper
+trigger1 = map(Install)=0
+source = 1,1
+dest =1,palno
+ignorehitpause = 1
+persistent = 1
+[State 0, RemapPal]
+type = RemapPal
+triggerall = name = "Roger"
+triggerall = !ishelper
+trigger1 = map(Install)
+source =  1,1
+dest =2,palno
+ignorehitpause = 1
+persistent = 1
 
 [State 0, AssertSpecial]
 type = AssertSpecial

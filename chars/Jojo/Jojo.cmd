@@ -16,7 +16,7 @@ var(1) = 0
 type = VarSet
 trigger1 = statetype != A
 trigger1 = ctrl
-trigger2 = (stateno = [200,299]) || (stateno = [400,499]) || stateno = 656
+trigger2 = (stateno = [200,299]) || (stateno = [400,499]) || stateno = 656||stateno=651
 trigger2 = movecontact
 trigger2 = stateno!=421
 trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
@@ -400,6 +400,9 @@ triggerall = command = "y"
 triggerall = command = "holdfwd"
 triggerall = command !="holddown"
 triggerall = command !="holdup"
+triggerall = command != "TripleKFPalm"
+triggerall = command != "QCF"
+triggerall = command != "236x"
 trigger1 = ctrl
 trigger2 = (stateno = 200) && movecontact 
 trigger3 = (stateno = 210) && movecontact 
@@ -611,6 +614,7 @@ trigger4 = stateno = 630&&movehit
 [State -1, jM]
 type = ChangeState
 value = 610
+triggerall = command != "holddown"
 triggerall = command = "y"
 triggerall = statetype = A
 trigger1 = ctrl
@@ -636,8 +640,7 @@ trigger3 = stateno = 1350 ;Air blocking
 
 
 ;---------------------------------------------------------------------------
-;Jumping d+SK
-[State -1, Fast Kung Fu Palm]
+[State j2H]
 type = ChangeState
 value = 650
 triggerall = command = "holddown"
@@ -648,14 +651,16 @@ trigger2 = stateno = 600&&movecontact
 trigger3 = stateno = 610&&movecontact
 trigger4 = stateno = 630&&movecontact
 trigger5 = stateno = 640&&movecontact
-
-[state -1, Enryu Haibi Follow]
-type = changestate
-triggerall = ifelse(p2dist X> 0, command = "holddown", command = "holddown")
-triggerall = ifelse(p2dist X> 0, command = "z", command = "z")
-triggerall = stateno = 5004 && statetype != A
-trigger1 = movehit
-value = 650
-
-
+;---------------------------------------------------------------------------
+[State j2M]
+type = ChangeState
+value = 640
+triggerall = command = "holddown"
+triggerall = command = "y"
+trigger1 = statetype = A
+trigger1 = ctrl
+trigger2 = stateno = 600&&movecontact
+trigger3 = stateno = 610&&movecontact
+trigger4 = stateno = 630&&movecontact
+trigger5 = stateno = 640&&movecontact
 ;==================================================

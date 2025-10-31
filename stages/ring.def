@@ -3,11 +3,6 @@ name = "KNOCKOUT RING"
 attachedchar = data/dynamiclight/DynamicLight.def
 
 [Constants]
-DynamicLighting = 1
-DynamicR = 240
-DynamicG = 200
-DynamicB = 190
-DynamicAlpha =200
 
 StaticShadow = 0
 DynamicShadow = 1

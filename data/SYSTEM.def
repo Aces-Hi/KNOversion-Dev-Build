@@ -508,6 +508,26 @@ teammenu.itemname.ratio =    ;Ikemen feature
 180,0, 6,0, 1
 180,0, 7,0, 1
 
+; CSS
+[Begin Action 1]
+-1,0, 0,0, 300
+110,1, 0,0, 4, , AS50D256
+110,1, 0,0, 4, , AS150D256
+110,1, 0,0, 300
+110,1, 0,0, 4, , AS150D256
+110,1, 0,0, 4, , AS50D256
+-1,0, 0,0, 60
+110,2, 0,0, 4, , AS50D256
+110,2, 0,0, 4, , AS150D256
+110,2, 0,0, 300
+110,2, 0,0, 4, , AS150D256
+110,2, 0,0, 4, , AS50D256
+-1,0, 0,0, 60
+110,3, 0,0, 4, , AS50D256
+110,3, 0,0, 4, , AS150D256
+LoopStart
+110,3, 0,0, 600
+
 [Begin Action 0]
 -1,0, 0,0, 1800
 0,1, 0,0, 5, , AS256D200
@@ -538,6 +558,13 @@ start = 0, 0
 tile = 1,2
 velocity = 0
 mask = 0
+
+[SelectBG 1] ;Words
+type  = anim
+actionno = 1
+layerno = 0
+start = 0, 0
+delta = 0,0
 
 [SelectBG 1]
 type = normal

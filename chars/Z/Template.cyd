@@ -45,7 +45,7 @@ trigger2 = movecontact
 trigger3 = stateno = 1101||stateno = 1100
 trigger3 = enemy,movetype=H
 
-[State LVL4]
+[State LVL6]
 type = ChangeState
 value = 3050
 triggerall = command="lvl4"
@@ -58,7 +58,7 @@ trigger2 = stateno != [3000,3050)
 trigger2 = movecontact
 trigger3 = stateno = 1101||stateno = 1100
 trigger3 = enemy,movetype=H
-[State LVL4]
+[State LVL6]
 type = ChangeState
 value = 3050
 triggerall = command="lvl4"
@@ -816,6 +816,9 @@ triggerall = command = "y"
 triggerall = command = "holdfwd"
 triggerall = command !="holddown"
 triggerall = command !="holdup"
+triggerall = command != "TripleKFPalm"
+triggerall = command != "QCF"
+triggerall = command != "236x"
 trigger1 = ctrl
 trigger2 = (stateno = 200) && movecontact 
 trigger3 = (stateno = 210) && movecontact 

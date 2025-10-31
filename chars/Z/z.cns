@@ -727,7 +727,7 @@ triggerall=teamside=2
 triggerall = GameMode = "Training"
 trigger1 = ctrl = 1
 trigger1 = statetype!=A
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 2
 value = 8020
 ctrl = 0
@@ -737,7 +737,7 @@ triggerall=teamside=2
 triggerall = GameMode = "Training"
 trigger1 = ctrl = 1
 trigger1 = statetype=A
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 2
 value = 630
 ctrl = 0
@@ -747,7 +747,7 @@ triggerall=teamside=2
 triggerall = statetype!=A
 triggerall = GameMode = "Training"
 trigger1 = ctrl = 1
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 3
 value = 3000
 ctrl = 0
@@ -757,7 +757,7 @@ triggerall=teamside=2
 triggerall = statetype=A
 triggerall = GameMode = "Training"
 trigger1 = ctrl = 1
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 3
 value = 3001
 ctrl = 0
@@ -766,7 +766,7 @@ type = ChangeState
 triggerall=teamside=2
 triggerall = GameMode = "Training"
 trigger1 = ctrl = 1
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 4
 value = 3050
 ctrl = 0
@@ -875,7 +875,7 @@ triggerall = teamside = 1 && RoundState=[2,3]
 trigger1= !NumExplod(7050)
 anim =7050
 ID = 7050
-pos = 126,198
+pos = 130,192
 postype = left  ;p2,front,back,left,right
 facing = 1
 vfacing = 1
@@ -896,7 +896,7 @@ triggerall= !NumExplod(7051)
 trigger1 = var(4)=1
 anim =7051
 ID = 7051
-pos = 126,198
+pos = 130,192
 postype = left  ;p2,front,back,left,right
 facing = 1
 vfacing = 1
@@ -917,7 +917,7 @@ triggerall = teamside = 2 && RoundState=[2,3]
 trigger1= !NumExplod(7050)
 anim =7050
 ID = 7050
-pos = 155,198
+pos = 151,192
 postype = left  ;p2,front,back,left,right
 facing = 1
 vfacing = 1
@@ -938,7 +938,7 @@ triggerall= !NumExplod(7051)
 trigger1 = var(4)=1
 anim =7051
 ID = 7051
-pos = 155,198
+pos = 151,192
 postype = left  ;p2,front,back,left,right
 facing = 1
 vfacing = 1

@@ -8,12 +8,12 @@
 
 	<#009d20>UNIQUE MOVES</>
 LOW KICK	-		_B^A
+LAUNCHER 	-		^C
+   <#aaff00>IN PUDDLE: Launches much higher.</>
 CROSS SLASH	-		_B^C
 ACIDIC SWEEP	-		_DF^C
 VILE CLAW	-		<#65b5ff>(AIR ONLY)</> _DF^C
    <#aaff00>IN PUDDLE: Causes a sliding knockdown.</>
-LAUNCHER 	-		^C
-   <#aaff00>IN PUDDLE: Launches much higher.</>
 
 
 
@@ -35,7 +35,7 @@ LOOPHOLD	-		_B^Y
    <#aaff00>IN PUDDLE: Does more damage.</>
 CURB STOMP	-		_D^Y
    <#bbbbbb>Can be canceled into _F^Y on hit.</>
-<#aaff00>IN PUDDLE: Has much more range and launches the enemy.</>
+   <#aaff00>IN PUDDLE: Has much more range and launches the enemy.</>
 
 
 
@@ -78,8 +78,8 @@ _EX RISING	-		<#aaffff>(GROUND OR AIR)<#55ffff>(1 BAR)</> ^Y+^Z
    The air version has no invincibility.</>
 _!_EX KNEE	-		<#65b5ff>(AIR ONLY)</> _F^Y+^Z
 _EX LOOPHOLD	-		<#55ffff>(1 BAR)</> _B^Y+^Z
+  <#bbbbbb>A command grab. Can be used in combos.</>
 _EX CURB STOMP	-		<#55ffff>(1 BAR)</> _D^Y+^Z
-
 
 
 
@@ -102,8 +102,8 @@ _D	_D		_D
    <#bbbbbb>Vile spawns 2 acid bubbles that circle around him.
    These bubbles can hit whenever the enemy is blocking or
    taking damage. They disappear if Vile blocks or takes damage.</>
-
-
+_!<#009d20>MAW OF OUROBUBBLE</>	-		_D_DB_B_-^A/^B/^C
+        <#bbbbbb>A launcher that causes the bubbles to explode.</>
 
 
 
@@ -125,24 +125,24 @@ OVERHEAD	-		_F^B
 ANTI-AIR	-		_D^C
    <#bbbbbb>This move has invulnerability to airborne enemies.</>
 GRAB	-		ANY 2 NORMALS </>
-   <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.</>
-FORCE BLOCK (WHILE BLOCKING)	-		<#55ffff>(1/4 BAR)</> _B^X
+   <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.
+   Enemies can break this by pressing ^A/^B/^C.</>
+FORCE BLOCK (WHILE BLOCKING)	-		<#55ffff>(1 BAR)</> _B^X
    <#bbbbbb>Can push the enemy backwards while you block.</>
-RECOIL GUARD (WHILE BLOCKING)	-		<#55ffff>(2 BARS)</> _F^X
-   <#bbbbbb>A fullscreen-ranged reversal that knocks the
-   enemy down and beats projectiles. Refunds 1 BAR on hit.</>
+NO PARRY	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _F^X
+   <#bbbbbb>A reversal option that gives you the advantage
+   if the enemy hits you. Refunds 1 BAR on hit.</>
 RECORD SCRATCH (WHILE ATTACKING)		<#55ffff>(1 BAR/2 BARS ON BLOCK)</> ^X
    <#bbbbbb>Can be used to instantly cancel most attacks.</>
 BURST (WHILE GETTING HIT)	-		^X+^A/^B/^C
    <#bbbbbb>A large reversal that can be used while you're getting hit.</>
-PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(4 BARS)</> ^X+^A/^B/^C
+PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(5 BARS)</> ^X+^A/^B/^C
    <#bbbbbb>An extra burst that can be used in an emergency.</>
-   <#ff0000>Using this PERMANENTLY limits your meter to a max of 1 BAR
+   <#ff0000>Using this PERMANENTLY lowers your max meter
    for the rest of the game.</>
 
-
 _D	_D		_D
- 
+
 	2V2 MODE
 SWITCH CHARACTERS	-		ASSIST </>
 ACTIVE SWITCH (WHILE ATTACKING)	-		<#55ffff>(2 BARS)</>ASSIST </>

@@ -1504,7 +1504,7 @@ value = 0, 4
 [State 0, VelAdd]
 type = VelAdd
 trigger1 = time=0
-x = 6
+x = 10
 y = 0
 ;ignorehitpause = 
 ;persistent = 
@@ -2040,6 +2040,120 @@ trigger1 =pos y>= 0
 value = 52
 ctrl = 1
 
+;j2M
+[Statedef 640]
+type    = A
+movetype= A
+physics = N
+juggle  = 0
+poweradd= 0
+ctrl = 0
+anim = 631
+sprpriority = 2
+velset = 1,-2
+
+
+[State JoJo Voices]
+type = PlaySnd
+trigger1 = animelem =4
+value = 200,0+random%6
+volumescale=150
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = animelem = 5
+x = 0
+y = 11.4
+;ignorehitpause = 
+;persistent = 
+
+[State 600, 1]
+type = PlaySnd
+trigger1 = Time = 1
+value = 0, 0
+
+[State 1000, 5]
+type = ChangeState
+trigger1 = Vel Y > 0
+trigger1 = Pos Y >= -13
+value = 641
+;---------------------------------------------------------------------------
+;j2M (Land)
+[Statedef 641]
+type    = S
+movetype= A
+physics = S
+juggle  = 0
+poweradd= 0
+velset = 0,0
+ctrl = 1
+anim = 632
+sprpriority = 2
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = nowalk
+flag2 = nojump
+flag3 = nocrouch
+ignorehitpause = 1
+
+[State 1030, 0]
+type = PosSet
+trigger1 = Time = 0
+y = 0
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = 10042
+ID = 10042
+pos =0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -2
+pausemovetime = 0
+scale = 0.6,0.3
+sprpriority = -2
+ontop = 0
+shadow = 0,0,0
+ownpal = 1
+removeongethit = 0
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = 6900
+ID = 6900
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -2
+pausemovetime = 0
+scale = 0.6,0.6
+sprpriority = -3
+ontop = 1
+shadow = 0,0,0
+ownpal = 1
+removeongethit = 0
+
+[State 600, 1]
+type = PlaySnd
+trigger1 = Time = 1
+value = 40, 0
+
+[State 1010, 8]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
 
 ;j. Down+Heavy
 ; CNS difficulty: easy
@@ -2050,7 +2164,7 @@ physics = N
 juggle  = 0
 poweradd= 0
 ctrl = 0
-anim = 631
+anim = 641
 sprpriority = 2
 velset = 1,-2
 
@@ -2089,9 +2203,24 @@ physics = S
 juggle  = 0
 poweradd= 0
 velset = 0,0
-ctrl = 1
-anim = 632
+ctrl = 0
+anim = 642
 sprpriority = 2
+
+[State 0, StateTypeSet]
+type = StateTypeSet
+trigger1 = animelem=1&&enemynear,movetype=A
+statetype = A       ;S,A,C,L
+movetype = A        ;I,A,H
+physics = S       ;A,C,S,N
+Ignorehitpause = 1
+[State 0, StateTypeSet]
+type = StateTypeSet
+trigger1 = animelem=2
+statetype = S       ;S,A,C,L
+movetype = A        ;I,A,H
+physics = S       ;A,C,S,N
+Ignorehitpause = 1
 
 [State 0, AssertSpecial]
 type = AssertSpecial
@@ -2152,6 +2281,36 @@ ontop = 1
 shadow = 0,0,0
 ownpal = 1
 removeongethit = 0
+
+[State 200, 1]
+type = HitDef
+trigger1 = !movecontact
+attr = S, NA
+animtype  = hard
+damage = ceil(cond(fvar(11) *50 < 10, 10, fvar(11) * 50)), 0
+hitflag = MAFD
+guardflag = LA
+pausetime = 12,12
+sparkno = 2
+sparkxy = -15,-40
+hitsound   = 5,3
+guardsound = 6,2
+ground.type = high
+ground.slidetime = 12
+ground.hittime  = 15
+air.hittime  = 25
+ground.velocity = -1.5,0
+air.velocity = -1.5,-3+map(grav)
+envshake.time = 10
+envshake.freq = 10
+envshake.ampl = 3
+envshake.phase = 1
+palfx.time = 12
+palfx.add = 100, 0,20
+fall.yvelocity = 0
+getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
+forcenofall = 1
+guard.ctrltime=15
 
 [State 600, 1]
 type = PlaySnd
@@ -2503,7 +2662,7 @@ animtype  = hard
 damage = ceil(cond(fvar(11) *50 < 10, 10, fvar(11) * 50)), 2
 hitflag = MAFD
 guardflag = MA
-pausetime = 15,50
+pausetime = 25,25
 sparkno = 2
 sparkxy = -15,-40
 hitsound   = 5,3
@@ -2522,6 +2681,62 @@ palfx.time = 12
 palfx.add = 100, 0,20
 fall.yvelocity = 0
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
+P2STATENO= 6150
+P2GETP1STATE=0
+
+;COUNTER ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+trigger1 = enemynear,movetype!=A&&enemynear,stateno!=666999
+trigger1 = movecountered
+trigger1 = enemy,HitShakeOver = 0
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-10
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+trigger1 = enemynear,movetype!=A&&enemynear,stateno!=666999
+trigger1 = movecountered
+trigger1 = enemy,HitShakeOver = 0
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-10
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = movecountered
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+trigger1=movecountered
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = enemynear,movetype!=A&&enemynear,stateno!=666999
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
 
 [State 200, 2]
 type = PlaySnd
@@ -2901,7 +3116,7 @@ pos = 42,0
 [State 0, ChangeState]
 type = ChangeState
 trigger1 = map(gcounter)=0
-trigger1 = time<=12 && target, command = "throwtech"
+trigger1 = time<=10 && target, command = "techthrow"
 value = 820
 ctrl = 0
 

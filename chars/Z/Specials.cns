@@ -3284,8 +3284,8 @@ flag3 = noairguard
 ;Battery Drain Variable
 [State 0, VarAdd]
 type = VarAdd
-trigger1 = time%1=0
-v = 5     
+trigger1 = time%2=0
+v = 5    
 value = -1
 
 ;neutral anim loop

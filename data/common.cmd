@@ -296,6 +296,19 @@ command = z+x
 time = 5
 
 [Command]
+name = "techthrow"
+command = x
+time = 5
+[Command]
+name = "techthrow"
+command = y
+time = 5
+[Command]
+name = "techthrow"
+command = z
+time = 5
+
+[Command]
 name = "rc"
 command = ~a
 buffer.time=5

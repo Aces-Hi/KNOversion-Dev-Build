@@ -61,6 +61,26 @@ trigger4 = stateno = 616
 trigger5 = stateno = 10003 ||stateno =40016
 trigger6 = stateno = 1405||stateno =1458
 trigger7 = var(1)
+
+;---------------------------------------------------------------------------
+[State Install]
+type = ChangeState
+value = 3500
+triggerall = command="lvl4"
+triggerall = power >= 2000
+triggerall = stateno !=3050 && var(30)<=0
+trigger1 = statetype != A
+trigger1 = ctrl
+trigger2 = statetype != A
+trigger2 = hitdefattr = SC, NA, SA, HA
+trigger2 = stateno != [3000,3050)
+trigger2 = movecontact
+trigger3 = stateno = 1310 || (stateno = 1330&&ctrl)
+trigger4 = stateno = 616
+trigger5 = stateno = 10003 ||stateno =40016
+trigger6 = stateno = 1405||stateno =1458
+trigger7 = var(1)
+
 ;===========================================================================
 
 [State -1,DJC]
@@ -109,6 +129,7 @@ value = 1400
 triggerall=stateno!=40
 triggerall = command = "b"
 triggerall = command != "c"
+triggerall = command!="lvl4"
 triggerall = command = "holdfwd"
 triggerall = command != "holddown"
 triggerall = statetype != A
@@ -136,6 +157,7 @@ type = ChangeState
 value = 1300
 triggerall=stateno!=40
 triggerall = command = "b"
+triggerall = command!="lvl4"
 triggerall = command != "c"
 triggerall = command = "holddown"
 trigger1 = statetype != A
@@ -267,13 +289,14 @@ trigger2=stateno!=105
 type = ChangeState
 value = 100
 triggerall = stateno!=105
-triggerall = stateno!=100
+trigger1 = stateno!=100
 triggerall = stateno!=40
 triggerall = stateno!=1330
 triggerall = command = "FF" || (command = "dash"&&teammode!=tag) || (command = "dash"&&teammode=tag && partner,stateno=5150)
 triggerall = command != "holdback"
 trigger1 = statetype != A
 trigger1 = ctrl
+trigger2 = stateno=100&&map(Install)
 ;Backdash
 [State -1, Backdash]
 type = ChangeState
@@ -286,6 +309,29 @@ trigger1 = statetype != A
 trigger1 = ctrl
 triggerall = stateno!=105
 
+;Aerial Dash
+[State -1, Airdash]
+type = ChangeState
+value =904
+triggerall=map(Install)&&map(airdash)=0
+triggerall = command = "aFF" || (command = "dash" && teammode !=tag) || (command = "dash" && teammode=tag && partner,stateno=5150)
+triggerall = command != "holdback" 
+trigger1 = statetype = A
+trigger1 = ctrl
+triggerall = stateno!=904
+triggerall = (pos y<-30 && vel y < 0) || (vel y >=0)
+;Aerial Backdash
+[State -1, Air Backdash]
+type = ChangeState
+value =903
+triggerall=map(Install)&&map(airdash)=0
+triggerall = command = "aBB" || (command = "dash" && teammode !=tag) || (command = "dash" && teammode=tag && partner,stateno=5150)
+triggerall = command = "holdback" 
+trigger1 = statetype = A
+trigger1 = ctrl
+triggerall = stateno!=903
+triggerall = (pos y<-30 && vel y < 0) || (vel y >=0)
+
 ;Overhead
 [State -1, Stand Strong Punch]
 type = ChangeState
@@ -297,6 +343,9 @@ triggerall = command = "y"
 triggerall = command = "holdfwd"
 triggerall = command !="holddown"
 triggerall = command !="holdup"
+triggerall = command != "TripleKFPalm"
+triggerall = command != "QCF"
+triggerall = command != "236x"
 trigger1 = ctrl
 trigger2 = (stateno = 200) && movecontact 
 trigger3 = (stateno = 210) && movecontact 
@@ -313,6 +362,7 @@ value =  200
 triggerall=stateno!=40
 triggerall = command = "x"
 triggerall = command = "holdback"
+triggerall = command != "holddown"
 trigger1 = statetype != A
 trigger1 = ctrl
 ;trigger2 = (stateno = 200) && movecontact

@@ -9,6 +9,10 @@ ctrl = 0
 anim = 1000
 sprpriority = 2
 
+[State 0, Turn]
+type = Turn
+trigger1 = map(teamlead)=0&&facing=enemynear,facing&&time=0
+
 [State 0, NotHitBy]
 type = NotHitBy
 trigger1 = animelemtime(12)<0
@@ -830,6 +834,10 @@ ctrl = 0
 anim = 1200
 sprpriority = 2
 
+[State 0, Turn]
+type = Turn
+trigger1 = map(teamlead)=0&&facing=enemynear,facing&&time=0
+
 [State Voice From Above]
 type = PlaySnd
 triggerall=map(december)=0
@@ -872,7 +880,23 @@ ignorehitpause = 1
 
 [State 0, Helper]
 type = Helper
-trigger1 = animelem=10
+trigger1 = animelem=10&&map(teamlead)
+helpertype = normal ;player
+name = "kiss"
+ID = 1210
+stateno = 1210
+pos = 30,-70
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+ownpal = 1
+supermovetime = 0
+pausemovetime = 0
+ignorehitpause = 1
+persistent = 0
+[State 0, Helper]
+type = Helper
+trigger1 = animelem=10&&map(teamlead)=0&&numhelper(1210)=0&&numhelper(1310)=0
 helpertype = normal ;player
 name = "kiss"
 ID = 1210
@@ -1063,6 +1087,12 @@ trigger1 =  root,statetype = A
 triggerall = root,HitDefAttr != SCA, HA,HP,HT
 trigger1 =  root,movetype!=H
 trigger2 = root,stateno=1010||root,stateno=1801||root,stateno=1600||root,stateno=1400||root,stateno=801||root,stateno=802||root,stateno=1700||root,stateno=1501||root,stateno=1110||root,stateno=1800||root,stateno=1900||root,stateno=1901
+ignorehitpause=1
+
+[State j5S]
+type = ChangeState
+value = 1221
+trigger1 = root,animelem=10&&root,map(teamlead)=0&&root,stateno=1200&&time>20
 ignorehitpause=1
 
 [State 0, DestroySelf]
@@ -1516,6 +1546,12 @@ trigger1 =  root,movetype!=H
 trigger2 = root,stateno=1010||root,stateno=1801||root,stateno=1600||root,stateno=1400||root,stateno=801||root,stateno=802||root,stateno=1700||root,stateno=1501||root,stateno=1110||root,stateno=1800||root,stateno=1900||root,stateno=1901
 ignorehitpause=1
 
+[State j5S]
+type = ChangeState
+value = 1321
+trigger1 = root,animelem=10&&root,map(teamlead)=0&&root,stateno=1200&&time>20
+ignorehitpause=1
+
 [State 0, DestroySelf]
 type = DestroySelf
 trigger1 = parent,movetype = H
@@ -1686,6 +1722,68 @@ poweradd= 0
 ctrl = 0
 anim = 1400
 sprpriority = 2
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem=1
+value = 209,0+random%4
+volumescale = 100
+persistent=0
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 =animelem=4
+value = 1400,0
+volumescale = 150
+persistent=0
+
+[State 20, 2]
+type = Turn
+trigger1=time=0
+trigger1 = command = "holdback"
+
+[State 20, 2]
+type = VelMul
+trigger1=1
+x = .9
+
+[State 0, Helper]
+type = Helper
+trigger1 = animelem=5
+helpertype = normal ;player
+name = "Halo"
+ID = 1410
+stateno = 1410
+pos = 40,0
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+ownpal = 1
+supermovetime = 0
+pausemovetime = 0
+ignorehitpause = 1
+persistent = 0
+
+[State 210, 5]
+type = ctrlset
+trigger1 = AnimElem=12
+value = 1
+[State 210, 5]
+type = ChangeState
+trigger1 = !animtime
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+;6S Assist
+[Statedef 1402]
+type    = S
+movetype= A
+physics = N
+poweradd= 0
+ctrl = 0
+anim = 1400
+sprpriority = 2
+facep2=1
 
 [State 0, PlaySnd]
 type = PlaySnd

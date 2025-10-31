@@ -975,8 +975,8 @@ trigger1 = animtime=0
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "intro %f meter %f lead %f enemy %f nj %f hl %f ap %f tracker %f"
-params = map(moveintro),map(meter),map(teamlead),map(enemyteamlead),map(noblockjump),map(hardlimit),map(afterparry),map(hardlimittracker)
+text = "intro %f meter %f lead %f enemy %f nj %f hl %f ap %f tl %f"
+params = map(moveintro),map(meter),map(teamlead),map(enemyteamlead),map(noblockjump),map(hardlimit),map(afterparry),map(teamlead)
 ignorehitpause = 1
 
 ;==================================================================================================
@@ -988,7 +988,7 @@ triggerall=teamside=2
 triggerall = GameMode = "Training"
 trigger1 = ctrl = 1
 trigger1 = statetype!=A
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 2
 value = 9061
 ctrl = 0
@@ -998,7 +998,7 @@ triggerall=teamside=2
 triggerall = GameMode = "Training"
 trigger1 = ctrl = 1
 trigger1 = statetype=A
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 2
 value = 9971
 ctrl = 0
@@ -1009,7 +1009,7 @@ triggerall = statetype!=A
 triggerall = GameMode = "Training"
 triggerall=var(28)=0
 trigger1 = ctrl = 1
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 3
 value = 3000
 ctrl = 0
@@ -1020,7 +1020,7 @@ triggerall = statetype!=A
 triggerall = GameMode = "Training"
 triggerall=var(28)>0
 trigger1 = ctrl = 1
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 3
 value = 3005
 ctrl = 0
@@ -1031,7 +1031,7 @@ triggerall = statetype!=A
 triggerall = GameMode = "Training"
 triggerall=var(28)=0
 trigger1 = ctrl = 1
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 4
 value = 3010
 ctrl = 0
@@ -1042,7 +1042,7 @@ triggerall = statetype!=A
 triggerall = GameMode = "Training"
 triggerall=var(28)>0
 trigger1 = ctrl = 1
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 4
 value = 3015
 ctrl = 0

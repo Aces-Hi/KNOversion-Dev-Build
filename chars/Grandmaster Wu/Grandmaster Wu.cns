@@ -506,7 +506,7 @@ triggerall=teamside=2
 triggerall = GameMode = "Training"
 trigger1 = ctrl = 1
 trigger1 = statetype!=A
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 2
 value = 2010
 ctrl = 0
@@ -516,7 +516,7 @@ triggerall=teamside=2
 triggerall = GameMode = "Training"
 trigger1 = ctrl = 1
 trigger1 = statetype=A
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 2
 value = 640
 ctrl = 0
@@ -526,7 +526,7 @@ triggerall=teamside=2
 triggerall = statetype!=A
 triggerall = GameMode = "Training"
 trigger1 = ctrl = 1
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 3
 value = 3010
 ctrl = 0
@@ -536,7 +536,7 @@ triggerall=teamside=2
 triggerall = statetype=A
 triggerall = GameMode = "Training"
 trigger1 = ctrl = 1
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 3
 value = 3000
 ctrl = 0
@@ -546,7 +546,7 @@ triggerall=teamside=2
 triggerall = statetype!=A
 triggerall = GameMode = "Training"
 trigger1 = ctrl = 1
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 4
 value = 3020
 ctrl = 0
@@ -556,7 +556,7 @@ triggerall=teamside=2
 triggerall = statetype=A
 triggerall = GameMode = "Training"
 trigger1 = ctrl = 1
-trigger1 = prevstateno = [120, 155]
+trigger1 = prevstateno = [120, 155] || stateno=[912,913]
 trigger1 = map(_iksys_trainingPunish) = 4
 value = 3000
 ctrl = 0
@@ -1033,6 +1033,11 @@ triggerall = var(2) != 0
 trigger1= p2stateno = 5110
 var(2)=0
 
+[State -2, reset var when opponent lies down]
+type=mapset
+trigger1= combocount=0
+map = "ksuper"
+value=0
 ;-------------------------------------------------------------------------------------------------------
 ; ------ REGULAR SPECIALS ----------------
 ;-------------------------------------------------------------------------------------------------------

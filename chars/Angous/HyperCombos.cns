@@ -33,9 +33,10 @@ value = 0
 
 [State 4000, NotHitBy]
 type = NotHitBy
-trigger1 = time = 0
+trigger1 = anim=3000
+trigger2 = anim=3001&&animelemtime(4)<0
 value = SCA
-time = 19
+time = 1
 
 [State 0, RemoveExplod]
 type = RemoveExplod
@@ -328,6 +329,12 @@ velset = 0,0
 anim =3005
 sprpriority = 16
 
+[State 4000, NotHitBy]
+type = NotHitBy
+trigger1 =1
+value = SCA
+time = 1
+
 [State 0, VarAdd]
 type = VarAdd
 trigger1 = time=0
@@ -395,6 +402,54 @@ supermovetime = -1
 persistent=0
 ignorehitpause=1
 ;=======================================
+
+;DEATH ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+trigger1 = enemy,HitShakeOver = 0
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-10
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+trigger1 = enemy,HitShakeOver = 0
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-10
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = movehit
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+trigger1 = enemy,HitShakeOver = 0
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
 
 [State 200, 3]
 type = ChangeState
@@ -508,9 +563,10 @@ value = 0
 
 [State 4000, NotHitBy]
 type = NotHitBy
-trigger1 = time = 0
+trigger1 = anim=3003
+trigger2 = anim=3004&&animelemtime(4)<0
 value = SCA
-time = 19
+time = 1
 
 [State 1000, shake]
 type = EnvShake
@@ -801,6 +857,12 @@ velset = 0,0
 anim =30055
 sprpriority = 16
 
+[State 4000, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 1
+
 ;RC Jasta
 [State -1, RC Jasta]
 type = ChangeState
@@ -876,6 +938,54 @@ persistent=0
 ignorehitpause=1
 ;=======================================
 
+;DEATH ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+trigger1 = enemy,HitShakeOver = 0
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-10
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+trigger1 = enemy,HitShakeOver = 0
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-10
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = movehit
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+trigger1 = enemy,HitShakeOver = 0
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
+
 [State 200, 3]
 type = ChangeState
 trigger1 = time > 59
@@ -894,6 +1004,12 @@ ctrl = 0
 velset = 20,0
 anim =3006
 sprpriority = 16
+
+[State 4000, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 1
 
 ;RC Jasta
 [State -1, RC Jasta]

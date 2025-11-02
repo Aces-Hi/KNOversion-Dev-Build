@@ -1504,7 +1504,7 @@ type = ModifyExplod
 trigger1 = enemynear,animelemtime(46)>=0
 ID = 3006
 scale=1.75,1.75
-pos = 130,312
+pos = 130,350
 postype = back
 
 

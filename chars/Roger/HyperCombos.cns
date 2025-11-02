@@ -2145,7 +2145,7 @@ ignorehitpause = 0
 type = HitDef 
 trigger1 = !movecontact
 attr = S, HA
-damage = ceil(cond(fvar(11) * 200 < 70, 70, fvar(11) * 200)),12
+damage = ceil(cond(fvar(11) *100 < 50, 50, fvar(11) * 100)), 0
 hitflag = MAFD
 guardflag = MA
 pausetime = 20,20
@@ -2196,7 +2196,7 @@ ignoreHitPause = 1
  type=mapset
  trigger1= animelem=7
 map = "install"
-value = 900
+value = 720
 
 [State 0, ChangeState]
 type = ChangeState

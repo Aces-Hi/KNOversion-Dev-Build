@@ -69,6 +69,8 @@ roger
 -5r launch height
 -2h hurtbox
 -2l sends down
+-2l ground pushback
+-4r level 2 blockstun
 /M>2M>M>3H
 /js rc doesnt freeze enemies
 /2l takes priority over 4l

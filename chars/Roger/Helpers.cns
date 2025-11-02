@@ -49,7 +49,7 @@ type =ModifyExplod
 Trigger1=TeamSide=1
 triggerall=root,alive
 trigger1 = NumExplod(7001)
-scale = .6 * Root,Map(Install)/900,.6
+scale = .6 * Root,Map(Install)/720,.6
 id = 7001
 PauseMoveTime=999999999999
 SuperMoveTime=99999999999999

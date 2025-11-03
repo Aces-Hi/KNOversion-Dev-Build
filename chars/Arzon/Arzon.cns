@@ -709,50 +709,13 @@ trigger1 =  GetHitVar(fall) = 1
 v = 50    ;fv = 10
 value = 0
 
-
-;[State 0, Regulat Display]
-;type = DisplayToClipboard
-;trigger1 = 1
-;text = "Counter Hit = %d Scale Counter = %d Scaling = %f Fireball Charge = %d"
-;params = fvar(8),var(27),fvar(11), var(10)
-
-;[State 0, Special Display]
-;type = DisplayToClipboard
-;trigger1 = 1
-;text = "Special Counter: %i, Special OKAY: %i, jH limiter: %i"
-;params = var(5), numexplod(1000), numexplod(90101)
-
-
-;var(54) = Cam Left Bound
-;var(51) = Cam Right Bound
-;var(52) = Player Left Bound
-;var(53) = Player Right Bound
-;[State 0, Position Display]
-;type = DisplayToClipboard
-;trigger1 = 1
-;text = "Pos: %i, CameraPos: %i, clb: %i, crb: %i, plb: %i, prb: %i"
-;params = Pos X, CameraPos X, var(54), var(51), var(52), var(53)
-
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "var(48) = %d"
-params = var(48)
+text = "ab %f"
+params =map(airball)
 ignorehitpause =1 
 ;persistent = 
-
-
-;[State 0, Stage Selector Test]
-;type = Varset
-;trigger1 = StageVar(PlayerInfo.p1startx)
-;var(50) = 1
-
-;[State 0, Selector Display]
-;type = DisplayToClipboard
-;trigger1 = 1
-;text = "Var(15): %i, S Input Detector: %i"
-;params = var(15), numexplod(1599)
-
 
 [State 0, PalFXWiz]
 type = PalFX
@@ -902,6 +865,11 @@ triggerall = var(11) != 0
 trigger1= p2stateno = 5110
 var(11)=0
 
+[State 0, VarAdd]
+type = MapSet
+trigger1 = combocount=0&&numhelper(1204)=0&&stateno!=1430
+map = "airball"
+value = 0
 
 ;----------------------------------------
 ;EX fiyahbowl reset var

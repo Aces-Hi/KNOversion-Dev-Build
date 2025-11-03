@@ -788,6 +788,12 @@ trigger1 = animtime = 0
 value = 0
 ctrl = 1
 
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = helper(1303),movehit && command = "holdupb"
+trigger2 = helper(1303),movehit && command = "holdup"
+value = 40
+
 ;j4S: air activation
 ;-----------------------------
 [Statedef 1302]
@@ -977,7 +983,7 @@ guard.ctrltime = 4
 guard.cornerpush.veloff = -7
 ID = 220
 yaccel = .27
-getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
+getpower = (100)*(cond(var(var(2)) = 1, 1, 1))
 guard.dist=0
 
 [State 0, DestroySelf]
@@ -4948,6 +4954,11 @@ getpower = (50)*(cond(var(var(3)) = 1, 1, .5))
 guard.dist=0
 ground.cornerpush.veloff = 0
 p1stateno=1502
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = moveguarded
+value=1502
+ctrl = 0
 
 [State 0, VelSet]
 type = VelSet
@@ -5578,6 +5589,13 @@ poweradd= 0
 ctrl = 0
 anim =1430
 sprpriority = 2
+
+
+[State 0, VarAdd]
+type = MapSet
+trigger1 = time = 0
+map = "airball"
+value = 1
 
 [State Arzon Voices]
 type = PlaySnd
@@ -6387,79 +6405,70 @@ bindtime = 0
 scale = -.82,.82
 sprpriority = 3
 
+
 [State 0, StateTypeSet]
 type = StateTypeSet
 trigger1 = animelem=2
 statetype = A       ;S,A,C,L
 movetype = A        ;I,A,H
 physics = N         ;A,C,S,N
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = animelem=2
+y = 4
 
 [State 0, VelAdd]
 type = Velset
 triggerall = time<=120
 triggerall=time>5
 trigger1 = command="holdfwd"
-x =4
+x =8
 
 [State 0, VelAdd]
 type = Velset
 triggerall = time<=120
 triggerall=time>12
 trigger1 = command="holddown"
-y =4
+y =5
 
 [State 0, VelAdd]
 type = Velset
 triggerall = time<=120
 triggerall=time>5
 trigger1 = command="holdback"
-x =-4
+x =-8
 
 [State 0, VelAdd]
 type = Velset
 triggerall = time<=120
 triggerall=time>5
+triggerall=pos y >-60
 trigger1 = command="holdup"
-y =-4
+y =-5
+
+[State 0, Veladd]
+type = VelMul
+triggerall=pos y <=-50
+trigger1 = command != "holddown"
+y = .95
+persistent=1
 
 [State 0, VelAdd]
-type = VelAdd
-triggerall=vel x>0
-triggerall=!vel x=0
-trigger1 = command!="holdback"
-trigger1 = command!="holdfwd"
-x =-1
-[State 0, VelAdd]
-type = VelAdd
-triggerall = time<=120
-triggerall=vel y>0
-triggerall=!vel y=0
-trigger1 = command!="holdup"
-trigger1 = command!="holddown"
-y =-1
-[State 0, VelAdd]
-type = VelAdd
-triggerall=vel x<0
-triggerall=!vel x=0
-trigger1 = command!="holdback"
-trigger1 = command!="holdfwd"
-x =1
-[State 0, VelAdd]
-type = VelAdd
-triggerall = time<=120
-triggerall=vel y<0
-triggerall=!vel y=0
-trigger1 = command!="holdup"
-trigger1 = command!="holddown"
-y =1
+type = VelMul
+trigger1=vel x!=0
+triggerall = command!="holdback"
+triggerall = command!="holdfwd"
+x =.9
 
 [State 0, VelAdd]
-type = VelSet
+type = VelMul
 triggerall = time<=120
-triggerall=pos y <=-100
-trigger1 = command="holdup"
-trigger2 = vel y<0
-y =0
+triggerall=vel y!=0
+trigger1 = command!="holdup"
+trigger1 = command!="holddown"
+y =.9
+
+
 
 [State 0, mapSet]
 type =mapSet
@@ -6470,10 +6479,11 @@ value = 0
 [State 0, StateTypeSet]
 type = StateTypeSet
 trigger1 = time>120
-trigger2=pos y <=-10
+trigger2=pos y >=-10
 statetype = A       ;S,A,C,L
 movetype = A        ;I,A,H
 physics = A        ;A,C,S,N
+
 ;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ;Shadow Override
 ;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

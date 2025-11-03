@@ -31,13 +31,13 @@ TYPHOON DISK		<#aaffff>(GROUND OR AIR)</> _F^Y/+^A/+^B/+^C
 TORNADO TRAP	-		_B^Y/+^A/+^B/+^C
    <#bbbbbb>Holding ^A,^B, or ^C changes it's placement.</>
 _!TYPHOON UPPERCUT	-		<#aaffff>(GROUND OR AIR)</> _B^Y
+   <#bbbbbb>Can be jump canceled on hit.</>
 TYPHOON SHIELD	-		_D^Y
    <#bbbbbb>A large move that gains invincibility after it begins.</>
 WHIRLWIND HOVER	-		<#65b5ff>(AIR ONLY)</> _D^Y
    <#bbbbbb>This move stops Arzon's vertical movement, allowing
    him to hover and drift side-to-side for a moment.
    This move does not obey Arzon's FREE AS THE WIND trait.</>
-
 
 
 

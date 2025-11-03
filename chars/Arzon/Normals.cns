@@ -219,6 +219,10 @@ type = RemoveExplod
 trigger1 = 1
 id = 211
 
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = animelem=4
+x = 7
 [State 0, Explod]
 type = Explod
 trigger1 = animelem = 5

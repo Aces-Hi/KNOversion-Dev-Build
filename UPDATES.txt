@@ -135,6 +135,11 @@ arzon
 +j5s ground hitstun
 +6sR
 +EX6sR
++exj2s speed
++exj2s ceiling
++5h movement
++lvl2 wall
++4ss meter
 -j5s endlag
 /j5s>2r
 
@@ -231,6 +236,7 @@ z
 +flight gauge drain
 +4s stagger ch
 +2h startup
++jR flight ceiling
 -236s 6 bars
 -jl hitstun on grounded
 -jm hitstun on grounded

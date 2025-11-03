@@ -385,16 +385,14 @@ trigger4 = stateno=640&&movecontact
 type = ChangeState
 value = 1430
 triggerall=stateno!=40
-triggerall = !numhelper(1204)
+triggerall = map(airball)=0
 triggerall = command != "holdback" && command != "holdfwd" 
 triggerall=command != "holddown"
 triggerall = command = "b" && command != "c"
 triggerall = statetype = A
-triggerall = !numexplod(1200)
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3 = numexplod(1000) && (var(5) <= 2)
-trigger4 = stateno=640&&movecontact
+trigger3 = stateno=640&&movecontact
 
 [State -1, j5EX] ; no longer gay; hate those people (I lied)
 type = ChangeState

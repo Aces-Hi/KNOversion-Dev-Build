@@ -3335,15 +3335,15 @@ x=0
 persistent=1
 
 [State 0, Veladd]
-type = VelSet
-triggerall=pos y <=-80
-trigger1 = command = "holdup"
-y = 0
+type = VelMul
+triggerall=pos y <=-60
+trigger1 = command != "holddown"
+y = .95
 persistent=1
 
 [State 0, Veladd]
 type = VelSet
-triggerall=pos y >-80
+triggerall=pos y >-60
 triggerall=vel y >-3
 trigger1 = command = "holdup"
 y = -3

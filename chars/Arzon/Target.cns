@@ -1152,10 +1152,10 @@ movecamera = 0,1
 [State 1026, Hit wall]
 type = ChangeState
 triggerall = Pos y < -0
-trigger1 = BackEdgeBodyDist <= 10
+trigger1 = BackEdgeBodyDist <= 0
 trigger1 = vel x < 0
 trigger2 = FrontEdgeBodyDist <= 10
-trigger1 = vel x > 0
+trigger2 = vel x > 0
 value = 11227
 
 [State 1026, Hit ground]

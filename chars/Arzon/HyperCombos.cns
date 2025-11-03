@@ -303,6 +303,11 @@ fall = 1
 envshake.time = 5
 guard.dist=0
 
+[State 0, VelSet]
+type = VelSet
+trigger1 = stagefrontedge<=40
+x = 0
+
 ;DEATH ZOOM ================================================
 [State 0]
 type = MapSet
@@ -838,7 +843,7 @@ scale = 1.5
 lag = 0.8
 stagebound = 1
 camerabound = 0
-pos =0,-10
+pos =-50*facing,-10
 ignorehitpause=1
 [State 0, Zoom]
 type = zoom
@@ -955,7 +960,21 @@ sprpriority = 3
 removeongethit = 1
 bindtime = 0
 supermovetime = 999
-
+[State 0, Explod]
+type = Explod
+trigger1 = animelem = 54
+anim = 3515
+ID =  3515
+pos = 100,0
+postype = p1
+facing = -1
+removetime = -2
+pausemovetime = 0
+scale = .82,.82
+sprpriority = 3
+removeongethit = 1
+bindtime = -1
+supermovetime = 999
 
 [State 0, Explod]
 type = Explod
@@ -972,25 +991,6 @@ sprpriority = -9
 removeongethit = 1
 bindtime = 0
 supermovetime = 999
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 43
-anim = 3515
-ID =  3512
-pos = -60,-25
-postype = p1
-facing = 1
-removetime = -2
-pausemovetime = 0
-scale = 2,2
-sprpriority = -9
-removeongethit = 1
-bindtime = 0
-velocity = 12.5,0
-accel = -.45,0
-supermovetime = 999
-ownpal = 1
 
 
 [State 0, ChangeState]

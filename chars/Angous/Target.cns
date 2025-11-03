@@ -1663,6 +1663,7 @@ trigger1 = 1
 value = 1
 movecamera = 1,0
 
+
 ;[State 1317, Muteki]
 ;type = NotHitBy
 ;trigger1 = AnimElemTime(2)<0
@@ -1742,8 +1743,14 @@ ignorehitpause=1
 persistent=1
 [State 30001, Velset]
 type = PosSet
-trigger1=stateowner,stateno=3016
+trigger1=stateowner,stateno=3016&&stateowner,numexplod(3018)=0
 y =-7
+ignorehitpause=1
+persistent=1
+[State 30001, Velset]
+type = PosSet
+trigger1=stateowner,stateno=3016&&stateowner,numexplod(3018)
+y =-500
 ignorehitpause=1
 persistent=1
 

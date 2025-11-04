@@ -1589,13 +1589,13 @@ ignorehitpause = 1
 
 [State 0, VarSet]
 type = MapAdd
-trigger1 = combocount=0&&map(install)=720&&roundstate=2
+trigger1 = combocount=0&&map(install)=900&&roundstate=2
 map = "Install"
 value = -1
 ignorehitpause = 1
 [State 0, VarSet]
 type = MapAdd
-trigger1 = map(install)>0&&map(install)<720&&roundstate=2
+trigger1 = map(install)>0&&map(install)<900&&roundstate=2
 map = "Install"
 value = -1
 ignorehitpause = 1

@@ -1461,59 +1461,7 @@ getpower = 0
 guard.dist=0
 P2STATENO= 6150
 P2GETP1STATE=0
-;COUNTER ZOOM ================================================
-[State 0]
-type = MapSet
-trigger1 = time=0
-map = "nozoom"
-value = 0
-ignorehitpause = 0
-[State 0, Zoom]
-type = zoom
-triggerall=map(nozoom)=0
-triggerall=backedgebodydist<=100
-trigger1 = enemynear,movetype!=A&&enemynear,stateno!=666999
-trigger1 = movecountered
-trigger1 = enemy,HitShakeOver = 0
-scale = 1.5
-lag = 0.8
-stagebound = 1
-camerabound = 0
-pos =0,-10
-ignorehitpause=1
-[State 0, Zoom]
-type = zoom
-triggerall=map(nozoom)=0
-triggerall=backedgebodydist>100
-trigger1 = enemynear,movetype!=A&&enemynear,stateno!=666999
-trigger1 = movecountered
-trigger1 = enemy,HitShakeOver = 0
-scale = 1.5
-lag = 0.8
-stagebound = 1
-camerabound = 0
-pos = pos x,-10
-ignorehitpause=1
-[State 0]
-type = MapAdd
-trigger1 = movecountered
-map = "nozoom"
-value = 1
-ignorehitpause = 0
-[State 0, BGPalFX]
-type = BGPalFX
-triggerall=map(nozoom)=0
-trigger1=movecountered
-trigger1 = enemy,HitShakeOver = 0
-trigger1 = enemynear,movetype!=A&&enemynear,stateno!=666999
-time = 1
-;add = 0,0,0
-mul = 50,50,50
-;sinadd = 0,0,0,10
-;color = 256
-ignorehitpause = 1
-persistent = 1
-;==============================================================
+
 
 [State 200, 1]
 type = HitDef

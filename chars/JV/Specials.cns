@@ -1345,7 +1345,7 @@ ignorehitpause = 1
 
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = command != "hold_b" && time>=30
+trigger1 = command != "hold_b" && time>=24
 trigger1=time<300
 value = 1008
 

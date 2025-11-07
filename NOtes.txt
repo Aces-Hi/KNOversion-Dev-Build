@@ -4,4 +4,11 @@ waffle house light poles
 z
 ball super
 
-jv crumple anim
+jv
+crumple anim
+
+z
+z charge during lvl6
+
+angous
+if he charges js then charges 5s his projectile breaks

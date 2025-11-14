@@ -1201,7 +1201,7 @@ Clsn2Default: 2
 ; 6S: Windwheel Loop
 [Begin Action 1102]
 Clsn1Default: 1
-  Clsn1[0] = -31, -31, 31, 31
+  Clsn1[0] = -16, -8, 25, 31
 Clsn2Default: 1
   Clsn2[0] = -31, -31, 31, 31
 1003,15, 22,56, 4
@@ -1216,7 +1216,7 @@ Clsn2Default: 1
 ; EX 6S: Windwheel Loop
 [Begin Action 1112]
 Clsn1Default: 1
-  Clsn1[0] = -47, -47, 48, 47
+  Clsn1[0] = -22, -17, 38, 47
 Clsn2Default: 1
   Clsn2[0] = -45, -45, 46, 45
 1004,0, 12,57, 4

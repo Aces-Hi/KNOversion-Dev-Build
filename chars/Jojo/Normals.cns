@@ -403,7 +403,7 @@ type = HitDef
 trigger1 = time=0
 attr = S, NA
 animtype  = Light
-damage = ceil(cond(fvar(11) *35 < 10, 10, fvar(11) * 35)), 0
+damage = ceil(cond(fvar(11) *30 < 10, 10, fvar(11) * 30)), 0
 hitflag = MAFD
 guardflag = MA
 pausetime = 10,10
@@ -566,7 +566,7 @@ trigger1 = var(8)=1
 trigger1 = !movecontact
 attr = S, NA
 animtype  = up
-damage = ceil(cond(fvar(11) *40 < 7, 7, fvar(11) * 40)), 0
+damage = ceil(cond(fvar(11) *30 < 7, 7, fvar(11) * 30)), 0
 hitflag = MAFD
 guardflag = MA
 pausetime = 10,10
@@ -710,7 +710,7 @@ attr = S, NA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *50 < 7, 7, fvar(11) * 50)), 2
 animtype = up                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA                   ;Flags on how move is to be guarded against
-hitflag = MAF                    ;Flags of conditions that move can hit
+hitflag = MAFD                    ;Flags of conditions that move can hit
 
 ;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 8, 8                ;Time attacker pauses, time opponent shakes
@@ -808,7 +808,7 @@ type = HitDef
 trigger1 = time = 0
 attr = S, NA
 animtype  = hard
-damage = ceil(cond(fvar(11) *50 < 10, 10, fvar(11) * 50)), 0
+damage = ceil(cond(fvar(11) *40 < 10, 10, fvar(11) * 40)), 0
 hitflag = MAFD
 guardflag = MA
 pausetime = 12,12
@@ -1311,7 +1311,7 @@ value = 0, 2
 type = HitDef
 trigger1 = time = 0
 attr = C, NA
-damage = ceil(cond(fvar(11) *35 < 10, 10, fvar(11) * 35)), 0
+damage = ceil(cond(fvar(11) *30 < 10, 10, fvar(11) * 30)), 0
 animtype  = light
 hitflag = MAFD
 guardflag = LA
@@ -1438,7 +1438,7 @@ type = HitDef
 trigger1 = !movecontact
 attr = S, NA
 animtype  = Hard
-damage = ceil(cond(fvar(11) *50 < 10, 10, fvar(11) * 50)), 0
+damage = ceil(cond(fvar(11) *40 < 10, 10, fvar(11) * 40)), 0
 hitflag = MAFD
 guardflag = MA
 pausetime = 12,12
@@ -1450,7 +1450,7 @@ ground.type = low
 ground.slidetime = 12
 ground.hittime  = 20
 air.hittime  = 44
-ground.velocity = -2,-6+map(grav)
+ground.velocity = -2,-4.5+map(grav)
 air.velocity = -2,-5+map(grav)
 ground.cornerpush.veloff = -3
 down.cornerpush.veloff = 0
@@ -1601,7 +1601,7 @@ guard.hittime = 30
 guard.ctrltime = 30
 fall.yvelocity = -2
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
-ground.cornerpush.veloff = -8
+ground.cornerpush.veloff = -22
 guard.velocity=-20
 [State 210, 2]
 type = HitDef 
@@ -1633,7 +1633,7 @@ guard.hittime = 30
 guard.ctrltime = 30
 fall.yvelocity = -2
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
-ground.cornerpush.veloff = -8
+ground.cornerpush.veloff = -22
 guard.velocity=-20
 
 
@@ -1674,7 +1674,7 @@ envshake.phase = 100
 fall=1
 air.fall=1
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
-ground.cornerpush.veloff = -8
+ground.cornerpush.veloff = -16
 guard.velocity=-20
 guard.hittime = 30
 guard.ctrltime = 30
@@ -1883,7 +1883,7 @@ triggerall=enemynear,map(armor)=0
 trigger1 = map(jH)<1
 trigger1 = !movecontact
 attr = A, NA
-damage = ceil(cond(fvar(11) *50 < 10, 10, fvar(11) * 50)), 0
+damage = ceil(cond(fvar(11) *40 < 10, 10, fvar(11) * 40)), 0
 getpower = 15
 animtype = light
 guardflag = HA
@@ -1903,7 +1903,7 @@ air.type = high
 air.velocity = -1,25
 air.hittime = 12
 fall = 1
-fall.yvelocity = -9
+fall.yvelocity = -8
 down.bounce = 9
 envshake.time = 15
 envshake.freq = 90
@@ -1919,7 +1919,7 @@ triggerall=enemynear,map(armor)>0
 trigger1 = map(jH)<1
 trigger1 = !movecontact
 attr = A, NA
-damage = ceil(cond(fvar(11) *50 < 10, 10, fvar(11) * 50)), 0
+damage = ceil(cond(fvar(11) *40 < 10, 10, fvar(11) * 40)), 0
 getpower = 15
 animtype = light
 guardflag = HA
@@ -1939,7 +1939,7 @@ air.type = high
 air.velocity = -1,25
 air.hittime = 12
 fall = 1
-fall.yvelocity = -9
+fall.yvelocity = -8
 down.bounce = 9
 envshake.time = 15
 envshake.freq = 90
@@ -1957,7 +1957,7 @@ triggerall=enemynear,map(armor)=0
 trigger1 = map(jH)>=1
 trigger1 = !movecontact
 attr = A, NA
-damage = ceil(cond(fvar(11) *50 < 10, 10, fvar(11) * 50)), 0
+damage = ceil(cond(fvar(11) *40 < 10, 10, fvar(11) * 40)), 0
 getpower = 15
 animtype = light
 guardflag = HA
@@ -1991,7 +1991,7 @@ triggerall=enemynear,map(armor)>0
 trigger1 = map(jH)>=1
 trigger1 = !movecontact
 attr = A, NA
-damage = ceil(cond(fvar(11) *50 < 10, 10, fvar(11) * 50)), 0
+damage = ceil(cond(fvar(11) *40 < 10, 10, fvar(11) * 40)), 0
 getpower = 15
 animtype = light
 guardflag = HA

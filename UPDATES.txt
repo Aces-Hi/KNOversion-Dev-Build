@@ -40,6 +40,7 @@ angous
 +EXjS projectile
 +6rH distance
 +6rH counter
++charge 6sss damage
 ~jS air blockstun
 -jS not air unblockable
 -js landing can be anti-aired
@@ -48,6 +49,17 @@ angous
 -6ss ending lag
 -install ex6ss armor
 -3s skd
+-6R>M min damage
+-install 6s damage
+-install 6ss damage
+-install 6sss damage
+-6sss min damage
+-js hitbox
+-EXjs hitbox
+-js blockstun
+-jS endlag
+-js second hit only hits in combos
+-EXjs second hit only hits in combos
 
 roger
 ++va
@@ -84,6 +96,14 @@ eddy
 +6ss crumple
 +3h otg
 +rr stagger ch
+-5s blockstun
+-ex5s blockstun
+-r no damage
+-rr no damage
+-ex5s damage scaling
+-4ss damage scaling
+-4sx damage scaling
+-2s damage scaling
 /no more super jc
 
 one
@@ -128,6 +148,7 @@ wu
 ~ANOTHER WU REWORK YES! YES!!!!!
 -r endlag
 -j236x double bounce
+-lvl4 max damage
 
 arzon
 +2h hitbox
@@ -140,7 +161,11 @@ arzon
 +5h movement
 +lvl2 wall
 +4ss meter
+-5h hitstun
 -j5s endlag
+-6s hitbox
+-ex6s hitbox
+-r only pushes mid combo
 /j5s>2r
 
 jv
@@ -193,6 +218,7 @@ jojo
 +2m launch height
 +2h launch height
 +3h movement
++3h wallbounce
 +jl launch height
 +jm launch height
 +jh launch height on second use
@@ -211,17 +237,21 @@ jojo
 -5mm gravity
 -4m gravity on second use
 -5h gravity
+-5h max damage
 -6h gravity on second use
 -4h gravity on second use
 -2l gravity
 -2l extra gravity
 -2m gravity
 -2h gravity
+-2h max damage
 -jl gravity
 -jl extra gravity
 -jm gravity
 -jh gravity gravity on second use
-
+-jh floor bounce height
+-jh max damage
+-4s maxcharge damage
 z
 +j6s distance
 +EXj6s distance

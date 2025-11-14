@@ -1330,7 +1330,7 @@ p2facing = 1
 triggerall=enemynear,map(armor)=0
 trigger1 = !movecontact
 attr = S, SA
-damage = ceil(cond(fvar(11) *120 < 40, 40, fvar(11) * 120)), 15
+damage = ceil(cond(fvar(11) *100 < 30, 30, fvar(11) * 100)), 15
 animtype  = Medium
 hitflag = MAFD
 guardflag = HA
@@ -1367,7 +1367,7 @@ p2facing = 1
 triggerall=enemynear,map(armor)>0
 trigger1 = !movecontact
 attr = S, SA
-damage = ceil(cond(fvar(11) *120 < 40, 40, fvar(11) * 120)), 0
+damage = ceil(cond(fvar(11) *100 < 30, 30, fvar(11) * 100)), 15
 animtype  = Medium
 hitflag = MAFD
 guardflag = HA

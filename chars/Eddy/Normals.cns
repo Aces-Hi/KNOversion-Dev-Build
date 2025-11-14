@@ -830,7 +830,7 @@ p2facing = 1
 triggerall=enemynear,movetype=H
 trigger1 = !movecontact
 attr = S, SA
-damage = ceil(cond(fvar(11) *80 < 10, 10, fvar(11) * 80)), 0
+damage = 0
 animtype  = Medium
 air.animtype = back
 hitflag = MAF
@@ -867,7 +867,7 @@ triggerall=enemynear,movetype!=A
 triggerall=enemynear,movetype!=H
 trigger1 = !movecontact
 attr = S, SA
-damage = ceil(cond(fvar(11) *80 < 10, 10, fvar(11) * 80)), 0
+damage = 0
 animtype  = Medium
 air.animtype = back
 hitflag = MAF
@@ -903,7 +903,7 @@ p2facing = 1
 triggerall=enemynear,movetype=A
 trigger1 = !movecontact
 attr = S, SA
-damage = 120,15
+damage = 0
 animtype  = Medium
 air.animtype = back
 hitflag = MAF
@@ -1077,7 +1077,7 @@ type = HitDef
 p2facing = 1
 trigger1 = !movecontact
 attr = S, SA
-damage = 120,15
+damage = 0
 animtype  = Medium
 air.animtype = back
 hitflag = MAF

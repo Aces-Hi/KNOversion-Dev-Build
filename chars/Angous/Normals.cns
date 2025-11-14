@@ -5593,7 +5593,7 @@ p2facing = 1
 trigger1 = animelem = 8
 hitonce = 1
 attr = S, SA
-damage = ceil(cond(fvar(11) *150 < 30, 30, fvar(11) * 110)), 15
+damage = ceil(cond(fvar(11) *150 < 20, 20, fvar(11) * 110)), 15
 hitflag = MAFD
 guardflag = HA
 ;priority = 3

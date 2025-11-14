@@ -1984,7 +1984,7 @@ y = -6
 type = VelSet
 trigger1 = animelem = 7
 x = 0
-y = 9
+y = 12
 
 [State 200, VarAdd]
 type = VarAdd

@@ -599,7 +599,7 @@ y = -9
 [State 1028, Vel X]
 type = VelSet
 trigger1 = Time = 0
-x = 1
+x = 0
 
 
 [State 1028, Gravity]
@@ -1381,7 +1381,7 @@ trigger1 = Time = 0
 x = 0.75
 
 [State 5100, 7]
-type = ChangeState
+type = SelfState
 trigger1 = Time = 0
 trigger1 = GetHitVar(fall.yvel) = 0
 value = 5110 ;Downed get-hit (lying down)
@@ -1408,7 +1408,7 @@ trigger1 = 1
 
 [State 5100, 12]
 type = ChangeState
-trigger1 = AnimTime = 0
+trigger1 = time>=5
 value = 54322 ;Downed get-hit (bounce off ground)
 
 [State 5100, 13]

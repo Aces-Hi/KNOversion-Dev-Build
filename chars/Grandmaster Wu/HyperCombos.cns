@@ -746,54 +746,6 @@ air.cornerpush.veloff = -36
 ID = 99858
 NoChainID = 99858
 
-;DEATH ZOOM ================================================
-[State 0]
-type = MapSet
-trigger1 = time=0
-map = "nozoom"
-value = 0
-ignorehitpause = 0
-[State 0, Zoom]
-type = zoom
-triggerall=map(nozoom)=0
-triggerall=backedgebodydist<=100
-trigger1 = enemy,HitShakeOver = 0&&movehit
-scale = 1.5
-lag = 0.8
-stagebound = 1
-camerabound = 0
-pos =0,-10
-ignorehitpause=1
-[State 0, Zoom]
-type = zoom
-triggerall=map(nozoom)=0
-triggerall=backedgebodydist>100
-trigger1 = enemy,HitShakeOver = 0&&movehit
-scale = 1.5
-lag = 0.8
-stagebound = 1
-camerabound = 0
-pos = pos x,-10
-ignorehitpause=1
-[State 0]
-type = MapAdd
-trigger1 = movehit
-map = "nozoom"
-value = 1
-ignorehitpause = 0
-[State 0, BGPalFX]
-type = BGPalFX
-triggerall=map(nozoom)=0
-trigger1 = enemy,HitShakeOver = 0&&movehit
-time = 1
-;add = 0,0,0
-mul = 50,50,50
-;sinadd = 0,0,0,10
-;color = 256
-ignorehitpause = 1
-persistent = 1
-;==============================================================
-
 [state 300, targetstate]
 type = targetstate
 trigger1 = movehit = 1
@@ -1313,7 +1265,7 @@ y = ((P2Dist Y * 10) / (Exp(0.5*ln((P2Dist X * P2Dist X) + (P2Dist Y * P2Dist Y)
 type = HitDef
 trigger1 = time = 0
 attr = S, HP
-damage = ceil(cond(root, fvar(11) * 50< 30, 30, root, fvar(11) * 50)), 15
+damage = ceil(cond(root, fvar(11) * 40< 30, 30, root, fvar(11) * 40)), 15
 hitflag = MAFD
 guardflag = MA
 ;priority = 3

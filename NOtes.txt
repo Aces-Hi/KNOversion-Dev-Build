@@ -1,23 +1,6 @@
-stages
-waffle house light poles
-
 z
 ball super
+make sure 4s doesnt proc prox guard
 
-jv
-crumple anim
-
-z
-z charge during lvl6
-
-angous
-if he charges js then charges 5s his projectile breaks
-hb on clone fucks up the animation
-js hitbox
-js landing lag increase
-
-wu
-jr is standing
-
-deus
-find out why her win face didnt work
+roger
+make him less carried idk

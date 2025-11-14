@@ -245,11 +245,12 @@ trigger1= MoveHit =1 && NumTarget(3000) && !ishelper
 ;ID = 3000
 value = 3001
 ignorehitpause=0
+
+
 [State 3000, P1 Custom State]
 type = Changestate
 triggerall =animtime=0
-triggerall = anim=3001
-trigger1= !MoveHit
+trigger1 = anim=3001
 value =0
 ignorehitpause=0
 ctrl=1
@@ -770,8 +771,7 @@ ignorehitpause=0
 [State 3000, P1 Custom State]
 type = Changestate
 triggerall =animtime=0
-triggerall = anim=3004
-trigger1= !MoveHit
+trigger1 = anim=3004
 value =0
 ignorehitpause=0
 ctrl=1

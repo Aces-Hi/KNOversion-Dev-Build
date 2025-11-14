@@ -871,6 +871,7 @@ ctrl = 0
 ;background
 [State 0, Explod] ;p1 side
 type = Explod
+triggerall map(TrailerMode)=0
 triggerall = teamside = 1 && RoundState=[2,3]
 trigger1= !NumExplod(7050)
 anim =7050
@@ -891,6 +892,7 @@ ignorehitpause = 1
 ;foreground
 [State 0, Explod] ;p1 side
 type = Explod
+triggerall map(TrailerMode)=0
 triggerall = teamside = 1 && RoundState=[2,3]
 triggerall= !NumExplod(7051)
 trigger1 = var(4)=1
@@ -913,6 +915,7 @@ ignorehitpause = 1
 ;background
 [State 0, Explod] ;p2 side
 type = Explod
+triggerall map(TrailerMode)=0
 triggerall = teamside = 2 && RoundState=[2,3]
 trigger1= !NumExplod(7050)
 anim =7050
@@ -933,6 +936,7 @@ ignorehitpause = 1
 ;foreground
 [State 0, Explod] ;p2 side
 type = Explod
+triggerall map(TrailerMode)=0
 triggerall = teamside = 2 && RoundState=[2,3]
 triggerall= !NumExplod(7051)
 trigger1 = var(4)=1
@@ -964,6 +968,7 @@ trigger4 = enemy,stateno = 3051&&enemynear,anim=3052
 
 trigger5=enemy,name="Deus"
 trigger5 = enemynear,stateno = 3002&&enemynear,anim=3002
+trigger6= stateno = 3051&&anim=3052
 ID = 7050
 ignorehitpause=1
 [State 0, RemoveExplod]
@@ -979,6 +984,7 @@ trigger4 = enemy,stateno = 3051&&enemynear,anim=3052
 
 trigger5=enemy,name="Deus"
 trigger5 = enemynear,stateno = 3002&&enemynear,anim=3002
+trigger6= stateno = 3051&&anim=3052
 id = 7051
 ignorehitpause=1
 ;j6S SKD Limiter
@@ -1147,6 +1153,7 @@ IgnoreHitPause=1
 ;Everything Regarding Volt Meter (Taken from HDBZ)
 [State -2, Volt Bar]
 type = Helper
+triggerall map(TrailerMode)=0
 triggerall=alive
 trigger1 = !NumHelper(7010)&&RoundState=2
 stateNo = 7010

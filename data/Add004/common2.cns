@@ -224,6 +224,7 @@ facep2=1
 	value=0
 [State 0]
 type = text
+triggerall map(TrailerMode)=0
 trigger1 = time<=20
 triggerall = teamside = 1
 removetime = 1
@@ -235,6 +236,7 @@ pos = 90,44
 ignorehitpause = 1
 [State 0]
 type = text
+triggerall map(TrailerMode)=0
 trigger1 = time<=20
 triggerall = teamside = 2
 removetime = 1
@@ -247,6 +249,7 @@ ignorehitpause = 1
 
 [State 0]
 type = text
+triggerall map(TrailerMode)=0
 trigger1 = time>20
 trigger1 = time<=40
 triggerall = teamside = 1
@@ -259,6 +262,7 @@ pos = 90,44
 ignorehitpause = 1
 [State 0]
 type = text
+triggerall map(TrailerMode)=0
 trigger1 = time>20
 trigger1 = time<=40
 triggerall = teamside = 2
@@ -272,6 +276,7 @@ ignorehitpause = 1
 
 [State 0]
 type = text
+triggerall map(TrailerMode)=0
 trigger1 = time>40
 trigger1 = time<60
 triggerall = teamside = 1
@@ -284,6 +289,7 @@ pos = 90,44
 ignorehitpause = 1
 [State 0]
 type = text
+triggerall map(TrailerMode)=0
 trigger1 = time>40
 trigger1 = time<60
 triggerall = teamside = 2
@@ -372,6 +378,7 @@ ctrl=0
 
 [State 0]
 type = text
+triggerall map(TrailerMode)=0
 trigger1 = time<=60
 triggerall = teamside = 1
 removetime = 1
@@ -383,6 +390,7 @@ pos = 90,44
 ignorehitpause = 1
 [State 0]
 type = text
+triggerall map(TrailerMode)=0
 trigger1 = time<=60
 triggerall = teamside = 2
 removetime = 1
@@ -396,6 +404,7 @@ ignorehitpause = 1
 ;Throw Tech SFX & FX
 [State -3, ThrowTech Announcer]
 type = PlaySnd
+triggerall map(TrailerMode)=0
 trigger1 = time=0
 value = F1030, (0+(Random%2))
 volumescale=75

@@ -789,6 +789,7 @@ id = 44020
 
 [State 0, Explod] ;Meditation LvL Indicator P1 Side
 type = Explod
+triggerall map(TrailerMode)=0
 trigger1 = roundstate=2
 trigger1 = teamside = 1
 anim =7050
@@ -808,6 +809,7 @@ ignorehitpause = 1
 
 [State 0, Explod] ;Meditation LvL Indicator P2 Side
 type = Explod
+triggerall map(TrailerMode)=0
 trigger1 = roundstate=2
 trigger1 = teamside = 2
 anim =7050

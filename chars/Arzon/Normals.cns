@@ -301,7 +301,7 @@ air.animtype = back
 damage = ceil(cond(fvar(11) *55 < 4, 4, fvar(11) * 55)), 0
 hitflag = MAFD
 guardflag = MA
-pausetime = 12,14
+pausetime = 14,14
 sparkno = 3
 sparkxy = -15,-45
 hitsound   = 5,3
@@ -309,8 +309,8 @@ guardsound = 6,2
 ground.type = Low
 ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *30 < 9, 9, fvar(15) * 30))
-air.hittime  = ceil(cond(fvar(15) *60 < 9, 9, fvar(15) * 60))
-down.hittime = ceil(cond(fvar(15) *56 < 9, 9, fvar(15) * 56))
+air.hittime  = ceil(cond(fvar(15) *40 < 9, 9, fvar(15) * 60))
+down.hittime = ceil(cond(fvar(15) *40 < 9, 9, fvar(15) * 56))
 ground.velocity = -3.2
 air.velocity = -2.5,-5.5
 envshake.time = 20
@@ -3039,13 +3039,13 @@ time = 1
 
 [State 0, PlayerPush]
 type = PlayerPush
-trigger1 = 1
+trigger1 = root,combocount
 trigger1 = enemy,stateno!=10225
 value = 1
 ignorehitpause=1
 [State 0, PlayerPush]
 type = PlayerPush
-trigger1 = 1
+trigger1 = root,combocount
 trigger1 = enemy,stateno=10225
 value = 0
 ignorehitpause=1
@@ -3070,7 +3070,7 @@ value = SCA,NA,SA,HA,NT,ST,HT
 time = 1
 [State 0, PlayerPush]
 type = PlayerPush
-trigger1 = 1
+trigger1 = root,combocount
 value = 1
 
 

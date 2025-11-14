@@ -2845,9 +2845,9 @@ ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *21 < 9, 9, fvar(15) * 21))
 air.hittime  = ceil(cond(fvar(15) *31 < 9, 9, fvar(15) * 31))
 down.hittime = ceil(cond(fvar(15) *31 < 9, 9, fvar(15) * 31))  
-ground.velocity =  -2,-6.5
-air.velocity = -2,-6.5
-down.velocity =  -2,-6.5
+ground.velocity =  -2,-7
+air.velocity = -2,-7
+down.velocity =  -2,-7
 palfx.time = 12
 palfx.add = 100, 0,20
 guard.hittime = 24
@@ -2918,9 +2918,9 @@ ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *21 < 9, 9, fvar(15) * 21))
 air.hittime  = ceil(cond(fvar(15) *31 < 9, 9, fvar(15) * 31))
 down.hittime = ceil(cond(fvar(15) *31 < 9, 9, fvar(15) * 31))  
-ground.velocity =  -2,-4
-air.velocity = -2,-4
-down.velocity =  -2,-4
+ground.velocity =  -2,-5
+air.velocity = -2,-5
+down.velocity =  -2,-5
 palfx.time = 12
 palfx.add = 100, 0,20
 guard.hittime = 24
@@ -3151,7 +3151,7 @@ ignorehitpause = 1
 [State 0, NotHitBy]
 type = NotHitBy
 trigger1 = anim=1600
-trigger1 = time<=5
+trigger1 = time<=10
 trigger2 = anim=1700
 trigger2 = animelemtime(4)<0
 triggerall=enemy,stateno!=900
@@ -3163,7 +3163,7 @@ ignorehitpause = 1
 [State 0, NotHitBy]
 type = NotHitBy
 trigger1 = anim=1600
-trigger1 = time>5
+trigger1 = time>10
 triggerall=enemy,stateno!=900
 triggerall=enemy,stateno!=901
 value = A

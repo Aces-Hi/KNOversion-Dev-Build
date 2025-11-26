@@ -31,7 +31,6 @@ local footerTextOptions = {
 
 local loadingTextOptions = {
 
-  "When's Deus?",
   "When's Tui?",
   "When's Tentionmaru?",
   "When's Dreyvon?",

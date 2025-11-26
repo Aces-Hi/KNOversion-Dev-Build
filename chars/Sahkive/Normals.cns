@@ -1984,7 +1984,7 @@ hitsound   = 5,3
 guardsound = 6,2
 ground.type = high
 ground.slidetime = 12
-ground.hittime  =19
+ground.hittime  =cond(combocount=0,34,15)
 air.hittime  = cond(combocount=0,34,26)
 ground.velocity = -4,0
 air.velocity = -1.8,-4.5

@@ -2050,7 +2050,13 @@ ctrl = 0
 anim = 3100
 sprpriority = 2
 poweradd=-2000
-velset = 0,0
+velset = 15,0
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = animelemtime(3)<0
+trigger1 = p2bodydist x <30
+x = 0
 
 ;Idle Explod Removal
 [State 0, RemoveExplod]

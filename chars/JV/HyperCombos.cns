@@ -418,11 +418,22 @@ trigger1 = movehit = 1
 v = 3
 value = 0
 
+[State 0, VelAdd]
+type = MapSet
+trigger1 = time=0
+map = "scounter"
+value=0
+[State 0, VelAdd]
+type = MapSet
+trigger1 = movecountered
+map = "scounter"
+value=1
+
 [State 200, 1]
 type = HitDef
 p2facing = 1 
-trigger1 = time = 0
-hitonce = 1
+trigger1 = !movecontact
+trigger1 = enemynear,movetype!=A
 attr = S, HA
 damage = ceil(cond(fvar(11) *78 < 10, 10, fvar(11) * 78)), 10
 hitflag = MAFD
@@ -449,6 +460,90 @@ guard.ctrltime = 4
 getpower = 0
 snap=30,0
 kill=0
+[State 200, 1]
+type = HitDef
+p2facing = 1 
+trigger1 = !movecontact
+trigger1 = enemynear,movetype=A
+attr = S, HA
+damage = 80
+hitflag = MAFD
+guardflag = MA
+pausetime = 22,70
+guard.pausetime = 15,10
+sparkno = 2
+sparkxy = -25,-44
+hitsound   = 5,1
+guardsound = 6,1
+ground.type = Low
+animtype = medium
+ground.slidetime = 14
+ground.hittime  = 23
+ground.velocity = -0,0
+air.velocity = -0,-1
+air.hittime = 24
+envshake.time = 7
+fall = 1
+fall.yvelocity = 0
+guard.slidetime = 21
+guard.hittime = 21
+guard.ctrltime = 4
+getpower = 0
+snap=30,0
+kill=0
+
+;DEATH ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movecountered
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-10
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movecountered
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-10
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = movecountered
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movecountered
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
+
+
 [State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit
@@ -664,9 +759,39 @@ ignorehitpause = 1
 type = HitDef
 p2facing = 1 
 kill=0
+trigger1 = map(scounter)=0
 trigger1 = animelem = 2 || animelem = 5 || animelem = 10 || animelem = 14 || animelem = 19 || animelem = 23 || animelem = 25 || animelem = 28 || animelem = 32 || animelem = 35    
 attr = S, HA
 damage = ceil(cond(fvar(11) *9 < 4, 4, fvar(11) * 9)), 5
+hitflag = MAFD
+guardflag = MA
+pausetime =2,4
+sparkno = 2
+sparkxy = -25,-44
+hitsound   = 5,1
+guardsound = 6,1
+ground.type = Low
+animtype = medium
+ground.slidetime = 14
+ground.hittime  = 23
+ground.velocity = -2,0
+air.velocity = -6.6,-10
+air.hittime = 24
+envshake.time = 7
+fall = 0
+fall.yvelocity = 0
+guard.slidetime = 21
+guard.hittime = 21
+guard.ctrltime = 4
+getpower=0
+[State 200, 1]
+type = HitDef
+p2facing = 1 
+kill=0
+trigger1 = map(scounter)>0
+trigger1 = animelem = 2 || animelem = 5 || animelem = 10 || animelem = 14 || animelem = 19 || animelem = 23 || animelem = 25 || animelem = 28 || animelem = 32 || animelem = 35    
+attr = S, HA
+damage = 12
 hitflag = MAFD
 guardflag = MA
 pausetime =2,4
@@ -693,6 +818,7 @@ getpower=0
 type = HitDef
 p2facing = 1 
 kill=0
+trigger1 = map(scounter)=0
 trigger1 = animelem = 40
 attr = S,HA
 damage = ceil(cond(fvar(11) *50< 10, 10, fvar(11) * 50)), 10
@@ -717,16 +843,75 @@ guard.slidetime = 21
 guard.hittime = 21
 guard.ctrltime = 4
 getpower=0
+[State 200, 1]
+type = HitDef
+p2facing = 1 
+kill=0
+trigger1 = map(scounter)>0
+trigger1 = animelem = 40
+attr = S,HA
+damage = 70
+hitflag = MAFD
+guardflag = MA
+pausetime = 20,60
+sparkno = 3
+sparkxy = -25,-44
+hitsound   = 5,1
+guardsound = 6,1
+ground.type = Low
+animtype = medium
+ground.slidetime = 14
+ground.hittime  = 23
+ground.velocity = -2,0
+air.velocity = -6.6,-3
+air.hittime = 24
+envshake.time = 7
+fall = 0
+fall.yvelocity = 0
+guard.slidetime = 21
+guard.hittime = 21
+guard.ctrltime = 4
+getpower=0
 
 [State 200, 1]
 type = HitDef
 p2facing = 1 
+trigger1 = map(scounter)=0
 trigger1 = animelem = 48
 attr = S, HA
 damage = ceil(cond(fvar(11) *98 < 40, 40, fvar(11) * 98)), 10
 hitflag = MAFD
 guardflag = MA
 pausetime = 25,30
+sparkno = 13
+sparkxy = -25,-44
+hitsound   = 5,1
+guardsound = 6,1
+ground.type = trip
+air.type = trip
+animtype = hard
+ground.slidetime = 25
+ground.hittime  = 23
+ground.velocity = -24,1
+air.velocity = -24,1
+down.velocity = -24,1
+air.hittime = 24
+envshake.time = 10
+fall = 1
+fall.yvelocity = 0
+guard.slidetime = 21
+guard.hittime = 21
+getpower=0
+[State 200, 1]
+type = HitDef
+p2facing = 1 
+trigger1 = map(scounter)>0
+trigger1 = animelem = 48
+attr = S, HA
+damage = 156
+hitflag = MAFD
+guardflag = MA
+pausetime = 45,50
 sparkno = 13
 sparkxy = -25,-44
 hitsound   = 5,1
@@ -776,7 +961,7 @@ scale = 1.5
 lag = 0.8
 stagebound = 1
 camerabound = 0
-pos = pos x,-10
+pos = pos x+50*facing,-10
 ignorehitpause=1
 [State 0]
 type = MapAdd
@@ -1501,47 +1686,13 @@ ignorehitpause = 0
 type = HitDef 
 p2facing = 1
 trigger1 = animelem=5
-trigger1=enemynear,statetype!=A
-attr = S, SP
-animtype  = Light
-air.animtype = back
-damage = ceil(cond(fvar(11) *100 < 20, 20, fvar(11) * 100)), 10
-hitflag = MAFDP
-guardflag = MA
-pausetime = 12,12
-sparkno = 3
-sparkxy = -35,-70
-hitsound   = 5,3
-guardsound = 6,2
-ground.type = low
-ground.slidetime = 40
-ground.hittime  = 40
-ground.velocity = -4
-air.velocity = -4,1
-airguard.velocity = -2,-1
-fall = 1
- envshake.time = 15
-envshake.freq = 80
-envshake.ampl = 2
-envshake.phase = 1
-guard.hittime = 10
-guard.ctrltime = 10
-fall.yvelocity = 0
-getpower = 0
-
-
-[State 630, 2]
-type = HitDef 
-p2facing = 1
-trigger1 = animelem=5
-trigger1=enemynear,statetype=A
 attr = S, SP
 animtype  = Light
 air.animtype = back
 damage = ceil(cond(fvar(11) *120 < 25, 25, fvar(11) * 120)), 10
-hitflag = MAFDP
+hitflag = AF
 guardflag = MA
-pausetime = 12,12
+pausetime = 12,16
 sparkno = 2
 sparkxy = -35,-45
 hitsound   = 5,3
@@ -1550,7 +1701,7 @@ ground.type = low
 ground.slidetime = 40
 ground.hittime  = 40
 ground.velocity = -4
-air.velocity = -16,-4
+air.velocity = -16,-5
 airguard.velocity = -2,-1
 fall = 1
  envshake.time = 15
@@ -1599,8 +1750,12 @@ x = 0.2
 [State 0, VelAdd]
 type = VelSet
 trigger1 = time=0
-y = 0
+y = -12
 persistent = 1
+[State 0, VelMul]
+type = VelMul
+trigger1 = animelemtime(6)<0
+y = 0.8
 
 [State 0, SuperPause]
 type = SuperPause
@@ -1686,7 +1841,6 @@ value = .2
 type = HitDef 
 p2facing = 1
 trigger1 = animelem=6
-trigger1=enemynear,statetype!=A
 attr = A, SP
 animtype  = Light
 air.animtype = back
@@ -1714,38 +1868,6 @@ guard.ctrltime = 10
 fall.yvelocity = 0
 getpower = 0
  p2stateno=915020
-
-[State 630, 2]
-type = HitDef 
-p2facing = 1
-trigger1 = animelem=6
-trigger1=enemynear,statetype=A
-attr = A, SP
-animtype  = Light
-air.animtype = back
-damage = ceil(cond(fvar(11) *100 < 20, 20, fvar(11) * 100)), 10
-hitflag = MAFDP
-guardflag = MA
-pausetime = 12,12
-sparkno = 2
-sparkxy = -35,-45
-hitsound   = 5,3
-guardsound = 6,2
-ground.type = low
-ground.slidetime = 40
-ground.hittime  = 40
-ground.velocity = -4
-air.velocity = -16,4
-airguard.velocity = -2,4
-fall = 1
- envshake.time = 15
-envshake.freq = 80
-envshake.ampl = 2
-envshake.phase = 1
-guard.hittime = 10
-guard.ctrltime = 10
-fall.yvelocity = 0
-getpower = 0
 
 [State 0, ChangeState]
 type = ChangeState

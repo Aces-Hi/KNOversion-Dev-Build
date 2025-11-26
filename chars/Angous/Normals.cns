@@ -594,7 +594,7 @@ persistent=0
 [State -3, Angous Voices]
 type = PlaySnd
 trigger1 = movehit&&palno=3
-value = 226, (2+(Random%2))
+value = 226, 2
 volumescale=150
 channel=9
 ignorehitpause=1
@@ -3794,7 +3794,7 @@ type = zoom
 triggerall=map(nozoom)=0
 triggerall=backedgebodydist<=100
 trigger1 = enemy,HitShakeOver = 0
-trigger1 = movehit&&time>5
+trigger1 = movehit&&animelemtime(11)>=0
 scale = 1.5
 lag = 0.8
 stagebound = 1
@@ -3806,7 +3806,7 @@ type = zoom
 triggerall=map(nozoom)=0
 triggerall=backedgebodydist>100
 trigger1 = enemy,HitShakeOver = 0
-trigger1 = movehit&&time>5
+trigger1 = movehit&&animelemtime(11)>=0
 scale = 1.5
 lag = 0.8
 stagebound = 1
@@ -3823,7 +3823,7 @@ ignorehitpause = 0
 type = BGPalFX
 triggerall=map(nozoom)=0
 trigger1 = enemy,HitShakeOver = 0
-trigger1 = movehit&&time>5
+trigger1 = movehit&&animelemtime(11)>=0
 time = 1
 ;add = 0,0,0
 mul = 50,50,50
@@ -4364,7 +4364,7 @@ type = zoom
 triggerall=map(nozoom)=0
 triggerall=backedgebodydist<=100
 trigger1 = enemy,HitShakeOver = 0
-trigger1 = time>5
+trigger1 = movehit&&animelemtime(11)>=0
 scale = 1.5
 lag = 0.8
 stagebound = 1
@@ -4376,7 +4376,7 @@ type = zoom
 triggerall=map(nozoom)=0
 triggerall=backedgebodydist>100
 trigger1 = enemy,HitShakeOver = 0
-trigger1 = time>5
+trigger1 = movehit&&animelemtime(11)>=0
 scale = 1.5
 lag = 0.8
 stagebound = 1
@@ -4393,7 +4393,7 @@ ignorehitpause = 0
 type = BGPalFX
 triggerall=map(nozoom)=0
 trigger1 = enemy,HitShakeOver = 0
-trigger1 = time>5
+trigger1 = movehit&&animelemtime(11)>=0
 time = 1
 ;add = 0,0,0
 mul = 50,50,50

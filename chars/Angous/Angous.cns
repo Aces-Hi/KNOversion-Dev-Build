@@ -1275,7 +1275,7 @@ persistent=1
 
 [State 0, PlaySnd] ;PEPSI MAAAAAN
 type = PlayBgm
-triggerall=enemynear,var(28)>0
+triggerall=enemynear,var(28)>0&&enemynear,name="Angous"
 triggerall=RoundType=3
 triggerall = palno = 11
 triggerall=enemynear,palno!=12
@@ -1283,24 +1283,25 @@ trigger1=animelem=4
 trigger1=stateno=3010
 ignorehitpause=1
 persistent=0
-bgm = "sound/angouspepsi.wav"
+bgm = "sound/angouspepsi.mp3"
 loop = 1
 volume=60
 [State 0, PlaySnd] ;PEPSI MAAAAAN
 type = PlayBgm
-triggerall=enemynear,var(28)=0
 triggerall=RoundType=3
 triggerall = palno = 11
-trigger1=animelem=4
-trigger1=stateno=3010
+triggerall=animelem=4
+triggerall=stateno=3010
+trigger1=enemynear,var(28)=0&&enemynear,name="Angous"
+trigger2=enemynear,name!="Angous"
 ignorehitpause=1
 persistent=0
-bgm = "sound/angouspepsi.wav"
+bgm = "sound/angouspepsi.mp3"
 loop = 1
 volume=60
 [State 0, PlaySnd] ;RATED R
 type = PlayBgm
-triggerall=enemynear,var(28)>0
+triggerall=enemynear,var(28)>0&&enemynear,name="Angous"
 triggerall=RoundType=3
 triggerall = palno = 10
 triggerall=enemynear,palno!=12
@@ -1308,22 +1309,23 @@ trigger1=animelem=4
 trigger1=stateno=3010
 ignorehitpause=1
 persistent=0
-bgm = "sound/angousbadguy.wav"
+bgm = "sound/angousbadguy.mp3"
 loop = 1
 [State 0, PlaySnd] ;RATED R
 type = PlayBgm
-triggerall=enemynear,var(28)=0
 triggerall=RoundType=3
 triggerall = palno = 10
-trigger1=animelem=4
-trigger1=stateno=3010
+triggerall=animelem=4
+triggerall=stateno=3010
+trigger1=enemynear,var(28)=0&&enemynear,name="Angous"
+trigger2=enemynear,name!="Angous"
 ignorehitpause=1
 persistent=0
-bgm = "sound/angousbadguy.wav"
+bgm = "sound/angousbadguy.mp3"
 loop = 1
 [State 0, PlaySnd] ;buster.
 type = PlayBgm
-triggerall=enemynear,var(28)>0
+triggerall=enemynear,var(28)>0&&enemynear,name="Angous"
 triggerall=RoundType=3
 triggerall = palno = 9
 triggerall=enemynear,palno!=12
@@ -1331,41 +1333,163 @@ trigger1=animelem=4
 trigger1=stateno=3010
 ignorehitpause=1
 persistent=0
-bgm = "sound/angousbuster.wav"
+bgm = "sound/angousbuster.mp3"
 loop = 1
 [State 0, PlaySnd] ;buster.
 type = PlayBgm
-triggerall=enemynear,var(28)=0
 triggerall=RoundType=3
 triggerall = palno = 9
-trigger1=animelem=4
-trigger1=stateno=3010
+triggerall=animelem=4
+triggerall=stateno=3010
+trigger1=enemynear,var(28)=0&&enemynear,name="Angous"
+trigger2=enemynear,name!="Angous"
 ignorehitpause=1
 persistent=0
-bgm = "sound/angousbuster.wav"
+bgm = "sound/angousbuster.mp3"
 loop = 1
 [State 0, PlaySnd] ;PERFECT HATRED
 type = PlayBgm
-triggerall=enemynear,var(28)>0
+triggerall=enemynear,var(28)>0&&enemynear,name="Angous"
 triggerall=RoundType=3
-triggerall = palno = 6
+triggerall = palno = 8
 triggerall=enemynear,palno!=12
 trigger1=animelem=4
 trigger1=stateno=3010
 ignorehitpause=1
 persistent=0
-bgm = "sound/angoushatred.wav"
+bgm = "sound/angoushatred.mp3"
 loop = 1
 [State 0, PlaySnd] ;PERFECT HATRED
 type = PlayBgm
-triggerall=enemynear,var(28)=0
 triggerall=RoundType=3
-triggerall = palno = 6
+triggerall = palno = 8
+triggerall=animelem=4
+triggerall=stateno=3010
+trigger1=enemynear,var(28)=0&&enemynear,name="Angous"
+trigger2=enemynear,name!="Angous"
+ignorehitpause=1
+persistent=0
+bgm = "sound/angoushatred.mp3"
+loop = 1
+[State 0, PlaySnd] ;MARK OF THE WOLF
+type = PlayBgm
+triggerall=enemynear,var(28)>0&&enemynear,name="Angous"
+triggerall=RoundType=3
+triggerall = palno = 2
+triggerall=enemynear,palno!=12
 trigger1=animelem=4
 trigger1=stateno=3010
 ignorehitpause=1
 persistent=0
-bgm = "sound/angoushatred.wav"
+bgm = "sound/angoushoward.mp3"
+loop = 1
+[State 0, PlaySnd] ;MARK OF THE WOLF
+type = PlayBgm
+triggerall=RoundType=3
+triggerall = palno = 2
+triggerall=animelem=4
+triggerall=stateno=3010
+trigger1=enemynear,var(28)=0&&enemynear,name="Angous"
+trigger2=enemynear,name!="Angous"
+ignorehitpause=1
+persistent=0
+bgm = "sound/angoushoward.mp3"
+loop = 1
+[State 0, PlaySnd] ;ORA
+type = PlayBgm
+triggerall=enemynear,var(28)>0&&enemynear,name="Angous"
+triggerall=RoundType=3
+triggerall = palno = 3
+triggerall=enemynear,palno!=12
+trigger1=animelem=4
+trigger1=stateno=3010
+ignorehitpause=1
+persistent=0
+bgm = "sound/angousplatinum.mp3"
+loop = 1
+[State 0, PlaySnd] ;ORA
+type = PlayBgm
+triggerall=RoundType=3
+triggerall = palno = 3
+triggerall=animelem=4
+triggerall=stateno=3010
+trigger1=enemynear,var(28)=0&&enemynear,name="Angous"
+trigger2=enemynear,name!="Angous"
+ignorehitpause=1
+persistent=0
+bgm = "sound/angousplatinum.mp3"
+loop = 1
+[State 0, PlaySnd] ;MEMPHIS
+type = PlayBgm
+triggerall=enemynear,var(28)>0&&enemynear,name="Angous"
+triggerall=RoundType=3
+triggerall = palno = 4
+triggerall=enemynear,palno!=12
+trigger1=animelem=4
+trigger1=stateno=3010
+ignorehitpause=1
+persistent=0
+bgm = "sound/angousfromstreets.mp3"
+loop = 1
+[State 0, PlaySnd] ;MEMPHIS
+type = PlayBgm
+triggerall=RoundType=3
+triggerall = palno = 4
+triggerall=animelem=4
+triggerall=stateno=3010
+trigger1=enemynear,var(28)=0&&enemynear,name="Angous"
+trigger2=enemynear,name!="Angous"
+ignorehitpause=1
+persistent=0
+bgm = "sound/angousfromstreets.mp3"
+loop = 1
+[State 0, PlaySnd] ;RUDE BUSTER
+type = PlayBgm
+triggerall=enemynear,var(28)>0&&enemynear,name="Angous"
+triggerall=RoundType=3
+triggerall = palno = 5
+triggerall=enemynear,palno!=12
+trigger1=animelem=4
+trigger1=stateno=3010
+ignorehitpause=1
+persistent=0
+bgm = "sound/angousrude.mp3"
+loop = 1
+[State 0, PlaySnd] ;RUDE BUSTER
+type = PlayBgm
+triggerall=RoundType=3
+triggerall = palno = 5
+triggerall=animelem=4
+triggerall=stateno=3010
+trigger1=enemynear,var(28)=0&&enemynear,name="Angous"
+trigger2=enemynear,name!="Angous"
+ignorehitpause=1
+persistent=0
+bgm = "sound/angousrude.mp3"
+loop = 1
+[State 0, PlaySnd] ;CONDESCENSION 
+type = PlayBgm
+triggerall=enemynear,var(28)>0&&enemynear,name="Angous"
+triggerall=RoundType=3
+triggerall = palno = 7
+triggerall=enemynear,palno!=12
+trigger1=animelem=4
+trigger1=stateno=3010
+ignorehitpause=1
+persistent=0
+bgm = "sound/angousgameover.mp3"
+loop = 1
+[State 0, PlaySnd] ;CONDESCENSION 
+type = PlayBgm
+triggerall=RoundType=3
+triggerall = palno = 7
+triggerall=animelem=4
+triggerall=stateno=3010
+trigger1=enemynear,var(28)=0&&enemynear,name="Angous"
+trigger2=enemynear,name!="Angous"
+ignorehitpause=1
+persistent=0
+bgm = "sound/angousgameover.mp3"
 loop = 1
 [State 0, PlaySnd] ;HEAVEN-SENT
 type = PlayBgm
@@ -1375,7 +1499,7 @@ trigger1=animelem=4
 trigger1=stateno=3010
 ignorehitpause=1
 persistent=0
-bgm = "sound/angousheaven.wav"
+bgm = "sound/angousheaven.mp3"
 loop = 1
 [State 0, BGPalFX]
 type = BGPalFX

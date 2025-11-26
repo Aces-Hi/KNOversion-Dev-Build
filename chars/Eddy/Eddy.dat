@@ -133,14 +133,14 @@ NO PARRY	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _F^X
    <#bbbbbb>A reversal option that gives you the advantage
    if the enemy hits you. Refunds 1 BAR on hit.</>
 RECORD SCRATCH (WHILE ATTACKING)		<#55ffff>(1 BAR/2 BARS ON BLOCK)</> ^X
-   <#bbbbbb>Can be used to instantly cancel most attacks.</>
+   <#bbbbbb>Can be used to instantly cancel most attacks.
+   Holding any direction during this will cause you to move that way.</>
 BURST (WHILE GETTING HIT)	-		^X+^A/^B/^C
    <#bbbbbb>A large reversal that can be used while you're getting hit.</>
 PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(5 BARS)</> ^X+^A/^B/^C
    <#bbbbbb>An extra burst that can be used in an emergency.</>
    <#ff0000>Using this PERMANENTLY lowers your max meter
    for the rest of the game.</>
-
 _D	_D		_D
 
 	2V2 MODE

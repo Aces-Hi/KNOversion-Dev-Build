@@ -1056,10 +1056,14 @@ physics = N
 
 [State 1028, Vel X]
 type = VelSet
-trigger1 = Time = 0
+trigger1 = Time = 0&&stateowner,stateno!=1070
 x = 0
 y=-3
-
+[State 1028, Vel X]
+type = VelSet
+trigger1 = Time = 0&&stateowner,stateno=1070
+x = 0
+y=-6
 
 [State 1028, Gravity]
 type = VelAdd

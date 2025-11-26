@@ -1,8 +1,8 @@
 [Info]
 name = "HEAVEN"
 round1def = stages/Heaven.def
-round2def = stages/Heaven 2.def
-round3def = stages/Heaven 3.def
+round2def = stages/Heaven2.def
+round3def = stages/Heaven3.def
 
 [Constants]
 

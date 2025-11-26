@@ -5283,11 +5283,11 @@ ignorehitpause=1
 [State 0, Pause]
 type = Pause
 trigger1 = time=0
-time = 10
-movetime =10
-endcmdbuftime = 10
+time = 20
+movetime =20
 pausebg = 1
 ignorehitpause = 1
+
 [State 0, CtrlSet]
 type = CtrlSet
 trigger1 = time = 10
@@ -5402,15 +5402,16 @@ ignorehitpause=0
 [State 0, Pause]
 type = Pause
 trigger1 = time=0
-time = 10
-movetime =10
-endcmdbuftime = 10
+time = 20
+movetime =20
 pausebg = 1
 ignorehitpause = 1
 [State 0, CtrlSet]
 type = CtrlSet
 trigger1 = time = 10
 value = 1
+ignorehitpause=1
+
 [State 0, StateTypeSet]
 type = StateTypeSet
 trigger1 = time = 10
@@ -5801,6 +5802,7 @@ type = ChangeState
 value = 910 + 1 * statetype = A
 triggerall = power >= 1000
 triggerall = hitshakeover && teammode != Tag
+triggerall = stateno!=[690000,690002]
 trigger1 = command = "holdfwd" || command = "fwd"
 triggerall = command = "nobuffer_a" || (stateno = [120,155] || stateno = 912 || stateno = 5120) && (command = "a")
 triggerall = ctrl ||   stateno = 912 && time > 2
@@ -5843,6 +5845,24 @@ triggerall = power>=1000
 trigger1 = movehit
 trigger2 = map(zexception)
 ignorehitpause=0
+;RC Jasta Air
+[State -1, RC Jasta Air]
+type = ChangeState
+value = 690001
+triggerall = prevstateno!=[910,914]
+triggerall = stateno!=[910,914]
+triggerall = map(norc)=0
+triggerall = name!="angous"
+triggerall=enemy,stateno!=7000
+triggerall = !ishelper
+triggerall = stateno!=900&&stateno!=901&&stateno!=69002&&stateno!=902&&stateno!=750
+triggerall = command = "a"
+triggerall = statetype = A
+triggerall = movetype = A
+triggerall = power>=1000
+trigger1 = movehit>1
+trigger2 = map(zexception)
+ignorehitpause=1
 
 
 ;RC Jasta Air
@@ -5900,11 +5920,11 @@ ignorehitpause=0
 ;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ;Trailer Mode
 ;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-[State 0]
-type = MapSet
-trigger1 = roundtype=0
-map = "TrailerMode"
-value=1
+;[State 0]
+;type = MapSet
+;trigger1 = roundtype=0
+;map = "TrailerMode"
+;value=1
 ;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [State -2, Dynamic Shadows]
@@ -5984,7 +6004,7 @@ value =0
 
 [State -2, Explod];Counter Explod for P1 Side.
 type = Explod
-triggerall map(TrailerMode)=0
+triggerall = map(TrailerMode)=0
 triggerall = numexplod(13000) = 0 && teamside = 1 ;Counter Ok, Explod has not played, P1 Side
 triggerall = combocount<=2
 triggerall = movecountered = 1 ;Enemy was indeed HIT, otherwise this'd be retarded.
@@ -6007,7 +6027,7 @@ pausemovetime = -1
 
 [State 0, PlaySnd]
 type = PlaySnd
-triggerall map(TrailerMode)=0
+triggerall = map(TrailerMode)=0
 triggerall = movecountered = 1 
 triggerall = combocount<=1
 triggerall=stateno!=[900,901]
@@ -6021,7 +6041,7 @@ lowpriority=1
 
 [State -2, Explod];Counter Explod for P2 Side.
 type = Explod
-triggerall map(TrailerMode)=0
+triggerall = map(TrailerMode)=0
 triggerall = numexplod(13000) = 0 && teamside = 2 ;Counter Ok, Explod has not played, P2 Side
 triggerall = combocount<=2
 triggerall = movecountered = 1 ;Enemy was indeed HIT, otherwise this'd be retarded.
@@ -6044,7 +6064,7 @@ pausemovetime = -1
 
 [State 0, Explod] ;BURST EXPLOD
 type = Explod
-triggerall map(TrailerMode)=0
+triggerall = map(TrailerMode)=0
 triggerall = !numexplod(900)
 triggerall=roundstate=2
 trigger1 = map(burst) = 0 && playerno = 1&&teammode!=tag
@@ -6064,7 +6084,7 @@ ignorehitpause = 1
 ownpal=1
 [State 0, Explod]
 type = Explod
-triggerall map(TrailerMode)=0
+triggerall = map(TrailerMode)=0
 triggerall = !numexplod(900)
 triggerall=roundstate=2
 trigger1 = map(burst) = 0 && playerno = 2&&teammode!=tag
@@ -6086,7 +6106,7 @@ ownpal=1
 
 [State 0, Explod] ;PBURST EXPLOD
 type = Explod
-triggerall map(TrailerMode)=0
+triggerall = map(TrailerMode)=0
 triggerall = !numexplod(900)
 triggerall=roundstate=2
 trigger1 = map(burst) = 1 && playerno = 1&&teammode!=tag&&power>=5000
@@ -6106,7 +6126,7 @@ ignorehitpause = 1
 ownpal=1
 [State 0, Explod]
 type = Explod
-triggerall map(TrailerMode)=0
+triggerall = map(TrailerMode)=0
 triggerall = !numexplod(900)
 triggerall=roundstate=2
 trigger1 = map(burst) = 1 && playerno = 2&&teammode!=tag&&power>=5000&&gamemode!="training"
@@ -6135,7 +6155,7 @@ ignorehitpause = 1
 
 [State 0, Explod] ;BURST EXPLOD
 type = Explod
-triggerall map(TrailerMode)=0
+triggerall = map(TrailerMode)=0
 triggerall = !numexplod(900)
 triggerall=roundstate=2
 trigger1 = map(burst) = 0 && playerno = 1&&teammode=tag
@@ -6155,7 +6175,7 @@ ignorehitpause = 1
 ownpal=1
 [State 0, Explod]
 type = Explod
-triggerall map(TrailerMode)=0
+triggerall = map(TrailerMode)=0
 triggerall = !numexplod(900)
 triggerall=roundstate=2
 trigger1 = map(burst) = 0 && playerno = 2&&teammode=tag
@@ -6176,7 +6196,7 @@ ownpal=1
 
 [State 0, Explod]
 type = Explod
-triggerall map(TrailerMode)=0
+triggerall = map(TrailerMode)=0
 triggerall = !numexplod(900)
 triggerall=roundstate=2
 trigger1 = map(burst) = 0 && playerno = 3
@@ -6196,7 +6216,7 @@ ignorehitpause = 1
 ownpal=1
 [State 0, Explod]
 type = Explod
-triggerall map(TrailerMode)=0
+triggerall = map(TrailerMode)=0
 triggerall = !numexplod(900)
 triggerall=roundstate=2
 trigger1 = map(burst) = 0 && playerno = 4
@@ -6221,7 +6241,7 @@ ownpal=1
 
 [State 0, ENEMYCTRL]
 type = text
-triggerall map(TrailerMode)=0
+triggerall = map(TrailerMode)=0
 triggerall = map(_iksys_trainingAtkDataDisp) = 0
 trigger1 = map(_iksys_trainingGuardMode) =1||map(_iksys_trainingGuardMode) =2||map(_iksys_trainingGuardMode) =3
 triggerall = teamside = 2
@@ -6676,7 +6696,7 @@ ignorehitpause = 1
 
 [State 0, DAMAGE]
 type = text
-triggerall map(TrailerMode)=0
+triggerall = map(TrailerMode)=0
 triggerall = map(_iksys_trainingAtkDataDisp) = 0
 triggerall=teamside=2
 triggerall = GameMode = "Training"
@@ -6776,7 +6796,7 @@ ignorehitpause = 1
 
 [State 0]
 type = text
-triggerall map(TrailerMode)=0
+triggerall = map(TrailerMode)=0
 triggerall = map(_iksys_trainingAtkDataDisp) = 0
 trigger1=teamside=2
 triggerall = GameMode = "Training"
@@ -6790,7 +6810,7 @@ pos=160,209
 ignorehitpause = 1
 ;[State 0]
 ;type = text
-;triggerall map(TrailerMode)=0
+;triggerall = map(TrailerMode)=0
 ;triggerall = map(_iksys_trainingAtkDataDisp) = 0
 ;trigger1=teamside=2
 ;trigger1 = player(1),map(cock)>0
@@ -6807,7 +6827,7 @@ ignorehitpause = 1
 
 [State 0]
 type = text
-triggerall map(TrailerMode)=0
+triggerall = map(TrailerMode)=0
 triggerall = map(_iksys_trainingAtkDataDisp) = 0
 trigger1=teamside=2
 trigger1= player(1),map(cokc)=0
@@ -6824,7 +6844,7 @@ ignorehitpause = 1
 color=0,256,0
 [State 0]
 type = text
-triggerall map(TrailerMode)=0
+triggerall = map(TrailerMode)=0
 triggerall = map(_iksys_trainingAtkDataDisp) = 0
 trigger1=teamside=2
 trigger1= player(1),map(cokc)=1
@@ -6841,7 +6861,7 @@ ignorehitpause = 1
 color=0,256,0
 [State 0]
 type = text
-triggerall map(TrailerMode)=0
+triggerall = map(TrailerMode)=0
 triggerall = map(_iksys_trainingAtkDataDisp) = 0
 trigger1=teamside=2
 trigger1= player(1),map(cokc)=2
@@ -7158,7 +7178,7 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmside)
 removetime=1
 layerno=2  
-text="Overflow (Sabrina's Version)"
+text="Can't Control"
 scale=1,1
 font=F1
 align=0
@@ -7173,7 +7193,7 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmside)
 removetime=1
 layerno=2  
-text="Rina Ryukami ft. Een Glish"
+text="Rina Ryukami"
 scale=.6,.6
 font=F1
 align=0
@@ -7317,7 +7337,7 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmdown)
 removetime=1
 layerno=2  
-text="The Only Thing They Fear Is You"
+text="You Blow My Mind"
 scale=1,1
 font=F1
 align=0
@@ -7332,7 +7352,7 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmdown)
 removetime=1
 layerno=2  
-text="Mick Gordon"
+text="Hideki Okugawa"
 scale=.6,.6
 font=F1
 align=0
@@ -7828,7 +7848,7 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmdown)
 removetime=1
 layerno=2  
-text="N95"
+text="Count Me Out"
 scale=1,1
 font=F1
 align=0
@@ -8973,7 +8993,7 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmdown)
 removetime=1
 layerno=2  
-text="Sneakman"
+text="GET ENUF"
 scale=1,1
 font=F1
 align=0
@@ -9116,7 +9136,7 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmdown)
 removetime=1
 layerno=2  
-text="DINNER!"
+text="Mother Fucking Jerk"
 scale=1,1
 font=F1
 align=0
@@ -9131,7 +9151,7 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmdown)
 removetime=1
 layerno=2  
-text="femtanyl"
+text="Ackk Studios"
 scale=.6,.6
 font=F1
 align=0
@@ -9372,7 +9392,7 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmdown)
 removetime=1
 layerno=2  
-text="Let The Sparks Fly!"
+text="Gotta Get The Cash"
 scale=1,1
 font=F1
 align=0
@@ -9387,7 +9407,7 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmdown)
 removetime=1
 layerno=2  
-text="Breeton Boi & V!CE"
+text="Doujah Raze"
 scale=.6,.6
 font=F1
 align=0
@@ -9500,7 +9520,7 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmdown)
 removetime=1
 layerno=2  
-text="Duvet"
+text="Moon"
 scale=1,1
 font=F1
 align=0
@@ -9515,7 +9535,7 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmdown)
 removetime=1
 layerno=2  
-text="Boa"
+text="mcbaise"
 scale=.6,.6
 font=F1
 align=0

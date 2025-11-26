@@ -15,6 +15,7 @@ var(1) = 0
 
 [State -1, Combo condition Check]
 type = VarSet
+triggerall=stateno!=[251,252]
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = stateno = [200,499]&&stateno!=260

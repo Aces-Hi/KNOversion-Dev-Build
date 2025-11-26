@@ -618,8 +618,8 @@ value = -1
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "normals %f"
-params = map(no_rmals)
+text = "normals %f sc %f"
+params = map(no_rmals), map(scounter)
 
 [State 0, Pause]
 type = Pause

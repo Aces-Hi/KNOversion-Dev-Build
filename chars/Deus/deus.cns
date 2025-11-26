@@ -983,7 +983,7 @@ lowpriority=1
 [State Voice From Above]
 type = PlaySnd
 triggerall=map(december)=1
-trigger1 = time=0
+trigger1 = time=1
 value = 1225,0
 volumescale=200
 channel=7
@@ -1275,7 +1275,7 @@ lowpriority=1
 [State Voice From Above]
 type = PlaySnd
 triggerall=map(december)=1
-trigger1 = time=0
+trigger1 = time=1
 value = 1225,0
 volumescale=200
 channel=7
@@ -2010,7 +2010,7 @@ lowpriority=1
 [State Voice From Above]
 type = PlaySnd
 triggerall=map(december)=1
-trigger1 = time=0
+trigger1 = time=1
 value = 1225,0
 volumescale=200
 channel=7
@@ -2994,7 +2994,8 @@ persistent = 1
 [State 0, VarSet]
 type = Mapset
 triggerall = palno=12
-trigger1 =consecutivewins>=5
+trigger1 =command = "hold_start"
+triggerall = StageVar(info.name) = "From the Other Side"
 trigger1 =roundno=1&&roundstate=0
 map = "december"
 value = 1

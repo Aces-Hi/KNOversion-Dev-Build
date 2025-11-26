@@ -23,7 +23,7 @@ boundright = 237
 boundhigh = -40
 boundlow = 0
 verticalfollow = .1
-tension = 200
+tension = 100
 
 [PlayerInfo]
 ;--- Player 1 ---

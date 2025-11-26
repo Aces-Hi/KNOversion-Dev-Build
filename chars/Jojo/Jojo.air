@@ -1,4 +1,4 @@
-qqzczcezqzcqeeeeqqccqzqeeeeeeeeqqqqeqqqeqqeeeeqeqeqqczzccqeeqzqqacqcczzczcqczcqqqqqeeqeeeeeeeeeeeqqecaaaaaaaaaaaaaeeqeqqeqe1008..klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
+eqqzczcezqzcqeeeeqqccqzqeeeeeeeeqqqqeqqqeqqeeeeqeqeqqczzccqeeqzqqacqcczzczcqczcqqqqqeeqeeeeeeeeeeeqqecaaaaaaaaaaaaaeeqeqqeqe1008..klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
 ..,......,,,...j,,,./..kl,,----..,,.,,,,,,,,,,,.; KFM's animation data
 ; Idle
 
@@ -1110,7 +1110,7 @@ Clsn2: 1
 651,0, 0,0, 1
 Clsn2: 1
   Clsn2[0] = -17, -102, 30, -29
-651,1, 0,0, 2
+651,1, 0,0, 1
 Clsn2: 1
   Clsn2[0] = -17, -102, 30, -29
 651,2, 0,0, 2
@@ -1150,13 +1150,13 @@ Clsn2: 1
 651,0, 0,0, 3
 Clsn2: 1
   Clsn2[0] = -17, -102, 30, -29
-651,1, 0,0, 4
+651,1, 0,0, 3
 Clsn2: 1
   Clsn2[0] = -17, -102, 30, -29
 651,2, 0,0, 3
 Clsn2: 1
   Clsn2[0] = -17, -111, 30, -18
-651,3, 0,0, 3
+651,3, 0,0, 2
 Clsn2: 1
   Clsn2[0] = -15, -153, 18, 8
 651,4, 0,0, 1

@@ -454,7 +454,7 @@ volumescale=150
 type = PlaySnd
 triggerall = time=0
 trigger1 = enemynear,name = "roger"
-trigger1 = enemynear,palno=7||enemynear,palno!=4||enemynear,palno!=9
+trigger1 = enemynear,palno=7||enemynear,palno=4||enemynear,palno=9
 value = 190, (0+(Random%3))
 volumescale=150
 [State Sahkive Voices]
@@ -587,7 +587,7 @@ volumescale=150
 type = PlaySnd
 triggerall = time=0
 trigger1 = enemynear,name = "roger"
-trigger1 = enemynear,palno=7||enemynear,palno!=4||enemynear,palno!=9
+trigger1 = enemynear,palno=7||enemynear,palno=4||enemynear,palno=9
 value = 190, (0+(Random%3))
 volumescale=150
 [State Sahkive Voices]

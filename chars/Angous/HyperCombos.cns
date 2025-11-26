@@ -1913,6 +1913,11 @@ value = 3013,4
 channel = 99
 loop = 0
 
+[State 0, PlaySnd] 
+type = PlaySnd
+trigger1 = animelem = 10 && palno = 5
+value = 3011,1
+volumescale=100
 
 [State 0, StopSnd]
 type = StopSnd

@@ -224,11 +224,15 @@ value = 40
 
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = movecontact && command = "z" && command = "holdfwd" && command != "holddown" 
+trigger1 = movecontact
+triggerall = command = "z" && command = "holdfwd" && command != "holddown" 
+trigger2 = animelemtime(8)>=0
 value = 206
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = movecontact && command = "z" && command = "holdfwd" && command = "holddown" 
+trigger1 = movecontact
+triggerall = command = "z" && command = "holdfwd" && command = "holddown" 
+trigger2 = animelemtime(8)>=0
 value = 207
 
 [State 0, ChangeState]
@@ -2245,20 +2249,19 @@ ctrl = 0
 
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = command = "x" && time > 30
+trigger1 = command = "hold_x" && time > 9
 value = 637
 ctrl = 0
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = command = "y" && time > 30
+trigger1 = command = "hold_y" && time > 9
 value = 633
 ctrl = 0
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = command = "z" && time > 30
+trigger1 = command = "hold_z" && time > 9
 value = 634
 ctrl = 0
-
 ;================================
 ;5REN
 ;-----------------------------
@@ -2400,17 +2403,17 @@ ctrl = 0
 
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = command = "nobuffer_x" && time > 15
+trigger1 = command = "hold_x" && time > 14
 value = 637
 ctrl = 0
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = command = "nobuffer_y" && time > 15
+trigger1 = command = "hold_y" && time > 14
 value = 633
 ctrl = 0
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = command = "nobuffer_z" && time > 15 
+trigger1 = command = "hold_z" && time > 14
 value = 634
 ctrl = 0
 
@@ -2888,6 +2891,12 @@ envshake.ampl = 2
 envshake.phase = 1
 forcenofall = 1
 getpower = (100)*(cond(var(var(2)) = 1, 1, 1)) 
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = movehit && command = "holdupb"
+trigger2 = movehit && command = "holdup"
+value = 40
 
 [State 0, ChangeState]
 type = ChangeState

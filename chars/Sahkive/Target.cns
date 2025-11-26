@@ -1125,7 +1125,9 @@ type = VelSet
 trigger1 = Time = 0
 trigger1=stateowner,stateno=1051
 trigger1=p2bodydist x >=50
-x =2
+trigger2=stateowner,prevstateno=1043
+trigger3=stateowner,stateno=1043
+x =1
 
 [State 1028, Gravity]
 type = VelAdd

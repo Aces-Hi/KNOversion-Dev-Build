@@ -2,7 +2,7 @@
 
 	<#107105>UNIQUE TRAIT: BOUNDLESS</>
 	I have many traits that make me play unlike any other character in this game.
-	I can face either direction at any time. I don't have a traditional walk,
+	I can face either direction at any time, I don't have a traditional walk,
 	backdash, or air dash, and I can freely move back and forward in the air.
 	There's even more, so check the rest of the move list for more info. :)
 
@@ -38,7 +38,7 @@ HALO	-		<#aaffff>(GROUND OR AIR)</> _F^Y
 SHINE THROUGH	-		(CAN BE HELD) _D^Y
    <#bbbbbb>The slide is projectile immune. The uppercut is an anti-air.
    Becomes more powerful when fully held.</>
-DIVINE INTERVENTION	-		<#65b5ff>(AIR ONLY)</> _D^Y
+LIGHT FROM ABOVE	-		<#65b5ff>(AIR ONLY)</> _D^Y
 
 
 
@@ -86,7 +86,7 @@ _EX HALO	-		<#aaffff>(GROUND OR AIR)<#55ffff>(1 BAR)</> _F^Y
 _EX SHINE THROUGH	-		(CAN BE HELD)<#55ffff>(1 BAR)</> _D^Y
    <#bbbbbb>Invincible startup. The rest of the attack is
    an anti-air and projectile immune.</>
-_EX DIVINE INTERVENTION	-		<#65b5ff>(AIR ONLY)<#55ffff>(1 BAR)</> _D^Y
+_EX LIGHT FROM ABOVE	-		<#65b5ff>(AIR ONLY)<#55ffff>(1 BAR)</> _D^Y
 
 
 
@@ -96,9 +96,9 @@ _EX DIVINE INTERVENTION	-		<#65b5ff>(AIR ONLY)<#55ffff>(1 BAR)</> _D^Y
 _D	_D		_D
 
 	<#55ffff>SUPERS</>
-<#107105>ALL THAT YOU KNOW OF</>		<#aaffff>(GROUND OR AIR)<#55ffff><#55ffff>(2 BARS)</> _D_DF_F_-^A/^B/^C
-_!<#107105>AND ALL YOU DO NOT</>		<#aaffff>(GROUND OR AIR)<#55ffff><#55ffff>(1 BAR)</> (HOLD)^A/^B/^C
-   _!<#107105>ALL OF IT, IS ME.</>		<#aaffff>(GROUND OR AIR)<#55ffff><#55ffff>(1 BAR)</> (HOLD)^A/^B/^C
+<#107105>DIVINE INTERVENTION</>		<#aaffff>(GROUND OR AIR)<#55ffff><#55ffff>(2 BARS)</> _D_DF_F_-^A/^B/^C
+_!<#107105>HOLY TRINITY</>		<#aaffff>(GROUND OR AIR)<#55ffff><#55ffff>(1 BAR)</> (HOLD)^A/^B/^C
+   _!<#107105>ABSOLUTION.</>		<#aaffff>(GROUND OR AIR)<#55ffff><#55ffff>(1 BAR)</> (HOLD)^A/^B/^C
 <#107105>FUTILITY</>	-		<#55ffff>(2 BARS)</> _D_DF_F_-^Y
    <#bbbbbb>A counter that beats strikes and projectiles.
    The opposition may have time to block when this is used to beat a projectile.</>
@@ -133,14 +133,14 @@ NO PARRY	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _F^X
    <#bbbbbb>A reversal option that gives me the advantage
    if someone hits me. Refunds 1 BAR on hit.</>
 RECORD SCRATCH (WHILE ATTACKING)		<#55ffff>(1 BAR/2 BARS ON BLOCK)</> ^X
-   <#bbbbbb>Can be used to instantly cancel most attacks.</>
+   <#bbbbbb>Can be used to instantly cancel most attacks.
+   Holding any direction during this will cause me to move that way.</>
 BURST (WHILE GETTING HIT)	-		^X+^A/^B/^C
    <#bbbbbb>A large reversal that can be used while I'm getting hit.</>
 PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(5 BARS)</> ^X+^A/^B/^C
    <#bbbbbb>An extra burst that can be used in an emergency.</>
    <#ff0000>Using this PERMANENTLY limits my max meter
    for the rest of the game.</>
-
 _D	_D		_D
 
 	2V2 MODE

@@ -1,4 +1,4 @@
-ecQqeqeeeeqeqqqeqcc.zeecqzzccqeze1aaazczzeeeeeeeeeqeeeqeeqqeqqqqqqeeeeeeeeeeeecqeeceqeeeeqeqqeqqqqqeeqqeeeeeqeeqqqqqqqeqeeccqqqqqqzczczqqqzzecqaqcezqqzqsssqezecqeeeeqeeqeeeqccqeeeeqeeccadazcddzqqeqeeqqzzzzeczczzccqqeqqzzzzzsseqqeeqqqqqeeezezqqzqeqqqeeeeee3eqeqqqezzzeqeczzcczezqeqeeeqeeeqeeqjjkkkkkkkkkkkkkk31011,,klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
+zzzecQqeqeeeeqeqqqeqcc.zeecqzzccqeze1aaazczzeeeeeeeeeqeeeqeeqqeqqqqqqeeeeeeeeeeeecqeeceqeeeeqeqqeqqqqqeeqqeeeeeqeeqqqqqqqeqeeccqqqqqqzczczqqqzzecqaqcezqqzqsssqezecqeeeeqeeqeeeqccqeeeeqeeccadazcddzqqeqeeqqzzzzeczczzccqqeqqzzzzzsseqqeeqqqqqeeezezqqzqeqqqeeeeee3eqeqqqezzzeqeczzcczezqeqeeeqeeeqeeqjjkkkkkkkkkkkkkk31011,,klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
 ..,......,,,...j,,,./..kl,,----..,,.,,,,,,,,,,,.; KFM's animation data
 ; see docs/air.txt for more information
 
@@ -1837,15 +1837,15 @@ LoopStart
 3002,39, 0,0, 4
 Clsn1: 1
   Clsn1[0] = -558, -312, 1099, 783
-3002,40, 0,0, 40
-3002,41, 0,0, 4
-3002,42, 0,0, 10
-3002,43, 0,0, 10
-3002,44, 0,0, 22
+3002,40, 0,-10, 40
+3002,41, 0,-10, 4
+3002,42, 0,-10, 10
+3002,43, 0,-10, 10
+3002,44, 0,-10, 22
 
-3003,8, 0,0, 4
-3003,8, 0,0, 2, , AS200D256
-3003,8, 0,0, 2, , AS100D256
+3003,8, 0,-10, 4
+3003,8, 0,-10, 2, , AS200D256
+3003,8, 0,-10, 2, , AS100D256
 -1,0, 0,0, 10
 
 [Begin Action 3003]

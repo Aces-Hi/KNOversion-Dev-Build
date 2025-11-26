@@ -8,17 +8,17 @@
 
 	<#190bd9>UNIQUE MOVES</>
 DIVIDER	-		_F^C
-_!CONQUEROR	-		_F^C
-        <#bbbbbb>Hits overhead.</>
-_!BEGGAR	-		_DF^C
-        <#bbbbbb>Hits low. Crumples when used to start a combo.</>
 SNAKE IN THE GRASS	-		_DF^C
 MJÖLLNIR	-		<#65b5ff>(AIR ONLY)</> _D^C
    <#bbbbbb>Has movement followups on hit.</>
 _!FLOW STATE	-		^A/^B/^C
         <#bbbbbb>The different buttons send JV in different directions.</>
 
-
+	<#190bd9>STRINGS</>
+CONQUEROR	-		_F^C_-_F^C
+   <#bbbbbb>Hits overhead.</>
+BEGGAR	-		_F^C_-_DF^C
+   <#bbbbbb>Hits low. Crumples when used to start a combo.</>
 
 
 _D	_D		_D
@@ -106,11 +106,11 @@ _D	_D		_D
 
 	<#55ffff>ENHANCED SUPER MOVES</>
 <#983eff>72 CHAMBERS</>	-		<#55ffff>(2 BARS)</> _D_DF_F_-^A/^B/^C
-   <#bbbbbb>A long-ranged invincible attack.</>
+   <#bbbbbb>A long-ranged invincible attack.
+   Does more damage on counter-hit.</>
 <#983eff>TWENTY-EIGHT MALIGNANT GATES</>	-		<#55ffff>(2 BARS)</> _D_DB_B_-^A/^B/^C
    <#bbbbbb>A combo super.</>
 <#983eff>BEAUTIFUL DEATH</>		<#aaffff>(GROUND OR AIR)</><#55ffff>(2 BARS)</> _D_DB_B_-^Y
-
 
 
 
@@ -133,14 +133,14 @@ NO PARRY	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _F^X
    <#bbbbbb>A reversal option that gives you the advantage
    if the enemy hits you. Refunds 1 BAR on hit.</>
 RECORD SCRATCH (WHILE ATTACKING)		<#55ffff>(1 BAR/2 BARS ON BLOCK)</> ^X
-   <#bbbbbb>Can be used to instantly cancel most attacks.</>
+   <#bbbbbb>Can be used to instantly cancel most attacks.
+   Holding any direction during this will cause you to move that way.</>
 BURST (WHILE GETTING HIT)	-		^X+^A/^B/^C
    <#bbbbbb>A large reversal that can be used while you're getting hit.</>
 PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(5 BARS)</> ^X+^A/^B/^C
    <#bbbbbb>An extra burst that can be used in an emergency.</>
    <#ff0000>Using this PERMANENTLY lowers your max meter
    for the rest of the game.</>
-
 _D	_D		_D
 
 	2V2 MODE

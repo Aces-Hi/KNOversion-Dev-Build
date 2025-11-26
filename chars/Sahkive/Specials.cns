@@ -296,7 +296,7 @@ pos = 40,0
 [State 0, TargetLifeAdd]
 type = TargetLifeAdd
 trigger1 = animelem = 4
-value = ceil(cond(fvar(11) *-25 < -25, -25, fvar(11) * -25))
+value = -20
 ID = -1
 kill = 0
 absolute = 0
@@ -745,7 +745,7 @@ air.type = high
 air.velocity = -5,10
 air.hittime = 60
 fall.yvelocity = -4
-fall.damage=ceil(cond(fvar(11) *150 < 50, 50, fvar(11) * 150))
+fall.damage=ceil(cond(fvar(11) *170 < 50, 50, fvar(11) * 170))
 p2facing = 1
 ground.cornerpush.veloff = -7
 air.cornerpush.veloff = -7
@@ -778,7 +778,7 @@ air.type = trip
 air.velocity = -5,10
 air.hittime = 60
 fall.yvelocity = 0
-fall.damage=ceil(cond(fvar(11) *150 < 50, 50, fvar(11) * 150))
+fall.damage=ceil(cond(fvar(11) *170 < 50, 50, fvar(11) * 170))
 p2facing = 1
 ground.cornerpush.veloff = -7
 air.cornerpush.veloff = -7
@@ -3744,7 +3744,7 @@ pos = 30,-35
 [State 0, TargetLifeAdd]
 type = TargetLifeAdd
 trigger1 = animelem = 7
-value = ceil(cond(fvar(11) *-25 < -25, -25, fvar(11) * -25))
+value = -20
 ID = -1
 kill = 0
 absolute = 0
@@ -4084,7 +4084,7 @@ value = 1048
 [State 0, TargetLifeAdd]
 type = TargetLifeAdd
 trigger1 = animelem=7
-value = ceil(cond(fvar(11) *-100 > -40, -40, fvar(11) * -100))
+value = ceil(cond(fvar(11) *-120 > -40, -40, fvar(11) * -120))
 ID = 1044
 kill = 1
 absolute = 0

@@ -2158,6 +2158,7 @@ animtype = medium
 ground.slidetime = 14
 ground.hittime  = 999
 ground.velocity = 0,10
+down.velocity=-1,-9
 fall.xvelocity = -1
 fall.yvelocity = -9
 AIR.velocity = 0,10

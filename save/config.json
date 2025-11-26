@@ -57,7 +57,7 @@
   "GameHeight": 720,
   "GameFramerate": 60,
   "InputButtonAssistWindow": 1,
-  "InputSOCDResolution": 1,
+  "InputSOCDResolution": 4,
   "IP": {},
   "LifeMul": 100,
   "ListenPort": "7500",

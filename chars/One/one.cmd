@@ -20,9 +20,8 @@ trigger1 = ctrl
 trigger2 = (stateno = [200,299]) || (stateno = [400,499]) || (stateno = 401)
 trigger2 = movecontact ;&& enemynear, movetype = H
 trigger2 = stateno!=421 && stateno!= 453&&stateno!=253
-trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
-trigger4 = stateno = 434
-trigger5= stateno=253&&movehit
+trigger3 = stateno = 434
+trigger4= stateno=253&&movehit
 var(1) = 1
 
 
@@ -42,8 +41,7 @@ trigger2 = statetype = A
 trigger2 = hitdefattr = A, NA, SA
 trigger2 = stateno != [3000,3050)
 trigger2 = movecontact ;&& enemynear, movetype = H
-trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
-trigger4 = stateno = 1053 && movecontact ;&& enemynear, movetype = H
+trigger3 = stateno = 1053 && movecontact ;&& enemynear, movetype = H
 triggerall = var(50)=0
 ;---------------------------------------------------------------------------
 [State 3010, 236X: Super Dash Slash]
@@ -58,8 +56,7 @@ trigger2 = statetype != A
 trigger2 = hitdefattr = SC, NA, SA, HA
 trigger2 = stateno != [3000,3050)
 trigger2 = movecontact ;&& enemynear, movetype = H
-trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
-trigger4 = stateno = 1053 && movecontact ;&& enemynear, movetype = H
+trigger3 = stateno = 1053 && movecontact ;&& enemynear, movetype = H
 triggerall = var(50)=0
 ;---------------------------------------------------------------------------
 [State 3010, 236X: Ono Super Dash Slash]
@@ -74,8 +71,8 @@ trigger2 = statetype != A
 trigger2 = hitdefattr = SC, NA, SA, HA
 trigger2 = stateno != [3000,3050)
 trigger2 = movecontact ;&& enemynear, movetype = H
-trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
-trigger4 = stateno = 1053 && movecontact ;&& enemynear, movetype = H
+trigger3 = stateno = 1053 && movecontact ;&& enemynear, movetype = H
+trigger4 = stateno=1300&&movecontact
 triggerall = var(50)!=0
 ;---------------------------------------------------------------------------
 [State 3013, j236X: Ono Air Super Dash Slash]
@@ -93,8 +90,7 @@ trigger2 = statetype = A
 trigger2 = hitdefattr = A, NA, SA
 trigger2 = stateno != [3000,3050)
 trigger2 = movecontact ;&& enemynear, movetype = H
-trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
-trigger4 = stateno = 1053 && movecontact ;&& enemynear, movetype = H
+trigger3 = stateno = 1053 && movecontact ;&& enemynear, movetype = H
 triggerall = var(50)!=0
 ;---------------------------------------------------------------------------
 [State 3050, 214X: Timestop]
@@ -110,8 +106,7 @@ trigger2 = statetype != A
 trigger2 = hitdefattr = SC, NA, SA, HA
 trigger2 = stateno != [3000,3050)
 trigger2 = movecontact ;&& enemynear, movetype = H
-trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
-trigger4 = stateno = 1053 && movecontact ;&& enemynear, movetype = H
+trigger3 = stateno = 1053 && movecontact ;&& enemynear, movetype = H
 ;===========================================================================
 [State 800, Grab]
 type = ChangeState
@@ -177,6 +172,15 @@ trigger2 = var(1)
 trigger3 = (stateno = [600,650]) && movecontact
 
 
+[State 1030, 2S: SLAM]
+type = ChangeState
+value = 1310
+triggerall = var(50)
+triggerall = command = "b"
+triggerall = command = "holddown"
+trigger1 = ctrl
+trigger2 = var(1) ||(stateno = [600,650]) && movecontact || stateno = 1300 && movehit
+trigger3 = stateno = 450 || stateno = 640 || stateno = 11125
 
 [State 10301, j2EX: Air EX Shoryu]
 type = ChangeState
@@ -303,13 +307,14 @@ trigger3 = (stateno = [600,650]) && movecontact
 
 [State 10400, ono6S: Ono Run]
 type = ChangeState
-value = 10400
+value = 1300
 triggerall=stateno!=40
 triggerall = roundstate = 2 ;only attack during the round
 triggerall = var(50)
 triggerall = command = "b"
 triggerall = command != "c"
 triggerall = command = "holdfwd"
+triggerall = command != "holddown"
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
@@ -344,6 +349,15 @@ trigger2 = var(1)
 trigger3 = stateno = 101
 trigger4 = stateno = 100
 trigger5= (stateno = [600,650]) && movecontact
+
+[State 100, 4S: Slashes]
+type = ChangeState
+value = 1315
+triggerall = var(50)
+triggerall = command = "b"
+triggerall = command = "holdback"
+triggerall = statetype != A
+trigger1 = ctrl || var(1)
 
 [State 12251, jEX: EX Air Flip]
 type = ChangeState
@@ -422,7 +436,7 @@ trigger1 = ctrl
 triggerall = stateno!=904
 triggerall = var(29)>0
 triggerall = (pos y<-30 && vel y < 0) || (vel y >=0)
-trigger2 = (stateno = [600,640]) 
+trigger2 = (stateno = [600,650]) 
 trigger2 = movehit
 ;Aerial Backdash
 [State -1, Air Backdash]
@@ -435,7 +449,7 @@ trigger1 = ctrl
 triggerall = stateno!=903
 triggerall = var(29)>0
 triggerall = (pos y<-30 && vel y < 0) || (vel y >=0)
-trigger2 = (stateno = [600,640]) 
+trigger2 = (stateno = [600,650]) 
 trigger2 = movehit
 
 ;---------------------------------------------------------------------------
@@ -759,6 +773,7 @@ triggerall = command = "c"
 triggerall = command != "b"
 triggerall = command != "holddown"
 triggerall = command != "holdup"
+triggerall = command != "holdback"
 triggerall = !var(50)
 triggerall = statetype != A
 trigger1 = ctrl
@@ -856,10 +871,12 @@ trigger4 = movehit
 [State 625, onojH: Ono Jump Heavy]
 type = ChangeState
 value = 625
+triggerall = stateno!=625
 triggerall = stateno!=40
 triggerall = roundstate = 2 ;only attack during the round
 triggerall = var(50)!=0
 triggerall = command = "buffer_z"
+triggerall = command != "holddown"
 triggerall = statetype = A
 trigger1 = ctrl
 trigger2 = stateno = 600 || stateno = 635 || stateno = 630 
@@ -873,12 +890,11 @@ trigger4 = movecontact ;&& enemynear, movetype = H
 type = ChangeState
 value = 645
 triggerall = stateno!=40
+triggerall = stateno!=645
 triggerall = roundstate = 2 ;only attack during the round
 triggerall = var(50)!=0 || stateno = 452
-triggerall = command = "buffer_c"
-triggerall = command != "b"
-triggerall = command != "holdfwd"
-triggerall = command != "holddown"
+triggerall = command = "buffer_z"
+triggerall = command = "holddown"
 triggerall = Helper(260), stateno = 261 || Helper(260), stateno = 461 || Helper(260), Stateno = 661 || Helper(260), Stateno = 860
 triggerall = statetype = A
 trigger1 = ctrl
@@ -892,10 +908,8 @@ value = 645
 triggerall = stateno!=40
 triggerall = roundstate = 2 ;only attack during the round
 triggerall = var(50)!=0 || stateno = 452
-triggerall = command = "buffer_c"
-triggerall = command != "holdfwd"
-triggerall = command != "holddown"
-triggerall = command != "b"
+triggerall = command = "buffer_z"
+triggerall = command = "holddown"
 triggerall = !(Helper(260), stateno = 261 || Helper(260), stateno = 461 || Helper(260), Stateno = 661 || Helper(260), Stateno = 860)
 triggerall = statetype = A
 trigger1 = ctrl
@@ -928,6 +942,7 @@ triggerall = command = "buffer_c"
 triggerall = command != "b"
 triggerall = command != "holdfwd"
 triggerall = command != "holddown"
+triggerall = command != "holdback"
 trigger1 = time > 15 && stateno = 111250
 trigger2 = time > 22 && stateno = 450
 trigger3 = time > 40 && stateno = 111251
@@ -989,7 +1004,7 @@ trigger1 = time > 25 && stateno = 640
 trigger2 = ctrl
 trigger2 = Helper(260), stateno = 261 || Helper(260), stateno = 461 || Helper(260), Stateno = 661 || Helper(260), Stateno = 860
 trigger3=ctrl
-trigger4 = (stateno = [600,635]) 
+trigger4 = (stateno = [600,635]) || stateno=645
 trigger4 = movecontact ;&& enemynear, movetype = H
 value = 641
 
@@ -1005,7 +1020,7 @@ trigger1 = time > 25 && stateno = 640
 trigger2 = Helper(260), stateno = 261 || Helper(260), stateno = 461 || Helper(260), Stateno = 661 || Helper(260), Stateno = 860
 trigger2 = ctrl 
 trigger3=ctrl
-trigger4 = (stateno = [600,635]) 
+trigger4 = (stateno = [600,635]) || stateno=645
 trigger4 = movecontact ;&& enemynear, movetype = H
 value = 651
 

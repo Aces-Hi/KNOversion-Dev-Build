@@ -1165,7 +1165,7 @@ movetype= I                      ;Move-type: A-attack, I-idle, H-gethit
 physics = S                      ;Physics: S-stand, C-crouch, A-air                     ;Number of air juggle points move takes
 ;Commonly-used controllers:
 velset = 6,0                     ;Set velocity (x,y) (Def: no change)
-ctrl = 0                         ;Set ctrl (Def: no change)
+ctrl = 1                ;Set ctrl (Def: no change)
 anim = 101+var(50)*7                      ;Change animation (Def: no change)
 poweradd = 0                    ;Power to add (Def: 0)
 sprpriority = 2             

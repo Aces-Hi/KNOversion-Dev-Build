@@ -852,6 +852,7 @@ type = ChangeState
 trigger1 = time > 15 && command = "buffer_c"
 trigger1 = command != "holdfwd"
 trigger1 = command != "holddown"
+triggerall = command != "holdback"
 value = 253
 
 [State 0, ChangeState]
@@ -1035,7 +1036,7 @@ type = VelSet
 trigger1 = animelem = 3
 trigger1 = anim != 252
 trigger1 = !numhelper(260)
-x = 50
+x = 6
 
 [State 0, I don't want to go fast]
 type = VelSet
@@ -1599,33 +1600,29 @@ ctrl = 0
 type = ChangeState
 ;Sword Retrieval Methods: Bash, Raise, Slash Miss Recovery
 ;Slash Startup
-triggerall = root, command != "hold_c"&& root,command != "c" 
 trigger1 = (rootdist x = [-40, 70]) && (rootdist y = [-40, 40]) && (root, stateno = 253 || root, stateno = 452 || root, stateno = 641 || root, stateno = 251)
-
-trigger2 = (rootdist x = [-200, 200]) && (rootdist y = [-100, 100]) && (root, stateno = 251)  && (root, time <= 11)
-
+trigger2 = (rootdist x = [-70, 70]) && (rootdist y = [-100, 100]) && (root, stateno = 251)  && (root, time <= 11)
 ;Training Reset
 ;Dashing/Standing Movement: Forward Dash, Back Dash, Stand, Walk
 trigger3 = (rootdist x = [-80, 80]) && (rootdist y = [-40, 40]) && (root, stateno = 100 || root, stateno = 105 || root, stateno = 0 || root,stateno = 20)
-
+trigger3 = root, command = "hold_c" || root,command = "c" 
 ;Crouching
 trigger4 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && (root, stateno = [10, 12])
-
+trigger4 = root, command = "hold_c" || root,command = "c" 
 ;Ono Specials: Dashblast, EX Dashblast 
 ;Flip
 trigger5 = (rootdist x = [-40, 40]) && (rootdist y = [-40, 40]) && (root, stateno = [10400, 10477] || root, stateno = [1241, 1243])
- 
 trigger6 = (rootdist x = [-60, 60]) && (rootdist y = [-60, 60]) && root, stateno = [1050, 1251]
-
 ;Ono Normals: (5L, 5M, 5H), (2L, 2M, 2H) 
 trigger7 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && ((root, stateno = 205 || root, stateno = 215 || root, stateno = 225) || (root, stateno = 410 || root, stateno = 425 || root, stateno = 435))
-
+trigger7 = root, command = "hold_c" || root,command = "c" 
 ;Dash Super
 trigger8 = root, stateno = 3015
 trigger9=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3010
 trigger10=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3013
-
-trigger11=(rootdist x = [-80, 80]) && (rootdist y = [-60, 60])&&root,movehit
+trigger11 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && root,ctrl=1
+trigger11= root, command = "hold_c" || root,command = "c"
+trigger12=root, stateno =1311 && root,animelemtime(3)>=0 
 value = 265
 ignorehitpause=1
 
@@ -1654,6 +1651,21 @@ trigger1 = 1
 x = .8
 y = 1
 
+[State 0. MapSet]
+type 		= parentMapSet
+trigger1 		= 1
+map 		= "swordDistX"
+value 		= 0
+ignorehitpause 	= 1
+persistent 		= 1
+
+[State 0. MapSet]
+type 		= parentMapSet
+trigger1 		= 1
+map 		= "swordDistY"
+value 		= 0
+ignorehitpause 	= 1
+persistent 		= 1
 
 [State 0, VelSet]
 type = VelSet
@@ -1722,29 +1734,28 @@ type = ChangeState
 ;Sword Retrieval Methods: Bash, Raise, Slash Miss Recovery
 ;Slash Startup
 trigger1 = (rootdist x = [-40, 70]) && (rootdist y = [-40, 40]) && (root, stateno = 253 || root, stateno = 452 || root, stateno = 641 || root, stateno = 251)
-trigger1 = root, command != "hold_c" && root,command != "c" 
-trigger2 = (rootdist x = [-200, 200]) && (rootdist y = [-100, 100]) && (root, stateno = 251)  && (root, time <= 11)
-trigger2 = root, command != "hold_c"&& root,command != "c" 
+trigger2 = (rootdist x = [-70, 70]) && (rootdist y = [-100, 100]) && (root, stateno = 251)  && (root, time <= 11)
 ;Training Reset
 ;Dashing/Standing Movement: Forward Dash, Back Dash, Stand, Walk
 trigger3 = (rootdist x = [-80, 80]) && (rootdist y = [-40, 40]) && (root, stateno = 100 || root, stateno = 105 || root, stateno = 0 || root,stateno = 20)
-trigger3 = root, command != "hold_c" && root,command != "c" 
+trigger3 = root, command = "hold_c" || root,command = "c" 
 ;Crouching
 trigger4 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && (root, stateno = [10, 12])
-trigger4 = root, command != "hold_c" && root,command != "c" 
+trigger4 = root, command = "hold_c" || root,command = "c" 
 ;Ono Specials: Dashblast, EX Dashblast 
 ;Flip
 trigger5 = (rootdist x = [-40, 40]) && (rootdist y = [-40, 40]) && (root, stateno = [10400, 10477] || root, stateno = [1241, 1243])
-trigger5 = root, command != "hold_c" && root,command != "c" 
 trigger6 = (rootdist x = [-60, 60]) && (rootdist y = [-60, 60]) && root, stateno = [1050, 1251]
-trigger6 = root, command != "hold_c" && root,command != "c" 
 ;Ono Normals: (5L, 5M, 5H), (2L, 2M, 2H) 
 trigger7 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && ((root, stateno = 205 || root, stateno = 215 || root, stateno = 225) || (root, stateno = 410 || root, stateno = 425 || root, stateno = 435))
-trigger7 = root, command != "hold_c"&& root,command != "c" 
+trigger7 = root, command = "hold_c" || root,command = "c" 
 ;Dash Super
 trigger8 = root, stateno = 3015
 trigger9=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3010
 trigger10=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3013
+trigger11 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && root,ctrl=1
+trigger11= root, command = "hold_c" || root,command = "c"
+trigger12=root, stateno =1311 && root,animelemtime(3)>=0 
 value = 265
 ignorehitpause=1
 
@@ -1880,18 +1891,35 @@ trigger1 = 1
 x = 0
 y = .3
 
-[State 0, ChangeState]
+[State 261, Picked Up?]
 type = ChangeState
-trigger1 = (rootdist x=[-40,40])&& (rootdist y=[-30,30]) && (root, stateno = 251) && root, time<19 && root,command != "c" && root,command != "hold_c" 
-trigger2 = root, command = "start" && enemynear, name = "Training"
-trigger3 = (rootdist x=[-40,40])&& (rootdist y=[-30,30]) && root, stateno = 100 && root, command = "holddown"
-trigger4 = (rootdist x=[-40,40])&& (rootdist y=[-30,30]) && root, stateno = 105 && root, command = "holddown"
-trigger5 = (rootdist x=[-40,40])&& (rootdist y=[-30,30]) && root, stateno = 10
-trigger6 = (rootdist x=[-40,40])&& (rootdist y=0) && root, stateno = 5120
-trigger7 = (rootdist x=[-30,30])&& (rootdist y=0) && ( root, stateno = 1041 ||root, stateno = 1042 ||root, stateno = 1241 || root, stateno = 1242) && root, animelem = 7
+;Sword Retrieval Methods: Bash, Raise, Slash Miss Recovery
+;Slash Startup
+trigger1 = (rootdist x = [-40, 70]) && (rootdist y = [-40, 40]) && (root, stateno = 253 || root, stateno = 452 || root, stateno = 641 || root, stateno = 251)
+trigger2 = (rootdist x = [-70, 70]) && (rootdist y = [-100, 100]) && (root, stateno = 251)  && (root, time <= 11)
+;Training Reset
+;Dashing/Standing Movement: Forward Dash, Back Dash, Stand, Walk
+trigger3 = (rootdist x = [-80, 80]) && (rootdist y = [-40, 40]) && (root, stateno = 100 || root, stateno = 105 || root, stateno = 0 || root,stateno = 20)
+trigger3 = root, command = "hold_c" || root,command = "c" 
+;Crouching
+trigger4 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && (root, stateno = [10, 12])
+trigger4 = root, command = "hold_c" || root,command = "c" 
+;Ono Specials: Dashblast, EX Dashblast 
+;Flip
+trigger5 = (rootdist x = [-40, 40]) && (rootdist y = [-40, 40]) && (root, stateno = [10400, 10477] || root, stateno = [1241, 1243])
+trigger6 = (rootdist x = [-60, 60]) && (rootdist y = [-60, 60]) && root, stateno = [1050, 1251]
+;Ono Normals: (5L, 5M, 5H), (2L, 2M, 2H) 
+trigger7 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && ((root, stateno = 205 || root, stateno = 215 || root, stateno = 225) || (root, stateno = 410 || root, stateno = 425 || root, stateno = 435))
+trigger7 = root, command = "hold_c" || root,command = "c" 
+;Dash Super
+trigger8 = root, stateno = 3015
+trigger9=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3010
+trigger10=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3013
+trigger11 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && root,ctrl=1
+trigger11= root, command = "hold_c" || root,command = "c"
+trigger12=root, stateno =1311 && root,animelemtime(3)>=0 
 value = 265
 ignorehitpause=1
-;persistent = 
 
 [State 0, ChangeState]
 type = ChangeState
@@ -1935,18 +1963,35 @@ trigger1 = 1
 x = 0
 y = .3
 
-[State 0, ChangeState]
+[State 261, Picked Up?]
 type = ChangeState
-trigger1 = (rootdist x=[-40,40])&& (rootdist y=[-30,30]) && (root, stateno = 251) && root, time<19 && root,command != "c" && root,command != "hold_c" 
-trigger2 = root, command = "start" && enemynear, name = "Training" 
-trigger3 = (rootdist x=[-40,40])&& (rootdist y=[-30,30]) && root, stateno = 100 && root, command = "holddown"
-trigger4 = (rootdist x=[-40,40])&& (rootdist y=[-30,30]) && root, stateno = 105 && root, command = "holddown"
-trigger5 = (rootdist x=[-40,40])&& (rootdist y=[-30,30]) && root, stateno = 10
-trigger6 = (rootdist x=[-40,40])&& (rootdist y=0) && root, stateno = 5120
-trigger7 = (rootdist x=[-30,30])&& (rootdist y=0) && (root, stateno = 1041 ||root, stateno = 1042 ||root, stateno = 1241 || root, stateno = 1242) && root, animelem = 7
+;Sword Retrieval Methods: Bash, Raise, Slash Miss Recovery
+;Slash Startup
+trigger1 = (rootdist x = [-40, 70]) && (rootdist y = [-40, 40]) && (root, stateno = 253 || root, stateno = 452 || root, stateno = 641 || root, stateno = 251)
+trigger2 = (rootdist x = [-70, 70]) && (rootdist y = [-100, 100]) && (root, stateno = 251)  && (root, time <= 11)
+;Training Reset
+;Dashing/Standing Movement: Forward Dash, Back Dash, Stand, Walk
+trigger3 = (rootdist x = [-80, 80]) && (rootdist y = [-40, 40]) && (root, stateno = 100 || root, stateno = 105 || root, stateno = 0 || root,stateno = 20)
+trigger3 = root, command = "hold_c" || root,command = "c" 
+;Crouching
+trigger4 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && (root, stateno = [10, 12])
+trigger4 = root, command = "hold_c" || root,command = "c" 
+;Ono Specials: Dashblast, EX Dashblast 
+;Flip
+trigger5 = (rootdist x = [-40, 40]) && (rootdist y = [-40, 40]) && (root, stateno = [10400, 10477] || root, stateno = [1241, 1243])
+trigger6 = (rootdist x = [-60, 60]) && (rootdist y = [-60, 60]) && root, stateno = [1050, 1251]
+;Ono Normals: (5L, 5M, 5H), (2L, 2M, 2H) 
+trigger7 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && ((root, stateno = 205 || root, stateno = 215 || root, stateno = 225) || (root, stateno = 410 || root, stateno = 425 || root, stateno = 435))
+trigger7 = root, command = "hold_c" || root,command = "c" 
+;Dash Super
+trigger8 = root, stateno = 3015
+trigger9=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3010
+trigger10=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3013
+trigger11 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && root,ctrl=1
+trigger11= root, command = "hold_c" || root,command = "c"
+trigger12=root, stateno =1311 && root,animelemtime(3)>=0 
 value = 265
 ignorehitpause=1
-;persistent = 
 
 [State 0, ChangeState]
 type = ChangeState
@@ -2851,6 +2896,7 @@ type = ChangeState
 trigger1 = time > 22 && command = "buffer_c"
 trigger1 = command != "holdfwd"
 trigger1 = command != "holddown"
+triggerall = command != "holdback"
 value = 253
 
 [State 0, ChangeState]
@@ -2865,6 +2911,13 @@ type = ChangeState
 trigger1 = animelemtime(9) > 0 && command = "buffer_c"
 trigger1 = command = "holddown"
 value = 451
+
+[State 0, ChangeState]
+type = ChangeState
+triggerall = combocount>0 &&animelemtime(5)>0
+trigger1 = command = "holdupb"
+trigger2 = command = "holdup"
+value = 40
 
 ;[State 0, ChangeState]
 ;type = ChangeState
@@ -3192,29 +3245,28 @@ type = ChangeState
 ;Sword Retrieval Methods: Bash, Raise, Slash Miss Recovery
 ;Slash Startup
 trigger1 = (rootdist x = [-40, 70]) && (rootdist y = [-40, 40]) && (root, stateno = 253 || root, stateno = 452 || root, stateno = 641 || root, stateno = 251)
-trigger1 = root, command != "hold_c" && root,command != "c" 
-trigger2 = (rootdist x = [-200, 200]) && (rootdist y = [-100, 100]) && (root, stateno = 251)  && (root, time <= 11)
-trigger2 = root, command != "hold_c" && root,command != "c" 
+trigger2 = (rootdist x = [-70, 70]) && (rootdist y = [-100, 100]) && (root, stateno = 251)  && (root, time <= 11)
 ;Training Reset
 ;Dashing/Standing Movement: Forward Dash, Back Dash, Stand, Walk
 trigger3 = (rootdist x = [-80, 80]) && (rootdist y = [-40, 40]) && (root, stateno = 100 || root, stateno = 105 || root, stateno = 0 || root,stateno = 20)
-trigger3 = root, command != "hold_c" && root,command != "c" 
+trigger3 = root, command = "hold_c" || root,command = "c" 
 ;Crouching
 trigger4 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && (root, stateno = [10, 12])
-trigger4 = root, command != "hold_c" && root,command != "c" 
+trigger4 = root, command = "hold_c" || root,command = "c" 
 ;Ono Specials: Dashblast, EX Dashblast 
 ;Flip
 trigger5 = (rootdist x = [-40, 40]) && (rootdist y = [-40, 40]) && (root, stateno = [10400, 10477] || root, stateno = [1241, 1243])
-trigger5 = root, command != "hold_c" && root,command != "c" 
 trigger6 = (rootdist x = [-60, 60]) && (rootdist y = [-60, 60]) && root, stateno = [1050, 1251]
-trigger6 = root, command != "hold_c" && root,command != "c" 
 ;Ono Normals: (5L, 5M, 5H), (2L, 2M, 2H) 
 trigger7 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && ((root, stateno = 205 || root, stateno = 215 || root, stateno = 225) || (root, stateno = 410 || root, stateno = 425 || root, stateno = 435))
-trigger7 = root, command != "hold_c" && root,command != "c" 
+trigger7 = root, command = "hold_c" || root,command = "c" 
 ;Dash Super
 trigger8 = root, stateno = 3015
 trigger9=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3010
 trigger10=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3013
+trigger11 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && root,ctrl=1
+trigger11= root, command = "hold_c" || root,command = "c"
+trigger12=root, stateno =1311 && root,animelemtime(3)>=0 
 value = 265
 ignorehitpause=1
 
@@ -3932,6 +3984,132 @@ trigger1 =pos y>= 0
 value = 52
 ctrl = 1
 
+
+;---------------------------------------------------------------------------
+;4S Sword Tumble
+[Statedef 665]
+type    = U
+movetype= I
+physics = N
+juggle  = 0 ; juggle  = 0  = 0
+poweradd= 0
+ctrl = 0
+anim = 261
+velset = vel x * 0.1 + p2dist x * 0.005,-9
+sprpriority = 2
+
+[State 0, Turn]
+type = Turn
+trigger1 = facing != root, facing
+
+[State 0, PosFreeze]
+type = PosFreeze
+trigger1 = time = [0,5]
+value = 1
+ignorehitpause = 1
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time = [0, 5]
+value = anim 
+
+[State 0, Explod]
+type = Explod
+trigger1 = !time
+anim = F0
+ID = 665
+pos = 0,0
+postype = P1  ;P2, Front, Back, Left, Right
+facing = 1
+vfacing = 1
+bindtime = 1
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -2
+supermovetime = 0
+pausemovetime = 0
+scale = 1,1
+sprpriority = 0
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+;ignorehitpause = 
+;persistent = 
+
+
+[State 0. MapSet]
+type 		= parentMapSet
+trigger1 		= 1
+map 		= "swordDistX"
+value 		= rootdist x
+ignorehitpause 	= 1
+persistent 		= 1
+
+[State 0. MapSet]
+type 		= parentMapSet
+trigger1 		= 1
+map 		= "swordDistY"
+value 		= rootdist y
+ignorehitpause 	= 1
+persistent 		= 1
+
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = 1
+x = 0
+y = .3
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 2
+value = 0,0
+
+[State 261, Picked Up?]
+type = ChangeState
+;Sword Retrieval Methods: Bash, Raise, Slash Miss Recovery
+;Slash Startup
+trigger1 = (rootdist x = [-40, 70]) && (rootdist y = [-40, 40]) && (root, stateno = 253 || root, stateno = 452 || root, stateno = 641 || root, stateno = 251)
+trigger2 = (rootdist x = [-200, 200]) && (rootdist y = [-100, 100]) && (root, stateno = 251)  && (root, time <= 11)
+;Training Reset
+;Dashing/Standing Movement: Forward Dash, Back Dash, Stand, Walk
+trigger3 = (rootdist x = [-80, 80]) && (rootdist y = [-40, 40]) && (root, stateno = 100 || root, stateno = 105 || root, stateno = 0 || root,stateno = 20)
+trigger3 = root, command = "hold_c" || root,command = "c" 
+;Crouching
+trigger4 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && (root, stateno = [10, 12])
+trigger4 = root, command = "hold_c" || root,command = "c" 
+;Ono Specials: Dashblast, EX Dashblast 
+;Flip
+trigger5 = (rootdist x = [-40, 40]) && (rootdist y = [-40, 40]) && (root, stateno = [10400, 10477] || root, stateno = [1241, 1243])
+trigger6 = (rootdist x = [-60, 60]) && (rootdist y = [-60, 60]) && root, stateno = [1050, 1251]
+;Ono Normals: (5L, 5M, 5H), (2L, 2M, 2H) 
+trigger7 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && ((root, stateno = 205 || root, stateno = 215 || root, stateno = 225) || (root, stateno = 410 || root, stateno = 425 || root, stateno = 435))
+trigger7 = root, command = "hold_c" || root,command = "c" 
+;Dash Super
+trigger8 = root, stateno = 3015
+trigger9=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3010
+trigger10=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3013
+trigger11 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 60]) && root,ctrl=1
+trigger11= root, command = "hold_c" || root,command = "c" 
+trigger12=root, stateno =1311 && root,animelemtime(3)>=0
+value = 265
+
+[State 0, ChangeState]
+type = ChangeState
+triggerall = root, command = "c" || root, command = "hold_c" || root, stateno = [3023,3026] || root, stateno = 1151 || root, stateno = 252
+trigger1 = (rootdist x=[-40,40])&& (rootdist y=[-40,40]) 
+value = 265
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = root, stateno = 3015 || root, stateno = 1311 && root, animelem = 4
+value = 265
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = pos y>=-10 && vel y>=0
+value = 262
+ctrl = 0
+
 ;---------------------------------------------------------------------------
 ;j2H Sword (?)
 [Statedef 6440]
@@ -4413,11 +4591,6 @@ type = Velset
 trigger1 = animelem = 6
 y = 20
 
-[State 10, If Pickup?]
-type = ChangeState
-trigger1 = !numhelper(260)
-value = 1052
-
 [State 00, If Land?]
 type = ChangeState ;Get Ready to change the state
 trigger1 = pos y>= 0 && vel y>= 0 ;Once I land
@@ -4579,10 +4752,26 @@ trigger1 = !numtarget
 fv = 12
 value = 0
 
+[State 0, ChangeState]
+type = ChangeState
+triggerall = enemy, HitPauseTime = 0
+triggerall = var(50)
+triggerall = helper(260), stateno = 665 || helper(260), stateno = 261 || helper(260), stateno = 661
+triggerall = animelem = 7
+trigger1 = abs(map(SwordDIstX)) < 100
+trigger1 = abs(map(SworddistY) < 75)
+value = 260
+redirectid = helper(260), id
 
+[State 40, 2]
+type = VarSet
+trigger1 = helper(260), stateno = 260
+sysvar(1) = 1
 
-
-
+[State 0, ChangeState]
+type = ctrlSet
+trigger1 =animtime = 0 || sysvar(1)
+value = 1
 
 [State 630, 1]
 type = PlaySnd
@@ -4681,14 +4870,33 @@ trigger1 = !numtarget
 fv = 25
 value = 0
 
+[State 0, ChangeState]
+type = ChangeState
+triggerall = enemy, HitPauseTime = 0
+triggerall = var(50)
+triggerall = helper(260), stateno = 665 || helper(260), stateno = 261 || helper(260), stateno = 661
+triggerall = animelem = 7
+trigger1 = abs(map(SwordDIstX)) < 100
+trigger1 = abs(map(SworddistY) < 75)
+value = 660
+redirectid = helper(260), id
 
+[State 40, 2]
+type = VarSet
+trigger1 = helper(260), stateno = 660
+sysvar(1) = 1
+
+[State 0, ChangeState]
+type = ctrlSet
+trigger1 =animtime = 0 || sysvar(1)
+value = 1
 
 [State 640, 3]
 type = HitDef 
 p2facing = 1
 trigger1 = Time = 0&& (enemynear, stateno!= [5110,5119])
 attr = A, NA
-damage = ceil(cond(fvar(11) *60 <7, 7, fvar(11) * 60)), 0
+damage = ceil(cond(fvar(11) *50 <6, 6, fvar(11) * 50)), 0
 hitflag = MAFD
 guardflag = HA
 ;priority = 4
@@ -4933,29 +5141,28 @@ type = ChangeState
 ;Sword Retrieval Methods: Bash, Raise, Slash Miss Recovery
 ;Slash Startup
 trigger1 = (rootdist x = [-40, 70]) && (rootdist y = [-40, 40]) && (root, stateno = 253 || root, stateno = 452 || root, stateno = 641 || root, stateno = 251)
-trigger1 = root, command != "hold_c" && root,command != "c" 
-trigger2 = (rootdist x = [-200, 200]) && (rootdist y = [-100, 100]) && (root, stateno = 251)  && (root, time <= 11)
-trigger2 = root, command != "hold_c" && root,command != "c" 
+trigger2 = (rootdist x = [-70, 70]) && (rootdist y = [-100, 100]) && (root, stateno = 251)  && (root, time <= 11)
 ;Training Reset
 ;Dashing/Standing Movement: Forward Dash, Back Dash, Stand, Walk
 trigger3 = (rootdist x = [-80, 80]) && (rootdist y = [-40, 40]) && (root, stateno = 100 || root, stateno = 105 || root, stateno = 0 || root,stateno = 20)
-trigger3 = root, command != "hold_c" && root,command != "c" 
+trigger3 = root, command = "hold_c" || root,command = "c" 
 ;Crouching
 trigger4 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && (root, stateno = [10, 12])
-trigger4 = root, command != "hold_c" && root,command != "c" 
+trigger4 = root, command = "hold_c" || root,command = "c" 
 ;Ono Specials: Dashblast, EX Dashblast 
 ;Flip
 trigger5 = (rootdist x = [-40, 40]) && (rootdist y = [-40, 40]) && (root, stateno = [10400, 10477] || root, stateno = [1241, 1243])
-trigger5 = root, command != "hold_c" && root,command != "c" 
 trigger6 = (rootdist x = [-60, 60]) && (rootdist y = [-60, 60]) && root, stateno = [1050, 1251]
-trigger6 = root, command != "hold_c" && root,command != "c" 
 ;Ono Normals: (5L, 5M, 5H), (2L, 2M, 2H) 
 trigger7 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && ((root, stateno = 205 || root, stateno = 215 || root, stateno = 225) || (root, stateno = 410 || root, stateno = 425 || root, stateno = 435))
-trigger7 = root, command != "hold_c" && root,command != "c" 
+trigger7 = root, command = "hold_c" || root,command = "c" 
 ;Dash Super
 trigger8 = root, stateno = 3015
 trigger9=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3010
 trigger10=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3013
+trigger11 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && root,ctrl=1
+trigger11= root, command = "hold_c" || root,command = "c" 
+trigger12=root, stateno =1311 && root,animelemtime(3)>=0
 value = 265
 ignorehitpause=1
 
@@ -4987,16 +5194,33 @@ trigger1 = 1
 x = 0
 y = .5
 
-[State 0, ChangeState]
+[State 261, Picked Up?]
 type = ChangeState
-trigger1 = (rootdist x=[-40,40])&& (rootdist y=[-40,40]) && (root, stateno = 251 || root, stateno = 253 || root, stateno = 452) && root,command != "hold_c" && root,command != "c" 
-trigger2 = root, command = "start" && enemynear, name = "Training"
-trigger3 = (rootdist x=[-40,40])&& (rootdist y=[-30,30]) && root, stateno = 100 && root, command != "hold_c"&& root,command != "c" 
-trigger4 = (rootdist x=[-40,40])&& (rootdist y=[-30,30]) && root, stateno = 105 && root, command != "hold_c"&& root,command != "c" 
-trigger5 = (rootdist x=[-40,40])&& (rootdist y=[-30,30]) && root, stateno = 10
-trigger6 = (rootdist x=[-40,40])&& (rootdist y=[-40,40]) && root, stateno = 1051 && root, time >= 2
-trigger7 = (rootdist x=[-40,40])&& (rootdist y=[-40,40]) && root, stateno = 1151 && root, time >= 2
-trigger9 = (rootdist x=[-40,40])&& (rootdist y=0) && root, stateno = 5120
+;Sword Retrieval Methods: Bash, Raise, Slash Miss Recovery
+;Slash Startup
+trigger1 = (rootdist x = [-40, 70]) && (rootdist y = [-40, 40]) && (root, stateno = 253 || root, stateno = 452 || root, stateno = 641 || root, stateno = 251)
+trigger2 = (rootdist x = [-70, 70]) && (rootdist y = [-100, 100]) && (root, stateno = 251)  && (root, time <= 11)
+;Training Reset
+;Dashing/Standing Movement: Forward Dash, Back Dash, Stand, Walk
+trigger3 = (rootdist x = [-80, 80]) && (rootdist y = [-40, 40]) && (root, stateno = 100 || root, stateno = 105 || root, stateno = 0 || root,stateno = 20)
+trigger3 = root, command = "hold_c" || root,command = "c" 
+;Crouching
+trigger4 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && (root, stateno = [10, 12])
+trigger4 = root, command = "hold_c" || root,command = "c" 
+;Ono Specials: Dashblast, EX Dashblast 
+;Flip
+trigger5 = (rootdist x = [-40, 40]) && (rootdist y = [-40, 40]) && (root, stateno = [10400, 10477] || root, stateno = [1241, 1243])
+trigger6 = (rootdist x = [-60, 60]) && (rootdist y = [-60, 60]) && root, stateno = [1050, 1251]
+;Ono Normals: (5L, 5M, 5H), (2L, 2M, 2H) 
+trigger7 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && ((root, stateno = 205 || root, stateno = 215 || root, stateno = 225) || (root, stateno = 410 || root, stateno = 425 || root, stateno = 435))
+trigger7 = root, command = "hold_c" || root,command = "c" 
+;Dash Super
+trigger8 = root, stateno = 3015
+trigger9=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3010
+trigger10=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3013
+trigger11 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && root,ctrl=1
+trigger11= root, command = "hold_c" || root,command = "c"
+trigger12=root, stateno =1311 && root,animelemtime(3)>=0 
 value = 265
 ignorehitpause=1
 
@@ -5038,29 +5262,28 @@ type = ChangeState
 ;Sword Retrieval Methods: Bash, Raise, Slash Miss Recovery
 ;Slash Startup
 trigger1 = (rootdist x = [-40, 70]) && (rootdist y = [-40, 40]) && (root, stateno = 253 || root, stateno = 452 || root, stateno = 641 || root, stateno = 251)
-trigger1 = root, command != "hold_c" && root,command != "c" 
-trigger2 = (rootdist x = [-200, 200]) && (rootdist y = [-100, 100]) && (root, stateno = 251)  && (root, time <= 11)
-trigger2 = root, command != "hold_c" && root,command != "c" 
+trigger2 = (rootdist x = [-70, 70]) && (rootdist y = [-100, 100]) && (root, stateno = 251)  && (root, time <= 11)
 ;Training Reset
 ;Dashing/Standing Movement: Forward Dash, Back Dash, Stand, Walk
 trigger3 = (rootdist x = [-80, 80]) && (rootdist y = [-40, 40]) && (root, stateno = 100 || root, stateno = 105 || root, stateno = 0 || root,stateno = 20)
-trigger3 = root, command != "hold_c"&& root,command != "c" 
+trigger3 = root, command = "hold_c" || root,command = "c" 
 ;Crouching
 trigger4 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && (root, stateno = [10, 12])
-trigger4 = root, command != "hold_c" && root,command != "c" 
+trigger4 = root, command = "hold_c" || root,command = "c" 
 ;Ono Specials: Dashblast, EX Dashblast 
 ;Flip
 trigger5 = (rootdist x = [-40, 40]) && (rootdist y = [-40, 40]) && (root, stateno = [10400, 10477] || root, stateno = [1241, 1243])
-trigger5 = root, command != "hold_c"&& root,command != "c" 
 trigger6 = (rootdist x = [-60, 60]) && (rootdist y = [-60, 60]) && root, stateno = [1050, 1251]
-trigger6 = root, command != "hold_c" && root,command != "c" 
 ;Ono Normals: (5L, 5M, 5H), (2L, 2M, 2H) 
 trigger7 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && ((root, stateno = 205 || root, stateno = 215 || root, stateno = 225) || (root, stateno = 410 || root, stateno = 425 || root, stateno = 435))
-trigger7 = root, command != "hold_c" && root,command != "c" 
+trigger7 = root, command = "hold_c" || root,command = "c" 
 ;Dash Super
 trigger8 = root, stateno = 3015
 trigger9=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3010
 trigger10=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3013
+trigger11 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && root,ctrl=1
+trigger11= root, command = "hold_c" || root,command = "c"
+trigger12=root, stateno =1311 && root,animelemtime(3)>=0 
 value = 265
 ignorehitpause=1
 

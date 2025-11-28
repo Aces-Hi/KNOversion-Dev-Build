@@ -151,6 +151,19 @@ ctrl = 0
 anim = 180
 velset = 0,0
 
+[State 200, VOICE - FLAWLESS VICTORY]
+type = PlaySnd
+trigger1 = time=0
+trigger1 = life = lifemax
+value = 700, 0 + random % 2
+volumescale = 200
+[State 200, VOICE - NORMAL VICTORY]
+type = PlaySnd
+trigger1 = time=0
+trigger1 = life < lifemax
+value = 180, 2
+volumescale = 200
+
 [State -3, Win Announcer]
 type = PlaySnd
 triggerall=teammode!=Tag
@@ -206,6 +219,19 @@ type = S
 ctrl = 0
 anim = 182
 velset = 0,0
+
+[State 200, VOICE - FLAWLESS VICTORY]
+type = PlaySnd
+trigger1 = time=0
+trigger1 = life = 1689
+value = 700, 0 + random % 2
+volumescale = 200
+[State 200, VOICE - NORMAL VICTORY]
+type = PlaySnd
+trigger1 = time=0
+trigger1 = life < 1689
+value = 180, 0
+volumescale = 200
 
 [State -3, Win Announcer]
 type = PlaySnd

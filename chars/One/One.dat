@@ -1,21 +1,21 @@
 	<#bbbbbb>This move list assumes you are facing to the right.</>
 
 	<#0f43ff>UNIQUE TRAIT: ONLY ONE</>
-	One has a different set of moves when he isn't holding his sword.
-	His Remix Moves make him throw his sword, and he can pick it back up
-	by touching it. Alternatively, you can hold the Remix button while
-	One isn't holding his sword to keep him from picking it up.
+	One's Remix Moves make him throw his sword, and he can pick it back up
+	by using Remix Moves or specific Special Moves while standing near it.
+	He can kick his sword out of the air by using his jumping Heavy attacks.
+	Additionally, One can airdash cancel his Normal moves on hit.
 
 	<#24ff24>SWORD UNIQUE MOVES</>
 HIGH KICK	-		<#65b5ff>(AIR ONLY)</> ^A_-^A
-VERTICAL	-		_B^B
 LOW KICK	-		_D^A_-^A
+VERTICAL	-		_B^B
 SWEEP	-		_DF^C
 SPIKE	-		<#65b5ff>(AIR ONLY)</> _D^C
 
-	<#0f43ff>SWORDLESS UNIQUE MOVE</>
+	<#0f43ff>SWORDLESS UNIQUE MOVES</>
 SWEEP	-		_DF^C
-
+AXE	-		<#65b5ff>(AIR ONLY)</> _D^C
 
 
 
@@ -36,11 +36,37 @@ RAPID	-		_B^Y
 SHREDDER	-		<#65b5ff>(AIR ONLY)</> _B^Y
 RISE	-		<#aaffff>(GROUND OR AIR)</> _D^Y
 
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
 	<#0f43ff>SWORDLESS SPECIAL MOVES</>
 FLIP	-		<#aaffff>(GROUND OR AIR)</> ^Y
-SLIDE	-		(CAN BE HELD) _F^Y
-   <#bbbbbb>Holding the button makes One run forward.</>
-_!HOP	-		_D
+   <#bbbbbb>This move turns into Acid Flip if used
+   near One's sword.</>
+UNDERMINE	-		_F^Y
+   <#bbbbbb>Goes behind the opponent when One gets close.
+   Can be canceled into Downpour during a combo.</>
+DOWNPOUR	-		<#aaffff>(GROUND OR AIR)</> _D^Y
+   <#bbbbbb>One flies into the air before crashing down with
+   a powerful sword strike at the position of his sword.</>
+UPRISING	-		_B^Y
+   <#bbbbbb>One kicks his sword into the air.
+   If he kicks it successfully, he can jump cancel.</>
+
+
+
+
+
+
+
 
 
 
@@ -49,14 +75,15 @@ _D	_D		_D
 
 	<#24ff24>SWORD REMIX MOVES</>
 SWORD THROW	-		^Z
-   <#bbbbbb>Can be canceled into other ^Z moves.</>
+   <#bbbbbb>Can be canceled into Swordless ^Z moves.</>
 DOWN THROW	-		<#65b5ff>(AIR ONLY)</> ^Z
-_!FLYING PEDESTAL	-		<#65b5ff>(AIR ONLY)</> _F^Z
-   <#bbbbbb>Can be canceled into special moves on hit.</>
+   <#bbbbbb>Can be canceled into Swordless ^Z moves.</>
 ROUNDABOUT	-		(HOLD) ^Z
 _!AIM		(HOLD ANY DIRECTION AS THE MOVE STARTS) </>
 UP THROW	-		_D^Z
-   <#bbbbbb>Can be canceled into other ^Z moves.</>
+   <#bbbbbb>Can be canceled into Swordless ^Z moves.
+   Can also be jump canceled during a combo.</>
+
 
 
 
@@ -73,19 +100,23 @@ _D	_D		_D
 
 	<#0f43ff>SWORDLESS REMIX MOVES</>
 TACKLE	-		^Z
-AXE	-		<#65b5ff>(AIR ONLY)</> ^Z
+   <#bbbbbb>Can be canceled into special moves during a combo.</>
+AIR PICKUP	-		<#65b5ff>(AIR ONLY)</> ^Z
+   <#bbbbbb>Can be used to pick up the sword without doing anything else.
+   This even works during other attacks.</>
 PASS	-		_F^Z
-   <#bbbbbb>This move can pass through the enemy.</>
-LUNGE	-		<#65b5ff>(AIR ONLY)</> _F^Z
+   <#bbbbbb>This move can pass through the enemy.
+   Can be canceled into special moves on hit.</>
+FLYING PEDESTAL	-		<#65b5ff>(AIR ONLY)</> _F^Z
+   <#bbbbbb>If One grabs the sword with this move,
+   It can be canceled into special moves on hit.</>
+PICKUP	-		_B^Z
+   <#bbbbbb>Can be used to pick up the sword without doing anything else.
+   This even works during other attacks.</>
 LAUNCH	-		_D^Z
-   <#bbbbbb>Has unique followups when used to catch his sword out of the air.</>
-_!AXE	-		<#65b5ff>(AIR ONLY)</> ^Z
-_!FLYING PEDESTAL	-		<#65b5ff>(AIR ONLY)</> _F^Z
-   <#bbbbbb>Can be canceled into special moves on hit.</>
-_!PEDESTAL	-		<#65b5ff>(AIR ONLY)</> _D^Z
+   <#bbbbbb>If One grabs the sword with this move,
+   It can still be canceled into Swordless ^Z moves.</>
 DROP	-		<#65b5ff>(AIR ONLY)</> _D^Z
-
-
 
 
 

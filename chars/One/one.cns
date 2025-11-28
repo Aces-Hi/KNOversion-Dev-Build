@@ -1020,6 +1020,65 @@ ctrl = 0
 
 ;==================================================================================================
 
+[State 0. MapSet]
+type 		= MapSet
+triggerall	= var(50)
+trigger1 	= map(swordDistX) > frontedgedist
+trigger1	= map(swordDistX) > backedgedist
+map 		= "noJump"
+value 		= 1
+ignorehitpause 	= 1
+persistent	= 1
+[State 0. MapSet]
+type 		= MapSet
+triggerall	= var(50)
+trigger1 	= map(swordDistX) < frontedgedist
+trigger1	= map(swordDistX) < backedgedist
+map 		= "noJump"
+value 		= 0
+ignorehitpause 	= 1
+persistent	= 1
+
+[State 0. MapAdd]
+type 		= MapAdd
+triggerall	= map(ComboStateCheck)
+trigger1 	= stateno = 640
+map 		= "jR_useCount"
+value 		= 1
+ignorehitpause 	= 1
+persistent 	= 0
+
+[State 0. MapSet]
+type 		= MapSet
+trigger1	= !map(ComboStateCheck)
+map 		= "jR_useCount"
+value 		= 0
+ignorehitpause 	= 0
+persistent 	= 0
+
+[State 0. MapSet]
+type 		= MapAdd
+trigger1 	= map(SwordContact)
+map 		= "swordContact"
+value 		= -1
+ignorehitpause 	= 0
+persistent 	= 0
+
+[State 0. MapSet]
+type 		= MapSet
+trigger1 		= !var(50)
+map 		= "swordDistX"
+value 		= 0
+ignorehitpause 	= 1
+persistent 		= 1
+[State 0. MapSet]
+type 		= MapSet
+trigger1 		= !var(50)
+map 		= "swordDistY"
+value 		= 0
+ignorehitpause 	= 1
+persistent 		= 1
+
 [State 45, Explod]
 type = Explod
 trigger1 = command != "holdup"
@@ -1626,6 +1685,12 @@ value = 1
 ignorehitpause=1
 persistent=1
 
+[State 0, MAPSET]
+type = MapSet
+trigger1 =combocount=0
+map = "SLAM_UseCount"
+value = 0
+
 [State 0, VarSet]
 type = VarSet
 trigger1 =  roundstate>2
@@ -1713,8 +1778,8 @@ value = 0
 [State 0, Distance Display]
 type = DisplaytoClipboard
 trigger1 = 1
-text = "25 = %f var 30 = %d, P2DistY = %d, P2BodyDistX = %d, ag = %f "
-params =fvar(25), var(30), P2Dist Y, P2BodyDist X, map(airgrab)
+text = "25 = %f var 30 = %d, P2DistY = %d, P2BodyDistX = %d, slam = %f "
+params =fvar(25), var(30), P2Dist Y, P2BodyDist X, map(SLAM_UseCount)
 
 [State 0, VarAdd]
 type = VarAdd

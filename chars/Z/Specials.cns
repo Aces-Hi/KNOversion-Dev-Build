@@ -1751,7 +1751,7 @@ type = VelSet
 triggerall = p2movetype = H
 trigger1 = enemy, BackEdgeBodyDist <=0
 trigger1 = animelemtime(6)=0 ;&& P2MoveType = H
-x = -2*3*var(7)
+x = -2.5*3*var(7)
 ignorehitpause = 1
 
 [State 0, VelSet]

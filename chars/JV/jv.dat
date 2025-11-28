@@ -99,10 +99,9 @@ _D	_D		_D
 <#190bd9>36 CHAMBERS</>	-		<#55ffff>(1 BAR)</> _D_DF_F_-^A/^B/^C
 <#190bd9>WANDERING SERPENT</>	-		<#55ffff>(1 BAR)</> _D_DB_B_-^A/^B/^C
    <#bbbbbb>An invincible reversal attack. Can be dash canceled during combos.</>
-<#190bd9>ALTERNATE BERETTA DRIVER</>		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _D_DB_B_-^Y
+<#190bd9>KANON DRIVER</>		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _D_DB_B_-^Y
    <#bbbbbb>Grounded version is a fullscreen anti-air that wallbounces airborne enemies.
-   Air version is a fullscreen overhead attack that causes a
-   sliding knockdown on grounded enemies.</>
+   Air version is a fullscreen overhead attack that causes a sliding knockdown.</>
 
 	<#55ffff>ENHANCED SUPER MOVES</>
 <#983eff>72 CHAMBERS</>	-		<#55ffff>(2 BARS)</> _D_DF_F_-^A/^B/^C

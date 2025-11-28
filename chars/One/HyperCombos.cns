@@ -616,6 +616,7 @@ type = ChangeState
 triggerall = animtime = 0
 trigger1 = prevstateno = 3010
 trigger2 = prevstateno = 3016
+trigger3 = prevstateno = 3017 && pos y >-10
 value = 3019
 ctrl = 0
 
@@ -623,7 +624,7 @@ ctrl = 0
 type = ChangeState
 triggerall = animtime = 0
 trigger1 = prevstateno = 3013
-trigger2 = prevstateno = 3017
+trigger2 = prevstateno = 3017 && pos y <= -10
 value = 3018
 ctrl = 0
 ;---------------------------------------------------------------------------

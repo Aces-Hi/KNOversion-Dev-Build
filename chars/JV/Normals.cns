@@ -2543,17 +2543,17 @@ ctrl = 0
 
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = command = "nobuffer_x" && time > 3 && map(FJV)
+trigger1 = command = "nobuffer_x" && map(FJV)
 value = 648
 ctrl = 0
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = command = "nobuffer_y" && time > 3 && map(FJV)
+trigger1 = command = "nobuffer_y" && map(FJV)
 value = 645
 ctrl = 0
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = command = "nobuffer_z" && time > 3 && map(FJV)
+trigger1 = command = "nobuffer_z" && map(FJV)
 value = 646
 ctrl = 0
 

@@ -1,4 +1,4 @@
-eeeqqeeeccccccczzzzeeeqqqqqqqqqqqqqqeeecqqqqqqqqqqqqeeeeecqeeqeeeqeqeqeeqqqeqeeeqqeezqeqeeeezzzzzcccqeeceeceqzzczqqqqqqqeqqeqccceqqqqeqezczccqeqeeeeeeeeqqeqqeqeeeqqeqeqcccccccccccczeq1eqzczzcczczqeq31011,,klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
+aeeeqqeeeccccccczzzzeeeqqqqqqqqqqqqqqeeecqqqqqqqqqqqqeeeeecqeeqeeeqeqeqeeqqqeqeeeqqeezqeqeeeezzzzzcccqeeceeceqzzczqqqqqqqeqqeqccceqqqqeqezczccqeqeeeeeeeeqqeqqeqeeeqqeqeqcccccccccccczeq1eqzczzcczczqeq31011,,klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
 ..,......,,,...j,,,./..kl,,----..,,.,,,,,,,,,,,.; KFM's animation data
 ; see docs/air.txt for more information
 
@@ -2674,10 +2674,10 @@ Clsn2: 1
 [Begin Action 2010]
 Clsn2Default: 1
   Clsn2[0] = -39, -108, 33, -1
-1200,12, 0,0, 3
-1200,13, 0,0, 3
-1200,14, 0,0, 3
-1200,15, 0,0, 3
+1200,12, 0,0, 5
+1200,13, 0,0, 5
+1200,14, 0,0, 5
+1200,15, 0,0, 5
 Clsn1: 10
   Clsn1[0] = -21, -96, 72, -46
   Clsn1[1] = 52, -103, 99, -80
@@ -2695,14 +2695,14 @@ Clsn1: 10
 1200,19, 0,0, 4
 1040,9, 0,0, 4
 
-;FEX5S
-[Begin Action 2012]
+; FEX5S
+[Begin Action 2009]
 Clsn2Default: 1
   Clsn2[0] = -39, -108, 33, -1
-1200,12, 0,0, 5
-1200,13, 0,0, 5
-1200,14, 0,0, 5
-1200,15, 0,0, 5
+1200,12, 0,0, 3
+1200,13, 0,0, 3
+1200,14, 0,0, 3
+1200,15, 0,0, 3
 Clsn1: 10
   Clsn1[0] = -21, -96, 72, -46
   Clsn1[1] = 52, -103, 99, -80
@@ -2748,6 +2748,31 @@ Clsn1: 13
 2011,8, 0,0, 4
 LoopStart
 2011,8, 0,0, 5
+
+;FEX5S
+[Begin Action 2012]
+Clsn2Default: 1
+  Clsn2[0] = -39, -108, 33, -1
+1200,12, 0,0, 5
+1200,13, 0,0, 5
+1200,14, 0,0, 5
+1200,15, 0,0, 5
+Clsn1: 10
+  Clsn1[0] = -21, -96, 72, -46
+  Clsn1[1] = 52, -103, 99, -80
+  Clsn1[2] = 83, -117, 140, -93
+  Clsn1[3] = 116, -131, 165, -106
+  Clsn1[4] = 148, -150, 202, -120
+  Clsn1[5] = 176, -163, 240, -133
+  Clsn1[6] = 212, -176, 282, -146
+  Clsn1[7] = 242, -195, 312, -159
+  Clsn1[8] = 278, -215, 348, -174
+  Clsn1[9] = 306, -238, 406, -187
+1200,16, 0,0, 1
+1200,17, 0,0, 5
+1200,18, 0,0, 4
+1200,19, 0,0, 4
+1040,9, 0,0, 4
 
 ; 236X - Judgement Start
 [Begin Action 3000]

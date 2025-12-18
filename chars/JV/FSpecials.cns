@@ -1815,14 +1815,6 @@ anim = 1200
 poweradd = 0
 sprpriority = 2
 
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit
-v = 31    
-value = 1
-ignorehitpause=1
-persistent=0
-
 [State 200, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
@@ -1921,7 +1913,7 @@ animtype = medium
 ground.slidetime = 14
 ground.hittime  = ceil(cond(fvar(15) *30 < 9, 9, fvar(15) * 30))
 ground.velocity = -2,-5
-air.velocity 	= -5,-1
+air.velocity 	= -5,-2
 air.hittime  =ceil(cond(fvar(15) *30 < 9, 9, fvar(15) * 30))
 envshake.time = 7
 fall = 0
@@ -2436,6 +2428,7 @@ hitflag = MAFD
 guardflag = MAF
 ;priority = 3
 pausetime = 10,10
+guard.pausetime = 10,8
 sparkno = 3
 sparkxy = -10,-45
 hitsound   = 5,4
@@ -2451,8 +2444,8 @@ air.velocity = -5,-5
 forcenofall=1
 guard.slidetime = 12
 getpower = (0)*(cond(var(var(3)) = 1, 1, .5))
-guard.hittime = 12
-guard.ctrltime = 12
+guard.hittime = 1
+guard.ctrltime = 1
 envshake.time = 8
 envshake.freq = 10
 envshake.ampl = 2
@@ -2545,6 +2538,7 @@ hitflag = MAFD
 guardflag = MAF
 ;priority = 3
 pausetime = 12,12
+guard.pausetime = 12,10
 sparkno = 3
 sparkxy = -10,-45
 hitsound   = 5,1
@@ -2559,8 +2553,8 @@ air.hittime = ceil(cond(fvar(15) *40 < 9, 9, fvar(15) * 40))
 fall = 1
 guard.slidetime = 12
 getpower = (0)*(cond(var(var(3)) = 1, 1, .5))
-guard.hittime = 21
-guard.ctrltime = 21
+guard.hittime =1
+guard.ctrltime = 1
  envshake.time = 8
 envshake.freq = 10
 envshake.ampl = 2
@@ -2578,6 +2572,7 @@ hitflag = MAFD
 guardflag = MAF
 ;priority = 3
 pausetime = 12,12
+guard.pausetime = 12,10
 sparkno = 3
 sparkxy = -10,-45
 hitsound   = 5,4
@@ -2592,8 +2587,8 @@ air.hittime = ceil(cond(fvar(15) *40 < 9, 9, fvar(15) * 40))
 fall = 1
 guard.slidetime = 12
 getpower = (0)*(cond(var(var(3)) = 1, 1, .5))
-guard.hittime = 21
-guard.ctrltime = 21
+guard.hittime = 1
+guard.ctrltime = 1
 p2stateno = 1225 
  envshake.time = 8
 envshake.freq = 10
@@ -2611,6 +2606,7 @@ hitflag = MAFD
 guardflag = MAF
 ;priority = 3
 pausetime = 12,12
+guard.pausetime = 12,10
 sparkno = 3
 sparkxy = -10,-45
 hitsound   = 5,4
@@ -2625,8 +2621,8 @@ air.hittime = 34
 fall = 1
 guard.slidetime = 12
 getpower = (0)*(cond(var(var(3)) = 1, 1, .5))
-guard.hittime = 21
-guard.ctrltime = 21
+guard.hittime = 1
+guard.ctrltime = 1
  envshake.time = 8
 envshake.freq = 10
 envshake.ampl = 2
@@ -3174,7 +3170,7 @@ Physics = S
 juggle = 0
 velset = 0,0
 ctrl = 0
-anim = 2010
+anim = 2009
 poweradd = -1000
 sprpriority = 2
 
@@ -3372,6 +3368,14 @@ guard.ctrltime = 10
 fall.yvelocity = 0
 getpower = 0
 p2stateno=15000
+
+[State 0, Changestate]
+type = Changestate
+triggerall = command != "holdback"
+triggerall = command = "FF" || command = "dash"
+trigger1 = movecontact
+value = 100
+ctrl = 0
 
 [State 0, ChangeState]
 type = ChangeState

@@ -69,11 +69,11 @@ trigger4 = stateno = [100,101]
 [State 1240, 214S]
 type = ChangeState
 value = 1070
+triggerall=map(EXLimiter1)=0
 triggerall=stateno!=40
 triggerall = power>=1000
-triggerall=var(30)<=0
 triggerall=stateno!=3200
-triggerall = command = "EX"
+triggerall = command = "nobuffer_EX"
 triggerall = command !="holdfwd"
 triggerall = command !="holddown"
 triggerall = command !="holdup"
@@ -82,7 +82,7 @@ triggerall = statetype != A
 triggerall = hitdefattr!=SCA,NT,ST,HT
 trigger1 = statetype != A
 trigger1 = ctrl
-trigger2 = var(1)
+trigger2 = var(1) || stateno=1009
 trigger2 = movecontact
 
 [State 1240, 214S]
@@ -275,7 +275,6 @@ trigger4 = stateno = [100,101]
 [State -1, Spotdodge]
 type = ChangeState
 value = 1010
-triggerall=stateno!=40
 triggerall = command = "b"
 triggerall = command != "c"&&command != "EX"
 triggerall = command = "holdback"
@@ -285,6 +284,7 @@ trigger1 = ctrl
 trigger2 = var(1)
 trigger3 = stateno = 100
 trigger4=stateno=105
+trigger5 = stateno=40
 
 ;4SEN - Wandering Serpent (Ground)
 [State -1, Spotdodge]
@@ -295,30 +295,14 @@ triggerall = command = "b"
 triggerall = command != "c"&&command != "EX"
 triggerall = command = "holdback"
 triggerall = command != "214b"
-triggerall=var(33)=0
 triggerall = var(30) > 1
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
 trigger2 = movecontact
 trigger3 = stateno = 100|| stateno = 101
+trigger4 = stateno=40
 
-;4SEN No enhance
-[State -1, Spotdodge]
-type = ChangeState
-value = 1010
-triggerall=stateno!=40
-triggerall = command = "b"
-triggerall = command != "c"&&command != "EX"
-triggerall = command != "214b"
-triggerall = command = "holdback"
-triggerall=var(33)>0
-triggerall = var(30) > 1
-trigger1 = statetype != A
-trigger1 = ctrl
-trigger2 = var(1)
-trigger2 = movecontact
-trigger3 =  stateno = 100|| stateno = 101
 
 ;EX4S
 [State EX 4S]
@@ -333,7 +317,7 @@ triggerall = command = "holdback"
 triggerall = command != "holddown"
 triggerall = statetype != A
 trigger1 = ctrl
-trigger2 = var(1) 
+trigger2 = var(1) || stateno=1009
 trigger2 = movecontact
 
 ;6S
@@ -358,13 +342,13 @@ value = 2200
 triggerall=map(EXLimiter2)=0
 triggerall=power>=1000
 triggerall=stateno!=40
-triggerall = command = "EX"
+triggerall = command = "nobuffer_EX"
 triggerall = command = "holdfwd"
 triggerall = command != "holdback"
 triggerall = command != "holddown"
 triggerall = statetype != A
 trigger1 = ctrl
-trigger2 = var(1) 
+trigger2 = var(1) || stateno=1009
 trigger2 = movecontact
 
 ;===========================================================================
@@ -430,7 +414,7 @@ triggerall = command != "holdfwd"
 triggerall = command = "holddown"
 triggerall = statetype != A
 trigger1 = ctrl
-trigger2 = var(1) 
+trigger2 = var(1) || stateno=1009
 trigger2 = movecontact
 
 ;===========================================================================
@@ -549,6 +533,7 @@ value = 631
 triggerall=stateno!=40
 triggerall = command = "c"
 triggerall = command = "holddown"
+triggerall = command != "b"||command != "EX"
 triggerall = var(30) < 1
 triggerall = statetype !=A
 trigger1 = var(1)
@@ -560,6 +545,7 @@ value = 6310
 triggerall=stateno!=40
 triggerall = command = "c"
 triggerall = command = "holddown"
+triggerall = command != "b"||command != "EX"
 triggerall = var(30) >= 1
 triggerall = statetype !=A
 trigger1 = var(1)
@@ -571,6 +557,7 @@ type = ChangeState
 value = 6300
 triggerall=stateno!=40
 triggerall = command = "c"
+triggerall = command != "b"||command != "EX"
 triggerall = var(30) < 1
 triggerall = statetype !=A
 trigger1 = var(1)
@@ -582,6 +569,7 @@ type = ChangeState
 value = 6301
 triggerall=stateno!=40
 triggerall = command = "c"
+triggerall = command != "b"||command != "EX"
 triggerall = var(30) >= 1
 triggerall = statetype !=A
 trigger1 = var(1)
@@ -811,7 +799,7 @@ triggerall = command != "holddown"
 triggerall = statetype = A
 triggerall = stateno!=[621,623]
 trigger1 = ctrl
-trigger2 = (stateno = [600,610]) || stateno = 640
+trigger2 = (stateno = [600,610])
 trigger2 = movecontact ;&& enemynear, movetype = H
 trigger3 = stateno = 1350 ;Air blocking
 trigger4 = movehit && stateno = 640

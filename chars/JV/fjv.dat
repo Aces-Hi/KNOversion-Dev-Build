@@ -1,25 +1,25 @@
 	<#bbbbbb>This move list assumes you are facing to the right.</>
 
 	<#190bd9>UNIQUE TRAIT: JÖRMUNGANDR DRIVE</>
-	JV can enhance his Special, Remix, and Super Moves by dashing forward
-	before using them. The enhanced moves are more powerful, have unique
-	properties, and are all limited to one use per combo.
-	JV also does not have any EX Moves; Instead, he has level 1 Super Moves.
+	JV can enhance his Special, Remix, and Super Moves by
+	dashing forward before using them. The enhanced moves are more powerful
+	and have unique properties. JV can also cancel certain moves into
+	King's Arsenal, a set of followup attacks.
 
 	<#190bd9>UNIQUE MOVES</>
 DIVIDER	-		_F^C
-SNAKE IN THE GRASS	-		_DF^C
-MJÖLLNIR	-		<#65b5ff>(AIR ONLY)</> _D^C
-   <#bbbbbb>Has movement followups on hit.</>
-_!FLOW STATE	-		^A/^B/^C
-        <#bbbbbb>The different buttons send JV in different directions.</>
+EARTHEN SERPENT	-		_DF^C
+KICKBACK	-		<#65b5ff>(AIR ONLY)</> _D^C
 
-	<#190bd9>STRINGS</>
-CONQUEROR	-		_F^C_-_F^C
-   <#bbbbbb>Hits overhead.</>
-BEGGAR	-		_F^C_-_DF^C
-   <#bbbbbb>Hits low. Crumples when used to start a combo.</>
-
+	<#190bd9>KING'S ARSENAL</>
+	<#bbbbbb>Can only be used after certain moves.</>
+_!SUNDR	-		^A
+        <#983eff>Is dash cancellable on hit.
+        If spaced to hit at the tip, it will wallbounce.</></>
+_!NAORA	-		^B
+        <#983eff>An anti-air/anti-projectile attack.</>
+_!YGGDRASIL	-		^C
+        <#983eff>A very strong overhead attack.</>
 
 _D	_D		_D
 

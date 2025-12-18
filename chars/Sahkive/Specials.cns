@@ -1632,7 +1632,6 @@ ignorehitpause = 1
 persistent = 1
 [State 0]
 type = Mapadd
-trigger1 = map(haki)&&prevstateno = 100
 trigger1 = time=0
 trigger1 = prevstateno=666999
 map = "armorlimit"
@@ -3594,7 +3593,7 @@ ignorehitpause = 0
 type = TargetBind
 triggerall = NumTarget
 trigger1 = map(grabtimer)>0
-time = 50
+time = 1
 pos = 42,-48
 ;Pummel
 [State 0, ChangeState]

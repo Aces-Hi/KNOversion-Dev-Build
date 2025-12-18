@@ -9,7 +9,7 @@
 	<#790909>UNIQUE MOVES</>
 PRIMAL	-		_F^C
 WORLD DESTROYER	-		(CAN BE HELD) _DF^C
-   <#bbbbbb>Gains armor and becomes unblockable when fully held.</>
+   <#bbbbbb>Has armor while charging and becomes unblockable when fully held.</>
 MOVE THE GROUND	-		(HOLD)_D^C
    <#bbbbbb>Can be used after landing _D^C.</>
 
@@ -51,8 +51,7 @@ _D	_D		_D
 RAGE CHARGE	-		(HOLD)^Z
    <#bbbbbb>Angous will gain <#55ffff>Meter<#bbbbbb> as long as he holds ^Z.</>
 FADE	-		(CAN BE HELD) _F^Z
-   <#bbbbbb>A movement option that can pass through enemies.
-   Holding ^Z will keep Angous from passing through.</>
+   <#bbbbbb>A movement option that can pass through enemies.</>
 _!OUT	-		(CAN BE HELD) ^A
 _!IN	-		(CAN BE HELD) ^B
 _!THROUGH	-		(CAN BE HELD) ^C
@@ -65,6 +64,7 @@ RAMPAGE	-		_D^Z
 _!RAMPAGE ENDER	-		(HOLD)^Z
         <#bbbbbb>Can be canceled into _F^Z, _B^Z, or any Special Move on hit.</>
 FLYING FIST <#ff0000>(RAGE)</>	-		<#65b5ff>(AIR ONLY)</> ^Z
+
 
 
 
@@ -130,8 +130,8 @@ GRAB	-		ANY 2 NORMALS </>
 FORCE BLOCK (WHILE BLOCKING)	-		<#55ffff>(1 BAR)</> _B^X
    <#bbbbbb>Can push the enemy backwards while you block.</>
 NO PARRY	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _F^X
-   <#bbbbbb>A reversal option that gives you the advantage
-   if the enemy hits you. Refunds 1 BAR on hit.</>
+   <#bbbbbb>A reversal option that makes you invincible if the enemy hits you.
+   Can be used again FOR FREE while the invincibility is active.</>
 RECORD SCRATCH (WHILE ATTACKING)		<#55ffff>(1 BAR/2 BARS ON BLOCK)</> ^X
    <#bbbbbb>Can be used to instantly cancel most attacks.
    Holding any direction during this will cause you to move that way.</>

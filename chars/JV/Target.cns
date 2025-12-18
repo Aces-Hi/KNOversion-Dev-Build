@@ -928,8 +928,6 @@ value = 1226
 
 ;------------------
 ;  DropKick - Hit
-; (a custom gethit state)
-; See State 1020 for details
 [Statedef 1225]
 type    = A
 movetype= H

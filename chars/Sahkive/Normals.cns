@@ -14,7 +14,7 @@ velset = vel x, vel y
 [State Sahkive Voices]
 type = PlaySnd
 trigger1 =  animelem = 3
-value = 200, (0+(Random%39))
+value = 200, (0+(Random%50))
 volumescale=150
 
 [State 200, 2]
@@ -31,7 +31,9 @@ value = 1004, (0+(Random%15))
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.5
+value = 1
+ignorehitpause=1
+persistent=0
 
 
 [State 200, VarAdd]
@@ -72,7 +74,7 @@ air.velocity = -1.4,-2           ;X-velocity at which opponent is pushed,
 air.hittime = 15                 ;Time before opponent regains control in air
 envshake.time = 0;
 guard.hittime = 16
-guard.ctrltime = 12
+guard.ctrltime = 10
 guard.slidetime = 10
 forcenofall=1
 getpower = (50)*(cond(var(var(2)) = 1, 1, 1)) 
@@ -97,7 +99,7 @@ velset = vel x, vel y
 [State Sahkive Voices]
 type = PlaySnd
 trigger1 =  animelem = 3
-value = 200, (0+(Random%26))
+value = 200, (0+(Random%50))
 volumescale=150
 
 [State 0, VarAdd]
@@ -218,7 +220,7 @@ velset = vel x, vel y
 [State Sahkive Voices]
 type = PlaySnd
 trigger1 =  animelem = 5
-value = 200, (0+(Random%13))
+value = 200, (0+(Random%50))
 volumescale=150
 
 [State 0, VarAdd]
@@ -356,7 +358,7 @@ facep2 = 1
 [State Sahkive Voices]
 type = PlaySnd
 trigger1 =  animelem = 5
-value = 200, (0+(Random%13))
+value = 200, (0+(Random%50))
 volumescale=150
 
 [State 0, VarAdd]
@@ -462,7 +464,7 @@ triggerall=enemynear,map(armor)=0
 triggerall = prevstateno = 100
 trigger1 = !movecontact
 attr = S,NA
-damage = ceil(ifElse(fvar(11) * 125 < 20, 20, fvar(11) * 125)), 5
+damage = ceil(ifElse(fvar(11) * 100 < 20, 20, fvar(11) * 100)), 5
 animtype = hard
 air.animtype = back
 guardflag = MA
@@ -503,7 +505,7 @@ triggerall=enemynear,map(armor)>0
 triggerall = prevstateno = 100
 trigger1 = !movecontact
 attr = S,NA
-damage = ceil(ifElse(fvar(11) * 125 < 20, 20, fvar(11) * 125)), 5
+damage = ceil(ifElse(fvar(11) * 100 < 20, 20, fvar(11) * 100)), 5
 animtype = hard
 air.animtype = back
 guardflag = MA
@@ -595,7 +597,6 @@ ignorehitpause = 1
 persistent = 1
 [State 0]
 type = Mapadd
-trigger1 = map(haki)&&prevstateno = 100
 trigger1 = time=0
 trigger1 = prevstateno=666999
 map = "armorlimit"
@@ -700,14 +701,16 @@ velset = vel x, vel y
 [State Sahkive Voices]
 type = PlaySnd
 trigger1 =  animelem = 3
-value = 200, (0+(Random%39))
+value = 200, (0+(Random%50))
 volumescale=150
 
 [State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 2
+value = 1
+ignorehitpause=1
+persistent=0
 
 [State 200, 2]
 type = PlaySnd
@@ -769,7 +772,7 @@ velset = vel x, vel y
 [State Sahkive Voices]
 type = PlaySnd
 trigger1 =  animelem = 3
-value = 200, (0+(Random%26))
+value = 200, (0+(Random%50))
 volumescale=150
 
 [State 0, VarAdd]
@@ -817,7 +820,7 @@ envshake.phase = 4
 forcenofall=1
 getpower = (100)*(cond(var(var(2)) = 1, 1, 1))
 guard.hittime=10
-guard.ctrltime=10
+guard.ctrltime=8
 [State 410, 4]
 type = ChangeState
 trigger1 = AnimTime = 0
@@ -837,7 +840,7 @@ velset = vel x, vel y
 [State Sahkive Voices]
 type = PlaySnd
 trigger1 =  animelem = 5
-value = 200, (0+(Random%13))
+value = 200, (0+(Random%50))
 volumescale=150
 
 
@@ -955,7 +958,7 @@ air.velocity = -.4,-6;
 ground.cornerpush.veloff = -8
 down.cornerpush.veloff = 0
 air.cornerpush.veloff = 0
-guard.hittime = 18
+guard.hittime = 15
 guard.velocity = -7
 guard.slidetime = 10;
 envshake.time = 8
@@ -1717,7 +1720,9 @@ x = 4
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.5
+value = 1
+ignorehitpause=1
+persistent=0
 
 [State 200, VarAdd]
 type = VarAdd
@@ -1741,7 +1746,7 @@ y = .44
 [State Sahkive Voices]
 type = PlaySnd
 trigger1 =  animelem = 2
-value = 200, (0+(Random%39))
+value = 200, (0+(Random%50))
 volumescale=150
 
 [State 200, 2]
@@ -1823,7 +1828,7 @@ velset = vel x, vel y
 [State Sahkive Voices]
 type = PlaySnd
 trigger1 =  animelem = 5
-value = 200, (0+(Random%26))
+value = 200, (0+(Random%50))
 volumescale=150
 
 [State 0, VelSet]
@@ -1960,7 +1965,7 @@ value = .5
 [State Sahkive Voices]
 type = PlaySnd
 trigger1 =  animelem =3
-value = 200, (0+(Random%13))
+value = 200, (0+(Random%50))
 volumescale=150
 
 [State 200, 2]
@@ -2060,7 +2065,7 @@ velset = vel x, vel y
 [State Sahkive Voices]
 type = PlaySnd
 trigger1 =  animelem = 3
-value = 200, (0+(Random%13))
+value = 200, (0+(Random%50))
 volumescale=150
 
 [State 0, VelSet]
@@ -2256,7 +2261,6 @@ ignorehitpause = 1
 persistent = 1
 [State 0]
 type = Mapadd
-trigger1 = map(haki)
 trigger1 = time=0
 trigger1 = prevstateno=666999
 map = "armorlimit"
@@ -2920,7 +2924,6 @@ ignorehitpause = 1
 persistent = 1
 [State 0]
 type = Mapadd
-trigger1 = map(haki)
 trigger1 = time=0
 trigger1 = prevstateno=666999
 map = "armorlimit"
@@ -3080,7 +3083,6 @@ ignorehitpause = 1
 persistent = 1
 [State 0]
 type = Mapadd
-trigger1 = map(haki)
 trigger1 = time=0
 trigger1 = prevstateno=666999
 map = "armorlimit"
@@ -3364,7 +3366,6 @@ ignorehitpause = 1
 persistent = 1
 [State 0]
 type = Mapadd
-trigger1 = map(haki)
 trigger1 = time=0
 trigger1 = prevstateno=666999
 map = "armorlimit"
@@ -3696,7 +3697,6 @@ ignorehitpause = 1
 persistent = 1
 [State 0]
 type = Mapadd
-trigger1 = map(haki)
 trigger1 = time=0
 trigger1 = prevstateno=666999
 map = "armorlimit"
@@ -4111,7 +4111,6 @@ ignorehitpause = 1
 persistent = 1
 [State 0]
 type = Mapadd
-trigger1 = map(haki)
 trigger1 = time=0
 trigger1 = prevstateno=666999
 map = "armorlimit"
@@ -4276,6 +4275,13 @@ pausetime = 1,1
 p1stateno = 1101
 ignorehitpause = 1
 
+[State 0, SelfState]
+type = SelfState
+trigger1=time<=15
+trigger1 = enemy,name="vile"&&enemy,numhelper(6001)&&map(vile)<=10&&map(vile)>=-80
+value = 1101
+ignorehitpause = 1
+
 ;Armament Haki------------------------------------------------------------------------------------------------------------------------------
 ;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ;Shadow Override
@@ -4333,7 +4339,6 @@ ignorehitpause = 1
 persistent = 1
 [State 0]
 type = Mapadd
-trigger1 = map(haki)
 trigger1 = time=0
 trigger1 = prevstateno=666999
 map = "armorlimit"
@@ -4396,6 +4401,12 @@ physics = S
 ctrl = 0
 sprpriority = 1
 
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time = 0 && anim!=1100 ;Animation of this state
+value = 1100
+elem = 1
+
 [State 200, 2]
 type = PlaySnd
 trigger1 = time = 0&&!map(observationactive)
@@ -4444,8 +4455,8 @@ ignorehitpause=1
 
 [State 100, 4]
 type = ChangeState
-trigger1 = time>20
-value = 20
+trigger1 = time>17
+value = 17
 ctrl = 1
 
 ;---------------------------------------------------------------------------
@@ -4604,7 +4615,6 @@ ignorehitpause = 1
 persistent = 1
 [State 0]
 type = Mapadd
-trigger1 = map(haki)
 trigger1 = time=0
 trigger1 = prevstateno=666999
 map = "armorlimit"
@@ -4897,7 +4907,6 @@ ignorehitpause = 1
 persistent = 1
 [State 0]
 type = Mapadd
-trigger1 = map(haki)
 trigger1 = time=0
 trigger1 = prevstateno=666999
 map = "armorlimit"

@@ -217,14 +217,6 @@ ownpal = 0
 supermovetime = 0
 pausemovetime = 0
 
-[State -3, Win Voices] ;Win
-type = PlaySnd
-trigger1 = time = 0
-value = 800, (0+(Random%4))
-[State -3, Win Voices] ;Win
-type = PlaySnd
-trigger1 = time = 0
-value = 8178, (0+(Random%4))
 [State 0, Explod]
 type = Explod
 trigger1 =Time = 0
@@ -370,15 +362,6 @@ ownpal = 0
 supermovetime = 0
 pausemovetime = 0
 
-[State -3, Win Voices] ;Win
-type = PlaySnd
-trigger1 = time = 0
-value = 800, (0+(Random%4))
-[State -3, Win Voices] ;Win
-type = PlaySnd
-trigger1 = time = 0
-value = 8178, (0+(Random%4))
-
 [State 0, Explod]
 type = Explod
 trigger1 =Time = 0
@@ -515,8 +498,13 @@ supermovetime = 0
 pausemovetime = 0
 [State 154, 1]
 type = ChangeAnim
-trigger1 = 1
+trigger1 = name !="one"
 value = 152
+
+[State 5000, 1] ;Anim for HIT_LIGHT to HIT_HARD
+type = ChangeAnim
+trigger1 = name ="one"
+value = ifelse(var(50),157,152)
 
 [State 154, 2]
 type = selfstate
@@ -535,7 +523,6 @@ time = 4
 type    = A
 movetype= H
 physics = N
-anim = 152
 
 [State 0, NotHitBy]
 type = NotHitBy
@@ -1483,8 +1470,13 @@ physics = S
 velset = vel x * 0.5,0
 anim = 910
 ctrl = 0
-poweradd = -1000
 sprpriority = 2
+
+[State 0, PowerAdd]
+type = PowerAdd
+trigger1 = map(afterparry)<50&&time=0
+value = -1000
+ignorehitpause = 1
 
 [State 0, ChangeAnim]
 type = ChangeAnim
@@ -1557,7 +1549,12 @@ velset = vel x,vel y + 1
 anim = 911
 ctrl = 0
 sprpriority = 2
-poweradd = -1000
+
+[State 0, PowerAdd]
+type = PowerAdd
+trigger1 = map(afterparry)<50&&time=0
+value = -1000
+ignorehitpause = 1
 
 [State 0, ChangeAnim]
 type = ChangeAnim
@@ -1726,14 +1723,6 @@ type = PalFX
 trigger1 = !time
 time = 10
 add = 100, 100, 100
-invertall = 0
-color = 0
-ignorehitpause = 1
-[State 0, PalFX]
-type = BGPalFX
-trigger1 = !time
-time = 15
-add = -20, -20, -20
 invertall = 0
 color = 0
 ignorehitpause = 1
@@ -3104,7 +3093,7 @@ value = 5041 ;Jump land
 ; Air get-hit (recovering in air, not falling)
 [Statedef 5041]
 type    = A
-movetype= I
+movetype= H
 physics = A
 ctrl=0
 velset=0,0
@@ -5175,7 +5164,6 @@ anim = 69900
 poweradd= -1000
 ctrl = 0
 sprpriority = 2
-facep2 = 1
 
 [State 0, VarAdd]
 type = VarSet
@@ -5313,7 +5301,6 @@ anim = 69901
 poweradd=-1000
 ctrl = 0
 sprpriority = 2
-facep2 = 1
 
 [State consequences.]
 type = mapset
@@ -5447,7 +5434,6 @@ anim = 69900
 poweradd= -2000
 ctrl = 0
 sprpriority = 2
-facep2 = 1
 
 [State 0, VarAdd]
 type = VarAdd
@@ -5575,7 +5561,6 @@ anim = 69901
 poweradd=-2000
 ctrl = 0
 sprpriority = 2
-facep2 = 1
 
 [State 0, AssertSpecial]
 type = AssertSpecial
@@ -5800,10 +5785,11 @@ trigger4 = parent, stateno = 5301
 [State -1, Parry]
 type = ChangeState
 value = 910 + 1 * statetype = A
-triggerall = power >= 1000
+trigger1 = power >= 1000
+trigger2 = map(afterparry)>=50
 triggerall = hitshakeover && teammode != Tag
 triggerall = stateno!=[690000,690002]
-trigger1 = command = "holdfwd" || command = "fwd"
+triggerall = command = "holdfwd" || command = "fwd"
 triggerall = command = "nobuffer_a" || (stateno = [120,155] || stateno = 912 || stateno = 5120) && (command = "a")
 triggerall = ctrl ||   stateno = 912 && time > 2
 ignorehitpause = 1
@@ -5845,24 +5831,6 @@ triggerall = power>=1000
 trigger1 = movehit
 trigger2 = map(zexception)
 ignorehitpause=0
-;RC Jasta Air
-[State -1, RC Jasta Air]
-type = ChangeState
-value = 690001
-triggerall = prevstateno!=[910,914]
-triggerall = stateno!=[910,914]
-triggerall = map(norc)=0
-triggerall = name!="angous"
-triggerall=enemy,stateno!=7000
-triggerall = !ishelper
-triggerall = stateno!=900&&stateno!=901&&stateno!=69002&&stateno!=902&&stateno!=750
-triggerall = command = "a"
-triggerall = statetype = A
-triggerall = movetype = A
-triggerall = power>=1000
-trigger1 = movehit>1
-trigger2 = map(zexception)
-ignorehitpause=1
 
 
 ;RC Jasta Air
@@ -5971,6 +5939,35 @@ ownpal = 1
 size.xscale = const(size.xscale)
 size.yscale = const(size.yscale)
 
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 =  map(techsafe)
+value =,NT,ST,HT
+time = 1
+ignorehitpause=1
+persistent=0
+
+[State 0, AssertSpecial]
+type = MapSet
+trigger1 =  stateno=5041
+ignorehitpause = 1
+persistent=1
+map = "techsafe"
+value = 6
+[State 0, AssertSpecial]
+type = MapAdd
+trigger1 =  stateno!=5041&&map(techsafe)>0
+ignorehitpause = 1
+persistent=1
+map = "techsafe"
+value = -1
+[State 0, AssertSpecial]
+type = MapSet
+trigger1 =  movetype=A
+ignorehitpause = 1
+persistent=1
+map = "techsafe"
+value = 0
 
 [State 0, AssertSpecial]
 type = MapSet
@@ -8357,7 +8354,7 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmdown)
 removetime=1
 layerno=2  
-text="Hellion"
+text="SWAMP REALM MUSIC"
 scale=1,1
 font=F1
 align=0
@@ -8372,7 +8369,7 @@ triggerall = map(bgmtimer)
 trigger1 = map(bgmdown)
 removetime=1
 layerno=2  
-text="Machine Girl"
+text="Pe$o Pete & Qteku"
 scale=.6,.6
 font=F1
 align=0
@@ -9960,6 +9957,7 @@ value = -1
 
 ;---------------------------------------------------------------------------
 
+
 [statedef -4]
 
 ;==================================
@@ -10365,15 +10363,6 @@ persistent=1
 
 [State consequences.]
 type = mapset
-triggerall=stateno=[910,912]
-trigger1 = map(hardlimit)=0
-map = "hardlimittracker"
-value = power+1000
-ignorehitpause=1
-persistent=1
-
-[State consequences.]
-type = mapset
 trigger1 = map(hardlimit)
 trigger1 = power<map(hardlimittracker)
 map = "hardlimittracker"
@@ -10381,8 +10370,11 @@ value = power
 ignorehitpause=1
 persistent=1
 
+;=================================================
+;AfterParry
+;=================================================
 
-[State consequences.]
+[State AfterParry]
 type = mapset
 triggerall=map(afterparry)=0
 trigger1 = combocount=0
@@ -10402,7 +10394,6 @@ map = "hardlimit"
 value = 1
 ignorehitpause=1
 persistent=1
-
 
 [State consequences.]
 type = mapadd
@@ -10433,6 +10424,25 @@ trigger1=map(afterparry)=0
 value = 1
 ignorehitpause = 1
 persistent = 1
+
+[State 0, PalFX]
+type = BGPalFX
+trigger1 = map(afterparry)>=50
+time = 1
+add = -20, -20, -20
+invertall = 0
+color = 0
+ignorehitpause = 1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = map(afterparry)>=55
+value = SCA
+time = 1
+ignorehitpause = 1
+persistent = 1
+
+;=================================================
 
 [State 0, PowerSet]
 type = PowerSet

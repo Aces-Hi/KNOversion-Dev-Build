@@ -973,7 +973,7 @@ ID = 7050
 ignorehitpause=1
 [State 0, RemoveExplod]
 type = RemoveExplod
-trigger6= var(4)=0
+trigger7= var(4)=0
 trigger1 = roundstate!=2
 trigger2 = winko
 trigger3=enemy,name="Angous"
@@ -1263,8 +1263,8 @@ value = 0
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "at = %f, Z =%f, Battery Test =%d, 5S cock =%f cokc = %f norc %f"
-params = map(autotech),map(zexception), var(5), map(cock), map(cokc),map(norc)
+text = "at = %f, Z =%d, Battery Test =%d, 5S cock =%f cokc = %f norc %f"
+params = map(autotech),var(4), var(5), map(cock), map(cokc),map(norc)
 
 
 

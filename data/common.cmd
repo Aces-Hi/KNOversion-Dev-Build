@@ -508,24 +508,6 @@ command = /d
 name = "holds"
 command = /s
 
-
-[Command]
-name = "holdx"
-command = /z
-
-[Command]
-name = "holda"
-command = /z
-
-[Command]
-name = "holdy"
-command = /c
-
-[Command]
-name = "holdb"
-command = /c
-
-
 [Command]
 name = "bfhold_x";Required (do not remove)
 command = /x
@@ -614,23 +596,22 @@ buffer.time=1
 [Command]
 name = "holdfwd" ;Required (do not remove)
 command = /$F
-
 buffer.time=1
+
 [Command]
 name = "holddown" ;Required (do not remove)
 command = /$D
+buffer.time=1
 
-buffer.time=2
 [Command]
 name = "holdback" ;Required (do not remove)
 command = /$B
-
 buffer.time=1
+
 [Command]
 name = "holdup" ;Required (do not remove)
 command = /$U
-
-buffer.time=2
+buffer.time=1
 
 [Command]
 name = "holdfwd_r" ; Raw hold forward (REQUIRED for command buffering)

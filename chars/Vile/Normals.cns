@@ -92,8 +92,8 @@ air.velocity = -1.4,-2           ;X-velocity at which opponent is pushed,
 ;air.hittime = 15                 ;Time before opponent regains control in air
 envshake.time = 0;
 forcenofall = 1
-guard.ctrltime = 10
-guard.hittime = 10
+guard.ctrltime = 8
+guard.hittime = 8
 getpower = (80)*(cond(var(var(2)) = 1, 1, .5))
 p2facing = 1
 
@@ -1182,8 +1182,8 @@ envshake.time = 8
 envshake.freq = 10
 envshake.ampl = 2
 envshake.phase = 1
-guard.ctrltime = 12
-guard.hittime = 12
+guard.ctrltime = 10
+guard.hittime = 10
 guard.velocity = -5
 airguard.velocity = -1,0
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))

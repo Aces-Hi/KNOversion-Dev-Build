@@ -5,6 +5,8 @@
 	before using them. The enhanced moves are more powerful, have unique
 	properties, and are all limited to one use per combo.
 	JV also does not have any EX Moves; Instead, he has level 1 Super Moves.
+	<#983eff>JV has an alternate moveset.
+	Go to JV on the character select screen and press down to access it.</>
 
 	<#190bd9>UNIQUE MOVES</>
 DIVIDER	-		_F^C
@@ -19,8 +21,6 @@ CONQUEROR	-		_F^C_-_F^C
    <#bbbbbb>Hits overhead.</>
 BEGGAR	-		_F^C_-_DF^C
    <#bbbbbb>Hits low. Crumples when used to start a combo.</>
-
-
 _D	_D		_D
 
 	<#190bd9>SPECIAL MOVES (PAGE 1)</>
@@ -61,7 +61,7 @@ _!SUNDR	-		^A
         <#983eff>Is dash cancellable on hit.</>
 _!NAORA	-		^B
         <#983eff>An invincible attack.</>
-_!YGGDRASIL	-		^C
+_!VEÐRFÖLNIR	-		^C
         <#983eff>A very strong combo starter.</>
 
 
@@ -109,7 +109,8 @@ _D	_D		_D
    Does more damage on counter-hit.</>
 <#983eff>TWENTY-EIGHT MALIGNANT GATES</>	-		<#55ffff>(2 BARS)</> _D_DB_B_-^A/^B/^C
    <#bbbbbb>A combo super.</>
-<#983eff>BEAUTIFUL DEATH</>		<#aaffff>(GROUND OR AIR)</><#55ffff>(2 BARS)</> _D_DB_B_-^Y
+<#983eff>MAW OF OUROBOROS</>		<#aaffff>(GROUND OR AIR)</><#55ffff>(2 BARS)</> _D_DB_B_-^Y
+
 
 
 
@@ -129,8 +130,8 @@ GRAB	-		ANY 2 NORMALS </>
 FORCE BLOCK (WHILE BLOCKING)	-		<#55ffff>(1 BAR)</> _B^X
    <#bbbbbb>Can push the enemy backwards while you block.</>
 NO PARRY	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _F^X
-   <#bbbbbb>A reversal option that gives you the advantage
-   if the enemy hits you. Refunds 1 BAR on hit.</>
+   <#bbbbbb>A reversal option that makes you invincible if the enemy hits you.
+   Can be used again FOR FREE while the invincibility is active.</>
 RECORD SCRATCH (WHILE ATTACKING)		<#55ffff>(1 BAR/2 BARS ON BLOCK)</> ^X
    <#bbbbbb>Can be used to instantly cancel most attacks.
    Holding any direction during this will cause you to move that way.</>

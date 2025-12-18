@@ -274,7 +274,7 @@ value = const(velocity.jump.y)
 [State 40, 4]
 type = VelSet
 trigger1 = animtime=0
-x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x), const(velocity.jump.back.x)))
+x = ifelse(sysvar(1)=0, const(velocity.jump.neu.x), ifelse(sysvar(1)=1, const(velocity.jump.fwd.x)+ (vel x * 0.65), const(velocity.jump.back.x)))
 y = var(40)
 
 [State 40, 5]
@@ -1284,7 +1284,7 @@ ctrl = 1
 [Statedef 100]
 type    = S
 physics = S
-anim = 100
+anim = 100 - 1*(prevstateno = 4000 || prevstateno = 2000)
 sprpriority = 1
 ctrl = 1
 
@@ -1301,6 +1301,23 @@ persistent = 0
 type = selfstate
 value = 99
 trigger1 = prevstateno = [700, 701] || prevstateno = [703,704]
+
+[State 0, VelSet]
+type = VelAdd
+triggerall = prevstateno = 2000
+trigger1 = vel x <= 18
+x = 4
+[State 0, VelSet]
+type = VelSet
+triggerall = anim = 99
+trigger1 = vel x >= 24
+x = 24
+[State 0, ChangeAnim] ;Transition from "Blink" to run
+type = ChangeAnim
+trigger1 = anim = 99 && animtime = 0
+value = 100
+elem = 1
+ignorehitpause = 1
 
 [State 0, AfterImage] ;Enhancer Afterimage Effect
 type = AfterImage
@@ -1347,6 +1364,8 @@ value = 1
 [State 0, VelSet]
 type = VelSet
 trigger1 = time >= 0
+triggerall = prevstateno != 2000
+triggerall = anim != 99
 x = 6.75
 
 [State 0, Explod]

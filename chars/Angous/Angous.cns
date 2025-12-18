@@ -2058,9 +2058,10 @@ color = 256
 [State 0, LifeAdd]
 type = LifeAdd
 trigger1 = time=1
-value = map(HEALINGFACTOR)/2
+value = -map(HEALINGFACTOR)/2
 ignorehitpause = 1
 persistent = 1
+kill=1
 
 [State 0, PalFXWiz]
 type = PalFX

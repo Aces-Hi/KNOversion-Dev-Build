@@ -11,7 +11,7 @@ sprpriority = 0
 
 [State 0, NotHitBy]
 type = NotHitBy
-trigger1 = 1
+trigger1 = anim=3000||anim=3001
 value = SCA
 time = 1
 ignorehitpause = 1
@@ -2592,7 +2592,7 @@ ignorehitpause=1
 [State 8990, Explod]
 type = Explod
 trigger1 = WinKO
-anim = F8990
+anim = F8992
 id = 8990
 pos = 0,0
 scale = 1,1
@@ -2600,21 +2600,6 @@ postype = back
 bindtime = -1
 removetime = -2
 sprpriority = -10
-ownpal = 1
-supermovetime = -1
-persistent=0
-ignorehitpause=1
-[State 8990, Explod]
-type = Explod
-trigger1 = WinKO
-anim = F8991
-id = 8991
-pos = 0,0
-scale = 1,1
-postype = Left
-bindtime = -1
-removetime = -2
-sprpriority = -9
 ownpal = 1
 supermovetime = -1
 persistent=0

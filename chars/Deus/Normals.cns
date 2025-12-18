@@ -63,7 +63,7 @@ type = VarAdd
 trigger1 = movehit=1
 trigger1 = combocount<=1
 fv =13     ;fv = 
-value = 0
+value = 1
 persistent = 0
 ignorehitpause = 1
 [State Damage Scaling]
@@ -696,7 +696,7 @@ air.velocity = -1.5,-2
 down.velocity = -1.5,-2
 guard.hittime = 25
 guard.slidetime = 6
-guard.ctrltime = 15
+guard.ctrltime = 13
 guard.cornerpush.veloff = -10
 forcenofall = 1
 getpower = (60)*(cond(var(var(2)) = 1, 1, 1)) 
@@ -1118,7 +1118,7 @@ type = VarAdd
 trigger1 = movehit=1
 trigger1 = combocount<=1
 fv =13     ;fv = 
-value = 0
+value = 1
 persistent = 0
 ignorehitpause = 1
 [State Damage Scaling]
@@ -1160,7 +1160,7 @@ envshake.time = 0;
 forcenofall = 1
 guard.hittime = 20
 guard.slidetime = 12
-guard.ctrltime = 19
+guard.ctrltime = 18
 getpower = (30)*(cond(var(var(2)) = 1, 1, 1)) 
 [State 0, PlaySnd]
 type = PlaySnd
@@ -1826,7 +1826,7 @@ type = VarAdd
 trigger1 = movehit=1
 trigger1 = combocount<=1
 fv =13     ;fv = 
-value = 0
+value = 1
 persistent = 0
 ignorehitpause = 1
 [State Damage Scaling]

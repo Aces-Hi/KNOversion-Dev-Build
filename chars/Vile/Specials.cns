@@ -5420,6 +5420,7 @@ poweradd= 0
 ctrl = 0
 velset = 0,0
 sprpriority = 2
+anim=5030
 
 [State 4000, NotHitBy]; FA Invincibility
 type = NotHitBy
@@ -5431,11 +5432,6 @@ time = 61
 type = ChangeAnim
 trigger1 = 1
 value = 5030
-
-[State 20, 1]
-type = ChangeAnim2
-trigger1 = Time = 0
-value = 1053
 
 [State 1050, 5]
 type = SelfState

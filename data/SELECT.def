@@ -4,18 +4,19 @@ name = "KNO select"
 [Characters]
 
 Blank
-Blank
 Deus
-Angous
 Eddy
-One
+Angous
+Blank
+Tui
 Roger
-Vile
+One
 Blank
 Blank
 
+
 Blank
-Blank
+Vile
 Grandmaster Wu
 Arzon
 JV/JV.def
@@ -25,11 +26,12 @@ Z
 Blank
 Blank
 
+
 Blank
 Blank
 Blank
 Blank
-Blank
+JV/FJV.def,hidden=1
 Blank
 Blank
 Blank

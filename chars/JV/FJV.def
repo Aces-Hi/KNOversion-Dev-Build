@@ -17,20 +17,20 @@ ikemenversion=0.99
 
 ; Files for the player
 [Files]
-cmd     = JV.cmd           ;Command set
+cmd     = FJV.cmd           ;Command set
 cns     = JV.cns           ;Constants
 st      = JV.cns           ;States
 st1      = Normals.cns
-st2      = Specials.cns
-st3      = HyperCombos.cns
+st2      = FSpecials.cns
+st3      = FHyperCombos.cns
 st4      = Target.cns
 st5      = Movement.cns
 stcommon = common1.cns      ;Common states (from data/ or motif)
-sprite  = JV.sff           ;Sprite
+sprite  = FJV.sff           ;Sprite
 anim    = JV.air           ;Animation
 sound   = JV.snd           ;Sound
 ai      = JV.ai            ;AI hints data (not used)
-movelist=jv.dat
+movelist=fjv.dat
 
 
 ; Maps character selection buttons to palette numbers.
@@ -48,3 +48,5 @@ a2 = 10
 b2 = 11
 c2 = 12
 
+[Map]
+FJV = 1

@@ -586,6 +586,13 @@ anim = 3005
 sprpriority = 8
 poweradd = 0
 
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 1
+ignorehitpause = 1
+
 [State 0, VarSet]
 type = VarSet
 trigger1 = movehit
@@ -707,6 +714,20 @@ velset = 1.2,0
 anim = 3006
 sprpriority = 8
 poweradd = 0
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 1
+ignorehitpause = 1
+
+[State 200, VOICE]
+type = PlaySnd
+trigger1 = time = 0
+value = 3000, 0
+volumescale = 150
+
 
 [State 77]
 type = bgpalfx
@@ -1072,6 +1093,12 @@ ctrl = 0
 anim = 1206
 poweradd = -2000
 sprpriority = 2
+
+[State 200, VOICE]
+type = PlaySnd
+trigger1 = time = 0
+value = 3000, 7 + random % 1
+volumescale = 200
 
 [State 0, PosAdd]
 type = PosAdd
@@ -1586,6 +1613,8 @@ persistent=1
 
 [State 0, NotHitBy]
 type = NotHitBy
+triggerall=enemynear,stateno!=900
+triggerall=enemynear,stateno!=901
 trigger1 = time<=25
 value = A
 time = 1
@@ -1629,7 +1658,7 @@ type = Explod
 trigger1 = animelem = 5
 anim = 10041
 ID = 10041
-pos = 65,-65
+pos = 40,-60
 postype = p1  ;p2,front,back,left,right
 facing = 1
 vfacing = 1
@@ -1887,6 +1916,12 @@ ctrl = 0
 anim = 3050
 sprpriority = 2
 
+[State 200, VOICE]
+type = PlaySnd
+trigger1 = TIME = 0&&prevstateno!=3205
+value = 3000, 9
+volumescale = 200
+
 [State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit
@@ -2017,7 +2052,7 @@ trigger1 = time % 10
 trigger1 = time <30
 attr = S, HA
 animtype  = hard
-damage = ceil(cond(fvar(11) *25 < 10, 10, fvar(11) *25)), 4
+damage = ceil(cond(fvar(11) *35 < 4, 4, fvar(11) *35)), 4
 hitflag = MAFD
 guardflag = MA
 pausetime = 3,3
@@ -2057,7 +2092,7 @@ trigger1 = time % 10
 trigger1 = time < 63
 attr = S, HA
 animtype  = hard
-damage = ceil(cond(fvar(11) *25 < 10, 10, fvar(11) *25)), 4
+damage = ceil(cond(fvar(11) *35 < 4, 4, fvar(11) *35)), 4
 hitflag = MAFD
 guardflag = MA
 pausetime = 3,3
@@ -2093,7 +2128,7 @@ p2facing = 1
 trigger1 = animelem = 13
 attr = S, HA
 animtype  = hard
-damage =76, 10
+damage =67, 10
 hitflag = MAFD
 guardflag = MA
 pausetime = 35,35
@@ -2249,6 +2284,11 @@ anim = 3055
 poweradd = -2000
 sprpriority = 2
 
+[State 200, VOICE]
+type = PlaySnd
+trigger1 = TIME = 0
+value = 3000, 9
+volumescale = 200
 
 [State Meter Burn State, VarSet]
 type = VarSet

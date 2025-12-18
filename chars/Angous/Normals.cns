@@ -32,6 +32,8 @@ type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
 value = 1
+ignorehitpause=1
+persistent=0
 
 [State 200, 2]
 type = PlaySnd
@@ -78,7 +80,7 @@ air.hittime = 60                 ;Time before opponent regains control in air
 envshake.time = 0;
 guard.hittime = 16
 guard.slidetime = 6
-guard.ctrltime = 10
+guard.ctrltime = 8
 air.fall = 0
 forcenofall = 1
 getpower = (50)*(cond(var(var(5)) = 1, 1, .5)) 
@@ -175,7 +177,7 @@ envshake.ampl = 2
 envshake.phase = 1
 guard.hittime = 15
 guard.slidetime = 10
-guard.ctrltime = 17
+guard.ctrltime = 15
 air.fall = 0
 forcenofall = 1
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
@@ -323,7 +325,7 @@ palfx.time = 12
 palfx.add = 100, 0,20
 guard.hittime = 19
 guard.slidetime = 16
-guard.ctrltime = 17
+guard.ctrltime = 14
 guard.velocity = -3.5
 air.fall = 0
 forcenofall = 1
@@ -436,7 +438,7 @@ air.hittime = 60                 ;Time before opponent regains control in air
 envshake.time = 0;
 guard.hittime = 32
 guard.slidetime = 6
-guard.ctrltime = 28
+guard.ctrltime = 25
 air.fall = 0
 forcenofall = 1
 getpower = (30)*(cond(var(var(5)) = 1, 1, .5))
@@ -546,7 +548,7 @@ air.hittime = 60                 ;Time before opponent regains control in air
 envshake.time = 0;
 guard.hittime = 32
 guard.slidetime = 6
-guard.ctrltime = 28
+guard.ctrltime = 25
 air.fall = 0
 forcenofall = 1
 getpower = (30)*(cond(var(var(5)) = 1, 1, .5))
@@ -821,7 +823,7 @@ removetime = -1
 type = hitdef 
 p2facing = 1
 trigger1 = numexplod(90101) <= 1
-trigger1 = time = 0
+trigger1 = !movecontact
 attr = A, NA
 animtype  = hard
 damage = ceil(cond(fvar(11) *100 < 10, 10, fvar(11) * 100)), 0
@@ -848,9 +850,9 @@ envshake.ampl = 5
 envshake.phase = 1
 palfx.time = 12
 palfx.add = 100, 0,20
-guard.hittime = 22
+guard.hittime = 18
 guard.slidetime = 40
-guard.ctrltime = 28
+guard.ctrltime = 24
 guard.velocity = -8
 guard.dist = 2
 down.bounce = 2
@@ -862,7 +864,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, 1))
 type = hitdef 
 p2facing = 1
 trigger1 = numexplod(90101) > 1
-trigger1 = time = 0
+trigger1 = !movecontact
 attr = A, NA
 animtype  = hard
 damage = ceil(cond(fvar(11) *110 < 10, 10, fvar(11) * 110)), 10
@@ -889,9 +891,9 @@ envshake.ampl = 5
 envshake.phase = 1
 palfx.time = 12
 palfx.add = 100, 0,20
-guard.hittime = 22
+guard.hittime = 18
 guard.slidetime = 40
-guard.ctrltime = 28
+guard.ctrltime = 24
 guard.velocity = -8
 guard.dist = 2
 fall.yvelocity = 0
@@ -952,13 +954,9 @@ value = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 3
-
-;[State 0, VarSet]
-;type = VarSet
-;trigger1 = time = 0
-;fv = 6  ;fv = 10
-value = 400 ;State of this attack
+value = 1
+ignorehitpause=1
+persistent=0
 
 
 [State 200, 2]
@@ -1000,7 +998,7 @@ ground.velocity = -3
 air.velocity = -1.5,-3;
 guard.hittime = 12
 guard.slidetime = 6
-guard.ctrltime = 10
+guard.ctrltime = 8
 air.fall = 0
 forcenofall = 1
 getpower = (50)*(cond(var(var(5)) = 1, 1, .5)) 
@@ -1088,7 +1086,7 @@ envshake.ampl = 2
 envshake.phase = 1
 guard.hittime = 12
 guard.slidetime = 10
-guard.ctrltime = 11
+guard.ctrltime = 9
 ;air.fall = 0
 forcenofall = 1
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
@@ -1790,8 +1788,8 @@ ampl = 5
 
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = var(41)>90 || (command!="hold_z" && time>12)
-trigger2 = var(41)>13 && prevstateno = 666999 && command!= "hold_z"  
+trigger1 = var(41)>85 || (command!="hold_z" && time>7)
+trigger2 = var(41)>8 && prevstateno = 666999 && command!= "hold_z"  
 value =431
 ctrl = 0
 
@@ -1857,27 +1855,6 @@ type = VarSet
 trigger1 = time = 0
 fv = 6  ;fv = 10
 value = 431 ;State of this attack
-
-[State 0]
-type = MapSet
-triggerall=(AnimElemTime (3) < 0)
-trigger1 = (AnimElemTime (1) >= 0) 
-trigger2 = prevstateno=666999
-map = "armor"
-value=2
-ignorehitpause = 1
-persistent = 1
-[State 0, HitOverride]
-type = HitOverride
-triggerall=(AnimElemTime (3) < 0)
-trigger1 = (AnimElemTime (1) >= 0) 
-trigger2 = prevstateno=666999
-attr = SCA,NA,SA,NP,SP
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-ignorehitpause = 1
 
 [State 0, VarAdd]
 type = VarAdd
@@ -1999,7 +1976,7 @@ ignorehitpause = 0
 type = hitdef 
 p2facing = 1
 trigger1 = numexplod(90101) <= 1
-trigger1 = !movecontact && var(10)<=15
+trigger1 = !movecontact && var(10)<=55
 attr = S, NA
 damage = ceil(cond(fvar(11) * 65 < 10, 10, fvar(11) * 65)),10+var(10)/4
 animtype  = Medium
@@ -2029,14 +2006,14 @@ fall.envshake.ampl = 0
 fall.yvelocity = 0 
 guard.slidetime = 16
 guard.hittime = 20
-guard.ctrltime = 10
+guard.ctrltime = 7
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 
 [State 410, 2]
 type = hitdef 
 p2facing = 1
 trigger1 = numexplod(90101) > 1
-trigger1 =  !movecontact && var(10)<=15
+trigger1 =  !movecontact && var(10)<=55
 attr = S, NA
 damage = ceil(cond(fvar(11) * 100 < 15, 15, fvar(11) * 100)),10+var(10)/4
 animtype  = Medium
@@ -2066,82 +2043,9 @@ fall.envshake.ampl = 0
 fall.yvelocity = 0 
 guard.slidetime = 16
 guard.hittime = 20
-guard.ctrltime = 10
+guard.ctrltime = 7
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-trigger1 =  !movecontact && (var(10)=[16,35])
-attr = S, NA
-damage = ceil(cond(fvar(11) * 110+var(10) < 17, 17, fvar(11) * 110+var(10))),10+var(10)/3
-animtype  = Medium
-hitflag = MAFD
-guardflag = LA
-pausetime = 12,12
-sparkno = 2
-sparkxy = -10,-5
-hitsound   = 5,3
-guardsound = 6,2
-ground.type = Low
-ground.slidetime = 12
-ground.hittime  = 35
-air.hittime  = 66
-down.hittime  = 60
-down.velocity = -1,-6
-ground.velocity = -1,-6
-air.velocity = -1,-6
-guard.velocity = -7
-fall  = 1
-air.fall = 0
-envshake.time = 15
-envshake.freq = 90
-envshake.ampl = 5
-fall.envshake.time = 0
-fall.envshake.freq = 0
-fall.envshake.ampl = 0
-fall.yvelocity = 0
-guard.slidetime = 16
-guard.hittime = 20
-guard.ctrltime = 10
-getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
-
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-trigger1 =  !movecontact && (var(10)=[36,55])
-attr = S, NA
-damage = ceil(cond(fvar(11) * 100+var(10)*1.5 < 21, 21, fvar(11) * 100+var(10)*1.5)),10+var(10)/2
-animtype  = Medium
-hitflag = MAFD
-guardflag = LA
-pausetime = 15,15
-sparkno = 3
-sparkxy = -10,-5
-hitsound   = 5,3
-guardsound = 6,2
-ground.type = Low
-ground.slidetime = 12
-ground.hittime  = 35
-air.hittime  = 66
-down.hittime  = 60
-down.velocity = -1,-7
-ground.velocity = -1,-6
-air.velocity = -1,-6
-guard.velocity = -9
-fall  = 1
-air.fall = 0
-envshake.time = 15
-envshake.freq = 90
-envshake.ampl = 5
-fall.envshake.time = 0
-fall.envshake.freq = 0
-fall.envshake.ampl = 0
-fall.yvelocity = 0
-guard.slidetime = 16
-guard.hittime = 20
-guard.ctrltime = 10
-getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 
 [State 410, 2]
 type = hitdef 
@@ -2300,7 +2204,9 @@ value = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 3
+value = 1
+ignorehitpause=1
+persistent=0
 
 [State -3, Angous Voices]
 type = PlaySnd
@@ -3782,6 +3688,18 @@ velset = 0,0
 ;anim = 1052
 sprpriority = -1
 
+[State 0, ChangeAnim]
+type = mapset
+trigger1 = time = 0&&prevstateno!=666999
+map = "dashtimer"
+value = 0
+[State 0, ChangeAnim]
+type = mapadd
+trigger1 =1
+map = "dashtimer"
+value = 1
+
+
 ;DEATH ZOOM ================================================
 [State 0]
 type = MapSet
@@ -3860,12 +3778,8 @@ type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
 value = 3
-
-[State -2, VarSet]
-type = VarSet
-trigger1 = !numtarget
-fv = 13
-value = 3
+ignorehitpause=1
+persistent=0
 
 [State 0, RemoveExplod]
 type = RemoveExplod
@@ -4041,8 +3955,8 @@ triggerall = enemynear,map(armor)=0
 trigger1 = !movecontact
 trigger1 = enemynear,statetype!=A
 trigger1 = enemynear,movetype!=H
-attr = S, SA
-damage = ceil(cond(fvar(11) * 250 < 20, 20, fvar(11) * 250)),11
+attr = S, ST
+damage = ceil(cond(fvar(11) * 200 < 20, 20, fvar(11) * 200)),11
 animtype = hard
 hitflag = MAFD
 ;priority = 3
@@ -4085,7 +3999,7 @@ trigger1 = !movecontact
 trigger1 = enemynear,statetype!=A
 trigger1 = enemynear,movetype!=H
 attr = S, ST
-damage = ceil(cond(fvar(11) * 250 < 20, 20, fvar(11) * 250)),11
+damage = ceil(cond(fvar(11) * 200 < 20, 20, fvar(11) * 200)),11
 animtype = hard
 hitflag = MAFD
 ;priority = 3
@@ -4127,8 +4041,8 @@ p2facing = 1
 trigger1 = !movecontact
 trigger1 = enemynear,statetype!=A
 trigger1 = enemynear,movetype=H
-attr = S, SA
-damage = ceil(cond(fvar(11) * 250 < 20, 20, fvar(11) * 250)),11
+attr = S, ST
+damage = ceil(cond(fvar(11) * 200 < 20, 20, fvar(11) * 200)),11
 animtype = hard
 hitflag = MAFD
 guardflag = MA
@@ -4175,8 +4089,8 @@ trigger1 = !movecontact
 triggerall = enemynear,map(armor)=0
 trigger1 = enemynear,statetype=A
 trigger1 = enemynear,movetype!=H
-attr = S, SA
-damage = ceil(cond(fvar(11) * 250 < 20, 20, fvar(11) * 250)),11
+attr = S, ST
+damage = ceil(cond(fvar(11) * 200 < 20, 20, fvar(11) * 200)),11
 animtype = hard
 hitflag = MAFD
 ;priority = 3
@@ -4219,7 +4133,7 @@ triggerall = enemynear,map(armor)>0
 trigger1 = enemynear,statetype=A
 trigger1 = enemynear,movetype!=H
 attr = S, ST
-damage = ceil(cond(fvar(11) * 250 < 20, 20, fvar(11) * 250)),11
+damage = ceil(cond(fvar(11) * 200 < 20, 20, fvar(11) * 200)),11
 animtype = hard
 hitflag = MAFD
 ;priority = 3
@@ -4261,8 +4175,8 @@ p2facing = 1
 trigger1 = !movecontact
 trigger1 = enemynear,statetype=A
 trigger1 = enemynear,movetype=H
-attr = S, ST
-damage = ceil(cond(fvar(11) * 250 < 20, 20, fvar(11) * 250)),11
+attr = S, SA
+damage = ceil(cond(fvar(11) * 200 < 20, 20, fvar(11) * 200)),11
 animtype = hard
 hitflag = MAFD
 guardflag = MA
@@ -4315,6 +4229,7 @@ type = VarAdd
 trigger1 = movehit = 1
 v = 18
 value = 2
+ignorehitpause=1
 
 [State 210, 4]
 type = sprpriority
@@ -4323,7 +4238,7 @@ value = 2
 
 [State 0, CtrlSet]
 type = CtrlSet
-trigger1 = animelem = 15 && movehit
+trigger1 = animelem = 15 && movehit&&enemy,movetype=H
 value = 1
 
 [State 210, 5]
@@ -4350,6 +4265,17 @@ ctrl = 0
 velset = 0,0
 ;anim = 1052
 sprpriority = -1
+
+[State 0, ChangeAnim]
+type = mapset
+trigger1 = time = 0&&prevstateno!=666999
+map = "dashtimer"
+value = 0
+[State 0, ChangeAnim]
+type = mapadd
+trigger1 =1
+map = "dashtimer"
+value = 1
 
 
 ;DEATH ZOOM ================================================
@@ -4441,6 +4367,8 @@ type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
 value = 3
+ignorehitpause=1
+persistent=0
 
 ;This goes into the actual hit
 [State 200, VarAdd]
@@ -4630,8 +4558,8 @@ triggerall = enemynear,map(armor)=0
 trigger1 = !movecontact
 trigger1 = enemynear,statetype!=A
 trigger1 = enemynear,movetype!=H
-attr = S, SA
-damage = ceil(cond(fvar(11) * 250 < 20, 20, fvar(11) * 250)),11
+attr = S, ST
+damage = ceil(cond(fvar(11) * 200 < 20, 20, fvar(11) * 200)),11
 animtype = hard
 hitflag = MAFD
 ;priority = 3
@@ -4674,7 +4602,7 @@ trigger1 = !movecontact
 trigger1 = enemynear,statetype!=A
 trigger1 = enemynear,movetype!=H
 attr = S, ST
-damage = ceil(cond(fvar(11) * 250 < 20, 20, fvar(11) * 250)),11
+damage = ceil(cond(fvar(11) * 200 < 20, 20, fvar(11) * 200)),11
 animtype = hard
 hitflag = MAFD
 ;priority = 3
@@ -4717,8 +4645,8 @@ p2facing = 1
 trigger1 = !movecontact
 trigger1 = enemynear,statetype!=A
 trigger1 = enemynear,movetype=H
-attr = S, SA
-damage = ceil(cond(fvar(11) * 250 < 20, 20, fvar(11) * 250)),11
+attr = S, ST
+damage = ceil(cond(fvar(11) * 200 < 20, 20, fvar(11) * 200)),11
 animtype = hard
 hitflag = MAFD
 guardflag = MA
@@ -4762,8 +4690,8 @@ triggerall = enemynear,map(armor)=0
 trigger1 = !movecontact
 trigger1 = enemynear,statetype=A
 trigger1 = enemynear,movetype!=H
-attr = S, SA
-damage = ceil(cond(fvar(11) * 250 < 20, 20, fvar(11) * 250)),11
+attr = S, ST
+damage = ceil(cond(fvar(11) * 200 < 20, 20, fvar(11) * 200)),11
 animtype = hard
 hitflag = MAFD
 ;priority = 3
@@ -4806,7 +4734,7 @@ trigger1 = !movecontact
 trigger1 = enemynear,statetype=A
 trigger1 = enemynear,movetype!=H
 attr = S, ST
-damage = ceil(cond(fvar(11) * 250 < 20, 20, fvar(11) * 250)),11
+damage = ceil(cond(fvar(11) * 200 < 20, 20, fvar(11) * 200)),11
 animtype = hard
 hitflag = MAFD
 ;priority = 3
@@ -4850,8 +4778,8 @@ p2facing = 1
 trigger1 = !movecontact
 trigger1 = enemynear,statetype=A
 trigger1 = enemynear,movetype=H
-attr = S, ST
-damage = ceil(cond(fvar(11) * 250 < 20, 20, fvar(11) * 250)),11
+attr = S, SA
+damage = ceil(cond(fvar(11) * 200 < 20, 20, fvar(11) * 200)),11
 animtype = hard
 hitflag = MAFD
 guardflag = MA
@@ -4903,6 +4831,7 @@ type = VarAdd
 trigger1 = movehit = 1
 v = 18
 value = 2
+ignorehitpause=1
 
 [State 210, 4]
 type = sprpriority
@@ -4911,7 +4840,7 @@ value = 2
 
 [State 0, CtrlSet]
 type = CtrlSet
-trigger1 = animelem = 15 && movehit
+trigger1 = animelem = 15 && movehit&&enemy,movetype=H
 value = 1
 
 [State 210, 5]
@@ -4946,15 +4875,6 @@ id = 1007
 type = RemoveExplod
 trigger1 = 1
 id = 1008
-
-[State 0, Width]
-type = Width
-trigger1 = stateno = 1070
-edge = -10,-10
-;player = 5,5
-;value = 0,0
-ignorehitpause = 1
-;persistent = 
 
 [State -3, Win Voices] ;Win
 type = PlaySnd
@@ -4994,8 +4914,13 @@ removeongethit = 0
 
 [State 810, Velocity]
 type = VelSet
-trigger1 = AnimElem = 1
-x = 3.9
+trigger1 = AnimElemtime(3)<0
+x = 7
+[State 810, Velocity]
+type = VelSet
+trigger1 = AnimElemtime(3)>=0
+trigger1 = AnimElemtime(9)<0
+x = 3
 
 [State 810, Velocity]
 type = VelSet
@@ -5011,7 +4936,7 @@ value = ,NA,NP,SA,SP,HA,HP
 
 [State 810, Push]
 type = PlayerPush
-trigger1=command!="hold_c"
+trigger1=combocount=0
 value = 0
 
 ;Tech not allowed
@@ -5078,15 +5003,6 @@ trigger1 = animelem = 4
 value = 210, (0+(Random%7))
 volumescale=150
 
-[State 2, Width Change]
-type = Width
-trigger1 = stateno = 1071
-edge = -10,-10
-;player = 5,5
-;value = 0,0
-ignorehitpause = 1
-;persistent = 
-
 [State 0, VarAdd]
 type = VarAdd
 trigger1 = time=0
@@ -5097,11 +5013,6 @@ value = 1
 type = PlaySnd
 trigger1 = time = 0
 value = 1, 1
-
-[State 2, Push Disable]
-type = PlayerPush
-trigger1 = (AnimElemTime (1) >= 0) && (AnimElemTime (6) < 0)
-value = 0
 
 [State 1, Dust VFX#1]
 type = Explod
@@ -5175,53 +5086,16 @@ PalAdd = 200,0,0
 PalMul = .5,.5,.5
 trans = add1
 
-
-[State 3, HitDef #1]
-type = hitdef 
-p2facing = 1
-trigger1 = animelem = 4
-;hitonce = 1
-attr = S, SA
-damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 0
-hitflag = MAFD
-guardflag = MA
-;priority = 3
-pausetime = 14,14
-sparkno = 2
-sparkxy = -25,-44
-hitsound   = 5,1
-guardsound = 6,2
-ground.type = Low
-animtype = medium
-ground.slidetime = 14
-ground.hittime  = 29
-air.hittime  = 45
-down.hittime = 45
-ground.velocity = -3
-guard.velocity = -3
-air.velocity = -0.5,-2.5
-fall.yvelocity = 0
-envshake.time = 7
-guard.slidetime = 12
-guard.hittime = 28
-guard.ctrltime = 28
-palfx.time = 12
-palfx.add = 100, 0,20
-forcenofall = 1
-getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
-ID = 1071
-;NoChainID = 1071
-
 [State 3, HitDef #2]
 type = hitdef 
-trigger1 = animelem = 6
+trigger1 = !movecontact
 ;hitonce = 1
 attr = S, SA
-damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 10
+damage = ceil(cond(fvar(11) *80 < 15, 15, fvar(11) * 80)), 10
 hitflag = MAFD
 guardflag = MA
 ;priority = 3
-pausetime = 14,14
+pausetime = 10,10
 sparkno = 2
 sparkxy = -25,-44
 hitsound   = 5,1
@@ -5238,8 +5112,8 @@ air.velocity = 5,-5
 fall.yvelocity = 0
 envshake.time = 7
 guard.slidetime = 12
-guard.hittime = 21
-guard.ctrltime = 21
+guard.hittime = 20
+guard.ctrltime = 20
 palfx.time = 12
 palfx.add = 100, 0,20
 forcenofall = 1
@@ -5289,7 +5163,9 @@ value = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.25
+value = 5
+ignorehitpause=1
+persistent=0
 
  [State 1200, Shake Screen]
 type = EnvShake

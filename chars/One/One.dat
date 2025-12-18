@@ -185,8 +185,8 @@ GRAB	-		ANY 2 NORMALS </>
 FORCE BLOCK (WHILE BLOCKING)	-		<#55ffff>(1 BAR)</> _B^X
    <#bbbbbb>Can push the enemy backwards while you block.</>
 NO PARRY	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _F^X
-   <#bbbbbb>A reversal option that gives you the advantage
-   if the enemy hits you. Refunds 1 BAR on hit.</>
+   <#bbbbbb>A reversal option that makes you invincible if the enemy hits you.
+   Can be used again FOR FREE while the invincibility is active.</>
 RECORD SCRATCH (WHILE ATTACKING)		<#55ffff>(1 BAR/2 BARS ON BLOCK)</> ^X
    <#bbbbbb>Can be used to instantly cancel most attacks.
    Holding any direction during this will cause you to move that way.</>

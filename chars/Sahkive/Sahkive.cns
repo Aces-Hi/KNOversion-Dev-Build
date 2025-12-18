@@ -701,8 +701,8 @@ value = 0
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "toss %f stun %f damage %f red %f R %f tst %f djump %f haki %f"
-params = map(toss),fvar(25),fvar(13),map(truth),map(raga),map(TENSHADOWS),map(djump),map(haki)
+text = "toss %f stun %f damage %f red %f R %f tst %f limit %f haki %f vile %f"
+params = map(toss),fvar(25),fvar(13),map(truth),map(raga),map(TENSHADOWS),map(armorlimit),map(haki),map(vile)
 ;ignorehitpause = 
 ;persistent = 
 
@@ -832,12 +832,25 @@ ctrl = 0
 
 ;==================================================================================================
 
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Vile"&&enemy,numhelper(6001)
+map = "Vile"
+value = (p2bodydist x)+enemy,helper(6001),RootDist X
+ignorehitpause = 1
+
 [State -2, VarSet]
 type = VarSet
 trigger1 = !numtarget
 v = 2
 value = 1
 
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Vile"&&enemy,numhelper(6001)
+map = "Vile"
+value = (p2bodydist x)+enemy,helper(6001),RootDist X
+ignorehitpause = 1
 
 ;j.R SKD Limiter
 [State 0, RemoveExplod]
@@ -1259,6 +1272,13 @@ p2defmul = 1
 poweradd = 0
 unhittable = 1
 
+[State 0, StateTypeSet]
+type = StateTypeSet
+trigger1=prevstateno=650
+statetype = A       ;S,A,C,L
+physics = N
+ignorehitpause=1
+
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time = 0 
@@ -1299,9 +1319,10 @@ value = 1
 [State 0, LifeAdd]
 type = LifeAdd
 trigger1 = time=1
-value = map(HEALINGFACTOR)/2
+value = -map(HEALINGFACTOR)/2
 ignorehitpause = 1
 persistent = 1
+kill=1
 
 ;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ;Shadow Override

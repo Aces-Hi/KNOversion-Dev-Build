@@ -80,7 +80,7 @@ envshake.freq = 10
 envshake.ampl = 2
 envshake.phase = 1
 guard.hittime = 20
-guard.ctrltime = 14
+guard.ctrltime = 12
 
 
 [State 210, 4]
@@ -119,7 +119,9 @@ sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in fro
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 2
+value = 1
+ignorehitpause=1
+persistent=0
 
 [State 200, VarAdd]
 type = VarAdd
@@ -203,7 +205,7 @@ forcenofall = 1
 envshake.freq = 10
 envshake.ampl = 2
 envshake.phase = 1
-guard.ctrltime = 8
+guard.ctrltime = 9
 
 [State 210, 4]
 type = sprpriority
@@ -328,7 +330,7 @@ envshake.freq = 10
 envshake.ampl = 2
 envshake.phase = 1
 guard.hittime = 25
-guard.ctrltime = 16
+guard.ctrltime = 14
 getpower = (100)*(cond(var(var(2)) = 1, 1, 1)) 
 
 
@@ -462,7 +464,7 @@ envshake.freq = 10
 envshake.ampl = 2
 envshake.phase = 1
 guard.hittime = 25
-guard.ctrltime = 16
+guard.ctrltime = 14
 getpower = (100)*(cond(var(var(2)) = 1, 1, 1)) 
 
 [State 210, 4]
@@ -730,7 +732,7 @@ trigger1 = enemynear,movetype!=A && movecontact = 0
 attr = S, NA
 animtype  = Light
 air.animtype = back
-damage = ceil(cond(fvar(11) *110 < 15, 15, fvar(11) * 110)), 0
+damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 0
 hitflag = MAFDP
 guardflag = HA
 pausetime = 12,12
@@ -763,7 +765,7 @@ trigger1 = enemynear,movetype!=A  && movecontact = 0
 attr = S, NA
 animtype  = Light
 air.animtype = back
-damage = ceil(cond(fvar(11) *110 < 15, 15, fvar(11) * 110)), 0
+damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 0
 hitflag = MAFDP
 guardflag = HA
 pausetime = 12,12
@@ -896,7 +898,9 @@ sprpriority = 2
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 4
+value = 1
+ignorehitpause=1
+persistent=0
 
 [State 200, VarAdd]
 type = VarAdd
@@ -1125,7 +1129,7 @@ fall.yvelocity = 0
 forcenofall = 1
 sparkno = 2
 guard.hittime = 25
-guard.ctrltime = 8
+guard.ctrltime = 6
  envshake.time = 8
 envshake.freq = 10
 envshake.ampl = 2
@@ -1282,7 +1286,7 @@ fall.yvelocity = 0
 forcenofall = 1
 sparkno = 2
 guard.hittime = 25
-guard.ctrltime = 8
+guard.ctrltime = 6
  envshake.time = 8
 envshake.freq = 10
 envshake.ampl = 2
@@ -1670,6 +1674,14 @@ fv = 25
 value = 0.7; You can make this whatever you want to increase stun scaling per move
 ignorehitpause = 1
 persistent = 0
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv =13     ;fv = 
+value = 1
+ignorehitpause=1
+persistent=0
 
 [State -2, VarSet]
 type = VarSet
@@ -3101,6 +3113,12 @@ forceair = 0
 ignorehitpause = 1
 persistent=1
 
+[State 0, SelfState]
+type = SelfState
+trigger1 = enemy,name="vile"&&enemy,numhelper(6001)&&root,map(vile)<=130&&root,map(vile)>0
+value = 525
+ignorehitpause=1
+
 [State 0, DestroySelf]
 type = DestroySelf
 trigger1 = time = 20
@@ -3456,7 +3474,7 @@ triggerall=enemynear,map(armor)=0
 trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
-damage = ceil(cond(fvar(11) *125 < 25, 25, fvar(11) * 125)),10
+damage = ceil(cond(fvar(11) *100 < 25, 25, fvar(11) * 100)),10
 hitflag = MAFD
 guardflag = MA
 pausetime = 12,12
@@ -3496,7 +3514,7 @@ triggerall=enemynear,map(armor)>0
 trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
-damage = ceil(cond(fvar(11) *125 < 25, 25, fvar(11) * 125)),10
+damage = ceil(cond(fvar(11) *100 < 25, 25, fvar(11) * 100)),10
 hitflag = MAFD
 guardflag = MA
 pausetime = 12,12
@@ -3647,7 +3665,7 @@ triggerall=map(bigpunch)=0
 trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
-damage = ceil(cond(fvar(11) *200 < 88, 88, fvar(11) * 200)),20
+damage = ceil(cond(fvar(11) *150 < 80, 80, fvar(11) * 150)),20
 hitflag = MAFD
 guardflag = MA
 pausetime = 15,15
@@ -3685,7 +3703,7 @@ triggerall=map(bigpunch)=0
 trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
-damage = ceil(cond(fvar(11) *200 < 88, 88, fvar(11) * 200)),20
+damage = ceil(cond(fvar(11) *150 < 80, 80, fvar(11) * 150)),20
 hitflag = MAFD
 guardflag = MA
 pausetime = 15,15
@@ -3726,7 +3744,7 @@ triggerall=map(smallpunch)=0
 trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
-damage = ceil(cond(fvar(11) *200 < 88, 88, fvar(11) * 200)),20
+damage = ceil(cond(fvar(11) *150 < 80, 80, fvar(11) * 150)),20
 hitflag = MAFD
 guardflag = MA
 pausetime = 22,22
@@ -3768,7 +3786,7 @@ triggerall=map(smallpunch)=0
 trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
-damage = ceil(cond(fvar(11) *200 < 88, 88, fvar(11) * 200)),20
+damage = ceil(cond(fvar(11) *150 < 80, 80, fvar(11) * 150)),20
 hitflag = MAFD
 guardflag = MA
 pausetime = 22,22
@@ -3812,7 +3830,7 @@ triggerall=map(smallpunch)>0
 trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
-damage = ceil(cond(fvar(11) *200 < 88, 88, fvar(11) * 200)),20
+damage = ceil(cond(fvar(11) *150 < 80, 80, fvar(11) * 150)),20
 hitflag = MAF
 guardflag = MA
 pausetime = 22,22
@@ -3854,7 +3872,7 @@ triggerall=map(smallpunch)>0
 trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
-damage = ceil(cond(fvar(11) *200 < 88, 88, fvar(11) * 200)),20
+damage = ceil(cond(fvar(11) *150 < 80, 80, fvar(11) * 150)),20
 hitflag = MAF
 guardflag = MA
 pausetime = 22,22
@@ -4021,7 +4039,7 @@ triggerall=var(25)=0
 trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
-damage = ceil(cond(fvar(11) *250 < 100, 100, fvar(11) * 250)),30
+damage = ceil(cond(fvar(11) *200 < 100, 100, fvar(11) * 200)),30
 hitflag = MAFD
 guardflag = MA
 pausetime = 25,25
@@ -4060,7 +4078,7 @@ triggerall=var(25)=0
 trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
-damage = ceil(cond(fvar(11) *250 < 100, 100, fvar(11) * 250)),30
+damage = ceil(cond(fvar(11) *200 < 100, 100, fvar(11) * 200)),30
 hitflag = MAFD
 guardflag = MA
 pausetime = 25,25
@@ -4101,7 +4119,7 @@ triggerall=var(25)>0
 trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
-damage = ceil(cond(fvar(11) *250 < 100, 100, fvar(11) * 250)),30
+damage = ceil(cond(fvar(11) *200 < 100, 100, fvar(11) * 200)),30
 hitflag = MAFD
 guardflag = MA
 pausetime = 25,25
@@ -4141,7 +4159,7 @@ triggerall=var(25)>0
 trigger1 = !movecontact
 attr = S, SA
 animtype  = Light
-damage = ceil(cond(fvar(11) *250 < 100, 100, fvar(11) * 250)),30
+damage = ceil(cond(fvar(11) *200 < 100, 100, fvar(11) * 200)),30
 hitflag = MAFD
 guardflag = MA
 pausetime = 25,25

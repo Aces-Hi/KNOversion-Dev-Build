@@ -1736,10 +1736,6 @@ trigger2 = Vel Y > 0    ;Hit ground
 trigger2 = Pos Y >= Const(movement.air.gethit.groundlevel)
 value = 43333 ;HITA_FALL
 
-[State 5030, 6]
-type = selfState
-trigger1 = AnimTime = 0
-value = 5035 ;Air get-hit (transition)
 
 ;BOUNCE CUSTOM STATE (falling)
 [Statedef 43333]
@@ -1859,7 +1855,7 @@ trigger1 = 1
 
 [State 5100, 12]
 type = ChangeState
-trigger1 = AnimTime = 0
+trigger1 = time>3
 value = 54322 ;Downed get-hit (bounce off ground)
 
 [State 5100, 13]

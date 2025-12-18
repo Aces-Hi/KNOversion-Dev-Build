@@ -262,7 +262,7 @@ envshake.ampl = 2
 envshake.phase = 1
 forcenofall = 1
 guard.hittime = 13
-guard.ctrltime = 11
+guard.ctrltime = 9
 guard.slidetime = 12
 getpower = (50)*(cond(var(var(2)) = 1, 1, 1))
 
@@ -483,7 +483,7 @@ p2facing = 1
 attr = S, NA
 animtype  = hard
 air.animtype = back
-damage = ceil(cond(fvar(11) *90 < 5, 5, fvar(11) * 90)), 3
+damage = ceil(cond(fvar(11) *80 < 5, 5, fvar(11) * 80)), 3
 hitflag = MAF
 guardflag = MA
 pausetime = 12,12
@@ -503,7 +503,7 @@ envshake.freq = 70
 envshake.ampl = 3
 forcenofall = 1
 guard.hittime = 24
-guard.ctrltime = 21
+guard.ctrltime = 18
 guard.slidetime = 14
 getpower = (100)*(cond(var(var(2)) = 1, 1, 1))
 
@@ -752,7 +752,7 @@ p2facing = 1
 attr = S, NA
 animtype  = Hard
 air.animtype = back
-damage = ceil(cond(fvar(11) *60 < 3, 3, fvar(11) * 60)), 5
+damage = ceil(cond(fvar(11) *50 < 3, 3, fvar(11) * 50)), 5
 hitflag = MAFD
 guardflag = MA
 pausetime = 8,8
@@ -762,9 +762,9 @@ hitsound   = 5,2
 guardsound = 6,1
 ground.type = high
 ground.slidetime = 12
-ground.hittime  = ceil(cond(fvar(15) *35 < 35, 35, fvar(15) * 35))
-air.hittime  = ceil(cond(fvar(15) *60 < 60, 60, fvar(15) * 60))
-down.hittime = ceil(cond(fvar(15) *60 < 60, 60, fvar(15) * 60))
+ground.hittime  = ceil(cond(fvar(15) *35 < 30, 30, fvar(15) * 35))
+air.hittime  = ceil(cond(fvar(15) *60 < 30, 30, fvar(15) * 60))
+down.hittime = ceil(cond(fvar(15) *60 < 30, 30, fvar(15) * 60))
 ground.velocity = -1.3,0
 air.velocity = -1.5,-1.9
 envshake.time = 8
@@ -789,10 +789,10 @@ trigger1 = animelem = 10
 p2facing = 1
 attr = S, NA
 animtype  = Hard
-damage = ceil(cond(fvar(11) *60 < 5, 5, fvar(11) * 60)), 5
+damage = ceil(cond(fvar(11) *50 < 5, 5, fvar(11) * 50)), 5
 hitflag = MAFD
 guardflag = MA
-pausetime = 12,12
+pausetime = 10,10
 sparkno = 3
 sparkxy = -40,-30
 hitsound   = 5,3
@@ -803,14 +803,14 @@ ground.hittime  = ceil(cond(fvar(15) *35 < 30, 30, fvar(15) * 35))
 air.hittime  = ceil(cond(fvar(15) *60 < 30, 30, fvar(15) * 60))
 down.hittime = ceil(cond(fvar(15) *60 < 30, 30, fvar(15) * 60))
 ground.velocity = -5,-1.5
-air.velocity = -4.5,-1.5
+air.velocity = -4.5,-1
 envshake.time = 8
 envshake.freq = 10
 envshake.ampl = 2
 envshake.phase = 1
 guard.hittime = 28
 guard.slidetime = 16
-guard.ctrltime = 27
+guard.ctrltime = 25
 guard.velocity = -6
 guard.cornerpush.veloff = -8
 fall = 1
@@ -3198,6 +3198,11 @@ movetype = A       ;I,A,H
 physics = N       ;A,C,S,N
 ignorehitpause = 1
 
+[State 0, VelSet]
+type = PosSet
+trigger1 = Pos Y >= 0
+y = 0
+
 [State Wu Voices]
 type = PlaySnd
 trigger1 = time=0
@@ -3434,6 +3439,11 @@ trigger1 = vel Y >0
 x = 0
 y = 0
 
+[State 0, VelSet]
+type = PosSet
+trigger1 = Pos Y >= 0
+y = 0
+
 ;SOMEBODY MAKE THIS WORK AAAAAAAAAAAAA ;Nah
 [State 1900, dust]
 type = explod
@@ -3449,6 +3459,7 @@ removeongethit = 1
 ignorehitpause = 1
 facing = -1
 removetime = -1
+removeonchangestate=1
 
 [State 2001, Particles]
 type = Helper
@@ -3697,6 +3708,11 @@ statetype = A       ;S,A,C,L
 movetype = A       ;I,A,H
 physics = N         ;A,C,S,N
 ignorehitpause = 1
+
+[State 0, VelSet]
+type = PosSet
+trigger1 = Pos Y >= 0
+y = 0
 
 [State 999]
 type = explod

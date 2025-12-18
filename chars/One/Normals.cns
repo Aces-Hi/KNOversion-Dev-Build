@@ -26,9 +26,11 @@ ignorehitpause = 1
 persistent = 0
 [State 0, VarAdd]
 type = VarAdd
-trigger1 = movehit = 1
+trigger1 = movehit
 fv =13     ;fv = 
-value = 4
+value = 1.5
+ignorehitpause=1
+persistent=0
 
 
 [State -2, VarSet]
@@ -70,7 +72,7 @@ envshake.time = 0;
 forcenofall = 1
 guard.hittime = 25
 guard.slidetime = 6
-guard.ctrltime = 9
+guard.ctrltime = 8
 getpower = (40)*(cond(var(var(5)) = 1, 1, .5)) 
 guard.velocity = -8
 
@@ -169,7 +171,7 @@ envshake.phase = 1
 fall.envshake.time = 0
 guard.hittime = 25
 guard.slidetime = 6
-guard.ctrltime = 19
+guard.ctrltime = 16
 ground.cornerpush.veloff = -6
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 
@@ -273,7 +275,7 @@ envshake.ampl = 2
 envshake.phase = 1
 guard.hittime = 23
 guard.slidetime = 6
-guard.ctrltime = 17
+guard.ctrltime = 15
 guard.cornerpush.veloff = -10
 getpower = (60)*(cond(var(var(2)) = 1, 1, 1))
 
@@ -407,7 +409,7 @@ envshake.phase = 1
 guard.velocity = -5
 guard.hittime = 20
 guard.slidetime = 6
-guard.ctrltime = 19
+guard.ctrltime = 15
 guard.cornerpush.veloff = -10
 forcenofall = 1
 getpower = (80)*(cond(var(var(2)) = 1, 1, .5))
@@ -457,9 +459,11 @@ volumescale=200
 
 [State 0, VarAdd]
 type = VarAdd
-trigger1 = movehit = 1
+trigger1 = movehit
 fv =13     ;fv = 
-value = 2
+value = 1.5
+ignorehitpause=1
+persistent=0
 
 [State 200, VarAdd]
 type = VarAdd
@@ -2024,9 +2028,11 @@ ignorehitpause = 1
 
 [State 0, VarAdd]
 type = VarAdd
-trigger1 = movehit = 1
+trigger1 = movehit
 fv =13     ;fv = 
-value = 4
+value = 1.5
+ignorehitpause=1
+persistent=0
 
 [State 200, VarAdd]
 type = VarAdd
@@ -2072,7 +2078,7 @@ ground.velocity = -3
 air.velocity = -1.5,-3;
 guard.hittime = 19
 guard.slidetime =16
-guard.ctrltime = 17
+guard.ctrltime = 14
 forcenofall = 1
 getpower = (50)*(cond(var(var(5)) = 1, 1, .5)) 
 guard.velocity = -8
@@ -2116,9 +2122,11 @@ volumescale=200
 
 [State 0, VarAdd]
 type = VarAdd
-trigger1 = movehit = 1
+trigger1 = movehit
 fv =13     ;fv = 
-value = 4
+value = 1.5
+ignorehitpause=1
+persistent=0
 
 [State 200, VarAdd]
 type = VarAdd
@@ -2164,7 +2172,7 @@ ground.velocity = -10
 air.velocity = -1.5,-3;
 guard.hittime = 19
 guard.slidetime = 6
-guard.ctrltime = 17
+guard.ctrltime = 16
 forcenofall = 1
 getpower = (50)*(cond(var(var(5)) = 1, 1, .5)) 
 ground.cornerpush.veloff =-10
@@ -2200,9 +2208,11 @@ volumescale=200
 
 [State 0, VarAdd]
 type = VarAdd
-trigger1 = movehit = 1
+trigger1 = movehit
 fv =13     ;fv = 
-value = 1
+value = 1.5
+ignorehitpause=1
+persistent=0
 
 
 [State 410, 1]
@@ -2350,7 +2360,7 @@ envshake.ampl = 2
 envshake.phase = 1
 guard.hittime = 26
 guard.slidetime = 6
-guard.ctrltime = 29
+guard.ctrltime = 27
 forcenofall = 1
 getpower = (60)*(cond(var(var(2)) = 1, 1, 1))
 
@@ -2469,7 +2479,7 @@ down.cornerpush.veloff = -4
 air.cornerpush.veloff = -4
 guard.hittime = 25
 guard.slidetime = 14
-guard.ctrltime = 16
+guard.ctrltime = 19
 guard.velocity = -5
 getpower = (80)*(cond(var(var(2)) = 1, 1, 1))
 
@@ -3413,7 +3423,13 @@ type = VarSet
 trigger1 = !numtarget
 fv = 12
 value = 0
-
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit
+fv =13     ;fv = 
+value = 1.5
+ignorehitpause=1
+persistent=0
 [State 0, Gravity]
 type = Gravity
 trigger1 = 1
@@ -3460,7 +3476,7 @@ trigger1 = Time = 0
 trigger1 = vel y >= 0
 attr = A, NA
 damage = ceil(cond(fvar(11) *20 < 4, 4, fvar(11) * 20)), 0
-guardflag = HA
+guardflag = MA
 hitflag = MAF
 ;priority = 4
 pausetime = 9,9
@@ -3535,7 +3551,13 @@ fv = 12
 value = 0.5; You can make this whatever you want to increase stun scaling per move
 ignorehitpause = 1
 persistent = 0
-
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit
+fv =13     ;fv = 
+value = 1.5
+ignorehitpause=1
+persistent=0
 [State -2, VarSet]
 type = VarSet
 trigger1 = !numtarget
@@ -4823,7 +4845,7 @@ ctrl = 1
 
 
 ;---------------------------------------------------------------------------
-;onojR
+;onoj2H
 [Statedef 645]
 type    = A
 movetype= A
@@ -4909,9 +4931,9 @@ animtype = Medium
 ground.type = high
 ground.slidetime = 12
 ground.hittime  = 23
-ground.velocity = -4,0
+ground.velocity =  -2, 14
 air.velocity = -2, 14
-air.fall = 1
+fall = 1
 fall.yvelocity = cond(map(jR)=0, -8,-0)
 guard.hittime = 15
 guard.slidetime = 12

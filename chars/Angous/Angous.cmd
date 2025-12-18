@@ -63,23 +63,6 @@ triggerall = power>=1000
 trigger1 = movehit
 trigger1 = stateno!=9969&&stateno!=9971
 ignorehitpause=0
-;RC Jasta Air
-[State -1, RC Jasta Air]
-type = ChangeState
-value = 690001
-triggerall = prevstateno!=[910,914]
-triggerall = stateno!=[910,914]
-triggerall = map(norc)=0
-triggerall=enemy,stateno!=7000
-triggerall = !ishelper
-triggerall = stateno=750
-triggerall = command = "a"
-triggerall = statetype = A
-triggerall = movetype = A
-triggerall = power>=1000
-trigger1 = movehit
-trigger2 = map(zexception)
-ignorehitpause=1
 
 ;True Buster
 [State -1, BH]
@@ -105,7 +88,7 @@ triggerall = command = "TrueBuster"
 triggerall = power >= 4000
 triggerall = statetype != A
 trigger1 = ctrl
-trigger2 = hitdefattr = SC, NA, SA, HA
+trigger2 = hitdefattr = SC, NA, SA, HA||stateno=[1062,1063]
 trigger2 = stateno != [3000,3050)
 trigger2 = movecontact
 trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
@@ -122,7 +105,7 @@ triggerall = command = "TripleKFPalm"
 triggerall = power >= 2000
 triggerall= statetype != A
 trigger1 = ctrl
-trigger2 = hitdefattr = SC, NA, SA, HA
+trigger2 = hitdefattr = SC, NA, SA, HA ||stateno=[1062,1063]
 trigger2 = stateno != [3000,3050)
 trigger2 = movecontact
 trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
@@ -139,7 +122,7 @@ triggerall = command = "TripleKFPalm"
 triggerall = power >= 2000 
 triggerall = statetype != A
 trigger1 = ctrl
-trigger2 = hitdefattr = SC, NA, SA, HA
+trigger2 = hitdefattr = SC, NA, SA, HA||stateno=[1062,1063]
 trigger2 = stateno != [3000,3050)
 trigger2 = movecontact
 trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
@@ -157,7 +140,7 @@ triggerall = command = "SmashKFUpper"
 triggerall = power >= 2000
 triggerall = statetype != A
 trigger1 = ctrl
-trigger2 = hitdefattr = SC, NA, SA, HA
+trigger2 = hitdefattr = SC, NA, SA, HA||stateno=[1062,1063]
 trigger2 = stateno != [3000,3050)
 trigger2 = movecontact
 trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
@@ -250,8 +233,8 @@ value = 106
 triggerall = command = "FF" || (command = "dash"&&teammode!=tag) || (command = "dash"&&teammode=tag && partner,stateno=5150)
 triggerall = command != "holdback"
 trigger1 = stateno = 1062||stateno = 1063
-trigger1=time<=49
-trigger1=time>=15
+trigger1=map(dashtimer)<=45
+trigger1=map(dashtimer)>=15
 ;Run Back
 [State -1, Run Back]
 type = ChangeState
@@ -263,8 +246,8 @@ trigger1 = ctrl
 trigger2 = stateno = 250
 triggerall = stateno!=105
 trigger3 = stateno = 1062||stateno = 1063
-trigger3=time<=49
-trigger3=time>=21
+trigger3=map(dashtimer)<=45
+trigger3=map(dashtimer)>=21
 
 [State -1, short hop]
 type = ChangeState
@@ -774,7 +757,7 @@ triggerall = command != "holdback"
 triggerall = command = "c"
 triggerall=command!="b"
 triggerall = command = "holdfwd"
-triggerall = stateno != 230
+triggerall = stateno != 230&&stateno != 431
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
@@ -803,7 +786,7 @@ triggerall = command != "holdback"
 triggerall = command = "c"
 triggerall=command!="b"
 triggerall = command = "holdfwd"
-triggerall = stateno != 230
+triggerall = stateno != 230&&stateno != 431
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)

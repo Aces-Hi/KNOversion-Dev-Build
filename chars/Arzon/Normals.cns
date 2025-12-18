@@ -71,7 +71,7 @@ air.velocity = -1.4,-3
 forcenofall = 1
 guard.hittime =10
 guard.slidetime = 8
-guard.ctrltime = 10
+guard.ctrltime = 9
 getpower = (100)*(cond(var(var(5)) = 1, 1, .5)) 
 
 [State 200, 3]
@@ -863,9 +863,9 @@ air.hittime  = ceil(cond(fvar(15) *28 < 6, 6, fvar(15) * 28))
 down.hittime = ceil(cond(fvar(15) *28 < 6, 6, fvar(15) * 28)) 
 ground.velocity = -5
 air.velocity = -1.5,-3
-guard.hittime = 10
+guard.hittime = 8
 guard.slidetime = 10
-guard.ctrltime = 11
+guard.ctrltime = 8
 getpower = (70)*(cond(var(var(5)) = 1, 1, .5)) 
 guard.velocity = -8
 
@@ -975,7 +975,7 @@ guard.pausetime= 12,12
 guard.velocity = -7
 guard.dist = 20
 guard.slidetime =12
-guard.ctrltime = 15
+guard.ctrltime = 12
 guard.hittime = 15
 guard.cornerpush.veloff = -5
 forcenofall = 1
@@ -1165,12 +1165,11 @@ air.hittime  = ceil(cond(fvar(15) *43 < 10, 10, fvar(15) * 43))
 down.hittime = ceil(cond(fvar(15) *34 < 10, 10, fvar(15) * 34))
 ground.velocity = -0.8,-6.5
 air.velocity = -0.8,-6.5
-guard.hittime = 15
-guard.pausetime= 15,15
+guard.hittime = 10
 guard.velocity = -9
 guard.dist = 20
-guard.slidetime =24
-guard.ctrltime = 24
+guard.slidetime =20
+guard.ctrltime = 20
 guard.cornerpush.veloff = -4
 envshake.time = 25
 envshake.freq = 100

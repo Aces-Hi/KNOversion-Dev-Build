@@ -26,10 +26,9 @@ _D	_D		_D
 	<#7f7f7f>SPECIAL MOVES</>
 TYPHOON SHOT	-		<#aaffff>(GROUND OR AIR)</> ^Y
 _!TYPHOON FOLLOWUP	-		^Y
-TYPHOON DISK		<#aaffff>(GROUND OR AIR)</> _F^Y/+^A/+^B/+^C
-   <#bbbbbb>Holding ^A,^B, or ^C changes it's speed and direction.</>
-TORNADO TRAP	-		_B^Y/+^A/+^B/+^C
-   <#bbbbbb>Holding ^A,^B, or ^C changes it's placement.</>
+TYPHOON DISK		<#aaffff>(GROUND OR AIR)</> _F^Y
+TORNADO TRAP	-		_B^Y
+   <#bbbbbb>Places a trap at the enemy's current location.</>
 _!TYPHOON UPPERCUT	-		<#aaffff>(GROUND OR AIR)</> _B^Y
    <#bbbbbb>Can be jump canceled on hit.</>
 TYPHOON SHIELD	-		_D^Y
@@ -45,12 +44,13 @@ WHIRLWIND HOVER	-		<#65b5ff>(AIR ONLY)</> _D^Y
 
 
 
+
 _D	_D		_D
 
 	<#7f7f7f>REMIX MOVES</>
 JETSTREAM	-		^Z/_F^Z/_B^Z/_D^Z
-   <#bbbbbb>Creates a gust of wind that moves enemies.
-   Can also manipulate Arzon's projectiles.</>
+   <#bbbbbb>Creates a gust of wind that manipulates Arzon's projectiles.
+   Can also move enemies during a combo.</>
 
 
 
@@ -76,17 +76,17 @@ _EX WIND BOOMERANG	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> ^Y+^Z
 _!BOOMERANG GUIDANCE	-		(AS THE MOVE STARTS) _U/_F/_B/_D
         <#bbbbbb>Holding a direction as the move comes out
         can change the speed and direction of the projectile.</>
-_EX TYPHOON DISK		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _F^Y+^Z/+^A/+^B/+^C
-   <#bbbbbb>Holding ^A,^B, or ^C changes it's speed and direction.</>
-_EX TORNADO TRAP	-		<#55ffff>(1 BAR)</> _B^Y+^Z/+^A/+^B/+^C
-   <#bbbbbb>Holding ^A,^B, or ^C changes it's placement.</>
+_EX TYPHOON DISK		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _F^Y+^Z
+_EX TORNADO TRAP	-		<#55ffff>(1 BAR)</> _B^Y+^Z
+   <#bbbbbb>Places a trap at the enemy's current location.</>
 _EX TYPHOON SHIELD	-		<#55ffff>(1 BAR)</> _D^Y+^Z
-  <#bbbbbb>A large, invincible reversal. You can only cancel into this move
+  <#bbbbbb>A large, invincible reversal. You can only cancel specials into this move
   if the enemy is currently getting hit. Cannot be canceled on block.</>
 _EX WHIRLWIND HOVER	-		<#65b5ff>(AIR ONLY)</><#55ffff>(1 BAR)</> _D^Y+^Z
    <#bbbbbb>This move allows you to hold any direction to freely
    move Arzon through the air.
    This move does not obey Arzon's FREE AS THE WIND trait.</>
+
 
 
 
@@ -130,8 +130,8 @@ GRAB	-		ANY 2 NORMALS </>
 FORCE BLOCK (WHILE BLOCKING)	-		<#55ffff>(1 BAR)</> _B^X
    <#bbbbbb>Can push the enemy backwards while you block.</>
 NO PARRY	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _F^X
-   <#bbbbbb>A reversal option that gives you the advantage
-   if the enemy hits you. Refunds 1 BAR on hit.</>
+   <#bbbbbb>A reversal option that makes you invincible if the enemy hits you.
+   Can be used again FOR FREE while the invincibility is active.</>
 RECORD SCRATCH (WHILE ATTACKING)		<#55ffff>(1 BAR/2 BARS ON BLOCK)</> ^X
    <#bbbbbb>Can be used to instantly cancel most attacks.
    Holding any direction during this will cause you to move that way.</>

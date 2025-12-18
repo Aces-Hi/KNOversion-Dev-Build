@@ -16,7 +16,6 @@ time = 10
 length = 14
 timegap = 1
 
-
 [State -3, Tui Voices]
 type = PlaySnd
 trigger1 = animelem = 4
@@ -61,6 +60,12 @@ juggle  = 0
 ctrl = 0
 anim =1051
 sprpriority = 2
+
+[State 200, VOICE]
+type = PlaySnd
+trigger1 = !time
+value = 700, 2
+volumescale = 200
 
 [State 0, NotHitBy]
 type = NotHitBy
@@ -298,7 +303,7 @@ velset 		= 7 , 0
 type = NotHitBy
 triggerall=enemynear,stateno!=900
 triggerall=enemynear,stateno!=901
-trigger1 = time<=16
+trigger1 = animelemtime(6)<0
 value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 time = 1
 
@@ -1130,7 +1135,7 @@ value = 1006
 
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = command = "hold_b" && time>18
+trigger1 = command = "hold_b" && time>10
 value = 1007
 ;===================================================
 ;5S One-Inch Punch
@@ -1285,7 +1290,7 @@ value = 1009
 
 [State 0, PlaySnd]
 type = PlaySnd
-trigger1 = time = 30
+trigger1 = time = 25
 value =8000,1
 channel = -1
 loop = 0
@@ -1313,7 +1318,7 @@ ignorehitpause = 1
 ;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [State 0]
 type = MapSet
-trigger1 = time<40&&time>=30
+trigger1 = time<30&&time>=20
 trigger2 = time<310&&time>=300
 trigger3 = time>=600
 map = "ShadowOverride"
@@ -1323,7 +1328,7 @@ ignorehitpause=1
 ;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [State 0, PalFX]
 type = PalFX
-trigger1 = time=30
+trigger1 = time=20
 trigger2 = time=300
 time = 10
 add = 100,100,100
@@ -1373,6 +1378,19 @@ anim = 1010
 poweradd = 0
 sprpriority = 2
 
+[State 0, VarSet]
+type = mapset
+trigger1 = movehit
+map ="beamskd"
+value = 1
+ignorehitpause = 1
+
+[State 200, VOICE]
+type = PlaySnd
+trigger1 = animelem = 2
+value = 1000, 2 + random % 3
+volumescale = 200
+
 [State 200, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
@@ -1421,12 +1439,13 @@ type = HitDef
 p2facing = 1
 triggerall=enemynear,map(armor)=0
 triggerall=enemynear,!ishelper
+triggerall=!map(beamskd)
 trigger1 = fvar(8) = 0 && movecontact = 0
 trigger1 = (enemynear, stateno!= [5110,5119])
 attr = S, SP
 animtype  = Light
 air.animtype = back
-damage = ceil(cond(fvar(11) *140 < 15, 15, fvar(11) * 140)), 10
+damage = ceil(cond(fvar(11) *120 < 15, 15, fvar(11) * 120)), 10
 hitflag = MAFD
 guardflag = MA
 pausetime = 12,19
@@ -1437,8 +1456,9 @@ guardsound = 6,2
 ground.type = low
 ground.slidetime = 40
 ground.hittime  = 40
-ground.velocity = -4
+ground.velocity = -4,-2
 air.velocity = -4,-1
+down.velocity= -4,-4
 fall = 1
  envshake.time = 15
 envshake.freq = 80
@@ -1449,17 +1469,19 @@ guard.ctrltime = 17
 fall.yvelocity = 0
 getpower = (100)*(cond(var(var(2)) = 1, 1.5, 1)) 
 p2stateno=915020
+
 [State 630, 2]
 type = HitDef 
 p2facing = 1
-triggerall=enemynear,map(armor)>0
+trigger1=enemynear,map(armor)>0
+trigger2=map(beamskd)
 triggerall=enemynear,!ishelper
-trigger1 = fvar(8) = 0 && movecontact = 0
-trigger1 = (enemynear, stateno!= [5110,5119])
+triggerall = fvar(8) = 0 && movecontact = 0
+triggerall = (enemynear, stateno!= [5110,5119])
 attr = S, SP
 animtype  = Light
 air.animtype = back
-damage = ceil(cond(fvar(11) *140 < 15, 15, fvar(11) * 140)), 10
+damage = ceil(cond(fvar(11) *120 < 15, 15, fvar(11) * 120)), 10
 hitflag = MAFD
 guardflag = MA
 pausetime = 12,19
@@ -1470,8 +1492,9 @@ guardsound = 6,2
 ground.type = low
 ground.slidetime = 40
 ground.hittime  = 40
-ground.velocity = -4
+ground.velocity = -4,-2
 air.velocity = -4,-1
+down.velocity= -4,-4
 fall = 1
  envshake.time = 15
 envshake.freq = 80
@@ -1490,12 +1513,13 @@ type = HitDef
 p2facing = 1
 triggerall=enemynear,map(armor)=0
 triggerall=enemynear,!ishelper
+triggerall=!map(beamskd)
 trigger1 = fvar(8) >0 && movecontact = 0
 trigger1 = (enemynear, stateno!= [5110,5119])
 attr = S, SP
 animtype  = Light
 air.animtype = back
-damage = ceil(cond(fvar(11) *140 < 15, 15, fvar(11) * 140)), 10
+damage = ceil(cond(fvar(11) *120 < 15, 15, fvar(11) * 120)), 10
 hitflag = MAFD
 guardflag = MA
 pausetime = 12,14
@@ -1506,8 +1530,9 @@ guardsound = 6,2
 ground.type = low
 ground.slidetime = 40
 ground.hittime  = 40
-ground.velocity = -4
+ground.velocity = -4,-2
 air.velocity = -4,1
+down.velocity= -4,-4
 fall = 1
  envshake.time = 15
 envshake.freq = 80
@@ -1521,14 +1546,15 @@ p2stateno=915020
 [State 630, 2]
 type = HitDef 
 p2facing = 1
-triggerall=enemynear,map(armor)>0
+trigger1=enemynear,map(armor)>0
+trigger2=map(beamskd)
 triggerall=enemynear,!ishelper
 trigger1 = fvar(8) >0 && movecontact = 0
 trigger1 = (enemynear, stateno!= [5110,5119])
 attr =S, SP
 animtype  = Light
 air.animtype = back
-damage = ceil(cond(fvar(11) *140 < 15, 15, fvar(11) * 140)), 10
+damage = ceil(cond(fvar(11) *120 < 15, 15, fvar(11) * 120)), 10
 hitflag = MAFD
 guardflag = MA
 pausetime = 12,14
@@ -1539,8 +1565,9 @@ guardsound = 6,2
 ground.type = low
 ground.slidetime = 40
 ground.hittime  = 40
-ground.velocity = -4
-air.velocity = -4,1
+ground.velocity = -4,-2
+air.velocity = -4,-1
+down.velocity= -4,-4
 fall = 1
  envshake.time = 15
 envshake.freq = 80
@@ -1797,28 +1824,6 @@ trigger1 = time=0
 map = "nozoom"
 value = 0
 ignorehitpause = 0
-[State 0, Zoom]
-type = zoom
-triggerall=map(nozoom)=0
-triggerall=backedgebodydist<=100
-trigger1 = enemy,HitShakeOver = 0&&movehit
-scale = 1.5
-lag = 0.8
-stagebound = 1
-camerabound = 0
-pos =0,-10
-ignorehitpause=1
-[State 0, Zoom]
-type = zoom
-triggerall=map(nozoom)=0
-triggerall=backedgebodydist>100
-trigger1 = enemy,HitShakeOver = 0&&movehit
-scale = 1.5
-lag = 0.8
-stagebound = 1
-camerabound = 0
-pos = pos x,-10
-ignorehitpause=1
 [State 0]
 type = MapAdd
 trigger1 = movehit
@@ -2090,28 +2095,6 @@ trigger1 = time=0
 map = "nozoom"
 value = 0
 ignorehitpause = 0
-[State 0, Zoom]
-type = zoom
-triggerall=map(nozoom)=0
-triggerall=backedgebodydist<=100
-trigger1 = enemy,HitShakeOver = 0&&movehit
-scale = 1.5
-lag = 0.8
-stagebound = 1
-camerabound = 0
-pos =0,-10
-ignorehitpause=1
-[State 0, Zoom]
-type = zoom
-triggerall=map(nozoom)=0
-triggerall=backedgebodydist>100
-trigger1 = enemy,HitShakeOver = 0&&movehit
-scale = 1.5
-lag = 0.8
-stagebound = 1
-camerabound = 0
-pos = pos x,-10
-ignorehitpause=1
 [State 0]
 type = MapAdd
 trigger1 = movehit

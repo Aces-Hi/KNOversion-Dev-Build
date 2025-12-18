@@ -338,7 +338,7 @@ down.hittime = ceil(cond(fvar(15) *20 < 9, 9, fvar(15) * 20))
 ground.velocity = -2.5
 guard.slidetime = 5
 guard.hittime = 25
-guard.ctrltime = 16
+guard.ctrltime = 13
 air.velocity = -1.5,-2
 forcenofall = 1
 palfx.time = 12
@@ -1159,7 +1159,7 @@ damage = ceil(cond(fvar(11) *15 < 5, 5, fvar(11) * 15)), 1
 hitflag = MAFD
 guardflag = MA
 ;priority = 3
-getpower = (0)*(cond(var(var(2)) = 1, 1, .5))
+getpower = (30)*(cond(var(var(2)) = 1, 1, 1))
 pausetime = 3,3
 guard.pausetime = 0,3
 sparkno = 1
@@ -1542,7 +1542,7 @@ fall.yvelocity = 0
 forcenofall = 1
 guard.slidetime = 15
 guard.hittime = 15
-guard.ctrltime = 13
+guard.ctrltime = 11
 getpower = (100)*(cond(var(var(5)) = 1, 1, .5)) 
 guard.velocity = -8
 
@@ -1674,7 +1674,7 @@ envshake.phase = 1
 fall.yvelocity = 0
 guard.slidetime = 13
 guard.hittime = 21
-guard.ctrltime = 17
+guard.ctrltime = 15
 forcenofall = 1
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5)) 
 
@@ -1808,7 +1808,7 @@ guard.pausetime= 15,15
 guard.velocity = -7
 guard.dist = 20
 guard.slidetime = 30;
-guard.ctrltime = 17
+guard.ctrltime = 15
  envshake.time = 8
 envshake.freq = 10
 envshake.ampl = 2
@@ -1974,6 +1974,8 @@ type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
 value = 1
+ignorehitpause=1
+persistent=0
 
 [State 200, VarAdd]
 type = VarAdd

@@ -1,4 +1,4 @@
-zqqEEQEQECZeeczceeeeeeeeczeqczeqzl; Animation data for Fight Effects
+qzqqEEQEQECZeeczceeeeeeeeczeqczeqzl; Animation data for Fight Effects
 
 ; groupno, imageno, offx, offy, duration [, [flipflags] [, drawtype]]
 ; if duration is -1, then frame is displayed indefinitely.
@@ -516,6 +516,23 @@ zqqEEQEQECZeeczceeeeeeeeczeqczeqzl; Animation data for Fight Effects
 8990,23, 0,0, 3
 8990,24, 0,0, 3
 8990,25, 0,0, 3
+
+; HyperWin Z
+[Begin Action 8992]
+8990,0, 0,0, 3
+8990,1, 0,0, 3
+8990,2, 0,0, 3
+8990,3, 0,0, 3
+8990,4, 0,0, 3
+8990,5, 0,0, 3
+8990,6, 0,0, 3
+8990,7, 0,0, 3
+8990,8, 0,0, 3
+8990,9, 0,0, 3
+8990,10, 0,0, 3
+8990,11, 0,0, 3
+8990,12, 0,0, 3
+8990,13, 0,0, 3
 
 ; Hyper Finish B.G. fade
 [Begin Action 8991]

@@ -1690,7 +1690,7 @@ value = 5050
 type = VelSet
 trigger1 = Time = 0
 x = -30
-y=-1
+y=-4
 
 [State 1026, Hit wall]
 type = ChangeState

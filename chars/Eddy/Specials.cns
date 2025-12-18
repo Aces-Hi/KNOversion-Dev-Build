@@ -476,7 +476,7 @@ damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 5
 hitflag = MAFD
 guardflag = LA
 ;priority = 3
-pausetime = 25,70
+pausetime = 25,25
 sparkno = 2
 sparkxy = -5,-15
 hitsound   = 5,2
@@ -500,6 +500,8 @@ envshake.freq = 10
 envshake.ampl = 2
 envshake.phase = 1
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5)) 
+p2stateno=6150
+p2getp1state=0
 
 [State 0, VelSet]
 type = VelSet

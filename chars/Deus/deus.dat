@@ -49,7 +49,7 @@ _D	_D		_D
 
 	<#107105>REMIX MOVES</>
 REFLECTION	-		(HOLD)^Z
-   <#bbbbbb>Makes me face the opposition. I can also walk while this is active.</>
+   <#bbbbbb>Makes me face the other person. I can also walk while this is active.</>
 _!DODGE	-		_F_F/_B_B/_D_D
         <#bbbbbb>Functions like a typical back dash,
         except I can do it in other directions. Passes through others.</>
@@ -126,12 +126,12 @@ ANTI-AIR	-		_D^C
    <#bbbbbb>This move has invulnerability to airborne attacks.</>
 GRAB	-		ANY 2 NORMALS </>
    <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.
-   The opposition can break this by pressing ^A/^B/^C.</>
+   People can break this by pressing ^A/^B/^C.</>
 FORCE BLOCK (WHILE BLOCKING)	-		<#55ffff>(1 BAR)</> _B^X
-   <#bbbbbb>Can push the opposition backwards while I block.</>
+   <#bbbbbb>Can push people backwards while I block.</>
 NO PARRY	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _F^X
-   <#bbbbbb>A reversal option that gives me the advantage
-   if someone hits me. Refunds 1 BAR on hit.</>
+   <#bbbbbb>A reversal option that makes me invincible if someone hits me.
+   Can be used again FOR FREE while the invincibility is active.</>
 RECORD SCRATCH (WHILE ATTACKING)		<#55ffff>(1 BAR/2 BARS ON BLOCK)</> ^X
    <#bbbbbb>Can be used to instantly cancel most attacks.
    Holding any direction during this will cause me to move that way.</>

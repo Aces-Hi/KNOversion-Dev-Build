@@ -670,57 +670,15 @@ freqmul = 0.7
 
 [State 0, Mid Set] ;Hold L or M
 type = Helper
-triggerall = map(select) = 4
 trigger1 = animelem = 4
 helpertype = normal ;player
 name = "Wind Trap"
 ID = 1303
 stateno = 1303
-pos = -50,2
+pos = 0,0
 postype = p1    ;p2,front,back,left,right
 facing = 1
 ownpal=1
-
-[State 0, Far Set] ;Hold H or G
-type = Helper
-triggerall = map(select) = 2
-trigger1 = animelem = 4
-helpertype = normal ;player
-name = "Wind Trap"
-ID = 1303
-stateno = 1303
-pos = 225,2
-postype = p1    ;p2,front,back,left,right
-facing = 1
-ownpal=1
-
-[State 0, Mid Set] ;Hold L or M
-type = Helper
-triggerall = map(select) = 1
-trigger1 = animelem = 4
-helpertype = normal ;player
-name = "Wind Trap"
-ID = 1303
-stateno = 1303
-pos = 125,2
-postype = p1    ;p2,front,back,left,right
-facing = 1
-ownpal=1
-
-[State 0, Close Set] ;Hold Nothing
-type = Helper
-triggerall = map(select) = 0
-trigger1 = animelem = 4
-helpertype = normal ;player
-name = "Wind Trap"
-ID = 1303
-stateno = 1303
-pos = 50,2
-postype = p1    ;p2,front,back,left,right
-facing = 1
-ownpal=1
-
-
 
 
 [State 10, ChangeState]
@@ -865,8 +823,8 @@ sprpriority = 2
 
 [State 0, PosAdd]
 type = PosSet
-trigger1 = StageFrontEdgeDist < 0
-x = pos x + (StageFrontEdgeDist*root,facing)
+trigger1 = time=0
+x = enemynear,pos x
 ignorehitpause=1
 
 [State 0, NotHitBy]
@@ -1132,52 +1090,16 @@ removeongethit = 1
 
 [State 0, Far Trap Set]
 type = Helper
-triggerall = map(select) = 2
 trigger1 = animelem = 5
 helpertype = normal ;player
 name = "Wind Trap"
 ID = 1305
 stateno = 1305
-pos = 225,2
+pos = 0,0
 postype = p1    ;p2,front,back,left,right
 facing = 1
 ownpal=1
-[State 0, Mid Trap Set] ;Hold L or M
-type = Helper
-triggerall = map(select) = 4
-trigger1 = animelem = 5
-helpertype = normal ;player
-name = "Wind Trap"
-ID = 1305
-stateno = 1305
-pos = -50,2
-postype = p1    ;p2,front,back,left,right
-facing = 1
-ownpal=1
-[State 0, Mid Trap Set] ;Hold L or M
-type = Helper
-triggerall = map(select) = 1
-trigger1 = animelem = 5
-helpertype = normal ;player
-name = "Wind Trap"
-ID = 1305
-stateno = 1305
-pos = 125,2
-postype = p1    ;p2,front,back,left,right
-facing = 1
-ownpal=1
-[State 0, Close Trap Set] ;Hold Nothing
-type = Helper
-triggerall = map(select) = 0
-trigger1 = animelem = 5
-helpertype = normal ;player
-name = "Wind Trap"
-ID = 1305
-stateno = 1305
-pos = 50,2
-postype = p1    ;p2,front,back,left,right
-facing = 1
-ownpal=1
+
 [State 0, ChangeState]
 type = ChangeState
 trigger1 = animtime = 0
@@ -1195,8 +1117,8 @@ anim =1303
 sprpriority = 2
 [State 0, PosAdd]
 type = PosSet
-trigger1 = StageFrontEdgeDist < 0
-x = pos x + (StageFrontEdgeDist*root,facing)
+trigger1 = time=0
+x = enemynear,pos x
 ignorehitpause=1
 
 [State 0, DestroySelf]
@@ -4052,58 +3974,23 @@ ignorehitpause=1
 type = DestroySelf
 trigger1 = root,movetype=H
 ignorehitpause = 1
-[State 0, VelSet]
-type = VelSet
-triggerall=parent,map(select)=0
-triggerall=prevstateno!=1102
-trigger1 = time=0
-x = 2.25
-y = 0
-ignorehitpause = 1
-
-[State 0, VelSet]
-type = VelSet
-triggerall=parent,map(select)=4
-triggerall=prevstateno!=1102
-trigger1 = time=0
-x = .5
-y = 0
-ignorehitpause = 1
-[State 0, PosAdd]
-type = PosAdd
-triggerall=parent,map(select)=4
-triggerall=prevstateno!=1102
-trigger1 = time=0
-x =-40
-ignorehitpause = 1
-
-[State 0, VelSet]
-type = VelSet
-triggerall=parent,map(select)=1
-triggerall=prevstateno!=1102
-trigger1 = time=0
-x = 5.5
-y = 0
-ignorehitpause = 1
 
 [State 0, VelSet]
 type = VelSet
 triggerall=parent,statetype!=A
-triggerall=parent,map(select)=2
 triggerall=prevstateno!=1102
 trigger1 = time=0
-x = 3.8
-y = -1.4
+x = 2
+y = 0
 ignorehitpause = 1
 
 [State 0, VelSet]
 type = VelSet
 triggerall=parent,statetype=A
-triggerall=parent,map(select)=2
 triggerall=prevstateno!=1102
 trigger1 = time=0
-x = 3.5
-y = 1.4
+x = 2
+y = .7
 ignorehitpause = 1
 
 
@@ -4257,9 +4144,9 @@ time = -1
 [State 0, ChangeState]
 type = ChangeState
 trigger1 = var(20)>3
-;(var(20)*7)
 trigger2 = numexplod(910311) = 3
-trigger3 = time >= 120
+trigger3 = time >= 120&&root,combocount
+trigger4 = time >= 70&&root,!combocount
 value = 1103
 ctrl = 0
 ignorehitpause=1
@@ -4815,61 +4702,24 @@ ignorehitpause=1
 type = DestroySelf
 trigger1 = root,movetype=H
 ignorehitpause = 1
-[State 0, VelSet]
-type = VelSet
-triggerall=parent,map(select)=0
-triggerall=prevstateno!=1502
-trigger1 = time=0
-x = 2.25
-y = 0
-ignorehitpause = 1
-
-[State 0, VelSet]
-type = VelSet
-triggerall=parent,map(select)=4
-triggerall=prevstateno!=1102
-trigger1 = time=0
-x = .5
-y = 0
-ignorehitpause = 1
-[State 0, PosAdd]
-type = PosAdd
-triggerall=parent,map(select)=4
-triggerall=prevstateno!=1102
-trigger1 = time=0
-x =-40
-ignorehitpause = 1
-
-
-[State 0, VelSet]
-type = VelSet
-triggerall=parent,map(select)=1
-triggerall=prevstateno!=1502
-trigger1 = time=0
-x = 5.5
-y = 0
-ignorehitpause = 1
 
 [State 0, VelSet]
 type = VelSet
 triggerall=parent,statetype!=A
-triggerall=parent,map(select)=2
-triggerall=prevstateno!=1502
+triggerall=prevstateno!=1102
 trigger1 = time=0
-x = 3.8
-y = -1.4
+x = 2
+y = 0
 ignorehitpause = 1
 
 [State 0, VelSet]
 type = VelSet
 triggerall=parent,statetype=A
-triggerall=parent,map(select)=2
-triggerall=prevstateno!=1502
+triggerall=prevstateno!=1102
 trigger1 = time=0
-x = 3.5
-y = 1.4
+x = 2
+y = .7
 ignorehitpause = 1
-
 
 [State 0, VelAdd]
 type = Velmul
@@ -5002,8 +4852,9 @@ time = -1
 
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = time >= 200
+trigger1 = time >= 200&&root,combocount
 trigger2 = map(exwheelhits)>=5
+trigger3 = time >= 100&&root,!combocount
 value = 1503
 ctrl = 0
 ignorehitpause=1

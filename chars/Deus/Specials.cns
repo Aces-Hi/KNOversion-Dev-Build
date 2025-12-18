@@ -1239,6 +1239,7 @@ palfx.add=0,0,0
 palfx.sinadd=256,256,256,-60
 palfx.time=30
 getpower = (100)*(cond(var(var(2)) = 1, 1, 1)) 
+guard.dist=0
 
 [State 0, PlaySnd]
 type = PlaySnd
@@ -1721,6 +1722,7 @@ palfx.add=0,0,0
 palfx.sinadd=256,256,256,-60
 palfx.time=32
 getpower = 0
+guard.dist=0
 
 [State 0, PlaySnd]
 type = PlaySnd
@@ -2115,9 +2117,10 @@ trigger1 = parent,movetype = H
 
 [State 210, 5]
 type = ChangeState
-trigger1 = time>127
+trigger1 = time>127&&root, combocount
 trigger2 = movecontact
 trigger3 = parent,stateno=3001||parent,stateno=3002
+trigger4 = time>77&&root, !combocount
 value = 1411
 ctrl = 1
 ignorehitpause=0
@@ -2569,9 +2572,10 @@ ctrl = 1
 
 [State 210, 5]
 type = ChangeState
-trigger1 = time>335
+trigger1 = time>335&&root, combocount
 trigger2 = map(EXhalohits)>=3
 trigger3 = parent,stateno=3001||parent,stateno=3002
+trigger4 = time>200&&root, !combocount
 value = 1511
 ctrl = 1
 ignorehitpause=0

@@ -1595,7 +1595,9 @@ value = -1
 ignorehitpause = 1
 [State 0, VarSet]
 type = MapAdd
-trigger1 = map(install)>0&&map(install)<900&&roundstate=2
+triggerall = map(install)>0&&map(install)<900&&roundstate=2
+trigger1 = map(install)>1&&combocount>0
+trigger2 = combocount=0
 map = "Install"
 value = -1
 ignorehitpause = 1
@@ -1611,6 +1613,13 @@ ignorehitpause = 1
  trigger1= statetype!=A
 map = "airdash"
 value = 0
+
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Vile"&&enemy,numhelper(6001)
+map = "Vile"
+value = (p2bodydist x)+enemy,helper(6001),RootDist X
+ignorehitpause = 1
 
 ;4R Lv1 SKD Limiter
 [State 0, RemoveExplod]
@@ -2090,9 +2099,10 @@ color = 256
 [State 0, LifeAdd]
 type = LifeAdd
 trigger1 = time=1
-value = map(HEALINGFACTOR)/2
+value = -map(HEALINGFACTOR)/2
 ignorehitpause = 1
 persistent = 1
+kill=1
 
 [State 0, PalFXWiz]
 type = PalFX
@@ -2194,8 +2204,8 @@ channel = 5
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "big=%f small=%f m=%f lead %f enemy %f armor %f,install %f"
-params = map(bigpunch),map(smallpunch),map(mediumpace),map(teamlead),map(enemyteamlead) ,map(armorlimit),map(install)
+text = "big=%f small=%f m=%f lead %f enemy %f armor %f,install %f vile %f"
+params = map(bigpunch),map(smallpunch),map(mediumpace),map(teamlead),map(enemyteamlead) ,map(armorlimit),map(install),map(vile)
 ignorehitpause = 1
 
 [State 0, VarAdd]

@@ -732,8 +732,8 @@ value = 915111 ;HITA_FALL
 
 [State 5030, 6]
 type = ChangeState
-trigger1 = AnimTime = 0
-value = 915035 ;Air get-hit (transition)
+trigger1 = time>3
+value = 915050
 
 ;---------------------------------------------------------------------------
 ;Slide (transition)

@@ -1,4 +1,4 @@
-zzzecQqeqeeeeqeqqqeqcc.zeecqzzccqeze1aaazczzeeeeeeeeeqeeeqeeqqeqqqqqqeeeeeeeeeeeecqeeceqeeeeqeqqeqqqqqeeqqeeeeeqeeqqqqqqqeqeeccqqqqqqzczczqqqzzecqaqcezqqzqsssqezecqeeeeqeeqeeeqccqeeeeqeeccadazcddzqqeqeeqqzzzzeczczzccqqeqqzzzzzsseqqeeqqqqqeeezezqqzqeqqqeeeeee3eqeqqqezzzeqeczzcczezqeqeeeqeeeqeeqjjkkkkkkkkkkkkkk31011,,klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
+eqzzzecQqeqeeeeqeqqqeqcc.zeecqzzccqeze1aaazczzeeeeeeeeeqeeeqeeqqeqqqqqqeeeeeeeeeeeecqeeceqeeeeqeqqeqqqqqeeqqeeeeeqeeqqqqqqqeqeeccqqqqqqzczczqqqzzecqaqcezqqzqsssqezecqeeeeqeeqeeeqccqeeeeqeeccadazcddzqqeqeeqqzzzzeczczzccqqeqqzzzzzsseqqeeqqqqqeeezezqqzqeqqqeeeeee3eqeqqqezzzeqeczzcczezqeqeeeqeeeqeeqjjkkkkkkkkkkkkkk31011,,klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
 ..,......,,,...j,,,./..kl,,----..,,.,,,,,,,,,,,.; KFM's animation data
 ; see docs/air.txt for more information
 
@@ -603,9 +603,9 @@ Clsn2: 2
 200,1, 0,0, 2
 Clsn2: 1
   Clsn2[0] = -28, -109, 32, -1
-200,2, 0,0, 3
-200,3, 0,0, 3
-200,4, 0,0, 2
+200,2, 0,0, 4
+200,3, 0,0, 4
+200,4, 0,0, 3
 
 ; LL
 [Begin Action 201]
@@ -635,12 +635,12 @@ Clsn2: 1
 Clsn2Default: 1
   Clsn2[0] = -31, -102, 34, -32
 Clsn2: 1
-  Clsn2[0] = -34, -107, 9, -54
-202,1, 0,0, 11
+  Clsn2[0] = -34, -107, 14, -27
+202,1, 0,0, 17
 Clsn2Default: 1
   Clsn2[0] = -31, -102, 34, -32
 Clsn2: 1
-  Clsn2[0] = -34, -107, 9, -54
+  Clsn2[0] = -34, -107, 14, -27
 202,1, 0,0, 1
 Clsn1: 1
   Clsn1[0] = 1, -73, 43, -15
@@ -708,12 +708,12 @@ Clsn2: 1
 210,5, 0,11, 3
 Clsn2: 1
   Clsn2[0] = -36, -95, 57, -18
-210,6, 0,11, 4
+210,6, 0,11, 5
 Clsn2: 1
   Clsn2[0] = -36, -95, 45, -18
-210,7, 0,10, 4
-210,8, 0,10, 4
-210,9, 0,3, 4
+210,7, 0,10, 5
+210,8, 0,10, 5
+210,9, 0,3, 5
 
 ; M smear
 [Begin Action 211]
@@ -852,11 +852,11 @@ Clsn2: 1
 420,11, 0,0, 2
 Clsn2: 1
   Clsn2[0] = -36, -63, 68, 1
-420,12, 0,0, 4
+420,12, 0,0, 5
 Clsn2: 1
   Clsn2[0] = -36, -65, 59, 1
-420,13, 0,0, 4
-420,14, 0,0, 4
+420,13, 0,0, 5
+420,14, 0,0, 5
 420,15, 0,0, 4
 420,16, 0,0, 4
 420,17, 0,0, 4
@@ -898,7 +898,7 @@ LoopStart
 [Begin Action 610]
 Clsn2Default: 1
   Clsn2[0] = -34, -111, 34, -21
-610,0, 0,0, 1
+610,0, 0,0, 2
 Clsn2: 1
   Clsn2[0] = -44, -105, 22, -11
 610,1, 0,0, 2
@@ -1003,9 +1003,6 @@ Clsn2: 1
 Clsn1: 1
   Clsn1[0] = -115, -88, -54, -59
 630,12, 22,0, 3
-Clsn1: 1
-  Clsn1[0] = -156, -85, -109, -64
-630,13, 3,0, 3
 
 ; j4H
 [Begin Action 640]
@@ -1016,7 +1013,7 @@ Clsn2Default: 1
 640,2, 0,0, 4
 640,3, 0,0, 3
 Clsn1: 1
-  Clsn1[0] = -103, -84, -50, -29
+  Clsn1[0] = -88, -75, -51, -35
 Clsn2: 1
   Clsn2[0] = -68, -98, 56, -33
 640,4, 0,0, 4
@@ -1104,7 +1101,7 @@ Clsn1: 1
   Clsn1[0] = -43, -100, 51, 0
 Clsn2Default: 1
   Clsn2[0] = -43, -100, 51, 0
-120,1, 0,0, 8
+120,1, 0,0, 10
 120,2, 0,0, 10
 
 ;Air Parry
@@ -1113,7 +1110,7 @@ Clsn1: 1
   Clsn1[0] = -43, -100, 51, 0
 Clsn2Default: 1
   Clsn2[0] = -43, -100, 51, 0
-122,1, 0,0, 8
+122,1, 0,0, 10
 122,2, 0,0, 6
 LoopStart
 122,3, 0,0, 6

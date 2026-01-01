@@ -59,7 +59,7 @@ type = HitDef
 p2facing = 1 
 trigger1 = time = 0
 hitonce = 1
-attr = S, SA
+attr = S, HA
 damage = ceil(cond(fvar(11) *77< 10, 10, fvar(11) * 77)), 10
 hitflag = MAFD
 guardflag = MA
@@ -116,13 +116,6 @@ anim =3001
 sprpriority = 8
 velset=0
 poweradd=-2000
-
-[State 0, NotHitBy]
-type = NotHitBy
-trigger1 = animelemtime(7)<0
-value = SCA
-time = 1
-ignorehitpause = 1
 
 [State 0, VelAdd]
 type = VelSet
@@ -351,7 +344,7 @@ type = HitDef
 p2facing = 1 
 kill=0
 trigger1 = animelem = 2 || animelem = 5 || animelem = 10 || animelem = 14 || animelem = 19 || animelem = 23 || animelem = 25 || animelem = 28 || animelem = 32 || animelem = 35    
-attr = S, SA
+attr = S, HA
 damage = ceil(cond(fvar(11) *5 < 3, 3, fvar(11) * 5)), 2
 hitflag = MAFD
 guardflag = MA
@@ -833,6 +826,13 @@ anim = 1206
 poweradd = -2000
 sprpriority = 2
 
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = animelemtime(7)<0
+value = SCA
+time = 1
+ignorehitpause = 1
+
 [State 200, VOICE]
 type = PlaySnd
 trigger1 = time = 0
@@ -1095,8 +1095,8 @@ ground.type = high
 animtype = hard
 ground.slidetime = 999
 ground.hittime  = 999
-ground.velocity = -2,-9
-air.velocity = -2,-9
+ground.velocity = -2,-7
+air.velocity = -2,-7
 air.hittime = 999
 envshake.time = 30
 fall = 1

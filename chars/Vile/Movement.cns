@@ -520,9 +520,9 @@ trigger1 = time > 6
 y = 0.6
 
 [State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 6
-x = 0
+type = Velmul
+trigger1 = animelemtime(6)>=0
+x = .96
 
 
 ;[State 0, StateTypeSet]
@@ -614,7 +614,7 @@ value = -1
 [State 0, VelSet]
 type = VelSet
 trigger1 = time=0
-x = 4
+x = 6
 y = 0
 
 [State 0, VelAdd]

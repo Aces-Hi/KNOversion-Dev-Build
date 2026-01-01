@@ -1090,6 +1090,21 @@ ID = 2045
 removetime = -1
 ignorehitpause = 1
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = combocount=0
+map =  "slashdunk"
+value = 0
+ignorehitpause = 1
+persistent = 1
+[State 0, VarAdd]
+type = mapset
+trigger1 = combocount=0
+map =  "kickbang"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State 45, Limiter Removal]
 type = RemoveExplod
 trigger1 = Statetype != A
@@ -1426,6 +1441,7 @@ type = VarAdd
 trigger1 = var(30) >0
 v = 30     ;fv = 
 value = -1
+ignorehitpause=1
 
 [State 0, RemapPal]
 type = RemapPal
@@ -1778,8 +1794,8 @@ value = 0
 [State 0, Distance Display]
 type = DisplaytoClipboard
 trigger1 = 1
-text = "25 = %f var 30 = %d, P2DistY = %d, P2BodyDistX = %d, slam = %f "
-params =fvar(25), var(30), P2Dist Y, P2BodyDist X, map(SLAM_UseCount)
+text = "25 = %f var 30 = %d, swordx = %f, swordy = %f "
+params =fvar(25), var(30), map(sworddistx), map(sworddisty)
 
 [State 0, VarAdd]
 type = VarAdd

@@ -299,6 +299,23 @@ anim 		=1110
 sprpriority 	= 2
 facep2 		= 1
 velset 		= 7 , 0
+
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 2
+ignorehitpause = 1
+persistent = 0
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State 0, NotHitBy]
 type = NotHitBy
 triggerall=enemynear,stateno!=900

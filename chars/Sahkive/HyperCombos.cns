@@ -5382,7 +5382,7 @@ trigger2=enemynear,palno!=12
 trigger3=enemynear,name="angous"
 trigger3=enemynear,palno=12
 trigger3=enemynear,var(28)=0
-bgm="sound\tst.wav"
+bgm="sound\tst.mp3"
 ignorehitpause = 1
 persistent=0
 

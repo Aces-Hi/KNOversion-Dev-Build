@@ -526,6 +526,12 @@ physics = N
 anim = 161
 ctrl = 1
 
+[State 0, VelSet]
+type = MapSet
+trigger1 = time = 0&&map(FJV)
+map = "fdash"
+value=0
+
 [State 0, AssertSpecial]
 type = AssertSpecial
 trigger1 = 1
@@ -551,7 +557,7 @@ value = -1
 [State 0, VelSet]
 type = VelSet
 trigger1 = time = 0
-x = 4
+x = 6
 y = 0
 
 
@@ -1366,7 +1372,7 @@ type = VelSet
 trigger1 = time >= 0
 triggerall = prevstateno != 2000
 triggerall = anim != 99
-x = 6.75
+x = 8
 
 [State 0, Explod]
 type = Explod

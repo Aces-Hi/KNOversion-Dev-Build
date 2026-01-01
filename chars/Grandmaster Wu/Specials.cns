@@ -20,6 +20,15 @@ ctrl = 0                         ;Set ctrl (Def: no change)
 anim = 1001                       ;Change animation (Def: no change)                  
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
 facep2 = 1
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State Wu Voices]
 type = PlaySnd
 trigger1 = time=0
@@ -204,6 +213,14 @@ ctrl = 0                         ;Set ctrl (Def: no change)
 anim = 1002                       ;Change animation (Def: no change)
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
 facep2 = 1
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
 
 [State 0, VarAdd]
 type = VarSet
@@ -454,10 +471,10 @@ guardsound = 6, 0                ;Sound to play on guard
 ground.type = low            ;Type: High, Low, Trip (def: Normal)
 ground.slidetime = 5             ;Time that the opponent slides back
 ground.hittime  = 55             ;Time opponent is in hit state
-ground.velocity = -12,-2.8             ;Velocity at which opponent is pushed
+ground.velocity = -12,-1.8             ;Velocity at which opponent is pushed
 airguard.velocity = -6.9,-.8     ;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
 air.type = High                  ;Type: High, Low, Trip (def: same as ground.type)
-air.velocity = -12,-2.8           ;X-velocity at which opponent is pushed,
+air.velocity = -12,-1.8           ;X-velocity at which opponent is pushed,
 ;Y-velocity at which opponent is pushed
 air.hittime = 15                 ;Time before opponent regains control in air
 envshake.time = 14
@@ -1019,6 +1036,14 @@ anim = 1002                       ;Change animation (Def: no change)
 poweradd = -1000
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
 facep2 = 1
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
 
 [State EX Limiters]
 type = mapset
@@ -4247,13 +4272,15 @@ ownpal = 1
 [State 13, ChangeState]
 type = changestate
 triggerall = fvar(19)>=100
-trigger1 = time = 20
+trigger1 = time >= 20
+trigger2 = time = 5&&combocount
 value = 2013
 
 [State 13, ChangeState]
 type = changestate
 triggerall = fvar(19)<100
-trigger1 = time = 20
+trigger1 = time >= 20
+trigger2 = time = 5&&combocount
 value = 2012
 ;-----------------------------
 ;2EX: Coom Kick
@@ -4487,7 +4514,7 @@ guardflag = MA                   ;Flags on how move is to be guarded against
 hitflag = MAF                    ;Flags of conditions that move can hit
 ;priority = 3, Hit                ;Attack priority: 0 (least) to 7 (most), 4 default
 ;Hit/Miss/Dodge type (Def: Hit)
-pausetime = 1, 1                ;Time attacker pauses, time opponent shakes
+pausetime = 12, 12                ;Time attacker pauses, time opponent shakes
 sparkno =3                      ;Spark anim no (Def: set above)
 sparkxy = -14,-60                ;X-offset for the "hit spark" rel. to p2,
 ;Y-offset for the spark rel. to p1
@@ -4562,6 +4589,14 @@ velset = 0,0                     ;Set velocity (x,y) (Def: no change)
 ctrl = 0                         ;Set ctrl (Def: no change)
 anim = 101555                       ;Change animation (Def: no change)                   
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
 
 [State 0, VarAdd]
 type = VarSet
@@ -4678,7 +4713,7 @@ guardflag = MA                   ;Flags on how move is to be guarded against
 hitflag = MAF                    ;Flags of conditions that move can hit
 ;priority = 3, Hit                ;Attack priority: 0 (least) to 7 (most), 4 default
 ;Hit/Miss/Dodge type (Def: Hit)
-pausetime = 1, 1                ;Time attacker pauses, time opponent shakes
+pausetime = 12, 12                ;Time attacker pauses, time opponent shakes
 sparkno =13                      ;Spark anim no (Def: set above)
 sparkxy = -14,-60                ;X-offset for the "hit spark" rel. to p2,
 ;Y-offset for the spark rel. to p1

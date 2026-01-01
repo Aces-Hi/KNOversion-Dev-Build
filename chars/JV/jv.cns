@@ -54,9 +54,9 @@ run.fwd  = 3.5, 0    ;Run forward (x, y)
 run.back = -2.5,-3.8 ;Hop backward (x, y)
 jump.neu = 0,-8    ;Neutral jumping velocity (x, y)
 jump.back = -2.55    ;Jump back Speed (x, y)
-jump.fwd = 2.33       ;Jump forward Speed (x, y)
+jump.fwd = 3      ;Jump forward Speed (x, y)
 runjump.back = -2 ;Running jump speeds (opt)
-runjump.fwd = 3      ;.
+runjump.fwd = 4     ;.
 airjump.neu = 0,-6.5      ;.
 airjump.back = -2.55      ;Air jump speeds (opt)
 airjump.fwd = 3.2         ;.
@@ -696,7 +696,8 @@ ignorehitpause=1
 
 [State 0, Enhancer Set]
 type = VarAdd
-trigger1 = stateno = 230 &&time=1&&var(30)
+trigger1 = stateno = 230||stateno = 1009
+trigger1 = time=1&&var(30)
 v = 30
 value = 10
 persistent=1
@@ -1268,6 +1269,14 @@ persistent =1
 
 [State 0, VarSet]
 type = MapAdd
+trigger1=map(fdash)<12
+map="fdash"
+value = 1
+ignorehitpause = 1
+persistent = 1
+
+[State 0, VarSet]
+type = MapAdd
 trigger1=1
 trigger1=map(no_rmals)>0
 map="no_rmals"    ;fv = 10
@@ -1300,6 +1309,28 @@ persistent = 1
 type = MapSet
 trigger1=combocount=0
 map="fpalm"
+value =0
+ignorehitpause = 1
+persistent = 1
+
+[State 0, VarSet]
+type = MapSet
+trigger1=combocount=0
+map="wallbang"
+value =0
+ignorehitpause = 1
+persistent = 1
+[State 0, VarSet]
+type = MapSet
+trigger1=stateno=1030||prevstateno=1030
+map="wallbangcheck"
+value =1
+ignorehitpause = 1
+persistent = 1
+[State 0, VarSet]
+type = MapSet
+trigger1=stateno!=1030&&prevstateno!=1030
+map="wallbangcheck"
 value =0
 ignorehitpause = 1
 persistent = 1

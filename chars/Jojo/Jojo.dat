@@ -25,11 +25,11 @@ _D	_D		_D
 
 	<#790909>SPECIAL MOVES</>
 RISING FIST	-		^Y
-   <#bbbbbb>Anti-air.</>
+   <#bbbbbb>Anti-air/anti-projectile.</>
 EVIL-ASS FIST	-		_F_D_-_DF+^Y
    <#bbbbbb>_DF and ^Y must be performed at the same time.
    This move does more damage when used consecutively.
-   Anti-air.</>
+   Anti-air/anti-projectile.</>
 FLURRY	-		_F^Y
 DOME CHECK	-		(CAN BE HELD) _B^Y
 _!SAVE IT FOR LATER	-		_F_F/_B_B
@@ -123,7 +123,7 @@ _D	_D		_D
 OVERHEAD	-		_F^B
    <#bbbbbb>Puts you in the air and hits overhead.</>
 ANTI-AIR	-		_D^C
-   <#bbbbbb>This move has invulnerability to airborne enemies.</>
+   <#bbbbbb>This move has invulnerability to projectiles and airborne enemies.</>
 GRAB	-		ANY 2 NORMALS </>
    <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.
    Enemies can break this by pressing ^A/^B/^C.</>

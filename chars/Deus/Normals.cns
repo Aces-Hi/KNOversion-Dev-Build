@@ -12,6 +12,13 @@ anim = 200                       ;Change animation (Def: no change)
 poweradd = 0                   ;Power to add (Def: 0)
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
 
 [State Voice From Above]
 type = PlaySnd
@@ -152,6 +159,14 @@ anim = 201                       ;Change animation (Def: no change)
 poweradd = 0                   ;Power to add (Def: 0)
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State Voice From Above]
 type = PlaySnd
 triggerall=map(december)=0
@@ -185,7 +200,7 @@ type = VarAdd
 trigger1 = combocount<=1
 trigger1 = movehit=1
 fv = 25  
-value = 0
+value = 1
 ignorehitpause = 1
 persistent = 0
 [State Stun Scaling]
@@ -202,7 +217,7 @@ type = VarAdd
 trigger1 = movehit=1
 trigger1 = combocount<=1
 fv =13     ;fv = 
-value = 0
+value = 1
 persistent = 0
 ignorehitpause = 1
 [State Damage Scaling]
@@ -287,6 +302,14 @@ ctrl = 0                         ;Set ctrl (Def: no change)
 poweradd = 0                   ;Power to add (Def: 0)
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State Voice From Above]
 type = PlaySnd
 triggerall=map(december)=0
@@ -314,7 +337,7 @@ type = VarAdd
 trigger1 = combocount<=1
 trigger1 = movehit=1
 fv = 25  
-value = -1
+value = 1
 ignorehitpause = 1
 persistent = 0
 [State Stun Scaling]
@@ -322,7 +345,7 @@ type = VarAdd
 trigger1 = combocount>1
 trigger1 = movehit=1
 fv = 25  
-value = 3
+value = 10
 ignorehitpause = 1
 persistent = 0
 
@@ -331,7 +354,7 @@ type = VarAdd
 trigger1 = movehit=1
 trigger1 = combocount<=1
 fv =13     ;fv = 
-value = -1
+value = 1
 persistent = 0
 ignorehitpause = 1
 [State Damage Scaling]
@@ -988,9 +1011,9 @@ envshake.time = 12
 envshake.freq = 90
 envshake.ampl = 3
 envshake.phase = 1
-guard.hittime = 22+(map(smashattack)/1.5)
-guard.slidetime = 22+(map(smashattack)/1.5)
-guard.ctrltime = 22+(map(smashattack)/1.5)
+guard.hittime = 20+(map(smashattack)/1.5)
+guard.slidetime = 20+(map(smashattack)/1.5)
+guard.ctrltime = 20+(map(smashattack)/1.5)
 guard.velocity = -6
 forcenofall = 1
 getpower = (80)*(cond(var(var(2)) = 1, 1, 1)) 
@@ -1020,9 +1043,9 @@ envshake.time = 12
 envshake.freq = 90
 envshake.ampl = 3
 envshake.phase = 1
-guard.hittime = 22+(map(smashattack)/1.5)
-guard.slidetime = 22+(map(smashattack)/1.5)
-guard.ctrltime = 22+(map(smashattack)/1.5)
+guard.hittime = 20+(map(smashattack)/1.5)
+guard.slidetime = 20+(map(smashattack)/1.5)
+guard.ctrltime = 20+(map(smashattack)/1.5)
 guard.velocity = -6
 forcenofall = 1
 palfx.color=256
@@ -1068,6 +1091,14 @@ juggle  = 0
 ctrl = 0
 anim = 400
 sprpriority = 2
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
 
 [State Voice From Above]
 type = PlaySnd
@@ -1672,8 +1703,8 @@ air.cornerpush.veloff = 0
 guard.hittime = 20+(map(smashattack)/2)
 guard.velocity = -7
 guard.dist = 20
-guard.slidetime =20+(map(smashattack)/2)
-guard.ctrltime = 20+(map(smashattack)/2)
+guard.slidetime =16+(map(smashattack)/2)
+guard.ctrltime = 16+(map(smashattack)/2)
 guard.cornerpush.veloff = -18
 envshake.time = 14
 envshake.freq = 90
@@ -1711,8 +1742,8 @@ air.cornerpush.veloff = 0
 guard.hittime = 20+(map(smashattack)/2)
 guard.velocity = -7
 guard.dist = 20
-guard.slidetime =20+(map(smashattack)/2)
-guard.ctrltime = 20+(map(smashattack)/2)
+guard.slidetime =16+(map(smashattack)/2)
+guard.ctrltime = 16+(map(smashattack)/2)
 guard.cornerpush.veloff = -18
 envshake.time = 14
 envshake.freq = 90
@@ -1774,6 +1805,14 @@ ctrl = 0
 anim = 600
 sprpriority = 2
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State Voice From Above]
 type = PlaySnd
 triggerall=map(december)=0
@@ -1809,7 +1848,7 @@ type = VarAdd
 trigger1 = combocount<=1
 trigger1 = movehit=1
 fv = 25  
-value = 0
+value = 1
 ignorehitpause = 1
 persistent = 0
 [State Stun Scaling]
@@ -1817,7 +1856,7 @@ type = VarAdd
 trigger1 = combocount>1
 trigger1 = movehit=1
 fv = 25  
-value = 1
+value = 2
 ignorehitpause = 1
 persistent = 0
 
@@ -1834,7 +1873,7 @@ type = VarAdd
 trigger1 = movehit=1
 trigger1 = combocount>1
 fv =13     ;fv = 
-value = 1
+value = 2
 persistent = 0
 ;==================================
 
@@ -1855,7 +1894,7 @@ ground.type = high
 animtype = light
 air.animtype = back
 ground.slidetime = 5
-ground.hittime  = ceil(cond(fvar(15) *17 < 1, 1, fvar(15) *17))
+ground.hittime  = ceil(cond(fvar(15) *12 < 1, 1, fvar(15) *12))
 air.hittime  = ceil(cond(fvar(15) *28 < 12, 12, fvar(15) * 28))
 down.hittime = ceil(cond(fvar(15) *28 < 12, 12, fvar(15) * 28)) 
 ground.velocity = -4
@@ -2023,9 +2062,9 @@ air.animtype = up
 ground.type = high
 ground.slidetime = 12
 forcenofall = 1
-ground.hittime  = ceil(cond(fvar(15) *42 < 10, 10, fvar(15) * 42))
-air.hittime  = ceil(cond(fvar(15) *42 < 10, 10, fvar(15) * 42))
-down.hittime = ceil(cond(fvar(15) *42 < 10, 10, fvar(15) * 42))
+ground.hittime  = ceil(cond(fvar(15) *24 < 10, 10, fvar(15) * 24))
+air.hittime  = ceil(cond(fvar(15) *24 < 10, 10, fvar(15) * 24))
+down.hittime = ceil(cond(fvar(15) *24 < 10, 10, fvar(15) * 24))
 ground.velocity = -1,-6
 air.velocity = -1,-5
 guard.ctrltime = 6
@@ -2362,7 +2401,7 @@ persistent = 0
 ignorehitpause = 1
 [State Starter Damage Scaling]
 type = MapSet
-trigger1 = movehit
+trigger1 = movecontact
 map = "bmhit"
 value = 1
 persistent = 1
@@ -2393,8 +2432,8 @@ pausemovetime = 0
 [State 0, VelAdd]
 type = VelAdd
 trigger1 = animelem = 5
-trigger1 = vel x < 5
-x = 5 - vel x
+trigger1 = vel x < 3
+x = 3 - vel x
 ignorehitpause = 0
 persistent=0
 
@@ -2695,9 +2734,8 @@ ground.velocity = 3,0
 air.velocity = 3,0
 down.velocity = 3,0
 forcenofall = 1
-guard.ctrltime = 8
-guard.hittime = 8
-guard.pausetime= 14,14
+guard.ctrltime = 2
+guard.hittime = 2
 guard.velocity = 6
 airguard.velocity= 4,-3
 getpower = (60)*(cond(var(var(2)) = 1, 1, 1)) 
@@ -2736,9 +2774,8 @@ ground.velocity = 16,-4
 air.velocity = 16,-4
 down.velocity =16,-4
 forcenofall = 1
-guard.ctrltime = 8
-guard.hittime = 8
-guard.pausetime= 14,14
+guard.ctrltime = 6
+guard.hittime = 6
 guard.dist = 20
 guard.slidetime = 16
 envshake.time = 12
@@ -2780,9 +2817,8 @@ ground.velocity = 6,-3
 air.velocity = 6,-6+(map(bair)*2)
 down.velocity =6,-3
 forcenofall = 1
-guard.ctrltime = 8
-guard.hittime = 8
-guard.pausetime= 12,14
+guard.ctrltime = 6
+guard.hittime = 6
 guard.dist = 20
 guard.slidetime = 16
 envshake.time = 12

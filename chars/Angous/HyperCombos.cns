@@ -1842,7 +1842,7 @@ trigger1 = root,stateno!=3016
 ;persistent = 
 
 
-;Super 2: Explosive Rage (Install)
+;Install
 ;-----------------------------
 [Statedef 3010]
 type    = S
@@ -2061,51 +2061,10 @@ ontop=1
 [State 200, 1]
 type = hitdef 
 p2facing = 1
-triggerall=enemynear,movetype!=H
-trigger1 = time = 0
+trigger1 = !movecontact
 attr = S, HA
 animtype  = hard
-damage = ceil(cond(fvar(11) *0< 0, 0, fvar(11) * 0)), 0
-hitflag = MAFD
-guardflag = MA
-pausetime = 5,5
-sparkno = 3
-sparkxy = enemynear, pos x, enemynear, pos y+-40 ;Bruh
-hitsound   = 5,3
-guardsound = 6,2
-ground.type = high
-ground.slidetime = 14
-ground.hittime  = 999
-air.hittime = 999
-down.hittime = 999
-ground.velocity = -12,-4
-down.velocity = -12,-4
-air.velocity = -12,-4
-air.cornerpush.veloff = -10
-envshake.time = 12
-envshake.freq = 10
-envshake.ampl = 3
-envshake.phase = 1
-palfx.time = 12
-palfx.add = 100, 0,20
-guard.hittime = 55
-guard.slidetime = 16
-guard.ctrltime = 55
-guard.velocity = -3.5
-airguard.velocity = -7,-3.5
-air.fall = 0
-forcenofall = 1
-getpower = 0
-id = 910311
-p2stateno = 915020
-[State 200, 1]
-type = hitdef 
-p2facing = 1
-triggerall=enemynear,movetype=H
-trigger1 = time = 0
-attr = S, HA
-animtype  = hard
-damage = ceil(cond(fvar(11) *0< 0, 0, fvar(11) * 0)), 0
+damage = 0
 hitflag = MAFD
 guardflag = M
 pausetime = 5,5
@@ -2118,9 +2077,9 @@ ground.slidetime = 14
 ground.hittime  = 999
 air.hittime = 999
 down.hittime = 999
-ground.velocity = -2,-15
-down.velocity = -2,-15
-air.velocity = -2,-15
+ground.velocity =  -10,-5
+down.velocity =  -10,-5
+air.velocity = -10,0
 down.bounce=1
 fall.yvelocity=-6
 air.cornerpush.veloff = -10
@@ -2137,8 +2096,8 @@ guard.velocity = -3.5
 air.fall = 1
 fall=1
 getpower = 0
-id = 3000
-p2stateno=30000
+id = 910311
+p2stateno = 915020
 
  [State 1200, Shake Screen]
 type = EnvShake

@@ -89,6 +89,13 @@ type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
 value = 1
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 1
+ignorehitpause = 1
+persistent = 0
 
 [State 200, 2]
 type = PlaySnd
@@ -346,6 +353,13 @@ type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
 value = 1
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 1
+ignorehitpause = 1
+persistent = 0
 
 ;COUNTER ZOOM ================================================
 [State 0]
@@ -1349,6 +1363,14 @@ sprpriority = 2
 facep2 = p2statetype = S 
 
 [State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 1
+ignorehitpause = 1
+persistent = 0
+
+[State 200, VarAdd]
 type = MapAdd
 trigger1 = animelem=5
 map = "slaunch"  
@@ -1525,6 +1547,14 @@ ctrl = 0
 anim =1012
 sprpriority = 2
 facep2 = p2statetype = S
+
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 1
+ignorehitpause = 1
+persistent = 0
 
 [State 0, Width]
 type = Width
@@ -1968,6 +1998,14 @@ ctrl = 0
 anim =1210
 velset = vel x,0
 sprpriority = 2
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
 
 [State 0, NotHitBy]
 type = NotHitBy
@@ -2451,6 +2489,14 @@ velset = vel x,0
 sprpriority = 2
 
 [State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+[State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit
 fv =13     ;fv = 
@@ -2736,6 +2782,14 @@ anim =1050
 sprpriority = 2
 
 [State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+[State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
@@ -2854,6 +2908,14 @@ ctrl = 0
 anim =1051
 sprpriority = 2
 velset = 2,-6
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
 
 [State 0, VarAdd]
 type = mapset
@@ -3427,6 +3489,14 @@ ctrl = 0
 anim =1050
 sprpriority = 2
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State 0, TargetBind]
 type = TargetBind
 trigger1 = movehit
@@ -3647,6 +3717,14 @@ ctrl = 0
 anim =10511
 sprpriority = 2
 velset = 2,-7
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
 
 [State 0,????]
 type = mapset

@@ -1183,6 +1183,7 @@ ignorehitpause = 1
 type = mapSet
 trigger1 = combocount=0
 trigger2 = moveguarded
+trigger3=enemynear,stateno=5120
 map = "wave"   
 value = 0
 ignorehitpause = 1
@@ -2229,6 +2230,18 @@ value = 0
 type = MapSet
 trigger1 = combocount=0
 map="hdc"  
+value = 0
+[State 0, VarAdd]
+type = mapset
+trigger1= combocount=0
+map =  "sweeplaunch"
+value = 0
+
+[State 0, VarSet]
+type = MapSet
+trigger1 = combocount=0&&stateno!=650
+trigger2 = statetype!=A
+map="jrlift" 
 value = 0
 
 [State 0, VarSet]

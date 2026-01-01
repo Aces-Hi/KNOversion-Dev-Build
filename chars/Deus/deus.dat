@@ -36,7 +36,7 @@ HALO	-		<#aaffff>(GROUND OR AIR)</> _F^Y
    <#bbbbbb>You can hold _B during startup to reduce the range of
    the projectile, and to also make it drift backwards.</>
 SHINE THROUGH	-		(CAN BE HELD) _D^Y
-   <#bbbbbb>The slide is projectile immune. The uppercut is an anti-air.
+   <#bbbbbb>The slide is projectile immune. The uppercut is anti-air/anti-projectile.
    Becomes more powerful when fully held.</>
 LIGHT FROM ABOVE	-		<#65b5ff>(AIR ONLY)</> _D^Y
 
@@ -123,7 +123,7 @@ _D	_D		_D
 OVERHEAD	-		(NOT AVAILABLE) </>
    <#bbbbbb>I actually don't do this one. Oops!</>
 ANTI-AIR	-		_D^C
-   <#bbbbbb>This move has invulnerability to airborne attacks.</>
+   <#bbbbbb>This move has invulnerability to projectiles and airborne attacks.</>
 GRAB	-		ANY 2 NORMALS </>
    <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.
    People can break this by pressing ^A/^B/^C.</>

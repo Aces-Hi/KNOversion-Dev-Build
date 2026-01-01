@@ -495,7 +495,7 @@ vfacing = 1
 bindtime = 1
 removetime = -2
 pausemovetime = 0
-ignorehitpause = 0
+ignorehitpause = 1
 scale = .76,.76
 sprpriority = -1
 removeongethit = 0
@@ -2194,10 +2194,16 @@ keyCtrl = 0
 ignoreHitPause = 1
 
 [State -2, map]
- type=mapset
+ type=mapadd
  trigger1= animelem=7
 map = "install"
 value = 900
+[State 0, VarSet]
+type = MapSet
+ trigger1= animelem=7
+map = "InstallFreeze"
+value = 1
+ignorehitpause = 1
 
 [State 0, ChangeState]
 type = ChangeState

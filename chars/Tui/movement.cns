@@ -476,7 +476,7 @@ value =1
 type    = A
 movetype= I
 physics = N
-velset = 5,0
+velset = 7,0
 anim = 161
 ctrl = 1
 
@@ -511,7 +511,7 @@ value = -1
 
 [State 0, StateTypeSet]
 type = StateTypeSet
-trigger1 = animelem = 3
+trigger1 = animelem = 2
 statetype = A       ;S,A,C,L
 movetype = I        ;I,A,H
 physics = A         ;A,C,S,N
@@ -1065,7 +1065,7 @@ value = 1
 [State 0, VelSet]
 type = VelSet
 trigger1 = time >= 0
-x = 5.5
+x = 7
 
 [State 0, Explod]
 type = Explod

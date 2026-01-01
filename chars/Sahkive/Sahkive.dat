@@ -34,14 +34,14 @@ _!<#bbbbbb>RELEASE</>	-		^Y
 DDT!	-		_F^Y
    <#D62187>Doing this during a forward dash turns it into a command grab.</>
 WHY ARE YOU JUMPING!?	-		_B^Y
-   <#bbbbbb>An anti-air command grab with follow-up attacks. Can be used in combos.</>
+   <#bbbbbb>An anti-air/anti-projectile command grab with follow-up attacks.
+   Can be used in combos.</>
 _!<#bbbbbb>PIÑATA</>	-		^A
         <#bbbbbb>Doing this move makes the other followups more difficult to combo from.</>
 _!<#bbbbbb>GET OUTTA HERE</>	-		^B
 _!<#bbbbbb>I WILL LITERALLY SLIDE YOU</>	-		^C
 _!<#bbbbbb>RELEASE</>	-		^Y
 EARTH MOVER	-		_D^Y 
-
 
 
 
@@ -77,7 +77,7 @@ _EX GUARDIAN'S EMBRACE	-		<#55ffff>(1 BAR)</> ^Y
 _EX DDT!	-		<#55ffff>(1 BAR)</> _F^Y
    <#D62187>Doing this during a forward dash turns it into a command grab.</>
 _EX GUARDIAN'S DOMAIN	-		<#55ffff>(1 BAR)</> _B^Y
-   <#bbbbbb>An anti-air command grab. Can be used in combos.</>
+   <#bbbbbb>An anti-air/anti-projectile command grab. Can be used in combos.</>
 _EX EARTH MOVER	-		<#55ffff>(1 BAR)</> _D^Y
 
 
@@ -123,7 +123,7 @@ _D	_D		_D
 OVERHEAD	-		_F^B
    <#bbbbbb>Puts you in the air and hits overhead.</>
 ANTI-AIR	-		_D^C
-   <#bbbbbb>This move has invulnerability to airborne enemies.</>
+   <#bbbbbb>This move has invulnerability to projectiles and airborne enemies.</>
 GRAB	-		ANY 2 NORMALS </>
    <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.
    Enemies can break this by pressing ^A/^B/^C.</>

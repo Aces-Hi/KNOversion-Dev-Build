@@ -74,7 +74,7 @@ _D	_D		_D
 	<#ffef0f>EX MOVES</>
 _EX RAZOR	-		<#aaffff>(GROUND OR AIR)<#55ffff>(1 BAR)</> ^Y+^Z
 _EX RISING	-		<#aaffff>(GROUND OR AIR)<#55ffff>(1 BAR)</> ^Y+^Z
-   <#bbbbbb>Anti-air reversal move. Can be airdash canceled on hit.
+   <#bbbbbb>Anti-air/anti-projectile reversal move. Can be airdash canceled on hit.
    The air version has no invincibility.</>
 _!_EX KNEE	-		<#65b5ff>(AIR ONLY)</> _F^Y+^Z
 _EX LOOPHOLD	-		<#55ffff>(1 BAR)</> _B^Y+^Z
@@ -123,7 +123,7 @@ _D	_D		_D
 OVERHEAD	-		_F^B
    <#bbbbbb>Puts you in the air and hits overhead.</>
 ANTI-AIR	-		_D^C
-   <#bbbbbb>This move has invulnerability to airborne enemies.</>
+   <#bbbbbb>This move has invulnerability to projectiles and airborne enemies.</>
 GRAB	-		ANY 2 NORMALS </>
    <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.
    Enemies can break this by pressing ^A/^B/^C.</>

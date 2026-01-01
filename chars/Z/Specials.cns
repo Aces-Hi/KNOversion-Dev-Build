@@ -1299,6 +1299,15 @@ volumescale=200
 
 [State 200, VarAdd]
 type = VarAdd
+trigger1 = map(dunk)<=1
+trigger1 = movehit
+fv = 25  
+value = 1
+ignorehitpause =1
+persistent = 0
+
+[State 200, VarAdd]
+type = VarAdd
 trigger1 = map(dunk)>1
 trigger1 = movehit
 fv = 25  
@@ -1708,6 +1717,14 @@ ctrl = 0
 anim = 1201                       
 poweradd = 0                   
 sprpriority = 0  
+
+[State 200, VarAdd]
+type = VarAdd
+trigger1 =time=0
+fv = 25  
+value = .7
+ignorehitpause =1
+persistent = 0
 
 [State 0, Explod]
 type = Explod
@@ -2467,6 +2484,14 @@ ctrl = 0
 velset = vel x,0
 anim = 1403
 sprpriority = -1
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
 
 [State 0, VarAdd]
 type = mapset
@@ -4873,20 +4898,20 @@ id = 6900
 [State 0, VelAdd]
 type = VelAdd
 trigger1 = command = "holdfwd"&& time<30 && vel X< 4
-x = .50
+x = .70
 [State 0, VelAdd]
 type = VelAdd
 trigger1 = command = "holdfwd" && vel X< 0
-x = .50
+x = .70
 
 [State 0, VelAdd]
 type = VelAdd
 trigger1 = command = "holdback" && time<30 && vel X> -4
-x = -.50
+x = -.70
 [State 0, VelAdd]
 type = VelAdd
 trigger1 = command = "holdback" && vel X> 0
-x = -.50
+x = -.70
  
 ;----------------------------------------------------------------------------------
 ;5R shockwave
@@ -6926,6 +6951,14 @@ ctrl = 0
 velset = vel x,0
 anim = 1406
 sprpriority = -1
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
 
 [State EX Limiters]
 type = mapset

@@ -2273,7 +2273,7 @@ type = HitDef
 p2facing = 1
 trigger1 = !movecontact && combocount=0
 attr 		= S, SA
-damage = ceil(cond(fvar(11) *80 < 10, 10, fvar(11) * 80)), 10
+damage = ceil(cond(fvar(11) *100 < 20, 20, fvar(11) * 100)), 10
 animtype 	= light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
 air.animtype 	= heavy
 guardflag 	= MA
@@ -2317,7 +2317,7 @@ type = HitDef
 p2facing = 1
 trigger1 = !movecontact && combocount>0
 attr 		= S, SA
-damage = ceil(cond(fvar(11) *80 < 10, 10, fvar(11) * 80)), 10
+damage = ceil(cond(fvar(11) *100 < 20, 20, fvar(11) * 100)), 10
 animtype 		= light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
 air.animtype 	= heavy
 guardflag 	= MA
@@ -2475,6 +2475,14 @@ anim =1211
 sprpriority = 2
 velset = vel x+1, vel y-.75
 
+[State 0, VarSet]
+type = MapAdd
+trigger1=movehit
+map="wallbang"
+value =1
+ignorehitpause = 1
+persistent = 0
+
 [State 0, Explod]
 type = Explod
 trigger1 = animelem=4
@@ -2533,7 +2541,7 @@ triggerall=enemynear,map(armor)=0
 trigger1 = !movecontact && p2bodydist x >= 70
 hitonce = 1
 attr = S, SA
-damage = ceil(cond(fvar(11) *80 < 10, 10, fvar(11) * 80)), 15
+damage = ceil(cond(fvar(11) *80 < 20,20, fvar(11) * 80)), 15
 hitflag = MAFD
 guardflag = MAF
 ;priority = 3
@@ -2567,7 +2575,7 @@ triggerall=enemynear,map(armor)=0
 trigger1 = !movecontact && p2bodydist x < 70
 hitonce = 1
 attr = S, SA
-damage = ceil(cond(fvar(11) *80 < 10, 10, fvar(11) * 80)), 15
+damage = ceil(cond(fvar(11) *80 < 20,20, fvar(11) * 80)), 15
 hitflag = MAFD
 guardflag = MAF
 ;priority = 3
@@ -2601,7 +2609,7 @@ triggerall=enemynear,map(armor)>0
 trigger1 = !movecontact
 hitonce = 1
 attr = S, SA
-damage = ceil(cond(fvar(11) *80 < 10, 10, fvar(11) * 80)), 15
+damage = ceil(cond(fvar(11) *80 < 20,20, fvar(11) * 80)), 15
 hitflag = MAFD
 guardflag = MAF
 ;priority = 3
@@ -2644,7 +2652,7 @@ ctrl = 1
 
 
 ;==================================================================
-;6S - Veorfolnir
+;6S - Vedrfolnir
 [Statedef 1100]
 type    	= S
 movetype	= A
@@ -2708,7 +2716,7 @@ triggerall 	= !movecontact && !movereversed
 trigger1	= anim = 1130
 attr 		= S, NA
 animtype  	= Hard
-damage = ceil(cond(fvar(11) *70 < 10, 10, fvar(11) * 70)), 10
+damage = ceil(cond(fvar(11) *80 < 20,20, fvar(11) * 80)), 10
 hitflag 		= MAFD
 guardflag 	= HA
 guard.ctrltime 	= 32
@@ -2945,6 +2953,14 @@ sprpriority 	= 2
 facep2 		= 1
 velset 		= vel x + 2, 0
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State 0, NotHitBy]
 type = NotHitBy
 triggerall=enemynear,stateno!=900
@@ -2958,7 +2974,7 @@ ignorehitpause = 1
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = .5
+value = 2
 ignorehitpause = 1
 persistent = 0
 
@@ -3054,7 +3070,7 @@ trigger1 = movecontact = 0
 attr = S, NA
 animtype  = Heavy
 air.animtype = back
-damage = ceil(cond(fvar(11) *80 < 10, 10, fvar(11) * 80)), 10
+damage = ceil(cond(fvar(11) *80 < 20,20, fvar(11) * 80)), 15
 pausetime = 20,20
 sparkno = 2
 sparkxy = -p2dist x * 0.25,-1
@@ -3575,7 +3591,7 @@ p2facing 	= 1
 trigger1 	= !movecontact
 attr 	= S, NA
 animtype  	= Hard
-damage = ceil(cond(fvar(11) *70 < 10, 10, fvar(11) * 70)), 10
+damage = ceil(cond(fvar(11) *80 < 20,20, fvar(11) * 80)), 15
 hitflag 		= MAFD
 guardflag 	= MAFD
 guard.ctrltime 	= 20
@@ -3728,9 +3744,25 @@ type    = S
 movetype= A
 physics = S
 ctrl = 0
-poweradd = -1000 * (prevstateno != 5000)
+poweradd = -1000 * (prevstateno != 666999)
 sprpriority = 2
-facep2 = 1 * (prevstateno != 5000)
+facep2 = 1 * (prevstateno != 666999)
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 2
+ignorehitpause = 1
+persistent = 0
 
 [State EX Limiters]
 type = mapset
@@ -3863,11 +3895,6 @@ type= VelSet
 trigger1 = animelem = 1 || animelem = 2 || animelem = 3 || animelem = 6
 x = 5.5
 
-[State -2, VarSet]
-type = VarSet
-trigger1 = !numtarget
-fv = 25
-value = 1
 
 [State 0, VarAdd]
 type = VarAdd

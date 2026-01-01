@@ -48,13 +48,13 @@ shadowoffset = 0     ;Number of pixels to vertically offset the shadow
 draw.offset = 0,0    ;Player drawing offset in pixels (x, y). Recommended 0,0
 
 [Velocity]
-walk.fwd  = 2.2     ;Walk forward
-walk.back = -2     ;Walk backward
+walk.fwd  = 3.5     ;Walk forward
+walk.back = -3     ;Walk backward
 run.fwd  = 4.6, 0    ;Run forward (x, y)
 run.back = -4.5,-3.8 ;Hop backward (x, y)
 jump.neu = 0,-8   ;Neutral jumping velocity (x, y)
 jump.back = -2.55    ;Jump back Speed (x, y)
-jump.fwd = 2.5       ;Jump forward Speed (x, y)
+jump.fwd = 3       ;Jump forward Speed (x, y)
 runjump.back = -2.55;Running jump speeds (opt)
 runjump.fwd = 5     ;.
 airjump.neu = 0,-6.5      ;.
@@ -1504,6 +1504,12 @@ value = 0
 type = MapSet
 trigger1 =combocount=0 
 map = "dc"    ;fv = 10
+value = 0
+
+[State 0, VarAdd]
+type = mapset
+trigger1= combocount=0
+map =  "sweeplaunch"
 value = 0
 
 [State 0, VarSet]

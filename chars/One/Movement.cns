@@ -526,7 +526,7 @@ physics = A         ;A,C,S,N
 type    = A
 movetype= I
 physics = N
-velset = 5,0
+velset = 6,0
 anim = 161+var(50)*2
 ctrl = 1
 

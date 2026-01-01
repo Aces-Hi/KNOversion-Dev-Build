@@ -1139,6 +1139,14 @@ freq = 90
 ampl = 4
 phase = 1
 ;=====SCALING SHIT==================
+[State Stun Scaling]
+type = VarAdd
+trigger1 = movehit=1
+fv = 25  
+value = 3
+ignorehitpause = 1
+persistent = 0
+
 [State Starter Damage Scaling]
 type = ParentVarAdd
 trigger1 = root,combocount<=1
@@ -1622,6 +1630,14 @@ phase = 1
 
 
 ;=====SCALING SHIT==================
+[State Stun Scaling]
+type = VarAdd
+trigger1 = movehit=1
+fv = 25  
+value = 3
+ignorehitpause = 1
+persistent = 0
+
 [State Starter Damage Scaling]
 type = ParentVarAdd
 trigger1 = root,combocount<=1
@@ -2495,9 +2511,9 @@ sparkxy = -15,-45
 guardsound = S300, 2
 ground.type = high
 ground.slidetime = 12
-ground.hittime  =ceil(cond(root,fvar(15) *40 < 20, 20, root,fvar(15) * 40))
-air.hittime  = ceil(cond(root,fvar(15) *40 < 20, 20, root,fvar(15) * 40))
-down.hittime = ceil(cond(root,fvar(15) *40 < 20, 20, root,fvar(15) * 40))
+ground.hittime  =999
+air.hittime  = 999
+down.hittime = 999
 ground.velocity = -2,-5
 air.velocity = -2,-5
 ;yaccel = .24
@@ -2512,8 +2528,7 @@ guard.pausetime=6,0
 guard.ctrltime = 30
 guard.velocity = 2
 airguard.velocity = -1,-1.5
-fall = 1
-air.fall=1
+forcenofall = 1
 palfx.color=256
 palfx.mul=128,128,128
 palfx.add=0,0,0
@@ -2640,6 +2655,14 @@ ctrl = 0
 anim = 1600
 sprpriority = 2
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time=0
@@ -2674,7 +2697,7 @@ removeongethit = 0
 type = VarAdd
 trigger1 = movehit
 fv = 25  
-value = 1
+value = 5
 ignorehitpause = 1
 persistent = 0
 
@@ -2848,9 +2871,9 @@ ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *21 < 9, 9, fvar(15) * 21))
 air.hittime  = ceil(cond(fvar(15) *31 < 9, 9, fvar(15) * 31))
 down.hittime = ceil(cond(fvar(15) *31 < 9, 9, fvar(15) * 31))  
-ground.velocity =  -2,-4.5
-air.velocity = -2,-4.5
-down.velocity =  -2,-4.5
+ground.velocity =  -2,-3.5
+air.velocity = -2,-3.5
+down.velocity =  -2,-3.5
 palfx.time = 12
 palfx.add = 100, 0,20
 guard.hittime = 25
@@ -2905,7 +2928,6 @@ type = HitDef
 p2facing = cond(combocount>0,1,0)
 trigger1 = !movecontact
 trigger1 = map(dspecial)>0
-trigger1 = map(full)=0
 attr = S, SA
 animtype  = up
 damage = ceil(cond(fvar(11) *70 < 7, 7, fvar(11) * 70)), 7
@@ -2921,9 +2943,9 @@ ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *21 < 9, 9, fvar(15) * 21))
 air.hittime  = ceil(cond(fvar(15) *31 < 9, 9, fvar(15) * 31))
 down.hittime = ceil(cond(fvar(15) *31 < 9, 9, fvar(15) * 31))  
-ground.velocity =  -2,-4
-air.velocity = -2,-4
-down.velocity =  -2,-4
+ground.velocity =  -2,-3
+air.velocity = -2,-3
+down.velocity =  -2,-3
 palfx.time = 12
 palfx.add = 100, 0,20
 guard.hittime = 25
@@ -2932,38 +2954,6 @@ guard.ctrltime = 14
 guard.cornerpush.veloff = -10
 forcenofall = 1
 getpower = (100)*(cond(var(var(2)) = 1, 1, 1)) 
-[State 210, 2]
-type = HitDef 
-p2facing = cond(combocount>0,1,0)
-trigger1 = !movecontact
-trigger1 = map(dspecial)>0
-trigger1 = map(full)
-attr = S, SA
-animtype  = up
-damage = ceil(cond(fvar(11) *70 < 7, 7, fvar(11) * 70)), 7
-hitflag = MAFD
-guardflag = MA
-pausetime = 12,18
-sparkno = 3
-sparkxy = -20,-43
-hitsound   = 5,1
-guardsound = S300, 2
-ground.type =trip
-ground.slidetime = 12
-ground.hittime  = ceil(cond(fvar(15) *21 < 9, 9, fvar(15) * 21))
-air.hittime  = ceil(cond(fvar(15) *31 < 9, 9, fvar(15) * 31))
-down.hittime = ceil(cond(fvar(15) *31 < 9, 9, fvar(15) * 31))  
-ground.velocity =  -2,-5
-air.velocity = -2,-5
-down.velocity =  -2,-5
-palfx.time = 12
-palfx.add = 100, 0,20
-guard.hittime = 24
-guard.slidetime = 6
-guard.ctrltime =24
-guard.cornerpush.veloff = -10
-forcenofall = 1
-getpower = (100)*(cond(var(var(2)) = 1, 1,1)) 
 
 [State 0, VarSet]
 type = MapSet
@@ -3024,6 +3014,14 @@ poweradd=-1000
 ctrl = 0
 anim = 1600
 sprpriority = 2
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
 
 [State 0, PlaySnd]
 type = PlaySnd
@@ -4412,6 +4410,12 @@ trigger1 = time <7
 value = SCA,NA,SA,HA,NP,SP,HP
 time = 1
 
+[State 0, VelAdd]
+type = MapSet
+trigger1 = time=0
+map = "ADB"
+value = 0
+
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time=0
@@ -4463,7 +4467,7 @@ persistent = 1
 [State 0, VelAdd]
 type = VelSet
 trigger1 = time=0
-x = 10
+x = 8
 y = 0
 [State 0, VelMul]
 type = VelMul
@@ -4505,6 +4509,12 @@ trigger1 = time <7
 value = SCA,NA,SA,HA,NP,SP,HP
 time = 1
 
+[State 0, VelAdd]
+type = MapSet
+trigger1 = time=0
+map = "ADB"
+value = 0
+
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time=0
@@ -4556,7 +4566,7 @@ persistent = 1
 [State 0, VelAdd]
 type = VelSet
 trigger1 = time=0
-x = 9
+x = 8
 y = 15
 [State 0, VelMul]
 type = VelMul
@@ -4597,6 +4607,12 @@ type = NotHitBy
 trigger1 = time <7
 value = SCA,NA,SA,HA,NP,SP,HP
 time = 1
+
+[State 0, VelAdd]
+type = MapSet
+trigger1 = time=0
+map = "ADB"
+value = 0
 
 [State 0, PlaySnd]
 type = PlaySnd
@@ -4695,6 +4711,12 @@ trigger1 = time <7
 value = SCA,NA,SA,HA,NP,SP,HP
 time = 1
 
+[State 0, VelAdd]
+type = MapSet
+trigger1 = time=0
+map = "ADB"
+value = 0
+
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time=0
@@ -4746,7 +4768,7 @@ persistent = 1
 [State 0, VelAdd]
 type = VelSet
 trigger1 = time=0
-x = 7
+x = 8
 y = 15
 [State 0, VelMul]
 type = VelMul
@@ -4788,6 +4810,12 @@ trigger1 = time <7
 value = SCA,NA,SA,HA,NP,SP,HP
 time = 1
 
+[State 0, VelAdd]
+type = MapSet
+trigger1 = time=0
+map = "ADB"
+value = 0
+
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time=0
@@ -4839,7 +4867,7 @@ persistent = 1
 [State 0, VelAdd]
 type = VelSet
 trigger1 = time=0
-x = -7
+x = -8
 y = 0
 [State 0, VelMul]
 type = VelMul
@@ -4881,6 +4909,12 @@ trigger1 = time <7
 value = SCA,NA,SA,HA,NP,SP,HP
 time = 1
 
+[State 0, VelAdd]
+type = MapSet
+trigger1 = time=0
+map = "ADB"
+value = 0
+
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time=0
@@ -4932,7 +4966,7 @@ persistent = 1
 [State 0, VelAdd]
 type = VelSet
 trigger1 = time=0
-x = -7
+x = -8
 y = -5
 [State 0, VelMul]
 type = VelMul
@@ -4973,6 +5007,12 @@ type = NotHitBy
 trigger1 = time <7
 value = SCA,NA,SA,HA,NP,SP,HP
 time = 1
+
+[State 0, VelAdd]
+type = MapSet
+trigger1 = time=0
+map = "ADB"
+value = 0
 
 [State 0, PlaySnd]
 type = PlaySnd
@@ -5067,6 +5107,12 @@ trigger1 = time <7
 value = SCA,NA,SA,HA,NP,SP,HP
 time = 1
 
+[State 0, VelAdd]
+type = MapSet
+trigger1 = time=0
+map = "ADB"
+value = 0
+
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time=0
@@ -5118,7 +5164,7 @@ persistent = 1
 [State 0, VelAdd]
 type = VelSet
 trigger1 = time=0
-x = 9
+x = 8
 y = -5
 [State 0, VelMul]
 type = VelMul

@@ -680,7 +680,7 @@ value = -1
 [State 0, VelSet]
 type = VelSet
 trigger1 = time = 0
-x = 5.4
+x = 7
 y = -1.4
 
 
@@ -1313,11 +1313,11 @@ ignorehitpause = 1
 [State 20, 1]
 type = VelSet
 trigger1 = time=0
-x = 4
+x = 6
 
 [State 100, 1]
 type = veladd
-trigger1 = vel x <5
+trigger1 = vel x <7
 x = .2
 
 ;Idle Explod Removal

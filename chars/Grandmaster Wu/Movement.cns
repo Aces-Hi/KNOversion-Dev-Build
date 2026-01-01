@@ -849,7 +849,7 @@ Trans = Add
 [State 0, VelSet]
 type = VelSet
 trigger1 = time=0
-x = 3
+x = 5
 y = -1.5
 
 [State 0, VelAdd]

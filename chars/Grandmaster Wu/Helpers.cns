@@ -297,13 +297,6 @@ ownpal = 0
 removeongethit = 1
 ignorehitpause = 0
 
-[State 0, Pause]
-type = Pause
-trigger1 = parent,Movecontact = 1
-time = 16
-movetime = 0
-ignorehitpause = 1
-
 [State 0, RemapPal]
 type = RemapPal
 trigger1 = 1
@@ -372,13 +365,6 @@ shadow = 0,0,0
 ownpal = 0
 removeongethit = 1
 ignorehitpause = 0
-
-[State 0, Pause]
-type = Pause
-trigger1 = parent,Movecontact = 1
-time = 20
-movetime = 0
-ignorehitpause = 1
 
 [State 0, RemapPal]
 type = RemapPal
@@ -449,12 +435,6 @@ ownpal = 0
 removeongethit = 1
 ignorehitpause = 0
 
-[State 0, Pause]
-type = Pause
-trigger1 = parent,Movecontact = 1
-time = 24
-movetime = 0
-ignorehitpause = 1
 
 [State 0, RemapPal]
 type = RemapPal

@@ -9,6 +9,13 @@ ctrl = 0
 sprpriority = 2
 facep2 = 1
 
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = .5
+ignorehitpause = 1
+persistent = 0
 [State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
@@ -87,14 +94,13 @@ x = 0
 [State 410, 2]
 type = hitdef 
 p2facing = 1
-triggerall=map(hdc)=0
 trigger1 = time = 0
 attr = S, SA
 damage = ceil(cond(fvar(11) * 50 < 10, 10, fvar(11) * 50)),11
 animtype  = Medium
 hitflag = MAFD
 guardflag = MA
-pausetime = 10,10
+pausetime = 8,8
 sparkno = 2
 sparkxy = -10,-40
 hitsound   = 5,3
@@ -102,46 +108,7 @@ guardsound = 6,2
 ground.type = Low
 ground.slidetime = 12
 ground.hittime  = 22
-air.hittime  = ceil(cond(fvar(15) *136 < 30, 30, fvar(15) * 136))
-down.hittime = 136
-ground.velocity = -3
-air.velocity = -3,-2.8
-fall  = 0
-forcenofall = 1
-air.fall = 0
-envshake.time = 9
-envshake.freq = 90
-envshake.ampl = 2
-fall.envshake.time = 0
-fall.envshake.freq = 0
-fall.envshake.ampl = 0
-air.cornerpush.veloff = -12
-palfx.time = 12
-palfx.add = 100, 0,20
-guard.hittime = 22
-guard.slidetime = 13
-guard.ctrltime = 21
-getpower = (50)*(cond(var(var(2)) = 1, 1, .5))
-
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-triggerall=map(hdc)>0
-trigger1 = time = 0
-attr = S, SA
-damage = ceil(cond(fvar(11) * 50 < 5, 5, fvar(11) * 50)),11
-animtype  = Medium
-hitflag = MAFD
-guardflag = MA
-pausetime = 15,15
-sparkno = 2
-sparkxy = -10,-40
-hitsound   = 5,3
-guardsound = 6,2
-ground.type = Low
-ground.slidetime = 12
-ground.hittime  = 22
-air.hittime  = ceil(cond(fvar(15) *136 < 30, 30, fvar(15) * 136))
+air.hittime  = ceil(cond(fvar(15) *136 < 10, 10, fvar(15) * 136))
 down.hittime = 136
 ground.velocity = -3
 air.velocity = -3,-2.8
@@ -186,7 +153,29 @@ juggle  = 0
 ctrl = 0
 sprpriority = 2
 facep2 = 1
+anim=1001
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time = 0&&combocount
+value = 1001
+elem = 3
+
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = .5
+ignorehitpause = 1
+persistent = 0
 [State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
@@ -201,24 +190,11 @@ value = 1001 ;State of this attack
 ;ignorehitpause = 
 ;persistent = 
 
-;Armor
 [State 0, ChangeAnim]
 type = ChangeAnim
-trigger1 = time = 0 && anim!=1001 ;Animation of this state
+trigger1 = time = 0
 value = 1001
-elem = 1
-
-
-[State 0, HitOverride]
-type = HitOverride
-triggerall = var(28)>0
-triggerall = movetype != H
-trigger1=  1
-attr = SCA,NA,SA,NP,SP
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
+elem = 3
 
 [State -3, Angous Voices]
 type = PlaySnd
@@ -296,9 +272,7 @@ x = 1
 [State 410, Regular Hit]
 type = hitdef 
 p2facing = 1
-triggerall=map(hdc)=0
 trigger1 = time = 0
-trigger1 = fvar(8) = 0
 attr = S, SA
 damage = ceil(cond(fvar(11) * 50 < 10, 10, fvar(11) * 50)),11
 animtype  =hard
@@ -312,7 +286,7 @@ guardsound = 6,2
 ground.type = high
 ground.slidetime = 12
 ground.hittime  = 26
-air.hittime  = ceil(cond(fvar(15) *106 < 30, 30, fvar(15) * 106))
+air.hittime  = ceil(cond(fvar(15) *106 < 16, 16, fvar(15) * 106))
 forcenofall = 1
 ground.velocity = -4
 air.velocity = -2,-3
@@ -333,84 +307,6 @@ guard.slidetime = 13
 guard.ctrltime = 24
 getpower = (50)*(cond(var(var(2)) = 1, 1, .5))
 
-[State 410, Regular Hit]
-type = hitdef 
-p2facing = 1
-triggerall=map(hdc)>0
-trigger1 = time = 0
-trigger1 = fvar(8) = 0
-attr = S, SA
-air.hittime  = ceil(cond(fvar(15) *106 < 30, 30, fvar(15) * 106))
-animtype  =hard
-hitflag = MAFD
-guardflag = MA
-pausetime = 20,20
-sparkno = 2
-sparkxy = -10,-50
-hitsound   = 5,2
-guardsound = 6,2
-ground.type = high
-ground.slidetime = 12
-ground.hittime  = 26
-air.hittime  = 106
-forcenofall = 1
-ground.velocity = -4
-air.velocity = -2,-3
-yaccel = .24
-air.cornerpush.veloff = -16
-air.fall = 0
-forcenofall = 0
-envshake.time = 9
-envshake.freq = 90
-envshake.ampl = 2
-fall.envshake.time = 0
-fall.envshake.freq = 0
-fall.envshake.ampl = 0
-palfx.time = 12
-palfx.add = 100, 0,20
-guard.hittime = 22
-guard.slidetime = 13
-guard.ctrltime = 24
-getpower = (50)*(cond(var(var(2)) = 1, 1, .5))
-
-[State 410, Counter Hit]
-type = hitdef 
-p2facing = 1
-trigger1 = fvar(8)
-attr = S, SA
-damage = ceil(cond(fvar(11) * 50 < 10, 10, fvar(11) * 50)),11
-animtype  =hard
-hitflag = MAFD
-guardflag = MA
-pausetime = 20,20
-sparkno = 2
-sparkxy = -10,-50
-hitsound   = 5,2
-guardsound = 6,2
-ground.type = high
-ground.slidetime = 12
-ground.hittime  = 30
-air.hittime  = 1000000000
-forcenofall = 1
-ground.velocity = -1.2, -8
-air.velocity = -2,-6
-yaccel = .24
-air.cornerpush.veloff = -16
-air.fall = 0
-forcenofall = 0
-envshake.time = 9
-envshake.freq = 90
-envshake.ampl = 2
-fall.envshake.time = 0
-fall.envshake.freq = 0
-fall.envshake.ampl = 0
-palfx.time = 12
-palfx.add = 100, 0,20
-guard.hittime = 17
-guard.slidetime = 13
-guard.ctrltime = 18
-getpower = (50)*(cond(var(var(2)) = 1, 1, .5))
-
 [State 0, ChangeState]
 type = ChangeState
 trigger1 = animtime = 0
@@ -424,174 +320,6 @@ trigger2 = command = "holdfwd" && command = "b"  && time>22
 value = 1002
 ctrl = 0
 
-;---------------------------------------------------------------------------
-;6S: BrawlerRush B
-;---------------------------------------------------------------------------
-[Statedef 10011]
-type    = S
-movetype= A
-physics = S
-juggle  = 0
-ctrl = 0
-sprpriority = 2
-facep2 = 1
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = .6
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time = 0
-fv = 6  ;fv = 10
-value = 1001 ;State of this attack
-;ignorehitpause = 
-;persistent = 
-
-;Armor
-[State 0, ChangeAnim]
-type = ChangeAnim
-trigger1 = time = 0 && anim!=1001 ;Animation of this state
-value = 1001
-elem = 1
-
-
-[State 0, HitOverride]
-type = HitOverride
-triggerall = var(28)>0
-triggerall = movetype != H
-trigger1=  1
-attr = SCA,NA,SA,NP,SP
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-
-[State -3, Angous Voices]
-type = PlaySnd
-trigger1 = animelem = 4
-value = 1001,0
-volumescale=150
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 7
-anim = 1004
-ID = 1011
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 20
-removetime = -2
-pausemovetime = 0
-scale = .64,.64
-sprpriority = 1
-removeongethit = 0
-ignorehitpause=  0
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 5
-anim = 6700
-ID = 6700
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =0.64,0.64
-sprpriority = -1
-ontop = 0
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 5
-anim = 6953
-ID = 6953
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = -1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =0.64,0.64
-sprpriority = 1
-ontop = 1
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 3
-x = 7
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 6
-x = 1
-
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-trigger1 = time = 0
-attr = S, SA
-damage = ceil(cond(fvar(11) * 100 < 10, 10, fvar(11) * 100)),11
-animtype  =hard
-hitflag = MAFD
-guardflag = MA
-pausetime = 10,10
-sparkno = 2
-sparkxy = -10,-50
-hitsound   = 5,2
-guardsound = 6,2
-ground.type = high
-ground.slidetime = 12
-ground.hittime  = 27
-air.hittime  = 106
-forcenofall = 1
-ground.velocity = -4
-air.velocity = -1.5,-4
-yaccel = .27
-air.cornerpush.veloff = -16
-air.fall = 0
-forcenofall = 0
-envshake.time = 9
-envshake.freq = 90
-envshake.ampl = 2
-fall.envshake.time = 0
-fall.envshake.freq = 0
-fall.envshake.ampl = 0
-palfx.time = 12
-palfx.add = 100, 0,20
-guard.hittime = 17
-guard.slidetime = 13
-guard.ctrltime = 18
-getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
-
-[State 0, ChangeState]
-type = ChangeState
-trigger1 = animtime = 0
-value = 0 
-ctrl = 1
-
-[State 0, ChangeState]
-type = ChangeState
-trigger1 = movecontact && command = "holdfwd" && command = "b"
-trigger2 = command = "holdfwd" && command = "b"  && time>22
-value = 1002
-ctrl = 0
 
 
 ;---------------------------------------------------------------------------
@@ -600,111 +328,15 @@ ctrl = 0
 type    = S
 movetype= A
 physics = S
-juggle  = 0
 poweradd= 0
 ctrl = 0
-;anim = 1002
+anim = 1002
 sprpriority = 2
-
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = prevstateno = 50
-x = 0
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time =  0
-v = 10    ;fv = 10
-value = 0
 
 [State 0, RemoveExplod]
 type = RemoveExplod
 trigger1 = 1
 id = 1011
-
-;Armor
-[State 0, ChangeAnim]
-type = ChangeAnim
-trigger1 = time = 0 && anim!=1002 ;Animation of this state
-value = 1002
-elem = 1
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time = 0
-fv = 6  ;fv = 10
-value = 1002 ;State of this attack
-
-;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-;Shadow Override
-;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-[State 0]
-type = MapSet
-trigger1 = time<20
-map = "ShadowOverride"
-value=3
-persistent=1
-ignorehitpause=1
-;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-[State 0, PalFXWiz]
-type = PalFX
-trigger1 = time=0
-time = 20
-add = 150,100,0
-mul = 256,256,256
-sinadd = 150,100,0,40
-invertall = 0
-color = 256
-
-[State 0]
-type = MapSet
-trigger1 = 1
-map = "armor"
-value=2
-ignorehitpause = 1
-persistent = 1
-[State 0, HitOverride]
-type = HitOverride
-;triggerall = (AnimElemTime (3) >= 0) && (AnimElemTime (8) < 0)
-trigger1 = 1 ;Time is how many ticks the Armor lasts
-attr = SCA,NA,NP,SP,SA
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-
-;[State 0, PalFXWiz]
-;type = PalFX
-;trigger1 = time = 40
-;time = 30
-;add = 150,100,0
-;mul = 256,256,256
-;sinadd = 150,100,0,30
-;invertall = 0
-;color = 256
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = prevstateno!=(666999) && time = 0
-v = 41    ;fv = 10
-value = 0
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = 1
-v = 41
-value = 1
-ignorehitpause = 1
-;armor end
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = time%3=0
-v = 10     ;fv = 
-value = 2
-;ignorehitpause = 
-;persistent = 
 
 [State 0, EnvShake]
 type = EnvShake
@@ -713,157 +345,10 @@ time = 60
 freq = 120
 ampl = 2
 
-[State 0, VarAdd]
-type = MapSet
-trigger1 = time=0
-trigger1 = prevstateno != 666999
-map = "scharge"
-value = 0
-ignorehitpause = 1
-
-[State 0, VarAdd]
-type = MapAdd
-trigger1 = 1
-map = "scharge"
-value = 1
-ignorehitpause = 1
-
 [State 12, ChangeState]
 type = ChangeState
-triggerall=command!= "hold_b"
-trigger1 = map(scharge)>12
-trigger2 = prevstateno = 666999
+trigger1 =time>3
 value = 1003
-
-[State 13, ChangeState]
-type = changestate
-triggerall=command= "hold_b"
-trigger1 = map(scharge) > 60
-trigger2 = map(scharge) > 60 && prevstateno = 666999
-value = 10033
-;---------------------------------------------------------------------------
-;6S Charge
-[Statedef 10022]
-type    = S
-movetype= A
-physics = S
-juggle  = 0
-poweradd= 0
-ctrl = 0
-;anim = 1002
-sprpriority = 2
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = prevstateno = 50
-x = 0
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time =  0
-v = 10    ;fv = 10
-value = 0
-
-[State 0, RemoveExplod]
-type = RemoveExplod
-trigger1 = 1
-id = 1011
-
-;Armor
-[State 0, ChangeAnim]
-type = ChangeAnim
-trigger1 = time = 0 && anim!=1002 ;Animation of this state
-value = 1002
-elem = 1
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time = 0
-fv = 6  ;fv = 10
-value = 1002 ;State of this attack
-
-[State 0, HitOverride]
-type = HitOverride
-;triggerall = (AnimElemTime (3) >= 0) && (AnimElemTime (8) < 0)
-trigger1 = 1 ;Time is how many ticks the Armor lasts
-attr = SCA,NA,NP,SP,SA
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-
-;[State 0, PalFXWiz]
-;type = PalFX
-;trigger1 = time = 40
-;time = 30
-;add = 150,100,0
-;mul = 256,256,256
-;sinadd = 150,100,0,30
-;invertall = 0
-;color = 256
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = prevstateno!=(666999) && time = 0
-v = 41    ;fv = 10
-value = 0
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = 1
-v = 41
-value = 1
-ignorehitpause = 1
-;armor end
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = time%3=0
-v = 10     ;fv = 
-value = 2
-;ignorehitpause = 
-;persistent = 
-
-[State 0, EnvShake]
-type = EnvShake
-trigger1 = animelem = 6
-time = 60
-freq = 120
-ampl = 2
-
-;[State 0, ChangeState]
-;type = ChangeState
-;trigger1 = time>60 || (command!="hold_b" && time>12)
-;value =1003
-;ctrl = 0
-
-;[State 0, ChangeState]
-;type = ChangeState
-;triggerall = var(55)<10
-;trigger1 = prevstateno = 666999 && command!= "hold_b"
-;trigger2 = command!= "hold_c"
-;value = 501
-
-;[State 0, ChangeState]
-;type = ChangeState
-;triggerall = var(55)=[11,60]
-;trigger1 = command != "hold_c" 
-;trigger2 = prevstateno = 666999 && command!= "hold_b"
-;value = 502
-
-
-[State 12, ChangeState]
-type = ChangeState
-triggerall = var(41)=[12,60]
-trigger1 = command !="hold_b"
-trigger2 = prevstateno = 666999 && command!= "hold_b"
-value = 1103
-
-[State 13, ChangeState]
-type = changestate
-trigger1 = var(41)>60 || time > 60
-trigger2 = var(41)>60 && prevstateno = 666999 && command!= "hold_b"
-value = 11033
 
 ;---------------------------------------------------------------------------
 ;6S: BrawlerRush C
@@ -878,6 +363,21 @@ ctrl = 0
 sprpriority = 2
 facep2 = 1
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 2
+ignorehitpause = 1
+persistent = 0
 [State 0, VarSet]
 type = VarSet
 trigger1 = time = 0
@@ -978,13 +478,12 @@ value=1
 type = hitdef 
 p2facing = 1
 trigger1 = time = 0
-trigger1 = !fvar(8)
 attr = S, SA
 damage =ceil(cond(fvar(11) * 100+var(10)*0.5888 < 40, 40, fvar(11) * 100+var(10)*0.5888)),13+var(10)*0.5
 animtype  = Medium
 hitflag = MAFDP
 guardflag = MA
-pausetime = 15,15
+pausetime = 12,12
 sparkno = 3
 sparkxy = -10,-50
 hitsound   = 5,4
@@ -1018,502 +517,7 @@ trigger1 = animtime = 0
 value = 0 
 ctrl = 1
 
-;---------------------------------------------------------------------------
-;6S: BrawlerRush C (charged)
-;---------------------------------------------------------------------------
-[Statedef 10033]
-type    = S
-movetype= A
-physics = S
-juggle  = 0
-poweradd=0
-ctrl = 0
-sprpriority = 2
-facep2 = 1
-anim=1003
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 2
 
-[State 0, VarSet]
-type = VarSet
-trigger1 = time = 0
-fv = 6  ;fv = 10
-value = 1003 ;State of this attack
-;ignorehitpause = 
-;persistent = 
-
-[State 0]
-type = MapSet
-trigger1 = (AnimElemTime (4) < 0)
-map = "armor"
-value=2
-ignorehitpause = 1
-persistent = 1
-[State 0, HitOverride]
-type = HitOverride
-trigger1 = (AnimElemTime (4) < 0)
-attr = SCA ,NA,SA,NP,SP
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-
-[State -3, Angous Voices]
-type = PlaySnd
-trigger1 = animelem = 3
-value = 1002,0
-volumescale=150
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 6
-anim = 6952
-ID = 6952
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =1.50,1
-sprpriority = 1
-ontop = 0
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 4
-anim = 6954
-ID = 6952
-pos = -40,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =1,1
-sprpriority = 1
-ontop = 1
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 4
-anim = 1005
-ID = 1013
-pos = 10,20
-ontop = 0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-removetime = -2
-pausemovetime = 0
-scale = .64,.64
-sprpriority = 3
-removeongethit = 0
-ignorehitpause=  0
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 1
-x = 24
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 4
-x = 4
-
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-trigger1 = time = 0
-attr = S, SA
-damage = ceil(cond(fvar(11) * 139+var(10)*0.5999 < 40, 40, fvar(11) * 139+var(10)*0.5999)),13+var(10)*0.5
-animtype  = Medium
-hitflag = MAFDP
-guardflag = MA
-pausetime = 15,15
-sparkno = 3
-sparkxy = -10,-50
-hitsound   = 5,4
-guardsound = 6,2
-ground.type = Low
-ground.slidetime = 12
-ground.hittime  = 35
-ground.velocity = -14,-6
-guard.velocity = -14
-air.velocity = -14,-4
-;fall.yvelocity = 0
-fall  = 1
-air.fall = 1
-envshake.time = 36
-envshake.freq = 120
-envshake.ampl = 8
-fall.envshake.time = 9
-fall.envshake.freq = 10
-fall.envshake.ampl = 8
-palfx.time = 28
-palfx.add = 100, 0,20
-guard.hittime = 28
-guard.slidetime = 19
-guard.ctrltime = 27
-p2stateno = 5555
-getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
-
-[State 0, ChangeState]
-type = ChangeState
-trigger1 = animtime = 0
-value = 0 
-ctrl = 1
-
-;---------------------------------------------------------------------------
-;6S: BrawlerRush C
-;---------------------------------------------------------------------------
-[Statedef 1103]
-type    = S
-movetype= A
-physics = S
-juggle  = 0
-poweradd= (100)*(cond(var(var(2)) = 1, 1, .5))
-ctrl = 0
-sprpriority = 2
-facep2 = 1
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 1
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time = 0
-fv = 6  ;fv = 10
-value = 1003 ;State of this attack
-;ignorehitpause = 
-;persistent = 
-
-;Armor
-[State 0, ChangeAnim]
-type = ChangeAnim
-trigger1 = time = 0 && anim!=1003 ;Animation of this state
-value = 1003
-elem = 1
-
-
-[State 0, HitOverride]
-type = HitOverride
-triggerall = var(28)>0
-triggerall = movetype != H
-trigger1=  1
-attr = SCA,NA,SA,NP,SP
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-
-
-[State -3, Angous Voices]
-type = PlaySnd
-trigger1 = animelem = 3
-value = 1002,0
-volumescale=150
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 6
-anim = 6952
-ID = 6952
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =1.50,1
-sprpriority = 1
-ontop = 0
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 4
-anim = 6954
-ID = 6952
-pos = -40,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =1,1
-sprpriority = 1
-ontop = 1
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 4
-anim = 1005
-ID = 1013
-pos = 10,20
-ontop = 0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-removetime = -2
-pausemovetime = 0
-scale = .64,.64
-sprpriority = 3
-removeongethit = 0
-ignorehitpause=  0
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 1
-x = 12
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 4
-x = 3
-
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-trigger1 = !time
-trigger1 = !fvar(8)
-attr = S, SA
-damage = ceil(cond(fvar(11) * 165+var(10)*0.5888 < 10, 10, fvar(11) * 165+var(10)*0.5888)),17+var(10)*0.5
-animtype  = Medium
-hitflag = MAFDP
-guardflag = MA
-pausetime = 12,12
-sparkno = 3
-sparkxy = -10,-50
-hitsound   = 5,4
-guardsound = 6,2
-ground.type = Low
-ground.slidetime = 12
-ground.hittime  = 35
-ground.velocity = -8,-2.8
-air.velocity = -8,-2.8
-fall.yvelocity = 0
-fall  = 1
-air.fall = 1
-envshake.time = 13
-envshake.freq = 90
-envshake.ampl = 8
-fall.envshake.time = 0
-fall.envshake.freq = 0
-fall.envshake.ampl = 0
-palfx.time = 28
-palfx.add = 100, 0,20
-guard.hittime = 28
-guard.slidetime = 19
-guard.ctrltime = 27
-getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
-
-
-
-[State 0, ChangeState]
-type = ChangeState
-trigger1 = animtime = 0
-value = 0 
-ctrl = 1
-
-;---------------------------------------------------------------------------
-;6S: BrawlerRush C (charged)
-;---------------------------------------------------------------------------
-[Statedef 11033]
-type    = S
-movetype= A
-physics = S
-juggle  = 0
-poweradd= (100)*(cond(var(var(2)) = 1, 1, .5))
-ctrl = 0
-sprpriority = 2
-facep2 = 1
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 2
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time = 0
-fv = 6  ;fv = 10
-value = 1003 ;State of this attack
-;ignorehitpause = 
-;persistent = 
-
-;Armor
-[State 0, ChangeAnim]
-type = ChangeAnim
-trigger1 = time = 0 && anim!=1003 ;Animation of this state
-value = 1003
-elem = 1
-
-
-[State 0, HitOverride]
-type = HitOverride
-triggerall = var(28)>0
-triggerall = movetype != H
-trigger1=  1
-attr = SCA ,NA,SA,NP,SP
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-
-[State 4000, NotHitBy]
-type = NotHitBy
-trigger1 = time = 0
-value = SCA
-time = 10
-
-[State -3, Angous Voices]
-type = PlaySnd
-trigger1 = animelem = 3
-value = 1002,0
-volumescale=150
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 6
-anim = 6952
-ID = 6952
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =1.50,1
-sprpriority = 1
-ontop = 0
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 4
-anim = 6954
-ID = 6952
-pos = -40,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =1,1
-sprpriority = 1
-ontop = 1
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 4
-anim = 1005
-ID = 1013
-pos = 10,20
-ontop = 0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-removetime = -2
-pausemovetime = 0
-scale = .64,.64
-sprpriority = 3
-removeongethit = 0
-ignorehitpause=  0
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 1
-x = 24
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 4
-x = 4
-
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-trigger1 = time = 0
-attr = S, SA
-damage = ceil(cond(fvar(11) * 164+var(10)*0.5999 < 50, 50, fvar(11) * 164+var(10)*0.5999)),17+var(10)*0.5
-animtype  = Medium
-hitflag = MAFDP
-guardflag = MA
-pausetime = 15,15
-sparkno = 3
-sparkxy = -10,-50
-hitsound   = 5,4
-guardsound = 6,2
-ground.type = Low
-ground.slidetime = 12
-ground.hittime  = 35
-ground.velocity = -14,-6
-guard.velocity = -14
-air.velocity = -14,-4
-;fall.yvelocity = 0
-fall  = 1
-air.fall = 1
-envshake.time = 13
-envshake.freq = 90
-envshake.ampl = 8
-fall.envshake.time = 0
-fall.envshake.freq = 0
-fall.envshake.ampl = 0
-palfx.time = 28
-palfx.add = 100, 0,20
-guard.hittime = 28
-guard.slidetime = 19
-guard.ctrltime = 27
-p2stateno = 5555
-getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
-
-[State 0, ChangeState]
-type = ChangeState
-trigger1 = animtime = 0
-value = 0 
-ctrl = 1
 ;------------------------------------------------------------------------
 ;4S: Command Grab
 [Statedef 10400]
@@ -3588,6 +2592,14 @@ velset = 0,0
 anim = 1032
 sprpriority = -1
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State 4000, NotHitBy]
 type = NotHitBy
 triggerall=enemynear,stateno!=900
@@ -3855,6 +2867,14 @@ anim =10323
 velset = 0,0 
 sprpriority = 2
 facep2 = 0
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
 
 [State 0, CtrlSet]
 type = CtrlSet
@@ -4174,19 +3194,9 @@ triggerall=time>17
 trigger1 = command != "hold_b"
 value = 1091
 
-[State 0, ChangeAnim]
-type = ChangeAnim
-triggerall=map(wave)>0
-trigger1 = animelem=8
-trigger1 = command = "hold_b"
-value = 1090
-elem = 7
-
 [State 0, ChangeState]
 type = ChangeState
-triggerall = animtime = 0
-trigger1=map(wave)=0
-trigger2=enemynear,stateno=5120
+trigger1 = animtime = 0
 value = 1092
 
 ;---------------------------------------------------------------------------
@@ -4489,7 +3499,7 @@ fall = !P2statetype = A
 fall.yvelocity = 0
 guard.slidetime = 12
 guard.hittime = 30
-guard.ctrltime = 25
+guard.ctrltime = 22
 palfx.time = 12
 palfx.add = 100, 0,20
 forcenofall = P2statetype = A 
@@ -4526,12 +3536,7 @@ ctrl = 0
 anim = 1091
 sprpriority = 2
 
-[State 0, VarSet]
-type = MapSet
-trigger1 = time=0
-map="wave" 
-value =1
-ignorehitpause = 1
+
 
 [State 0, VarAdd]
 type = VarAdd
@@ -4694,11 +3699,11 @@ p2facing = 1
 trigger1 = time = 0
 hitonce = 1
 attr = S, SA
-damage = ceil(cond(fvar(11) *120 < 15, 15, fvar(11) * 120)), 35
+damage = ceil(cond(fvar(11) *90 < 10, 10, fvar(11) * 90)), 35
 hitflag = MAFDP
 guardflag = MA
 ;priority = 3
-pausetime = 12,12
+pausetime = 10,10
 sparkno = 3
 sparkxy = -20,-20
 hitsound   = 5,3
@@ -4706,22 +3711,23 @@ guardsound = 6,2
 ground.type = Low
 animtype = medium
 ground.slidetime = 14
-ground.hittime  = 32
-air.hittime  = 40
-down.hittime = 40
-ground.velocity = -6.6
-air.velocity = -6,-4
+ground.hittime  = ceil(cond(fvar(16) *32 < 9, 9, fvar(16) * 32))
+air.hittime  = ceil(cond(fvar(16) *40 < 9, 9, fvar(16) * 40))
+down.hittime = ceil(cond(fvar(16) *40 < 9, 9, fvar(16) * 40))
+ground.velocity = -6,-1
+air.velocity = -6,-2
 ;air.fall=1
+fall = !P2statetype = A
 fall.yvelocity = 0
 guard.slidetime = 12
 guard.hittime = 30
-guard.ctrltime = 28
+guard.ctrltime = 25
 palfx.time = 12
 palfx.add = 100, 0,20
-forcenofall = 1
-envshake.time = 18
+forcenofall = P2statetype = A 
+envshake.time = 14
 envshake.freq = 90
-envshake.ampl = 8
+envshake.ampl = 5
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 
 [State 0, Helper]
@@ -4729,6 +3735,7 @@ type = Helper
 triggerall=anim=1091
 trigger1 = animelem = 6 && numhelper(1093)=0
 trigger1 = map(wavecheck)=0
+trigger1=map(wave)=0
 helpertype = normal ;player
 name = "wave"
 ID = 1093
@@ -4761,6 +3768,13 @@ ctrl = 0
 anim = 1093
 sprpriority = 2
 velset = 1.7,0
+
+[State 0, VarSet]
+type = ParentMapSet
+trigger1 = time=0
+map="wave" 
+value =1
+ignorehitpause = 1
 
 [State 0, PlayerPush]
 type = PlayerPush
@@ -4812,7 +3826,7 @@ type = Mapset
 trigger1 = prevstateno !=1093
 trigger1 = time = 0
 map = "wavetime"
-value = 80
+value = 40
 [State 0, VarSet]
 type = MapAdd
 trigger1 = map(wavetime)>0
@@ -4890,6 +3904,13 @@ ctrl = 0
 sprpriority = 2
 facep2 = 1
 
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = .5
+ignorehitpause = 1
+persistent = 0
 [State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
@@ -4989,61 +4010,21 @@ x = 0
 [State 410, 2]
 type = hitdef 
 p2facing = 1
-triggerall=map(hdc)=0
 trigger1 = time = 0
 attr = S, SA
 damage = ceil(cond(fvar(11) * 50 < 10, 10, fvar(11) * 50)),11
 animtype  = Medium
 hitflag = MAFD
 guardflag = MA
-pausetime = 10,10
+pausetime = 8,8
 sparkno = 2
 sparkxy = -10,-40
 hitsound   = 5,3
 guardsound = 6,2
 ground.type = Low
 ground.slidetime = 12
-ground.hittime  = 23
-air.hittime  = ceil(cond(fvar(15) *136 < 30, 30, fvar(15) * 136))
-down.hittime = 136
-ground.velocity = -3
-air.velocity = -3,-2.8
-fall  = 0
-forcenofall = 1
-air.fall = 0
-envshake.time = 9
-envshake.freq = 90
-envshake.ampl = 2
-fall.envshake.time = 0
-fall.envshake.freq = 0
-fall.envshake.ampl = 0
-air.cornerpush.veloff = -12
-palfx.time = 12
-palfx.add = 100, 0,20
-guard.hittime = 22
-guard.slidetime = 13
-guard.ctrltime = 21
-getpower = (50)*(cond(var(var(2)) = 1, 1, .5))
-
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-triggerall=map(hdc)>0
-trigger1 = time = 0
-attr = S, SA
-damage = ceil(cond(fvar(11) * 50 < 5, 5, fvar(11) * 50)),11
-animtype  = Medium
-hitflag = MAFD
-guardflag = MA
-pausetime = 15,15
-sparkno = 2
-sparkxy = -10,-40
-hitsound   = 5,3
-guardsound = 6,2
-ground.type = Low
-ground.slidetime = 12
-ground.hittime  = 23
-air.hittime  = ceil(cond(fvar(15) *136 < 30, 30, fvar(15) * 136))
+ground.hittime  = 22
+air.hittime  = ceil(cond(fvar(15) *136 < 10, 10, fvar(15) * 136))
 down.hittime = 136
 ground.velocity = -3
 air.velocity = -3,-2.8
@@ -5093,10 +4074,25 @@ movetype= A
 physics = S
 juggle  = 0
 poweradd= 0
-anim = 10011
 ctrl = 0
 sprpriority = 2
 facep2 = 1
+anim=10011
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time = 0&&combocount
+value = 10011
+elem = 3
 
 [State 0, NotHitBy]
 type = NotHitBy
@@ -5107,6 +4103,13 @@ value = A
 time = 1
 ignorehitpause = 1
 
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = .5
+ignorehitpause = 1
+persistent = 0
 [State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
@@ -5221,10 +4224,9 @@ type = VelSet
 trigger1 = animelem = 6
 x = 1
 
-[State 410, 2]
+[State 410, Regular Hit]
 type = hitdef 
 p2facing = 1
-triggerall=map(hdc)=0
 trigger1 = time = 0
 attr = S, SA
 damage = ceil(cond(fvar(11) * 50 < 10, 10, fvar(11) * 50)),11
@@ -5238,47 +4240,8 @@ hitsound   = 5,2
 guardsound = 6,2
 ground.type = high
 ground.slidetime = 12
-ground.hittime  = 27
-air.hittime  = ceil(cond(fvar(15) *106 < 30, 30, fvar(15) * 106))
-forcenofall = 1
-ground.velocity = -4
-air.velocity = -2,-3
-yaccel = .24
-air.cornerpush.veloff = -16
-air.fall = 0
-forcenofall = 0
-envshake.time = 9
-envshake.freq = 90
-envshake.ampl = 2
-fall.envshake.time = 0
-fall.envshake.freq = 0
-fall.envshake.ampl = 0
-palfx.time = 12
-palfx.add = 100, 0,20
-guard.hittime = 22
-guard.slidetime = 13
-guard.ctrltime = 24
-getpower = (50)*(cond(var(var(2)) = 1, 1, .5))
-
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-triggerall=map(hdc)>0
-trigger1 = time = 0
-attr = S, SA
-damage = ceil(cond(fvar(11) * 50 < 5, 5, fvar(11) * 50)),11
-animtype  =hard
-hitflag = MAFD
-guardflag = MA
-pausetime = 20,20
-sparkno = 2
-sparkxy = -10,-50
-hitsound   = 5,2
-guardsound = 6,2
-ground.type = high
-ground.slidetime = 12
-ground.hittime  = 27
-air.hittime  = ceil(cond(fvar(15) *106 < 30, 30, fvar(15) * 106))
+ground.hittime  = 26
+air.hittime  = ceil(cond(fvar(15) *106 < 16, 16, fvar(15) * 106))
 forcenofall = 1
 ground.velocity = -4
 air.velocity = -2,-3
@@ -5321,194 +4284,6 @@ value = 230
 ctrl = 0
 
 ;---------------------------------------------------------------------------
-;Install 6S: BrawlerRush B
-;---------------------------------------------------------------------------
-[Statedef 20011]
-type    = S
-movetype= A
-physics = S
-juggle  = 0
-poweradd= 0
-ctrl = 0
-sprpriority = 2
-facep2 = 1
-anim = 10000
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 100
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time = 0
-fv = 6  ;fv = 10
-value = 20011 ;State of this attack
-;ignorehitpause = 
-;persistent = 
-
-[State 200, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv = 25   
-value = 1.5; You can make this whatever you want to increase stun scaling per move
-ignorehitpause = 1
-persistent = 1
-
-
-[State 1200, Shake Screen]
-type = EnvShake
-trigger1 = animelem = 6
-time = 4    ;Time to shake screen
-ampl = 3     ;Amount to shake
-freq = 30   ;A frequency of 180 shakes the screen rapidly
-
-
-[State -3, Angous Voices]
-type = PlaySnd
-trigger1 = animelem = 4
-value = 9502, (0+(Random%3))
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 7
-anim = 1004
-ID = 1011
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 20
-removetime = -2
-pausemovetime = 0
-scale = .64,.64
-sprpriority = 1
-removeongethit = 0
-ignorehitpause=  0
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 6
-anim = 1008
-ID = 1008
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 15
-removetime = -2
-pausemovetime = 0
-scale = .84,.84
-ontop = 1
-sprpriority = 10
-removeongethit = 0
-ignorehitpause=  0
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 5
-anim = 6700
-ID = 6700
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =0.84,0.84
-sprpriority = 1
-ontop = 0
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 6
-anim = 6953
-ID = 6953
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = -1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale = .94,.94
-sprpriority = 3
-ontop = 0
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 3
-x = 9
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 6
-x = 1
-
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-trigger1 = time = 0
-attr = S, SA
-damage = ceil(cond(fvar(11) * 80 < 10, 10, fvar(11) * 80)),11
-animtype  =hard
-hitflag = MAFD
-guardflag = MA
-pausetime = 15,15
-sparkno = 2
-sparkxy = -10,-50
-hitsound   = 5,2
-guardsound = 6,2
-ground.type = high
-ground.slidetime = 12
-ground.hittime  = 27
-air.hittime  = 106
-forcenofall = 1
-ground.velocity = -4
-air.velocity = -2,-3
-yaccel = .24
-air.cornerpush.veloff = -16
-air.fall = 0
-forcenofall = 0
-envshake.time = 9
-envshake.freq = 90
-envshake.ampl = 2
-fall.envshake.time = 0
-fall.envshake.freq = 0
-fall.envshake.ampl = 0
-palfx.time = 12
-palfx.add = 100, 0,20
-guard.hittime = 22
-guard.slidetime = 13
-guard.ctrltime = 24
-getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
-
-[State 0, ChangeState]
-type = ChangeState
-trigger1 = animtime = 0
-value = 0 
-ctrl = 1
-
-[State 0, ChangeState]
-type = ChangeState
-trigger1 = movecontact && command = "holdfwd" && command = "b"
-trigger2 = command = "holdfwd" && command = "b"  && time>22
-value = 2002
-ctrl = 0
-
-
-;---------------------------------------------------------------------------
 ;Install 6S: Charge
 [Statedef 2002]
 type    = S
@@ -5518,6 +4293,7 @@ juggle  = 0
 poweradd= 0
 ctrl = 0
 sprpriority = 2
+anim=1002
 
 [State 0, VarAdd]
 type = MapSet
@@ -5531,107 +4307,13 @@ trigger1 = prevstateno!=2001
 map = "skdtrigger"
 value = 0
 ignorehitpause=1
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time =  0
-v = 10    ;fv = 10
-value = 0
-
-[State 8000, Varadd]
-type = VarAdd
-trigger1 = time = 0
-v = 3   ;fv = 10
-value = 1
-persistent = 0
-
-
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time = 0
-fv = 6  ;fv = 10
-value = 2002 ;State of this attack
-
-;Armor
+ 
 [State 0, ChangeAnim]
 type = ChangeAnim
-trigger1 = time = 0 && anim!=1002 ;Animation of this state
+trigger1 = time = 0
+trigger1 = prevstateno=2001
 value = 1002
-elem = 1
-
-;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-;Shadow Override
-;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-[State 0]
-type = MapSet
-trigger1 = time<20
-map = "ShadowOverride"
-value=3
-persistent=1
-ignorehitpause=1
-;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-[State 0, PalFXWiz]
-type = PalFX
-trigger1 = time=0
-time = 20
-add = 150,100,0
-mul = 256,256,256
-sinadd = 150,100,0,40
-invertall = 0
-color = 256
-
-[State 0]
-type = MapSet
-trigger1 = 1
-map = "armor"
-value=2
-ignorehitpause = 1
-persistent = 1
-[State 0, HitOverride]
-type = HitOverride
-trigger1 = 1 ;Time is how many ticks the Armor lasts
-attr = SCA,NA,SA,NP,SP
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = prevstateno!=(666999) && time = 0
-v = 41    ;fv = 10
-value = 0
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = 1
-v = 41
-value = 1
-ignorehitpause = 1
-;armor end
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = prevstateno!=(666999) && time = 0
-v = 41    ;fv = 10
-value = 0
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = 1
-v = 41
-value = 1
-ignorehitpause = 1
-;armor end
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = time%3=0
-v = 10     ;fv = 
-value = 2
-;ignorehitpause = 
-;persistent = 
+elem = 3
 
 [State 0, EnvShake]
 type = EnvShake
@@ -5640,34 +4322,11 @@ time = 60
 freq = 120
 ampl = 2
 
-[State 0, VarAdd]
-type = MapSet
-trigger1 = time=0
-trigger1 = prevstateno != 666999
-map = "scharge"
-value = 0
-ignorehitpause = 1
-
-[State 0, VarAdd]
-type = MapAdd
-trigger1 = 1
-map = "scharge"
-value = 1
-ignorehitpause = 1
-
 [State 12, ChangeState]
 type = ChangeState
-triggerall=command!= "hold_b"
-trigger1 = map(scharge)>12
-trigger2 = prevstateno = 666999
+trigger1 = time>3&&prevstateno=2001
+trigger2 = time>12&&prevstateno!=2001
 value = 2003
-
-[State 13, ChangeState]
-type = changestate
-triggerall=command= "hold_b"
-trigger1 = map(scharge) > 60
-trigger2 =map(scharge) > 60 && prevstateno = 666999
-value = 20033
 ;---------------------------------------------------------------------------
 ;Install 6S: BrawlerRush C
 ;---------------------------------------------------------------------------
@@ -5681,6 +4340,21 @@ ctrl = 0
 sprpriority = 2
 facep2 = 1
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 2
+ignorehitpause = 1
+persistent = 0
 [State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
@@ -5838,97 +4512,18 @@ persistent = 1
 
 [State 0, VarAdd]
 type = MapAdd
-trigger1 = map(skdtrigger)&&movehit
+trigger1 = !map(skdtrigger)&&movehit
 map = "punchskd"  
 value = 1
 ignorehitpause=1
 
 [State 410, 2]
-type = hitdef
-p2facing = 1
-triggerall = enemynear,map(armor)=0
-trigger1 = map(punchskd)=0&&map(skdtrigger)
-trigger1 = !movecontact
-attr = S, SA
-damage =ceil(cond(fvar(11) * 100+var(10)*0.5888 < 40, 40, fvar(11) * 100+var(10)*0.5888)),13+var(10)*0.5
-animtype  = Medium
-hitflag = MAFDP
-guardflag = MA
-pausetime = 15,15
-sparkno = 3
-sparkxy = -10,-50
-hitsound   = 5,4
-guardsound = 6,2
-ground.type = Low
-ground.slidetime = 14
-ground.hittime  = 999
-air.hittime = 999
-down.hittime = 999
-ground.velocity = -8,-2.8
-air.velocity = -8,-2.8
-fall.yvelocity = 0
-fall  = 1
-air.fall = 1
-envshake.time = 13
-envshake.freq = 90
-envshake.ampl = 8
-fall.envshake.time = 0
-fall.envshake.freq = 0
-fall.envshake.ampl = 0
-palfx.time = 28
-palfx.add = 100, 0,20
-guard.hittime = 28
-guard.slidetime = 19
-guard.ctrltime = 27
-getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
-id = 99856
-p2stateno = 915020
-[State 410, 2]
 type = hitdef 
 p2facing = 1
-triggerall = enemynear,map(armor)>0
-trigger1 = map(punchskd)=0&&map(skdtrigger)
-trigger1 = !movecontact
-attr = S, SA
-damage =ceil(cond(fvar(11) * 100+var(10)*0.5888 < 40, 40, fvar(11) * 100+var(10)*0.5888)),13+var(10)*0.5
-animtype  = Medium
-hitflag = MAFDP
-guardflag = MA
-pausetime = 15,15
-sparkno = 3
-sparkxy = -10,-50
-hitsound   = 5,4
-guardsound = 6,2
-ground.type = Low
-ground.slidetime = 14
-ground.hittime  = 999
-air.hittime = 999
-down.hittime = 999
-ground.velocity = -8,-2.8
-air.velocity = -8,-2.8
-fall.yvelocity = 0
-fall  = 1
-air.fall = 1
-envshake.time = 13
-envshake.freq = 90
-envshake.ampl = 8
-fall.envshake.time = 0
-fall.envshake.freq = 0
-fall.envshake.ampl = 0
-palfx.time = 28
-palfx.add = 100, 0,20
-guard.hittime = 28
-guard.slidetime = 19
-guard.ctrltime = 27
-getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
-id = 99856
-
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-trigger1 = map(punchskd)>0
-trigger2 = map(skdtrigger)=0
 triggerall = !movecontact
+trigger1 = map(skdtrigger)
+trigger2 = enemynear,!map(armor)
+trigger3 = map(punchskd)
 attr = S, SA
 damage =ceil(cond(fvar(11) * 100+var(10)*0.5888 < 40, 40, fvar(11) * 100+var(10)*0.5888)),13+var(10)*0.5
 animtype  = Medium
@@ -5963,163 +4558,13 @@ guard.ctrltime = 27
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 id = 99856
 
-[State 0, ChangeState]
-type = ChangeState
-trigger1 = animtime = 0
-value = 0 
-ctrl = 1
-
-
-;---------------------------------------------------------------------------
-;Install 6S: BrawlerRush C (charged)
-;---------------------------------------------------------------------------
-[Statedef 20033]
-type    = S
-movetype= A
-physics = S
-juggle  = 0
-poweradd= 0
-ctrl = 0
-sprpriority = 2
-facep2 = 1
-anim=10033
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 2
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time = 0
-fv = 6  ;fv = 10
-value = 20033 ;State of this attack
-;ignorehitpause = 
-;persistent = 
-
-[State 1200, Shake Screen]
-type = EnvShake
-trigger1 = animelem = 4
-time = 4    ;Time to shake screen
-ampl = 3     ;Amount to shake
-freq = 70   ;A frequency of 180 shakes the screen rapidly
-
-[State 0]
-type = MapSet
-trigger1 = animelemtime(5)<0
-map = "armor"
-value=2
-ignorehitpause = 1
-persistent = 1
-[State 0, HitOverride]
-type = HitOverride
-trigger1 = animelemtime(5)<0
-attr = SCA ,NA,SA,NP,SP
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-
-[State -3, Angous Voices]
-type = PlaySnd
-trigger1 = animelem = 3
-value = 1002,0
-volumescale=150
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 6
-anim = 6952
-ID = 6952
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =1.50,1
-sprpriority = 1
-ontop = 0
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 4
-anim = 6954
-ID = 6952
-pos = -40,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =1,1
-sprpriority = 1
-ontop = 1
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 5
-anim = 1005
-ID = 1013
-pos = 18,18
-ontop = 0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 6
-removetime = -2
-pausemovetime = 0
-scale = .94,.94
-sprpriority = 3
-removeongethit = 0
-ignorehitpause=  0
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 4
-anim = 1009
-ID = 1009
-pos = 0,2
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 6
-removetime = -2
-pausemovetime = 0
-scale = .94,.94
-sprpriority = 3
-removeongethit = 0
-ignorehitpause=  0
-ontop = 1
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 1
-x = 26
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 4
-x = 4
-
 [State 410, 2]
 type = hitdef 
 p2facing = 1
-triggerall = enemynear,map(armor)=0
-trigger1 =  !movecontact
+trigger1 = !map(skdtrigger)&&enemynear,map(armor)=0&&!map(punchskd)
+trigger1 = !movecontact
 attr = S, SA
-damage = ceil(cond(fvar(11) * 139+var(10)*0.5999 < 40, 40, fvar(11) * 139+var(10)*0.5999)),13+var(10)*0.5
+damage =ceil(cond(fvar(11) * 100+var(10)*0.5888 < 40, 40, fvar(11) * 100+var(10)*0.5888)),13+var(10)*0.5
 animtype  = Medium
 hitflag = MAFDP
 guardflag = MA
@@ -6129,347 +4574,29 @@ sparkxy = -10,-50
 hitsound   = 5,4
 guardsound = 6,2
 ground.type = Low
-ground.slidetime = 12
-ground.hittime  = 35
-ground.velocity = -14,-6
-guard.velocity = -14
-air.velocity = -14,-4
-;fall.yvelocity = 0
-fall  = 1
-air.fall = 1
-envshake.time = 40
-envshake.freq = 150
-envshake.ampl = 8
-fall.envshake.time = 9
-fall.envshake.freq = 20
-fall.envshake.ampl = 8
-palfx.time = 28
-palfx.add = 100, 0,20
-guard.hittime = 28
-guard.slidetime = 19
-guard.ctrltime = 27
-p2stateno = 5555
-getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-triggerall = enemynear,map(armor)>0
-trigger1 =  !movecontact
-attr = S, SA
-damage = ceil(cond(fvar(11) * 139+var(10)*0.5999 < 40, 40, fvar(11) * 139+var(10)*0.5999)),13+var(10)*0.5
-animtype  = Medium
-hitflag = MAFDP
-guardflag = MA
-pausetime = 15,15
-sparkno = 3
-sparkxy = -10,-50
-hitsound   = 5,4
-guardsound = 6,2
-ground.type = Low
-ground.slidetime = 12
-ground.hittime  = 35
-ground.velocity = -14,-6
-guard.velocity = -14
-air.velocity = -14,-4
-;fall.yvelocity = 0
-fall  = 1
-air.fall = 1
-envshake.time = 40
-envshake.freq = 150
-envshake.ampl = 8
-fall.envshake.time = 9
-fall.envshake.freq = 20
-fall.envshake.ampl = 8
-palfx.time = 28
-palfx.add = 100, 0,20
-guard.hittime = 28
-guard.slidetime = 19
-guard.ctrltime = 27
-getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
-
-[State 0, ChangeState]
-type = ChangeState
-trigger1 = animtime = 0
-value = 0 
-ctrl = 1
-
-;---------------------------------------------------------------------------
-;Install 6S: Charge
-[Statedef 20022]
-type    = S
-movetype= A
-physics = S
-juggle  = 0
-poweradd= 0
-ctrl = 0
-sprpriority = 2
-
-;Throw Tech not allowed
-[State 1060, Explod]
-type = Explod
-trigger1 = !NumExplod(44020)
-anim = 99856
-ID = 44020
-removetime = -1
-removeongethit = 0
-persistent = 1
-
-;Armor
-[State 0, ChangeAnim]
-type = ChangeAnim
-trigger1 = prevstateno = 666999
-trigger1 = time = 0 && anim!=1002
-trigger2 = prevstateno != 666999
-trigger2 = time = 0 ;Animation of this state
-value = 1002
-elem = 1
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time = 0
-fv = 6  ;fv = 10
-value = 20022 ;State of this attack
-
-[State 0, HitOverride]
-type = HitOverride
-trigger1 = 1;var(41) < 6 ;Time is how many ticks the Armor lasts
-attr = SCA,NA,SA,NP,SP
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-ignorehitpause = 1
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time =  0
-v = 10    ;fv = 10
-value = 0
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = prevstateno!=(666999) && time = 0
-v = 41    ;fv = 10
-value = 0
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = 1
-v = 41
-value = 1
-ignorehitpause = 1
-;armor end
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = time%3=0
-v = 10     ;fv = 
-value = 2
-;ignorehitpause = 
-;persistent = 
-
-[State 0, EnvShake]
-type = EnvShake
-trigger1 = animelem = 6
-time = 60
-freq = 120
-ampl = 2
-
-
-[State 12, ChangeState]
-type = ChangeState
-triggerall = var(41)=[12,60]
-trigger1 = command !="hold_b"
-trigger2 = prevstateno = 666999 && command!= "hold_b"
-value = 2103
-
-[State 13, ChangeState]
-type = changestate
-trigger1 = var(41)>60 || time > 60
-trigger2 = var(41)>60 && prevstateno = 666999 && command!= "hold_b"
-value = 21033
-;---------------------------------------------------------------------------
-;Install 6S: BrawlerRush C
-;---------------------------------------------------------------------------
-[Statedef 2103]
-type    = S
-movetype= A
-physics = S
-juggle  = 0
-poweradd= 0
-ctrl = 0
-sprpriority = 2
-facep2 = 1
-
-[State 200, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv = 25   
-value = 1.5; You can make this whatever you want to increase stun scaling per move
-ignorehitpause = 1
-persistent = 0
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time = 0
-fv = 6  ;fv = 10
-value = 2003 ;State of this attack
-;ignorehitpause = 
-;persistent = 
-
-[State 1200, Shake Screen]
-type = EnvShake
-trigger1 = animelem = 4
-time = 4    ;Time to shake screen
-ampl = 3     ;Amount to shake
-freq = 50   ;A frequency of 180 shakes the screen rapidly
-
-;Armor
-[State 0, ChangeAnim]
-type = ChangeAnim
-trigger1 = time = 0 && anim!=10033 ;Animation of this state
-value = 10033
-elem = 1
-
-
-[State 0, HitOverride]
-type = HitOverride
-triggerall = var(28)>0
-triggerall = movetype != H
-trigger1=  time<=11
-attr = SCA,NA,SA,NP,SP
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-
-
-[State -3, Angous Voices]
-type = PlaySnd
-trigger1 = animelem = 3
-value = 9503, (0+(Random%4))
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 6
-anim = 6952
-ID = 6952
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =1.50,1
-sprpriority = 1
-ontop = 0
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 4
-anim = 6954
-ID = 6952
-pos = -40,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =1,1
-sprpriority = 1
-ontop = 1
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 5
-anim = 1005
-ID = 1013
-pos = 18,18
-ontop = 0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 6
-removetime = -2
-pausemovetime = 0
-scale = .94,.94
-sprpriority = 3
-removeongethit = 0
-ignorehitpause=  0
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 4
-anim = 1009
-ID = 1009
-pos = 0,2
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 6
-removetime = -2
-pausemovetime = 0
-scale = .94,.94
-sprpriority = 3
-removeongethit = 0
-ignorehitpause=  0
-ontop = 1
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 1
-x = 14
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 4
-x = 3
-
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-trigger1 = time = 0
-attr = S, SA
-damage = ceil(cond(fvar(11) * 180+var(10)*0.5888 < 15, 15, fvar(11) * 180+var(10)*0.5888)),20+var(10)*0.5
-animtype  = Medium
-hitflag = MAFDP
-guardflag = MA
-pausetime = 28,28
-sparkno = 3
-sparkxy = -10,-50
-hitsound   = 5,4
-guardsound = 6,2
-ground.type = Low
-ground.slidetime = 12
-ground.hittime  = 35
+ground.slidetime = 14
+ground.hittime  = 999
+air.hittime = 999
+down.hittime = 999
 ground.velocity = -8,-2.8
 air.velocity = -8,-2.8
 fall.yvelocity = 0
 fall  = 1
 air.fall = 1
-envshake.time = 40
-envshake.freq = 160
+envshake.time = 13
+envshake.freq = 90
 envshake.ampl = 8
-fall.envshake.time = 9
-fall.envshake.freq = 10
-fall.envshake.ampl = 8
+fall.envshake.time = 0
+fall.envshake.freq = 0
+fall.envshake.ampl = 0
 palfx.time = 28
 palfx.add = 100, 0,20
 guard.hittime = 28
 guard.slidetime = 19
 guard.ctrltime = 27
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
+p2stateno = 915020
+id = 99856
 
 [State 0, ChangeState]
 type = ChangeState
@@ -6477,238 +4604,7 @@ trigger1 = animtime = 0
 value = 0 
 ctrl = 1
 
-;---------------------------------------------------------------------------
-;Install 6S: BrawlerRush C (charged)
-;---------------------------------------------------------------------------
-[Statedef 21033]
-type    = S
-movetype= A
-physics = S
-juggle  = 0
-poweradd= 0
-ctrl = 0
-sprpriority = 2
-facep2 = 1
 
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 2
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time = 0
-fv = 6  ;fv = 10
-value = 20033 ;State of this attack
-;ignorehitpause = 
-;persistent = 
-
-
-[State 1200, Shake Screen]
-type = EnvShake
-trigger1 = animelem = 4
-time = 4    ;Time to shake screen
-ampl = 3     ;Amount to shake
-freq = 70   ;A frequency of 180 shakes the screen rapidly
-
-;Armor
-[State 0, ChangeAnim]
-type = ChangeAnim
-trigger1 = time = 0 && anim!=10033 ;Animation of this state
-value = 10033
-elem = 1
-
-
-[State 0, HitOverride]
-type = HitOverride
-triggerall = var(28)>0
-triggerall = movetype != H
-trigger1=  1
-attr = SCA ,NA,SA,NP,SP
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-
-[State 4000, NotHitBy]
-type = NotHitBy
-trigger1 = time = 0
-value = SCA
-time = 10
-
-[State -3, Angous Voices]
-type = PlaySnd
-trigger1 = animelem = 3
-value = 9503, (0+(Random%4))
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 6
-anim = 6952
-ID = 6952
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =1.50,1
-sprpriority = 1
-ontop = 0
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 4
-anim = 6954
-ID = 6952
-pos = -40,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =1,1
-sprpriority = 1
-ontop = 1
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 5
-anim = 1005
-ID = 1013
-pos = 18,18
-ontop = 0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 6
-removetime = -2
-pausemovetime = 0
-scale = .94,.94
-sprpriority = 3
-removeongethit = 0
-ignorehitpause=  0
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 4
-anim = 1009
-ID = 1009
-pos = 0,2
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 6
-removetime = -2
-pausemovetime = 0
-scale = .94,.94
-sprpriority = 3
-removeongethit = 0
-ignorehitpause=  0
-ontop = 1
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 1
-x = 26
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 4
-x = 4
-
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-triggerall = enemynear,map(armor)=0
-trigger1 =!movecontact
-attr = S, SA
-damage = ceil(cond(fvar(11) * 179+var(10)*0.5999 < 20, 20, fvar(11) * 179+var(10)*0.5999)),22+var(10)*0.5
-animtype  = Medium
-hitflag = MAFDP
-guardflag = MA
-pausetime = 15,15
-sparkno = 3
-sparkxy = -10,-50
-hitsound   = 5,4
-guardsound = 6,2
-ground.type = Low
-ground.slidetime = 12
-ground.hittime  = 35
-ground.velocity = -14,-6
-guard.velocity = -14
-air.velocity = -14,-4
-;fall.yvelocity = 0
-fall  = 1
-air.fall = 1
-envshake.time = 40
-envshake.freq = 150
-envshake.ampl = 6
-fall.envshake.time = 9
-fall.envshake.freq = 10
-fall.envshake.ampl = 8
-palfx.time = 28
-palfx.add = 100, 0,20
-guard.hittime = 28
-guard.slidetime = 19
-guard.ctrltime = 27
-p2stateno = 5555
-getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-triggerall = enemynear,map(armor)>0
-trigger1 =!movecontact
-attr = S, SA
-damage = ceil(cond(fvar(11) * 179+var(10)*0.5999 < 20, 20, fvar(11) * 179+var(10)*0.5999)),22+var(10)*0.5
-animtype  = Medium
-hitflag = MAFDP
-guardflag = MA
-pausetime = 15,15
-sparkno = 3
-sparkxy = -10,-50
-hitsound   = 5,4
-guardsound = 6,2
-ground.type = Low
-ground.slidetime = 12
-ground.hittime  = 35
-ground.velocity = -14,-6
-guard.velocity = -14
-air.velocity = -14,-4
-;fall.yvelocity = 0
-fall  = 1
-air.fall = 1
-envshake.time = 40
-envshake.freq = 150
-envshake.ampl = 6
-fall.envshake.time = 9
-fall.envshake.freq = 10
-fall.envshake.ampl = 8
-palfx.time = 28
-palfx.add = 100, 0,20
-guard.hittime = 28
-guard.slidetime = 19
-guard.ctrltime = 27
-getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
-
-
-[State 0, ChangeState]
-type = ChangeState
-trigger1 = animtime = 0
-value = 0 
-ctrl = 1
 
 
 ;====================================================================================
@@ -6798,7 +4694,6 @@ type = hitdef
 p2facing = 1
 trigger1 = !movecontact
 trigger1 = p2statetype = A
-trigger1 = p2movetype !=H
 hitonce = 1
 attr = A, SA
 animtype  = hard 
@@ -6816,9 +4711,9 @@ ground.hittime  = 50
 air.hittime  = 50
 ground.velocity = -3.5,-6
 air.velocity = -2.2,-6
-airguard.velocity = -2.2,-4
+airguard.velocity = -2.2,-7
 airguard.hittime = 40
-airguard.ctrltime = 32
+airguard.ctrltime = 36
 guard.velocity = -7
 guard.slidetime = 16
 guard.hittime = 20
@@ -6830,44 +4725,6 @@ envshake.phase = 1
 forcenofall = 1
 palfx.time = 12
 palfx.add = 100, 0,20
-[State 2, Air "Grab" Hit]
-type = hitdef 
-p2facing = 1
-trigger1 = !movecontact
-trigger1 = p2statetype = A
-trigger1 = p2movetype =H
-hitonce = 1
-attr = A, SA
-animtype  = hard 
-damage = ceil(cond(fvar(11) *40 < 13, 13, fvar(11) * 40)), 7
-hitflag = MAFD
-guardflag=HA
-pausetime = 0,0
-sparkno = 1000
-sparkxy = -15,-20
-hitsound = S669,0
-guardsound = 6,2
-ground.type = low
-ground.slidetime = 12
-ground.hittime  = 50
-air.hittime  = 50
-ground.velocity = -3.5,-6
-air.velocity = -2.2,-6
-airguard.velocity = -2.2,-4
-airguard.hittime = 40
-airguard.ctrltime = 32
-guard.velocity = -7
-guard.slidetime = 16
-guard.hittime = 20
-guard.ctrltime = 16
-envshake.time = 20
-envshake.freq = 100
-envshake.ampl = 4
-envshake.phase = 1
-forcenofall = 1
-palfx.time = 12
-palfx.add = 100, 0,20
-
 [State 0, TargetBind]
 type = TargetBind
 trigger1 = movehit = 1
@@ -8065,7 +5922,7 @@ damage = ceil(cond(fvar(11) * 80 < 10, 10, fvar(11) * 80)),11
 animtype  = Medium
 hitflag = MAFD
 guardflag = MA
-pausetime = 19,19
+pausetime = 8,8
 sparkno = 3
 sparkxy = -10,-40
 hitsound   = 5,4
@@ -8122,6 +5979,12 @@ ctrl = 0
 anim = 1001
 sprpriority = 2
 facep2 = 1
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time = 0&&combocount
+value = 1001
+elem = 3
 
 [State Meter Burn State, VarSet]
 type = VarSet
@@ -8240,7 +6103,7 @@ damage = ceil(cond(fvar(11) * 80 < 10, 10, fvar(11) * 80)),11
 animtype  =hard
 hitflag = MAFD
 guardflag = MA
-pausetime = 20,20
+pausetime = 10,10
 sparkno = 2
 sparkxy = -10,-50
 hitsound   = 5,2
@@ -8285,267 +6148,7 @@ trigger4 = command = "holdfwd" && command = "EX"  && time>24
 value = 9002
 ctrl = 0
 
-;---------------------------------------------------------------------------
-;6S: EX BrawlerRush B
-;---------------------------------------------------------------------------
-[Statedef 90011]
-type    = S
-movetype= A
-physics = S
-juggle  = 0
-poweradd= -1000
-ctrl = 0
-anim = 1001
-sprpriority = 2
-facep2 = 1
 
-[State -3, Angous Voices]
-type = PlaySnd
-trigger1 = animelem = 4
-value = 1001,0
-volumescale=150
-
-[State EX Limiters]
-type = mapset
-trigger1 = time=0
-map = "EXlimiter8"
-value = 1
-ignorehitpause=1
-persistent=1
-
-
-[State 0, NotHitBy]
-type = NotHitBy
-triggerall=enemynear,stateno!=900
-triggerall=enemynear,stateno!=901
-trigger1 = time<=24
-value = A
-time = 1
-ignorehitpause = 1
-
-[State 8000, Varadd]
-type = VarAdd
-trigger1 = time = 0
-v = 3   ;fv = 10
-value = 1
-persistent = 0
-
-[State Meter Burn State, VarSet]
-type = VarSet
-trigger1 = movehit = 1
-v = 2
-value = 0
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 1
-
-[State -3, Angous Voices]
-type = PlaySnd
-trigger1 = animelem = 5
-value = 9500, 1
-channel=1
-
-;EX Effects
-[State 200, 2]
-type = PlaySnd
-trigger1 = time = 0
-value = 6800, 0
-[State 0, Explod]
-type = Explod
-trigger1 = time = 0
-anim = 6950
-ID = 6950
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-removetime = -2
-pausemovetime = 0
-scale = 0.5,0.5
-sprpriority = 0
-ontop = 1
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-[State 0, Explod]
-type = Explod
-trigger1 = time = 0
-anim = 6800
-ID = 6800
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-removetime = -2
-pausemovetime = 0
-scale = 0.9,0.5
-sprpriority = 0
-ontop = 0
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-;Shadow Override
-;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-[State 0]
-type = MapSet
-trigger1 = time<10
-map = "ShadowOverride"
-value=3
-persistent=1
-ignorehitpause=1
-;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-;EX EFfects
-;-------------------------------
-[State 0, PalFXWiz]
-type = PalFX
-trigger1 = time = 0
-time = 10
-add = 100,60,0
-mul = 256,256,256
-sinadd = 100,60,0,5
-invertall = 0
-color = 256
-[State 3120, Train]
-type = AfterImage
-trigger1 = Time = 0
-time = 8
-palbright = 40,30,-40
-palcontrast = 256,206,206
-trans = add1
-ignorehitpause = 1
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 5
-anim = 6700
-ID = 6700
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =0.64,0.64
-sprpriority = 1
-ontop = 0
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 7
-anim = 1004
-ID = 1011
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 20
-removetime = -2
-pausemovetime = 0
-scale = .64,.64
-sprpriority = 1
-removeongethit = 0
-ignorehitpause=  0
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 5
-anim = 6953
-ID = 6953
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = -1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =0.64,0.64
-sprpriority = 1
-ontop = 1
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 3
-x = 7
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 6
-x = 1
-
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-trigger1 = time = 0
-attr = S, SA
-damage = ceil(cond(fvar(11) * 120 < 15, 15, fvar(11) * 120)),11
-animtype  = hard
-hitflag = MAFD
-guardflag = MA
-pausetime = 28,28
-sparkno = 2
-sparkxy = -10,-50
-hitsound   = 5,4
-guardsound = 6,2
-ground.type = high
-ground.slidetime = 12
-ground.hittime  = 35
-air.hittime  = 106
-ground.velocity = -1,-5.9
-air.velocity = -1,-5.9
-yaccel =.24
-air.cornerpush.veloff = -16
-air.fall = 1
-fall=1
-envshake.time = 9
-envshake.freq = 90
-envshake.ampl = 2
-fall.envshake.time = 0
-fall.envshake.freq = 0
-fall.envshake.ampl = 0
-palfx.time = 28
-palfx.add = 100, 0,20
-guard.hittime = 19
-guard.slidetime = 13
-guard.ctrltime = 18
-getpower =  0
-fall.yvelocity = 0
-
-[State 0, ChangeState]
-type = ChangeState
-trigger1 = animtime = 0
-value = 0 
-ctrl = 1
-
-[State 0, ChangeState]
-type = ChangeState
-trigger1 = movecontact && command = "holdfwd" && command = "b"
-trigger2 = command = "holdfwd" && command = "b"  && time>24
-trigger3 = movecontact && command = "holdfwd" && command = "EX"
-trigger4 = command = "holdfwd" && command = "EX"  && time>24
-value = 9102
-ctrl = 0
 
 ;---------------------------------------------------------------------------
 ;EX 6S Charge
@@ -8565,102 +6168,13 @@ trigger1 = movehit = 1
 v = 2
 value = 0
 
-;Armor
-[State 0, ChangeAnim]
-type = ChangeAnim
-trigger1 = time = 0 && anim!=1002 ;Animation of this state
-value = 1002
-elem = 1
-;Armor
-[State 0, ChangeAnim]
-type = ChangeAnim
-trigger1 = time = 0 && prevstateno=666999 ;Animation of this state
-value = 1002
-elem = 6
-
 [State 0, VarSet]
 type = VarSet
 trigger1 = time = 0
 fv = 6  ;fv = 10
 value = 9002 ;State of this attack
 
-;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-;Shadow Override
-;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-[State 0]
-type = MapSet
-trigger1 = time<20
-map = "ShadowOverride"
-value=3
-persistent=1
-ignorehitpause=1
-;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-[State 0, PalFXWiz]
-type = PalFX
-trigger1 = time=0
-time = 20
-add = 150,100,0
-mul = 256,256,256
-sinadd = 150,100,0,40
-invertall = 0
-color = 256
 
-
-[State 0]
-type = MapSet
-trigger1 = (AnimElemTime (8) < 0)
-trigger2 = prevstateno=666999
-map = "armor"
-value=2
-ignorehitpause = 1
-persistent = 1
-[State 0, HitOverride]
-type = HitOverride
-trigger1 = (AnimElemTime (8) < 0)
-trigger2 = prevstateno=666999
-attr = SCA,NA,SA,NP,SP
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-
-;[State 0, PalFXWiz]
-;type = PalFX
-;trigger1 = time = 40
-;time = 30
-;add = 150,100,0
-;mul = 256,256,256
-;sinadd = 150,100,0,30
-;invertall = 0
-;color = 256
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = prevstateno!=(666999) && time = 0
-v = 41    ;fv = 10
-value = 0
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = 1
-v = 41
-value = 1
-ignorehitpause = 1
-;armor end
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time =  0
-v = 10    ;fv = 10
-value = 0
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = time%3=0
-v = 10     ;fv = 
-value = 2
-;ignorehitpause = 
-;persistent = 
 [State -3, Angous Voices]
 type = PlaySnd
 trigger1 = animelem = 5
@@ -8676,206 +6190,11 @@ ampl = 2
 
 [State 12, ChangeState]
 type = ChangeState
-triggerall = var(41)=[12,60]
-trigger1 = command!="hold_b"&&command!="hold_ex"
-trigger2 = prevstateno = 666999 && command!= "hold_b"&&command!="hold_ex"
+trigger1 = time>=3
 value = 9003
 
-[State 13, ChangeState]
-type = changestate
-trigger1 = var(41)>60 || time > 60
-trigger2 = var(41)>60 && prevstateno = 666999 && command!= "hold_b"&&command!="hold_ex"
-value = 90033
 ;---------------------------------------------------------------------------
 
-;---------------------------------------------------------------------------
-;EX 6S Charge
-[Statedef 90022]
-type    = S
-movetype= A
-physics = N
-juggle  = 0
-poweradd= -1000
-ctrl = 0
-sprpriority = 2
-velset = 0,0
-
-[State EX Limiters]
-type = mapset
-trigger1 = time=0
-map = "EXlimiter7"
-value = 1
-ignorehitpause=1
-persistent=1
-
-[State Meter Burn State, VarSet]
-type = VarSet
-trigger1 = movehit = 1
-v = 2
-value = 0
-
-[State 8000, Varadd]
-type = VarAdd
-trigger1 = time = 0
-v = 3   ;fv = 10
-value = 1
-persistent = 0
-
-;Armor
-[State 0, ChangeAnim]
-type = ChangeAnim
-trigger1 = time = 0 && anim!=1002 ;Animation of this state
-value = 1002
-elem = 1
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time = 0
-fv = 6  ;fv = 10
-value = 9002 ;State of this attack
-
-[State 0, HitOverride]
-type=hitoverride
-trigger1 = 1 ;Time is how many ticks the Armor lasts
-attr = SCA,NA,SA,NP,SP
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = prevstateno!=(666999) && time = 0
-v = 41    ;fv = 10
-value = 0
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = 1
-v = 41
-value = 1
-ignorehitpause = 1
-;armor end
-
-;EX Effects
-[State 200, 2]
-type = PlaySnd
-trigger1 = time = 0
-value = 6800, 0
-[State 0, Explod]
-type = Explod
-trigger1 = time = 0
-anim = 6950
-ID = 6950
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-removetime = -2
-pausemovetime = 0
-scale = 0.5,0.5
-sprpriority = 0
-ontop = 1
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-[State 0, Explod]
-type = Explod
-trigger1 = time = 0
-anim = 6800
-ID = 6800
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-removetime = -2
-pausemovetime = 0
-scale = 0.9,0.5
-sprpriority = 0
-ontop = 0
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-;Shadow Override
-;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-[State 0]
-type = MapSet
-trigger1 = time<10
-map = "ShadowOverride"
-value=3
-persistent=1
-ignorehitpause=1
-;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-;EX EFfects
-;-------------------------------
-[State 0, PalFXWiz]
-type = PalFX
-trigger1 = time = 0
-time = 10
-add = 100,60,0
-mul = 256,256,256
-sinadd = 100,60,0,5
-invertall = 0
-color = 256
-[State 3120, Train]
-type = AfterImage
-trigger1 = Time = 0
-time = 8
-palbright = 40,30,-40
-palcontrast = 256,206,206
-trans = add1
-ignorehitpause = 1
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time =  0
-v = 10    ;fv = 10
-value = 0
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = time%3=0
-v = 10     ;fv = 
-value = 2
-;ignorehitpause = 
-;persistent = 
-[State -3, Angous Voices]
-type = PlaySnd
-trigger1 = animelem = 5
-value = 9511,0
-channel=2
-
-[State 0, EnvShake]
-type = EnvShake
-trigger1 = animelem = 6
-time = 60
-freq = 120
-ampl = 2
-
-[State 12, ChangeState]
-type = ChangeState
-triggerall = var(41)=[12,60]
-trigger1 = command!="hold_b"
-trigger1 = command!="hold_EX"
-trigger2 = prevstateno = 666999 && command!= "hold_b"
-trigger2 = prevstateno = 666999 && command!= "hold_EX"
-value = 9203
-
-[State 13, ChangeState]
-type = changestate
-trigger1 = var(41)>60 || time > 60
-trigger2 = var(41)>60 && prevstateno = 666999 && command!= "hold_b"
-trigger2 = var(41)>60 && prevstateno = 666999 && command!= "hold_EX"
-value = 91033
 
 ;---------------------------------------------------------------------------
 ;6S: EX BrawlerRush C
@@ -9004,7 +6323,7 @@ damage = ceil(cond(fvar(11) * 145+var(10)*0.5999 < 10,10, fvar(11) * 145+var(10)
 animtype  = Medium
 hitflag = MAFDP
 guardflag = MA
-pausetime = 36,36
+pausetime = 12,12
 sparkno = 3
 sparkxy = -10,-50
 hitsound   = 5,4
@@ -9033,7 +6352,7 @@ damage = ceil(cond(fvar(11) * 145+var(10)*0.5999 < 10,10, fvar(11) * 145+var(10)
 animtype  = Medium
 hitflag = MAFDP
 guardflag = MA
-pausetime = 36,36
+pausetime = 12,12
 sparkno = 3
 sparkxy = -10,-50
 hitsound   = 5,4
@@ -9065,771 +6384,6 @@ trigger1 = animtime = 0
 value = 0 
 ctrl = 1
 
-;---------------------------------------------------------------------------
-;6S: EX BrawlerRush C (charged)
-;---------------------------------------------------------------------------
-[Statedef 90033]
-type    = S
-movetype= A
-physics = S
-juggle  = 0
-poweradd= 0
-ctrl = 0
-anim = 10033
-sprpriority = 2
-facep2 = 1
-
-[State Meter Burn State, VarSet]
-type = VarSet
-trigger1 = movehit = 1
-v = 2
-value = 0
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 2
-
-[State 0]
-type = MapSet
-trigger1 = (AnimElemTime (4) < 0)
-map = "armor"
-value=2
-ignorehitpause = 1
-persistent = 1
-[State 0, HitOverride]
-type = HitOverride
-trigger1 = (AnimElemTime (4) < 0)
-trigger1 = 1 ;Time is how many ticks the Armor lasts
-attr = SCA,NA,SA,NP,SP
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-
-[State -3, Angous Voices]
-type = PlaySnd
-trigger1 = animelem = 3
-value = 1002,0
-volumescale=150
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 4
-anim = 1009
-ID = 1009
-pos = 0,2
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 6
-removetime = -2
-pausemovetime = 0
-scale = .64,.64
-sprpriority = 3
-removeongethit = 0
-ignorehitpause=  0
-ontop = 1
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 6
-anim = 6952
-ID = 6952
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =1.50,1
-sprpriority = 1
-ontop = 0
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 4
-anim = 6954
-ID = 6952
-pos = -40,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =1,1
-sprpriority = 1
-ontop = 1
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-
-[State 3120, Train]
-type = AfterImage
-trigger1 = Time = 0
-time = 8
-palbright = 40,30,-40
-palcontrast = 256,206,206
-length = 10
-trans = add1
-ignorehitpause = 1
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 5
-anim = 1005
-ID = 1013
-pos = 18,18
-ontop = 0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 6
-removetime = -2
-pausemovetime = 0
-scale = .64,.64
-sprpriority = 3
-removeongethit = 0
-ignorehitpause=  0
-
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 1
-x = 25
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 4
-x = 4
-
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-triggerall = enemynear,map(armor)=0
-trigger1 = !movecontact
-attr = S, SA
-damage = ceil(cond(fvar(11) * 174+var(10)*0.5999 < 15, 15, fvar(11) * 174+var(10)*0.5999)),13+var(10)*0.5
-animtype  = Medium
-hitflag = MAFDP
-pausetime = 36,36
-sparkno = 3
-sparkxy = -10,-50
-hitsound   = 5,4
-guardsound = 6,2
-ground.type = Low
-ground.slidetime = 12
-ground.hittime  = 35
-ground.velocity = -20,-4
-air.velocity = -20,-4
-fall  = 1
-air.fall = 0
-envshake.time = 36
-envshake.freq = 120
-envshake.ampl = 8
-fall.envshake.time = 9
-fall.envshake.freq = 10
-fall.envshake.ampl = 8
-palfx.time = 36
-palfx.add = 100, 0,20
-p2stateno = 5555
-guard.hittime = 28
-guard.slidetime = 19
-guard.ctrltime = 27
-getpower =  0
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-triggerall = enemynear,map(armor)>0
-trigger1 = !movecontact
-attr = S, SA
-damage = ceil(cond(fvar(11) * 174+var(10)*0.5999 < 15, 15, fvar(11) * 174+var(10)*0.5999)),13+var(10)*0.5
-animtype  = Medium
-hitflag = MAFDP
-pausetime = 36,36
-sparkno = 3
-sparkxy = -10,-50
-hitsound   = 5,4
-guardsound = 6,2
-ground.type = Low
-ground.slidetime = 12
-ground.hittime  = 35
-ground.velocity = -20,-4
-air.velocity = -20,-4
-fall  = 1
-air.fall = 0
-envshake.time = 36
-envshake.freq = 120
-envshake.ampl = 8
-fall.envshake.time = 9
-fall.envshake.freq = 10
-fall.envshake.ampl = 8
-palfx.time = 36
-palfx.add = 100, 0,20
-guard.hittime = 28
-guard.slidetime = 19
-guard.ctrltime = 27
-getpower =  0
-
-
-
-
-[State 0, CtrlSet]
-type = CtrlSet
-trigger1 = animelem = 8 && movehit
-value = 1
-
-[State 0, ChangeState]
-type = ChangeState
-trigger1 = animtime = 0
-value = 0 
-ctrl = 1
-
-;---------------------------------------------------------------------------
-;6S: EX BrawlerRush C
-;---------------------------------------------------------------------------
-[Statedef 9203]
-type    = S
-movetype= A
-physics = S
-juggle  = 0
-poweradd= 0
-ctrl = 0
-anim = 1003
-sprpriority = 2
-facep2 = 1
-
-[State -3, Angous Voices]
-type = PlaySnd
-trigger1 = animelem = 3
-value = 1002,0
-volumescale=150
-
-
-[State Meter Burn State, VarSet]
-type = VarSet
-trigger1 = movehit = 1
-v = 2
-value = 0
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 2
-
-[State 0, HitOverride]
-type = HitOverride
-triggerall = (AnimElemTime (4) >= 0) && (AnimElemTime (8) < 0)
-trigger1 = 1 ;Time is how many ticks the Armor lasts
-attr = SCA,NA,SA,NP,SP
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-
-[State -3, Angous Voices]
-type = PlaySnd
-trigger1 = animelem = 3
-value = 9500, 2
-channel=2
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 6
-anim = 6952
-ID = 6952
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =1.50,1
-sprpriority = 1
-ontop = 0
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 4
-anim = 6954
-ID = 6952
-pos = -40,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =1,1
-sprpriority = 1
-ontop = 1
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-;Shadow Override
-;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-[State 0]
-type = MapSet
-trigger1 = time<10
-map = "ShadowOverride"
-value=3
-persistent=1
-ignorehitpause=1
-;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-;EX EFfects
-;-------------------------------
-[State 0, PalFXWiz]
-type = PalFX
-trigger1 = time = 0
-time = 10
-add = 100,60,0
-mul = 256,256,256
-sinadd = 100,60,0,5
-invertall = 0
-color = 256
-[State 3120, Train]
-type = AfterImage
-trigger1 = Time = 0
-time = 8
-palbright = 40,30,-40
-palcontrast = 256,206,206
-length = 10
-trans = add1
-ignorehitpause = 1
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 4
-anim = 1005
-ID = 1013
-pos = 10,20
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-removetime = -2
-pausemovetime = 0
-scale = .64,.64
-sprpriority = 3
-removeongethit = 0
-ignorehitpause=  0
-
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 1
-x = 12
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 4
-x = 3
-
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-trigger1 = time = 0 ;&& FrontEdgeDist < 8
-attr = S, SA
-damage = ceil(cond(fvar(11) * 185+var(10)*0.5999 < 10,10, fvar(11) * 185+var(10)*0.5999)),17+var(10)*0.5
-animtype  = Medium
-hitflag = MAFDP
-guardflag = MA
-pausetime = 36,36
-sparkno = 3
-sparkxy = -10,-50
-hitsound   = 5,4
-guardsound = 6,2
-ground.type = Low
-ground.slidetime = 12
-ground.hittime  = 35
-ground.velocity = -14,-4
-air.velocity = -14,-4.5
-fall  = 1
-air.fall = 0
-envshake.time = 36
-envshake.freq = 120
-envshake.ampl = 8
-fall.envshake.time = 9
-fall.envshake.freq = 10
-fall.envshake.ampl = 8
-palfx.time = 36
-palfx.add = 100, 0,20
-p2stateno = 5555
-guard.hittime = 28
-guard.slidetime = 19
-guard.ctrltime = 27
-getpower =  0
-
-
-[State 0, CtrlSet]
-type = CtrlSet
-trigger1 = animelem = 8 && movehit
-value = 1
-
-[State 0, ChangeState]
-type = ChangeState
-trigger1 = animtime = 0
-value = 0 
-ctrl = 1
-
-;---------------------------------------------------------------------------
-;6S: EX BrawlerRush C (charged)
-;---------------------------------------------------------------------------
-[Statedef 92033]
-type    = S
-movetype= A
-physics = S
-juggle  = 0
-poweradd= 0
-ctrl = 0
-anim = 10033
-sprpriority = 2
-facep2 = 1
-
-[State Meter Burn State, VarSet]
-type = VarSet
-trigger1 = movehit = 1
-v = 2
-value = 0
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 2
-
-[State 0, HitOverride]
-type = HitOverride
-triggerall = (AnimElemTime (4) >= 0) && (AnimElemTime (8) < 0)
-trigger1 = 1 ;Time is how many ticks the Armor lasts
-attr = SCA,NA,SA,NP,SP
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-
-[State 4000, NotHitBy]
-type = NotHitBy
-trigger1 = time = 0
-value = SCA
-time = 10
-
-[State -3, Angous Voices]
-type = PlaySnd
-trigger1 = animelem = 3
-value = 9500, 2
-channel=2
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 4
-anim = 1009
-ID = 1009
-pos = 0,2
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 6
-removetime = -2
-pausemovetime = 0
-scale = .64,.64
-sprpriority = 3
-removeongethit = 0
-ignorehitpause=  0
-ontop = 1
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 6
-anim = 6952
-ID = 6952
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =1.50,1
-sprpriority = 1
-ontop = 0
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 4
-anim = 6954
-ID = 6952
-pos = -40,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =1,1
-sprpriority = 1
-ontop = 1
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-[State 8000, flash]
-type = PalFX
-trigger1 = 1
-add = 40, 30, -40
-time=1
-ignorehitpause = 1
-[State 3120, Train]
-type = AfterImage
-trigger1 = Time = 0
-time = 8
-palbright = 40,30,-40
-palcontrast = 256,206,206
-length = 10
-trans = add1
-ignorehitpause = 1
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 5
-anim = 1005
-ID = 1013
-pos = 18,18
-ontop = 0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 6
-removetime = -2
-pausemovetime = 0
-scale = .64,.64
-sprpriority = 3
-removeongethit = 0
-ignorehitpause=  0
-
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 1
-x = 25
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 4
-x = 4
-
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-trigger1 = time = 0 ;&& FrontEdgeDist < 8
-attr = S, SA
-damage = ceil(cond(fvar(11) * 214+var(10)*0.5999 < 15, 15, fvar(11) * 214+var(10)*0.5999)),17+var(10)*0.5
-animtype  = Medium
-hitflag = MAFDP
-pausetime = 36,36
-sparkno = 3
-sparkxy = -10,-50
-hitsound   = 5,4
-guardsound = 6,2
-ground.type = Low
-ground.slidetime = 12
-ground.hittime  = 35
-ground.velocity = -20,-4
-air.velocity = -20,-4
-fall  = 1
-air.fall = 0
-envshake.time = 36
-envshake.freq = 120
-envshake.ampl = 8
-fall.envshake.time = 9
-fall.envshake.freq = 10
-fall.envshake.ampl = 8
-palfx.time = 36
-palfx.add = 100, 0,20
-p2stateno = 5555
-guard.hittime = 28
-guard.slidetime = 19
-guard.ctrltime = 27
-getpower =  0
-
-[State 0, CtrlSet]
-type = CtrlSet
-trigger1 = animelem = 8 && movehit
-value = 1
-
-[State 0, ChangeState]
-type = ChangeState
-trigger1 = animtime = 0
-value = 0 
-ctrl = 1
-
-type    = S
-movetype= A
-physics = S
-juggle  = 0
-poweradd= 0
-ctrl = 0
-sprpriority = 2
-
-[State Meter Burn State, VarSet]
-type = VarSet
-trigger1 = movehit = 1
-v = 2
-value = 0
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time = 0
-fv = 6  ;fv = 10
-value = 9041 ;State of this attack
-;ignorehitpause = 
-;persistent = 
-
-[State 0,????]
-type = varadd
-trigger1 = time = 0
-fvar(13) = 1
-
-;Armor
-[State 0, ChangeAnim]
-type = ChangeAnim
-trigger1 = time = 0 && anim!=1041 ;Animation of this state
-value = 1041
-elem = 1
-
-
-[State 0, HitOverride]
-type = HitOverride
-triggerall = var(28)>0
-triggerall = movetype != H
-trigger1=  1
-attr = SCA,NA,SA,NP,SP
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 3
-x = 4
-
-;ignorehitpause = 
-;persistent = 
-[State -3, Win Voices] ;Win
-type = PlaySnd
-trigger1 = animelem = 3
-value = 9503,1
-channel=1
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 5
-anim = 6600
-ID = 6952
-pos = -10,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =0.64,0.64
-sprpriority = 1
-ontop = 1
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 5
-anim = 6700
-ID = 6952
-pos = 60,0
-postype = p1  ;p2,front,back,left,right
-facing = -1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =0.64,0.64
-sprpriority = 1
-ontop = 1
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-
-[State 1041, 2]
-type = hitdef 
-p2facing = 1
-trigger1 = time = 0
-attr = S, SA
-damage = ceil(cond(fvar(11) * 30 < 10, 10, fvar(11) * 30)),12
-animtype = hard
-hitflag = MAF
-guardflag = MA
-pausetime = 25,25
-sparkno = 3
-sparkxy = -19, -22
-hitsound   = 5,4
-guardsound = 6,2
-ground.type = low
-ground.slidetime = 0
-guard.slidetime = 9
-ground.hittime  = 30
-guard.ctrltime = 21
-ground.velocity = -1,22
-airguard.velocity = -3,-.8
-air.type = high
-air.velocity = -1,22
-air.hittime = 12
-fall = 1 
-fall.yvelocity = -8
-down.bounce = 9
-envshake.time = 20
-envshake.freq = 100
-envshake.ampl = 4
-envshake.phase = 1
-  palfx.time = 16
-  palfx.add = 40, 30, -40
-palfx.sinadd = 50,50,50,16
-p2facing = 1
-ground.cornerpush.veloff = -7
-air.cornerpush.veloff = -7
-getpower =  0
-
-[State 0, ChangeState]
-type = ChangeState
-trigger1 = animtime = 0
-value = 0 
-ctrl = 1
 
 ;---------------------------------------------------------------------------
 ; 2S: Install EX DP (Ground)
@@ -9842,6 +6396,14 @@ ctrl = 0
 velset = 0,0
 anim = 1032
 sprpriority = -1
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
 
 [State EX Limiters]
 type = mapset
@@ -10243,6 +6805,14 @@ ctrl = 0
 velset = 4,-8
 anim = 10333
 sprpriority = 2
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
 
 [State 4000, NotHitBy]
 type = NotHitBy
@@ -10971,10 +7541,10 @@ p2facing = 1
 trigger1 = time = 0
 hitonce = 1
 attr = S, SA
-damage = ceil(cond(fvar(11) *200 < 15, 15, fvar(11) * 200)), 15
+damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 35
 hitflag = MAFDP
 guardflag = MA
-pausetime = 18,18
+pausetime = 12,12
 sparkno = 3
 sparkxy = -20,-20
 hitsound   = 5,3
@@ -11395,7 +7965,7 @@ damage = ceil(cond(fvar(11) * 90 < 15, 15, fvar(11) * 90)),15
 animtype  = Medium
 hitflag = MAFD
 guardflag = MA
-pausetime = 15,15
+pausetime = 8,8
 sparkno = 2
 sparkxy = -10,-40
 hitsound   = 5,3
@@ -11451,20 +8021,18 @@ poweradd= 0
 ctrl = 0
 sprpriority = 2
 facep2 = 1
-
+anim=9101
 [State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
 value = 1
 
-[State 0, VarSet]
-type = VarSet
-trigger1 = time = 0
-fv = 6  ;fv = 10
-value = 9101 ;State of this attack
-;ignorehitpause = 
-;persistent = 
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time = 0&&combocount
+value = 9101
+elem = 3
 
 [State 1200, Shake Screen]
 type = EnvShake
@@ -11590,7 +8158,7 @@ damage = ceil(cond(fvar(11) * 90 < 15, 15, fvar(11) * 90)),15
 animtype  =up
 hitflag = MAFD
 guardflag = MA
-pausetime = 20,20
+pausetime =10,10
 sparkno = 2
 sparkxy = -10,-50
 hitsound   = 5,2
@@ -11599,8 +8167,8 @@ ground.type = high
 ground.slidetime = 12
 ground.hittime  = 90
 air.hittime  = 90
-ground.velocity = -1.6,-11
-air.velocity = -1.6,-10
+ground.velocity = -4
+air.velocity = -2,-3
 yaccel = .29
 air.cornerpush.veloff = -16
 air.fall = 0
@@ -11635,272 +8203,6 @@ value = 9102
 ctrl = 0
 
 ;---------------------------------------------------------------------------
-;Install EX 6S: BrawlerRush B
-;---------------------------------------------------------------------------
-[Statedef 91011]
-type    = S
-movetype= A
-physics = S
-juggle  = 0
-poweradd= -1000
-ctrl = 0
-sprpriority = 2
-facep2 = 1
-
-[State 8000, Varadd]
-type = VarAdd
-trigger1 = time = 0
-v = 3   ;fv = 10
-value = 1
-persistent = 0
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 1
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time = 0
-fv = 6  ;fv = 10
-value = 91011 ;State of this attack
-;ignorehitpause = 
-;persistent = 
-
-[State 1200, Shake Screen]
-type = EnvShake
-trigger1 = animelem = 6
-time = 4    ;Time to shake screen
-ampl = 3     ;Amount to shake
-freq = 30
-
-;EX Effects
-[State 200, 2]
-type = PlaySnd
-trigger1 = time = 0
-value = 6800, 0
-[State 0, Explod]
-type = Explod
-trigger1 = time = 0
-anim = 6950
-ID = 6950
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-removetime = -2
-pausemovetime = 0
-scale = 0.5,0.5
-sprpriority = 0
-ontop = 1
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-[State 0, Explod]
-type = Explod
-trigger1 = time = 0
-anim = 6800
-ID = 6800
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-removetime = -2
-pausemovetime = 0
-scale = 0.9,0.5
-sprpriority = 0
-ontop = 0
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-[State 8000, flash]
-type = PalFX
-trigger1 = 1
-add = 40, 30, -40
-time=1
-ignorehitpause = 1
-[State 3120, Train]
-type = AfterImage
-trigger1 = Time = 0
-time = 8
-palbright = 40,30,-40
-palcontrast = 256,206,206
-trans = add1
-ignorehitpause = 1
-
-;Armor
-[State 0, ChangeAnim]
-type = ChangeAnim
-trigger1 = time = 0 && anim!=10011 ;Animation of this state
-value = 10011
-elem = 1
-
-
-[State 0, HitOverride]
-type = HitOverride
-triggerall = var(28)>0
-triggerall = movetype != H
-trigger1=  1
-attr = SCA,NA,SA,NP,SP
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-
-[State -3, Angous Voices]
-type = PlaySnd
-trigger1 = animelem = 5
-value = 9500, 1
-channel=1
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 7
-anim = 1004
-ID = 1011
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 20
-removetime = -2
-pausemovetime = 0
-scale = .98,.98
-sprpriority = 1
-removeongethit = 0
-ignorehitpause=  0
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 6
-anim = 1008
-ID = 1008
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 15
-removetime = -2
-pausemovetime = 0
-scale = .98,.98
-ontop = 1
-sprpriority = 10
-removeongethit = 0
-ignorehitpause=  0
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 5
-anim = 6700
-ID = 6700
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =0.64,0.64
-sprpriority = 1
-ontop = 0
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 6
-anim = 6953
-ID = 6953
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = -1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =0.64,0.64
-sprpriority = 3
-ontop = 0
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 3
-x = 9
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 6
-x = 1
-
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-trigger1 = time = 0
-attr = S, SA
-damage = ceil(cond(fvar(11) * 100 < 15, 15, fvar(11) * 100)),15
-animtype  =up
-hitflag = MAFD
-guardflag = MA
-pausetime = 20,20
-sparkno = 2
-sparkxy = -10,-50
-hitsound   = 5,2
-guardsound = 6,2
-ground.type = high
-ground.slidetime = 12
-ground.hittime  = 90
-air.hittime  = 90
-ground.velocity = -1.6,-11
-air.velocity = -1.6,-10
-yaccel = .29
-air.cornerpush.veloff = -16
-air.fall = 0
-forcenofall = 0
-envshake.time = 9
-envshake.freq = 90
-envshake.ampl = 2
-fall.envshake.time = 0
-fall.envshake.freq = 0
-fall.envshake.ampl = 0
-palfx.time = 12
-palfx.add = 100, 0,20
-guard.velocity = -4
-guard.hittime = 17
-guard.slidetime = 13
-guard.ctrltime = 16
-getpower = 0
-
-[State 0, ChangeState]
-type = ChangeState
-trigger1 = animtime = 0
-value = 0 
-ctrl = 1
-
-[State 0, ChangeState]
-type = ChangeState
-trigger1 = movecontact && command = "holdfwd" && command = "b"
-trigger2 = command = "holdfwd" && command = "b"  && time>22
-value = 9102
-ctrl = 0
-
-
-;---------------------------------------------------------------------------
 ;Install EX 6S: Charge
 [Statedef 9102]
 type    = S
@@ -11909,78 +8211,10 @@ physics = S
 juggle  = 0
 poweradd= 0
 ctrl = 0
-;anim = 1002
+anim = 1002
 sprpriority = 2
 
-[State 0, VarSet]
-type = VarSet
-trigger1 = time =  0
-v = 10    ;fv = 10
-value = 0
 
-;Armor
-[State 0, ChangeAnim]
-type = ChangeAnim
-trigger1 = time = 0 && anim!=1002 ;Animation of this state
-value = 1002
-elem = 1
-
-[State 0]
-type = MapSet
-trigger1 = 1
-map = "armor"
-value=2
-ignorehitpause = 1
-persistent = 1
-
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time = 0
-fv = 6  ;fv = 10
-value = 9102 ;State of this attack
-
-[State 0, HitOverride]
-type = HitOverride
-;triggerall = (AnimElemTime (3) >= 0) && (AnimElemTime (8) < 0)
-trigger1 = 1 ;Time is how many ticks the Armor lasts
-attr = SCA,NA,NP,SP,SA
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-
-;[State 0, PalFXWiz]
-;type = PalFX
-;trigger1 = time = 40
-;time = 30
-;add = 150,100,0
-;mul = 256,256,256
-;sinadd = 150,100,0,30
-;invertall = 0
-;color = 256
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = prevstateno!=(666999) && time = 0
-v = 41    ;fv = 10
-value = 0
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = 1
-v = 41
-value = 1
-ignorehitpause = 1
-;armor end
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = time%3=0
-v = 10     ;fv = 
-value = 2
-;ignorehitpause = 
-;persistent = 
 
 [State 0, EnvShake]
 type = EnvShake
@@ -11992,168 +8226,11 @@ ampl = 2
 
 [State 12, ChangeState]
 type = ChangeState
-triggerall = var(41)=[12,60]
-trigger1 = command !="hold_b"&&command !="hold_EX"
-trigger2 = prevstateno = 666999 && command!= "hold_b"&& command!= "hold_EX"
+trigger1 = time>=3
 value = 9103
 
-[State 13, ChangeState]
-type = changestate
-trigger1 = var(41)>60 || time > 60
-trigger2 = var(41)>60 && prevstateno = 666999 && command!= "hold_b" && command!= "hold_EX"
-value = 91033
-
-;Install EX 6S: Charge
-[Statedef 91022]
-type    = S
-movetype= A
-physics = N
-juggle  = 0
-poweradd= -1000
-ctrl = 0
-;anim = 1002
-sprpriority = 2
-
-[State 8000, Varadd]
-type = VarAdd
-trigger1 = time = 0
-v = 3   ;fv = 10
-value = 1
-persistent = 0
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time =  0
-v = 10    ;fv = 10
-value = 0
-
-;Armor
-[State 0, ChangeAnim]
-type = ChangeAnim
-trigger1 = time = 0 && anim!=1002 ;Animation of this state
-value = 1002
-elem = 1
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time = 0
-fv = 6  ;fv = 10
-value = 9102 ;State of this attack
-
-[State 0, HitOverride]
-type = HitOverride
-;triggerall = (AnimElemTime (3) >= 0) && (AnimElemTime (8) < 0)
-trigger1 = 1 ;Time is how many ticks the Armor lasts
-attr = SCA,NA,NP,SP,SA
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = prevstateno!=(666999) && time = 0
-v = 41    ;fv = 10
-value = 0
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = 1
-v = 41
-value = 1
-ignorehitpause = 1
-;armor end
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = time%3=0
-v = 10     ;fv = 
-value = 2
-;ignorehitpause = 
-;persistent = 
-
-;EX Effects
-[State 200, 2]
-type = PlaySnd
-trigger1 = time = 0
-value = 6800, 0
-[State 0, Explod]
-type = Explod
-trigger1 = time = 0
-anim = 6950
-ID = 6950
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-removetime = -2
-pausemovetime = 0
-scale = 0.5,0.5
-sprpriority = 0
-ontop = 1
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-[State 0, Explod]
-type = Explod
-trigger1 = time = 0
-anim = 6800
-ID = 6800
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-removetime = -2
-pausemovetime = 0
-scale = 0.9,0.5
-sprpriority = 0
-ontop = 0
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-[State 8000, flash]
-type = PalFX
-trigger1 = 1
-add = 40, 30, -40
-time=1
-ignorehitpause = 1
-[State 3120, Train]
-type = AfterImage
-trigger1 = Time = 0
-time = 8
-palbright = 40,30,-40
-palcontrast = 256,206,206
-trans = add1
-ignorehitpause = 1
-
-[State 0, EnvShake]
-type = EnvShake
-trigger1 = animelem = 6
-time = 60
-freq = 120
-ampl = 2
 
 
-[State 12, ChangeState]
-type = ChangeState
-triggerall = var(41)=[12,60]
-trigger1 = command !="hold_b"&&command !="hold_EX"
-trigger2 = prevstateno = 666999 && command!= "hold_b"&&command !="hold_EX"
-value = 9303
-
-[State 13, ChangeState]
-type = changestate
-trigger1 = var(41)>60 || time > 60
-trigger2 = var(41)>60 && prevstateno = 666999 && command!= "hold_b"&&command !="hold_EX"
-value = 93033
 ;---------------------------------------------------------------------------
 ;Install EX 6S: BrawlerRush C
 ;---------------------------------------------------------------------------
@@ -12327,7 +8404,7 @@ damage = ceil(cond(fvar(11) * 145+var(10)*0.5888 < 15, 15, fvar(11) * 145+var(10
 animtype  = Medium
 hitflag = MAFDP
 guardflag = MA
-pausetime = 36,36
+pausetime = 12,12
 sparkno = 3
 sparkxy = -10,-50
 hitsound   = 5,4
@@ -12402,250 +8479,4 @@ trigger1 = animtime = 0
 value = 0 
 ctrl = 1
 
-;---------------------------------------------------------------------------
-;Install EX 6S: BrawlerRush C (charged)
-;---------------------------------------------------------------------------
-[Statedef 91033]
-type    = S
-movetype= A
-physics = S
-juggle  = 0
-poweradd= 0
-ctrl = 0
-sprpriority = 2
-facep2 = 1
-anim = 10033
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 2
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = time = 0
-fv = 6  ;fv = 10
-value = 91033 ;State of this attack
-;ignorehitpause = 
-;persistent = 
-
-[State 1200, Shake Screen]
-type = EnvShake
-trigger1 = animelem = 5
-time = 4    ;Time to shake screen
-ampl = 3     ;Amount to shake
-freq = 70
-
-[State 3120, Train]
-type = AfterImage
-trigger1 = Time = 0
-time = 8
-palbright = 40,30,-40
-palcontrast = 256,206,206
-length = 10
-trans = add1
-ignorehitpause = 1
-
-[State 0]
-type = MapSet
-trigger1 = (AnimElemTime (4) < 0)
-map = "armor"
-value=2
-ignorehitpause = 1
-persistent = 1
-[State 0, HitOverride]
-type = HitOverride
-trigger1 = (AnimElemTime (4) < 0)
-attr = SCA ,NA,SA,NP,SP
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-
-[State -3, Angous Voices]
-type = PlaySnd
-trigger1 = animelem = 3
-value = 1002,0
-volumescale=150
-[State -3, Win Voices] ;Win
-type = PlaySnd
-trigger1 = time = 0
-value = 1009, (0+(Random%3))
-channel=1
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 6
-anim = 6952
-ID = 6952
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =1.50,1
-sprpriority = 1
-ontop = 0
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 4
-anim = 6954
-ID = 6952
-pos = -40,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-scale =1,1
-sprpriority = 1
-ontop = 1
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 0
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 5
-anim = 1005
-ID = 1013
-pos = 18,18
-ontop = 0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 6
-removetime = -2
-pausemovetime = 0
-scale = .98,.98
-sprpriority = 3
-removeongethit = 0
-ignorehitpause=  0
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 4
-anim = 1009
-ID = 1009
-pos = 0,2
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 6
-removetime = -2
-pausemovetime = 0
-scale = .98,.98
-sprpriority = 3
-removeongethit = 0
-ignorehitpause=  0
-ontop = 1
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 1
-x = 26
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = animelem = 4
-x = 4
-
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-triggerall=enemynear,map(armor)=0
-trigger1 = !movecontact
-attr = S, SA
-damage = ceil(cond(fvar(11) * 144+var(10)*0.5999 < 20, 20, fvar(11) * 144+var(10)*0.5999)),13+var(10)*0.5
-animtype  = Medium
-hitflag = MAFDP
-;guardflag = MA
-pausetime = 36,36
-sparkno = 3
-sparkxy = -10,-50
-hitsound   = 5,4
-guardsound = 6,2
-ground.type = Low
-ground.slidetime = 12
-ground.hittime  = 35
-ground.velocity = -14,-6
-guard.velocity = -14
-air.velocity = -14,-4
-;fall.yvelocity = 0
-fall  = 1
-air.fall = 1
-envshake.time = 36
-envshake.freq = 120
-envshake.ampl = 8
-fall.envshake.time = 9
-fall.envshake.freq = 10
-fall.envshake.ampl = 8
-palfx.time = 28
-palfx.add = 100, 0,20
-guard.hittime = 28
-guard.slidetime = 19
-guard.ctrltime = 27
-p2stateno = 5555
-getpower = 0
-[State 410, 2]
-type = hitdef 
-p2facing = 1
-triggerall=enemynear,map(armor)>0
-trigger1 = !movecontact
-attr = S, SA
-damage = ceil(cond(fvar(11) * 144+var(10)*0.5999 < 20, 20, fvar(11) * 144+var(10)*0.5999)),13+var(10)*0.5
-animtype  = Medium
-hitflag = MAFDP
-;guardflag = MA
-pausetime = 36,36
-sparkno = 3
-sparkxy = -10,-50
-hitsound   = 5,4
-guardsound = 6,2
-ground.type = Low
-ground.slidetime = 12
-ground.hittime  = 35
-ground.velocity = -14,-6
-guard.velocity = -14
-air.velocity = -14,-4
-;fall.yvelocity = 0
-fall  = 1
-air.fall = 1
-envshake.time = 36
-envshake.freq = 120
-envshake.ampl = 8
-fall.envshake.time = 9
-fall.envshake.freq = 10
-fall.envshake.ampl = 8
-palfx.time = 28
-palfx.add = 100, 0,20
-guard.hittime = 28
-guard.slidetime = 19
-guard.ctrltime = 27
-getpower = 0
-
-
-
-
-[State 0, CtrlSet]
-type = CtrlSet
-trigger1 = animelem = 8 && movehit
-value = 1
-
-[State 0, ChangeState]
-type = ChangeState
-trigger1 = animtime = 0
-value = 0 
-ctrl = 1
 

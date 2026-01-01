@@ -44,12 +44,25 @@ ignorehitpause = 1
 pausemovetime = 999999
 supermovetime = 999999
 
+
 [State -2, Explod];Scaling The Inside Bar
 type =ModifyExplod
+triggerall = root,map(install)<=900
 Trigger1=TeamSide=1
 triggerall=root,alive
 trigger1 = NumExplod(7001)
 scale = .6 * Root,Map(Install)/720,.6
+id = 7001
+PauseMoveTime=999999999999
+SuperMoveTime=99999999999999
+ignorehitpause = 1
+[State -2, Explod];Scaling The Inside Bar
+type =ModifyExplod
+triggerall = root,map(install)>900
+Trigger1=TeamSide=1
+triggerall=root,alive
+trigger1 = NumExplod(7001)
+scale = .6 * 900/720,.6
 id = 7001
 PauseMoveTime=999999999999
 SuperMoveTime=99999999999999
@@ -80,9 +93,20 @@ supermovetime = 999999
 
 [State -2, Explod];Scaling The Inside Bar
 type =ModifyExplod
+triggerall = root,map(install)<=900
 Trigger1=TeamSide=2
 trigger1 = NumExplod(7001)
 scale = .6 * Root,Map(Install)/900,.6
+id = 7001
+PauseMoveTime=999999999999
+SuperMoveTime=99999999999999
+ignorehitpause = 1
+[State -2, Explod];Scaling The Inside Bar
+type =ModifyExplod
+triggerall = root,map(install)>900
+Trigger1=TeamSide=2
+trigger1 = NumExplod(7001)
+scale = .6 * 900/720,.6
 id = 7001
 PauseMoveTime=999999999999
 SuperMoveTime=99999999999999

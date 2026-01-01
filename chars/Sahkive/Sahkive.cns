@@ -54,7 +54,7 @@ run.fwd  = 20, 0    ;Run forward (x, y)
 run.back = -20,0 ;Hop backward (x, y)
 jump.neu = 0,-8   ;Neutral jumping velocity (x, y)
 jump.back = -2.10
-jump.fwd = 2.10
+jump.fwd = 3
 runjump.back = -3 ;Running jump speeds (opt)
 runjump.fwd = 4     ;.
 airjump.neu = 0,-6.5     ;.
@@ -701,8 +701,8 @@ value = 0
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "toss %f stun %f damage %f red %f R %f tst %f limit %f haki %f vile %f"
-params = map(toss),fvar(25),fvar(13),map(truth),map(raga),map(TENSHADOWS),map(armorlimit),map(haki),map(vile)
+text = "toss %f stun %f damage %f red %f R %vile x %f vile y %f haki %f OBS %f"
+params = map(toss),fvar(25),fvar(13),map(truth),map(raga),map(vile),map(viley),map(haki),map(observation)
 ;ignorehitpause = 
 ;persistent = 
 
@@ -837,6 +837,13 @@ type = MapSet
 trigger1 = enemy,name="Vile"&&enemy,numhelper(6001)
 map = "Vile"
 value = (p2bodydist x)+enemy,helper(6001),RootDist X
+ignorehitpause = 1
+
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Vile"&&enemy,numhelper(6001)
+map = "VileY"
+value = (p2bodydist y)+enemy,helper(6001),RootDist y
 ignorehitpause = 1
 
 [State -2, VarSet]
@@ -1179,6 +1186,13 @@ var(53)=0
  trigger2= !numenemy    ;I think this may be what's messing things up.....
  var(54)=0
 
+
+[State 0, VarAdd]
+type = mapset
+trigger1= combocount=0
+map =  "kicklaunch"
+value = 0
+
 [State -2, reset var when opponent lies down]
 type=varset
 triggerall = var(54) != 0
@@ -1462,7 +1476,7 @@ ignorehitpause = 1
 type = MapSet
 trigger1 = roundstate=0
 trigger2 = map(haki)=1
-trigger2 = stateno!=250&&stateno!=1020&&stateno!=[510,515]&&stateno!=666999&&stateno!=500&&stateno!=650&&stateno!=[1100,1105]&&stateno!=300
+trigger2 = stateno!=250&&stateno!=1020&&stateno!=[510,515]&&stateno!=666999&&stateno!=500&&stateno!=650&&stateno!=[1100,1105]&&stateno!=300&&stateno!=1030
 trigger3 = movetype=H
 map = "Haki"
 value=0

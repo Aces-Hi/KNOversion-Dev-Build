@@ -152,12 +152,12 @@ value = S115,0
 [State 20, 1]
 type = VelSet
 trigger1 = command = "holdfwd"
-x = const(velocity.walk.fwd.x)*(cond(time<8, 2.0,1))+(cond(var(8)>0,1,0))
+x = const(velocity.walk.fwd.x)
 
 [State 20, 2]
 type = VelSet
 trigger1 = command = "holdback"
-x = const(velocity.walk.back.x)*(cond(time<8, 2.0,1))-(cond(var(8)>0,1,0))
+x = const(velocity.walk.back.x)
 
 [State 20, 3]
 type = ChangeAnim
@@ -519,7 +519,7 @@ value = -1
 [State 0, VelSet]
 type = VelSet
 trigger1 =time=0
-x = 4+(cond(var(8)>0,1,0))
+x =6+(cond(var(8)>0,1,0))
 y = 0
 
 [State 200, 2]
@@ -1054,7 +1054,7 @@ value = 1
 [State 100, 1]
 type = VelSet
 trigger1 = time=[0,8]
-x = 9
+x = 11
 
 [State 200, 2]
 type = PlaySnd
@@ -1063,7 +1063,7 @@ value = 900, 0
 [State 0, VelSet]
 type = VelSet
 trigger1 = time = 9
-x = 2+(cond(var(8)>0,1.5,0))
+x = 4+(cond(var(8)>0,1.5,0))
 y = 0
 ;ignorehitpause = 
 ;persistent = 

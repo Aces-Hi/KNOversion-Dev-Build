@@ -642,6 +642,14 @@ anim = 99999
 sprpriority = 2
 velset = 0,0
 
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 10
+ignorehitpause = 1
+persistent = 0
+
 [State 0, NotHitBy]
 type = NotHitBy
 trigger1 =1
@@ -806,6 +814,14 @@ ctrl = 0
 anim = cond((enemynear,stateno!=[120,159]) && enemynear, movetype = H, 3019, 3012)
 sprpriority = 2
 velset = 7,0
+
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 10
+ignorehitpause = 1
+persistent = 0
 
 [State 0, NotHitBy]
 type = NotHitBy
@@ -1048,14 +1064,6 @@ trigger1 = movehit = 1
 v = 2
 value = 0
 
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit
-fv =13     ;fv = 
-value = 5
-ignorehitpause=1
-persistent=0
-
 
 [State 0, PlaySnd]
 type = PlaySnd
@@ -1131,7 +1139,7 @@ ignorehitpause = 0
 type = HitDef
 trigger1 = !movecontact && p2dist x>70
 attr = S, HA
-damage = 300
+damage = 200
 animtype  = Medium
 hitflag = MAFD
 guardflag = MA
@@ -1161,7 +1169,7 @@ trigger1 =!movecontact && p2dist x<70
 trigger1 = enemynear,statetype!=A
 trigger1 = enemynear,movetype!=H
 attr = S, HA
-damage = 300
+damage = 200
 animtype  = Medium
 hitflag = MAFD
 guardflag = 
@@ -1190,7 +1198,7 @@ trigger1 =!movecontact && p2dist x<70
 trigger1 = enemynear,statetype!=A
 trigger1 = enemynear,movetype=H
 attr = S, HA
-damage = 300
+damage = 200
 animtype  = Medium
 hitflag = MAFD
 guardflag=MA
@@ -1221,7 +1229,7 @@ trigger1 =!movecontact && p2dist x<70
 trigger1 = enemynear,statetype=A
 trigger1 = enemynear,movetype!=H
 attr = S, HT
-damage = 300
+damage = 200
 animtype  = Medium
 hitflag = MAFD
 guardflag = 
@@ -1250,7 +1258,7 @@ trigger1 =!movecontact && p2dist x<70
 trigger1 = enemynear,statetype=A
 trigger1 = enemynear,movetype=H
 attr = S, HT
-damage = 300
+damage = 200
 animtype  = Medium
 hitflag = MAFD
 guardflag=MA

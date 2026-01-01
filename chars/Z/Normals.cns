@@ -12,6 +12,14 @@ anim = 200                       ;Change animation (Def: no change)
 poweradd = 0                   ;Power to add (Def: 0)
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State -2, WHY DOESN'T THE HITCOUNT RESET ARRRGGGHHH]
 type = Varset
 trigger1 = P2Movetype = H
@@ -28,21 +36,12 @@ ignorehitpause = 1
 
 [State 200, Starter Scaling]
 type = VarAdd
-trigger1 = fvar(1)
 trigger1 = movehit
 fv = 25  
-value = -1 ; You can make this whatever you want to increase stun scaling per move
+value = 2
 ignorehitpause = 1
 persistent = 0
 
-[State 200, VarAdd]
-type = VarAdd
-trigger1 = !fvar(1)
-trigger1 = movehit
-fv = 25  
-value = 1; You can make this whatever you want to increase stun scaling per move
-ignorehitpause = 1
-persistent = 0
 
 [State 0, VarAdd]
 type = VarAdd
@@ -776,6 +775,14 @@ anim = 400
 sprpriority = 2
 
 [State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+[State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
@@ -797,19 +804,9 @@ ignorehitpause = 1
 
 [State 200, Starter Scaling]
 type = VarAdd
-trigger1 = fvar(1)
 trigger1 = movehit
 fv = 25  
-value = -1 ; You can make this whatever you want to increase stun scaling per move
-ignorehitpause = 1
-persistent = 0
-
-[State 200, VarAdd]
-type = VarAdd
-trigger1 = !fvar(1)
-trigger1 = movehit
-fv = 25  
-value = 1; You can make this whatever you want to increase stun scaling per move
+value = 2
 ignorehitpause = 1
 persistent = 0
 
@@ -871,7 +868,7 @@ sprpriority = 1
 
 [State 0, VelSet]
 type = VelSet
-trigger1=vel x <=1
+trigger1=vel x <=6
 trigger1 = time = 6
 x = 10
 
@@ -1452,6 +1449,14 @@ sprpriority = 2
 facep2 = 1
 
 [State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+[State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
@@ -1472,19 +1477,9 @@ ignorehitpause = 1
 
 [State 200, Starter Scaling]
 type = VarAdd
-trigger1 = fvar(1)
 trigger1 = movehit
 fv = 25  
-value = -1 ; You can make this whatever you want to increase stun scaling per move
-ignorehitpause = 1
-persistent = 0
-
-[State 200, VarAdd]
-type = VarAdd
-trigger1 = !fvar(1)
-trigger1 = movehit
-fv = 25  
-value = 1; You can make this whatever you want to increase stun scaling per move
+value =2
 ignorehitpause = 1
 persistent = 0
 

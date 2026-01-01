@@ -178,12 +178,12 @@ trigger1 = ctrl
 [State -1,DJC]
 type = ChangeState
 value = 45
-triggerall = statetype=A
+triggerall = statetype=A&& stateno!=40
 triggerall = command = "holdupb"
 triggerall = stateno!=45 && stateno!=455 && stateno!=46 && stateno!= 4260 && (stateno!=[4000,4099])
 triggerall = var(45)>0
 triggerall = var(29)>0
-trigger1 = stateno!= 230 && ctrl && stateno!=45 && stateno!=455 && stateno!=46 && stateno!=50 && stateno!=40 && stateno!= 4260
+trigger1 = stateno!= 230 && ctrl && stateno!=45 && stateno!=455 && stateno!=46 && stateno!=50 && stateno!= 4260
 trigger2 = stateno!= 230 && movecontact
 trigger2 = stateno!= 230 && hitdefattr = A, NA
 trigger3 = stateno!= 230 && stateno=45 || stateno=455 || stateno=46|| stateno=50
@@ -264,8 +264,7 @@ triggerall = command = "b"
 triggerall=command!="c"
 trigger1 = statetype = A
 trigger1 = ctrl
-trigger2=stateno=[600,610]&&movecontact
-trigger3=stateno=630&&movecontact
+trigger2=stateno=[600,650]&&movecontact
 
 
 [State -1, EX JS]
@@ -277,8 +276,7 @@ triggerall = command = "EX"
 triggerall=power>=1000
 trigger1 = statetype = A
 trigger1 = ctrl
-trigger2=stateno=[600,610]&&movecontact
-trigger3=stateno=630&&movecontact
+trigger2=stateno=[600,650]&&movecontact
 
 ;===========================================================================
 ;===========================================================================

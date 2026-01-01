@@ -273,7 +273,7 @@ type = VelSet
 triggerall=vel x <8
 trigger1 = command != "holdback"
 trigger1 = command = "holdfwd"
-x = const(velocity.walk.fwd.x)+(map(accel)*0.02)+cond(map(Install),2,0)
+x = const(velocity.walk.fwd.x)+(map(accel)*0.04)+cond(map(Install),2,0)
 
 [State 20, 1]
 type = VelSet
@@ -664,7 +664,7 @@ physics = A         ;A,C,S,N
 type    = A
 movetype= I
 physics = A
-velset = 4.5,-2
+velset = 6,-2
 anim = 100
 ctrl = 1
 

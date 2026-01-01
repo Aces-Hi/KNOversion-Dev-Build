@@ -12,6 +12,14 @@ anim = 200                       ;Change animation (Def: no change)
 poweradd = 0                   ;Power to add (Def: 0)
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State Arzon Voices]
 type = PlaySnd
 trigger1 = animelem = 2
@@ -22,15 +30,9 @@ volumescale=120
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 0.3; You can make this whatever you want to increase stun scaling per move
+value = 2
 ignorehitpause = 1
 persistent = 0
-
-[State 0, Untech Scaling Reset]
-type = VarSet
-trigger1 = !numtarget
-fv = 25
-value = 0
 
 [State 0, Hitstun Scaling UP]
 type = VarAdd
@@ -213,6 +215,15 @@ velset = vel x,0
 anim = 220
 sprpriority = 2
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+
 ;5M Explod Removal (thx z lol im an idiot)
 [State 0, RemoveExplod]
 type = RemoveExplod
@@ -262,12 +273,6 @@ type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
 value = 1
-
-[State -2, VarSet]
-type = VarSet
-trigger1 = !numtarget
-fv = 25
-value = 0
 
 [State 0, Explod]
 type = Explod
@@ -792,6 +797,15 @@ ctrl = 0
 anim = 400
 sprpriority = 2
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+
 [State 0, Explod]
 type = Explod
 trigger1 = time = 0
@@ -828,16 +842,9 @@ value = 1.3
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 0.3; You can make this whatever you want to increase stun scaling per move
+value = 2
 ignorehitpause = 1
 persistent = 0
-
-[State -2, VarSet]
-type = VarSet
-trigger1 = !numtarget
-fv = 25
-value = 0
-
 
 [State 400, 2]
 type = HitDef 
@@ -1003,6 +1010,15 @@ juggle  = 0
 ctrl = 0
 anim = 420
 sprpriority = 2
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = anim=422
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 
 ;2L Explod Removal (thx z lol im an idiot)
 [State 0, RemoveExplod]
@@ -1273,6 +1289,15 @@ sprpriority = 2
 velset = vel x, vel y
 facep2 = 1
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+
 ;jH Explod Removal (thx z lol im an idiot)
 [State 0, RemoveExplod]
 type = RemoveExplod
@@ -1295,15 +1320,9 @@ value = 0.2
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 0.2
+value =2
 ignorehitpause = 1
 persistent = 0
-
-[State -2, VarSet]
-type = VarSet
-trigger1 = !numtarget
-fv = 25
-value = 0
 
 [State 0, VelAdd]
 type = VelAdd

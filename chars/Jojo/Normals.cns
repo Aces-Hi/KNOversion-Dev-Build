@@ -20,6 +20,14 @@ anim = 200                       ;Change animation (Def: no change)
 poweradd = 0                    ;Power to add (Def: 0)
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State JoJo Voices]
 type = PlaySnd
 trigger1 = animelem =2
@@ -30,6 +38,12 @@ volumescale=150
 type = PlaySnd
 trigger1 = animelem =2
 value = 0, 0
+
+[State -2, 6s]
+type = mapadd
+trigger1 =time=0
+map = "grav"
+value=.5
 
 [State 200, 1]
 type = HitDef
@@ -52,7 +66,7 @@ ground.hittime  = 10             ;Time opponent is in hit state
 ground.velocity = -3            ;Velocity at which opponent is pushed
 airguard.velocity = -1.9,-.8     ;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
 air.type = High                  ;Type: High, Low, Trip (def: same as ground.type)
-air.velocity = -1.4,-2+map(grav)         ;X-velocity at which opponent is pushed,
+air.velocity = -1.4,-2.5+map(grav)         ;X-velocity at which opponent is pushed,
 ;Y-velocity at which opponent is pushed
 air.hittime = 15                 ;Time before opponent regains control in air
 envshake.time = 0;
@@ -88,6 +102,14 @@ anim = 203                       ;Change animation (Def: no change)
 poweradd = 0                   ;Power to add (Def: 0)
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State JoJo Voices]
 type = PlaySnd
 trigger1 = animelem =2
@@ -103,7 +125,7 @@ value = 0, 1
 type = mapadd
 trigger1 =time=0
 map = "grav"
-value=.5
+value=1
 [State 0, VarSet]
 type = VarSet
 trigger1 =movehit = 1
@@ -133,7 +155,7 @@ ground.hittime  = 20            ;Time opponent is in hit state
 ground.velocity = -4            ;Velocity at which opponent is pushed
 airguard.velocity = -1.9,-.8     ;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
 air.type = High                  ;Type: High, Low, Trip (def: same as ground.type)
-air.velocity = -1.4,-1+map(grav)         ;X-velocity at which opponent is pushed,
+air.velocity = -1.4,-1.5+map(grav)         ;X-velocity at which opponent is pushed,
 ;Y-velocity at which opponent is pushed
 air.hittime = 35                ;Time before opponent regains control in air
 envshake.time = 0;
@@ -191,6 +213,14 @@ anim = 201                       ;Change animation (Def: no change)
 poweradd = 0                    ;Power to add (Def: 0)
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State JoJo Voices]
 type = PlaySnd
 trigger1 = animelem =4
@@ -206,7 +236,11 @@ value = 0, 1
 type = PosAdd
 trigger1 = animelem =4
 x = 18
-
+[State -2, 6s]
+type = mapadd
+trigger1 =time=0
+map = "grav"
+value=.5
 [State 200, 1]
 type = HitDef
 trigger1 = time = 0 
@@ -228,7 +262,7 @@ ground.hittime  = 19             ;Time opponent is in hit state
 ground.velocity = -3            ;Velocity at which opponent is pushed
 airguard.velocity = -1.9,-.8     ;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
 air.type = High                  ;Type: High, Low, Trip (def: same as ground.type)
-air.velocity = -1,-2+map(grav)         ;X-velocity at which opponent is pushed,
+air.velocity = -1,-2.5+map(grav)         ;X-velocity at which opponent is pushed,
 ;Y-velocity at which opponent is pushed
 air.hittime = 15                 ;Time before opponent regains control in air
 envshake.time = 10
@@ -284,6 +318,14 @@ ctrl = 0                         ;Set ctrl (Def: no change)
 anim = 202                       ;Change animation (Def: no change)
 poweradd = 0                    ;Power to add (Def: 0)
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
 
 [State JoJo Voices]
 type = PlaySnd
@@ -450,6 +492,14 @@ ctrl = 0
 velset = 0,0
 anim = 211
 sprpriority = -1
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
 
 [State JoJo Voices]
 type = PlaySnd
@@ -1237,6 +1287,14 @@ ctrl = 0
 anim = 400
 sprpriority = 2
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State JoJo Voices]
 type = PlaySnd
 trigger1 = animelem =2
@@ -1252,7 +1310,7 @@ value = 0, 2
 type = mapadd
 trigger1 =time=0
 map = "grav"
-value=.5
+value=1
 [State 400, 2]
 type = HitDef
 trigger1 = Time = 0
@@ -1270,7 +1328,7 @@ ground.type = Low
 ground.slidetime = 6
 ground.hittime  = 11
 ground.velocity = -4
-air.velocity = -4,-1.5+map(grav)
+air.velocity = -4,-2+map(grav)
 fall.yvelocity = 0
 guard.velocity=-6
 ground.cornerpush.veloff = -10
@@ -1705,6 +1763,14 @@ ctrl = 0
 anim = 600
 sprpriority = 2
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State JoJo Voices]
 type = PlaySnd
 trigger1 = animelem =2
@@ -1719,7 +1785,7 @@ value = 0, 0
 type = mapadd
 trigger1 =time=0
 map = "grav"
-value=.5
+value=1
 [State 600, 2]
 type = HitDef
 trigger1 = Time = 0
@@ -1738,7 +1804,7 @@ animtype = light
 ground.slidetime = 5
 ground.hittime  = 8
 ground.velocity = -1
-air.velocity = -4,-.5+map(grav)
+air.velocity = -4,-1+map(grav)
 air.hittime = 14;
  fall.yvelocity = 0
 getpower = (50)*(cond(var(var(5)) = 1, 1, .5))
@@ -2369,12 +2435,12 @@ value = 0
 [State 100, 1]
 type = VelSet
 trigger1 = time<=5
-x = 6
+x = 8
 [State 100, 1]
 type = VelSet
 trigger1 = time>5
 trigger1 = time<25
-x = 4
+x = 6
 
 [State 0, Explod]
 type = Explod
@@ -2761,6 +2827,14 @@ ctrl = 0
 velset = 0,0
 sprpriority = 2
 facep2=1
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
 
 [State JoJo Voices]
 type = PlaySnd

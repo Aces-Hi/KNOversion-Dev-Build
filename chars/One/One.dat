@@ -69,8 +69,6 @@ UPRISING	-		_B^Y
 
 
 
-
-
 _D	_D		_D
 
 	<#24ff24>SWORD REMIX MOVES</>
@@ -83,7 +81,6 @@ _!AIM		(HOLD ANY DIRECTION AS THE MOVE STARTS) </>
 UP THROW	-		_D^Z
    <#bbbbbb>Can be canceled into Swordless ^Z moves.
    Can also be jump canceled during a combo.</>
-
 
 
 
@@ -137,7 +134,7 @@ _EX ACID DASH	-		<#65b5ff>(AIR ONLY)<#55ffff>(1 BAR)</> _F^Y+^Z
 _EX RAPID	-		<#55ffff>(1 BAR)</> _B^Y+^Z
 _EX SHREDDER	-		<#65b5ff>(AIR ONLY)<#55ffff>(1 BAR)</> _B^Y+^Z
 _EX RISE	-		<#aaffff>(GROUND OR AIR)<#55ffff>(1 BAR)</> _D^Y+^Z
-   <#bbbbbb>An anti-air invulnerable uppercut that can start combos.
+   <#bbbbbb>An anti-air/anti-projectile uppercut that can start combos.
    The airborne version has no invelnerability.</>
 
 
@@ -178,7 +175,7 @@ _D	_D		_D
 OVERHEAD	-		_F^B
    <#bbbbbb>Puts you in the air and hits overhead.</>
 ANTI-AIR	-		_D^C
-   <#bbbbbb>This move has invulnerability to airborne enemies.</>
+   <#bbbbbb>This move has invulnerability to projectiles and airborne enemies.</>
 GRAB	-		ANY 2 NORMALS </>
    <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.
    Enemies can break this by pressing ^A/^B/^C.</>

@@ -316,8 +316,9 @@ value =904
 triggerall=map(Install)&&map(airdash)=0
 triggerall = command = "aFF" || (command = "dash" && teammode !=tag) || (command = "dash" && teammode=tag && partner,stateno=5150)
 triggerall = command != "holdback" 
-trigger1 = statetype = A
+triggerall = statetype = A
 trigger1 = ctrl
+trigger2 = stateno=[600,615]&&movehit
 triggerall = stateno!=904
 triggerall = (pos y<-30 && vel y < 0) || (vel y >=0)
 ;Aerial Backdash
@@ -327,8 +328,9 @@ value =903
 triggerall=map(Install)&&map(airdash)=0
 triggerall = command = "aBB" || (command = "dash" && teammode !=tag) || (command = "dash" && teammode=tag && partner,stateno=5150)
 triggerall = command = "holdback" 
-trigger1 = statetype = A
+triggerall = statetype = A
 trigger1 = ctrl
+trigger2 = stateno=[600,615]&&movehit
 triggerall = stateno!=903
 triggerall = (pos y<-30 && vel y < 0) || (vel y >=0)
 

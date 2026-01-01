@@ -77,35 +77,6 @@ trigger2 = stateno != 504 && stateno !=1655 && stateno !=1656 && stateno !=1657 
 trigger3 = stateno != 504 && stateno !=1655 && stateno !=1656 && stateno !=1657 && stateno=45 || stateno=46|| stateno=50
 trigger3 = stateno != 504 && stateno !=1655 && stateno !=1656 && stateno !=1657 && vel y>.1
 
-[State -1, EX j6S]
-type = ChangeState
-value = 1035
-triggerall = roundstate = 2 ;only attack during the round
-triggerall = !numexplod(924685) ;this is the new ex limiter
-triggerall = power>1000
-triggerall = statetype = A
-triggerall = command = "holdfwd"
-triggerall = command = "b"
-triggerall = command = "c"
-trigger1 = ctrl
-trigger2 = var(1)
-trigger3 = (stateno = [600,640]) 
-trigger3 = movecontact ;&& enemynear, movetype = H
-trigger4 = stateno = 904
-
-[State -1, j6S]
-type = ChangeState
-value = 1030
-triggerall = roundstate = 2 ;only attack during the round
-triggerall = statetype = A
-triggerall = command = "holdfwd"
-triggerall = command = "b"
-trigger1 = ctrl
-trigger2 = var(1)
-trigger3 = stateno = 904
-trigger4 = (stateno = [600,640]) 
-trigger4 = movecontact ;&& enemynear, movetype = H
-
 ;---------------------------------------------------------------------------
 
 
@@ -132,158 +103,6 @@ triggerall = stateno!=903
 triggerall = var(29)>0
 triggerall = (pos y<-30 && vel y < 0) || (vel y >=0)
 
-[State -1, EX 2S]
-type = ChangeState
-value = 1005
-triggerall = roundstate = 2 ;only attack during the round
-triggerall = !numexplod(924683) ;this is the new ex limiter
-triggerall = power>1000
-triggerall = command = "b"
-triggerall = command = "c"
-triggerall = command = "holddown"
-triggerall = command != "holdback"
-triggerall = stateno != 1020
-trigger1 = statetype != A
-trigger1 = ctrl
-trigger2 = var(1)
-
-[State -1, 2S]
-type = ChangeState
-value = 1000
-triggerall = roundstate = 2 ;only attack during the round
-triggerall = command = "b"
-triggerall = command = "holddown"
-triggerall = command != "holdback"
-trigger1 = statetype != A
-trigger1 = ctrl
-trigger2 = var(1)
-
-;--------------------------------------------------------------------------
-[State -1, EX 6S]
-type = ChangeState
-value = 1025
-triggerall = roundstate = 2 ;only attack during the round
-triggerall = !numexplod(924681) ;this is the new ex limiter
-triggerall = power>1000
-triggerall = command = "b"
-triggerall = command = "c"
-triggerall = command = "holdfwd"
-triggerall = fvar(22) = 0
-trigger1 = statetype != A
-trigger1 = ctrl
-trigger2 = var(1)
-
-[State -1, 6S]
-type = ChangeState
-value = 1020
-triggerall = roundstate = 2 ;only attack during the round
-triggerall = command = "b"
-triggerall = command = "holdfwd"
-trigger1 = statetype != A
-trigger1 = ctrl
-trigger2 = var(1)
-
-;stomperino
-[State -1, EX 4S]
-type = ChangeState
-value = 1206
-triggerall = roundstate = 2 ;only attack during the round
-triggerall = !numexplod(924682) ;this is the new ex limiter
-triggerall = power>1000
-triggerall = command = "b" && command="holdback" && command = "c"
-trigger1 = statetype != A
-trigger1 = ctrl
-trigger2 = var(1)
-
-[State -1, 4S]
-type = ChangeState
-value = 1205
-triggerall = roundstate = 2 ;only attack during the round
-triggerall = command = "b" && command="holdback"
-trigger1 = statetype != A
-trigger1 = ctrl
-trigger2 = var(1)
-
-[State -1, EX 5S]
-type = ChangeState
-value = 1016
-triggerall = roundstate = 2 ;only attack during the round
-triggerall = !numexplod(924680) ;this is the new ex limiter
-triggerall = power>1000
-triggerall = fvar(21) = 0
-triggerall = command = "b"
-triggerall = command = "c"
-trigger1 = statetype != A
-trigger1 = ctrl
-trigger2 = var(1)
-
-[State -1, 5S]
-type = ChangeState
-value = 1010
-triggerall = roundstate = 2 ;only attack during the round
-triggerall = command = "b"
-trigger1 = statetype != A
-trigger1 = ctrl
-trigger2 = stateno = [200,499] && movecontact
-trigger3 = stateno = [502,503] && movecontact
-trigger4 = stateno = 656 && movehit
-
-
-[State -1, EX jS]
-type = ChangeState
-value = 1656
-triggerall = roundstate = 2 ;only attack during the round
-triggerall = !numexplod(924684) ;this is the new ex limiter
-triggerall = power>1000
-triggerall = command = "c"
-triggerall = command = "b"
-triggerall = command != "holdfwd"
-triggerall = statetype = A
-trigger1 = ctrl
-trigger2 = (stateno = [600,640]) 
-trigger2 = movecontact ;&& enemynear, movetype = H
-trigger3 = stateno = 1350 ;Air blocking
-
-[State -1, jS]
-type = ChangeState
-value = 1657
-triggerall = roundstate = 2 ;only attack during the round
-triggerall = command != "holdfwd"
-;triggerall = command = "holddown"
-triggerall = command = "b"
-triggerall = statetype = A
-trigger1 = ctrl
-trigger2 = (stateno = [600,640]) 
-trigger2 = movecontact ;&& enemynear, movetype = H
-trigger3 = stateno = 1350 ;Air blocking
-
-
-;[State -1, Viper Flare]
-;type = ChangeState
-;value = 1655
-;triggerall = command = "b"
-;triggerall = command != "holdfwd"
-;triggerall = statetype = A
-;trigger1 = ctrl
-;trigger2 = (stateno = [600,640]) 
-;trigger2 = movecontact
-;trigger3 = stateno = 1350 ;Air blocking
-
-[State -1, Air grab BOYEEE]
-type = ChangeState
-value = 550
-triggerall=map(awing)
-triggerall = roundstate = 2 ;only attack during the round
-;triggerall = command != "holdfwd"
-;triggerall = command = "holddown"
-triggerall = pos y<-30
-triggerall = prevstateno != 850
-triggerall = command = "c"
-triggerall = statetype = A
-trigger1 = ctrl
-trigger2 = (stateno = [600,640]) 
-trigger2 = movecontact ;&& enemynear, movetype = H 
-trigger3 = stateno = 1350 ;Air blocking
 ;--------------------------------------------------------------------------
 ;Forward Dash
 [State -1, Run!!]
@@ -317,8 +136,106 @@ triggerall = command="start"
 trigger1 = statetype != A
 trigger1 = ctrl
 
-;Overhead
-[State -1, Stand Strong Punch]
+[State 5S]
+type = ChangeState
+value = 1040
+triggerall = command = "b"
+triggerall = command != "c" && command != "EX"
+triggerall = command != "holddown"
+triggerall = command != "holdfwd"
+triggerall = command != "holdback"
+triggerall = statetype != A
+trigger1 = ctrl
+trigger2 = var(1)
+
+[State EX5S]
+type = ChangeState
+value = 1050
+triggerall = command = "EX"
+triggerall = power>=1000
+triggerall = command != "holddown"
+triggerall = command != "holdfwd"
+triggerall = command != "holdback"
+triggerall = statetype != A
+trigger1 = ctrl
+trigger2 = var(1)
+
+[State j5S]
+type = ChangeState
+value = 1045
+triggerall = command = "b"
+triggerall = command != "c" && command != "EX"
+triggerall = command != "holddown"
+triggerall = command != "holdfwd"
+triggerall = command != "holdback"
+triggerall = statetype = A
+trigger1 = ctrl
+trigger2 = var(1)
+
+[State EX 2S]
+type = ChangeState
+value = 1005
+triggerall = roundstate = 2 ;only attack during the round
+triggerall = power>1000
+triggerall = command = "EX"
+triggerall = command = "holddown"
+triggerall = stateno != 1020
+triggerall = statetype != A
+trigger1 = ctrl
+trigger2 = var(1)
+
+[State 2S]
+type = ChangeState
+value = 1000
+triggerall = roundstate = 2 ;only attack during the round
+triggerall = command = "b"
+triggerall = command = "holddown"
+triggerall = statetype != A
+trigger1 = ctrl
+trigger2 = var(1)
+
+[State EX 4S]
+type = ChangeState
+value = 1016
+triggerall = roundstate = 2 ;only attack during the round
+triggerall = power>1000
+triggerall = command="holdback" 
+triggerall = command != "holddown"
+triggerall = command = "EX"
+triggerall = statetype != A
+trigger1 = ctrl
+trigger2 = var(1)
+
+[State 4S]
+type = ChangeState
+value = 1010
+triggerall = roundstate = 2 ;only attack during the round
+triggerall = command = "b" && command="holdback"
+triggerall = command != "holddown"
+triggerall = statetype != A
+trigger1 = ctrl
+trigger2 = var(1)
+
+[State EX6S]
+type = ChangeState
+value = 1035
+triggerall = power>1000
+triggerall = command = "holdfwd"
+triggerall = command = "EX"
+trigger1 = ctrl
+trigger2 = var(1)
+
+[State j6S]
+type = ChangeState
+value = 1030
+triggerall = command = "holdfwd"
+triggerall = command = "b"
+triggerall = command != "c" && command != "EX"
+triggerall = statetype = A
+trigger1 = ctrl
+trigger2 = var(1)
+
+[State Overhead]
 type = ChangeState
 value =  750
 triggerall=stateno!=100
@@ -335,8 +252,7 @@ trigger4 = (stateno = 400) && movecontact ;&& enemynear, movetype = H
 trigger5 = stateno = 410 && movecontact ;&& enemynear, movetype = H
 trigger6 = stateno = 101 
 
-;Stand Strong Punch
-[State -1, Stand Strong Punch]
+[State 5L]
 type = ChangeState
 value = 200
 triggerall = roundstate = 2 ;only attack during the round
@@ -348,8 +264,7 @@ trigger2 = stateno = 400 && movecontact&&prevstateno!=200
 trigger3 = stateno = 200 && movecontact
 trigger4 = stateno = 101 
  
-;Stand Strong Punch
-[State -1, Stand Strong Punch]
+[State 5M]
 type = ChangeState
 value =  210
 triggerall = roundstate = 2 ;only attack during the round
@@ -362,8 +277,7 @@ trigger2 = (stateno = 200) && movecontact ;&& enemynear, movetype = H
 trigger3 = stateno = 400 && movecontact ;&& enemynear, movetype = H
 trigger4 = stateno = 410 && movecontact&&prevstateno!=210
 
-;6H
-[State -1, Stand Strong Punch]
+[State 6H]
 type = ChangeState
 value =  230
 triggerall = roundstate = 2 ;only attack during the round
@@ -380,8 +294,7 @@ trigger6 = (stateno = 420) && movecontact ;&& enemynear, movetype = H
 trigger7 = stateno = 101 
 trigger8 = stateno = 400 && movecontact ;&& enemynear, movetype = H
 
-;Stand Strong Punch
-[State -1, Stand Strong Punch]
+[State 5H]
 type = ChangeState
 value =  220
 triggerall = roundstate = 2 ;only attack during the round
@@ -397,8 +310,7 @@ trigger5 = stateno = 420 && movecontact&&prevstateno!=220
 trigger6 = stateno = 400 && movecontact ;&& enemynear, movetype = H
 
 ;---------------------------------------------------------------------------
-;Crouching Light Punch
-[State -1, Crouching Light Punch]
+[State 2L]
 type = ChangeState
 value = 400
 triggerall = roundstate = 2 ;only attack during the round
@@ -410,8 +322,7 @@ trigger2 = stateno = 200 && movecontact&&prevstateno!=400
 trigger3 = stateno = 400 && movecontact ;&& enemynear, movetype = H
 
 ;---------------------------------------------------------------------------
-;Crouching Strong Punch
-[State -1, Crouching Strong Punch]
+[State 2M]
 type = ChangeState
 value = 410
 triggerall = roundstate = 2 ;only attack during the round
@@ -425,8 +336,7 @@ trigger3 = stateno = 210 && movecontact&&prevstateno!=410
 
 
 ;---------------------------------------------------------------------------
-;Crouching Strong Kick
-[State -1, Crouching Strong Kick]
+[State 3H]
 type = ChangeState
 value = 430
 triggerall = roundstate = 2 ;only attack during the round
@@ -440,8 +350,7 @@ trigger2 = (movecontact) ;&& enemynear, movetype = H
 trigger3 = stateno = 101
 
 ;---------------------------------------------------------------------------
-;Crouching Light Kick
-[State -1, Crouching Light Kick]
+[State 2H]
 type = ChangeState
 value = 420
 triggerall = roundstate = 2 ;only attack during the round
@@ -454,21 +363,8 @@ trigger2 = (stateno = 400) || (stateno = 410)|| (stateno = 200)|| (stateno = 210
 trigger2 = (movecontact) ;&& enemynear, movetype = H
 trigger3 = stateno = 220 && movecontact&&prevstateno!=420
 
-
-;========================================================
-[State R Phoenix Stance]
-type = ChangeState
-value = 500
-triggerall=map(gwing)
-triggerall = roundstate = 2 ;only attack during the round
-triggerall = command = "c" 
-triggerall = command!="b"&&command!="EX"
-triggerall = statetype != A
-trigger1 = var(1)
 ;---------------------------------------------------------------------------
-
-;Jump Light Punch
-[State -1, Jump Light Punch]
+[State jL]
 type = ChangeState
 value = 600
 triggerall = roundstate = 2 ;only attack during the round
@@ -479,8 +375,7 @@ trigger2= stateno = 610 && movehit
 trigger3= stateno = 630 && movehit
 trigger4= stateno = 600 && movehit
 ;---------------------------------------------------------------------------
-;Jump Strong Punch
-[State -1, Jump Strong Punch]
+[State jM]
 type = ChangeState
 value = 610
 triggerall = roundstate = 2 ;only attack during the round
@@ -493,8 +388,7 @@ trigger3 = stateno = 1350 ;Air blocking
 trigger4 = stateno = 630 && movehit
 
 ;---------------------------------------------------------------------------
-;Jump Strong Kick
-[State -1, Jump Strong Kick]
+[State jH]
 type = ChangeState
 value = 630
 triggerall = roundstate = 2 ;only attack during the round
@@ -505,3 +399,30 @@ trigger2 = (stateno = [600,610])
 trigger2 = movecontact ;&& enemynear, movetype = H
 trigger3 = stateno = 1350 ;Air blocking
 ;---------------------------------------------------------------------------
+
+;========================================================
+[State R Phoenix Stance]
+type = ChangeState
+value = 500
+triggerall=map(gwing)
+triggerall = roundstate = 2 ;only attack during the round
+triggerall = command = "c" 
+triggerall = command!="b"&&command!="EX"
+triggerall = statetype != A
+trigger1 = var(1)
+
+[State jR Air Stance]
+type = ChangeState
+value = 550
+triggerall=map(awing)
+triggerall = roundstate = 2 ;only attack during the round
+;triggerall = command != "holdfwd"
+;triggerall = command = "holddown"
+triggerall = pos y<-30
+triggerall = prevstateno != 850
+triggerall = command = "c"
+triggerall = statetype = A
+trigger1 = ctrl
+trigger2 = (stateno = [600,640]) 
+trigger2 = movecontact ;&& enemynear, movetype = H 
+trigger3 = stateno = 1350 ;Air blocking

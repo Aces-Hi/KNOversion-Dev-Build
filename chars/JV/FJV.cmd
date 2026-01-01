@@ -20,6 +20,7 @@ trigger2 = (stateno = [200,299]) || (stateno = [400,503]) || stateno = 656 || st
 trigger2 = movecontact ;&& enemynear, movetype = H
 trigger2 = stateno!=421
 trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
+trigger4 = stateno = 40
 var(1) = 1
 
 
@@ -28,7 +29,6 @@ var(1) = 1
 [State -1, 236x]
 type = ChangeState
 value = 3000
-triggerall=stateno!=40
 triggerall = command = "236x"
 triggerall = power >= 2000
 triggerall=stateno!=3200
@@ -49,7 +49,6 @@ trigger4 = stateno = [100,101]
 [State -1, 236x]
 type = ChangeState
 value = 3001
-triggerall=stateno!=40
 triggerall = command = "236x"
 triggerall = power >= 2000
 triggerall=stateno!=3200
@@ -70,7 +69,6 @@ trigger4 = stateno = [100,101]
 type = ChangeState
 value = 1070
 triggerall=map(EXLimiter1)=0
-triggerall=stateno!=40
 triggerall = power>=1000
 triggerall=stateno!=3200
 triggerall = command = "nobuffer_EX"
@@ -88,7 +86,6 @@ trigger2 = movecontact
 [State 1240, 214S]
 type = ChangeState
 value = 3200
-triggerall=stateno!=40
 triggerall = power>=4000
 triggerall = command = "214b"
 triggerall = statetype != A
@@ -127,7 +124,7 @@ triggerall = stateno!=45 && stateno!=46
 triggerall = stateno!=904 && stateno!=903 
 ;triggerall = var(45)>0
 triggerall = var(45)>0
-trigger1 = ctrl && stateno!=45 && stateno!=46 && stateno!=50 && stateno!=40 && stateno!= 4260
+trigger1 = ctrl && stateno!=45 && stateno!=46 && stateno!=50 && stateno!= 4260
 trigger2 = movecontact ;&& enemynear, movetype = H
 trigger2 = hitdefattr = A, NA
 trigger3 =  stateno=45 || stateno=46|| stateno=50
@@ -233,15 +230,14 @@ trigger6 = stateno = 101
 [State -1, 66>214X - Piercer: Tyrfing]
 type = ChangeState
 value = 1050
-triggerall=stateno!=40
 triggerall = command = "214x"
 triggerall = power >= 2000
 triggerall=stateno!=3200
 triggerall=var(30)>0
-triggerall = statetype != A
+triggerall = statetype != A || stateno = 40
 triggerall = hitdefattr!=SCA,NT,ST,HT
 trigger1 = ctrl
-trigger2 = statetype != A
+trigger2 = statetype != A || stateno = 40
 trigger2 = stateno != [3000,3050)
 trigger2 = stateno != 1070
 trigger2 = stateno != 1061
@@ -253,15 +249,14 @@ trigger4 = stateno = [100,101]
 [State -1, 214X - Wrath of Aimless]
 type = ChangeState
 value = 1060
-triggerall=stateno!=40
 triggerall = command = "214x"
 triggerall = power >= 2000
 triggerall=stateno!=3200
 triggerall=var(30)<=0
-triggerall = statetype != A
+triggerall = statetype != A || stateno = 40
 triggerall = hitdefattr!=SCA,NT,ST,HT
 trigger1 = ctrl
-trigger2 = statetype != A
+trigger2 = statetype != A || stateno = 40
 trigger2 = stateno != [3000,3050)
 trigger2 = stateno != 1070
 trigger2 = stateno != 1061
@@ -279,24 +274,23 @@ triggerall = command = "b"
 triggerall = command != "c"&&command != "EX"
 triggerall = command = "holdback"
 triggerall = var(30) <= 1
-trigger1 = statetype != A
+trigger1 = statetype != A || stateno = 40
 trigger1 = ctrl
 trigger2 = var(1)
 trigger3 = stateno = 100
 trigger4=stateno=105
-trigger5 = stateno=40
 
 ;4SEN - Wandering Serpent (Ground)
 [State -1, Spotdodge]
 type = ChangeState
 value = 1011
-triggerall=stateno!=40
+
 triggerall = command = "b"
 triggerall = command != "c"&&command != "EX"
 triggerall = command = "holdback"
 triggerall = command != "214b"
 triggerall = var(30) > 1
-trigger1 = statetype != A
+trigger1 = statetype != A || stateno = 40
 trigger1 = ctrl
 trigger2 = var(1)
 trigger2 = movecontact
@@ -310,12 +304,11 @@ type = ChangeState
 value = 2000
 triggerall=map(EXLimiter3)=0
 triggerall=power>=1000
-triggerall=stateno!=40
 triggerall = command = "EX"
 triggerall = command != "holdfwd"
 triggerall = command = "holdback"
 triggerall = command != "holddown"
-triggerall = statetype != A
+triggerall = statetype != A || stateno = 40
 trigger1 = ctrl
 trigger2 = var(1) || stateno=1009
 trigger2 = movecontact
@@ -324,13 +317,12 @@ trigger2 = movecontact
 [State 6S]
 type = ChangeState
 value = 1100
-triggerall=stateno!=40
 triggerall = command = "nobuffer_b"
 triggerall = command != "c"&&command != "EX"
 triggerall = command = "holdfwd"
 triggerall = command != "holdback"
 triggerall = command != "holddown"
-triggerall = statetype != A
+triggerall = statetype != A || stateno = 40
 trigger1 = ctrl
 trigger2 = var(1) 
 trigger2 = movecontact
@@ -341,12 +333,11 @@ type = ChangeState
 value = 2200
 triggerall=map(EXLimiter2)=0
 triggerall=power>=1000
-triggerall=stateno!=40
 triggerall = command = "nobuffer_EX"
 triggerall = command = "holdfwd"
 triggerall = command != "holdback"
 triggerall = command != "holddown"
-triggerall = statetype != A
+triggerall = statetype != A || stateno = 40
 trigger1 = ctrl
 trigger2 = var(1) || stateno=1009
 trigger2 = movecontact
@@ -356,13 +347,12 @@ trigger2 = movecontact
 [State -1, DP]
 type = ChangeState
 value = 1000
-triggerall=stateno!=40
 triggerall = command = "b"
 triggerall = command = "holddown"
 triggerall = command != "c"&&command != "EX"
 triggerall = command != "holdback"
 triggerall = var(30) <= 1
-trigger1 = statetype != A
+trigger1 = statetype != A || stateno = 40
 trigger1 = ctrl
 trigger2 = var(1)
 trigger2 = movecontact
@@ -373,13 +363,12 @@ trigger3=stateno=105
 type = ChangeState
 value = 1001
 triggerall=var(34)=0
-triggerall=stateno!=40
-triggerall = command = "b"
+triggerall = command = "nobuffer_b"
 triggerall = command = "holddown"
 triggerall = command != "c"&&command != "EX"
 triggerall = command != "holdback"
 triggerall = var(30) > 1
-trigger1 = statetype != A
+trigger1 = statetype != A || stateno = 40
 trigger1 = ctrl
 trigger2 = var(1)
 trigger2 = movecontact
@@ -390,13 +379,12 @@ trigger3 = stateno = 100|| stateno = 101
 type = ChangeState
 value = 1000
 triggerall=var(34)>0
-triggerall=stateno!=40
 triggerall = command = "b"
 triggerall = command = "holddown"
 triggerall = command != "c"&&command != "EX"
 triggerall = command != "holdback"
 triggerall = var(30) > 1
-trigger1 = statetype != A
+trigger1 = statetype != A || stateno = 40
 trigger1 = ctrl
 trigger2 = var(1)
 trigger2 = movecontact
@@ -408,11 +396,11 @@ type = ChangeState
 value = 2300
 triggerall=map(EXLimiter4)=0
 triggerall = power>=1000
-triggerall=stateno!=40
+
 triggerall = command = "EX"
 triggerall = command != "holdfwd"
 triggerall = command = "holddown"
-triggerall = statetype != A
+triggerall = statetype != A || stateno = 40
 trigger1 = ctrl
 trigger2 = var(1) || stateno=1009
 trigger2 = movecontact
@@ -422,13 +410,12 @@ trigger2 = movecontact
 [State 5S]
 type = changeState
 value = 1005
-triggerall=stateno!=40
 triggerall = command = "b"
 triggerall = command != "c"&&command != "EX"
 triggerall = command != "holdfwd"
 triggerall = command != "holdback"
 triggerall = command != "holddown"
-triggerall = statetype != A
+triggerall = statetype != A || stateno = 40
 triggerall = var(30) <= 1
 trigger1 = ctrl
 trigger2 = var(1)
@@ -438,13 +425,12 @@ trigger3=stateno=105
 [State EN5S]
 type = changeState
 value = 1009
-triggerall=stateno!=40
-triggerall = command = "b"
+triggerall = command = "nobuffer_b"
 triggerall = command != "c"&&command != "EX"
 triggerall = command != "holdfwd"
 triggerall = command != "holdback"
 triggerall = command != "holddown"
-triggerall = statetype != A
+triggerall = statetype != A || stateno = 40
 triggerall = var(30) > 0
 trigger1 = ctrl
 trigger2 = var(1)
@@ -454,11 +440,11 @@ trigger3 = stateno = 100|| stateno = 101
 [State j5S]
 type = changeState
 value = 1025
-triggerall = stateno!=40
+
 triggerall = command = "b"
 triggerall = command != "c" && command != "EX"
 triggerall = command != "holddown"
-triggerall = statetype = A
+triggerall = statetype = A 
 triggerall = var(30) <= 1
 trigger1 = ctrl
 trigger2 = var(1)
@@ -469,7 +455,6 @@ trigger3 = movecontact
 [State ENj5S]
 type = changeState
 value = 1030
-triggerall = stateno!=40 
 triggerall=map(jS)=0
 triggerall = command = "b"
 triggerall = command != "c" && command != "EX"
@@ -485,7 +470,6 @@ trigger3 = movecontact
 [State j5S]
 type = changeState
 value = 1025
-triggerall = stateno!=40 
 triggerall=map(jS)>0
 triggerall = command = "b"
 triggerall = command != "c" && command != "EX"
@@ -503,7 +487,6 @@ type = changeState
 value = 2500
 triggerall=map(EXLimiter5)=0
 triggerall = power>=1000
-triggerall = stateno!=40
 triggerall = command = "EX"
 triggerall = statetype = A
 trigger1 = ctrl
@@ -515,7 +498,6 @@ trigger3 = movecontact
 [State j2S]
 type = changeState
 value = 652
-triggerall = stateno!=40
 triggerall = command = "b"
 triggerall = command = "holddown"
 triggerall = statetype = A
@@ -530,24 +512,22 @@ trigger3 = movecontact
 [State -1, 2R: Striking Serpent]
 type = ChangeState
 value = 631
-triggerall=stateno!=40
 triggerall = command = "c"
 triggerall = command = "holddown"
 triggerall = command != "b"||command != "EX"
 triggerall = var(30) < 1
-triggerall = statetype !=A
+triggerall = statetype !=A || stateno = 40
 trigger1 = var(1)
 trigger2 = ctrl
 
 [State -1, EN2R: Striking Serpent]
 type = ChangeState
 value = 6310
-triggerall=stateno!=40
 triggerall = command = "c"
 triggerall = command = "holddown"
 triggerall = command != "b"||command != "EX"
 triggerall = var(30) >= 1
-triggerall = statetype !=A
+triggerall = statetype !=A || stateno = 40
 trigger1 = var(1)
 trigger2 = ctrl
 trigger3= stateno = [100,101]
@@ -555,11 +535,10 @@ trigger3= stateno = [100,101]
 [State -1, 5R: Coiled Serpent]
 type = ChangeState
 value = 6300
-triggerall=stateno!=40
 triggerall = command = "c"
 triggerall = command != "b"||command != "EX"
 triggerall = var(30) < 1
-triggerall = statetype !=A
+triggerall = statetype !=A || stateno = 40
 trigger1 = var(1)
 trigger2 = ctrl
 
@@ -567,11 +546,10 @@ trigger2 = ctrl
 [State -1, EN5R: Coiled Serpent]
 type = ChangeState
 value = 6301
-triggerall=stateno!=40
 triggerall = command = "c"
 triggerall = command != "b"||command != "EX"
 triggerall = var(30) >= 1
-triggerall = statetype !=A
+triggerall = statetype !=A || stateno = 40
 trigger1 = var(1)
 trigger2 = ctrl
 trigger3= stateno = [100,101]

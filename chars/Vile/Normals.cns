@@ -21,6 +21,13 @@ anim = 200                       ;Change animation (Def: no change)
 poweradd = 0                    ;Power to add (Def: 0)
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
 
 [State 200, 2]
 type = PlaySnd
@@ -37,15 +44,10 @@ value = 1.8
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 0.5; You can make this whatever you want to increase stun scaling per move
+value = 2
 ignorehitpause = 1
 persistent = 0
 
-[State -2, VarSet]
-type = VarSet
-trigger1 = !numtarget
-fv = 25
-value = 0
 
 ;[State 0, VelSet]
 ;type = Velset 
@@ -117,6 +119,14 @@ anim = 210
 sprpriority = -1
 
 [State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+[State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
 fv = 13     ;fv = 
@@ -126,15 +136,10 @@ value = 1.8
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 0.3; You can make this whatever you want to increase stun scaling per move
+value = 2
 ignorehitpause = 1
 persistent = 0
 
-[State -2, VarSet]
-type = VarSet
-trigger1 = !numtarget
-fv = 25
-value = 0
 
 [State 200, 2]
 type = PlaySnd
@@ -549,7 +554,7 @@ air.type = Trip
 air.velocity = 1,22
 air.hittime = 12
 fall = 1 
-fall.yvelocity =cond(var(19)=1, -3,0)
+fall.yvelocity =cond(map(hbounce)=1, -3,0)
 down.bounce = 9
 envshake.time = 12
 envshake.freq = 3
@@ -570,21 +575,20 @@ ID = 220
 
 [State 9051, P2 Custom State]
 type = TargetState
-;triggerall = AnimElemTime(7) >= 0
-triggerall=var(19)=1
-trigger1= MoveHit =1 && NumTarget(220)
-trigger1= Target(220),MoveType=H 
+triggerall=map(hbounce)=1
+trigger1= MoveHit =1
 ID = 220
 value = 43211
 ignorehitpause=1
 persistent=1
 
-[State 0, VarAdd]
-type = VarAdd
+[State 0, VarSet]
+type = mapadd
 trigger1 = movehit
-v =  19   ;fv = 
-value = 1
-ignorehitpause = 1
+trigger2 = time=0&&map(hbounce)
+map="hbounce"
+value =1
+ignorehitpause=1
 persistent=0
 
 [State 200, 2]
@@ -773,6 +777,14 @@ anim = 400
 sprpriority = 2
 
 [State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+[State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
@@ -782,15 +794,9 @@ value = 1.5
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 0.5; You can make this whatever you want to increase stun scaling per move
+value =2
 ignorehitpause = 1
 persistent = 0
-
-[State -2, VarSet]
-type = VarSet
-trigger1 = !numtarget
-fv = 25
-value = 0
 
 [State 200, 2]
 type = PlaySnd
@@ -1211,6 +1217,14 @@ sprpriority = 2
 velset = vel x, vel y
 
 [State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+[State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
@@ -1220,29 +1234,17 @@ value = 0.8
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 0.2; You can make this whatever you want to increase stun scaling per move
+value =2
 ignorehitpause = 1
 persistent = 0
-
-[State -2, VarSet]
-type = VarSet
-trigger1 = !numtarget
-fv = 25
-value = 0
 
 [State 200, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
 fv = 29   
-value = 0.3; You can make this whatever you want to increase stun scaling per move
+value = 2
 ignorehitpause = 1
 persistent = 0
-
-[State -2, VarSet]
-type = VarSet
-trigger1 = !numtarget
-fv = 29
-value = 0
 
 [State 0, VelAdd]
 type = VelAdd

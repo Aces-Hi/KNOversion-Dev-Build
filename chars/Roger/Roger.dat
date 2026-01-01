@@ -35,7 +35,7 @@ _!A PRAYER UNANSWERED	-		^Y
         <#bbbbbb>Cancels the move early.</>
 UMBRAL SNATCH	-		_B^Y
 HELL DELIVERY	-		_D^Y/_DF^Y
-   <#bbbbbb>An anti-air command grab.
+   <#bbbbbb>An anti-air/anti-projectile command grab.
    Holding forward makes Roger move more forward. Can be used in combos.</>
 
 
@@ -82,7 +82,7 @@ _EX GOD CRUSH	-		<#55ffff>(1 BAR)</> _F^Y+^Z
 _EX UMBRAL SNATCH	-		<#55ffff>(1 BAR)</> _B^Y+^Z
    <#bbbbbb>An armored reversal attack.</>
 _EX HELL DELIVERY	-		<#55ffff>(1 BAR)</> _D^Y+^Z/_DF^Y+^Z
-   <#bbbbbb>An anti-air command grab that launches the enemy.
+   <#bbbbbb>An anti-air/anti-projectile command grab that launches the enemy.
    Holding forward makes Roger move more forward. Can be used in combos.</>
 
 
@@ -99,7 +99,7 @@ _D	_D		_D
 <#964317>INFINITE HYPERDEATH</>	-		<#55ffff>(2 BARS)</> _D_DF_F_-^A/^B/^C
    <#bbbbbb>A powerful and invincible command grab.</>
 <#964317>STAY STILL.</>	-		<#55ffff>(2 BARS)</> _D_DB_B_-^A/^B/^C
-   <#bbbbbb>A powerful anti-air command grab. Can be used in combos.</>
+   <#bbbbbb>A powerful anti-air/anti-projectile command grab. Can be used in combos.</>
 <#964317>BLITZ CHARGER</>	-		<#55ffff>(2 BARS)</> _D_DF_F_-^Y
    <#bbbbbb>Greatly improves Roger's mobility.
    The initial hit can extend combos.</>
@@ -123,7 +123,7 @@ _D	_D		_D
 OVERHEAD	-		_F^B
    <#bbbbbb>Puts you in the air and hits overhead.</>
 ANTI-AIR	-		_D^C
-   <#bbbbbb>This move has invulnerability to airborne enemies.</>
+   <#bbbbbb>This move has invulnerability to projectiles and airborne enemies.</>
 GRAB	-		ANY 2 NORMALS </>
    <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.
    Enemies can break this by pressing ^A/^B/^C.</>

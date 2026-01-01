@@ -402,14 +402,8 @@ ignorehitpause=1
 persistent=0
 [State JoJo Voices]
 type = PlaySnd
-trigger1 = animelem=14
-value = 3000,1
-ignorehitpause=1
-persistent=0
-[State JoJo Voices]
-type = PlaySnd
-trigger1 = animelem=31
-value = 3000,2
+trigger1 = animelem=22
+value = 3000,1+random%2
 ignorehitpause=1
 persistent=0
 [State JoJo Voices]

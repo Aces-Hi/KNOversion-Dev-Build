@@ -11,6 +11,14 @@ ctrl = 0                         ;Set ctrl (Def: no change)
 anim = 200                       ;Change animation (Def: no change)
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State -3, Win Voices] 
 type = PlaySnd
 trigger1 = time = 0
@@ -21,7 +29,7 @@ volumescale=200
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 0.5; You can make this whatever you want to increase stun scaling per move
+value = 2
 ignorehitpause = 1
 persistent = 0
 [State 0, VarAdd]
@@ -451,6 +459,14 @@ velset = vel x,0
 anim = 205
 sprpriority = 2
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State -3, Win Voices] 
 type = PlaySnd
 trigger1 = time = 0
@@ -469,7 +485,7 @@ persistent=0
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = .5; You can make this whatever you want to increase stun scaling per move
+value =2
 ignorehitpause = 1
 persistent = 0
 
@@ -595,9 +611,9 @@ envshake.time = 8
 envshake.freq = 10
 envshake.ampl = 2
 envshake.phase = 1
-guard.hittime = 20
+guard.hittime = 15
 guard.slidetime = 6
-guard.ctrltime = 20
+guard.ctrltime = 15
 forcenofall = 1
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 
@@ -1411,38 +1427,38 @@ x = 18
 [State 0, VelSet]
 type = VelMul
 trigger1 =map(y)=2
-trigger1 =time>5&&time<60
+trigger1 =time>5&&time<40
 x = .25
 
 [State 0, VelSet]
 type = VelMul
 trigger1 =map(y)=1
-trigger1 =time>10&&time<60
+trigger1 =time>10&&time<40
 y = .85
 [State 0, VelSet]
 type = VelMul
 trigger1 =map(y)=1
-trigger1 =time>10&&time<60
+trigger1 =time>10&&time<40
 x = .25
 
 [State 0, VelSet]
 type = VelSet
-trigger1 = map(y)=1&&time>60
+trigger1 = map(y)=1&&time>40
 y = 3
 
 [State 0, VelSet]
 type = VelSet
-trigger1 = map(y)=1&&time>60
+trigger1 = map(y)=1&&time>40
 trigger1 = map(x)=2
 x = -1
 [State 0, VelSet]
 type = VelSet
-trigger1 = map(y)=1&&time>60
+trigger1 = map(y)=1&&time>40
 trigger1 = map(x)=0
 x = -3
 [State 0, VelSet]
 type = VelSet
-trigger1 = map(y)=1&&time>60
+trigger1 = map(y)=1&&time>40
 trigger1 = map(x)=1
 x = -5
 
@@ -1453,7 +1469,7 @@ x = 4
 
 [State 0, VelSet]
 type = VelAdd
-trigger1 = map(y)=2&& time = 60
+trigger1 = map(y)=2&& time = 40
 x = -8
 
 [State 0, VelSet]
@@ -1471,11 +1487,11 @@ type = VelSet
 trigger1 = map(x)!=2 
 triggerall = map(y)!=1
 triggerall = vel x<0 && vel y!=0
-trigger2 = map(x)=2 &&time>30
+trigger2 = map(x)=2 &&time>40
 y = 5
 [State 0, VelSet]
 type = VelSet
-trigger1 = map(x)=2 &&time>15&&time<60
+trigger1 = map(x)=2 &&time>15&&time<40
 x = 0
 
 [State 0, VelSet]
@@ -1531,7 +1547,7 @@ animtype  = Medium
 air.animtype = back
 hitflag = MAF
 guardflag = MA
-pausetime = 2,2
+pausetime = 0,2
 sparkno = 11
 sparkxy = -10,10-random%20
 hitsound   = S8,0
@@ -1634,6 +1650,7 @@ ignorehitpause=1
 type = ChangeState
 trigger1 = parent,movetype = H
 trigger1 = parent,stateno != [150,155]
+trigger2 = RootDist X >10
 value = 261
 ctrl = 0
 
@@ -1788,6 +1805,22 @@ anim = 261
 velset = -2*(cond(backedgedist<-10, -1,1)),-8
 sprpriority = 2
     
+[State 0. MapSet]
+type 		= parentMapSet
+trigger1 		= 1
+map 		= "swordDistX"
+value 		= rootdist x
+ignorehitpause 	= 1
+persistent 		= 1
+
+[State 0. MapSet]
+type 		= parentMapSet
+trigger1 		= 1
+map 		= "swordDistY"
+value 		= rootdist y
+ignorehitpause 	= 1
+persistent 		= 1
+
 [State 0, VelAdd]
 type = VelAdd
 trigger1 = 1
@@ -2013,6 +2046,14 @@ ctrl = 0
 anim = 400
 sprpriority = 2
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State -3, Win Voices] 
 type = PlaySnd
 trigger1 = time = 0
@@ -2038,15 +2079,9 @@ persistent=0
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 0.5; You can make this whatever you want to increase stun scaling per move
+value =2
 ignorehitpause = 1
 persistent = 0
-
-[State -2, VarSet]
-type = VarSet
-trigger1 = !numtarget
-fv = 25
-value = 0
 
 [State 200, 2]
 type = PlaySnd
@@ -2114,6 +2149,14 @@ ctrl = 0
 anim = 410
 sprpriority = 2
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State -3, Win Voices] 
 type = PlaySnd
 trigger1 = time = 0
@@ -2132,7 +2175,7 @@ persistent=0
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 0.5; You can make this whatever you want to increase stun scaling per move
+value = 2
 ignorehitpause = 1
 persistent = 0
 
@@ -2200,6 +2243,14 @@ ctrl = 0
 anim = cond(!var(50), 410, 405)
 sprpriority = 2
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State -3, Win Voices] 
 type = PlaySnd
 trigger1 = time = 0
@@ -2214,6 +2265,13 @@ value = 1.5
 ignorehitpause=1
 persistent=0
 
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 2
+ignorehitpause = 1
+persistent = 0
 
 [State 410, 1]
 type = PlaySnd
@@ -2617,7 +2675,7 @@ air.cornerpush.veloff = -4
 ;envshake.freq =
 ;envshake.ampl = 
 ;envshake.phase =
-guard.hittime = 19
+guard.hittime = 14
 guard.velocity = -3
 guard.dist = 20
 guard.slidetime = 18;
@@ -2722,8 +2780,8 @@ down.velocity = -.2,-7
 ground.cornerpush.veloff = -3
 guard.velocity = -5
 guard.slidetime = 13
-guard.ctrltime = 23
-guard.hittime = 25
+guard.ctrltime = 15
+guard.hittime = 15
 forcenofall = 1
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 
@@ -3196,8 +3254,8 @@ hitsound   = S8,0
 guardsound = 6,0
 ground.type = high
 ground.slidetime = 12
-ground.hittime  = 40 * (1.0 / (2 ** root, numexplod(460199)))
-air.hittime  = 40 * (1.0 / (2 ** root, numexplod(460199)))
+ground.hittime  = ceil(cond(root,fvar(14) *50 < 11, 11, root,fvar(14) * 50))
+air.hittime  = ceil(cond(root,fvar(14) *50 < 11, 11, root,fvar(14) * 50))
 ground.velocity = -3,-6
 air.velocity = -3,-4
 forcenofall = 1
@@ -3382,6 +3440,14 @@ anim = 600
 sprpriority = 2
 velset=  vel x, vel y
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State -3, Win Voices] 
 type = PlaySnd
 trigger1 = time = 0
@@ -3400,7 +3466,7 @@ ignorehitpause = 1
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 0.5; You can make this whatever you want to increase stun scaling per move
+value = 2
 ignorehitpause = 1
 persistent = 0
 
@@ -3414,7 +3480,7 @@ value = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv = 12   
-value = 0.5; You can make this whatever you want to increase stun scaling per move
+value = 2
 ignorehitpause = 1
 persistent = 0
 
@@ -3524,6 +3590,14 @@ anim = 610
 sprpriority = 2
 velset=  vel x, vel y
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State -3, Win Voices] 
 type = PlaySnd
 trigger1 = time = 0
@@ -3534,7 +3608,7 @@ volumescale=200
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 0.5; You can make this whatever you want to increase stun scaling per move
+value = 2
 ignorehitpause = 1
 persistent = 0
 
@@ -3548,7 +3622,7 @@ value = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv = 12   
-value = 0.5; You can make this whatever you want to increase stun scaling per move
+value = 2
 ignorehitpause = 1
 persistent = 0
 [State 0, VarAdd]
@@ -3674,7 +3748,7 @@ volumescale=200
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 1; You can make this whatever you want to increase stun scaling per move
+value = 1.5; You can make this whatever you want to increase stun scaling per move
 ignorehitpause = 1
 persistent = 0
 
@@ -4646,15 +4720,10 @@ y = .44
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 0.8; You can make this whatever you want to increase stun scaling per move
+value = 1.5
 ignorehitpause = 1
 persistent = 0
 
-[State -2, VarSet]
-type = VarSet
-trigger1 = !numtarget
-fv = 25
-value = 0
 
 [State 200, VarAdd]
 type = VarAdd
@@ -4778,10 +4847,10 @@ value = 0
 type = ChangeState
 triggerall = enemy, HitPauseTime = 0
 triggerall = var(50)
-triggerall = helper(260), stateno = 665 || helper(260), stateno = 261 || helper(260), stateno = 661
+triggerall = helper(260), stateno = 665 || helper(260), stateno = 261 || helper(260), stateno = 661 || helper(260), stateno = 263
 triggerall = animelem = 7
-trigger1 = abs(map(SwordDIstX)) < 100
-trigger1 = abs(map(SworddistY) < 75)
+trigger1 = map(SwordDIstX) < 30 && map(SwordDIstX) >-80
+trigger1 = map(SworddistY) < 70 && map(SworddistY) > -20
 value = 260
 redirectid = helper(260), id
 
@@ -4896,10 +4965,10 @@ value = 0
 type = ChangeState
 triggerall = enemy, HitPauseTime = 0
 triggerall = var(50)
-triggerall = helper(260), stateno = 665 || helper(260), stateno = 261 || helper(260), stateno = 661
-triggerall = animelem = 7
-trigger1 = abs(map(SwordDIstX)) < 100
-trigger1 = abs(map(SworddistY) < 75)
+triggerall = helper(260), stateno = 665 || helper(260), stateno = 261 || helper(260), stateno = 661 || helper(260), stateno = 263
+triggerall = animelem =6
+trigger1 = map(SwordDIstX) < 30 && map(SwordDIstX) > -70
+trigger1 = map(SworddistY) < 75 && map(SwordDIsty) > -10
 value = 660
 redirectid = helper(260), id
 
@@ -5013,13 +5082,14 @@ air.animtype = back
 hitflag = MAFD
 guardflag = MA
 pausetime = 12,12
+guard.pausetime=12,0
 sparkno = 12
 sparkxy = -10,0
 hitsound   = S8,0
 guardsound = 6,2
 ground.type = Low
 ground.slidetime = 12
-ground.hittime  = 35
+ground.hittime  = ceil(cond(root,fvar(14) *50 < 11, 11, root,fvar(14) * 50))
 ground.velocity = -3,-4
 air.velocity = -3,-3
 fall  = 1
@@ -5031,6 +5101,7 @@ fall.envshake.time = 0
 fall.envshake.freq = 0
 fall.envshake.ampl = 0
 fall.yvelocity = 0
+guard.ctrltime=9
 getpower =(100)*(cond(var(var(2)) = 1, 1, .5))
 guard.dist=0
 [State 0, ChangeState]
@@ -5094,16 +5165,17 @@ damage = ceil(cond(root,fvar(11) * 40 < 7, 7, root,fvar(11) * 40)),7
 animtype  = back
 air.animtype = back
 hitflag = MAFD
-guardflag = HA
+guardflag = MA
 pausetime = 12,12
+guard.pausetime=12,0
 sparkno = 12
 sparkxy = -10,0
 hitsound   = S8,0
 guardsound = 6,0
 ground.type = high
 ground.slidetime = 12
-ground.hittime  = 40
-air.hittime = 40
+ground.hittime  = ceil(cond(root,fvar(14) *50 < 11, 11, root,fvar(14) * 50))
+air.hittime = ceil(cond(root,fvar(14) *50 < 11, 11, root,fvar(14) * 50))
 ground.velocity = -3,-4
 air.velocity = -3,-3
 air.fall = 0
@@ -5113,6 +5185,7 @@ envshake.ampl = 0
 getpower = (100)*(cond(var(var(3)) = 1, 1, .5))
 guard.dist=0
 forcenofall=1
+guard.ctrltime=5
 [State 0, ChangeState]
 type = ChangeState
 trigger1 = movecontact = 1 || frontedgedist<-14 || pos y>=-10
@@ -5131,6 +5204,22 @@ ctrl = 0
 anim = 261
 ;velset = -1,-7
 sprpriority = 2
+
+[State 0. MapSet]
+type 		= parentMapSet
+trigger1 		= 1
+map 		= "swordDistX"
+value 		= rootdist x
+ignorehitpause 	= 1
+persistent 		= 1
+
+[State 0. MapSet]
+type 		= parentMapSet
+trigger1 		= 1
+map 		= "swordDistY"
+value 		= rootdist y
+ignorehitpause 	= 1
+persistent 		= 1
 
 [State 0, Short Launch]
 type = Velset
@@ -5266,6 +5355,22 @@ ctrl = 0
 anim = 261
 velset = 1,-8.7
 sprpriority = 2
+
+[State 0. MapSet]
+type 		= parentMapSet
+trigger1 		= 1
+map 		= "swordDistX"
+value 		= rootdist x
+ignorehitpause 	= 1
+persistent 		= 1
+
+[State 0. MapSet]
+type 		= parentMapSet
+trigger1 		= 1
+map 		= "swordDistY"
+value 		= rootdist y
+ignorehitpause 	= 1
+persistent 		= 1
 
 [State 0, VelAdd]
 type = VelAdd

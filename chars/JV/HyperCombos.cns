@@ -100,6 +100,14 @@ sprpriority = 2
 facep2 = 1
 
 [State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+[State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit
 fv =13     ;fv = 
@@ -161,7 +169,6 @@ value = 5,0
 [State 200, 1]
 type = HitDef
 p2facing = 1 
-trigger1 = combocount=0
 trigger1 =!movecontact
 hitonce = 1
 attr = S, SA
@@ -189,70 +196,6 @@ guard.hittime = 5
 guard.ctrltime = 5
 getpower =0
 
-[State 200, 1]
-type = HitDef
-p2facing = 1 
-trigger1 = combocount>0
-trigger1=map(super)=0
-trigger1 =!movecontact
-hitonce = 1
-attr = S, SA
-damage = ceil(cond(fvar(11) *80 < 10, 10, fvar(11) * 80)), 10
-hitflag = MAFD
-guardflag = MA
-pausetime = 12,12
-guard.pausetime = 15,10
-sparkno = 2
-sparkxy = -25,-44
-hitsound   = 5,1
-guardsound = 6,1
-ground.type = Low
-animtype = medium
-ground.slidetime = 14
-ground.hittime  = 23
-ground.velocity = -6,-5
-air.velocity = -6.6,-3
-air.hittime = 24
-envshake.time = 7
-fall = 1
-fall.yvelocity = 0
-guard.slidetime = 5
-guard.hittime = 5
-guard.ctrltime = 5
-p2stateno = 915020
-getpower =0
-[State 200, 1]
-type = HitDef
-p2facing = 1 
-trigger1 = combocount>0
-trigger1=map(super)>0
-trigger1 =!movecontact
-hitonce = 1
-attr = S, HA
-damage = ceil(cond(fvar(11) *80 < 10, 10, fvar(11) * 80)), 10
-hitflag = MAFD
-guardflag = MA
-pausetime = 12,7
-guard.pausetime = 15,10
-sparkno = 2
-sparkxy = -25,-44
-hitsound   = 5,1
-guardsound = 6,1
-ground.type = trip
-air.type=trip
-animtype = medium
-ground.slidetime = 14
-ground.hittime  = 23
-ground.velocity = -8,5
-air.velocity = -8,5
-air.hittime = 24
-envshake.time = 7
-fall = 1
-fall.yvelocity = 0
-guard.slidetime = 5
-guard.hittime = 5
-guard.ctrltime = 5
-getpower = 0
 
 [State 0, ChangeState]
 type = ChangeState

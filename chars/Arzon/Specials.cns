@@ -11,6 +11,14 @@ sprpriority = 2
 
 [State 0, VarAdd]
 type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+[State 0, VarAdd]
+type = mapset
 trigger1 = movehit&&combocount=1
 map =  "norc"
 value = 1
@@ -74,12 +82,6 @@ type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
 value = 2.1
-
-[State 0, Untech Scaling RESET]
-type = VarSet
-trigger1 = !numtarget
-fv = 25
-value = 0
 
 [State 0, Special Counter UP]
 type = VarAdd
@@ -310,6 +312,14 @@ poweradd = -1000
 ctrl = 0
 anim =1010
 sprpriority = 2
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
 
 [State EX Limiters]
 type = mapset
@@ -697,6 +707,14 @@ ctrl = 0
 anim =1301
 sprpriority = 3
 
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = time = 0
+fv = 25   
+value = .75; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
+
 [State 0, Cancel into DISABLE]
 type = Explod
 trigger1 = animelem = 6
@@ -958,6 +976,14 @@ ctrl = 0
 anim =1307
 sprpriority = 2
 poweradd = -1000
+
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = time = 0
+fv = 25   
+value = .75; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
 
 [State EX Limiters]
 type = mapset
@@ -1258,6 +1284,13 @@ type = VarAdd
 trigger1 = time = 0
 fv =13     ;fv = 
 value = .75
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = time = 0
+fv = 25   
+value = .75; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
 
 [State 0, Cancel into DISABLE]
 type = Explod
@@ -1490,6 +1523,13 @@ type = VarAdd
 trigger1 = time = 0
 fv =13     ;fv = 
 value = .75
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = time = 0
+fv = 25   
+value = .75; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
 
 [State 0, Cancel into DISABLE]
 type = Explod
@@ -2732,6 +2772,19 @@ anim =1200
 sprpriority = 2
 poweradd = -1000
 
+[State 0, VarAdd]
+type = parentVarAdd
+trigger1 = time = 0
+fv =13     ;fv = 
+value = .75
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = time = 0
+fv = 25   
+value = .75; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
+
 [State Arzon Voices]
 type = PlaySnd
 trigger1 = animelem =1
@@ -3729,6 +3782,14 @@ ctrl = 0
 anim =1100
 sprpriority = 2
 
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = time = 0
+fv = 25   
+value = .75; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
+
 [State 0, Explod]
 type = Explod
 trigger1 = time = 0
@@ -4049,13 +4110,13 @@ y = 0
 
 [State 410, 2]
 type = HitDef
-trigger1 = time%8=0
+trigger1 = time%3=0
 hitonce = 1
 attr = S, SP
 damage = ceil(cond(root,fvar(11) *15 < 5, 5, root,fvar(11) * 15)), 5
 hitflag = MAFD
 guardflag = MAF
-pausetime = 5,5
+pausetime =2,2
 guard.ctrltime = 4
 sparkno = 0
 sparkxy = 0,0
@@ -4444,6 +4505,15 @@ poweradd = -1000
 anim =1100
 sprpriority = 2
 
+
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = time = 0
+fv = 25   
+value = .75; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
+
 [State 0, VarAdd]
 type = VarAdd
 trigger1 = time = 0
@@ -4778,13 +4848,13 @@ y = 0
 
 [State 410, 2]
 type = HitDef
-trigger1 = time%8=0
+trigger1 = time%3=0
 hitonce = 1
 attr = S, SP
 damage = ceil(cond(root,fvar(11) *35 < 20, 20, root,fvar(11) * 35)), 5
 hitflag = MAFD
 guardflag = MAF
-pausetime = 5,5
+pausetime = 2,2
 guard.ctrltime = 4
 sparkno = 0
 sparkxy = 0,0
@@ -6149,7 +6219,7 @@ triggerall = time<=60
 triggerall=time>12
 triggerall=vel x<4
 trigger1 = command="holdfwd"
-x =.4
+x =.6
 
 [State 0, VelAdd]
 type = VelAdd
@@ -6157,7 +6227,7 @@ triggerall = time<=60
 triggerall=time>12
 triggerall=vel x>-4
 trigger1 = command="holdback"
-x =-.4
+x =-.6
 
 [State 0, VelAdd]
 type = VelAdd
@@ -6273,21 +6343,21 @@ type = Velset
 triggerall = time<=120
 triggerall=time>5
 trigger1 = command="holdfwd"
-x =8
+x =9
 
 [State 0, VelAdd]
 type = Velset
 triggerall = time<=120
 triggerall=time>12
 trigger1 = command="holddown"
-y =5
+y =6
 
 [State 0, VelAdd]
 type = Velset
 triggerall = time<=120
 triggerall=time>5
 trigger1 = command="holdback"
-x =-8
+x =-9
 
 [State 0, VelAdd]
 type = Velset
@@ -6295,7 +6365,7 @@ triggerall = time<=120
 triggerall=time>5
 triggerall=pos y >-60
 trigger1 = command="holdup"
-y =-5
+y =-6
 
 [State 0, Veladd]
 type = VelMul

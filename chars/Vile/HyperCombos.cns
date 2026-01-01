@@ -1090,13 +1090,12 @@ ignorehitpause = 1
 
 [State -2, destroyself]
 type = destroyself
-trigger1 = var(2)>5
-trigger2 = parent,movetype = H
-value = 6007
+trigger1 = parent,movetype = H
+ignorehitpause=1
 
 [State -2, ChangeState]
 type = ChangeState
-trigger1 = var(2)>5
+trigger1 = var(2)>3
 trigger2 = root,stateno=3060&&root,animelem=6
 value = 6007
 ignorehitpause=1
@@ -1298,13 +1297,12 @@ ignorehitpause = 1
 
 [State -2, destroyself]
 type = destroyself
-trigger1 = var(2)>5
-trigger2 = parent,movetype = H
-value = 6007
+trigger1 = parent,movetype = H
+ignorehitpause=1
 
 [State -2, ChangeState]
 type = ChangeState
-trigger1 = var(2)>5
+trigger1 = var(2)>3
 trigger2 = root,stateno=3060&&root,animelem=6
 value = 6007
 ignorehitpause=1
@@ -1370,7 +1368,7 @@ triggerall = root,var(8)
 trigger1=enemynear,movetype=H
 trigger1 = !(movecontact%18)
 attr = S, HP                     ;Attribute: Standing, Normal Attack
-damage = ceil(cond(root,fvar(11) * 8 < 2, 2, root,fvar(11) * 8)),6
+damage = ceil(cond(root,fvar(11) * 16 < 4, 4, root,fvar(11) * 16)),6
 animtype = hard                ;Animation type: Light, Medium, Heavy, Back (def: Light)
 air.animtype = back
 guardflag = MA                   ;Flags on how move is to be guarded against
@@ -1404,7 +1402,7 @@ envshake.ampl = 2
 guard.dist=0
 [State -2, destroyself]
 type = destroyself
-trigger1 = parent,var(2)>5
+trigger1 = parent,var(2)>3
 trigger2 = root, movetype = H
 trigger3 = root,stateno=3060&&root,animelem=6
 
@@ -1463,7 +1461,7 @@ triggerall = root,var(8)
 trigger1=enemynear,movetype=H
 trigger1 = !(movecontact%18)
 attr = S, HP                     ;Attribute: Standing, Normal Attack
-damage = ceil(cond(root,fvar(11) * 8 < 2, 2, root,fvar(11) * 8)),6
+damage = ceil(cond(root,fvar(11) * 16 < 4, 4, root,fvar(11) * 16)),6
 air.animtype = back
 animtype = hard                ;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA                   ;Flags on how move is to be guarded against
@@ -1498,7 +1496,7 @@ envshake.ampl = 2
 guard.dist=0
 [State -2, destroyself]
 type = destroyself
-trigger1 = parent,var(2)>5
+trigger1 = parent,var(2)>3
 trigger2 = root, movetype = H
 trigger3 = root,stateno=3060&&root,animelem=6
 

@@ -583,7 +583,7 @@ value = -1
 [State 0, VelSet]
 type = VelSet
 trigger1 = time = 0
-x = 4.5
+x = 6
 y = 0
 
 
@@ -1196,7 +1196,7 @@ value = 1009,0
 [State 100]
 type = VelSet
 trigger1 = time<10
-x = 6.5
+x = 8
 
 [State 0, Explod]
 type = Explod

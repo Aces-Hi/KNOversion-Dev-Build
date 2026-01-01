@@ -56,7 +56,7 @@ jump.neu = 0,-8    ;Neutral jumping velocity (x, y)
 jump.back = -2.00   ;Jump back Speed (x, y)
 jump.fwd = 3.00       ;Jump forward Speed (x, y)
 runjump.back = -2.5 ;Running jump speeds (opt)
-runjump.fwd = 3      ;.
+runjump.fwd = 4      ;.
 airjump.neu = 0,-6.5      ;.
 airjump.back = -2.55      ;Air jump speeds (opt)
 airjump.fwd = 2.5         ;.
@@ -833,7 +833,7 @@ value=1
 type = mapadd
 trigger1 =map(gravtimer)>60
 map = "grav"
-value=.01
+value=.015
 
 [State 0, AfterImageTime]
 type = AfterImageTime

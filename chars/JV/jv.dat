@@ -35,13 +35,13 @@ BERETTA DRIVER	-		(HOLD) ^Y
    <#bbbbbb>Can be dash canceled on hit.</>
 NAGANT DRIVER	-		(HOLD LONGER) ^Y
    <#bbbbbb>Unblockable. Can be dash canceled on hit.</>
-VEÐRFÖLNIR	-		_F^Y
+DEATH DRIVER	-		(MAX HOLD) ^Y
+   <#bbbbbb>Executioner's Technique.</>
+OPHIUCHUS	-		_F^Y
    <#bbbbbb>This move can be used to dodge low-hitting attacks.
    <#983eff>Enhanced version has 2 hits and a movement followup on hit.</>
 _!FLOW STATE	-		^A/^B/^C
         <#983eff>The different buttons send JV in different directions.</>
-
-
 
 
 
@@ -51,7 +51,7 @@ _D	_D		_D
 AIMLESS SERPENT	-		_B^Y
    <#bbbbbb>JV enters a stance with a unique followup.
    The stance can be dash canceled, but doing this
-   locks JV out of using any normals attacks for a short while.
+   locks JV out of using any normal attacks for a short while.
    <#983eff>Enhanced version passes through enemies and is dash cancelable on hit.</>
 _!LUNGING SERPENT	-		^Y
         <#bbbbbb>An overhead attack. Can be used to start combos.</>
@@ -80,7 +80,8 @@ _!SVERA	-		^A
 _!MEGIN	-		^B
         <#983eff>Enhanced version is faster and has more hitstun.</>
 _!GUNGNIR	-		^C
-        <#983eff>Enhanced version has some invincibility and launches higher.</>
+        <#983eff>Enhanced version has some invincibility, launches higher,
+        and can be jump canceled during a combo.</>
 SKYFALL	-		<#65b5ff>(AIR ONLY)</> ^Z
    <#bbbbbb>A fastfall JV can use to reach the ground.</>
    <#983eff>Enhanced version is faster and can be canceled into Flow State.</>
@@ -92,7 +93,6 @@ STRIKING SERPENT	-		_D^Z
 
 
 
-
 _D	_D		_D
 
 	<#55ffff>SUPER MOVES</>
@@ -100,8 +100,8 @@ _D	_D		_D
 <#190bd9>WANDERING SERPENT</>	-		<#55ffff>(1 BAR)</> _D_DB_B_-^A/^B/^C
    <#bbbbbb>An invincible reversal attack. Can be dash canceled during combos.</>
 <#190bd9>KANON DRIVER</>		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _D_DB_B_-^Y
-   <#bbbbbb>Grounded version is a fullscreen anti-air that wallbounces airborne enemies.
-   Air version is a fullscreen overhead attack that causes a sliding knockdown.</>
+   <#bbbbbb>Grounded version is an anti-air/anti-projectile that wallbounces airborne enemies.
+   Air version is an overhead attack that causes a sliding knockdown.</>
 
 	<#55ffff>ENHANCED SUPER MOVES</>
 <#983eff>72 CHAMBERS</>	-		<#55ffff>(2 BARS)</> _D_DF_F_-^A/^B/^C
@@ -123,7 +123,7 @@ _D	_D		_D
 OVERHEAD	-		_F^B
    <#bbbbbb>Puts you in the air and hits overhead.</>
 ANTI-AIR	-		_D^C
-   <#bbbbbb>This move has invulnerability to airborne enemies.</>
+   <#bbbbbb>This move has invulnerability to projectiles and airborne enemies.</>
 GRAB	-		ANY 2 NORMALS </>
    <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.
    Enemies can break this by pressing ^A/^B/^C.</>

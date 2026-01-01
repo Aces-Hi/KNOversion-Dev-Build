@@ -939,6 +939,21 @@ type = ChangeAnim
 trigger1 = 1
 value = 5030
 
+[State 0, VarSet]
+type = MapSet
+trigger1=stateowner,map(wallbangcheck)
+map="wallbangcheck"
+value =1
+ignorehitpause = 1
+persistent = 1
+[State 0, VarSet]
+type = MapSet
+trigger1=stateowner,map(wallbangcheck)=0
+map="wallbangcheck"
+value =0
+ignorehitpause = 1
+persistent = 1
+
 [State 1025, State]
 type = ChangeState
 trigger1 = HitShakeOver = 1
@@ -1054,7 +1069,7 @@ physics = N
 
 [State 1028, Vel X]
 type = VelSet
-trigger1 = Time = 0&&stateowner,stateno!=1070
+trigger1 = Time = 0&&stateowner,stateno!=1070&&map(wallbangcheck)=0
 x = 0
 y=-3
 [State 1028, Vel X]
@@ -1062,6 +1077,12 @@ type = VelSet
 trigger1 = Time = 0&&stateowner,stateno=1070
 x = 0
 y=-6
+
+[State 1028, Vel X]
+type = VelSet
+trigger1 = Time = 0&&map(wallbangcheck)=1
+x = 0
+y=-5+stateowner,map(wallbang)
 
 [State 1028, Gravity]
 type = VelAdd

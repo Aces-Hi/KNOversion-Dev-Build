@@ -3726,7 +3726,7 @@ id = 1008
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 1; You can make this whatever you want to increase stun scaling per move
+value = 3
 ignorehitpause = 1
 persistent = 0
 
@@ -4313,7 +4313,7 @@ persistent=0
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 1.5; You can make this whatever you want to increase stun scaling per move
+value = 3
 ignorehitpause = 1
 persistent = 0
 

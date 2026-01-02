@@ -56,7 +56,7 @@ _!OUT	-		(CAN BE HELD) ^A
 _!IN	-		(CAN BE HELD) ^B
 _!THROUGH	-		(CAN BE HELD) ^C
         <#bbbbbb>This move crumples on counter-hit and ignores projectiles.</>
-RAW POWER	-		_B^Z
+DEMOLITION ARC	-		_B^Z
    <#bbbbbb>A slow, unblockable attack with armor.</>
 _!CANCEL	-		(BEFORE IT HITS) _F_F/_B_B
 _!UPPERCUT	-		(AFTER IT HITS) _D^C

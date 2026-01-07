@@ -681,7 +681,7 @@ sprpriority = -1
 
 [State 0, ChangeAnim]
 type = ChangeAnim
-triggerall = time=0
+triggerall = time=0 && combocount
 trigger1 = prevstateno = [1000,1001]
 trigger2 = prevstateno = [2000,2001]
 value = 231

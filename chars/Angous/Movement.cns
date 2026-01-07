@@ -755,6 +755,11 @@ velset = 3,-2
 anim = 100
 ctrl = 1
 
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = var(28) && time=0
+x = 2
+
 [State 0, AssertSpecial]
 type = AssertSpecial
 trigger1 = 1

@@ -20,7 +20,7 @@ persistent = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1
+value = .5
 
 [State 0, VarSet]
 type = VarSet
@@ -111,7 +111,7 @@ ground.hittime  = 22
 air.hittime  = ceil(cond(fvar(15) *136 < 10, 10, fvar(15) * 136))
 down.hittime = 136
 ground.velocity = -3
-air.velocity = -3,-2.8
+air.velocity = -3,-1.8
 fall  = 0
 forcenofall = 1
 air.fall = 0
@@ -180,7 +180,7 @@ persistent = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1
+value = .5
 
 [State 0, VarSet]
 type = VarSet
@@ -289,7 +289,7 @@ ground.hittime  = 26
 air.hittime  = ceil(cond(fvar(15) *106 < 16, 16, fvar(15) * 106))
 forcenofall = 1
 ground.velocity = -4
-air.velocity = -2,-3
+air.velocity = -2,-2.3
 yaccel = .24
 air.cornerpush.veloff = -16
 air.fall = 0
@@ -3281,7 +3281,7 @@ freq = 90   ;A frequency of 180 shakes the screen rapidly
 [State 200, 1]
 type = hitdef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 hitonce = 1
 attr = S, HT
 damage = ceil(cond(fvar(11) *200 < 15, 15, fvar(11) * 200)), 15
@@ -3355,7 +3355,7 @@ sprpriority = 2
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 2.2
+value = 1
 
 [State 0, StopSnd]
 type = StopSnd
@@ -3915,7 +3915,7 @@ persistent = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1
+value = .5
 
 [State 0, VarSet]
 type = VarSet
@@ -4027,7 +4027,7 @@ ground.hittime  = 22
 air.hittime  = ceil(cond(fvar(15) *136 < 10, 10, fvar(15) * 136))
 down.hittime = 136
 ground.velocity = -3
-air.velocity = -3,-2.8
+air.velocity = -3,-1.8
 fall  = 0
 forcenofall = 1
 air.fall = 0
@@ -4114,7 +4114,7 @@ persistent = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1
+value = .5
 
 [State 0, VarSet]
 type = VarSet
@@ -4216,7 +4216,7 @@ ignorehitpause = 0
 
 [State 0, VelSet]
 type = VelSet
-trigger1 = animelem = 3
+trigger1 = animelem = 3&&prevstateno=2000
 x = 9
 
 [State 0, VelSet]
@@ -4244,7 +4244,7 @@ ground.hittime  = 26
 air.hittime  = ceil(cond(fvar(15) *106 < 16, 16, fvar(15) * 106))
 forcenofall = 1
 ground.velocity = -4
-air.velocity = -2,-3
+air.velocity = -2,-2.3
 yaccel = .24
 air.cornerpush.veloff = -16
 air.fall = 0
@@ -4355,11 +4355,7 @@ fv = 25
 value = 2
 ignorehitpause = 1
 persistent = 0
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 1
+
 
 [State 0, VarSet]
 type = VarSet
@@ -4520,7 +4516,7 @@ ignorehitpause=1
 [State 410, 2]
 type = hitdef 
 p2facing = 1
-triggerall = !movecontact
+triggerall = !movecontact&&!movereversed
 trigger1 = map(skdtrigger)
 trigger2 = enemynear,!map(armor)
 trigger3 = map(punchskd)
@@ -4562,7 +4558,7 @@ id = 99856
 type = hitdef 
 p2facing = 1
 trigger1 = !map(skdtrigger)&&enemynear,map(armor)=0&&!map(punchskd)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage =ceil(cond(fvar(11) * 100+var(10)*0.5888 < 40, 40, fvar(11) * 100+var(10)*0.5888)),13+var(10)*0.5
 animtype  = Medium
@@ -4657,7 +4653,7 @@ value = 0
 [State 2, Ground Hit]
 type = hitdef 
 p2facing = 1
-trigger1 =  !movecontact
+trigger1 =  !movecontact&&!movereversed
 trigger1 = P2statetype != A
 hitonce = 1
 attr = A, SA
@@ -4692,7 +4688,7 @@ palfx.add = 100, 0,20
 [State 2, Air "Grab" Hit]
 type = hitdef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = p2statetype = A
 hitonce = 1
 attr = A, SA
@@ -5089,7 +5085,7 @@ ignorehitpause = 1
 [State 2, Ground Hit]
 type = hitdef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = P2statetype != A
 attr = A, SA
 animtype  = hard 
@@ -5123,7 +5119,7 @@ getpower =0
 [State 2, Aerial "Grab" Hit]
 type = hitdef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = P2statetype = A
 trigger1 = p2movetype !=H
 attr = A, SA
@@ -5158,7 +5154,7 @@ getpower =0
 [State 2, Aerial "Grab" Hit]
 type = hitdef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = P2statetype = A
 trigger1 = p2movetype =H
 attr = A, SA
@@ -5295,7 +5291,7 @@ ignorehitpause = 1
 type = hitdef 
 p2facing = 1
 triggerall = enemynear,map(armor)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 hitonce = 1
 attr = S, SA
 damage = ceil(cond(fvar(11) *50 < 13, 13, fvar(11) * 40)), 7
@@ -5332,7 +5328,7 @@ getpower = 0
 type = hitdef 
 p2facing = 1
 triggerall = enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 hitonce = 1
 attr = S, SA
 damage = ceil(cond(fvar(11) *50 < 13, 13, fvar(11) * 40)), 7
@@ -5720,7 +5716,7 @@ value = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1
+value = .5
 
 [State 0, VarSet]
 type = VarSet
@@ -5996,7 +5992,7 @@ value = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1
+value = .5
 
 [State -3, Angous Voices]
 type = PlaySnd
@@ -6222,11 +6218,7 @@ trigger2 = movehit = 1
 time = 30
 freq = 190
 ampl = 8
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 2
+
 
 [State -3, Angous Voices]
 type = PlaySnd
@@ -6317,7 +6309,7 @@ x = 3
 type = hitdef 
 p2facing = 1
 triggerall = enemynear,map(armor)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) * 145+var(10)*0.5999 < 10,10, fvar(11) * 145+var(10)*0.5999)),13+var(10)*0.5
 animtype  = Medium
@@ -6346,7 +6338,7 @@ getpower =  0
 type = hitdef 
 p2facing = 1
 triggerall = enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) * 145+var(10)*0.5999 < 10,10, fvar(11) * 145+var(10)*0.5999)),13+var(10)*0.5
 animtype  = Medium
@@ -7748,7 +7740,7 @@ persistent=1
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.5
+value = .5
 
 [State 0, VarSet]
 type = VarSet
@@ -8026,7 +8018,7 @@ anim=9101
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1
+value = .5
 
 [State 0, ChangeAnim]
 type = ChangeAnim
@@ -8244,12 +8236,6 @@ ctrl = 0
 sprpriority = 2
 facep2 = 1
 
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 2
-
 [State 0, VarSet]
 type = VarSet
 trigger1 = time = 0
@@ -8398,7 +8384,7 @@ x = 3
 type = hitdef 
 p2facing = 1
 triggerall=enemynear,map(armor)=0
-trigger1 =!movecontact
+trigger1 =!movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) * 145+var(10)*0.5888 < 15, 15, fvar(11) * 145+var(10)*0.5888)),13+var(10)*0.5
 animtype  = Medium
@@ -8434,7 +8420,7 @@ getpower = 0
 type = hitdef 
 p2facing = 1
 triggerall=enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) * 145+var(10)*0.5888 < 15, 15, fvar(11) * 145+var(10)*0.5888)),13+var(10)*0.5
 animtype  = Medium

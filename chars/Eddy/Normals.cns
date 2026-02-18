@@ -30,7 +30,7 @@ value = 10
 type = VarAdd
 trigger1 = movehit
 fv =13     ;fv = 
-value = 1.5
+value = 2
 ignorehitpause=1
 persistent=0
 
@@ -132,7 +132,7 @@ value = 20
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1
+value = .5
 
 [State 0, VelSet]
 type = VelSet
@@ -258,7 +258,7 @@ value = 20
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1
+value = .5
 
 [State 200, VarAdd]
 type = VarAdd
@@ -398,7 +398,7 @@ x = 4
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.2
+value = 1
 
 [State 200, VarAdd]
 type = VarAdd
@@ -447,8 +447,8 @@ guardsound = 6,2
 ground.type = High
 ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *29 < 9, 9, fvar(15) * 29))
-air.hittime  = ceil(cond(fvar(15) *34 < 9, 9, fvar(15) * 34))
-down.hittime = ceil(cond(fvar(15) *34 < 9, 9, fvar(15) * 34))
+air.hittime  = ceil(cond(fvar(15) *60 < 9, 9, fvar(15) * 60))
+down.hittime = ceil(cond(fvar(15) *60 < 9, 9, fvar(15) * 60))
 ground.velocity = -8,-0
 air.velocity = -5, -3
 down.velocity = -5, -3
@@ -1158,6 +1158,11 @@ type = VelMul
 trigger1 = animelem=4
 x=.6
 
+[State 0, VelAdd]
+type = VelSet
+trigger1 = animelem=4
+y=-1
+
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
@@ -1170,7 +1175,7 @@ guardflag = MA
 ;priority = 3
 getpower = (30)*(cond(var(var(2)) = 1, 1, 1))
 pausetime = 3,3
-guard.pausetime = 0,3
+guard.pausetime = 3,0
 sparkno = 1
 sparkxy = -random%30,-30-random%50
 hitsound   = 5,1
@@ -1180,8 +1185,8 @@ animtype = medium
 air.animtype = back
 ground.slidetime = 14
 ground.hittime  = ceil(cond(fvar(14) *24 < 2, 2, fvar(14) * 24))
-air.hittime  = ceil(cond(fvar(14) *24 < 2, 2, fvar(14) * 24))
-down.hittime = ceil(cond(fvar(14) *24 < 2, 2, fvar(14) * 24))
+air.hittime  = ceil(cond(fvar(14) *24 < 11, 11, fvar(14) * 24))
+down.hittime = ceil(cond(fvar(14) *24 < 11, 11, fvar(14) * 24))
 ground.velocity = -1,-5
 air.velocity = -0.2,-2
 down.velocity = 0, -1
@@ -1484,7 +1489,7 @@ value = 10
 type = VarAdd
 trigger1 = movehit
 fv =13     ;fv = 
-value = 1.5
+value = 2
 ignorehitpause=1
 persistent=0
 
@@ -1597,7 +1602,7 @@ value = 20
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.8
+value = .5
 
 [State 200, VarAdd]
 type = VarAdd
@@ -1780,7 +1785,7 @@ value = 0, 1
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 2.65
+value = 1
 
 [State 0]
 type = HitDef 
@@ -1800,8 +1805,8 @@ guardsound = 6,2
 ground.type = high
 ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *26 < 9, 9, fvar(15) * 26))
-air.hittime  = ceil(cond(fvar(15) *44 < 9, 9, fvar(15) * 44))
-down.hittime = ceil(cond(fvar(15) *44 < 9, 9, fvar(15) * 44))
+air.hittime  = ceil(cond(fvar(15) *60 < 9, 9, fvar(15) * 60))
+down.hittime = ceil(cond(fvar(15) *60 < 9, 9, fvar(15) * 60))
 ground.velocity = -6,0
 air.velocity = -3, -3
 down.velocity = -3, -3
@@ -1862,6 +1867,12 @@ type = VarAdd
 trigger1 = fvar(8) = 1 && time = 0
 v = 15
 value = 30
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv =13     ;fv = 
+value = 1
 
 [State 200, VarAdd]
 type = VarAdd
@@ -1992,7 +2003,7 @@ value = 10
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1
+value = 2
 ignorehitpause=1
 persistent=0
 
@@ -2057,7 +2068,7 @@ ground.type = high
 animtype = light
 air.animtype = back
 ground.slidetime = 5
-ground.hittime  = ceil(cond(fvar(15) *12 < 6, 12, fvar(15) * 12))
+ground.hittime  = ceil(cond(fvar(15) *12 < 6, 6, fvar(15) * 12))
 air.hittime  = ceil(cond(fvar(1) *12 < 12, 12, fvar(1) * 12))
 down.hittime = ceil(cond(fvar(1) *12 < 12, 12, fvar(1) * 12)) 
 ground.velocity = -4
@@ -2171,7 +2182,7 @@ value = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.5
+value = 1
 [State 0, VelAdd]
 type = VelAdd
 trigger1 = 1
@@ -2265,7 +2276,7 @@ type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
 ;value = 1.5
-value = 0.5
+value = 1
 
 
 [State 200, VarAdd]
@@ -2323,7 +2334,7 @@ ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *34 < 5, 5, fvar(15) * 30))
 air.hittime  = ceil(cond(fvar(15) *34 < 9, 9, fvar(15) * 34))
 down.hittime = ceil(cond(fvar(15) *34 < 9, 9, fvar(15) * 34))
-ground.velocity = -5
+ground.velocity = -2,-3
 down.velocity = -1.7, 9
 air.velocity = -1.7, 9
 fall.yvelocity = 0
@@ -2405,7 +2416,7 @@ y = .44
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 2.3
+value = 1
 
 [State 630, 1]
 type = PlaySnd

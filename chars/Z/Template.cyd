@@ -14,8 +14,9 @@ trigger2 = hitdefattr = A, NA, SA
 trigger2 = stateno != [3000,3050)
 trigger2 = movecontact
 trigger3 = stateno = 1010|| stateno = 1011
-trigger3 = enemy,movetype=H
-
+trigger3 = movecontact
+trigger4 = stateno = 1101
+trigger4 = enemynear,movetype=H
 ;Super 1: Blown Fuse (Ground)
 [State -1,QCF+LMH]
 type = ChangeState
@@ -29,8 +30,9 @@ trigger2 = hitdefattr = SC, NA, SA, HA
 trigger2 = stateno != [3000,3050)
 trigger2 = movecontact
 trigger3 = stateno = 1101||stateno = 1100
-trigger3 = enemy,movetype=H
-
+trigger3 = movecontact
+trigger4 = stateno = 1011
+trigger4 = enemynear,movetype=H
 ;Super 2
 [State -1,QCB+LMH]
 type = ChangeState
@@ -43,8 +45,9 @@ trigger2 = hitdefattr = SC, NA, SA, HA
 trigger2 = stateno != [3000,3050)
 trigger2 = movecontact
 trigger3 = stateno = 1101||stateno = 1100
-trigger3 = enemy,movetype=H
-
+trigger3 = movecontact
+trigger4 = stateno = 1101
+trigger4 = enemynear,movetype=H
 [State LVL6]
 type = ChangeState
 value = 3050
@@ -57,7 +60,9 @@ trigger2 = hitdefattr = SC, NA, SA, HA
 trigger2 = stateno != [3000,3050)
 trigger2 = movecontact
 trigger3 = stateno = 1101||stateno = 1100
-trigger3 = enemy,movetype=H
+trigger3 = movecontact
+trigger4 = stateno = 1101
+trigger4 = enemynear,movetype=H
 [State LVL6]
 type = ChangeState
 value = 3050
@@ -71,7 +76,9 @@ trigger2 = hitdefattr = A, NA, SA
 trigger2 = stateno != [3000,3050)
 trigger2 = movecontact
 trigger3 = stateno = 1010|| stateno = 1011
-trigger3 = enemy,movetype=H
+trigger3 = movecontact
+trigger4 = stateno = 1101
+trigger4 = enemynear,movetype=H
 
 ;===========================================================================
 ;This is not a move, but it sets up var(1) to be 1 if conditions are right

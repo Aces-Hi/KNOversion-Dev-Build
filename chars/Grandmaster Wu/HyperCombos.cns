@@ -351,6 +351,13 @@ anim = 3010
 sprpriority =8
 velset = 0,0
 
+[State 0, VarSet]
+type = MapSet
+trigger1=movehit
+map = "beamslide"    ;fv = 10
+value = 1
+ignorehitpause=1
+
 [State Wu Voices]
 type = PlaySnd
 trigger1 = time=0
@@ -542,7 +549,7 @@ ignorehitpause = 0
 [State 1000, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = !NumExplod(99858) 
+trigger1 = map(beamslide)=0
 triggerall=enemynear,movetype!=A
 trigger1 = animelem = 14
 attr = S, HP                     ;Attribute: Standing, Normal Attack
@@ -585,7 +592,7 @@ ID = 99858
 [State 1000, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = NumExplod(99858) 
+trigger1 = map(beamslide)>0
 triggerall=enemynear,movetype!=A
 trigger1 = animelem = 14
 attr = S, HP                     ;Attribute: Standing, Normal Attack
@@ -606,6 +613,7 @@ animtype = heavy  ;Animation type: Light, B, Heavy, Back (def: Light)
 ground.slidetime = 5             ;Time that the opponent slides back
 fall = 1
 air.fall = 1
+fall.yvelocity=0
 getpower = 0
 ground.velocity = -12,-3
 air.velocity = -12,-3    
@@ -623,14 +631,11 @@ envshake.phase = 2
 p2sprpriority = 0 
 ground.cornerpush.veloff = -36
 air.cornerpush.veloff = -36
-ID = 99858
-NoChainID = 99858
 
 
 [State 1000, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = !NumExplod(99858) 
 triggerall=enemynear,movetype=A
 trigger1 = animelem = 14
 attr = S, HP                     ;Attribute: Standing, Normal Attack
@@ -671,49 +676,7 @@ air.cornerpush.veloff = -36
 ID = 99858
 NoChainID = 99858
 
-[State 1000, 1]
-type = HitDef 
-p2facing = 1
-trigger1 = NumExplod(99858) 
-triggerall=enemynear,movetype=A
-trigger1 = animelem = 14
-attr = S, HP                     ;Attribute: Standing, Normal Attack
-damage = 300
-guardflag = MA                   ;Flags on how move is to be guarded against
-hitflag = MAFDP                    ;Flags of conditions that move can hit
-;priority = 3, Hit                ;Attack priority: 0 (least) to 7 (most), 4 default
-;Hit/Miss/Dodge type (Def: Hit)
-pausetime = 45, 45            ;Time attacker pauses, time opponent shakes
-sparkno = 13                      ;5park anim no (Def: set above)
-sparkxy = -10, -45               ;X-offset for the "hit spark" rel. to p2,
-;Y-offset for the spark rel. to p1
-hitsound = 5, 2                  ;5ound to play on hit
-guardsound = 6, 0                ;5ound to play on guard
-ground.type = High               ;Type: High, Low, Trip (def: Normal)
-air.animtype = back       
-animtype = heavy  ;Animation type: Light, B, Heavy, Back (def: Light)
-ground.slidetime = 5             ;Time that the opponent slides back
-fall = 1
-air.fall = 1
-getpower = 0
-ground.velocity = -12,-3
-air.velocity = -12,-3    
-down.velocity = -12,-3
-ground.hittime  = 36
-air.hittime  = 36
-down.hittime  = 36
-guard.slidetime = 5
-guard.hittime = 16
-guard.ctrltime = 9       
-envshake.time = 35
-envshake.freq = 90
-envshake.ampl = -2
-envshake.phase = 2
-p2sprpriority = 0 
-ground.cornerpush.veloff = -36
-air.cornerpush.veloff = -36
-ID = 99858
-NoChainID = 99858
+
 
 [state 300, targetstate]
 type = targetstate
@@ -722,7 +685,7 @@ trigger1 = enemynear, life > 0
 value = 915020
 ignorehitpause = 1
 persistent = 0
-
+id = 99858
 
 
 
@@ -733,17 +696,6 @@ trigger1 = enemynear, life < 1
 value = 3011020
 ignorehitpause = 1
 persistent = 0
-
-;Explod Limiter 
-[State 0, Explod]
-type = Explod
-trigger1 = !NumExplod(99858)
-trigger1 = MoveHit
-anim = 1
-ID = 99858
-removetime = -1
-removeongethit = 1
-
 
 [State 0, Helper]
 type = Helper

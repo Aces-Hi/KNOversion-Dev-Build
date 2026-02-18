@@ -5511,6 +5511,7 @@ physics = N
 juggle  = 2
 ctrl = 0
 sprpriority = 2
+velset=0,0
 
 [State 0, PlayerPush]
 type = PlayerPush
@@ -5814,10 +5815,9 @@ ownpal = 1
 type = HitDef 
 p2facing = 1 
 trigger1 = time = 0
-hitonce = 1
 attr = A, ST
 damage = 0, 0
-hitflag = AF
+hitflag = MAFD
 guardflag = 
 ;priority = 3
 pausetime = 0,0

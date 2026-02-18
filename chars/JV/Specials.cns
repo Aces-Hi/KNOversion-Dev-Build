@@ -2588,6 +2588,15 @@ trigger3 = command = "dash" && time > 6
 value = 100
 ctrl = 1
 
+[State 0, Changestate]
+type = Changestate
+triggerall = combocount
+trigger1 = command = "holdfwd" && time > 3
+trigger2 = command = "fwd" && time >3
+trigger3 = command = "dash" && time > 3
+value = 100
+ctrl = 1
+
 [State 0, ChangeState]
 type = ChangeState
 trigger1 = command = "nobuffer_b" && time > 3

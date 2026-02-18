@@ -837,7 +837,7 @@ channel=10
 
 [State JoJo Voices]
 type = PlaySnd
-trigger1 = animelem=13
+trigger1 = animelem=12
 value = 50,3
 ignorehitpause=1
 persistent=0
@@ -1268,6 +1268,14 @@ ctrl = 0
 sprpriority = 2
 facep2 = 1
 anim=1052
+
+[State -2, 6s]
+type = mapadd
+trigger1 =time=0
+trigger2 =movehit=1&&map(grav)=0
+map = "grav"
+value=1
+ignorehitpause=1
 
 [State JoJo Voices]
 type = PlaySnd
@@ -3150,7 +3158,7 @@ freq = 100   ;A frequency of 180 shakes the screen rapidly
 type = hitdef 
 p2facing = 1
 trigger1 = !movecontact
-attr = S, SA
+attr = A, SA
 damage = ceil(cond(fvar(11) *60 < 15, 15, fvar(11) * 60)), 2
 animtype  = Medium
 hitflag = MAFD
@@ -3385,7 +3393,7 @@ freq = 100   ;A frequency of 180 shakes the screen rapidly
 type = hitdef 
 p2facing = 1
 trigger1 = !movecontact
-attr = S, SA
+attr = A, SA
 damage = ceil(cond(fvar(11) *60 < 15, 15, fvar(11) * 60)), 2
 animtype  = Medium
 hitflag = MAFD

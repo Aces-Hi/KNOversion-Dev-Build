@@ -39,7 +39,7 @@ value = 1004, (0+(Random%15))
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1
+value = 2
 ignorehitpause=1
 persistent=0
 
@@ -235,7 +235,7 @@ volumescale=150
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = .5
+value = 1
 
 [State 200, VarAdd]
 type = VarAdd
@@ -303,7 +303,7 @@ type = HitDef
 trigger1 = !movecontact
 attr = S,NA
 air.animtype = back
-damage = ceil(ifElse(fvar(11) * 90 < 7, 7, fvar(11) * 90)), 0
+damage = ceil(ifElse(fvar(11) * 75 < 7, 7, fvar(11) * 75)), 0
 animtype = hard
 guardflag = MA
 hitflag = MAFD
@@ -333,7 +333,7 @@ guard.hittime = 28
 guard.ctrltime = 19
 guard.slidetime = 18
 forcenofall=1
-getpower = (100)*(cond(var(var(2)) = 1, 1, 1))
+getpower = (70)*(cond(var(var(2)) = 1, 1, 1))
 
 [State 200, 2]
 type = PlaySnd
@@ -373,7 +373,7 @@ volumescale=150
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = .2
+value = 1
 
 [State 0, VarSet]
 type = VarAdd
@@ -462,7 +462,7 @@ guard.hittime = 28
 guard.ctrltime = 19
 guard.slidetime = 18
 forcenofall=1
-getpower = (100)*(cond(var(var(2)) = 1, 1.5, 1)) 
+getpower = (50)*(cond(var(var(2)) = 1, 1.5, 1)) 
 
 ;-----------------------------------------
 ;Enhanced 6H code
@@ -505,7 +505,7 @@ guard.ctrltime 		= 18
 guard.slidetime 		= 18
 p2stateno 	= 1225
 forcenofall=1
-getpower = (100)*(cond(var(var(2)) = 1, 1, 1))
+getpower = (70)*(cond(var(var(2)) = 1, 1, 1))
 ;Enhanced 6H code
 [State 1055, 5]
 type = HitDef
@@ -545,7 +545,7 @@ guard.hittime 		= 18
 guard.ctrltime 		= 18
 guard.slidetime 		= 18
 forcenofall=1
-getpower = (100)*(cond(var(var(2)) = 1, 1, 1))
+getpower = (70)*(cond(var(var(2)) = 1, 1, 1))
 
 [State 0, VarAdd]
 type = mapset
@@ -733,7 +733,7 @@ volumescale=150
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1
+value = 2
 ignorehitpause=1
 persistent=0
 
@@ -877,6 +877,11 @@ trigger1 =  animelem = 5
 value = 200, (0+(Random%50))
 volumescale=150
 
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv =13     ;fv = 
+value = 1
 
 [State 0, VarAdd]
 type = VarAdd
@@ -973,7 +978,7 @@ type = HitDef
 trigger1 = animelem = 6
 attr = S, NA
 animtype  = back
-damage = ceil(cond(fvar(11) *35 < 4, 4, fvar(11) * 35)), 0
+damage = ceil(cond(fvar(11) *40 < 4, 4, fvar(11) * 40)), 0
 hitflag = MAFD
 guardflag = MA
 air.animtype = back
@@ -1002,14 +1007,14 @@ envshake.ampl = 2
 air.fall = 0
 fall = 0
 forcenofall=1
-getpower = (50)*(cond(var(var(2)) = 1, 1, 1))
+getpower = (30)*(cond(var(var(2)) = 1, 1, 1))
 
 [State 0]
 type = HitDef
 trigger1 = animelem = 7
 attr = S, NA
 animtype  = up
-damage = ceil(cond(fvar(11) *35 < 4, 4, fvar(11) * 35)), 0
+damage = ceil(cond(fvar(11) *40< 4, 4, fvar(11) * 40)), 0
 hitflag = MAFD
 guardflag = MA
 pausetime = 12,15
@@ -1037,7 +1042,7 @@ envshake.time = 9
 envshake.freq = 90
 envshake.ampl = 2
 forcenofall=1
-getpower = (50)*(cond(var(var(2)) = 1, 1,1))
+getpower = (40)*(cond(var(var(2)) = 1, 1,1))
 
 [State 0, ChangeState]
 type = ChangeState
@@ -1166,13 +1171,6 @@ type = PlaySnd
 trigger1 =  animelem = 1
 value = 440, (0+(Random%4))
 volumescale=150
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1=map(scoop)>0
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 1.7
 
 
 [State 800, 1] ;With grab sound
@@ -1539,7 +1537,7 @@ volumescale=150
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.7
+value = 1
 ignorehitpause=0
 
 [State 0, VarAdd]
@@ -1770,7 +1768,7 @@ x = 4
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1
+value =2
 ignorehitpause=1
 persistent=0
 
@@ -1891,7 +1889,7 @@ x = 4
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 1.25; You can make this whatever you want to increase stun scaling per move
+value = 1.5
 ignorehitpause = 1
 persistent = 0
 
@@ -1932,9 +1930,9 @@ down.hittime = ceil(cond(fvar(15) *27 < 9, 9, fvar(15) * 27))
 ground.velocity = -4.8
 yaccel = .30
 air.velocity = -1.6,-2.3;
-guard.ctrltime = 5
+guard.ctrltime = 2
 guard.slidetime =9
-guard.hittime = 5
+guard.hittime = 2
 envshake.time = 8
 envshake.freq = 10
 envshake.ampl = 2
@@ -2002,7 +2000,7 @@ x = 4
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 1.25; You can make this whatever you want to increase stun scaling per move
+value = 1.5
 ignorehitpause = 1
 persistent = 0
 
@@ -2010,7 +2008,7 @@ persistent = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = .5
+value = 1
 
 [State Sahkive Voices]
 type = PlaySnd
@@ -2047,15 +2045,15 @@ hitsound   = 5,3
 guardsound = 6,2
 ground.type = high
 ground.slidetime = 12
-ground.hittime  =34
+ground.hittime  = 34
 air.hittime  = 34
-ground.velocity = -4,0
+ground.velocity = -1.8,-4.5
 air.velocity = -1.8,-4.5
 ground.cornerpush.veloff = 0
 down.cornerpush.veloff = 0
 air.cornerpush.veloff = 0
-guard.hittime = 12
-guard.ctrltime = 12
+guard.hittime = 5
+guard.ctrltime = 5
 ;envshake.freq =
 ;envshake.ampl = 
 ;envshake.phase =
@@ -2070,7 +2068,7 @@ fall.yvelocity = 0
 air.fall = 0
 fall=0
 forcenofall=1
-getpower = (100)*(cond(var(var(2)) = 1, 1, 1))
+getpower = (70)*(cond(var(var(2)) = 1, 1, 1))
 
 [State 0]
 type = HitDef
@@ -2091,13 +2089,13 @@ ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *30 < 9, 9, fvar(15) * 29))
 air.hittime  = ceil(cond(fvar(15) *30 < 15, 15, fvar(15) * 29))
 down.hittime = ceil(cond(fvar(15) *29 < 15, 15, fvar(15) * 29))
-ground.velocity = -4,0
+ground.velocity = -1.8,-4.5
 air.velocity = -1.8,-4.5
 ground.cornerpush.veloff = 0
 down.cornerpush.veloff = 0
 air.cornerpush.veloff = 0
-guard.hittime = 12
-guard.ctrltime = 12
+guard.hittime = 5
+guard.ctrltime = 5
 ;envshake.freq =
 ;envshake.ampl = 
 ;envshake.phase =
@@ -2112,7 +2110,7 @@ fall.yvelocity = 0
 air.fall = 0
 fall=0
 forcenofall=1
-getpower = (100)*(cond(var(var(2)) = 1, 1, 1))
+getpower = (70)*(cond(var(var(2)) = 1, 1, 1))
 
 [State 0, ChangeState]
 type = Ctrlset
@@ -2197,7 +2195,7 @@ persistent = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.25
+value = 1
 
 
 
@@ -3232,7 +3230,7 @@ volumescale=150
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = .5
+value = 1
 
 [State 0, RemoveExplod]
 type = RemoveExplod

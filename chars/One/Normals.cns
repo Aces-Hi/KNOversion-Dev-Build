@@ -36,7 +36,7 @@ persistent = 0
 type = VarAdd
 trigger1 = movehit
 fv =13     ;fv = 
-value = 1.5
+value = 2
 ignorehitpause=1
 persistent=0
 
@@ -124,7 +124,7 @@ x = cond(prevstateno = 100, vel x, 3)
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.5
+value = 0.5
 
 [State 200, VarAdd]
 type = VarAdd
@@ -226,7 +226,7 @@ volumescale=200
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1
+value = .5
 
 [State 200, VarAdd]
 type = VarAdd
@@ -344,7 +344,7 @@ x = 9
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 0.2
+value = 1
 
 [State 200, VarAdd]
 type = VarAdd
@@ -477,7 +477,7 @@ volumescale=200
 type = VarAdd
 trigger1 = movehit
 fv =13     ;fv = 
-value = 1.5
+value = 2
 ignorehitpause=1
 persistent=0
 
@@ -559,11 +559,11 @@ type = VelSet
 trigger1 = animelem = 4
 x = 3
 
-;[State 0, VarAdd]
-;type = VarAdd
-;trigger1 = movehit = 1
-;fv =13     ;fv = 
-;value = 
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv =13     ;fv = 
+value = .5
 
 [State 200, VarAdd]
 type = VarAdd
@@ -656,7 +656,11 @@ value = 0.3; You can make this whatever you want to increase stun scaling per mo
 ignorehitpause = 1
 persistent = 0
 
-
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv =13     ;fv = 
+value = .5
 
 [State -2, VarSet]
 type = VarSet
@@ -1025,6 +1029,12 @@ anim = 251
 sprpriority = 2
 velset = 12,0
 
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv =13     ;fv = 
+value =.5
+
 [State -3, Win Voices] 
 type = PlaySnd
 trigger1 = time = 0
@@ -1238,6 +1248,20 @@ ctrl = 0
 anim = 255
 sprpriority = 2
 velset = 25,0
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv =13     ;fv = 
+value = 1
+
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 1
+ignorehitpause = 1
+persistent = 0
 
 [State -3, Win Voices] 
 type = PlaySnd
@@ -2071,7 +2095,7 @@ ignorehitpause = 1
 type = VarAdd
 trigger1 = movehit
 fv =13     ;fv = 
-value = 1.5
+value = 2
 ignorehitpause=1
 persistent=0
 
@@ -2167,7 +2191,7 @@ volumescale=200
 type = VarAdd
 trigger1 = movehit
 fv =13     ;fv = 
-value = 1.5
+value = 2
 ignorehitpause=1
 persistent=0
 
@@ -2261,7 +2285,7 @@ volumescale=200
 type = VarAdd
 trigger1 = movehit
 fv =13     ;fv = 
-value = 1.5
+value = 2
 ignorehitpause=1
 persistent=0
 
@@ -2338,7 +2362,7 @@ volumescale=200
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.5
+value = 0.5
 
 [State 200, VarAdd]
 type = VarAdd
@@ -2462,7 +2486,7 @@ persistent = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 2.8
+value = 1
 
 [State -2, VarSet]
 type = VarSet
@@ -2621,11 +2645,11 @@ type = VelSet
 trigger1 = time = 0
 x = 1.5
 
-;[State 0, VarAdd]
-;type = VarAdd
-;trigger1 = movehit = 1
-;fv =13     ;fv = 
-;value = 
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv =13     ;fv = 
+value = .5
 
 [State 200, VarAdd]
 type = VarAdd
@@ -2732,11 +2756,11 @@ fv = 25
 value = 0
 
 
-;[State 0, VarAdd]
-;type = VarAdd
-;trigger1 = movehit = 1
-;fv =13     ;fv = 
-;value = 2
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv =13     ;fv = 
+value = .5
 
 [State 0, NotHitBy]
 type = NotHitBy
@@ -3493,7 +3517,7 @@ value = 0
 type = VarAdd
 trigger1 = movehit
 fv =13     ;fv = 
-value = 1.5
+value =2
 ignorehitpause=1
 persistent=0
 [State 0, Gravity]
@@ -3629,7 +3653,7 @@ persistent = 0
 type = VarAdd
 trigger1 = movehit
 fv =13     ;fv = 
-value = 1.5
+value = 2
 ignorehitpause=1
 persistent=0
 [State -2, VarSet]
@@ -3897,7 +3921,7 @@ value = 0, 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.35
+value = 1
 
 [State 630, While Falling Hit]
 type = HitDef 
@@ -3975,7 +3999,7 @@ persistent = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 0.75
+value =1
 
 [State -2, VarSet]
 type = VarSet
@@ -4519,7 +4543,7 @@ value = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.5
+value = 1
 
 [State 200, 1]
 type = HitDef 
@@ -4739,7 +4763,11 @@ trigger1 = !numtarget
 fv = 12
 value = 0
 
-
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv =13     ;fv = 
+value = .5
 
 [State 0]
 type = HitDef 
@@ -4828,6 +4856,12 @@ type = VarSet
 trigger1 = !numtarget
 fv = 25
 value = 0
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv =13     ;fv = 
+value = .5
 
 [State 200, VarAdd]
 type = VarAdd
@@ -4960,6 +4994,12 @@ type = VarSet
 trigger1 = !numtarget
 fv = 25
 value = 0
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv =13     ;fv = 
+value = .5
 
 [State 0, ChangeState]
 type = ChangeState

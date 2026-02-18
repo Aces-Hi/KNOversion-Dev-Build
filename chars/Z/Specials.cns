@@ -30,13 +30,6 @@ type = PlaySnd
 trigger1 = animelemtime(5)=0
 value = 1000, 1
 
-;Damage Scaling 
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 1
-
 [State 0, EnvShake]
 type = EnvShake
 trigger1 = animelemtime(7)=0
@@ -369,13 +362,6 @@ value = 1000, 0
 type = PlaySnd
 trigger1 = animelemtime(5)=0
 value = 1000, 1
-
-;Damage Scaling 
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 1
 
 [State 0, EnvShake]
 type = EnvShake
@@ -1082,13 +1068,6 @@ type = PlaySnd
 trigger1 = animelemtime(4)=0
 value = 1012, 1
 
-;Damage Scaling 
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 1
-
 ;jS-2 cancel removal
 [State 0, VarAdd]
 type = VarAdd
@@ -1290,6 +1269,13 @@ anim = 1104
 poweradd = 0                   
 sprpriority = 0  
 
+;Damage Scaling 
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv =13     ;fv = 
+value = 1
+
 [State LTG]
 type = PlaySnd
 triggerall=palno=11
@@ -1444,51 +1430,7 @@ id = 910311
 [State 0]
 type = HitDef 
 p2facing = 1
-trigger1=map(dunk)=1
-trigger1 = !movecontact
-attr = A, SA
-animtype  = Hard
-air.animtype = back
-damage = ceil(cond(fvar(11) *45 < 10, 10, fvar(11) * 45)), 5
-hitflag = MAF
-guardflag = MA
-pausetime = 12,16
-sparkno = 3
-sparkxy = -15,-30
-hitsound   = 5,4
-guardsound = 6,1
-ground.type = Low
-ground.slidetime = 12
-ground.hittime  = 999
-air.hittime  = 999
-down.hittime = 999
-ground.velocity = -0
-air.velocity = -2, 10
-ground.cornerpush.veloff = 0
-down.cornerpush.veloff = 0
-air.cornerpush.veloff = 0
-fall = 1
-fall.yvelocity = -1
-guard.hittime = 24
-guard.pausetime= 14,14
-guard.velocity = -7
-guard.dist = 20
-guard.slidetime = 16
-envshake.time = 14
-envshake.freq = 100
-envshake.ampl = 7
-envshake.phase = 1
-palfx.color=256
-palfx.mul=128,128,128
-palfx.add=0,0,0
-palfx.sinadd=256,256,256,10
-palfx.time=32
-getpower = (50)*(cond(var(var(2)) = 1, 1, .65)) 
-
-[State 0]
-type = HitDef 
-p2facing = 1
-trigger1=map(dunk)>1
+trigger1=map(dunk)>0
 trigger1 = !movecontact
 attr = A, SA
 animtype  = Hard
@@ -1985,7 +1927,7 @@ persistent=1
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1
+value = .5
 
 [State LTG]
 type = PlaySnd
@@ -5070,14 +5012,6 @@ type = VarAdd
 trigger1 = animelem = 7
 v = 5     
 value = 150
-
-;Damage Scaling 
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 1
-
 ;EX Effects
 [State 200, 2]
 type = PlaySnd
@@ -5577,13 +5511,6 @@ id = 611
 type = RemoveExplod
 trigger1 = 1
 id = 621
-
-;Damage Scaling 
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 1
 
 ;EX Effects
 [State 200, 2]
@@ -6374,6 +6301,13 @@ type = PlaySnd
 trigger1 = time = 0
 value = 1012, 0
 
+;Damage Scaling 
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv =13     ;fv = 
+value = 1
+
 [State 200, 2]
 type = PlaySnd
 trigger1 = animelemtime(4)=0
@@ -6681,7 +6615,7 @@ p2facing = 1
 trigger1 = anim = 1110
 trigger1 = time % 6 = 0
 attr = A, SA
-damage = ceil(cond(fvar(11) *8 < 7, 7, fvar(11) * 8)), 0
+damage = ceil(cond(fvar(11) *8 < 5, 5, fvar(11) * 8)), 0
 guardflag = A
 hitflag = MAF
 pausetime = 2,1
@@ -6979,7 +6913,7 @@ channel=10
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.5
+value = 2
 
 [State 200, 2]
 type = PlaySnd

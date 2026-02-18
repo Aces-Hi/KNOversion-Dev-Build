@@ -673,7 +673,7 @@ type = VarAdd
 trigger1 = movehit=1
 trigger1 = combocount>1
 fv =13     ;fv = 
-value = .5
+value = 1
 persistent = 0
 ;==================================
 
@@ -1289,7 +1289,7 @@ type = VarAdd
 trigger1 = movehit=1
 trigger1 = combocount>1
 fv =13     ;fv = 
-value = .5
+value = 1
 persistent = 0
 ;==================================
 
@@ -2738,7 +2738,7 @@ guard.ctrltime = 2
 guard.hittime = 2
 guard.velocity = 6
 airguard.velocity= 4,-3
-getpower = (60)*(cond(var(var(2)) = 1, 1, 1)) 
+getpower = (50)*(cond(var(var(2)) = 1, 1, 1)) 
 
 
 [State 0, VarSet]
@@ -2758,7 +2758,7 @@ trigger1 = map(bair)=0
 attr = A, NA
 animtype  = Hard
 air.animtype = back
-damage = ceil(cond(fvar(11) *70 < 15, 15, fvar(11) * 75)), 8
+damage = ceil(cond(fvar(11) *65 < 15, 15, fvar(11) * 65)), 8
 hitflag = MAFD
 guardflag = HA
 pausetime = 12,12
@@ -2789,7 +2789,7 @@ palfx.sinadd=256,256,256,10
 palfx.time=32
 guard.velocity = 6
 airguard.velocity= 4,-3
-getpower = (100)*(cond(var(var(2)) = 1, 1, 1)) 
+getpower = (80)*(cond(var(var(2)) = 1, 1, 1)) 
 id=640
 
 [State 0]
@@ -2801,7 +2801,7 @@ trigger1 = map(bair)>0
 attr = A, NA
 animtype  = Hard
 air.animtype = back
-damage = ceil(cond(fvar(11) *70 < 15, 15, fvar(11) * 75)), 8
+damage = ceil(cond(fvar(11) *65 < 15, 15, fvar(11) * 65)), 8
 hitflag = MAFD
 guardflag = HA
 pausetime = 12,12
@@ -2832,7 +2832,7 @@ palfx.sinadd=256,256,256,10
 palfx.time=32
 guard.velocity = 6
 airguard.velocity= 4,-3
-getpower = (90)*(cond(var(var(2)) = 1, 1,1)) 
+getpower = (80)*(cond(var(var(2)) = 1, 1,1)) 
 
 [State 0, PlaySnd]
 type = PlaySnd

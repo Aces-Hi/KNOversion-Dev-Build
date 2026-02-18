@@ -1492,7 +1492,7 @@ ctrl = 1
 ;Parry
 [Statedef 910]
 type    = S
-movetype= I
+movetype= A
 physics = S
 velset = vel x * 0.5,0
 anim = 910
@@ -1774,7 +1774,7 @@ ctrl = 1
 ;Air Parry - Success
 [Statedef 913]
 type    = A
-movetype= I
+movetype= A
 physics = A
 velset = vel x * 0.75, -3 
 ctrl = 0
@@ -1884,7 +1884,7 @@ persistent = 1
 ;Red Guard - Helper
 [Statedef 915]
 type    = A
-movetype= I
+movetype= A
 physics = N
 velset = 0, 0
 anim = F42
@@ -2132,7 +2132,7 @@ type = ParentMapSet
 trigger1 = 1
 map ="pbstun"
 ignorehitpause=1
-value =8
+value =4
 
 [State 0, PosSet]
 type = PosSet
@@ -6111,6 +6111,7 @@ triggerall = !numexplod(1020)
 triggerall = !ishelper
 triggerall = !hitdefattr = SCA, AT, HA, AP
 trigger1= movecountered = 1 ;Enemy was indeed HIT, otherwise this'd be retarded.
+triggerall = target,!ishelper
 anim = F1020
 pos = -5,-80
 postype = p2
@@ -6136,6 +6137,7 @@ persistent = 1
 [State 0, VarAdd]
 type = mapset
 trigger1=map(afterparry)
+trigger2= target,!ishelper
 map =  "truecounter"
 value = 0 
 ignorehitpause = 1
@@ -6147,6 +6149,7 @@ triggerall = map(truecounter)
 triggerall = !ishelper
 triggerall = !hitdefattr = SCA, AT, HA, AP
 trigger1= movecountered = 1
+triggerall = target,!ishelper
 map =  "counterdamage"
 value = 1
 ignorehitpause = 1

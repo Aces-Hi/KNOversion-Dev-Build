@@ -192,7 +192,7 @@ x = 5
 ;Hitdef
 [State 200, 1]
 type = HitDef
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, HA
 animtype  = hard
 damage = ceil(cond(fvar(11) * 300 < 120, 120, fvar(11) * 300)),25
@@ -230,11 +230,7 @@ getpower = 0
 id=3000
 p2stateno = 30000
 p2facing=1
-;[State 0, ChangeAnim]
-;type = ChangeAnim
-;trigger1 = movehit
-;value = 3005
-;elem = 1
+
 airguard.velocity = -10,-1
 
 [State 3000, P1 Custom State]
@@ -716,7 +712,7 @@ x = 5
 ;Hitdef
 [State 200, 1]
 type = HitDef
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, HA
 animtype  = hard
 damage = ceil(cond(fvar(11) * 300 < 120, 120, fvar(11) * 300)),25
@@ -1332,7 +1328,7 @@ value = 0
 [State 610, 3]
 type = hitdef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, HA
 damage = 0
 animtype = hard
@@ -1604,7 +1600,7 @@ id = 1072
 ;Hitdef
 [State 200, 1]
 type = HitDef
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, HA
 animtype  = hard
 damage = 5000
@@ -2061,7 +2057,7 @@ ontop=1
 [State 200, 1]
 type = hitdef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, HA
 animtype  = hard
 damage = 0
@@ -2324,7 +2320,7 @@ value = 0
 [State 610, 3]
 type = hitdef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, HA
 damage = 0
 animtype = hard

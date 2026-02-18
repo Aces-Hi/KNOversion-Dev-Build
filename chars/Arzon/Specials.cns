@@ -81,7 +81,7 @@ persistent = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 2.1
+value = 1
 
 [State 0, Special Counter UP]
 type = VarAdd
@@ -115,11 +115,17 @@ trigger1 = animelem = 6
 value = 0, 4
 volumescale = 65
 
+[State 0, mapSet]
+type =mapSet
+trigger1 =movehit
+map ="fartblast"
+value =1 
+ignorehitpause=1
 
 [State 2, Regular Hit]
 type = HitDef 
+trigger1 = map(fartblast)=0
 trigger1 = movecontact = 0
-hitonce = 1
 p2facing = 0
 attr = S, SA
 air.animtype = back
@@ -142,6 +148,43 @@ forcenofall = 1
 ground.velocity = -5,-5.4
 ground.cornerpush.veloff = -15
 air.velocity = -6,-4.5
+envshake.time = 20
+envshake.freq = 110
+envshake.ampl = 7
+envshake.phase = 1
+guard.slidetime = 25
+guard.hittime = 9
+guard.ctrltime = 21
+guard.cornerpush.veloff = -7
+getpower = (100)*(cond(var(var(3)) = 1, 1, .5))
+
+[State 2, Regular Hit]
+type = HitDef 
+trigger1 = map(fartblast)
+trigger1 = movecontact = 0
+hitonce = 1
+p2facing = 0
+attr = S, SA
+air.animtype = back
+damage = ceil(cond(fvar(11) * 100 < 30, 30, fvar(11) * 100)), 5
+hitflag = MAFD
+guardflag = MAF
+;priority = 3
+pausetime = 12,12
+sparkno = 3
+sparkxy = -10,-45
+hitsound   = 5,3
+guardsound = 6,2
+ground.type = Low
+animtype = hard
+ground.slidetime = 14
+ground.hittime  = ceil(cond(fvar(15) *43 < 10, 10, fvar(15) * 43))
+air.hittime  = ceil(cond(fvar(15) *43 < 10, 10, fvar(15) * 43))
+down.hittime = ceil(cond(fvar(15) *34 < 10, 10, fvar(15) * 34))
+forcenofall = 1
+ground.velocity = -5,-5
+ground.cornerpush.veloff = -15
+air.velocity = -6,-4
 envshake.time = 20
 envshake.freq = 110
 envshake.ampl = 7
@@ -459,7 +502,7 @@ persistent = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 7
+value = 2
 
 [State -2, VarSet]
 type = VarSet

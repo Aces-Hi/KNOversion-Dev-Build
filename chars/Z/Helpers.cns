@@ -556,13 +556,6 @@ map = "zexception"
 value = 1
 ignorehitpause=1
 
-;helper damage scaling
-[State 0, ParentVarAdd]
-type = ParentVarAdd
-trigger1 = movehit = 1
-fv = 13
-value = 0.5
-
 [State 0, NotHitBy]
 type = NotHitBy
 trigger1 = 1
@@ -929,12 +922,11 @@ p2facing = 1
 triggerall = prevstateno = 1114
 trigger1 = !movecontact 
 attr = A, SP                     ;Attribute: Standing, Normal Attack
-damage = ceil(cond(root,fvar(15) * 100 < 10, 10, root,fvar(15) * 100)),12
+damage = ceil(cond(root,fvar(11) * 100 < 60, 60, root,fvar(11) * 100)),12
 animtype  = up
 air.animtype = up
 guardflag = MA                   ;Flags on how move is to be guarded against
 hitflag = MAFD                    ;Flags of conditions that move can hit
-priority = 2, Hit                ;Attack priority: 0 (least) to 7 (most), 4 default
 ;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 16               ;Time attacker pauses, time opponent shakes
 sparkno = 13
@@ -1744,96 +1736,6 @@ trigger2 = parent,stateno=3101
 ignorehitpause=1
 
 ;---------------------------------------------------------------------------
-
-;--- PUSH BLOCKING ---
-[Statedef 99149]
-type    = U
-movetype= I
-physics = N
-juggle  = 0
-poweradd= 0
-ctrl = 0
-anim = 9999
-velset = 10
-
-[State 0, parentVarAdd]
-type = ParentVarAdd
-triggerall = parent,stateno = [120,160]
-triggerall = parent,stateno = [130,160]
-trigger1 = time = 0
-v = 15
-value = -70
-
-[State 0, Explod]
-type = Explod
-trigger1 = time = 0
-anim =F41 
-ID = 41
-pos = 0,-45
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-removetime = -2
-pausemovetime = 0
-scale = .6,.6
-sprpriority = 8
-ontop = 1
-removeongethit = 0
-
-[State 0, Explod]
-type = Explod
-trigger1 = time = 0
-anim =6700
-ID = 41
-pos = 100,0
-postype = p1  ;p2,front,back,left,right
-facing = -1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-removetime = -2
-pausemovetime = 0
-scale = .6,.6
-sprpriority = 8
-ontop = 1
-removeongethit = 0
-
-[State 0, EnvShake]
-type = EnvShake
-trigger1 = time=0
-time = 7
-freq = 60
-ampl = -7
-
-[State 0, PlaySnd]
-type = PlaySnd
-trigger1 = time=0
-value = F4141,0
-
-
-
-
-[State 0, PlayerPush]
-type = PlayerPush
-trigger1 = 1
-value = 1
-
-[State 0, NotHitBy]
-type = NotHitBy
-trigger1 = 1
-value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
-time = 3
-
-
-[State 0, DestroySelf]
-type = DestroySelf
-trigger1 = animtime = 0
 
 
 ;===============================================================================================

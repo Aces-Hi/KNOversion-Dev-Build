@@ -898,8 +898,8 @@ value = 0
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "det = %d 13 %f"
-params = var(38),fvar(13)
+text = "det = %d hb %f"
+params = var(38),map(hbounce)
 
 [State 0, VarSet]
 type = VarSet

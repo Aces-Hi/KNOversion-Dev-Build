@@ -138,7 +138,7 @@ p2.counter.scale = 1.5,1.5
 p2.counter.layerno = 2
 p2.counter.font = 4,0, 0
 
-level6.snd = 21,0
+
 ;-----------------------------------------------------------
 [Face]
 ;Player 1

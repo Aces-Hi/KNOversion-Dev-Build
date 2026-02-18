@@ -1837,9 +1837,15 @@ ignorehitpause = 1
 
 [State 0, PosSet]
 type = PosSet
-trigger1 = time=2
+trigger1 = time=2 && player(map(enemyteamlead)),pos y < 0
 x = player(map(enemyteamlead)),pos x + cond(facing=1,120,-120)
 y = player(map(enemyteamlead)),pos y
+ignorehitpause = 1
+[State 0, PosSet]
+type = PosSet
+trigger1 = time=2 && player(map(enemyteamlead)),pos y >= 0
+x = player(map(enemyteamlead)),pos x + cond(facing=1,120,-120)
+y = 0
 ignorehitpause = 1
 
 [State 0, NotHitBy]
@@ -1936,6 +1942,7 @@ type = HitDef
 p2facing = -1
 triggerall=!map(combobeam)
 trigger1 = time%3=1
+kill = 0
 attr = S, HA
 animtype  = Hard
 air.animtype = back
@@ -2010,6 +2017,7 @@ type = HitDef
 p2facing = -1
 triggerall=map(combobeam)
 trigger1 = time%3=1
+kill=0
 attr = S, HA
 animtype  = Hard
 air.animtype = back
@@ -2049,7 +2057,7 @@ trigger1 = time=141
 attr = S, HA
 animtype  = Hard
 air.animtype = back
-damage = ceil(cond(fvar(11) *170 < 30, 30, fvar(11) * 170)), 19
+damage = ceil(cond(fvar(11) *170 < 55, 55, fvar(11) * 170)), 19
 hitflag = MAFD
 guardflag = MA
 pausetime = 1,12

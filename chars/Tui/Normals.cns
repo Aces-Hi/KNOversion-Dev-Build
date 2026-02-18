@@ -24,25 +24,15 @@ persistent = 1
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 0.6; You can make this whatever you want to increase stun scaling per move
+value = 2
 ignorehitpause = 1
 persistent = 0
-
-[State -2, VarSet]
-type = VarSet
-trigger1 = !numtarget
-fv = 25
-value = 0
-
-;ground.hittime  = ceil(cond(fvar(15) *15 < 9, 9, fvar(15) * 15))
-;air.hittime  = ceil(cond(fvar(15) *18 < 9, 9, fvar(15) * 18))
-;down.hittime = ceil(cond(fvar(15) *18 < 9, 9, fvar(15) * 18))
 
 [State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 3.7
+value = 2
 
 [State 200, 2]
 type = PlaySnd
@@ -83,7 +73,7 @@ down.hittime = ceil(cond(fvar(15) *21 < 6, 6, fvar(15) * 21))            ;Time o
 ground.velocity = -4             ;Velocity at which opponent is pushed
 airguard.velocity = -1.9,-.8     ;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
 air.type = High                  ;Type: High, Low, Trip (def: same as ground.type)
-air.velocity = -1.4,-6           ;X-velocity at which opponent is pushed,
+air.velocity = -1.4,-1          ;X-velocity at which opponent is pushed,
 ;Y-velocity at which opponent is pushed                 ;Time before opponent regains control in air
 envshake.time = 0;
 forcenofall = 1
@@ -121,15 +111,9 @@ x = cond(prevstateno = 100, vel x, 3)
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 1; You can make this whatever you want to increase stun scaling per move
+value = .5; You can make this whatever you want to increase stun scaling per move
 ignorehitpause = 1
 persistent = 0
-
-[State -2, VarSet]
-type = VarSet
-trigger1 = !numtarget
-fv = 25
-value = 0
 
 [State 0, VarAdd]
 type = VarAdd
@@ -240,22 +224,16 @@ value = 1; You can make this whatever you want to increase stun scaling per move
 ignorehitpause = 1
 persistent = 0
 
-[State -2, VarSet]
-type = VarSet
-trigger1 = !numtarget
-fv = 25
-value = 0
-
 [State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 0.5
+value = 1
 
 [State 0, VelSet]
 type = VelSet
 trigger1 = animelem = 7
-x = 11
+x =5
 ;ignorehitpause = 
 ;persistent = 
 
@@ -334,10 +312,10 @@ hitsound   = 5,3
 guardsound = 6,2
 ground.type = Low
 ground.slidetime = 12
-ground.hittime  = ceil(cond(fvar(15) *31 < 9, 9, fvar(15) * 31))
-air.hittime  = ceil(cond(fvar(15) *60 < 9, 9, fvar(15) * 60))
-down.hittime = ceil(cond(fvar(15) *56 < 9, 9, fvar(15) * 56))
-ground.velocity = -1.8, -4
+ground.hittime  = ceil(cond(fvar(15) *31 < 5, 5, fvar(15) * 31))
+air.hittime  = ceil(cond(fvar(15) *40 < 5, 5, fvar(15) * 40))
+down.hittime = ceil(cond(fvar(15) *46 < 5, 5, fvar(15) * 46))
+ground.velocity = -1.8
 air.velocity = -2.5,-4
 ;yaccel = .24
 ;p2stateno = 615020
@@ -356,7 +334,6 @@ getpower = (60)*(cond(var(var(3)) = 1, 1, 1))
 type = HitDef 
 p2facing = 1
 trigger1 = animelem = 9
-trigger1 = !fvar(8)
 attr = S, NA
 animtype  = up
 air.animtype = back
@@ -371,56 +348,22 @@ guardsound = 6,2
 ground.type = high
 ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *45 < 9, 9, fvar(15) * 45))
-air.hittime  = ceil(cond(fvar(15) *65 < 9, 9, fvar(15) * 65))
-down.hittime = ceil(cond(fvar(15) *56 < 9, 9, fvar(15) * 56))
+air.hittime  = ceil(cond(fvar(15) *45 < 9, 9, fvar(15) * 45))
+down.hittime = ceil(cond(fvar(15) *46 < 9, 9, fvar(15) * 46))
 ground.velocity = -2,-6
 air.velocity = -1.25,-5
 envshake.time = 8
 envshake.freq = 10
 envshake.ampl = 2
 envshake.phase = 1
-guard.hittime = 26
+guard.hittime = 22
 guard.slidetime = 16
-guard.ctrltime = 19
+guard.ctrltime = 15
 guard.velocity = -6
 guard.cornerpush.veloff = -8
 forcenofall = 1
 getpower = (50)*(cond(var(var(3)) = 1, 1, 1)) 
 
-[State 200, 1]
-type = HitDef 
-p2facing = 1
-trigger1 = animelem = 9
-trigger1 = fvar(8)
-attr = S, NA
-animtype  = hard
-air.animtype = back
-damage = ceil(cond(fvar(11) *50 < 5, 5, fvar(11) * 50)), 0
-hitflag = MAFD
-guardflag = MA
-pausetime =12,12
-sparkno = 2
-sparkxy = -10,-75
-hitsound   = 5,3
-guardsound = 6,2
-ground.type = high
-ground.slidetime = 12
-ground.hittime  = ceil(cond(fvar(15) *120 < 9, 9, fvar(15) * 120))
-air.hittime  = ceil(cond(fvar(15) *120 < 9, 9, fvar(15) * 120))
-down.hittime = ceil(cond(fvar(15) *56 < 9, 9, fvar(15) * 56))
-ground.velocity = -0.5, -8.8
-air.velocity = -0.5,-8.8
-envshake.time = 8
-envshake.freq = 10
-envshake.ampl = 2
-envshake.phase = 1
-guard.hittime = 25
-guard.slidetime = 16
-guard.ctrltime = 19
-guard.velocity = -6
-guard.cornerpush.veloff = -8
-forcenofall = 1
-getpower = (50)*(cond(var(var(3)) = 1, 1, 1)) 
 
 [State 200, 2]
 type = PlaySnd
@@ -700,7 +643,7 @@ hitsound   = 5,3
 guardsound = 6,2
 ground.type = high
 ground.slidetime = 12
-ground.hittime  = ceil(cond(fvar(15) *35 < 9, 9, fvar(15) * 35))
+ground.hittime  = ceil(cond(fvar(15) *25 < 9, 9, fvar(15) * 25))
 air.hittime  = ceil(cond(fvar(15) *42 < 9, 9, fvar(15) * 42))
 down.hittime = ceil(cond(fvar(15) *42 < 9, 9, fvar(15) * 42))  
 ground.velocity = -4
@@ -755,21 +698,15 @@ persistent = 1
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.5
+value = 2
 
 [State 200, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 0.5; You can make this whatever you want to increase stun scaling per move
+value = 2
 ignorehitpause = 1
 persistent = 0
-
-[State -2, VarSet]
-type = VarSet
-trigger1 = !numtarget
-fv = 25
-value = 0
 
 [State 200, 2]
 type = PlaySnd
@@ -810,7 +747,7 @@ ground.hittime  = ceil(cond(fvar(15) *21 < 6, 6, fvar(15) * 21))
 air.hittime  = ceil(cond(fvar(15) *28 < 6, 6, fvar(15) * 28))
 down.hittime = ceil(cond(fvar(15) *28 < 6, 6, fvar(15) * 28)) 
 ground.velocity = -5
-air.velocity = -1.5,-3
+air.velocity = -1.5,-1
 guard.hittime = 25
 guard.slidetime = 10
 guard.ctrltime = 13
@@ -840,7 +777,7 @@ sprpriority = 2
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.3
+value = 1
 
 [State 200, VarAdd]
 type = VarAdd
@@ -903,7 +840,7 @@ guard.hittime = 11
 guard.velocity = -7
 guard.dist = 20
 guard.slidetime =20
-guard.ctrltime = 17
+guard.ctrltime = 13
 guard.cornerpush.veloff = -14
   envshake.time = 4
 envshake.freq = 70
@@ -1009,7 +946,7 @@ ignorehitpause =1
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.5
+value = 1
 
 [State 200, VarAdd]
 type = VarAdd
@@ -1018,12 +955,6 @@ fv = 25
 value = 1; You can make this whatever you want to increase stun scaling per move
 ignorehitpause = 1
 persistent = 0
-
-[State -2, VarSet]
-type = VarSet
-trigger1 = !numtarget
-fv = 25
-value = 0
 
 [State -3, Tui Voices]
 type = PlaySnd
@@ -1082,7 +1013,7 @@ hitsound   = 5,3
 guardsound = 6,0
 ground.type = Low
 ground.slidetime = 12
-ground.hittime  = ceil(cond(fvar(15) *34 < 10, 10, fvar(15) * 34))
+ground.hittime  = ceil(cond(fvar(15) *20 < 10, 10, fvar(15) * 20))
 air.hittime  = ceil(cond(fvar(15) *34 < 10, 10, fvar(15) * 34))
 down.hittime = ceil(cond(fvar(15) *34 < 10, 10, fvar(15) * 34))
 ground.velocity = -4;,-7
@@ -1097,8 +1028,8 @@ guard.hittime = 18
 guard.pausetime= 16,16
 guard.velocity = -7
 guard.dist = 20
-guard.slidetime =24
-guard.ctrltime = 24
+guard.slidetime =20
+guard.ctrltime = 20
 guard.cornerpush.veloff = -18
   envshake.time = 4
 envshake.freq = 70
@@ -1164,7 +1095,7 @@ y = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 3
+value = 1
 
 [State 200, VarAdd]
 type = VarAdd
@@ -1187,7 +1118,7 @@ trigger1 =  time = 0
 attr = C, NA
 damage = ceil(cond(fvar(11) *75 < 4, 4, fvar(11) * 75)), 0
 animtype  = Hard
-hitflag = MAF
+hitflag = MAFD
 guardflag = LA
 pausetime = 13,13
 sparkno = 2
@@ -1195,17 +1126,17 @@ sparkxy = -10,-8
 hitsound   = 5,2
 guardsound = 6,1
 animtype = back
-ground.type = low
+ground.type = trip
 air.animtype = back
 ground.slidetime = 25
 ground.hittime  = ceil(cond(fvar(15) *31 < 9, 9, fvar(15) * 31))
 air.hittime  = ceil(cond(fvar(15) *31 < 9, 9, fvar(15) * 31))
 down.hittime = ceil(cond(fvar(15) *31 < 9, 9, fvar(15) * 31))
-ground.velocity = -1,cond(numexplod(226) = 1, -6,2)
-fall =1
+ground.velocity = -1,-2
+forcenofall =1
 ;yaccel = cond(p2statetype = S, .8, 1)
-air.velocity = -1,cond(numexplod(226) = 1, -6,-2)
-down.velocity = -1,cond(numexplod(226) = 1, -6,-2)
+air.velocity = -1,-2
+down.velocity = -1,-2
 fall.yvelocity = 1
 down.velocity = -2,0
 down.hittime = 22
@@ -1214,17 +1145,6 @@ guard.ctrltime = 13
 guard.hittime = 15
 guard.cornerpush.veloff = -6
 getpower = (100)*(cond(var(var(3)) = 1, 1, 1)) 
-
-;3H limiter
-[State 0, Explod]
-type = Explod ;Spawn an Explod
-trigger1 = movehit = 1;When the move hits
-anim = 90101 ;Use this empty animation
-ID = 226 ;And give it this number
-removetime = -1 ;DO NOT REMOVE
-ignorehitpause = 1 ;Fuck hitpause
-persistent = 0 ;And only do this once, please
-
 
 
 
@@ -1306,13 +1226,13 @@ persistent = 1
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 0.2
+value = 2
 
 [State 200, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 0.2
+value = 2
 ignorehitpause = 1
 persistent = 0
 
@@ -1555,6 +1475,13 @@ type = VarSet
 trigger1 = !numtarget
 fv = 25
 value = 0
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv =13     ;fv = 
+value = 1
+persistent=0
 
 [State 200, VarAdd]
 type = VarAdd
@@ -1970,11 +1897,38 @@ value=0
 
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = time=0
+triggerall = time=0
+
 trigger1 = numhelper(1041)
 trigger1 = helper(1041),rootdist x > -60 && helper(1041),rootdist x < 40
 trigger1 = helper(1041),rootdist y > -80 && helper(1041),rootdist y < 80
 trigger1 = helper(1041),anim!=1044
+
+trigger2 = numhelper(3500)
+trigger2 = helper(3500),rootdist x > -60 && helper(3500),rootdist x < 40
+trigger2 = helper(3500),rootdist y > -80 && helper(3500),rootdist y < 80
+trigger2 = helper(3500),anim!=3504
+
+trigger3 = numhelper(3501)
+trigger3 = helper(3501),rootdist x > -60 && helper(3501),rootdist x < 40
+trigger3 = helper(3501),rootdist y > -80 && helper(3501),rootdist y < 80
+trigger3 = helper(3501),anim!=3504
+
+trigger4 = numhelper(3502)
+trigger4 = helper(3502),rootdist x > -60 && helper(3502),rootdist x < 40
+trigger4 = helper(3502),rootdist y > -80 && helper(3502),rootdist y < 80
+trigger4 = helper(3502),anim!=3504
+
+trigger5 = numhelper(3503)
+trigger5 = helper(3503),rootdist x > -60 && helper(3503),rootdist x < 40
+trigger5 = helper(3503),rootdist y > -80 && helper(3503),rootdist y < 80
+trigger5 = helper(3503),anim!=3504
+
+trigger6 = numhelper(3504)
+trigger6 = helper(3504),rootdist x > -60 && helper(3504),rootdist x < 40
+trigger6 = helper(3504),rootdist y > -80 && helper(3504),rootdist y < 80
+trigger6 = helper(3504),anim!=3504
+
 value = 700
 ctrl = 0
 ignorehitpause = 1
@@ -2077,49 +2031,21 @@ sprpriority = 1
 velset= 7 
 facep2 = 0
 
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = time = 0
-v = 15
-value = 30
-
-[State 0,????]
-type = varadd
-trigger1 = time = 0
-fvar(13) = 1
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 0.35
-
-[State 0, VarAdd]
-type = VarAdd
-triggerall = animelem = 11
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 1
-
-[State 0,????]
-type = varadd
-trigger1 = time = 0
-fvar(13) = 1
-
 [State 200, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
-fv = 26   
-value = 0.8; You can make this whatever you want to increase stun scaling per move
+fv = 25   
+value = 1; You can make this whatever you want to increase stun scaling per move
 ignorehitpause = 1
 persistent = 0
 
-[State -2, VarSet]
-type = VarSet
-trigger1 = !numtarget
-fv = 26
-value = 0
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = time=0
+fv =13     ;fv = 
+value = 1
+ignorehitpause = 1
+persistent = 0
 
 [State 0,????]
 type = varadd
@@ -2217,14 +2143,14 @@ animtype = medium
 air.animtype = back
 ground.slidetime = 17
 guard.velocity = 1.8
-ground.hittime  = 23
+ground.hittime  = 11
 guard.slidetime = 6
 ground.velocity = 1,-5
 ;fall.xvelocity = -1
 fall.yvelocity = 0
 air.velocity = 0.3,-0.8
 yaccel = 0.18
-air.hittime = 16
+air.hittime = 11
 guard.slidetime = 6
 guard.ctrltime = 6
 guard.hittime = 6
@@ -2233,7 +2159,6 @@ getpower = 0
 [State 0]
 type = HitDef 
 p2facing = 1
-trigger1 = numexplod(90101) <= 1
 trigger1 = animelem = 11 
 attr = S, SA
 animtype  = UP
@@ -2248,9 +2173,9 @@ hitsound   = 5,4
 guardsound = 6,2
 ground.type = Low
 ground.slidetime = 12
-ground.hittime  = ceil(cond(fvar(16) *30 < 6, 6, fvar(16) * 30))
-air.hittime  =  ceil(cond(fvar(16) *60 < 6, 6, fvar(16) * 60))
-down.hittime =  ceil(cond(fvar(16) *60 < 6, 6, fvar(16) * 60))
+ground.hittime  = ceil(cond(fvar(16) *30 < 11, 11, fvar(16) * 30))
+air.hittime  =  ceil(cond(fvar(16) *60 < 11, 11, fvar(16) * 60))
+down.hittime =  ceil(cond(fvar(16) *60 < 11, 11, fvar(16) * 60))
 ground.velocity = -.4,-6
 air.velocity = -1.5,-6;
 ground.cornerpush.veloff = 0
@@ -2267,46 +2192,7 @@ guard.slidetime = 14
 guard.ctrltime = 6
 guard.cornerpush.veloff = -5
 forcenofall = 1
-getpower = (125)*(cond(var(var(2)) = 1, 1, 1)) 
-
-[State 0]
-type = HitDef 
-p2facing = 1
-trigger1 = numexplod(90101) > 1
-trigger1 = animelem = 11 
-attr = S, SA
-animtype  = UP
-air.animtype = up
-damage = ceil(cond(fvar(11) *10 < 5, 5, fvar(11) * 10)), 3
-hitflag = MAFD
-guardflag = MA
-pausetime = 10,10
-sparkno = 3
-sparkxy = -10,-60
-hitsound   = 5,4
-guardsound = 6,2
-ground.type = Low
-ground.slidetime = 12
-ground.hittime  = ceil(cond(fvar(16) *15 < 6, 6, fvar(16) * 15))
-air.hittime  =  ceil(cond(fvar(16) *15 < 6, 6, fvar(16) * 15))
-down.hittime =  ceil(cond(fvar(16) *15 < 6, 6, fvar(16) * 15))
-ground.velocity = -.4,-6
-air.velocity = -1.5,-6;
-ground.cornerpush.veloff = 0
-down.cornerpush.veloff = 0
-air.cornerpush.veloff = 0
-;envshake.freq =
-;envshake.ampl = 
-;envshake.phase =
-guard.hittime = 28
-guard.pausetime= 16,16
-guard.velocity = -7
-guard.dist = 20
-guard.slidetime = 14
-guard.ctrltime = 6
-guard.cornerpush.veloff = -5
-forcenofall = 1
-getpower = (125)*(cond(var(var(3)) = 1, 1, 1))
+getpower = (100)*(cond(var(var(2)) = 1, 1, 1)) 
 
 [State 0, ChangeState]
 type = ChangeState
@@ -2334,7 +2220,7 @@ sprpriority = 5
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = .08
+value = 1
 ignorehitpause = 1
 
 [State 200, VarAdd]
@@ -2452,7 +2338,7 @@ x = 9
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = time = 0 
+trigger1 = !movecontact
 attr = S, NA
 animtype  = Hard
 damage = ceil(cond(fvar(11) *160 < 10, 10, fvar(11) * 160)), 10
@@ -2467,16 +2353,15 @@ ground.type = Low
 ground.slidetime = 12
 ground.hittime  = 35
 air.hittime  = 12
-ground.velocity = 2,-1
-air.velocity = -0.5,7.5
-down.velocity = -0.5,-7
-air.fall = 1
+ground.velocity = -2,2
+air.velocity = -2,10
+down.velocity =-2,10
 fall = 1
 envshake.time = 20
 envshake.freq = 80
 envshake.ampl = 6
 envshake.phase = 1
-fall.yvelocity = 0
+fall.yvelocity = -2
 getpower = (70)*(cond(var(var(3)) = 1, 1, .5))
 
 
@@ -2501,7 +2386,7 @@ sprpriority = 5
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = .08
+value = 1
 ignorehitpause = 1
 
 [State 200, VarAdd]
@@ -3172,11 +3057,38 @@ value=0
 
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = time=0
+triggerall = time=0
+
 trigger1 = numhelper(1041)
 trigger1 = helper(1041),rootdist x > -60 && helper(1041),rootdist x < 40
 trigger1 = helper(1041),rootdist y > -80 && helper(1041),rootdist y < 80
 trigger1 = helper(1041),anim!=1044
+
+trigger2 = numhelper(3500)
+trigger2 = helper(3500),rootdist x > -60 && helper(3500),rootdist x < 40
+trigger2 = helper(3500),rootdist y > -80 && helper(3500),rootdist y < 80
+trigger2 = helper(3500),anim!=3504
+
+trigger3 = numhelper(3501)
+trigger3 = helper(3501),rootdist x > -60 && helper(3501),rootdist x < 40
+trigger3 = helper(3501),rootdist y > -80 && helper(3501),rootdist y < 80
+trigger3 = helper(3501),anim!=3504
+
+trigger4 = numhelper(3502)
+trigger4 = helper(3502),rootdist x > -60 && helper(3502),rootdist x < 40
+trigger4 = helper(3502),rootdist y > -80 && helper(3502),rootdist y < 80
+trigger4 = helper(3502),anim!=3504
+
+trigger5 = numhelper(3503)
+trigger5 = helper(3503),rootdist x > -60 && helper(3503),rootdist x < 40
+trigger5 = helper(3503),rootdist y > -80 && helper(3503),rootdist y < 80
+trigger5 = helper(3503),anim!=3504
+
+trigger6 = numhelper(3504)
+trigger6 = helper(3504),rootdist x > -60 && helper(3504),rootdist x < 40
+trigger6 = helper(3504),rootdist y > -80 && helper(3504),rootdist y < 80
+trigger6 = helper(3504),anim!=3504
+
 value = 710
 ctrl = 0
 ignorehitpause = 1
@@ -3245,7 +3157,7 @@ value = 585
 [State 0, ChangeState]
 type = ChangeState
 triggerall = time> 13
-trigger1 = command = "c" || time>60
+trigger1 = command = "c" || time>40
 value = 551
 
 ;==================================
@@ -3284,6 +3196,12 @@ type = VelAdd
 trigger1 = 1
 y = .3
 
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv =13     ;fv = 
+value = 0.1
+
 [State 600, While Rising]
 type = HitDef 
 p2facing = 1
@@ -3303,8 +3221,8 @@ animtype = light
 air.animtype = back
 ground.slidetime = 5
 ground.hittime  = ceil(cond(fvar(15) *12 < 2, 2, fvar(15) * 12))
-air.hittime  = ceil(cond(fvar(15) *16 < 2, 2, fvar(15) * 16))
-down.hittime  = ceil(cond(fvar(15) *16 < 2, 2, fvar(15) * 16))
+air.hittime  = ceil(cond(fvar(15) *26 < 9, 9, fvar(15) * 26))
+down.hittime  = ceil(cond(fvar(15) *26 < 9, 9, fvar(15) * 26))
 ground.velocity = -1
 air.velocity = -1,.75
 guard.slidetime = 6
@@ -3347,6 +3265,12 @@ trigger1 = animelemtime(4)<0
 x = .9
 y = .9
 
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv =13     ;fv = 
+value = 1
+
 [State 0, VelAdd]
 type = VelSet
 trigger1 = movecontact
@@ -3374,9 +3298,9 @@ ground.slidetime = 12
 ground.hittime  = 999
 air.hittime  = 999
 down.hittime = 999
-ground.velocity = -4,15
-air.velocity = -2,15
-down.velocity = -2,15
+ground.velocity = -4,10
+air.velocity = -2,10
+down.velocity = -2,10
 palfx.time = 12
 palfx.add = 100, 0,20
  envshake.time = 14
@@ -3421,7 +3345,6 @@ ctrl = 0
 anim = 625
 sprpriority = 2
 velset = vel x,-7
-
 
 [State 0, VelSet]
 type = VelMul
@@ -3515,6 +3438,20 @@ poweradd = 0
 anim =626
 velset = 0,0
 sprpriority = 2
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv =13     ;fv = 
+value = 1
+
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 1; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
 
 [State 200, VarAdd]
 type = VarAdd
@@ -3654,10 +3591,10 @@ y = 0
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1 = time = 0
+trigger1 = !movecontact
 attr = S, SA
 damage = ceil(cond(fvar(11) *77 < 6, 6, fvar(11) * 77)), 12
-hitflag = MAFD
+hitflag = MAFD+
 guardflag = MAF
 ;priority = 3
 pausetime = 12,12
@@ -3889,7 +3826,7 @@ value = 565
 [State 0, ChangeState]
 type = ChangeState
 triggerall = time> 13
-trigger1 = command = "c" || time>60
+trigger1 = command = "c" || time>40
 value = 551
 
 ;==================================
@@ -3908,6 +3845,12 @@ type = VelMul
 trigger1 = animelemtime(4)<0
 x = .85
 y = .85
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv =13     ;fv = 
+value = 0.5
 
 [State 0, VelMul]
 type = VelSet
@@ -4029,9 +3972,9 @@ hitsound = 5, 0                  ;Sound to play on hit
 guardsound = 6, 0                ;Sound to play on guard
 ground.type = High               ;Type: High, Low, Trip (def: Normal)
 ground.slidetime = 5             ;Time that the opponent slides back
-ground.hittime  = 10
-air.hittime  = 10
-down.hittime = 10    
+ground.hittime  = ceil(cond(fvar(15) *50 < 10, 10, fvar(15) * 50))
+air.hittime  =ceil(cond(fvar(15) *50 < 10, 10, fvar(15) * 50))
+down.hittime = ceil(cond(fvar(15) *50 < 10, 10, fvar(15) * 50))         ;Time opponent is in hit state 
 ground.velocity = -4             ;Velocity at which opponent is pushed
 airguard.velocity = -1.9,-.8     ;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
 air.type = High                  ;Type: High, Low, Trip (def: same as ground.type)
@@ -4057,7 +4000,7 @@ guardflag = MA                   ;Flags on how move is to be guarded against
 hitflag = MAFD                 ;Flags of conditions that move can hit
 ;priority = 3, Hit                ;Attack ;priority: 0 (least) to 7 (most), 4 default
 ;Hit/Miss/Dodge type (Def: Hit)
-pausetime = 2,2                ;Time attacker pauses, time opponent shakes
+pausetime = 2,8                ;Time attacker pauses, time opponent shakes
 sparkno = 0                      ;Spark anim no (Def: set above)
 sparkxy = -14, -56               ;X-offset for the "hit spark" rel. to p2,
 ;Y-offset for the spark rel. to p1
@@ -4071,7 +4014,7 @@ down.hittime = ceil(cond(fvar(15) *50 < 10, 10, fvar(15) * 50))         ;Time op
 ground.velocity = 4,-6             ;Velocity at which opponent is pushed
 airguard.velocity = -1.9,-.8     ;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
 air.type = High                  ;Type: High, Low, Trip (def: same as ground.type)
-air.velocity = 4,-6        ;X-velocity at which opponent is pushed,
+air.velocity = 4,-4        ;X-velocity at which opponent is pushed,
 ;Y-velocity at which opponent is pushed                 ;Time before opponent regains control in air
 envshake.time = 0;
 forcenofall = 1

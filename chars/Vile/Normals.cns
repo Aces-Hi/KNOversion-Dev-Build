@@ -38,7 +38,7 @@ value = 0, 0
 type = VarAdd
 trigger1 = movehit = 1
 fv = 13     ;fv = 
-value = 1.8
+value = 2
 
 [State 200, VarAdd]
 type = VarAdd
@@ -130,7 +130,7 @@ persistent = 1
 type = VarAdd
 trigger1 = movehit = 1
 fv = 13     ;fv = 
-value = 1.8
+value = 2
 
 [State 200, VarAdd]
 type = VarAdd
@@ -247,7 +247,7 @@ sprpriority = -1
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 0.7
+value = 0.5
 
 [State 200, VarAdd]
 type = VarAdd
@@ -428,7 +428,7 @@ value = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.5
+value = 1
 
 [State -3, Vile Voices]
 type = PlaySnd
@@ -554,7 +554,7 @@ air.type = Trip
 air.velocity = 1,22
 air.hittime = 12
 fall = 1 
-fall.yvelocity =cond(map(hbounce)=1, -3,0)
+fall.yvelocity =cond(map(hbounce)<=1, -3,0)
 down.bounce = 9
 envshake.time = 12
 envshake.freq = 3
@@ -575,7 +575,7 @@ ID = 220
 
 [State 9051, P2 Custom State]
 type = TargetState
-triggerall=map(hbounce)=1
+triggerall=map(hbounce)<=1
 trigger1= MoveHit =1
 ID = 220
 value = 43211
@@ -584,8 +584,7 @@ persistent=1
 
 [State 0, VarSet]
 type = mapadd
-trigger1 = movehit
-trigger2 = time=0&&map(hbounce)
+trigger1 = animelem=7
 map="hbounce"
 value =1
 ignorehitpause=1
@@ -642,7 +641,7 @@ value = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 0.3
+value = 1
 
 [State -3, Vile Voices]
 type = PlaySnd
@@ -788,7 +787,7 @@ persistent = 1
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.5
+value = 2
 
 [State 200, VarAdd]
 type = VarAdd
@@ -860,7 +859,7 @@ sprpriority = 2
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 0.7
+value = 0.5
 
 [State 200, VarAdd]
 type = VarAdd
@@ -958,7 +957,7 @@ persistent = 1
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.5
+value = 1
 
 [State 200, VarAdd]
 type = VarAdd
@@ -1127,7 +1126,7 @@ sprpriority = 2
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 0.3
+value = 1
 
 [State 200, VarAdd]
 type = VarAdd
@@ -1167,7 +1166,7 @@ attr = C, NA
 damage = ceil(cond(fvar(11) *50 < 5, 5, fvar(11) * 50)), 0
 animtype  = hard
 air.animtype = back
-hitflag = MAF
+hitflag = MAFD
 guardflag = LA
 pausetime = 10,10
 sparkno = 2
@@ -1228,7 +1227,7 @@ persistent = 1
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 0.8
+value = 2
 
 [State 200, VarAdd]
 type = VarAdd
@@ -1349,7 +1348,7 @@ velset = vel x, vel y
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.5
+value = 1
 
 [State 200, VarAdd]
 type = VarAdd
@@ -1469,7 +1468,7 @@ velset = vel x, vel y
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.3
+value = 1
 ignorehitpause = 1
 persistent = 0
 
@@ -1573,7 +1572,7 @@ velset = vel x, -6
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 2.5
+value = 1
 ignorehitpause = 1
 persistent = 0
 

@@ -722,7 +722,7 @@ trigger1 = ctrl
 triggerall = stateno!=904
 triggerall = var(29)>0
 triggerall = (pos y<-30 && vel y < 0) || (vel y >=0)
-trigger2 = stateno = 1051 || stateno = 1061 || stateno = 1066
+trigger2 = stateno = 1051 || stateno = 1061 || stateno = 1066 || stateno = 1054
 trigger2 = movehit
 ;Aerial Backdash
 [State -1, Air Backdash]
@@ -735,7 +735,7 @@ trigger1 = ctrl
 triggerall = stateno!=903
 triggerall = var(29)>0
 triggerall = (pos y<-30 && vel y < 0) || (vel y >=0)
-trigger2 = stateno = 1051 || stateno = 1061 || stateno = 1066
+trigger2 = stateno = 1051 || stateno = 1061 || stateno = 1066  || stateno = 1054
 trigger2 = movehit
 
 ;===========================================================================

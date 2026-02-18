@@ -133,7 +133,7 @@ command = ~D, DB, B, y;~F, D, DF, F, D, DF, y
 time = 10
 [Command]
 name = "QCB"  ;Same name as above
-command = ~D, DB, B+z;~F, D, DF, F, D, DF, y
+command = ~D, DB, B, z;~F, D, DF, F, D, DF, y
 time = 10
 [Command]
 name = "QCB"

@@ -1158,6 +1158,12 @@ trigger1 =stateno!=1451
 map ="nojump" 
 value = 0
 
+[State 0, mapSet]
+type =mapSet
+trigger1 =combocount=0
+map ="fartblast"
+value = 0
+
 [State 0, VarSet]
 type = VarSet
 trigger1 = roundstate=0

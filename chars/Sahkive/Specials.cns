@@ -365,9 +365,9 @@ sprpriority = 2
 
 [State 0, VarAdd]
 type = VarAdd
-trigger1 = movehit = 1
+trigger1 = time=0
 fv =13     ;fv = 
-value = 1.5
+value = 5
 [State Sahkive Voices]
 type = PlaySnd
 trigger1 =  time=0
@@ -426,7 +426,7 @@ type = hitdef
 p2facing = 1
 trigger1 = animelem = 7
 attr = S, ST
-damage = ceil(cond(fvar(11) *50 < 20, 20, fvar(11) * 50)), 15
+damage = ceil(cond(fvar(11) *100 < 20, 20, fvar(11) * 100)), 15
 animtype = hard
 hitflag = MAFD
 pausetime = 6,6
@@ -469,7 +469,7 @@ p2facing = 1
 trigger1=map(pummel)=0
 trigger1 = animelem = 12
 attr = S, ST
-damage = ceil(cond(fvar(11) *50 < 20, 20, fvar(11) * 50)), 15
+damage = ceil(cond(fvar(11) *146 < 30, 30, fvar(11) * 146)), 15
 animtype = hard
 hitflag = MAFD
 guardflag = MAFD
@@ -512,7 +512,7 @@ p2facing = 1
 trigger1=map(pummel)>0
 trigger1 = animelem = 12
 attr = S, ST
-damage = ceil(cond(fvar(11) *50 < 30, 30, fvar(11) * 50)), 15
+damage = ceil(cond(fvar(11) *146 < 30, 30, fvar(11) * 146)), 15
 animtype = hard
 hitflag = MAFD
 guardflag = MAFD
@@ -627,9 +627,9 @@ volumescale=170
 
 [State 0, VarAdd]
 type = VarAdd
-trigger1 = movehit = 1
+trigger1 = time=0
 fv =13     ;fv = 
-value = 1.5
+value = 5
 
 [State 0, HitDef]
 type = HitDef
@@ -745,7 +745,7 @@ air.type = high
 air.velocity = -5,10
 air.hittime = 60
 fall.yvelocity = -4
-fall.damage=ceil(cond(fvar(11) *170 < 50, 50, fvar(11) * 170))
+fall.damage=ceil(cond(fvar(11) *247< 50, 50, fvar(11) * 247))
 p2facing = 1
 ground.cornerpush.veloff = -7
 air.cornerpush.veloff = -7
@@ -778,7 +778,7 @@ air.type = trip
 air.velocity = -5,10
 air.hittime = 60
 fall.yvelocity = 0
-fall.damage=ceil(cond(fvar(11) *170 < 50, 50, fvar(11) * 170))
+fall.damage=ceil(cond(fvar(11) *247 < 50, 50, fvar(11) * 247))
 p2facing = 1
 ground.cornerpush.veloff = -7
 air.cornerpush.veloff = -7
@@ -1294,7 +1294,7 @@ Trigger1 = animelem = 10
 attr 		= S, ST
 hitflag 		= MAFD
 priority 		= 3,Hit
-damage 		= ceil(cond(fvar(11) * 150 < 25, 25, fvar(11) * 150)),0
+damage 		= ceil(cond(fvar(11) * 150 < 35,35, fvar(11) * 150)),0
 sparkno 		= 1000          ;No spark
 sparkxy 		= 0,-40
 p1sprpriority 	= 1     ;Draw p1's sprite in front of p2
@@ -1338,7 +1338,7 @@ guardflag = MA
 air.type = trip
 ground.type = trip
     ;Throw has low priority, must be miss or dodge type.
-damage = ceil(cond(fvar(11) * 531 < 45, 45, fvar(11) * 531)),0
+damage = ceil(cond(fvar(11) * 531 < 65, 65, fvar(11) * 531)),0
 sparkno = 3          ;No spark
 sparkxy = -20,-30
 p1sprpriority = 1     ;Draw p1's sprite in front of p2
@@ -1421,9 +1421,10 @@ value = -5,0
 [State 0, VelSet]
 type = VelSet
 trigger1=prevstateno!=100
-trigger1 = time=0
-;trigger1 = time = [10,25]
+trigger1 = animelem=2
+triggerall=combocount
 x = 14
+
 [State 0, VelSet]
 type = VelSet
 trigger1=prevstateno=100
@@ -1774,7 +1775,7 @@ value = 6, 2
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 7
+value = 2
 ignorehitpause=1
 persistent=0
 [State 0, Explod]
@@ -1857,9 +1858,15 @@ ownpal = 0
 removeongethit = 0
 ignorehitpause = 1
 
+[State 0, VarAdd]
+type = MapSet
+trigger1 = movehit
+map = "ddtbounce"
+value = 6
+
 [State 1041, 2]
 type = hitdef 
-trigger1 = time = 0
+trigger1 = !movecontact
 attr = S, ST
 damage = ceil(cond(fvar(11) * 150 < 25, 25, fvar(11) * 150)),12
 animtype  = Hard
@@ -1875,8 +1882,8 @@ ground.slidetime = 12
 ground.hittime  = 45
 air.hittime  = 136
 down.hittime = 136
-ground.velocity = -1,-6
-air.velocity = -1,-6
+ground.velocity = -1,-6+map(ddtbounce)
+air.velocity = -1,-6+map(ddtbounce)
 fall  = 1
 fall.yvelocity = 0
 ;down.bounce = 3
@@ -1968,7 +1975,7 @@ type = ChangeAnim
 trigger1=prevstateno=100
 trigger1 = time=0
 value = 1023
-elem = 2
+elem = cond(combocount,2,0)
 ignorehitpause = 1
 
 [State 0, ChangeAnim]
@@ -1976,16 +1983,17 @@ type = ChangeAnim
 trigger1=prevstateno!=100
 trigger1 = time=0
 value = 1020    
-elem = 2
+elem = cond(combocount,2,0)
 ;ignorehitpause = 
 ;persistent = 
 
 [State 0, VelSet]
 type = VelSet
 trigger1=prevstateno!=100
-trigger1 = time=0
-;trigger1 = time = [10,25]
+trigger1 = animelem=2
+triggerall=combocount
 x = 14
+
 [State 0, VelSet]
 type = VelSet
 trigger1=prevstateno=100
@@ -2492,7 +2500,7 @@ ignorehitpause = 1
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 7
+value = 3
 ignorehitpause=1
 persistent=0
 
@@ -2500,7 +2508,7 @@ persistent=0
 type = hitdef 
 trigger1 = time = 0
 attr = S, ST
-damage = ceil(cond(fvar(11) * 200 < 100, 100, fvar(11) * 200)),12
+damage = ceil(cond(fvar(11) * 200 < 60, 60, fvar(11) * 200)),12
 animtype  = Hard
 hitflag = MAF
 guardflag = HA
@@ -2608,7 +2616,7 @@ ampl = 6
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1.5
+value = 1
 
 [State 0, VarAdd]
 type = MapSet
@@ -3229,15 +3237,9 @@ volumescale=180
 
 [State 0, VarAdd]
 type = VarAdd
-trigger1 = movehit&&animelem=7
+trigger1 = movehit
 fv =13     ;fv = 
-value = 1
-persistent=0
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit&&animelem=8
-fv =13     ;fv = 
-value = 2
+value = 1.5
 persistent=0
 
 [State 0, EnvShake]

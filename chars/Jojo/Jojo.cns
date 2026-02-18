@@ -830,10 +830,15 @@ trigger1 =(combocount>0)
 map = "gravtimer"
 value=1
 [State -2, 6s]
+type = mapSet
+trigger1 =map(grav)>0
+map = "gravtimer"
+value=61
+[State -2, 6s]
 type = mapadd
 trigger1 =map(gravtimer)>60
 map = "grav"
-value=.015
+value=.01
 
 [State 0, AfterImageTime]
 type = AfterImageTime

@@ -405,7 +405,7 @@ triggerall = command != "QCF"
 triggerall = command != "236x"
 trigger1 = ctrl
 trigger2 = (stateno = 200) && movecontact 
-trigger3 = (stateno = 210) && movecontact 
+trigger3 = (stateno = [210,211]) && movecontact 
 trigger4 = stateno = 411 && movecontact
 trigger5 = (stateno = 400) && movecontact 
 trigger6 = stateno = 410 && movecontact
@@ -457,7 +457,7 @@ triggerall = command != "holddown"
 trigger1 = ctrl
 trigger2 = stateno=410||stateno=400
 trigger2 = prevstateno!=700&&movecontact
-trigger3 = stateno=200||stateno=210||stateno=202||stateno=203||stateno=201
+trigger3 = stateno=200||stateno=210||stateno=202||stateno=203||stateno=201||stateno=211
 trigger3=movecontact
 
 ;5M
@@ -497,7 +497,7 @@ triggerall = command != "holddown"
 trigger1 = ctrl
 trigger2 = stateno=410||stateno=400||stateno=420
 trigger2 = prevstateno!=700&&movecontact
-trigger3 = stateno=200||stateno=202||stateno=203||stateno=220||stateno=212||stateno=210||stateno=201
+trigger3 = stateno=200||stateno=202||stateno=203||stateno=220||stateno=212||stateno=210||stateno=201||stateno=211
 trigger3=movecontact
 
 
@@ -515,7 +515,7 @@ trigger1 = ctrl
 trigger2 = stateno=410||stateno=400||stateno=420
 trigger2 = prevstateno!=700&&movecontact
 trigger2 = prevstateno!=220&&movecontact
-trigger3 = stateno=200||stateno=202||stateno=203||stateno=212||stateno=210||stateno=201
+trigger3 = stateno=200||stateno=202||stateno=203||stateno=212||stateno=210||stateno=201||stateno=211
 trigger3=movecontact
 
 ;6H
@@ -529,7 +529,7 @@ triggerall = command = "holdfwd"
 trigger1 = ctrl
 trigger2 = stateno=410||stateno=400||stateno=420
 trigger2 = prevstateno!=700&&movecontact
-trigger3 = stateno=200||stateno=202||stateno=203||stateno=220||stateno=212||stateno=210||stateno=201
+trigger3 = stateno=200||stateno=202||stateno=203||stateno=220||stateno=212||stateno=210||stateno=201||stateno=211
 trigger3=movecontact
 
 ;-----------------------------------------------------------------------------------------------------------
@@ -556,7 +556,7 @@ triggerall = command = "y"
 triggerall = command = "holddown"
 triggerall = statetype != A
 trigger1 = ctrl
-trigger2 = stateno=400||stateno=210
+trigger2 = stateno=400||stateno=210||stateno=211
 trigger2 = prevstateno!=700&&movecontact
 trigger2 = prevstateno!=410&&movecontact
 trigger3 = stateno=200||stateno=202||stateno=203||stateno=201
@@ -575,7 +575,7 @@ trigger1 = ctrl
 trigger2 = stateno=410||stateno=400||stateno=220
 trigger2 = prevstateno!=700&&movecontact
 trigger2 = prevstateno!=420&&movecontact
-trigger3 = stateno=200||stateno=202||stateno=203||stateno=212||stateno=210||stateno=201
+trigger3 = stateno=200||stateno=202||stateno=203||stateno=212||stateno=210||stateno=201||stateno=211
 trigger3=movecontact
 trigger4 = stateno=700
 
@@ -591,7 +591,7 @@ triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = stateno=410||stateno=400||stateno=420
 trigger2 = prevstateno!=700&&movecontact
-trigger3 = stateno=200||stateno=202||stateno=203||stateno=212||stateno=210||stateno=220||stateno=201
+trigger3 = stateno=200||stateno=202||stateno=203||stateno=212||stateno=210||stateno=220||stateno=201||stateno=211
 trigger3=movecontact
 trigger4 = stateno=700
 ;-----------------------------------------------------------------------------------------------------------

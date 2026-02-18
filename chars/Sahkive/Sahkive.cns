@@ -1559,6 +1559,19 @@ ignorehitpause = 1
 
 [State 0, VarAdd]
 type = MapSet
+trigger1 = combocount=0
+map = "combosuper"
+value = 0
+ignorehitpause = 1
+
+[State 0, VarAdd]
+type = MapSet
+trigger1 = combocount=0
+map = "ddtbounce"
+value = 0
+
+[State 0, VarAdd]
+type = MapSet
 trigger1 = statetype!=A
 map = "airdash"
 value = 0

@@ -902,8 +902,8 @@ ground.slidetime = 5
 ground.hittime  = 45;ceil(cond(fvar(15) *34 < 16, 16, fvar(15) * 34))
 air.hittime  = 45;ceil(cond(fvar(15) *34 < 16, 16, fvar(15) * 34))
 down.hittime = 45;ceil(cond(fvar(15) *34 < 16, 16, fvar(15) * 34))
-ground.velocity = -1,-6
-air.velocity = -1,-6
+ground.velocity = -1,-7.5
+air.velocity = -1,-7.5
 envshake.time = 3
 guard.slidetime = 16
 guard.velocity = 0
@@ -997,7 +997,7 @@ guard.velocity = 0
 guard.hittime = 35
 guard.ctrltime = 17
 fall = 1
-fall.yvelocity=-7
+fall.yvelocity=-8
 getpower = 0
 
 [State 210, 5]
@@ -1075,7 +1075,7 @@ guard.velocity = 0
 guard.hittime = 35
 guard.ctrltime = 10
 fall = 1
-fall.yvelocity=-6
+fall.yvelocity=-8
 getpower = 0
 
 [State 210, 5]
@@ -2500,7 +2500,7 @@ persistent = 1
 type = VarAdd
 trigger1 = movehit
 fv =13     ;fv = 
-value = 3
+value = 2
 ignorehitpause=1
 persistent=0
 
@@ -2793,7 +2793,7 @@ persistent = 1
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1
+value =1
 
 [State 0, VarSet]
 type = MapSet
@@ -3379,11 +3379,11 @@ anim =1050
 sprpriority = 2
 velset=0,0
 
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 1
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time=0
+value = 1050
+elem = 2
 
 [State 0, VarSet]
 type = MapSet
@@ -3391,12 +3391,6 @@ trigger1 = time=0
 map = "g2s"
 value = 0
 ignorehitpause = 1
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 1
 
 [State 200, VarAdd]
 type = VarAdd
@@ -3488,6 +3482,18 @@ poweradd= -1000;(-1000)*(cond(var(var(2)) = 1, 1, .5))
 ctrl = 0
 anim =1050
 sprpriority = 2
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time=0
+value = 1050
+elem = 2
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv =13     ;fv = 
+value = 1
 
 [State 0, VarAdd]
 type = mapset
@@ -3755,7 +3761,7 @@ fvar(13) = 1
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 0.3
+value = 0.5
 
 [State 0, VelAdd]
 type = VelAdd
@@ -4048,6 +4054,12 @@ ctrl = 0
 anim =1050
 sprpriority = 2
 velset=0,0
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time=0
+value = 1050
+elem = 2
 
 [State Meter Burn State, VarSet]
 type = VarSet

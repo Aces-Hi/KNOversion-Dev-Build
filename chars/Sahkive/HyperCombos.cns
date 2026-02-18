@@ -4447,6 +4447,13 @@ velset = 0,0
 sprpriority = 2
 
 [State 0, VarAdd]
+type = MapSet
+trigger1 = movehit
+map = "combosuper"
+value = 11
+ignorehitpause = 1
+
+[State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit
 fv =13     ;fv = 
@@ -4591,8 +4598,8 @@ ground.slidetime = 12
 ground.hittime  = 45
 air.hittime  = 136
 down.hittime = 136
-ground.velocity =-1,-11
-air.velocity = -1,-11
+ground.velocity =-1,-11+map(combosuper)
+air.velocity = -1,-11+map(combosuper)
 fall  = 1
 fall.yvelocity = 0
 ;down.bounce = 3

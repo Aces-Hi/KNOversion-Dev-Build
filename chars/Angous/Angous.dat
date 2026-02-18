@@ -11,7 +11,7 @@ PRIMAL	-		_F^C
 WORLD DESTROYER	-		(CAN BE HELD) _DF^C
    <#bbbbbb>Has armor while charging and becomes unblockable when fully held.</>
 MOVE THE GROUND	-		(HOLD)_D^C
-   <#bbbbbb>Can be used after landing _D^C.</>
+   <#bbbbbb>Can be used after landing _D^C. Has armor.</>
 
 
 
@@ -30,8 +30,7 @@ BRAWLER RUSH	-		_F^Y
    <#bbbbbb>Can be canceled into Special Moves, _F^C, _DF^C, _F^Z, or _B^Z on hit.</>
 _!UPPER RUSH	-		_F^Y
         <#bbbbbb>Can be canceled into Special Moves, _F^C, _DF^C, _F^Z, or _B^Z on hit.</>
-   _!DEMOLITION RUSH	-		(CAN BE HELD) _F^Y
-           <#bbbbbb>Gains armor and causes a wall bounce when held.</>
+   _!DEMOLITION RUSH	-		_F^Y
 STRONG GRAPPLE	-		_B^Y
    <#bbbbbb>A command grab.</>
 RAGING UPPER	-		_D^Y
@@ -39,8 +38,9 @@ RAGING UPPER	-		_D^Y
 UPPER RUSH <#ff0000>(RAGE)</>	-		_DB^Y
    <#bbbbbb>An anti-air reversal.
    Can be canceled into Special Moves, _F^C, _DF^C, _F^Z, or _B^Z on hit.</>
-DEMOLITION RUSH <#ff0000>(RAGE)</>	-		(CAN BE HELD) _DF^Y
-   <#bbbbbb>Has armor, and causes a wall bounce when held.</>
+DEMOLITION RUSH <#ff0000>(RAGE)</>	-		_DF^Y
+
+
 
 
 
@@ -77,8 +77,7 @@ _EX BRAWLER RUSH	-		<#55ffff>(1 BAR)</> _F^Y+^Z
    <#bbbbbb>Can be canceled into Special Moves, _F^C, _DF^C, _F^Z, or _B^Z on hit.</>
 _!_EX UPPER RUSH	-		_F^Y
         <#bbbbbb>Can be canceled into Special Moves, _F^C, _DF^C, _F^Z, or _B^Z on hit.</>
-   _!_EX DEMOLITION RUSH	-		(CAN BE HELD) _F^Y
-           <#bbbbbb>Has armor.</>
+   _!_EX DEMOLITION RUSH	-		_F^Y
 _EX STRONG GRAPPLE	-		<#55ffff>(1 BAR)</> _B^Y+^Z
    <#bbbbbb>A command grab. Can be used in combos.</>
 _EX RAGING UPPER	-		<#55ffff>(1 BAR)</> _D^Y+^Z
@@ -86,8 +85,9 @@ _EX RAGING UPPER	-		<#55ffff>(1 BAR)</> _D^Y+^Z
 _EX UPPER RUSH <#ff0000>(RAGE)</>	-		<#55ffff>(1 BAR)</> _DB^Y+^Z
    <#bbbbbb>An anti-air/anti-projectile reversal.
    Can be canceled into Special Moves, _F^C, _DF^C, _F^Z, or _B^Z on hit.</>
-_EX DEMOLITION RUSH <#ff0000>(RAGE)</>	-		(CAN BE HELD)<#55ffff>(1 BAR)</> _DF^Y+^Z
-   <#bbbbbb>Has armor.</>
+_EX DEMOLITION RUSH <#ff0000>(RAGE)</>	-		<#55ffff>(1 BAR)</> _DF^Y+^Z
+
+
 
 
 

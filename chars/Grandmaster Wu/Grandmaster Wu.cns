@@ -1232,7 +1232,11 @@ trigger1=map(cokc)=2&&map(cock)=-1
 fv =19
 value = 0
 
-
+[State 0, VarSet]
+type = MapSet
+trigger1=combocount=0
+map = "beamslide"    ;fv = 10
+value = 0
 [State 0, VarSet]
 type = MapSet
 trigger1=combocount=0
@@ -1248,7 +1252,11 @@ type = MapSet
 trigger1=combocount=0
 map = "push"    ;fv = 10
 value = 0
-
+[State 0, VarSet]
+type = MapSet
+trigger1=combocount=0
+map = "sweeplaunch"    ;fv = 10
+value = 0
 
 [State 0, VarSet]
 type = VarSet

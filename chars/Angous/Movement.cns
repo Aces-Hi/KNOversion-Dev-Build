@@ -384,7 +384,7 @@ var(4) = 0
 
 [State 40, 1];?????
 type = VarSet
-trigger1 = command != "holdup"
+trigger1 = command != "holdup" && combocount
 var(4) = 1
 
 [State 40, 1]

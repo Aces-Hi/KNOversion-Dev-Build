@@ -20,38 +20,68 @@ trigger2 = hitdefattr = SCA ,NA&&movecontact
 var(1) = 1
 
 ;---------------------------------------------------------------------------
-;LETS FINISH HIM OFF- HYAAAH
-[State -1, Triple Kung Fu Palm]
+[State Divekick Super]
 type = ChangeState
 value = 3000
 triggerall = roundstate = 2 ;only attack during the round
-triggerall = command = "TripleKFPalm"
+triggerall = command = "QCF"
 triggerall = power >= 2000
-trigger1 = statetype = A
 trigger1 = ctrl
-trigger2 = statetype = A
-trigger2 = hitdefattr = A, NA, SA
-trigger2 = stateno != [3000,3050)
+trigger2 = hitdefattr = SCA, NA, SA
+trigger2 = stateno != [3000,3600)
 trigger2 = movecontact ;&& enemynear, movetype = H
 trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
 trigger4 = stateno = 1030 && movecontact ;&& enemynear, movetype = H
 trigger5 = stateno = 1033 && movecontact ;&& enemynear, movetype = H
-;---------------------------------------------------------------------------
-;THE FUN DOESN'T STOP- INFERNO
-[State -1, Triple Kung Fu Palm]
+
+[State Fireball Super]
 type = ChangeState
-value = 3010
-triggerall = !numhelper(3011)
+value = 3100
 triggerall = roundstate = 2 ;only attack during the round
-triggerall = command = "TripleKFPalm"
+triggerall = command = "QCB"
 triggerall = power >= 2000
-trigger1 = statetype != A
+triggerall = statetype = A
 trigger1 = ctrl
-trigger2 = statetype != A
-trigger2 = hitdefattr = SC, NA, SA
-trigger2 = stateno != [3000,3050)
+trigger2 = hitdefattr = SCA, NA, SA
+trigger2 = stateno != [3000,3600)
 trigger2 = movecontact ;&& enemynear, movetype = H
 trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
+trigger4 = stateno = 1030 && movecontact ;&& enemynear, movetype = H
+trigger5 = stateno = 1033 && movecontact ;&& enemynear, movetype = H
+
+[State Hellzone Super]
+type = ChangeState
+value = 3500
+triggerall = roundstate = 2 ;only attack during the round
+triggerall = command = "QCB"
+triggerall = power >= 2000
+triggerall = statetype != A
+triggerall = !numhelper(3500)&&!numhelper(3501)&&!numhelper(3502)&&!numhelper(3503)&&!numhelper(3504)
+trigger1 = ctrl
+trigger2 = hitdefattr = SCA, NA, SA
+trigger2 = stateno != [3000,3600)
+trigger2 = movecontact ;&& enemynear, movetype = H
+trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
+trigger4 = stateno = 1030 && movecontact ;&& enemynear, movetype = H
+trigger5 = stateno = 1033 && movecontact ;&& enemynear, movetype = H
+
+[State Hellzone Collapse]
+type = ChangeState
+value = 3505
+triggerall = map(Collapse)=0
+triggerall = roundstate = 2 ;only attack during the round
+triggerall = command = "QCB"
+triggerall = statetype != A
+triggerall = numhelper(3500)||numhelper(3501)||numhelper(3502)||numhelper(3503)||numhelper(3504)
+trigger1 = ctrl
+trigger2 = hitdefattr = SCA, NA, SA
+trigger2 = stateno != [3000,3600)
+trigger2 = movecontact ;&& enemynear, movetype = H
+trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
+trigger4 = stateno = 1030 && movecontact ;&& enemynear, movetype = H
+trigger5 = stateno = 1033 && movecontact ;&& enemynear, movetype = H
+
+
 ;===========================================================================
 
 [State -1, Grab]
@@ -172,6 +202,18 @@ triggerall = statetype = A
 trigger1 = ctrl
 trigger2 = var(1)
 
+[State EXj5S]
+type = ChangeState
+value = 1055
+triggerall = command = "EX"
+triggerall = power>=1000
+triggerall = command != "holddown"
+triggerall = command != "holdfwd"
+triggerall = command != "holdback"
+triggerall = statetype = A
+trigger1 = ctrl
+trigger2 = var(1)
+
 [State EX 2S]
 type = ChangeState
 value = 1005
@@ -180,7 +222,6 @@ triggerall = power>1000
 triggerall = command = "EX"
 triggerall = command = "holddown"
 triggerall = stateno != 1020
-triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
 
@@ -190,19 +231,6 @@ value = 1000
 triggerall = roundstate = 2 ;only attack during the round
 triggerall = command = "b"
 triggerall = command = "holddown"
-triggerall = statetype != A
-trigger1 = ctrl
-trigger2 = var(1)
-
-[State EX 4S]
-type = ChangeState
-value = 1016
-triggerall = roundstate = 2 ;only attack during the round
-triggerall = power>1000
-triggerall = command="holdback" 
-triggerall = command != "holddown"
-triggerall = command = "EX"
-triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
 
@@ -216,6 +244,42 @@ triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
 
+[State EX 4S]
+type = ChangeState
+value = 1016
+triggerall = numhelper(1013)=0
+triggerall = roundstate = 2 ;only attack during the round
+triggerall = power>1000
+triggerall = command="holdback" 
+triggerall = command != "holddown"
+triggerall = command = "EX"
+triggerall = statetype != A
+trigger1 = ctrl
+trigger2 = var(1)
+
+[State j4S]
+type = ChangeState
+value = 1021
+triggerall = roundstate = 2 ;only attack during the round
+triggerall = command = "b" && command="holdback"
+triggerall = command != "holddown"
+triggerall = statetype = A
+trigger1 = ctrl
+trigger2 = var(1)
+
+[State EX j4S]
+type = ChangeState
+value = 1022
+triggerall = numhelper(1013)=0
+triggerall = roundstate = 2 ;only attack during the round
+triggerall = power>1000
+triggerall = command="holdback" 
+triggerall = command != "holddown"
+triggerall = command = "EX"
+triggerall = statetype = A
+trigger1 = ctrl
+trigger2 = var(1)
+
 [State EX6S]
 type = ChangeState
 value = 1035
@@ -225,9 +289,21 @@ triggerall = command = "EX"
 trigger1 = ctrl
 trigger2 = var(1)
 
+[State 6S]
+type = ChangeState
+value = 1025
+triggerall = stateno!=1025
+triggerall = command = "holdfwd"
+triggerall = command = "b"
+triggerall = command != "c" && command != "EX"
+triggerall = statetype != A
+trigger1 = ctrl
+trigger2 = var(1)
+
 [State j6S]
 type = ChangeState
 value = 1030
+triggerall = stateno!=1030
 triggerall = command = "holdfwd"
 triggerall = command = "b"
 triggerall = command != "c" && command != "EX"

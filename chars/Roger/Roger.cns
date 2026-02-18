@@ -1596,8 +1596,16 @@ map = "Install"
 value = -1
 ignorehitpause = 1
 [State 0, VarSet]
+type = MapAdd
+triggerall = !map(installfreeze)
+trigger1 = map(install)>720
+map = "Install"
+value = -0.5
+ignorehitpause = 1
+[State 0, VarSet]
 type = MapSet
 trigger1 = roundstate=0
+trigger2 = map(install)<0
 map = "Install"
 value = 0
 ignorehitpause = 1
@@ -1607,6 +1615,7 @@ trigger1 = combocount=0
 map = "InstallFreeze"
 value = 0
 ignorehitpause = 1
+
 
 [State 0, VarSet]
 type = MapSet
@@ -2217,8 +2226,8 @@ channel = 5
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "big=%f small=%f m=%f lead %f enemy %f armor %f,install %f viley %f"
-params = map(bigpunch),map(smallpunch),map(mediumpace),map(teamlead),map(enemyteamlead) ,map(armorlimit),map(install),map(viley)
+text = "big=%f small=%f hs=%f lead %f enemy %f armor %f,install %f viley %f"
+params = map(bigpunch),map(smallpunch),map(hslide),map(teamlead),map(enemyteamlead) ,map(armorlimit),map(install),map(viley)
 ignorehitpause = 1
 
 [State 0, VarAdd]
@@ -2302,6 +2311,12 @@ value = 0
 type = MapSet
 trigger1 =(combocount=0)
 map = "smallpunch"
+value = 0
+
+[State 0, VarSet]
+type = MapSet
+trigger1 =(combocount=0)
+map = "installbounce"
 value = 0
 
 [State 0, VarSet]

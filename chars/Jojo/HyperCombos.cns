@@ -559,7 +559,7 @@ type = HitDef
 trigger1 = animelem = 12
 trigger2 = animelem = 21
 attr = S, HA                     ;Attribute: Standing, Normal Attack
-damage = ceil(ifElse(fvar(11) * 25 < 10, 10, fvar(11) * 25)), 10  
+damage = ceil(ifElse(fvar(11) * 25 < 5, 5, fvar(11) * 25)), 10  
 animtype = light
 guardflag = HA
 hitflag = MAFD+
@@ -641,7 +641,7 @@ type = HitDef
 trigger1 = animelem = 48
 trigger2 = animelem = 57
 attr = S, HA                     ;Attribute: Standing, Normal Attack
-damage = ceil(ifElse(fvar(11) * 50 < 15, 15, fvar(11) * 50)), 10  
+damage = ceil(ifElse(fvar(11) * 50 < 10, 10, fvar(11) * 50)), 10  
 animtype = light
 guardflag = HA
 hitflag = MAFD

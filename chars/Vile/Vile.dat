@@ -28,6 +28,7 @@ RAZOR	-		<#aaffff>(GROUND OR AIR)</> ^Y
    <#aaff00>IN PUDDLE: Lasts longer and has more hits.</>
 RISING	-		<#aaffff>(GROUND OR AIR)</> _F^Y
    <#bbbbbb>Can be airdash canceled on hit.</>
+   <#aaff00>IN PUDDLE: Launches higher.</>
 _!KNEE	-		<#65b5ff>(AIR ONLY)</> _F^Y
         <#aaff00>IN PUDDLE: Causes a sliding knockdown.</>
 LOOPHOLD	-		_B^Y
@@ -36,7 +37,6 @@ LOOPHOLD	-		_B^Y
 CURB STOMP	-		_D^Y
    <#bbbbbb>Can be canceled into _F^Y on hit.</>
    <#aaff00>IN PUDDLE: Has much more range and launches the enemy.</>
-
 
 
 

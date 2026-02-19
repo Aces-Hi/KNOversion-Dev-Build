@@ -373,7 +373,7 @@ facep2 = 1
 
 [State 0, CtrlSet]
 type = CtrlSet
-trigger1 = prevstateno=555
+trigger1 = prevstateno!=1001
 trigger1 = combocount
 value = 1
 ignorehitpause = 1

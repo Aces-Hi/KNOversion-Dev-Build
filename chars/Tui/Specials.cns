@@ -79,6 +79,14 @@ anim =1000
 sprpriority = 2
 velset = 0,0
 
+[State EX Limiters]
+type = mapset
+trigger1 = time=0
+map = "EXlimiter1"
+value = 1
+ignorehitpause=1
+persistent=1
+
 [State 0, StateTypeSet]
 type = StateTypeSet
 trigger1 = time=0&&pos y < 0
@@ -213,6 +221,7 @@ value = 5,0
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
+trigger1 = prevstateno!=1005
 trigger1 = anim = 1001
 trigger1 = time %3=0
 attr = A, SA
@@ -244,6 +253,43 @@ envshake.ampl = 2
 envshake.phase = 1
 forcenofall = 1
 getpower = 5
+fall.yvelocity = 0
+
+[State 630, 2]
+type = HitDef 
+p2facing = 1 
+trigger1 = prevstateno=1005
+trigger1 = anim = 1001
+trigger1 = time %3=0
+attr = A, SA
+damage = 3,2
+hitflag = MAF
+guardflag = MAF
+getpower =0
+;priority = 3
+pausetime = 1,1
+sparkno = 2
+sparkxy = -10,-55
+hitsound   = 5,3
+guardsound = 6,0
+ground.type = Low
+animtype = up
+air.animtype = up
+ground.slidetime = 14
+ground.hittime  = 23
+ground.velocity = -2.5,-7+(cond(prevstateno = 1020,-3,0))
+air.velocity = -2.5,-7+(cond(prevstateno = 1020,-3,0))
+air.hittime = 24
+guard.hittime =  4
+guard.ctrltime = 4
+guard.slidetime = 0
+guard.velocity = 0
+ envshake.time = 8
+envshake.freq = 10
+envshake.ampl = 2
+envshake.phase = 1
+forcenofall = 1
+getpower = 0
 fall.yvelocity = 0
 
 [State 0, ChangeAnim]
@@ -323,6 +369,7 @@ x = .9
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
+trigger1 = prevstateno!=1005
 trigger1 = anim = 1002
 trigger1 = animelemtime(1) = 1
 attr = A, SA
@@ -350,7 +397,37 @@ air.velocity = -3,-4
 air.hittime = 24
 forcenofall = 1
 getpower = (100)*(cond(var(var(3)) = 1, 1, .5))
-
+[State 630, 2]
+type = HitDef 
+p2facing = 1 
+trigger1 = prevstateno=1005
+trigger1 = anim = 1002
+trigger1 = animelemtime(1) = 1
+attr = A, SA
+damage = 4
+hitflag = MAF
+guardflag = MAF
+;priority = 3
+pausetime = 12,12
+sparkno = 3
+sparkxy = 0,-55
+hitsound   = 5,2
+guardsound = 6,0
+ground.type = Low
+animtype = medium
+air.animtype = back
+ground.slidetime = 14
+ground.hittime  = 23
+air.hittime = 60
+guard.hittime =  4
+guard.ctrltime = 4
+guard.slidetime = 2
+guard.velocity = 0
+ground.velocity = -3,-3
+air.velocity = -3,-4
+air.hittime = 24
+forcenofall = 1
+getpower = 0
 
 [State 0, ChangeState]
 type = ChangeState
@@ -612,6 +689,7 @@ removeongethit = 0
 [State 0, Helper]
 type = Helper
 trigger1 = animelemtime(5)=0&&numhelper(1013)=0
+trigger1 = map(fireball)<2
 helpertype = normal ;player
 name = "5S Fireball"
 ID = 1013
@@ -625,6 +703,14 @@ supermovetime = 0
 pausemovetime = 999
 size.xscale = 0.8
 size.yscale = 0.8
+
+[State Limiter]
+type = MapAdd
+trigger1=time=0
+map = "fireball"
+value=1
+persistent=0
+ignorehitpause=1
 
 [State 630, 2]
 type = HitDef 
@@ -645,7 +731,7 @@ air.animtype = back
 ground.slidetime = 14
 ground.hittime  = 33
 ground.velocity = -5
-air.velocity = -5,-4
+air.velocity = -5,-2
 yaccel = .38
 air.hittime = 42
 forcenofall = 1
@@ -869,6 +955,14 @@ poweradd= -1000
 ctrl = 0
 anim =1009
 sprpriority = 2
+
+[State EX Limiters]
+type = mapset
+trigger1 = time=0
+map = "EXlimiter2"
+value = 1
+ignorehitpause=1
+persistent=1
 
 [State Meter Burn State, VarSet]
 type = VarSet
@@ -1322,6 +1416,15 @@ ctrl = 0
 anim =670
 sprpriority = 2
 poweradd=-1000
+
+[State EX Limiters]
+type = mapset
+trigger1 = time=0
+map = "EXlimiter2"
+value = 1
+ignorehitpause=1
+persistent=1
+
 [State 0, PosSet]
 type = PosSet
 trigger1 = animelemtime(5)<0&&pos y>-10
@@ -1571,9 +1674,18 @@ type = PlaySnd
 trigger1 = animelem = 3
 value = 1, 1
 
+[State Limiter]
+type = MapSet
+trigger1=movehit
+map = "launchkick"
+value=1
+persistent=0
+ignorehitpause=1
+
 [State 630, 2]
 type = HitDef 
-p2facing = 1 
+p2facing = 1
+triggerall = map(launchkick)=0 
 trigger1 = !movecontact
 attr = A, SA
 damage = ceil(cond(fvar(11) *80 < 8, 8, fvar(11) * 80)), 8
@@ -1591,6 +1703,36 @@ ground.hittime  = 33
 ground.velocity = -4,-5
 air.velocity = -4,-5
 air.hittime = 34
+forcenofall = 1
+envshake.time = 25
+envshake.freq = 110
+envshake.ampl = 6
+envshake.phase = 1
+guard.slidetime = 16
+guard.hittime = 28
+guard.ctrltime = 28
+getpower = (105)*(cond(var(var(3)) = 1, 1, .5))
+[State 630, 2]
+type = HitDef 
+p2facing = 1
+triggerall = map(launchkick)
+trigger1 = !movecontact
+attr = A, SA
+damage = ceil(cond(fvar(11) *80 < 8, 8, fvar(11) * 80)), 8
+hitflag = MAFD
+guardflag = HAFD
+pausetime = 12,12
+sparkno = 3
+sparkxy = -20,-30
+hitsound   = 5,4
+guardsound = 6,2
+ground.type = Low
+animtype = medium
+ground.slidetime = 14
+ground.hittime  = 11
+ground.velocity = -4,-5
+air.velocity = -4,-5
+air.hittime = 11
 forcenofall = 1
 envshake.time = 25
 envshake.freq = 110
@@ -1799,10 +1941,19 @@ type = PlaySnd
 trigger1 = animelem = 3
 value = 1, 1
 
+[State Limiter]
+type = MapSet
+trigger1=movehit
+map = "slidekick"
+value=1
+persistent=0
+ignorehitpause=1
+
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1 = animelem = 3
+trigger1 = !movecontact
+triggerall = map(slidekick)=0 
 attr = S, SA
 damage = ceil(cond(fvar(11) *80 < 8, 8, fvar(11) * 80)), 8
 hitflag = MAF
@@ -1838,8 +1989,42 @@ id = 910313
 type = TargetState
 trigger1 = MoveHit = 1
 value = 915020
+id = 910313
 persistent = 1
 ignorehitpause = 1
+
+[State 630, 2]
+type = HitDef 
+p2facing = 1 
+trigger1 = !movecontact
+triggerall = map(slidekick) 
+attr = S, SA
+damage = ceil(cond(fvar(11) *80 < 8, 8, fvar(11) * 80)), 8
+hitflag = MAF
+guardflag = HAFD
+;priority = 3
+pausetime = 12,12
+sparkno = 3
+sparkxy = -20,-30
+hitsound   = 5,4
+guardsound = 6,2
+ground.type = Low
+animtype = medium
+ground.slidetime = 14
+ground.hittime  = 33
+ground.velocity = -10,10
+air.velocity = -10,10
+air.hittime = 34
+fall = 1
+fall.yvelocity = 0
+envshake.time = 25
+envshake.freq = 110
+envshake.ampl = 6
+envshake.phase = 1
+guard.slidetime = 16
+guard.hittime = 28
+guard.ctrltime = 28
+getpower = (105)*(cond(var(var(3)) = 1, 1, .5))
 
 
 [State 0, ChangeState]
@@ -1923,7 +2108,15 @@ poweradd= -1000
 ctrl = 0
 anim =1035
 sprpriority = 2
-velset = 4,-1
+velset = 5,-1
+
+[State EX Limiters]
+type = mapset
+trigger1 = time=0
+map = "EXlimiter3"
+value = 1
+ignorehitpause=1
+persistent=1
 
 [State 200, VarAdd]
 type = VarAdd
@@ -2109,7 +2302,7 @@ timegap = 1
 
 [State 0, VelAdd]
 type = VelAdd
-trigger1 =time>68
+trigger1 =time>45
 y = .825 
 
 [State 630, 2]
@@ -2119,14 +2312,10 @@ trigger1 = animelem = 6
 trigger2 = animelem = 9
 trigger3 = animelem = 12
 trigger4 = animelem = 15
-trigger5 = animelem = 18
-trigger6 = animelem = 21
-trigger7 = animelem = 24
-trigger8 = animelem = 27
 getpower = 0
 attr = A, SA
-damage = ceil(cond(fvar(11) *20 < 4, 4, fvar(11) * 20)), 3
-hitflag = MAF
+damage = ceil(cond(fvar(11) *10 < 4, 4, fvar(11) * 10)), 3
+hitflag = MAFD
 guardflag = MAF
 ;priority = 3
 pausetime = 3,3 
@@ -2140,23 +2329,32 @@ ground.slidetime = 14
 ground.hittime  = 33
 ground.velocity = -2,-4
 fall.xvelocity = -2
-snap = 20,-10
 fall.yvelocity = -3
 air.velocity = -4,-4.0
 air.hittime = 34
 fall = 1
+[State 0, TargetBind]
+type = TargetBind
+triggerall=movehit
+trigger1 = animelem = 6
+trigger2 = animelem = 9
+trigger3 = animelem = 12
+trigger4 = animelem = 15
+time = 1
+pos = 20,-10
+ignorehitpause = 1
 
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1 = animelem = 31
+trigger1 = animelem = 19
 attr = A, SA
 getpower = 0
-damage = ceil(cond(fvar(11) *100 < 10, 10, fvar(11) * 100)), 4
-hitflag = MAF
-guardflag = HAFD
+damage = ceil(cond(fvar(11) *30 < 10, 10, fvar(11) * 30)), 4
+hitflag = MAFD
+guardflag = MAFD
 ;priority = 3
-pausetime = 12,16
+pausetime = 8,12
 sparkno = 2
 sparkxy = -20,-30
 hitsound   = 5,2
@@ -2176,11 +2374,11 @@ fall = 1
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1 = animelem = 32
+trigger1 = animelem = 20
 attr = A, SA
-damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 4
-hitflag = MAF
-guardflag = HAFD
+damage = ceil(cond(fvar(11) *50 < 10, 10, fvar(11) * 50)), 4
+hitflag = MAFD
+guardflag = MAFD
 ;priority = 3
 pausetime = 12,12
 sparkno = 3
@@ -2559,6 +2757,14 @@ anim =1050
 sprpriority = 2
 poweradd=-1000
 
+[State EX Limiters]
+type = mapset
+trigger1 = time=0
+map = "EXlimiter4"
+value = 1
+ignorehitpause=1
+persistent=1
+
 ;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ;Shadow Override
 ;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2813,6 +3019,14 @@ ctrl = 0
 anim =1055
 sprpriority = 2
 poweradd=-1000
+
+[State EX Limiters]
+type = mapset
+trigger1 = time=0
+map = "EXlimiter4"
+value = 1
+ignorehitpause=1
+persistent=1
 
 ;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ;Shadow Override

@@ -181,6 +181,7 @@ trigger2 = var(1)
 [State EX5S]
 type = ChangeState
 value = 1050
+triggerall=map(EXLimiter4)=0
 triggerall = command = "EX"
 triggerall = power>=1000
 triggerall = command != "holddown"
@@ -205,6 +206,7 @@ trigger2 = var(1)
 [State EXj5S]
 type = ChangeState
 value = 1055
+triggerall=map(EXLimiter4)=0
 triggerall = command = "EX"
 triggerall = power>=1000
 triggerall = command != "holddown"
@@ -217,6 +219,7 @@ trigger2 = var(1)
 [State EX 2S]
 type = ChangeState
 value = 1005
+triggerall=map(EXLimiter1)=0
 triggerall = roundstate = 2 ;only attack during the round
 triggerall = power>1000
 triggerall = command = "EX"
@@ -247,6 +250,7 @@ trigger2 = var(1)
 [State EX 4S]
 type = ChangeState
 value = 1016
+triggerall=map(EXLimiter2)=0
 triggerall = numhelper(1013)=0
 triggerall = roundstate = 2 ;only attack during the round
 triggerall = power>1000
@@ -270,6 +274,7 @@ trigger2 = var(1)
 [State EX j4S]
 type = ChangeState
 value = 1022
+triggerall=map(EXLimiter2)=0
 triggerall = numhelper(1013)=0
 triggerall = roundstate = 2 ;only attack during the round
 triggerall = power>1000
@@ -283,6 +288,7 @@ trigger2 = var(1)
 [State EX6S]
 type = ChangeState
 value = 1035
+triggerall=map(EXLimiter3)=0
 triggerall = power>1000
 triggerall = command = "holdfwd"
 triggerall = command = "EX"

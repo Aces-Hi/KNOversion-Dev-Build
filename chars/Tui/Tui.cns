@@ -653,6 +653,66 @@ trigger2=roundstate=0
 map = "awing"
 value=1
 
+[State Limiter]
+type = MapSet
+trigger1=!combocount
+map = "windmillkick"
+value=0
+
+[State Limiter]
+type = MapSet
+trigger1=!combocount
+map = "divekick"
+value=0
+
+[State Limiter]
+type = MapSet
+trigger1=!combocount
+map = "stomp"
+value=0
+
+[State Limiter]
+type = MapSet
+trigger1=!combocount
+map = "slash"
+value=0
+
+[State Limiter]
+type = MapSet
+trigger1=!combocount
+map = "dkick"
+value=0
+
+[State Limiter]
+type = MapSet
+trigger1=!combocount
+map = "kicks"
+value=0
+
+[State Limiter]
+type = MapSet
+trigger1=!combocount
+map = "wham"
+value=0
+
+[State Limiter]
+type = MapSet
+trigger1=!combocount
+map = "launchkick"
+value=0
+
+[State Limiter]
+type = MapSet
+trigger1=!combocount
+map = "slidekick"
+value=0
+
+[State Limiter]
+type = MapSet
+trigger1=!combocount
+map = "fireball"
+value=0
+
 [State 0, Limiter Display]
 type = DisplayToClipboard
 trigger1 = 1

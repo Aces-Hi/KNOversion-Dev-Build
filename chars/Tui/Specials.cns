@@ -2866,7 +2866,7 @@ ignorehitpause = 1
 type = VelAdd
 trigger1 = animelem=7
 x = -2
-y = -2
+y = 0
 ignorehitpause = 1
 
 [State 0, Helper]

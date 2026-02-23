@@ -1860,7 +1860,8 @@ trigger1 = MoveHit = 1
 trigger1 = !HitPauseTime 
 trigger1 = !(HitDefAttr = SCA, AT) 
 fvar(13) = 1 
- 
+ persistent=0
+
 [State -2, Hit Count Reset] 
 type = VarSet 
 trigger1 = NumEnemy && fvar(13) 

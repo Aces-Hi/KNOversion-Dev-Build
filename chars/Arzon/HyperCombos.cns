@@ -706,7 +706,7 @@ kill = 0
 trigger1 = animelemno(0) = [1,29]
 attr = S,HA
 getpower = 0
-damage = ceil(cond(fvar(11) *30 < 2, 2, fvar(11) * 30)), 5
+damage = 2
 hitflag = MAF
 guardflag = MA
 ;priority = 1
@@ -738,7 +738,7 @@ trigger1 = animelem = 30
 kill = 0
 attr = S,HA
 getpower = 0
-damage = ceil(cond(fvar(11) *30 < 4, 4, fvar(11) * 30)), 5
+damage = 16
 hitflag = MAF
 guardflag = MA
 ;priority = 1
@@ -794,7 +794,7 @@ p2facing = 1
 trigger1 = animelem = 54
 attr = S,HA
 getpower = 0
-damage = 111
+damage = ceil(cond(fvar(11) *300 < 100, 100, fvar(11) * 300)), 5
 hitflag = MAFD
 guardflag = MA
 ;priority = 1

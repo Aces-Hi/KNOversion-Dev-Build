@@ -656,8 +656,8 @@ value=1
 [State 0, Limiter Display]
 type = DisplayToClipboard
 trigger1 = 1
-text = "G %f A %f"
-params = map(gwing), map(awing)
+text = "dmg %f stun %f"
+params = fvar(13),fvar(25)
 
 [State 0, VarSet]
 type = VarSet
@@ -777,8 +777,8 @@ ignoreHitPause = 1
 type = VarAdd 
 triggerall = stateno!=[1000,1003]
 triggerall = stateno!=1010
-triggerall = stateno!=1020
-triggerall = stateno!=502
+triggerall = stateno!=1020&&stateno!=1035
+triggerall = stateno!=[500,750]
 triggerall = stateno!=[3000,3001]
 ;triggerall = stateno!=
 trigger1 = !IsHelper
@@ -790,7 +790,7 @@ fvar(13) = 1
 [State -2, Hit Count Reset] 
 type = VarSet 
 trigger1 = NumEnemy && fvar(13) 
-trigger1 = (EnemyNear, MoveType != H) && (EnemyNear, StateNo != 5300) 
+trigger1 = (combocount=0) && (EnemyNear, StateNo != 5300) 
 fvar(13) = 0 
 ignoreHitPause = 1
  

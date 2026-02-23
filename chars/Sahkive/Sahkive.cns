@@ -1082,7 +1082,7 @@ triggerall = stateno!=[1000,1003]
 triggerall = stateno!=1010
 triggerall = stateno!=1020
 triggerall = stateno!=502
-triggerall = stateno!=[3000,3001]
+triggerall = stateno!=[3000,3100]
 ;triggerall = stateno!=
 trigger1 = !IsHelper
 trigger1 = MoveHit = 1 

@@ -91,7 +91,7 @@ kill = 0
 p2facing = 1
 trigger1 = time%2=0
 attr = A, HA
-damage = ceil(cond(fvar(11) *9 < 4, 4, fvar(11) * 9)), 2
+damage = 7, 2
 animtype  = Medium
 hitflag = MAFD
 guardflag = MA
@@ -141,6 +141,21 @@ anim = 3002
 velset = 4,0
 sprpriority = 2
 
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 2; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit=1
+fv =13     ;fv = 
+value = 2
+persistent = 0
+
 [State -3, Tui Voices]
 type = PlaySnd
 trigger1 = animelem = 7
@@ -183,9 +198,40 @@ y = 0
 type = HitDef 
 p2facing = 1
 trigger1 = animelem = 1
-trigger2 = animelem = 3
 attr = S, HA
-damage = ceil(cond(fvar(11) * 155 < 55, 55, fvar(11) * 155)),15
+damage = ceil(cond(fvar(11) * 90 < 30, 30, fvar(11) * 90)),15
+animtype  = Medium
+hitflag = MAFD
+guardflag = MA
+pausetime = 12,32
+guard.pausetime=12,12
+sparkno = 3
+sparkxy = -10,0
+hitsound   = 666,3
+guardsound = 6,2
+ground.type = Low
+air.animtype = back
+ground.slidetime = 12
+ground.hittime  = 35
+ground.velocity = -7,-3
+air.velocity = -7,-3
+air.hittime = 60
+getpower = 0
+fall=1
+envshake.time = 0
+envshake.freq = 0
+envshake.ampl = 0
+fall.envshake.time = 0
+fall.envshake.freq = 0
+fall.envshake.ampl = 0
+getpower = (0)*(cond(var(var(3)) = 1, 1, .5))
+fall.yvelocity=0
+[State 410, 2]
+type = HitDef 
+p2facing = 1
+trigger1 = animelem = 3
+attr = S, HA
+damage = ceil(cond(fvar(11) * 200 < 80, 80, fvar(11) * 200)),15
 animtype  = Medium
 hitflag = MAFD
 guardflag = MA
@@ -405,7 +451,7 @@ removeongethit = 0
 type = HitDef
 trigger1 = !movecontact
 attr = A, HP
-damage = ceil(cond(root, fvar(11) * 40< 8, 8, root, fvar(11) * 40)), 6
+damage = ceil(cond(root, fvar(11) * 40< 12, 12, root, fvar(11) * 40)), 6
 hitflag = MAFD
 air.animtype = back
 guardflag = MA
@@ -553,7 +599,7 @@ removeongethit = 0
 type = HitDef
 trigger1 = !movecontact
 attr = A, HP
-damage = ceil(cond(root, fvar(11) * 40< 8, 8, root, fvar(11) * 40)), 6
+damage = ceil(cond(root, fvar(11) * 40< 12, 12, root, fvar(11) * 40)), 6
 hitflag = MAFD
 air.animtype = back
 guardflag = MA
@@ -566,9 +612,9 @@ ground.type = Low
 animtype = medium
 ground.slidetime = 14
 ground.hittime  = 20
-ground.velocity = -4,-4
+ground.velocity = -2,-5
 fall.yvelocity = 0
-air.velocity = -4,-4
+air.velocity = -2,-5
 air.hittime = 24
 airguard.velocity = -2,-3
 getpower = 0
@@ -608,12 +654,14 @@ velset = 7,0
 [State 0, VelSet]
 type = VelSet
 trigger1 =StageFrontEdgeDist <= 10&&root,combocount&&!movecontact
+trigger1 = root,enemynear,pos y < -10
 x = 0
 ignorehitpause = 1
 persistent = 1
 [State 0, VelSet]
 type = VelSet
 trigger1 =movecontact
+trigger2 = enemynear,pos y >= -10
 x = 7
 ignorehitpause = 1
 persistent = 1
@@ -660,7 +708,7 @@ removeongethit = 0
 type = HitDef
 trigger1 = time %2= 0
 attr = A, HP
-damage = ceil(cond(root, fvar(11) * 25< 4, 4, root, fvar(11) * 25)), 3
+damage = ceil(cond(root, fvar(11) * 25< 15, 15, root, fvar(11) * 25)), 3
 hitflag = MAFD
 air.animtype = back
 guardflag = MA
@@ -780,12 +828,14 @@ velset = 7,0
 [State 0, VelSet]
 type = VelSet
 trigger1 =StageFrontEdgeDist <= 10&&root,combocount&&!movecontact
+trigger1 = root,enemynear,pos y < -10
 x = 0
 ignorehitpause = 1
 persistent = 1
 [State 0, VelSet]
 type = VelSet
 trigger1 =movecontact
+trigger2 = enemynear,pos y >= -10
 x = 7
 ignorehitpause = 1
 persistent = 1
@@ -832,7 +882,7 @@ removeongethit = 0
 type = HitDef
 trigger1 = time %2= 0
 attr = A, HP
-damage = ceil(cond(root, fvar(11) * 25< 4, 4, root, fvar(11) * 25)), 3
+damage = ceil(cond(root, fvar(11) * 25< 15, 15, root, fvar(11) * 25)), 3
 hitflag = MAFD
 air.animtype = back
 guardflag = MA
@@ -894,15 +944,34 @@ anim = 3105
 sprpriority = 5
 velset = 7,0
 
+[State 200, VarAdd]
+type = ParentVarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 5; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
+
+[State 0, VarAdd]
+type = ParentVarAdd
+trigger1 = movehit=1
+fv =13     ;fv = 
+value = 5
+persistent = 0
+ignorehitpause = 1
+persistent = 0
+
 [State 0, VelSet]
 type = VelSet
 trigger1 =StageFrontEdgeDist <= 10&&root,combocount&&!movecontact
+trigger1 = root,enemynear,pos y < -10
 x = 0
 ignorehitpause = 1
 persistent = 1
 [State 0, VelSet]
 type = VelSet
 trigger1 =movecontact
+trigger2 = enemynear,pos y >= -10
 x = 7
 ignorehitpause = 1
 persistent = 1
@@ -950,7 +1019,7 @@ type = HitDef
 trigger1 = var(21)<2
 trigger1 = time %2= 0
 attr = A, HP
-damage = ceil(cond(root, fvar(11) * 25< 4, 4, root, fvar(11) * 25)), 3
+damage = ceil(cond(root, fvar(11) * 30< 20, 20, root, fvar(11) * 30)), 3
 hitflag = MAFD
 air.animtype = back
 guardflag = MA
@@ -980,7 +1049,7 @@ type = HitDef
 trigger1 = var(21)>=2
 trigger1 = time %2= 0
 attr = A, HP
-damage = ceil(cond(root, fvar(11) * 25< 4, 4, root, fvar(11) * 25)), 3
+damage = ceil(cond(root, fvar(11) * 70< 40, 40, root, fvar(11) * 70)), 3
 hitflag = MAF
 air.animtype = back
 guardflag = MA
@@ -1289,13 +1358,13 @@ ignorehitpause = 1
 [State 0, VelSet]
 type = VelSet
 trigger1 = time=0 && root,map(HELLZONEGRENADE)=1
-x = 8
-y = -2
+x = 7
+y = -1.5
 [State 0, VelSet]
 type = VelSet
 trigger1 = time=0 && root,map(HELLZONEGRENADE)=2
 x = 12
-y =1
+y =.5
 [State 0, VelSet]
 type = VelSet
 trigger1 = time=0 && root,map(HELLZONEGRENADE)=3
@@ -1310,7 +1379,7 @@ y =4
 type = VelSet
 trigger1 = time=0 && root,map(HELLZONEGRENADE)=5
 x =3
-y =0
+y =.5
 [State 0, VelMul]
 type = VelMul
 trigger1 = root,map(HELLZONEGRENADE)=5&&StageFrontEdgeDist <= 110
@@ -1404,7 +1473,7 @@ persistent=1
 
 [State 0, ChangeAnim]
 type = ChangeAnim
-trigger1 = time>=300&&anim!=3504&&animtime=0&&map(hellzonetimer)=0
+trigger1 = time>=300&&anim!=3504&&animtime=0&&map(hellzonetimer)=0&&root,!combocount
 value = 3504
 
 [State 0, ChangeState]
@@ -1457,6 +1526,21 @@ ctrl = 0
 anim = 3503
 sprpriority = 5
 
+[State 200, VarAdd]
+type = ParentVarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = .5; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
+
+[State 0, VarAdd]
+type = ParentVarAdd
+trigger1 = movehit=1
+fv =13     ;fv = 
+value = .5
+persistent = 0
+
 [State 0, NotHitBy]
 type = NotHitBy
 trigger1 = 1
@@ -1488,7 +1572,7 @@ trigger1 =!movecontact
 attr = A, SP
 animtype  = Light
 air.animtype = back
-damage = ceil(cond(root,fvar(11) *40< 5, 5, root,fvar(11) * 40)), 0
+damage = ceil(cond(root,fvar(11) *40< 15, 15, root,fvar(11) * 40)), 0
 hitflag = MAFD
 guardflag = MA
 pausetime = 8,16
@@ -1502,9 +1586,9 @@ ground.slidetime = 12
 ground.hittime  = ceil(cond(root,fvar(15) *35 < 9, 9, root,fvar(15) * 35))
 air.hittime  = ceil(cond(root,fvar(15) *42 < 9, 9, root,fvar(15) * 42))
 down.hittime = ceil(cond(root,fvar(15) *42 < 9, 9, root,fvar(15) * 42))  
-ground.velocity = -2.5,-6
-air.velocity = -2.5,-6
-down.velocity = -2.5,-6
+ground.velocity = -2.5,-6.5
+air.velocity = -2.5,-6.5
+down.velocity = -2.5,-6.5
 palfx.time = 12
 palfx.add = 100, 0,20
  envshake.time = 14

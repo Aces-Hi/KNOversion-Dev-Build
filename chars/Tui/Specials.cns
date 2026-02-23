@@ -216,7 +216,7 @@ p2facing = 1
 trigger1 = anim = 1001
 trigger1 = time %3=0
 attr = A, SA
-damage = ceil(cond(fvar(11) *10 < 4, 4, fvar(11) * 10)), 2
+damage = ceil(cond(fvar(11) *10 < 3, 3, fvar(11) * 10)), 2
 hitflag = MAF
 guardflag = MAF
 getpower = cond(prevstateno = 1005, 0, 10)
@@ -450,13 +450,6 @@ ctrl = 0
 anim =1011
 sprpriority = 2
 
-
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 1
-
 [State 0, Helper]
 type = Helper
 trigger1 = animelemtime(3)=0&&numhelper(1013)=0
@@ -541,11 +534,21 @@ ctrl = 0
 anim =1012
 sprpriority = 2
 
-[State 0, VarAdd]
+[State 200, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
+fv = 25   
+value = .5
+ignorehitpause = 1
+persistent = 0
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit
 fv =13     ;fv = 
-value = 1
+value = .5
+ignorehitpause = 1
+persistent = 0
 
 [State -3, Tui Voices]
 type = PlaySnd
@@ -628,7 +631,7 @@ type = HitDef
 p2facing = 1 
 trigger1 = movecontact = 0
 attr = S, SA
-damage = ceil(cond(fvar(11) *62 < 7, 7, fvar(11) * 62)), 3
+damage = ceil(cond(fvar(11) *60 < 6, 6, fvar(11) * 60)), 3
 hitflag = MAFD
 guardflag = MAFD
 pausetime = 8,12
@@ -675,6 +678,21 @@ anim = 1015
 sprpriority = 5
 velset = 3,0
 
+[State 200, VarAdd]
+type = ParentVarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = .5; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
+
+[State 0, VarAdd]
+type = ParentVarAdd
+trigger1 = movehit
+fv =13     ;fv = 
+value = .5
+persistent = 0
+
 [State 0, VelSet]
 type = VelSet
 trigger1 =map(rotate)&&StageFrontEdgeDist > 10
@@ -710,13 +728,6 @@ value=0
 type = AngleDraw
 trigger1 =map(rotate)
 value =-60
-
-;helper damage scaling
-[State 0, ParentVarAdd]
-type = ParentVarAdd
-trigger1 = movehit = 1
-fv = 13
-value = 0.5
 
 ;normal projectiles collide 
 [State 0, HitOverride]
@@ -877,14 +888,6 @@ ID = 924680
 bindtime = -1
 removeongethit = 1
 
-[State 0, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-fv =13     ;fv = 
-value = 1.25
-;ignorehitpause = 1
-;persistent = 1
-
 [State -3, Tui Voices]
 type = PlaySnd
 trigger1 = animelem = 7
@@ -1007,37 +1010,6 @@ pausemovetime = 999
 size.xscale = 0.8
 size.yscale = 0.8
 
-[State 630, 2]
-type = HitDef 
-p2facing = 1 
-trigger1 = time = 0
-hitonce = 1
-attr = S, SP
-damage = ceil(cond(fvar(11) *40 < 4, 4, fvar(11) * 40)), 3
-hitflag = MAF
-guardflag = MAF
-;priority = 3
-getpower = (0)*(cond(var(var(3)) = 1, 1, .5))
-pausetime = 12,16
-sparkno = 3
-sparkxy = -30,-45
-hitsound   = 5,4
-guardsound = 6,2
-ground.type = Low
-animtype = back
-ground.slidetime = 14
-ground.hittime  = 33
-ground.velocity = -2,-3
-fall.xvelocity = -2
-fall.yvelocity = -3
-air.velocity = -5,-1
-air.hittime = 34
-fall = 1
- envshake.time = 8
-envshake.freq = 10
-envshake.ampl = 2
-envshake.phase = 1
-
 [State 0, ChangeState]
 type = ChangeState
 trigger1 = animtime = 0
@@ -1056,6 +1028,21 @@ ctrl = 0
 anim = 1018
 sprpriority = 5
 velset = 3,0
+
+[State 200, VarAdd]
+type = ParentVarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 1; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
+
+[State 0, VarAdd]
+type = ParentVarAdd
+trigger1 = movehit
+fv =13     ;fv = 
+value = 1
+persistent = 0
 
 [State 0, VelSet]
 type = VelSet
@@ -1092,13 +1079,6 @@ value=0
 type = AngleDraw
 trigger1 =map(rotate)
 value =-60
-
-;helper damage scaling
-[State 0, ParentVarAdd]
-type = ParentVarAdd
-trigger1 = movehit = 1
-fv = 13
-value = 0.5
 
 ;normal projectiles collide 
 [State 0, HitOverride]
@@ -1147,7 +1127,7 @@ removeongethit = 0
 type = HitDef
 trigger1 = time %5= 0
 attr = S, SP
-damage = ceil(cond(root, fvar(11) * 25< 4, 4, root, fvar(11) * 25)), 3
+damage = ceil(cond(root, fvar(11) * 30< 3, 3, root, fvar(11) * 30)), 3
 hitflag = MAF
 air.animtype = back
 guardflag = MA
@@ -1397,6 +1377,21 @@ anim =1029
 sprpriority = 2
 velset = 3,-4
 
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = .5; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit=1
+fv =13     ;fv = 
+value = .5
+persistent = 0
+
 ;2S explosion removal
 [State 0, RemoveExplod]
 type = RemoveExplod
@@ -1462,7 +1457,7 @@ type = HitDef
 p2facing = 1 
 trigger1 = animelem = 3
 attr = S, SA
-damage = ceil(cond(fvar(11) *60 < 4, 4, fvar(11) * 60)), 5
+damage = ceil(cond(fvar(11) *20 < 2, 2, fvar(11) * 20)), 2
 hitflag = MAF
 guardflag = MAF
 ;priority = 3
@@ -1517,6 +1512,21 @@ anim =1034
 sprpriority = 2
 velset = 4,-6
 
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = .5; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit=1
+fv =13     ;fv = 
+value = .5
+persistent = 0
+
 [State 0, StateTypeSet]
 type = StateTypeSet
 trigger1 = animelem=3
@@ -1566,7 +1576,7 @@ type = HitDef
 p2facing = 1 
 trigger1 = !movecontact
 attr = A, SA
-damage = ceil(cond(fvar(11) *50 < 3, 3, fvar(11) * 50)), 5
+damage = ceil(cond(fvar(11) *80 < 8, 8, fvar(11) * 80)), 8
 hitflag = MAFD
 guardflag = HAFD
 pausetime = 12,12
@@ -1614,6 +1624,21 @@ ctrl = 0
 anim =1030
 sprpriority = 2
 velset = 3,-4
+
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = .5; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit=1
+fv =13     ;fv = 
+value = .5
+persistent = 0
 
 ;2S explosion removal
 [State 0, RemoveExplod]
@@ -1680,7 +1705,7 @@ type = HitDef
 p2facing = 1 
 trigger1 = animelem = 3
 attr = S, SA
-damage = ceil(cond(fvar(11) *60 < 4, 4, fvar(11) * 60)), 5
+damage = ceil(cond(fvar(11) *20 < 2, 2, fvar(11) * 20)), 2
 hitflag = MAF
 guardflag = MAF
 ;priority = 3
@@ -1735,6 +1760,21 @@ anim =1032
 sprpriority = 2
 velset = 3,-4
 
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = .5; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit=1
+fv =13     ;fv = 
+value = .5
+persistent = 0
+
 [State -3, Tui Voices]
 type = PlaySnd
 trigger1 = animelem = 3
@@ -1764,7 +1804,7 @@ type = HitDef
 p2facing = 1 
 trigger1 = animelem = 3
 attr = S, SA
-damage = ceil(cond(fvar(11) *50 < 3, 3, fvar(11) * 50)), 5
+damage = ceil(cond(fvar(11) *80 < 8, 8, fvar(11) * 80)), 8
 hitflag = MAF
 guardflag = HAFD
 ;priority = 3
@@ -1884,6 +1924,21 @@ ctrl = 0
 anim =1035
 sprpriority = 2
 velset = 4,-1
+
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 1
+ignorehitpause = 1
+persistent = 0
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit=1
+fv =13     ;fv = 
+value = 1
+persistent = 0
 
 [State 0, NotHitBy]
 type = NotHitBy
@@ -2328,7 +2383,7 @@ removetime = 0
 
 [State 0, ChangeAnim]
 type = ChangeAnim
-trigger1 = time>=130&&anim!=1044&&animtime=0
+trigger1 = time>=130&&anim!=1044&&animtime=0&&root,!combocount
 value = 1044
 
 [State 0, ChangeState]
@@ -2359,6 +2414,21 @@ ctrl = 0
 anim = 1043
 sprpriority = 5
 velset=0,0
+
+[State 200, VarAdd]
+type = ParentVarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = .5; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
+
+[State 0, VarAdd]
+type = ParentVarAdd
+trigger1 = movehit=1
+fv =13     ;fv = 
+value = .5
+persistent = 0
 
 [State 0, NotHitBy]
 type = NotHitBy
@@ -2625,7 +2695,7 @@ removetime = 0
 
 [State 0, ChangeAnim]
 type = ChangeAnim
-trigger1 = time>=260&&anim!=1044&&animtime=0
+trigger1 = time>=260&&anim!=1044&&animtime=0&&root,!combocount
 value = 1044
 
 [State 0, ChangeState]
@@ -2656,6 +2726,21 @@ ctrl = 0
 anim = 1053
 sprpriority = 5
 velset=0,0
+
+[State 200, VarAdd]
+type = ParentVarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 1; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
+
+[State 0, VarAdd]
+type = ParentVarAdd
+trigger1 = movehit=1
+fv =13     ;fv = 
+value = 1
+persistent = 0
 
 [State 0, NotHitBy]
 type = NotHitBy

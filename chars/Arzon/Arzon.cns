@@ -800,7 +800,7 @@ type = VarAdd
 triggerall = stateno!=[1000,1003]
 triggerall = stateno!=1010
 triggerall = stateno!=1020
-triggerall = stateno!=502
+triggerall = stateno!=502&&stateno!=3501
 triggerall = stateno!=[3000,3001]
 triggerall = stateno!=[1101,1103]
 ;triggerall = stateno!=

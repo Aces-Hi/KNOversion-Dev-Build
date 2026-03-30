@@ -10433,31 +10433,31 @@ ignorehitpause=1
 
 [State 0, RemoveExplod]
 type = RemoveExplod
-trigger1 = enemy,map(cutscene)
+trigger1 = enemy,map(cutscene)||map(cutscene)||root,map(cutscene)
 id = 777
 ignorehitpause=1
 persistent=1
 [State 0, RemoveExplod]
 type = RemoveExplod
-trigger1 = enemy,map(cutscene)
+trigger1 = enemy,map(cutscene)||map(cutscene)||root,map(cutscene)
 id = 778
 ignorehitpause=1
 persistent=1
 [State 0, RemoveExplod]
 type = RemoveExplod
-trigger1 = enemy,map(cutscene)
+trigger1 = enemy,map(cutscene)||map(cutscene)||root,map(cutscene)
 id = 779
 ignorehitpause=1
 persistent=1
 [State 0, RemoveExplod]
 type = RemoveExplod
-trigger1 = enemy,map(cutscene)
+trigger1 = enemy,map(cutscene)||map(cutscene)||root,map(cutscene)
 id = 900
 ignorehitpause=1
 persistent=1
 [State 0, RemoveExplod]
 type = RemoveExplod
-trigger1 = enemy,map(cutscene)
+trigger1 = enemy,map(cutscene)||map(cutscene)||root,map(cutscene)
 id = 7050
 ignorehitpause=1
 persistent=1

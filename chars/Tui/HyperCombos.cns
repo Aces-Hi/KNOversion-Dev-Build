@@ -1894,7 +1894,7 @@ type = Explod
 trigger1 = movehit
 anim = 3021
 ID = 3021
-pos = 0,-60
+pos = 0,-80
 postype = p1  ;p2,front,back,left,right
 facing = 1
 vfacing = 1
@@ -1912,29 +1912,7 @@ ownpal = 0
 removeongethit = 1
 ignorehitpause =1
 persistent=0
-[State 0, Explod]
-type = Explod
-trigger1 = movehit
-anim = 3022
-ID = 3022
-pos = 0,-60
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 0
-vel = 0,0
-accel = 0,0
-random = 0,0
-removetime = -1
-pausemovetime = 0
-scale = .84,.84
-sprpriority = -4
-ontop = 0
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 1
-ignorehitpause =1
-persistent=0
+
 
 [State 0, RemoveExplod]
 type = RemoveExplod
@@ -2072,11 +2050,7 @@ type = RemoveExplod
 trigger1 = animelem=4
 id = 3021
 ignorehitpause = 1
-[State 0, RemoveExplod]
-type = RemoveExplod
-trigger1 = animelem=4
-id = 3022
-ignorehitpause = 1
+
 
 [State 0, AssertSpecial]
 type = MapSet

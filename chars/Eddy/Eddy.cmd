@@ -631,22 +631,24 @@ type = ChangeState
 value = 904
 triggerall = command = "aFF" || (command = "dash"&&teammode!=tag) || (command = "dash"&&teammode=tag && partner,stateno=5150)
 triggerall = command != "holdback"
-triggerall = movehit
+trigger1= movehit
 triggerall = statetype = A
 triggerall = map(dc)=0
 triggerall = map(g2s)=0
 trigger1 = stateno = 1305 || stateno = 1301 || stateno = 1304
+trigger2 = stateno = 1301&&prevstateno=1305&&map(uppermiss)=0
 triggerall=stateno!=[1200,1205]
-[State 100, Forward Dash Cancel]
+[State 100, Back Dash Cancel]
 type = ChangeState
 value = 903
 triggerall = command = "aBB" || (command = "dash"&&teammode!=tag) || (command = "dash"&&teammode=tag && partner,stateno=5150)
 triggerall = command = "holdback"
-triggerall = movehit
+trigger1= movehit
 triggerall = statetype = A
 triggerall = map(dc)=0
 triggerall = map(g2s)=0
 trigger1 = stateno = 1305 || stateno = 1301 || stateno = 1304
+trigger2 = stateno = 1301&&prevstateno=1305&&map(uppermiss)=0
 triggerall=stateno!=[1200,1205]
 
 

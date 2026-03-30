@@ -1427,6 +1427,13 @@ velset = 0,0
 anim =3004
 sprpriority = 16
 
+[State 0, AssertSpecial]
+type = MapSet
+trigger1 = 1
+map = "cutscene"
+value = 2
+ignorehitpause=1
+
 [State 0, BGPalFX]
 type = BGPalFX
 trigger1 = time=0

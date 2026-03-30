@@ -19,12 +19,15 @@ ShadowBComponent = -10
 [Camera]
 startx = 0
 starty = 0
-boundleft = -330
-boundright = 330
+boundleft = -280
+boundright = 280
 boundhigh = -20
 boundlow = 0
 verticalfollow = .1
 tension = 100
+zoomin=1
+zoomout=.9
+autocenter=1
 
 [PlayerInfo]
 p1startx = -70
@@ -72,7 +75,7 @@ spr = falls.sff
 [BG sky]
 type  = normal
 spriteno = 0,6
-start = 0, 0
+start = 0, -10
 delta=0.05,0
 
 [BG clouds]
@@ -155,10 +158,16 @@ id=1
 trans=add
 alpha=256,200
 
+
 [BG ground]
 type  = normal
 spriteno = 0, 2
 start = 0, 0
+[BG ground]
+type  = normal
+spriteno = 0, 2
+start = 0, 50
+
 
 [BGCtrlDef Heaven]
 looptime = -1

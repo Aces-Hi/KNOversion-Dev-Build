@@ -1,4 +1,4 @@
-;Art by J4RMS31
+ceq;Art by J4RMS31
 ;Implementation by Ace's Hi
 
 [Info]
@@ -21,6 +21,9 @@ boundhigh = -20
 boundlow = 0
 verticalfollow = .1
 tension = 100
+zoomin=1
+zoomout=.9
+autocenter=1
 
 [PlayerInfo]
 p1startx = -70

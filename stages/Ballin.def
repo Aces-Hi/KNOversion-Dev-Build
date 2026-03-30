@@ -16,12 +16,16 @@ ShadowBComponent = -15
 [Camera]
 startx = -0
 starty = 0
-boundleft = -315
-boundright = 315
+boundleft = -280
+boundright = 280 
 boundhigh = -20
 boundlow = 0
 verticalfollow = .1
 tension = 100
+zoomin=1
+zoomout=.9
+autocenter=1
+
 
 [PlayerInfo]
 p1startx = -70

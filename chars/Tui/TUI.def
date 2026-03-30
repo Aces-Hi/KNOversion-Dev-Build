@@ -11,7 +11,7 @@ displayname = "TUI" ;Name of character to display
 versiondate = 09,30,2009    ;Version date of character (MM-DD-YYYY or X.XX)
 mugenversion = 1.0          ;Version of M.U.G.E.N character works on (X.XX)
 ikemenversion = 0.99
-author = "Animated by Dillonator13 | Programmed by Taffy, Z, Bonehouse and Ace"         ;Character author nam
+author = "Animated by Dillonator13, J4RMS31, and Ace | Programmed by Taffy, Z, Bonehouse, and Ace" 
 pal.defaults = 1,2,3,4      ;Default palettes in order of preference (up to 4)
 localcoord = 280,240        ;Local coordinate space width and height
 

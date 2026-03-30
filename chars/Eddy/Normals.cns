@@ -987,7 +987,7 @@ ignorehitpause = 1
 type = VarAdd
 trigger1 = movehit
 fv =13     ;fv = 
-value = 3
+value = 2
 ignorehitpause=1
 persistent=0
 

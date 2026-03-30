@@ -23,6 +23,7 @@ var(1) = 1
 [State Divekick Super]
 type = ChangeState
 value = 3000
+triggerall = map(phoenix)=0
 triggerall = roundstate = 2 ;only attack during the round
 triggerall = command = "QCF"
 triggerall = power >= 2000
@@ -37,6 +38,7 @@ trigger5 = stateno = 1033 && movecontact ;&& enemynear, movetype = H
 [State Fireball Super]
 type = ChangeState
 value = 3100
+triggerall = map(phoenix)=0
 triggerall = roundstate = 2 ;only attack during the round
 triggerall = command = "QCB"
 triggerall = power >= 2000
@@ -52,6 +54,7 @@ trigger5 = stateno = 1033 && movecontact ;&& enemynear, movetype = H
 [State Hellzone Super]
 type = ChangeState
 value = 3500
+triggerall = map(phoenix)=0
 triggerall = roundstate = 2 ;only attack during the round
 triggerall = command = "QCB"
 triggerall = power >= 2000
@@ -73,6 +76,30 @@ triggerall = roundstate = 2 ;only attack during the round
 triggerall = command = "QCB"
 triggerall = statetype != A
 triggerall = numhelper(3500)||numhelper(3501)||numhelper(3502)||numhelper(3503)||numhelper(3504)
+trigger1 = ctrl
+trigger2 = hitdefattr = SCA, NA, SA
+trigger2 = stateno != [3000,3600)
+trigger2 = movecontact ;&& enemynear, movetype = H
+trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
+trigger4 = stateno = 1030 && movecontact ;&& enemynear, movetype = H
+trigger5 = stateno = 1033 && movecontact ;&& enemynear, movetype = H
+
+
+[State Manual Install FOR TESTING PURPOSES ONLY]
+type = ChangeState
+value = 4000
+triggerall = roundstate = 2 ;only attack during the round
+triggerall = command = "QCBs"
+triggerall = statetype != A
+triggerall = map(phoenix)=0
+trigger1 = ctrl
+
+[State Final Divekick Super]
+type = ChangeState
+value = 4100
+triggerall = map(phoenix)=1
+triggerall = roundstate = 2 ;only attack during the round
+triggerall = command = "QCF"
 trigger1 = ctrl
 trigger2 = hitdefattr = SCA, NA, SA
 trigger2 = stateno != [3000,3600)
@@ -183,7 +210,7 @@ type = ChangeState
 value = 1050
 triggerall=map(EXLimiter4)=0
 triggerall = command = "EX"
-triggerall = power>=1000
+triggerall = power>=1000||map(phoenix)=0
 triggerall = command != "holddown"
 triggerall = command != "holdfwd"
 triggerall = command != "holdback"
@@ -208,7 +235,7 @@ type = ChangeState
 value = 1055
 triggerall=map(EXLimiter4)=0
 triggerall = command = "EX"
-triggerall = power>=1000
+triggerall = power>=1000||map(phoenix)=0
 triggerall = command != "holddown"
 triggerall = command != "holdfwd"
 triggerall = command != "holdback"
@@ -221,7 +248,7 @@ type = ChangeState
 value = 1005
 triggerall=map(EXLimiter1)=0
 triggerall = roundstate = 2 ;only attack during the round
-triggerall = power>1000
+triggerall = power>=1000||map(phoenix)=0
 triggerall = command = "EX"
 triggerall = command = "holddown"
 triggerall = stateno != 1020
@@ -253,7 +280,7 @@ value = 1016
 triggerall=map(EXLimiter2)=0
 triggerall = numhelper(1013)=0
 triggerall = roundstate = 2 ;only attack during the round
-triggerall = power>1000
+triggerall = power>=1000||map(phoenix)=0
 triggerall = command="holdback" 
 triggerall = command != "holddown"
 triggerall = command = "EX"
@@ -277,7 +304,7 @@ value = 1022
 triggerall=map(EXLimiter2)=0
 triggerall = numhelper(1013)=0
 triggerall = roundstate = 2 ;only attack during the round
-triggerall = power>1000
+triggerall = power>=1000||map(phoenix)=0
 triggerall = command="holdback" 
 triggerall = command != "holddown"
 triggerall = command = "EX"
@@ -289,7 +316,7 @@ trigger2 = var(1)
 type = ChangeState
 value = 1035
 triggerall=map(EXLimiter3)=0
-triggerall = power>1000
+triggerall = power>=1000||map(phoenix)=0
 triggerall = command = "holdfwd"
 triggerall = command = "EX"
 trigger1 = ctrl

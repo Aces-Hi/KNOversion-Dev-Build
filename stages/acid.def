@@ -27,6 +27,9 @@ boundhigh = -20
 boundlow = 0
 verticalfollow = .1
 tension = 100
+zoomin=1
+zoomout=.9
+autocenter=1
 
 [PlayerInfo]
 p1startx = -70
@@ -113,6 +116,13 @@ spriteno = 0,25
 delta=.6,0.1
 velocity=2,0
 tile=1,0
+start=0,-30
+[BG mclouds]
+type  = normal
+spriteno = 0,25
+delta=.6,0.1
+velocity=2,0
+tile=1,0
 start=0,-5
 
 [BG fcity]
@@ -127,6 +137,14 @@ velocity=4,0
 tile=1,0
 delta=0,.3
 start=0,-10
+[BG fclouds]
+type  = normal
+spriteno = 0,25
+velocity=-4,0
+tile=1,0
+delta=0,.3
+start=0,-45
+
 [BG IDK]
 type  = normal
 spriteno = 0,15

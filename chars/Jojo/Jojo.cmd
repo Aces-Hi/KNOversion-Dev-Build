@@ -556,7 +556,7 @@ triggerall = command = "y"
 triggerall = command = "holddown"
 triggerall = statetype != A
 trigger1 = ctrl
-trigger2 = stateno=400||stateno=210||stateno=211
+trigger2 = stateno=400||stateno=210
 trigger2 = prevstateno!=700&&movecontact
 trigger2 = prevstateno!=410&&movecontact
 trigger3 = stateno=200||stateno=202||stateno=203||stateno=201

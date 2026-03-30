@@ -27,6 +27,9 @@ boundhigh = -40
 boundlow = 0
 verticalfollow = .1
 tension = 200
+zoomin=1
+zoomout=.9
+autocenter=1
 
 [PlayerInfo]
 ;--- Player 1 ---
@@ -76,16 +79,7 @@ spr = aegis2.sff
 [BG ground]
 type  = normal
 spriteno = 0, 6
-start = 160, 0
-delta = 0.1, 0.1
-mask = 1
-velocity = 0, 0
-tile = 1, 0
-tilespacing = 0, 0
-[BG ground]
-type  = normal
-spriteno = 0, 6
-start = 60, 0
+start = 60, -20
 delta = 0.1, 0.1
 mask = 1
 velocity = 0, 0
@@ -173,7 +167,7 @@ tilespacing = 0, 0
 [BG ground]
 type  = normal
 spriteno = 0, 4
-start = 60, 90
+start = 70, 90
 delta = 0.9, 0.9
 mask = 1
 velocity = 0, 0
@@ -191,16 +185,6 @@ tile = 1, 0
 id=1
 trans=add
 alpha=256,200
-
-[BG ground]
-type  = normal
-spriteno = 0, 10
-start = 280, 76
-delta = 0.9, 0.9
-mask = 1
-velocity = 0, 0
-tile = 0, 0
-tilespacing = 0, 0
 
 [BG ground]
 type  = normal

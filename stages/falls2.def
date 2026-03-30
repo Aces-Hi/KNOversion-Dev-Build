@@ -15,12 +15,15 @@ ShadowBComponent = -6
 [Camera]
 startx = 0
 starty = 0
-boundleft = -330
-boundright = 330
+boundleft = -300
+boundright = 300
 boundhigh = -20
 boundlow = 0
 verticalfollow = .1
 tension = 100
+zoomin=1
+zoomout=.9
+autocenter=1
 
 [PlayerInfo]
 p1startx = -70
@@ -92,6 +95,14 @@ type  = normal
 spriteno = 1,1
 start = 0, 0
 velocity=-.26,0
+tile=1,0
+delta=0.15,0
+
+[BG mclouds]
+type  = normal
+spriteno = 1,2
+start = 0, -30
+velocity=.26,0
 tile=1,0
 delta=0.15,0
 
@@ -171,6 +182,10 @@ alpha=256,200
 type  = normal
 spriteno = 0, 2
 start = 0, 0
+[BG ground]
+type  = normal
+spriteno = 0, 2
+start = 0, 50
 
 [BGCtrlDef Heaven]
 looptime = -1

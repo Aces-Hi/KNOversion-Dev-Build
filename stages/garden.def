@@ -13,12 +13,15 @@ ShadowBComponent = 0
 [Camera]
 startx = 0
 starty = 0
-boundleft = -152
-boundright = 152
+boundleft = -130
+boundright = 130
 boundhigh = -20
 boundlow = 0
 verticalfollow = .1
 tension = 100
+zoomin=1
+zoomout=.9
+autocenter=1
 
 [PlayerInfo]
 p1startx = -70
@@ -61,6 +64,7 @@ spr = stages/garden.sff
 [BG sky]
 type=normal
 spriteno=0,3
+start=0,-20
 delta=.05,.05
 
 [BG clouds]
@@ -114,6 +118,11 @@ alpha=256,100
 type=normal
 spriteno=0,4
 
+[BG bricks]
+type=normal
+spriteno=100,1
+start=0,-185
+
 [BG ground]
 type=anim
 actionno=1
@@ -121,7 +130,8 @@ actionno=1
 [BG leaves]
 type=anim
 actionno = 3
-start=0,-6
+start=70,-25
+delta = 1,0
 
 [BG temple]
 type=normal
@@ -130,8 +140,12 @@ start=0,-5
 [BG bricks]
 type=normal
 spriteno=0,5
-window = 0,163,360,360
 yscale=1.5
+
+[BG bricks]
+type=normal
+spriteno=100,0
+start=0,164
 
 [BGCtrlDef Heaven]
 looptime = -1

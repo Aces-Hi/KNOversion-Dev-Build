@@ -1432,6 +1432,13 @@ juggle = 0
 ctrl = 0
 velset = 0,0
 
+[State 0, AssertSpecial]
+type = MapSet
+trigger1 = anim=3052
+map = "cutscene"
+value = 2
+ignorehitpause=1
+
 [State 0, VarAdd]
 type = mapset
 trigger1 = 1

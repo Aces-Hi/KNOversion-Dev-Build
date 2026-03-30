@@ -28,6 +28,9 @@ boundhigh = -20
 boundlow = 0
 verticalfollow = .1
 tension = 100
+zoomin=1
+zoomout=.9
+autocenter=1
 
 [PlayerInfo]
 p1startx = -70
@@ -83,6 +86,13 @@ delta=.1,.1
 [BG bclouds]
 type  = normal
 spriteno = 0, 1
+start = 0, -10
+delta=.1,.1
+velocity=.3,0
+tile=1,0
+[BG bclouds]
+type  = normal
+spriteno = 0, 1
 start = 0, 0
 delta=.1,.1
 velocity=.3,0
@@ -94,6 +104,22 @@ spriteno = 0, 2
 start = 0, -5
 delta=.15,.15
 velocity=-.3,0
+tile=1,0
+
+[BG bclouds]
+type  = normal
+spriteno = 0, 1
+start = 100,-30
+delta=.1,.1
+velocity=.4,0
+tile=1,0
+
+[BG clouds]
+type  = normal
+spriteno = 0, 2
+start = -100, -30
+delta=.15,.15
+velocity=-.4,0
 tile=1,0
 
 [BG brocks]
@@ -168,6 +194,10 @@ alpha=256,200
 type  = normal
 spriteno = 0, 4
 start = 0, 0
+[BG ground]
+type  = normal
+spriteno = 0, 4
+start = 0, 55
 
 [BG rain]
 type  = anim

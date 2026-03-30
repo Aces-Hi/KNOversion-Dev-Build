@@ -222,10 +222,9 @@ trigger1 = hitdefattr = A,NA
 [State 5S]
 type = ChangeState
 value = 1000
-triggerall=map(ggta)=0
-trigger1 = command = "nobuffer_b"
+trigger1 = command = "b"
 triggerall = command != "EX"
-triggerall = command != "QCFs"&&command != "QCBs"
+triggerall = command != "QCBs"
 triggerall = command !="holddown"
 triggerall = command !="holdfwd"
 triggerall = command !="holdback"
@@ -237,8 +236,8 @@ triggerall = var(1)
 type = ChangeState
 value = 1100
 triggerall=map(EXLimiter1)=0
-triggerall = command = "nobuffer_EX"
-triggerall = command != "QCFs"&&command != "QCBs"
+triggerall = command = "EX"
+triggerall = command != "QCBs"
 triggerall = power>=1000
 triggerall = command !="holddown"
 triggerall = command !="holdfwd"
@@ -247,81 +246,28 @@ triggerall = statetype != A
 trigger1 = var(1)
 
 ;---------------------------------------------------------------------------
-[State j5S]
+[State 4S]
 type = ChangeState
 value = 1200
 triggerall = command = "b"
+triggerall = command != "QCBs"
 triggerall = command != "EX"
+triggerall = command ="holdback"
 triggerall = command !="holddown"
-triggerall = command !="holdfwd"
-triggerall = command !="holdback"
-triggerall = statetype = A
-triggerall = var(1)
-trigger1= numhelper(1210)=0&&numhelper(1310)=0
-trigger2= numhelper(1210)>0||numhelper(1310)>0
-trigger2= helper(1210),stateno!=[1220,1221]&&helper(1310),stateno!=[1320,1321]
+triggerall = statetype != A
+trigger1 = var(1)
+
 ;---------------------------------------------------------------------------
-[State EX j5S]
+[State EX 4S]
 type = ChangeState
 value = 1300
 triggerall=map(EXLimiter2)=0
 triggerall = command = "EX"
+triggerall = command != "QCBs"
 triggerall = power>=1000
 triggerall = command !="holddown"
-triggerall = command !="holdfwd"
-triggerall = command !="holdback"
-triggerall = statetype = A
-triggerall = var(1)
-trigger1= numhelper(1210)=0&&numhelper(1310)=0
-trigger2= numhelper(1210)>0||numhelper(1310)>0
-trigger2= helper(1210),stateno!=[1220,1221]&&helper(1310),stateno!=[1320,1321]
-
-;---------------------------------------------------------------------------
-[State 6S]
-type = ChangeState
-value = 1400
-triggerall = command = "b"
-triggerall = command != "QCFs"&&command != "QCBs"
-triggerall = command != "EX"
-triggerall = command ="holdfwd"||command ="holdback"
-triggerall = command !="holddown"
+triggerall = command ="holdback"
 triggerall = statetype != A
-trigger1 = var(1)
-
-[State j6S]
-type = ChangeState
-value = 1401
-triggerall = command = "b"
-triggerall = command != "EX"
-triggerall = command ="holdfwd"||command ="holdback"
-triggerall = command !="holddown"
-triggerall = statetype = A
-trigger1 = var(1)
-
-;---------------------------------------------------------------------------
-[State EX 6S]
-type = ChangeState
-value = 1500
-triggerall = power>=1000
-triggerall=map(EXLimiter3)=0
-triggerall = command = "EX"
-triggerall = command != "QCFs"&&command != "QCBs"
-triggerall = command ="holdfwd"||command ="holdback"
-triggerall = command !="holddown"
-triggerall = statetype != A
-triggerall = numhelper(1410)=0
-trigger1 = var(1)
-
-[State EX j6S]
-type = ChangeState
-value = 1501
-triggerall = power>=1000
-triggerall=map(EXLimiter3)=0
-triggerall = command = "EX"
-triggerall = command ="holdfwd"||command ="holdback"
-triggerall = command !="holddown"
-triggerall = statetype = A
-triggerall = numhelper(1410)=0
 trigger1 = var(1)
 
 ;---------------------------------------------------------------------------
@@ -330,7 +276,7 @@ type = ChangeState
 value = 1600
 triggerall = command = "b"
 triggerall = command != "EX"
-triggerall = command != "QCFs"&&command != "QCBs"
+triggerall = command != "QCBs"
 triggerall = command ="holddown"
 triggerall = statetype != A
 trigger1 = var(1)
@@ -341,30 +287,35 @@ value = 1700
 triggerall=map(EXLimiter4)=0
 triggerall = power>=1000
 triggerall = command = "EX"
-triggerall = command != "QCFs"&&command != "QCBs"
+triggerall = command != "QCBs"
 triggerall = command ="holddown"
 triggerall = statetype != A
 trigger1 = var(1)
 
 ;---------------------------------------------------------------------------
-[State j2S]
+[State 6S]
 type = ChangeState
-value = 1800
+value = 1400
 triggerall = command = "b"
+triggerall = command != "QCBs"
 triggerall = command != "EX"
-triggerall = command ="holddown"
-triggerall = statetype = A
+triggerall = command ="holdfwd"
+triggerall = command !="holddown"
+triggerall = statetype != A
 trigger1 = var(1)
 
 ;---------------------------------------------------------------------------
-[State EX j2S]
+[State EX 6S]
 type = ChangeState
-value = 1900
+value = 1500
 triggerall = power>=1000
-triggerall=map(EXLimiter5)=0
+triggerall=map(EXLimiter3)=0
 triggerall = command = "EX"
-triggerall = command ="holddown"
-triggerall = statetype = A
+triggerall = command != "QCBs"
+triggerall = command ="holdfwd"
+triggerall = command !="holddown"
+triggerall = statetype != A
+triggerall = numhelper(1410)=0
 trigger1 = var(1)
 
 ;---------------------------------------------------------------------------

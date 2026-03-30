@@ -3293,7 +3293,13 @@ type = VelAdd
 trigger1 = 1
 y = GetHitVar(yaccel)
 
-
+[State 0, 4] ;Are you dead?
+type =selfstate
+trigger1 = !alive
+trigger1 = Pos Y >=0&&time=0&&prevstateno!=5050&&prevstateno!=5030
+value = 6150
+ctrl = 0
+ignorehitpause=1
 
 [State 5050, 6]
 type = selfstate
@@ -3803,6 +3809,14 @@ ctrl = 0
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
+
+[State 0, AssertSpecial]
+type = selfstate
+trigger1 = name="Tui"&&power>=6000&&life<=1
+trigger1 = time >= 30
+value=4000
+ignorehitpause = 1
+persistent = 1
 
 
 [State 1000, 0]
@@ -10289,6 +10303,88 @@ ignorehitpause = 1
 persistent = 1
 ;===============================================================================
 
+;===============================================================================
+; Phoenix Revival
+;===============================================================================
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = name="Tui"&&power>=6000
+flag = noko
+ignorehitpause = 1
+persistent = 1
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = enemy,name="Tui"&&enemy,power>=6000&&enemy,life<=1&&enemy,map(phoenix)=0
+flag = noinput
+flag2 = nomusic
+flag3 = timerfreeze
+ignorehitpause = 1
+persistent = 1
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = name="Tui"&&power>0&&map(phoenix)
+flag = timerfreeze
+flag2 = noko
+ignorehitpause = 1
+persistent = 1
+
+[State 0, LifeSet]
+type = LifeSet
+trigger1 = name="Tui"&&power>0&&map(phoenix)
+value = 1
+ignorehitpause = 1
+persistent = 1
+
+[State 0, LifeSet]
+type = LifeSet
+trigger1 = name="Tui"&&power<=0&&map(phoenix)
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = name="Tui"&&power>0&&map(phoenix)
+flag = nohitdamage
+flag2 = noguarddamage
+ignorehitpause = 1
+persistent = 1
+
+[State 0, PowerAdd]
+type = PowerAdd
+trigger1 = name="Tui"&&map(phoenix)&&stateno!=4000
+value = -3
+ignorehitpause = 1
+persistent = 1
+[State 0, PowerAdd]
+type = PowerAdd
+trigger1 = name="Tui"&&map(phoenix)&&stateno!=4000
+trigger1 = movetype=H
+value = -3
+ignorehitpause = 1
+persistent = 1
+
+[State consequences.]
+type = mapset
+trigger1 = name="Tui"&&map(phoenix)
+map = "hardlimit"
+value = 1
+ignorehitpause=1
+persistent=1
+
+[State 0, AssertSpecial]
+type = MapSet
+trigger1 = roundstate!=2
+map = "phoenix"
+value = 0
+ignorehitpause=1
+
+;===============================================================================
+
+
 [State 0, RemapPal]
 type = RemapPal
 triggerall = name = "Roger"
@@ -10328,58 +10424,40 @@ flag = noinput
 flag2=noturntarget
 ignorehitpause = 1
 
+[State 0, AssertSpecial]
+type = MapAdd
+trigger1 = map(cutscene)>0
+map = "cutscene"
+value = -1
+ignorehitpause=1
+
 [State 0, RemoveExplod]
 type = RemoveExplod
-trigger1=enemy,name="Angous"
-trigger1 = enemy,stateno = 3016
-trigger2=enemy,name="Z"
-trigger2 = enemy,stateno = 3051&&enemynear,anim=3052
-trigger3=enemy,name="Deus"
-trigger3 = enemynear,stateno = 3002&&enemynear,anim=3002
+trigger1 = enemy,map(cutscene)
 id = 777
 ignorehitpause=1
 persistent=1
 [State 0, RemoveExplod]
 type = RemoveExplod
-trigger1=enemy,name="Angous"
-trigger1 = enemy,stateno = 3016
-trigger2=enemy,name="Z"
-trigger2 = enemy,stateno = 3051&&enemynear,anim=3052
-trigger3=enemy,name="Deus"
-trigger3 = enemynear,stateno = 3002&&enemynear,anim=3002
+trigger1 = enemy,map(cutscene)
 id = 778
 ignorehitpause=1
 persistent=1
 [State 0, RemoveExplod]
 type = RemoveExplod
-trigger1=enemy,name="Angous"
-trigger1 = enemy,stateno = 3016
-trigger2=enemy,name="Z"
-trigger2 = enemy,stateno = 3051&&enemynear,anim=3052
-trigger3=enemy,name="Deus"
-trigger3 = enemynear,stateno = 3002&&enemynear,anim=3002
+trigger1 = enemy,map(cutscene)
 id = 779
 ignorehitpause=1
 persistent=1
 [State 0, RemoveExplod]
 type = RemoveExplod
-trigger1=enemy,name="Angous"
-trigger1 = enemy,stateno = 3016
-trigger2=enemy,name="Z"
-trigger2 = enemy,stateno = 3051&&enemynear,anim=3052
-trigger3=enemy,name="Deus"
-trigger3 = enemynear,stateno = 3002&&enemynear,anim=3002
+trigger1 = enemy,map(cutscene)
 id = 900
 ignorehitpause=1
 persistent=1
 [State 0, RemoveExplod]
 type = RemoveExplod
-trigger1=enemy,name="Angous"
-trigger1 = enemy,stateno = 3016
-trigger2=enemy,name="Z"
-trigger2 = enemy,stateno = 3051&&enemynear,anim=3052
-trigger3=enemy,name="Deus"
-trigger3 = enemynear,stateno = 3002&&enemynear,anim=3002
+trigger1 = enemy,map(cutscene)
 id = 7050
 ignorehitpause=1
 persistent=1
@@ -10493,6 +10571,7 @@ triggerall=map(afterparry)=0
 trigger1 = combocount=0
 trigger2 = roundstate=0
 trigger3=stateno=[910,911]
+triggerall=map(phoenix)=0
 map = "hardlimit"
 value = 0
 ignorehitpause=1

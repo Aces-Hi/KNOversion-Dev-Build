@@ -91,37 +91,6 @@ triggerall = stateno != 4000
 
 ;---------------------------------------------------------------------------
 
-[State -1, Burst]
-type = ChangeState
-value = 900
-triggerall = alive
-triggerall = statetype != L
-triggerall = map(burst)=0
-triggerall = command = "burst"
-triggerall = movetype = H 
-triggerall = stateno!=[140,160]
-;Average battle
-trigger1 = enemynear,hitdefattr = SCA, NA, SA, NP, SP
-;Wu support
-trigger2 = enemynear, numhelper(777)
-trigger2 = enemynear, hitdefattr != SCA, HA, HP, NT, ST, HT
-[State -1, Panic Burst]
-type = ChangeState
-value = 901
-triggerall = alive
-triggerall = statetype != L
-triggerall = map(burst)=1
-triggerall = map(panic)=0
-triggerall = power>=4000
-triggerall = command = "burst"
-triggerall = movetype = H 
-triggerall = stateno!=[140,160]
-;Average battle
-trigger1 = enemynear,hitdefattr = SCA, NA, SA, NP, SP
-;Wu support
-trigger2 = enemynear, numhelper(777)
-trigger2 = enemynear, hitdefattr != SCA, HA, HP, NT, ST, HT
-
 ;[State -1, SuperJump]
 ;type = ChangeState
 ;value = 4000
@@ -321,7 +290,7 @@ triggerall = command = "b" && command="holdback"
 triggerall=command!="c"
 trigger1 = statetype != A
 trigger1 = ctrl
-
+trigger2 = var(1)
 ;-------------------------------------------------------------------------
 
 [State -1, j5S: (Air) Rayzah]

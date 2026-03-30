@@ -288,48 +288,6 @@ trigger2=stateno=[600,650]&&movecontact
 
 [State -1, EX 6S: Brawler Rush]
 type = ChangeState
-value = 90022
-triggerall=map(EXLimiter7)=0
-triggerall=stateno!=40
-triggerall = power>=1000
-triggerall = var(3)<=0
-triggerall = var(28) = 1
-triggerall = stateno != 230
-triggerall = stateno != 431
-triggerall = stateno != 225
-triggerall = stateno != 229
-triggerall = command = "EX"
-triggerall = command = "holddown"
-triggerall = command = "holdfwd"
-triggerall = statetype != A
-trigger1 = ctrl
-trigger2 = var(1)
-;trigger3 = (stateno = [600,640]) 
-;trigger3 = movecontact
-
-[State -1, EX 6S: Brawler Rush]
-type = ChangeState
-value = 90011
-triggerall=map(EXLimiter8)=0
-triggerall=stateno!=40
-triggerall = power>=1000
-triggerall = var(3)<=0
-triggerall = var(28) = 1
-triggerall = stateno != 230
-triggerall = stateno != 431
-triggerall = stateno != 225
-triggerall = stateno != 229
-triggerall = command = "EX"
-triggerall = command = "holddown" 
-triggerall = command = "holdback"
-triggerall = statetype != A
-trigger1 = ctrl 
-trigger2 = var(1) 
-;trigger3 = (stateno = [600,640]) 
-;trigger3 = movecontact
-
-[State -1, EX 6S: Brawler Rush]
-type = ChangeState
 value = 9000
 triggerall=map(EXLimiter2)=0
 triggerall=stateno!=40

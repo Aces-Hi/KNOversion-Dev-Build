@@ -4,6 +4,7 @@ type = S
 physics = S
 sprpriority = 0
 
+
 [State 0, VarSet]
 type = VarSet
 trigger1 = var(59)!=[1,4]

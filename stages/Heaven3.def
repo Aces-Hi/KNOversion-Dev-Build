@@ -11,15 +11,17 @@ ShadowGComponent = 0
 ShadowBComponent = -10
 
 [camera]
-startx 		= 0
-starty 		= 0
-boundleft 	= -200
-boundright 	= 200
+startx 	= 0
+starty 	= 0
+boundleft 	= -189
+boundright 	= 189
 boundhigh = -20
 boundlow = 0
 verticalfollow = .1
 tension = 100
-
+zoomin=1
+zoomout=.9
+autocenter=1
 ;--------------------------------------------------------
 [playerinfo]
 p1startx = -70          ;starting x coordinates
@@ -46,8 +48,8 @@ botscale = 1.2     ;scale to use at bottom
 
 ;--------------------------------------------------------
 [bound]
-screenleft = 15    ;dist from left of screen that player can move to
-screenright = 15   ;right edge
+screenleft = 15  ;dist from left of screen that player can move to
+screenright = 15  ;right edge
 
 ;--------------------------------------------------------
 [stageinfo]

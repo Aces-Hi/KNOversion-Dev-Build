@@ -29,7 +29,10 @@ boundright 	= 220
 boundhigh = -20
 boundlow = 0
 verticalfollow = .1
-tension = 100e
+tension = 100
+zoomin=1
+zoomout=.9
+autocenter=1
 
 ;--------------------------------------------------------
 [playerinfo]
@@ -136,7 +139,7 @@ layerno = 0
 [bg suelo]
 type = normal
 spriteno = 0,5
-start = -50, 200
+start = -50, 190
 delta = 0.1,0.1
 tile = 0,0
 mask = 1
@@ -194,7 +197,7 @@ layerno = 0
 [BG tero3]
 type = anim
 actionno = 1
-start = 0,130
+start = 0,140
 delta = 0.3,0.6
 layerno = 0
 
@@ -202,13 +205,13 @@ layerno = 0
 [BG tero3]
 type = anim
 actionno = 4
-start = 90,130
+start = 110,140
 delta = 0.3,0.7
 layerno = 0
 [BG tero3]
 type = anim
 actionno = 12
-start = 90,130
+start = 110,140
 delta = 0.3,0.7
 layerno = 0
 
@@ -295,19 +298,19 @@ alpha = 1,1
 [BG tero3]
 type = anim
 actionno = 2
-start = 0,130
+start = 20,130
 delta = 1,1
 layerno = 0
 [BG tero3]
 type = anim
 actionno = 8
-start = 0,130
+start = 20,130
 delta = 1,1
 layerno = 0
 [BG tero3]
 type = anim
 actionno = 9
-start = 0,130
+start = 20,130
 delta = 1,1
 layerno = 0
 

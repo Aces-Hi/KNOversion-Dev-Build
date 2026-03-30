@@ -25,15 +25,15 @@ _D	_D		_D
 
 	<#19cf2c>SPECIAL MOVES</>
 BOLT PRIMER	-		<#aaffff>(GROUND OR AIR)</> ^Y
-   <#bbbbbb>Using this move gives you a Z Charge.</>
+   <#bbbbbb>Using this move gives you a <#19cf2c>Z Charge<#bbbbbb>.</>
 BOLT SHOT	-		<#aaffff>(GROUND OR AIR)</> ^Y
-   <#bbbbbb>This move requires a Z Charge to use.
+   <#bbbbbb>This move requires a <#19cf2c>Z Charge<#bbbbbb> to use.
    Air version can be canceled into _F^Y on hit.</>
 STATIC WAVE	-		_F^Y
 _!DETONATE	-		^Y
 THUNDER CRASH	-		<#65b5ff>(AIR ONLY)</> _F^Y
 CAPACITOR TURNOUT	-		<#aaffff>(GROUND OR AIR)</> _B^Y
-   <#bbbbbb>A Z charge can be used to cast this move a second time.
+   <#bbbbbb>A <#19cf2c>Z charge<#bbbbbb> can be used to cast this move a second time.
    Crumples on counter-hit.</>
 BREWING SHOCKWAVE	-		_D^Y
    <#bbbbbb>A counter. Does not beat projectiles or grabs.
@@ -52,10 +52,10 @@ SONIC JUMP	-		^Z/_D^Z
    <#bbbbbb>Holding down makes Z jump lower.
    This move launches enemies during combos.</>
 STATIC HOVER	-		<#65b5ff>(AIR ONLY)</> (HOLD) ^Z
-   <#bbbbbb>This move requires Volt Bar to use.</>
+   <#bbbbbb>This move requires <#19cf2c>Volt Bar<#bbbbbb> to use.
+   You can input any direction during this move to fly.</>
 IMPETUS SURGE	-		<#65b5ff>(AIR ONLY)</> (ANY DIRECTION)+^Z
-   <#bbbbbb>This move requires Volt Bar to use.</>
-
+   <#bbbbbb>This move requires <#19cf2c>Volt Bar<#bbbbbb> to use.</>
 
 
 
@@ -73,10 +73,10 @@ _D	_D		_D
 
 	<#ffef0f>EX MOVES</>
 _EX BOLT PRIMER	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> ^Y+^Z
-   <#bbbbbb>Using this move gives you a Z Charge and
-   refills the Volt Bar.</>
+   <#bbbbbb>Using this move gives you a <#19cf2c>Z Charge<#bbbbbb> and
+   refills the <#19cf2c>Volt Bar<#bbbbbb>.</>
 _EX BOLT SHOT	-		<#aaffff>(GROUND OR AIR)<#55ffff>(1 BAR)</> ^Y+^Z
-   <#bbbbbb>This move requires a Z Charge to use.
+   <#bbbbbb>This move requires a <#19cf2c>Z Charge<#bbbbbb> to use.
    Air version can be canceled into _F^Y on hit.</>
 _EX STATIC WAVE	-		<#55ffff>(1 BAR)</> _F^Y+^Z
 _!DETONATE	-		<#aaffff>(GROUND OR AIR)</> _F^Y+^Z

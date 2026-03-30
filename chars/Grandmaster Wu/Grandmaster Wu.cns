@@ -829,16 +829,10 @@ ignorehitpause = 1
 
 [State 0, RemoveExplod]
 type = RemoveExplod
-trigger1 = roundstate!=2
+Trigger1 = RoundState != 2
 trigger2 = winko
-trigger3=enemy,name="Angous"
-trigger3 = enemy,stateno = 3016
-
-trigger4=enemy,name="Z"
-trigger4 = enemy,stateno = 3051&&enemynear,anim=3052
-
-trigger5=enemy,name="Deus"
-trigger5 = enemynear,stateno = 3002&&enemynear,anim=3002
+trigger3 = enemy,map(cutscene)||root,map(cutscene)||map(cutscene)
+trigger4=root,!alive
 ID = 7050
 ignorehitpause=1
 persistent=1

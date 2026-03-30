@@ -908,6 +908,20 @@ velset =0,0
 sprpriority = -1
 anim=3008
 
+[State 0, AssertSpecial]
+type = MapSet
+trigger1 = anim=3002
+map = "cutscene"
+value = 2
+ignorehitpause=1
+
+[State 0, ScreenBound]
+type = ScreenBound
+trigger1 = 1
+value = 1
+movecamera = 1,0
+ignorehitpause = 1
+
 [State Voice From Above]
 type = PlaySnd
 triggerall=map(december)=0

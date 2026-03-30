@@ -19,12 +19,16 @@ ShadowBComponent = -6
 [Camera]
 startx = 0
 starty = 0
-boundleft = -150
-boundright = 150
+boundleft = -130
+boundright = 130
 boundhigh = -20
 boundlow = 0
 verticalfollow = .1
 tension = 100
+zoomin=1
+zoomout=.9
+autocenter=1
+
 
 [PlayerInfo]
 ;--- Player 1 ---
@@ -52,7 +56,7 @@ topscale = 1
 botscale = 1.2     
 
 [Bound]
-screenleft = 15   
+screenleft = 15 
 screenright = 15
 
 [StageInfo]
@@ -78,8 +82,8 @@ debugbg = 0
 [BG sky]
 type  = normal
 spriteno = 0, 8
-start = 0, 380
-delta = 0.1, 0.1
+start = 0, 350
+delta = 0.02, 0.02
 mask = 1
 velocity = 0, 0
 tile = 0, 0

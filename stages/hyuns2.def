@@ -13,12 +13,15 @@ ShadowBComponent = -5
 [Camera]
 startx = 0
 starty = 0
-boundleft = -152
-boundright = 152
+boundleft = -142
+boundright = 142
 boundhigh = -20
 boundlow = 0
 verticalfollow = .1
 tension = 100
+zoomin=1
+zoomout=.9
+autocenter=1
 
 [PlayerInfo]
 p1startx = -70
@@ -76,7 +79,8 @@ trans = add
 [BG mountains]
 type  = normal
 spriteno = 0,6
-delta=.15,0.2
+start=-20,0
+delta=.1,0.2
 
 [BG clouds]
 type  = normal

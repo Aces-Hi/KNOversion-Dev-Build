@@ -1576,8 +1576,8 @@ value =4
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "grabc %f"
-params = Map(gcounter)
+text = "dc%f g2s%f"
+params = Map(dc),map(g2s)
 
 ;This controller plays a sound everytime KFM lands from a jump, or
 ;from his back-dash.

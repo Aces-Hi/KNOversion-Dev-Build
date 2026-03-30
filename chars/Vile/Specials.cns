@@ -4477,6 +4477,15 @@ ctrl = 0
 anim = 1050
 sprpriority = 2
 
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = !combocount&&prevmovetype=A
+trigger1 = animelem=5&&time<22
+value = 1050
+elem = 4
+ignorehitpause = 1
+persistent=1
+
 [State 0, NotHitBy]
 type = NotHitBy
 trigger1 = time <= 12
@@ -4536,7 +4545,7 @@ value = 0
 
 [State 0, PosAdd]
 type = PosAdd
-trigger1 = animelem = 4
+trigger1 = animelem = 5
 x = 11
 
 [State 0, PlaySnd] ;Throw Woosh

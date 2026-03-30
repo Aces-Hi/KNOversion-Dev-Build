@@ -1515,6 +1515,7 @@ mul =  60,200,40
 add=0,-10,0
 color = 1
 ignorehitpause = 1
+
 [State 0, Explod]
 type = Explod
 triggerall = roundtype=3

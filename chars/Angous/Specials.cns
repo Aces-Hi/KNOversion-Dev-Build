@@ -4380,27 +4380,6 @@ value = 10033
 elem = 1
 
 
-[State 0]
-type = MapSet
-triggerall = var(28)>0
-triggerall = movetype != H
-trigger1 = animelemtime(5)<0
-map = "armor"
-value=2
-ignorehitpause = 1
-persistent = 1
-[State 0, HitOverride]
-type = HitOverride
-triggerall = var(28)>0
-triggerall = movetype != H
-trigger1 = animelemtime(5)<0
-attr = SCA,NA,SA,NP,SP
-slot = 0
-stateno = 666999 
-time = 1
-forceair = 0
-
-
 [State -3, Angous Voices]
 type = PlaySnd
 trigger1 = animelem = 3
@@ -4748,7 +4727,7 @@ value = 1
 type = ChangeState
 trigger1 = Vel Y > 0 && Pos Y >= -15
 value = 9970
-
+ignorehitpause=1
 ;=========================================================================
 ; JS Land
 [Statedef 9970]

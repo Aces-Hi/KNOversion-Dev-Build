@@ -12,6 +12,29 @@ sprpriority = 16
 poweradd = -2000
 facep2=1
 
+[State EX Limiters]
+type = mapset
+trigger1 = time=0&&pos y >= 0
+map = "superinvuln"
+value = 1
+ignorehitpause=1
+persistent=1
+[State EX Limiters]
+type = mapset
+trigger1 = time=0&&pos y < 0
+map = "superinvuln"
+value = 0
+ignorehitpause=1
+persistent=1
+
+[State 0, NotHitBy]
+type = NotHitBy
+value = SCA
+trigger1 = map(superinvuln)
+time = 1
+ignorehitpause = 1
+persistent = 1
+
 [State 0, VelSet]
 type = VelSet
 trigger1 = time=0&&pos y < 0
@@ -1632,3 +1655,451 @@ type = ChangeState
 trigger1 = animtime=0
 value = 0
 ctrl=1
+
+;PHOENIX REVIVAL
+;-----------------------------
+[Statedef 4000]
+type    = S
+movetype= A
+physics = S
+ctrl = 0
+anim = 4001
+facep2=1
+
+[State 0, SuperPause]
+type = SuperPause
+trigger1 = time=0
+time = 189
+anim = -1
+sound = -1
+movetime = 189
+darken = 1
+p2defmul = 0
+poweradd = 0
+unhittable = 1
+ignorehitpause = 1
+
+[State 0, AssertSpecial]
+type = MapSet
+trigger1 = 1
+map = "cutscene"
+value = 2
+ignorehitpause=1
+
+[State 0, AssertSpecial]
+type = MapSet
+trigger1 = time=95
+map = "phoenix"
+value = 1
+ignorehitpause=1
+
+;HEAVEN-SENT
+[State 0]
+type=modifybgctrl
+trigger1 = time=95
+id = 1
+value=1
+
+[State 0, Explod]
+type = Explod
+trigger1 = time=95
+anim = 3015
+ID = 3011
+pos =40,220
+postype = left  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = -2
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -1
+pausemovetime = 0
+scale = 1.5,1.5
+sprpriority = 5
+ontop = 0
+shadow = 0,0,0
+ownpal = 1
+removeongethit = 0
+ignorehitpause =1
+trans = add
+alpha=256,100
+persistent =
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = timerfreeze
+flag2 = nobardisplay
+ignorehitpause=1
+persistent=1
+
+[State 0, RemapPal]
+type = RemapPal
+trigger1 = time=95
+source = 1,1
+dest = 2,palno
+
+[State 650, 2]
+type = Explod
+trigger1 = time=0
+anim = 4000
+pos = 0,0
+id = 4000
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 10
+ownpal = 0
+scale=.584,.584
+ontop=1
+facing=1
+supermove = 1
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = anim!=0&&animtime=0
+value = 0
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = time>189
+value = 0
+ctrl=1
+
+;Phoenix Final
+;-----------------------------
+[Statedef 4100]
+type    = A
+movetype= A
+physics = N
+juggle  = 0
+ctrl = 0
+velset = 1,-2
+anim =4100
+sprpriority = 16
+facep2=1
+
+[State 0, AssertSpecial]
+type = MapSet
+trigger1 = time=0
+map = "phoenix"
+value = 0
+ignorehitpause=1
+[State 0, PowerAdd]
+type = PowerSet
+trigger1 = time=1
+value = 0
+ignorehitpause = 1
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = time=0&&pos y < 0
+x = 1
+y = -2
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = time=0&&pos y >= 0
+x = 1
+y = -4
+
+;2S explosion removal
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1 = 1
+id = 1005
+
+[State 0, VelAdd]
+type = VelMul
+trigger1 = animelemtime(11) <0
+y = .95
+x = .95
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = animelem = 11
+x = 6
+y = 9
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 11
+value = S1,2
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 11
+value = S6969,0
+
+[State -3, Tui Voices]
+type = PlaySnd
+trigger1 = time = 0
+value = 1022, (0+(Random%6))
+[State -3, Tui Voices]
+type = PlaySnd
+trigger1 = animelem = 11
+value = 1012,0
+
+
+[State 0, SuperPause]
+type = SuperPause
+trigger1 = time = 0
+time = 60
+anim = -1
+sound = 20,0
+pos = 0,-50
+movetime = 60
+darken = 1
+p2defmul = 1
+unhittable = 1
+;ignorehitpause = 
+;persistent = 
+
+[State 410, 2]
+type = HitDef 
+p2facing = 1
+trigger1 = !movecontact
+attr = S, HA
+kill=0
+damage = ceil(cond(fvar(11) * 200 < 80, 80, fvar(11) * 200)),0
+animtype  = Medium
+hitflag = MAFD
+guardflag = MA
+pausetime = 60,80
+guard.pausetime=12,12
+sparkno = 3
+sparkxy = -10,0
+hitsound   = 666,3
+guardsound = 6,2
+ground.type = Low
+air.animtype = back
+ground.slidetime = 12
+ground.hittime  = 35
+ground.velocity = -7,-3
+air.velocity = -7,-3
+air.hittime = 60
+getpower = 0
+fall=1
+envshake.time = 0
+envshake.freq = 0
+envshake.ampl = 0
+fall.envshake.time = 0
+fall.envshake.freq = 0
+fall.envshake.ampl = 0
+getpower = (0)*(cond(var(var(3)) = 1, 1, .5))
+fall.yvelocity=0
+
+[State 0, Explod]
+type = Explod
+trigger1 = movehit
+anim = 3021
+ID = 3021
+pos = 0,-60
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 0
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -1
+pausemovetime = 0
+scale = .84,.84
+sprpriority = -5
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 1
+ignorehitpause =1
+persistent=0
+[State 0, Explod]
+type = Explod
+trigger1 = movehit
+anim = 3022
+ID = 3022
+pos = 0,-60
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 0
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -1
+pausemovetime = 0
+scale = .84,.84
+sprpriority = -4
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 1
+ignorehitpause =1
+persistent=0
+
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1 = movehit
+ID = 3011
+ignorehitpause = 1
+
+[State 0, AssertSpecial]
+type = MapSet
+trigger1 = movehit
+map = "cutscene"
+value = 2
+ignorehitpause=1
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = movehit
+flag = timerfreeze
+flag2 = nobardisplay
+ignorehitpause=1
+persistent=1
+
+[State 0, TargetBind]
+type = TargetBind
+trigger1 = movehit = 1
+time = 99
+id = -1
+pos = 60,0
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = pos y >=0&&vel y > 0
+value = 4101
+
+;Finale Land
+;---------------------------------------------------------------------------
+[Statedef 4101]
+type    = S
+movetype= A
+physics = S
+juggle  = 0
+poweradd= 0
+ctrl = 0
+anim = 4101
+velset = 4,0
+sprpriority = 2
+
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 2; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit=1
+fv =13     ;fv = 
+value = 2
+persistent = 0
+
+[State -3, Tui Voices]
+type = PlaySnd
+trigger1 = animelem = 7
+value = 1016, (0+(Random%6))
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = 3001
+ID = 3001
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -2
+pausemovetime = 0
+scale = .44,.44
+sprpriority = -5
+ontop = 0
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+ignorehitpause =0
+;trans = 
+;persistent =
+;supermove = 0
+;pausemove = 0
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = time = 0
+x = pos x+15
+y = 0
+
+[State 410, 2]
+type = HitDef 
+p2facing = 1
+trigger1 = !movecontact
+attr = S, HA
+damage = ceil(cond(fvar(11) * 200 < 100, 100, fvar(11) * 200)),0
+animtype  = Medium
+hitflag = MAFD+
+guardflag = MA
+pausetime = 60,80
+guard.pausetime=12,12
+sparkno = 3
+sparkxy = -10,0
+hitsound   = 666,3
+guardsound = 6,2
+ground.type = Low
+air.animtype = back
+ground.slidetime = 12
+ground.hittime  = 35
+ground.velocity = -7,-3
+air.velocity = -7,-3
+air.hittime = 60
+getpower = 0
+fall=1
+envshake.time = 0
+envshake.freq = 0
+envshake.ampl = 0
+fall.envshake.time = 0
+fall.envshake.freq = 0
+fall.envshake.ampl = 0
+getpower = (0)*(cond(var(var(3)) = 1, 1, .5))
+fall.yvelocity=0
+
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1 = animelem=4
+id = 3021
+ignorehitpause = 1
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1 = animelem=4
+id = 3022
+ignorehitpause = 1
+
+[State 0, AssertSpecial]
+type = MapSet
+trigger1 = animelemtime(4)<0&&combocount
+map = "cutscene"
+value = 2
+ignorehitpause=1
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = animelemtime(4)<0&&combocount
+flag = timerfreeze
+flag2 = nobardisplay
+ignorehitpause=1
+persistent=1
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = animtime = 0&&winko
+value =0
+ctrl = 1
+[State 0, LifeSet]
+type = LifeSet
+trigger1 = animtime =0&&!winko
+value = 0
+ignorehitpause = 1
+persistent = 1

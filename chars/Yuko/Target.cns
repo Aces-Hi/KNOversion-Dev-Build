@@ -1017,78 +1017,169 @@ value = 1226
 
 ;---------------------------------------------------------------------------
 
-
 ;------------------
-;  DropKick - Hit
-; (a custom gethit state)
-; See State 1020 for details
-[Statedef 1225]
+;Hard Wallbounce
+[Statedef 1220]
 type    = A
 movetype= H
 physics = N
-velset = 0,0
 
-[State 0, VarSet]
-type = MapSet
-trigger1 = time=0
-trigger1 = player(map(enemyteamlead)),stateno=640
-map = "j4hhit"
+[State 0, PosFreeze]
+type = PosFreeze
+trigger1 = 1
 value = 1
 ignorehitpause = 1
-[State 0, VarSet]
-type = MapSet
-trigger1 = time=0
-trigger1 = player(map(enemyteamlead)),stateno!=640
-map = "j4hhit"
-value = 0
-ignorehitpause = 1
-[State 0, VarSet]
-type = MapSet
-trigger1 = time=0
-trigger1 = player(map(enemyteamlead)),stateno=1110
-map = "ex5shit"
-value = 1
-ignorehitpause = 1
-[State 0, VarSet]
-type = MapSet
-trigger1 = time=0
-trigger1 = player(map(enemyteamlead)),stateno!=1110
-map = "ex5shit"
-value = 0
-ignorehitpause = 1
-[State 0, VarSet]
-type = MapSet
-trigger1 = time=0
-trigger1 = player(map(enemyteamlead)),stateno=220
-map = "fsmashhit"
-value = 1
-ignorehitpause = 1
-[State 0, VarSet]
-type = MapSet
-trigger1 = time=0
-trigger1 = player(map(enemyteamlead)),stateno!=220
-map = "fsmashhit"
-value = 0
-ignorehitpause = 1
-[State 0, VarSet]
-type = MapSet
-trigger1 = time=0
-trigger1 = player(map(enemyteamlead)),stateno=420
-map = "dsmashhit"
-value = 1
-ignorehitpause = 1
-[State 0, VarSet]
-type = MapSet
-trigger1 = time=0
-trigger1 = player(map(enemyteamlead)),stateno!=420
-map = "dsmashhit"
-value = 0
-ignorehitpause = 1
-[State 1026, No scroll]
+
+
+[State 1025, Anim] ;Custom animation
+type = ChangeAnim
+trigger1 = 1
+value = 5030
+
+[State 1025, State]
+type = ChangeState
+trigger1 = HitShakeOver = 1
+value = 1221
+
+;------------------
+;  DropKick - flying 
+; (a custom gethit state)
+[Statedef 1221]
+type    = A
+movetype= H
+physics = N
+
+[State 0, ScreenBound]
 type = ScreenBound
 trigger1 = 1
 value = 1
 movecamera = 0,1
+ignorehitpause = 1
+
+[State 1026, Velocity]
+type = HitVelSet
+trigger1 = Time = 0
+x = HitVel x
+y = HitVel x
+
+[State 1026, Hit wall]
+type = ChangeState
+triggerall = Pos y < -0
+trigger1 = FrontEdgeBodyDist <= 20
+trigger2 = BackEdgeBodyDist <= 20
+value = 1222
+
+[State 1026, Hit ground]
+type = selfstate
+trigger1 = (Vel y > 0) && (Pos y >= -10)
+value = 5111
+
+;------------------
+;  DropKick - hit wall
+; (a custom gethit state)
+[Statedef 1222]
+type    = A
+movetype= H
+physics = N
+
+[State 1027, Turn]
+type = Turn
+trigger1 = (Time = 0) && (FrontEdgeBodyDist <= 20)
+
+[State 1027, Stop moving]
+type = PosFreeze
+trigger1 = 1
+x = 1
+y = 1
+
+[State 1027, Spark]
+type = Explod
+trigger1 = Time = 0
+anim = F72
+pos = 0, floor (screenpos y) - 50
+postype = back
+sprpriority = 3
+
+[State 1027, Anim]
+type = ChangeAnim2
+trigger1 = Time = 0
+value = 1027
+
+[State 1027, Sound]
+type = PlaySnd
+trigger1 = Time = 0
+value = F7,0
+
+[State 1027, State]
+type = ChangeState
+trigger1 = Time = 5
+value = 1223
+
+;------------------
+;  DropKick - bounce off wall
+; (a custom gethit state)
+[Statedef 1223]
+type    = A
+movetype= H
+physics = N
+
+[State 1028, Vel Y]
+type = VelSet
+trigger1 = Time = 0
+y = -8
+x=0
+
+[State 1028, Gravity]
+type = VelAdd
+trigger1 = 1
+y = .35
+
+[State 1028, Anim 5050] ;Self falling animation
+type = ChangeAnim
+trigger1 = Time = 0
+trigger1 = !SelfAnimExist(5052)
+value = 5050
+
+[State 1028, Anim 5052] ;Self falling animation (diagup type)
+type = ChangeAnim
+trigger1 = Time = 0
+trigger1 = SelfAnimExist(5052)
+value = 5052
+
+[State 1028, Anim 5060] ;Coming down - normal
+type = ChangeAnim
+trigger1 = Vel Y > -2
+trigger1 = Anim = 5050
+trigger1 = SelfAnimExist(5060)
+persistent = 0
+value = 5060
+
+[State 1028, Anim 5062] ;Coming down - diagup type
+type = ChangeAnim
+trigger1 = Vel Y > -2
+trigger1 = Anim = 5052
+trigger1 = SelfAnimExist(5062)
+persistent = 0
+value = 5062
+
+[State 1028, Hit ground]
+type = selfstate
+trigger1 = (Vel y > 0) && (Pos y >= 30)
+value = 5041
+
+
+;------------------
+;Soft Wallbounce
+[Statedef 1225]
+type    = A
+movetype= H
+physics = N
+
+[State 0, PosFreeze]
+type = PosFreeze
+trigger1 = 1
+value = 1
+ignorehitpause = 1
 
 [State 1025, Anim] ;Custom animation
 type = ChangeAnim
@@ -1106,26 +1197,26 @@ value = 1226
 [Statedef 1226]
 type    = A
 movetype= H
-physics = N
+physics = A
 
 [State 1026, Velocity]
 type = HitVelSet
 trigger1 = Time = 0
-x = 1
-y = 1
+x = HitVel x
+y = HitVel x
 
 
 [State 1026, Hit wall]
 type = ChangeState
 triggerall = Pos y < -0
-trigger1 = BackEdgeBodyDist <= 10
-trigger2 = FrontEdgeBodyDist <= 10
+trigger1 = StageBackEdgeDist <= 20
+trigger2 = StageFrontEdgeDist <= 20
 value = 1227
 
 [State 1026, Hit ground]
 type = selfstate
-trigger1 = (Vel y > 0) && (Pos y >= 0)
-value = 5041
+trigger1 = (Vel y > 0) && (Pos y >= -10)
+value = 5111
 
 ;------------------
 ;  DropKick - hit wall
@@ -1137,24 +1228,13 @@ physics = N
 
 [State 1027, Turn]
 type = Turn
-trigger1 = (Time = 0) && (FrontEdgeBodyDist <= 30)
-
-[State 1027, Pos]
-type = PosAdd
-trigger1 = Time = 0
-x = 15 - BackEdgeBodyDist
+trigger1 = (Time = 0) && (FrontEdgeBodyDist <= 20)
 
 [State 1027, Stop moving]
 type = PosFreeze
 trigger1 = 1
 x = 1
 y = 1
-
-[State 1026, No scroll]
-type = ScreenBound
-trigger1 = 1
-value = 1
-movecamera = 0,1
 
 [State 1027, Spark]
 type = Explod
@@ -1187,42 +1267,11 @@ type    = A
 movetype= H
 physics = N
 
-
-
 [State 1028, Vel Y]
 type = VelSet
 trigger1 = Time = 0
-trigger1 = map(j4hhit)=1
 y = -6
 x=0
-[State 1028, Vel Y]
-type = VelSet
-trigger1 = Time = 0
-trigger1 = map(ex5shit)=1
-y = -12
-
-[State 1028, Vel Y]
-type = VelSet
-trigger1 = Time = 0
-trigger1 = map(fsmashhit)=1
-y = -8
-x=0
-
-[State 1028, Vel Y]
-type = VelSet
-trigger1 = Time = 0
-trigger1 = map(dsmashhit)=1
-y = -8
-x=0
-
-[State 1028, Vel X]
-type = VelSet
-trigger1 = Time = 0
-trigger1 = map(fsmashhit)=0
-trigger1 = map(dsmashhit)=0
-trigger1 = map(j4hhit)=0
-x = .5
-
 
 [State 1028, Gravity]
 type = VelAdd

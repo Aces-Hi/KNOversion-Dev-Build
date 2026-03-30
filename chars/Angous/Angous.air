@@ -1,4 +1,4 @@
-eeqeeeqqeeeeqqeeqeeeqqqqqqqqqqqqqqqqeqqee; KFM's animation data
+eczeeqeeeqqeeeeqqeeqeeeqqqqqqqqqqqqqqqqeqqee; KFM's animation data
 ; see docs/air.txt for more information
 
 ;---------------------------------------------------------------------------
@@ -2041,7 +2041,7 @@ Clsn2: 1
   Clsn2[0] = -37, -78, 46, -1
 1040,15, 0,0, 4
 Clsn1: 1
-  Clsn1[0] = -5, -93, 70, -24
+  Clsn1[0] = 1, -93, 70, -24
 Clsn2: 2
   Clsn2[0] = -38, -34, 47, -1
   Clsn2[1] = -5, -75, 66, -24

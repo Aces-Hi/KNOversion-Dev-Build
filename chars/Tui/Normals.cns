@@ -322,9 +322,9 @@ hitsound   = 5,3
 guardsound = 6,2
 ground.type = Low
 ground.slidetime = 12
-ground.hittime  = ceil(cond(fvar(15) *31 < 5, 5, fvar(15) * 31))
-air.hittime  = ceil(cond(fvar(15) *40 < 5, 5, fvar(15) * 40))
-down.hittime = ceil(cond(fvar(15) *46 < 5, 5, fvar(15) * 46))
+ground.hittime  = ceil(cond(fvar(15) *25 < 5, 5, fvar(15) * 25))
+air.hittime  = ceil(cond(fvar(15) *25 < 5, 5, fvar(15) * 25))
+down.hittime = ceil(cond(fvar(15) *25 < 5, 5, fvar(15) * 25))
 ground.velocity = -1.8
 air.velocity = -2.5,-4
 ;yaccel = .24
@@ -357,9 +357,9 @@ hitsound   = 5,3
 guardsound = 6,2
 ground.type = high
 ground.slidetime = 12
-ground.hittime  = ceil(cond(fvar(15) *45 < 9, 9, fvar(15) * 45))
-air.hittime  = ceil(cond(fvar(15) *45 < 9, 9, fvar(15) * 45))
-down.hittime = ceil(cond(fvar(15) *46 < 9, 9, fvar(15) * 46))
+ground.hittime  = ceil(cond(fvar(15) *30 < 9, 9, fvar(15) * 30))
+air.hittime  = ceil(cond(fvar(15) *30 < 9, 9, fvar(15) * 30))
+down.hittime = ceil(cond(fvar(15) *30 < 9, 9, fvar(15) * 30))
 ground.velocity = -2,-6
 air.velocity = -1.25,-5
 envshake.time = 8
@@ -648,8 +648,8 @@ guardsound = 6,2
 ground.type = high
 ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *25 < 9, 9, fvar(15) * 25))
-air.hittime  = ceil(cond(fvar(15) *42 < 9, 9, fvar(15) * 42))
-down.hittime = ceil(cond(fvar(15) *42 < 9, 9, fvar(15) * 42))  
+air.hittime  = ceil(cond(fvar(15) *34 < 10, 10, fvar(15) * 34))
+down.hittime = ceil(cond(fvar(15) *34 < 10, 10, fvar(15) * 34))
 ground.velocity = -4
 air.velocity = -2,-5
 down.velocity = -2,-5
@@ -873,28 +873,14 @@ sprpriority = 2
 
 [State 0, NotHitBy]
 type = NotHitBy
-trigger1 = time = 5
-value = A,NA
-;value2 = S,NA
-time = 11
-;ignorehitpause = 
-;persistent = 
-[State 0, HitBy]
-type = HitBy
-trigger1 = time = 5
-trigger1 = P2StateType = A
-value = A,SA,HA,HP,HT
-;value2 = SC,AA,AT,AP
-time = 11
-;ignorehitpause = 
-;persistent = 
-[State 0, HitBy]
-type = HitBy
-trigger1 = time = 5
-trigger1 = P2StateType != A
-value = SC,AA,AT,AP,HA,HP,HT
-;value2 = A,SA,HA,AT,AP
-time = 11
+triggerall=enemynear,stateno!=900
+triggerall=enemynear,stateno!=901
+value = A
+trigger1 = time>=4
+trigger1 = animelemtime(7)<0
+time = 1
+ignorehitpause = 1
+persistent = 1
 
 
 [State 0, PosAdd]
@@ -1501,9 +1487,9 @@ hitsound   = 5,2
 guardsound = 6,2
 ground.type = high
 ground.slidetime = 12
-ground.hittime  =15
-air.hittime  = 25
-down.hittime = 25
+ground.hittime  =9
+air.hittime  = 12
+down.hittime = 12
 ground.velocity = -2,0
 air.velocity = -1.5,-2.8
 down.velocity = -1, -4
@@ -2140,9 +2126,9 @@ hitsound   = 5,4
 guardsound = 6,2
 ground.type = Low
 ground.slidetime = 12
-ground.hittime  = ceil(cond(fvar(16) *30 < 11, 11, fvar(16) * 30))
-air.hittime  =  ceil(cond(fvar(16) *60 < 11, 11, fvar(16) * 60))
-down.hittime =  ceil(cond(fvar(16) *60 < 11, 11, fvar(16) * 60))
+ground.hittime  = ceil(cond(fvar(15) *34 < 10, 10, fvar(15) * 34))
+air.hittime  =  ceil(cond(fvar(15) *34 < 10, 10, fvar(15) * 34))
+down.hittime = ceil(cond(fvar(15) *34 < 10, 10, fvar(15) * 34))
 ground.velocity = -.4,-6
 air.velocity = -1.5,-6;
 ground.cornerpush.veloff = 0
@@ -2380,7 +2366,8 @@ envshake.ampl = 6
 envshake.phase = 1
 fall.yvelocity = cond(map(stomp),0,-2)
 getpower = (70)*(cond(var(var(3)) = 1, 1, .5))
-
+guard.hittime=21
+guard.ctrltime=21
 
 [State 210, 5]
 type = ChangeState
@@ -2467,12 +2454,43 @@ ignorehitpause=1
 type = HitDef 
 p2facing = 1
 trigger1 = !map(slash)
-trigger1 = !movecontact
-attr = S, SA
+trigger1 = !movecontact&&combocount=0
+attr = S, ST
 animtype  = Hard
 damage = ceil(cond(fvar(11) *100 < 10, 10, fvar(11) * 100)), 10
-hitflag = MAFD
-guardflag = HAFD
+hitflag = M
+guardflag =
+pausetime = 12,0
+sparkno = 3
+sparkxy = 0,-40
+hitsound   = 5,3
+guardsound = 6,2
+ground.type = Low
+ground.slidetime = 12
+ground.hittime  = 35
+air.hittime  = 12
+ground.velocity = 0
+air.velocity = 0,0
+down.velocity = 0,0
+forcenofall = 1
+envshake.time = 20
+envshake.freq = 80
+envshake.ampl = 6
+envshake.phase = 1
+fall.yvelocity = 0
+getpower = (70)*(cond(var(var(3)) = 1, 1, .5))
+id=6150
+
+[State 200, 1]
+type = HitDef 
+p2facing = 1
+trigger1 = !map(slash)
+trigger1 = !movecontact&&combocount
+attr = S, ST
+animtype  = Hard
+damage = ceil(cond(fvar(11) *100 < 10, 10, fvar(11) * 100)), 10
+hitflag = MAFD+
+guardflag =
 pausetime = 12,0
 sparkno = 3
 sparkxy = 0,-40
@@ -2522,11 +2540,11 @@ type = HitDef
 p2facing = 1
 trigger1 = map(slash)
 trigger1 = !movecontact
-attr = S, SA
+attr = S, ST
 animtype  = Hard
 damage = ceil(cond(fvar(11) *100 < 10, 10, fvar(11) * 100)), 10
 hitflag = MAFD
-guardflag = HAFD
+guardflag = 
 pausetime = 12,0
 sparkno = 3
 sparkxy = 0,-40
@@ -3018,6 +3036,7 @@ hitflag = MAF
 guardflag = MAF
 ;priority = 3
 pausetime = 12,10
+guard.pausetime=8,8
 sparkno = 3
 sparkxy = -10,-45
 hitsound   = 5,3
@@ -3108,6 +3127,12 @@ type = ChangeState
 triggerall = time>3
 trigger1 = command = "hold_z" 
 value = 515
+
+[State 0, ChangeState]
+type = ChangeState
+triggerall = time> 13
+trigger1 = animelemtime(8)<0 || command = "c" 
+value = 501
 
 [State 0, ChangeState]
 type = ChangeState
@@ -3258,6 +3283,11 @@ juggle  = 2
 ctrl = 0
 anim = 551
 sprpriority = 2
+
+[State 0, VelMul]
+type = VelMul
+trigger1 = 1
+x = .95
 
 [State 0, ChangeState]
 type =CtrlSet
@@ -3567,7 +3597,7 @@ trigger1 = !movecontact
 attr = A, SA
 damage = ceil(cond(fvar(11) *20 < 2, 2, fvar(11) * 20)), 2
 hitflag = MAF
-guardflag = MAFD
+guardflag = HA
 ;priority = 3
 pausetime = 8,11
 sparkno = S3012
@@ -3597,7 +3627,7 @@ trigger1 = !movecontact
 attr = A, SA
 damage = ceil(cond(fvar(11) *31 < 5, 5, fvar(11) * 31)), 2
 hitflag = MAF
-guardflag = MAFD
+guardflag = HA
 ;priority = 3
 pausetime = 8,11
 sparkno = S3012
@@ -3829,9 +3859,9 @@ ground.type = Low
 animtype = UP
 air.animtype = up
 ground.slidetime = 14
-ground.hittime  = ceil(cond(fvar(14) *70 < 9, 9, fvar(14) * 70))
-air.hittime  = ceil(cond(fvar(14) *70 < 9, 9, fvar(14) * 70))
-down.hittime = ceil(cond(fvar(14) *70 < 9, 9, fvar(14) * 70))  
+ground.hittime  = ceil(cond(fvar(15) *60 < 11, 11, fvar(15) * 60))
+air.hittime  = ceil(cond(fvar(15) *60 < 11,11, fvar(15) * 60))
+down.hittime = ceil(cond(fvar(15) *60 < 11, 11, fvar(15) *60))
 ground.velocity = -1,-8
 getpower = 0
 guard.hittime = 23
@@ -4138,7 +4168,7 @@ value = 0.5
 [State 0, VelMul]
 type = VelSet
 trigger1 = animelem=4
-y =  16
+y =  20
 
 [State 0, ChangeState]
 type = ChangeState

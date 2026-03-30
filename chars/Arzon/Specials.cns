@@ -882,6 +882,30 @@ ctrl = 0
 anim =1303
 sprpriority = 2
 
+[State 0, Explod]
+type = Explod
+trigger1 = animelemtime(5)=1
+trigger1 = numexplod(6900)=0
+anim = 6800
+ID = 6900
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -2
+pausemovetime = 0
+scale = 0.5,0.5
+sprpriority = 0
+ontop = 1
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+persistent=1
+
 [State 0, PosAdd]
 type = PosSet
 trigger1 = time=0
@@ -1175,7 +1199,7 @@ trigger1 = animtime = 0
 value = 0
 ctrl = 1
 
-;Trap Helper
+;EX Trap Helper
 ;-----------------------------
 [Statedef 1305]
 type    = A
@@ -1184,6 +1208,53 @@ physics = N
 ctrl = 0
 anim =1303
 sprpriority = 2
+
+[State 0, Explod]
+type = Explod
+trigger1 = animelemtime(5)=1
+anim = 6500
+ID = 6900
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -2
+pausemovetime = 0
+scale = 0.3,0.3
+sprpriority = 0
+ontop = 1
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+persistent=1
+[State 0, Explod]
+type = Explod
+trigger1 = animelemtime(7)=1
+anim = 6500
+ID = 6900
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = -1
+vfacing = 1
+bindtime = 1
+vel = 0,0
+accel = 0,0
+random = 0,0
+removetime = -2
+pausemovetime = 0
+scale = 0.3,0.3
+sprpriority = 0
+ontop = 1
+shadow = 0,0,0
+ownpal = 0
+removeongethit = 0
+persistent=1
+
+
 [State 0, PosAdd]
 type = PosSet
 trigger1 = time=0

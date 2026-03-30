@@ -925,8 +925,6 @@ type = VelSet
 trigger1 = abs(vel x) < Const(movement.stand.friction.threshold)
 x = 0
 
-
-
 [State 0, Explod]
 type = Explod
 trigger1 = time = 0

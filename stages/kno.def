@@ -29,6 +29,9 @@ boundhigh = -40
 boundlow = 0
 verticalfollow = .1
 tension = 200
+zoomin=1
+zoomout=.9
+autocenter=1
 
 ;--------------------------------------------------------
 [PlayerInfo]
@@ -167,8 +170,8 @@ velocity = 0.1,0.1
 TRANS=add
 
 [BG Glow]
-type = anim
-actionno=1
+type = normal
+spriteno=5,0
 start = 0,340
 delta = 0,1.2
 tile = 1,0
@@ -249,16 +252,17 @@ trans=add
 alpha=256,200
 
 [BG 1] ; Floor
-type  = anim
-actionno=10
+type  =normal
+spriteno=2,0
 start = 0,-50
 delta = 0, 1;.25, .35
 tile = 1, 0
 velocity=0,0
 tilespacing = 0, 0
-
-;yscalestart = 100
 layerno=0
+trans=add
+alpha=150,256
+
 [Begin Action 1]
 LoopStart
 5,0, 0,0, 10, , AS225D256

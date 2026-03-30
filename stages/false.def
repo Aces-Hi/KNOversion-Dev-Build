@@ -29,6 +29,9 @@ boundhigh = -40
 boundlow = 0
 verticalfollow = .1
 tension = 200
+zoomin=1
+zoomout=.9
+autocenter=1
 
 ;--------------------------------------------------------
 [PlayerInfo]
@@ -166,9 +169,9 @@ tile = 1,1
 velocity = -0.1,0.1
 TRANS=add
 
-[BG 1]
-type = anim
-actionno=1
+[BG Glow]
+type = normal
+spriteno=5,0
 start = 0,340
 delta = 0,1.2
 tile = 1,0
@@ -201,6 +204,7 @@ mask = 1
 velocity = 1, 0
 tile = 1, 0
 id=3
+
 
 [BG 1] ; Floor
 type  = parallax
@@ -246,13 +250,16 @@ trans=add
 alpha=256,200
 
 [BG 1] ; Floor
-type  = anim
-actionno=10
+type  =normal
+spriteno=2,0
 start = 0,-50
 delta = 0, 1;.25, .35
 tile = 1, 0
 velocity=0,0
 tilespacing = 0, 0
+layerno=0
+trans=add
+alpha=150,256
 
 ;yscalestart = 100
 layerno=0

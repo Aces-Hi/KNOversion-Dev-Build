@@ -1084,11 +1084,7 @@ trigger1 = player(map(enemyteamlead)),stateno!=420
 map = "dsmashhit"
 value = 0
 ignorehitpause = 1
-[State 1026, No scroll]
-type = ScreenBound
-trigger1 = 1
-value = 1
-movecamera = 0,1
+
 
 [State 1025, Anim] ;Custom animation
 type = ChangeAnim
@@ -1150,11 +1146,6 @@ trigger1 = 1
 x = 1
 y = 1
 
-[State 1026, No scroll]
-type = ScreenBound
-trigger1 = 1
-value = 1
-movecamera = 0,1
 
 [State 1027, Spark]
 type = Explod

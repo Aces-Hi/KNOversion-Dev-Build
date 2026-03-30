@@ -22,12 +22,15 @@ ShadowBComponent = -22
 [Camera]
 startx = 0
 starty = 0
-boundleft = -300
-boundright = 300
+boundleft = -280
+boundright = 280
 boundhigh = -20
 boundlow = 0
 verticalfollow = .1
 tension = 100
+zoomin=1
+zoomout=.9
+autocenter=1
 
 [PlayerInfo]
 p1startx = -70
@@ -75,7 +78,7 @@ spr = Mind.sff
 [BG sky]
 type  = anim
 actionno = 3
-start=0,-5
+start=0,-30
 delta = .11,-.02
 [BG Heaven]
 type  =normal
@@ -98,7 +101,7 @@ delta = .1,.1
 [BG Moon]
 type  = normal
 spriteno = 0,2
-start=0,-10
+start=0,-30
 delta = .12,.12
 
 [BG Heaven]
@@ -124,12 +127,12 @@ delta = .3,.3
 [BG OceanBase]
 type  = anim
 actionno = 1
-start = 0, -158
+start = 0, -150
 delta = 1, 0.45
 [BG OceanGlow]
 type  = anim
 actionno = 2
-start = 0, 0
+start = 0, 8
 delta = 0.45, 0.45
 
 [BG Heaven]

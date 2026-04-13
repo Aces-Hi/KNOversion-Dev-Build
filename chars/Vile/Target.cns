@@ -771,7 +771,7 @@ velset = 0,0
 [State -3, Win Voices] ;Win
 type = PlaySnd
 trigger1 = time = 1 && random <249
-value = 3001, (0+(Random%8))
+value = S3001, (0+(Random%8))
 
 [State 5000, 1] ;Anim for HIT_LIGHT to HIT_HARD
 type = ChangeAnim
@@ -1021,7 +1021,7 @@ velset = 0,0
 [State -3, Win Voices] ;Win
 type = PlaySnd
 trigger1 = time = 1 && random <249
-value = 3001, (0+(Random%8))
+value = S3001, (0+(Random%8))
 
 [State 5000, 1] ;Anim for HIT_LIGHT to HIT_HARD
 type = ChangeAnim
@@ -1125,7 +1125,7 @@ velset = 0,0
 [State -3, Win Voices] ;Win
 type = PlaySnd
 trigger1 = time = 1
-value = 3001, (0+(Random%15))
+value = S3001, (0+(Random%15))
 [State 5010, 1] ;Anim for HIT_LIGHT to HIT_HARD
 type = ChangeAnim
 trigger1 = Time = 0
@@ -2088,7 +2088,7 @@ y = enemy ,pos y >=0
 [State -3, Win Voices] ;hurt
 type = PlaySnd
 trigger1 = time=0
-value = 68264, (0+(Random%9))
+value = S68264, (0+(Random%9))
 channel=6
 
 [State 5000, 1] ;Anim for HIT_LIGHT to HIT_HARD

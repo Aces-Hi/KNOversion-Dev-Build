@@ -2398,6 +2398,14 @@ trigger1 = time = 1
 value = 5000, (0+(Random%20))
 lowpriority=1
 channel=7
+[State -3, Win Voices] 
+type = PlaySnd
+triggerall = name = "Tui"
+triggerall = !map(phoenix)
+trigger1 = time = 1
+value = 5000, (0+(Random%26))
+volumescale=150
+
 
 ;The stand phuckin dies (graphic/gone sexually paranormal)
 [State 0, HitOverride]
@@ -2635,6 +2643,13 @@ trigger1 = time = 1
 value = 5000, (0+(Random%20))
 lowpriority=1
 channel=7
+[State -3, Win Voices] 
+type = PlaySnd
+triggerall = name = "Tui"
+triggerall = !map(phoenix)
+trigger1 = time = 1
+value = 5000, (0+(Random%26))
+volumescale=150
 
 ;The stand phuckin dies (graphic/gone sexually paranormal)
 [State 0, HitOverride]
@@ -2834,6 +2849,13 @@ trigger1 = time = 1
 value = 5000, (0+(Random%20))
 lowpriority=1
 channel=7
+[State -3, Win Voices] 
+type = PlaySnd
+triggerall = name = "Tui"
+triggerall = !map(phoenix)
+trigger1 = time = 1
+value = 5000, (0+(Random%26))
+volumescale=150
 
 [State 5020, 1] ;Anim for HIT_LIGHT to HIT_HARD
 type = ChangeAnim
@@ -3293,14 +3315,6 @@ type = VelAdd
 trigger1 = 1
 y = GetHitVar(yaccel)
 
-[State 0, 4] ;Are you dead?
-type =selfstate
-trigger1 = !alive
-trigger1 = Pos Y >=0&&time=0&&prevstateno!=5050&&prevstateno!=5030
-value = 6150
-ctrl = 0
-ignorehitpause=1
-
 [State 5050, 6]
 type = selfstate
 trigger1 = Vel Y > 0
@@ -3379,6 +3393,13 @@ trigger1 = time = 1
 value = 5000, (0+(Random%20))
 lowpriority=1
 channel=7
+[State -3, Win Voices] 
+type = PlaySnd
+triggerall = name = "Tui"
+triggerall = !map(phoenix)
+trigger1 = time = 1
+value = 5000, (0+(Random%26))
+volumescale=150
 
 [State 5070, 1]
 type = ChangeAnim
@@ -4571,6 +4592,13 @@ trigger1 = time = 1
 value = 5000, (0+(Random%20))
 lowpriority=1
 channel=7
+[State -3, Win Voices] 
+type = PlaySnd
+triggerall = name = "Tui"
+triggerall = !map(phoenix)
+trigger1 = time = 1
+value = 5000, (0+(Random%26))
+volumescale=150
 
 [State 5070, 1]
 type = ChangeAnim
@@ -10318,8 +10346,7 @@ persistent = 1
 type = AssertSpecial
 trigger1 = enemy,name="Tui"&&enemy,power>=6000&&enemy,life<=1&&enemy,map(phoenix)=0
 flag = noinput
-flag2 = nomusic
-flag3 = timerfreeze
+flag2 = timerfreeze
 ignorehitpause = 1
 persistent = 1
 
@@ -10379,6 +10406,12 @@ persistent=1
 type = MapSet
 trigger1 = roundstate!=2
 map = "phoenix"
+value = 0
+ignorehitpause=1
+[State 0, AssertSpecial]
+type = MapSet
+trigger1 = roundstate<2
+map = "phoenixdie"
 value = 0
 ignorehitpause=1
 

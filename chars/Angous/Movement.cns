@@ -751,7 +751,7 @@ physics = A         ;A,C,S,N
 type    = A
 movetype= I
 physics = A
-velset = 3,-2
+velset = 4,-2
 anim = 100
 ctrl = 1
 
@@ -1654,7 +1654,7 @@ type = VelSet
 triggerall = !var(28)
 ;trigger1 = prevstateno !=666999
 trigger1 = time >= 0
-x =5
+x =6
 
 [State -3, Win Voices] ;Win
 type = PlaySnd

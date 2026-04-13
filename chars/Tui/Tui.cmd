@@ -28,7 +28,7 @@ triggerall = roundstate = 2 ;only attack during the round
 triggerall = command = "QCF"
 triggerall = power >= 2000
 trigger1 = ctrl
-trigger2 = hitdefattr = SCA, NA, SA
+trigger2 = hitdefattr = SCA, NA, SA, ST
 trigger2 = stateno != [3000,3600)
 trigger2 = movecontact ;&& enemynear, movetype = H
 trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
@@ -44,7 +44,7 @@ triggerall = command = "QCB"
 triggerall = power >= 2000
 triggerall = statetype = A
 trigger1 = ctrl
-trigger2 = hitdefattr = SCA, NA, SA
+trigger2 = hitdefattr = SCA, NA, SA, ST
 trigger2 = stateno != [3000,3600)
 trigger2 = movecontact ;&& enemynear, movetype = H
 trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
@@ -61,7 +61,7 @@ triggerall = power >= 2000
 triggerall = statetype != A
 triggerall = !numhelper(3500)&&!numhelper(3501)&&!numhelper(3502)&&!numhelper(3503)&&!numhelper(3504)
 trigger1 = ctrl
-trigger2 = hitdefattr = SCA, NA, SA
+trigger2 = hitdefattr = SCA, NA, SA, ST
 trigger2 = stateno != [3000,3600)
 trigger2 = movecontact ;&& enemynear, movetype = H
 trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
@@ -77,7 +77,7 @@ triggerall = command = "QCB"
 triggerall = statetype != A
 triggerall = numhelper(3500)||numhelper(3501)||numhelper(3502)||numhelper(3503)||numhelper(3504)
 trigger1 = ctrl
-trigger2 = hitdefattr = SCA, NA, SA
+trigger2 = hitdefattr = SCA, NA, SA, ST
 trigger2 = stateno != [3000,3600)
 trigger2 = movecontact ;&& enemynear, movetype = H
 trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
@@ -101,7 +101,7 @@ triggerall = map(phoenix)=1
 triggerall = roundstate = 2 ;only attack during the round
 triggerall = command = "QCF"
 trigger1 = ctrl
-trigger2 = hitdefattr = SCA, NA, SA
+trigger2 = hitdefattr = SCA, NA, SA, ST
 trigger2 = stateno != [3000,3600)
 trigger2 = movecontact ;&& enemynear, movetype = H
 trigger3 = stateno = 1310 || stateno = 1330 ;From blocking

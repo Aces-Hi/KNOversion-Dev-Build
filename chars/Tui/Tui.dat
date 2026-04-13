@@ -8,8 +8,8 @@
 
 	<#ff8400>UNIQUE MOVES</>
 HEAVY FLAME	-		_F^C
-SWEEP	-		_DF^C
-
+SWEEP	-		(CAN BE HELD) _DF^C
+   <#bbbbbb>Launches enemies higher when held.</>
 
 
 
@@ -120,7 +120,7 @@ _EX SPIRAL OUT	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _D^Y+^Z
 _D	_D		_D
 
 	<#55ffff>SUPERS</>
-<#ff8400>PHOENIX DIVE</>		<#aaffff>(GROUND OR AIR)<#55ffff>(2 BARS)</> _D_DF_F_-^A/^B/^C
+<#ff8400>PHOENIX CRY</>		<#aaffff>(GROUND OR AIR)<#55ffff>(2 BARS)</> _D_DF_F_-^A/^B/^C
    <#bbbbbb>A divekick that does more damage the higher up it hits.
    The grounded version is invincible.</>
 <#ff8400>SPIRIT FLAMES</>	-		<#55ffff>(2 BARS)</> _D_DB_B_-^A/^B/^C

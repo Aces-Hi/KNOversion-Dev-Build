@@ -12,6 +12,13 @@ sprpriority = 16
 poweradd = -2000
 facep2=1
 
+[State Tui Voices]
+type = PlaySnd
+triggerall = !map(phoenix)
+trigger1 = animelem = 1
+value = 3000, 0+Random%4
+volumescale=175
+
 [State EX Limiters]
 type = mapset
 trigger1 = time=0&&pos y >= 0
@@ -142,7 +149,7 @@ getpower =(0)*(cond(var(var(3)) = 1, 1, .5))
 [State 0, TargetBind]
 type = TargetBind
 trigger1 = movehit = 1
-time = 99
+time = 4
 id = -1
 pos = 60,0
 
@@ -299,6 +306,13 @@ anim =3100
 sprpriority = 16
 poweradd = -2000
 facep2=1
+
+[State Tui Voices]
+type = PlaySnd
+triggerall = !map(phoenix)
+trigger1 = animelem = 1
+value = 3100, 0+Random%2
+volumescale=175
 
 [State 0, SuperPause]
 type = SuperPause
@@ -474,7 +488,7 @@ removeongethit = 0
 type = HitDef
 trigger1 = !movecontact
 attr = A, HP
-damage = ceil(cond(root, fvar(11) * 40< 12, 12, root, fvar(11) * 40)), 6
+damage = ceil(cond(root, fvar(11) * 25< 10, 10, root, fvar(11) * 25)), 5
 hitflag = MAFD
 air.animtype = back
 guardflag = MA
@@ -622,7 +636,7 @@ removeongethit = 0
 type = HitDef
 trigger1 = !movecontact
 attr = A, HP
-damage = ceil(cond(root, fvar(11) * 40< 12, 12, root, fvar(11) * 40)), 6
+damage = ceil(cond(root, fvar(11) * 25< 10, 10, root, fvar(11) * 25)), 5
 hitflag = MAFD
 air.animtype = back
 guardflag = MA
@@ -731,7 +745,7 @@ removeongethit = 0
 type = HitDef
 trigger1 = time %2= 0
 attr = A, HP
-damage = ceil(cond(root, fvar(11) * 25< 15, 15, root, fvar(11) * 25)), 3
+damage = ceil(cond(root, fvar(11) * 33< 15, 15, root, fvar(11) * 33)), 3
 hitflag = MAFD
 air.animtype = back
 guardflag = MA
@@ -905,7 +919,7 @@ removeongethit = 0
 type = HitDef
 trigger1 = time %2= 0
 attr = A, HP
-damage = ceil(cond(root, fvar(11) * 25< 15, 15, root, fvar(11) * 25)), 3
+damage = ceil(cond(root, fvar(11) * 34< 15, 15, root, fvar(11) * 34)), 3
 hitflag = MAFD
 air.animtype = back
 guardflag = MA
@@ -971,7 +985,7 @@ velset = 7,0
 type = ParentVarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 5; You can make this whatever you want to increase stun scaling per move
+value = 10; You can make this whatever you want to increase stun scaling per move
 ignorehitpause = 1
 persistent = 0
 
@@ -1042,7 +1056,7 @@ type = HitDef
 trigger1 = var(21)<2
 trigger1 = time %2= 0
 attr = A, HP
-damage = ceil(cond(root, fvar(11) * 30< 20, 20, root, fvar(11) * 30)), 3
+damage = ceil(cond(root, fvar(11) * 40< 25, 25, root, fvar(11) * 40)), 3
 hitflag = MAFD
 air.animtype = back
 guardflag = MA
@@ -1071,8 +1085,9 @@ ground.cornerpush.veloff = 0
 type = HitDef
 trigger1 = var(21)>=2
 trigger1 = time %2= 0
+trigger1 = root,map(bigblue)=1
 attr = A, HP
-damage = ceil(cond(root, fvar(11) * 70< 40, 40, root, fvar(11) * 70)), 3
+damage = ceil(cond(root, fvar(11) * 81< 40, 40, root, fvar(11) * 81)), 3
 hitflag = MAF
 air.animtype = back
 guardflag = MA
@@ -1096,9 +1111,49 @@ envshake.time = 12
 envshake.freq = 80
 envshake.ampl = 12
 yaccel = .38
-fall = 1
+forcenofall = 1
 ground.cornerpush.veloff = 0
 
+[State Limiter]
+type = RootMapAdd
+trigger1 = movehit
+map = "bigblue"
+value=1
+ignorehitpause=1
+persistent=0
+
+[State 410, 2]
+type = HitDef
+trigger1 = var(21)>=2
+trigger1 = time %2= 0
+trigger1 = root,map(bigblue)>1
+attr = A, HP
+damage = ceil(cond(root, fvar(11) * 66< 40, 40, root, fvar(11) * 66)), 3
+hitflag = MAF
+air.animtype = back
+guardflag = MA
+;priority = 3
+pausetime = 15,15
+sparkno = 2
+sparkxy = random%20,10-random%20
+hitsound   = 5,2
+guardsound = 5,1
+ground.type = Low
+animtype = medium
+ground.slidetime = 14
+ground.hittime  = 10
+air.velocity = -6,-1
+fall.yvelocity = 0
+air.velocity = -6,-1
+air.hittime = 10
+airguard.velocity = -2,-3
+getpower = 0
+envshake.time = 12
+envshake.freq = 80
+envshake.ampl = 12
+yaccel = .38
+forcenofall = 1
+ground.cornerpush.veloff = 0
 
 [State 0, VarSet]
 type = VarSet
@@ -1135,6 +1190,13 @@ sprpriority = 16
 poweradd = -1000
 facep2=1
 
+[State Tui Voices]
+type = PlaySnd
+triggerall = !map(phoenix)
+trigger1 = animelem = 2
+value = 3110, 0+Random%2
+volumescale=175
+
 [State 0, SuperPause]
 type = SuperPause
 trigger1 = time = 0
@@ -1170,7 +1232,7 @@ y = -5
 [State 0, VelMul]
 type = VelSet
 trigger1 = animelem=17
-x = -1
+x = -2
 y = -9
 
 [State 0, StateTypeSet]
@@ -1254,6 +1316,13 @@ anim =3500
 sprpriority = 16
 poweradd = -2000
 facep2=1
+
+[State Tui Voices]
+type = PlaySnd
+triggerall = !map(phoenix)
+trigger1 = animelem = 1
+value = 3500, 0+Random%2
+volumescale=200
 
 [State 0, VarSet]
 type = MapSet
@@ -1643,6 +1712,13 @@ anim =3505
 sprpriority = 16
 facep2=1
 
+[State Tui Voices]
+type = PlaySnd
+triggerall = !map(phoenix)
+trigger1 = animelem = 1
+value = 3505, 0+Random%2
+volumescale=200
+
 [State 0, VarSet]
 type = MapSet
 trigger1 = animelem=7
@@ -1665,6 +1741,12 @@ physics = S
 ctrl = 0
 anim = 4001
 facep2=1
+
+[State Tui Voices]
+type = PlaySnd
+trigger1 = animelem = 1
+value = 4000, 0+Random%2
+volumescale=200
 
 [State 0, SuperPause]
 type = SuperPause
@@ -1780,12 +1862,42 @@ anim =4100
 sprpriority = 16
 facep2=1
 
+[State Tui Voices]
+type = PlaySnd
+trigger1 = time=0
+value = 4100, 0
+volumescale=200
+
+[State Tui Voices]
+type = PlaySnd
+trigger1 = movehit
+value = 4101, 0
+volumescale=200
+persistent=0
+ignorehitpause=1
+
 [State 0, AssertSpecial]
 type = MapSet
 trigger1 = time=0
 map = "phoenix"
 value = 0
 ignorehitpause=1
+
+[State 0, AssertSpecial]
+type = MapSet
+trigger1 = time=0
+map = "phoenixdie"
+value = 1
+ignorehitpause=1
+
+[State 0, NotHitBy]
+type = NotHitBy
+value = SCA
+trigger1 = 1
+time = 2
+ignorehitpause = 1
+persistent = 1
+
 [State 0, PowerAdd]
 type = PowerSet
 trigger1 = time=1
@@ -1844,11 +1956,11 @@ value = 1012,0
 [State 0, SuperPause]
 type = SuperPause
 trigger1 = time = 0
-time = 60
+time = 80
 anim = -1
 sound = 20,0
 pos = 0,-50
-movetime = 60
+movetime = 80
 darken = 1
 p2defmul = 1
 unhittable = 1
@@ -1958,6 +2070,15 @@ ctrl = 0
 anim = 4101
 velset = 4,0
 sprpriority = 2
+
+
+[State 0, NotHitBy]
+type = NotHitBy
+value = SCA
+trigger1 = 1
+time = 2
+ignorehitpause = 1
+persistent = 1
 
 [State 200, VarAdd]
 type = VarAdd
@@ -2077,3 +2198,8 @@ trigger1 = animtime =0&&!winko
 value = 0
 ignorehitpause = 1
 persistent = 1
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = animtime = 0&&!winko
+value =6150
+ctrl = 0

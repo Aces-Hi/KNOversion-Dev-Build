@@ -10,6 +10,13 @@ anim =1000
 sprpriority = 2
 velset = 0,0
 
+[State Tui Voices]
+type = PlaySnd
+triggerall = !map(phoenix)
+trigger1 = animelem = 1
+value = 1000, 0+Random%2
+volumescale=200
+
 [State 0, StateTypeSet]
 type = StateTypeSet
 trigger1 = time=0&&pos y < 0
@@ -97,6 +104,13 @@ ctrl = 0
 anim =1000
 sprpriority = 2
 velset = 0,0
+
+[State Tui Voices]
+type = PlaySnd
+triggerall = !map(phoenix)
+trigger1 = animelem = 1
+value = 1005, 0+Random%3
+volumescale=175
 
 [State EX Limiters]
 type = mapset
@@ -191,7 +205,6 @@ movetype= A
 physics = N
 juggle  = 2
 poweradd= 0
-velset = 3,-8
 ctrl = 0
 anim =1001
 sprpriority = 2
@@ -225,7 +238,7 @@ persistent = 1
 type = VelSet
 trigger1 = time = 0 && pos y >=0
 x = 3
-y = -8
+y = -7
 [State 0, VelSet]
 type = VelSet
 trigger1 = time = 0 && pos y <0
@@ -244,8 +257,8 @@ trigger1 = prevstateno!=1005
 trigger1 = anim = 1001
 trigger1 = time %3=0
 attr = A, SA
-damage = ceil(cond(fvar(11) *10 < 3, 3, fvar(11) * 10)), 2
-hitflag = MAF
+damage = ceil(cond(fvar(11) *8 < 2, 2, fvar(11) * 8)), 2
+hitflag = MAFD
 guardflag = MAF
 getpower = cond(prevstateno = 1005, 0, 10)
 ;priority = 3
@@ -259,8 +272,8 @@ animtype = up
 air.animtype = up
 ground.slidetime = 14
 ground.hittime  = 23
-ground.velocity = -2.5,-7+(cond(prevstateno = 1020,-3,0))
-air.velocity = -2.5,-7+(cond(prevstateno = 1020,-3,0))
+ground.velocity = -2.5,-6
+air.velocity = -2.5,-6
 air.hittime = 24
 guard.hittime =  4
 guard.ctrltime = 4
@@ -282,7 +295,7 @@ trigger1 = anim = 1001
 trigger1 = time %3=0
 attr = A, SA
 damage = 3,2
-hitflag = MAF
+hitflag = MAFD
 guardflag = MAF
 getpower =0
 ;priority = 3
@@ -391,9 +404,10 @@ p2facing = 1
 trigger1 = prevstateno!=1005
 trigger1 = anim = 1002
 trigger1 = animelemtime(1) = 1
+trigger1 = map(upperhit)=1
 attr = A, SA
 damage = ceil(cond(fvar(11) * 32 < 4, 4, fvar(11) * 50)), 5
-hitflag = MAF
+hitflag = MAFD
 guardflag = MAF
 ;priority = 3
 pausetime = 12,12
@@ -406,7 +420,7 @@ animtype = medium
 air.animtype = back
 ground.slidetime = 14
 ground.hittime  = 23
-air.hittime = 60
+air.hittime = 50
 guard.hittime =  4
 guard.ctrltime = 4
 guard.slidetime = 2
@@ -419,12 +433,54 @@ getpower = (100)*(cond(var(var(3)) = 1, 1, .5))
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
+trigger1 = prevstateno!=1005
+trigger1 = anim = 1002
+trigger1 = animelemtime(1) = 1
+trigger1 = map(upperhit)>1
+attr = A, SA
+damage = ceil(cond(fvar(11) * 32 < 4, 4, fvar(11) * 50)), 5
+hitflag = MAFD
+guardflag = MAF
+;priority = 3
+pausetime = 12,12
+sparkno = 3
+sparkxy = 0,-55
+hitsound   = 5,2
+guardsound = 6,0
+ground.type = Low
+animtype = medium
+air.animtype = back
+ground.slidetime = 14
+ground.hittime  = 10
+air.hittime = 10
+guard.hittime =  4
+guard.ctrltime = 4
+guard.slidetime = 2
+guard.velocity = 0
+ground.velocity = -3,-3
+air.velocity = -3,-4
+air.hittime = 24
+forcenofall = 1
+getpower = (100)*(cond(var(var(3)) = 1, 1, .5))
+
+[State Limiter]
+type = MapAdd
+trigger1 = prevstateno!=1005
+map = "upperhit"
+value=1
+ignorehitpause=1
+persistent=0
+
+
+[State 630, 2]
+type = HitDef 
+p2facing = 1 
 trigger1 = prevstateno=1005
 trigger1 = anim = 1002
 trigger1 = animelemtime(1) = 1
 attr = A, SA
 damage = 4
-hitflag = MAF
+hitflag = MAFD
 guardflag = MAF
 ;priority = 3
 pausetime = 12,12
@@ -457,9 +513,8 @@ value = 1003
 ;-----------------------------
 [Statedef 1003]
 type    = S
-movetype= I
+movetype=A
 physics = S
-juggle  = 2
 poweradd= 0
 ctrl = 0
 anim =1003
@@ -473,7 +528,7 @@ trigger1 = prevstateno!=1001
 trigger1 = combocount
 value = 1
 ignorehitpause = 1
- 
+
 [State 0, PosSet]
 type = PosSet
 trigger1 = time = 0
@@ -545,6 +600,13 @@ poweradd= 0
 ctrl = 0
 anim =1011
 sprpriority = 2
+
+[State Tui Voices]
+type = PlaySnd
+triggerall = !map(phoenix)
+trigger1 = animelem = 1
+value = 1011, 0+Random%2
+volumescale=150
 
 [State 0, Helper]
 type = Helper
@@ -629,6 +691,13 @@ poweradd= 0
 ctrl = 0
 anim =1012
 sprpriority = 2
+
+[State Tui Voices]
+type = PlaySnd
+triggerall = !map(phoenix)
+trigger1 = animelem = 1
+value = 1011, 0+Random%2
+volumescale=150
 
 [State 200, VarAdd]
 type = VarAdd
@@ -970,6 +1039,13 @@ ctrl = 0
 anim =1009
 sprpriority = 2
 
+[State Tui Voices]
+type = PlaySnd
+triggerall = !map(phoenix)
+trigger1 = animelem = 6
+value = 1011, 0+Random%2
+volumescale=150
+
 [State EX Limiters]
 type = mapset
 trigger1 = time=0
@@ -1098,7 +1174,7 @@ poweradd= 0
 ctrl = 0
 anim = 1018
 sprpriority = 5
-velset = 3,0
+velset = 2,0
 
 [State 200, VarAdd]
 type = ParentVarAdd
@@ -1238,7 +1314,7 @@ value = 1
 [State 0, ChangeState]
 type = ChangeState
 trigger1 = var(21)>2
-trigger2 = time >= 50
+trigger2 = time >= 80
 trigger3 = map(rotate) && pos y >=-5
 value = 1019
 ctrl = 0
@@ -1343,6 +1419,13 @@ ctrl = 0
 anim =670
 sprpriority = 2
 
+[State Tui Voices]
+type = PlaySnd
+triggerall = !map(phoenix)
+trigger1 = animelem = 3
+value = 1011, 0+Random%2
+volumescale=150
+
 [State 0, PosSet]
 type = PosSet
 trigger1 = animelemtime(5)<0&&pos y>-10
@@ -1393,6 +1476,13 @@ ctrl = 0
 anim =670
 sprpriority = 2
 poweradd=cond(map(phoenix),0,-1000)
+
+[State Tui Voices]
+type = PlaySnd
+triggerall = !map(phoenix)
+trigger1 = animelem = 3
+value = 1011, 0+Random%2
+volumescale=150
 
 [State EX Limiters]
 type = mapset
@@ -1567,7 +1657,7 @@ type = HitDef
 p2facing = 1 
 trigger1 = animelem = 3
 attr = S, SA
-damage = ceil(cond(fvar(11) *20 < 2, 2, fvar(11) * 20)), 2
+damage = ceil(cond(fvar(11) *10 < 1, 1, fvar(11) * 10)), 1
 hitflag = MAF
 guardflag = MAF
 ;priority = 3
@@ -1620,7 +1710,14 @@ juggle  = 2
 ctrl = 0
 anim =1034
 sprpriority = 2
-velset = 4,-6
+velset = 2,-6
+
+[State Tui Voices]
+type = PlaySnd
+triggerall = !map(phoenix)
+trigger1 = animelem = 1
+value = 1025, 3+Random%2
+volumescale=200
 
 [State 200, VarAdd]
 type = VarAdd
@@ -1707,8 +1804,8 @@ ground.type = Low
 animtype = medium
 ground.slidetime = 14
 ground.hittime  = 33
-ground.velocity = -4,-5
-air.velocity = -4,-5
+ground.velocity = -2.5,-5
+air.velocity = -2.5,-5
 air.hittime = 34
 forcenofall = 1
 envshake.time = 25
@@ -1737,8 +1834,8 @@ ground.type = Low
 animtype = medium
 ground.slidetime = 14
 ground.hittime  = 11
-ground.velocity = -4,-5
-air.velocity = -4,-5
+ground.velocity = -2.5,-5
+air.velocity = -2.5,-5
 air.hittime = 11
 forcenofall = 1
 envshake.time = 25
@@ -1854,7 +1951,7 @@ type = HitDef
 p2facing = 1 
 trigger1 = animelem = 3
 attr = S, SA
-damage = ceil(cond(fvar(11) *20 < 2, 2, fvar(11) * 20)), 2
+damage = ceil(cond(fvar(11) *10 < 1, 1, fvar(11) * 10)), 2
 hitflag = MAF
 guardflag = MAF
 ;priority = 3
@@ -1908,6 +2005,13 @@ ctrl = 0
 anim =1032
 sprpriority = 2
 velset = 3,-4
+
+[State Tui Voices]
+type = PlaySnd
+triggerall = !map(phoenix)
+trigger1 = animelem = 1
+value = 1025, 0+Random%3
+volumescale=125
 
 [State 200, VarAdd]
 type = VarAdd
@@ -1975,10 +2079,10 @@ ground.type = Low
 animtype = medium
 ground.slidetime = 14
 ground.hittime  = 33
-ground.velocity = -10,7
+ground.velocity = -10,6
 fall.xvelocity = -4
 fall.yvelocity = -4
-air.velocity = -10,7
+air.velocity = -10,6
 air.hittime = 34
 fall = 1
 fall.yvelocity = -3
@@ -2116,6 +2220,13 @@ ctrl = 0
 anim =1035
 sprpriority = 2
 velset = 5,-1
+
+[State Tui Voices]
+type = PlaySnd
+triggerall = !map(phoenix)
+trigger1 = animelem = 1
+value = 1035, 0+Random%2
+volumescale=150
 
 [State EX Limiters]
 type = mapset
@@ -2398,6 +2509,13 @@ ctrl = 0
 anim =1040
 sprpriority = 2
 
+[State Tui Voices]
+type = PlaySnd
+triggerall = !map(phoenix)
+trigger1 = animelem = 2
+value = 1040, 0+Random%3
+volumescale=175
+
 [State 0, Helper]
 type = Helper
 trigger1 = animelem=6
@@ -2521,8 +2639,8 @@ trigger2 = anim=1044&&animtime=0
 trigger3 = root,animelemtime(2)<=0
 trigger3 = root,stateno=1040 || root,stateno=1045 || root,stateno=1050 || root,stateno=1055
 trigger4 = root,stateno=700 || root,stateno=710
-trigger4 = rootdist x > -60 && rootdist x < 40
-trigger4 = rootdist y > -80 && rootdist y < 80
+trigger4 = rootdist x > -62 && rootdist x < 42
+trigger4 = rootdist y > -82 && rootdist y < 82
 ignorehitpause=1
 ;-----------------------------
 ;5S Boom
@@ -2620,6 +2738,13 @@ ctrl = 0
 anim =1045
 sprpriority = 2
 
+[State Tui Voices]
+type = PlaySnd
+triggerall = !map(phoenix)
+trigger1 = animelem = 2
+value = 1040, 0+Random%3
+volumescale=200
+
 [State 0, VelMul]
 type = VelMul
 trigger1 = animelemtime(7)<0
@@ -2666,7 +2791,7 @@ trigger1 = AnimTime = 0
 value = 1
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = pos y>=-5 && vel y>=0
+trigger1 = pos y>=-10 && vel y>=0
 value = 1003
 
 ;EX5S
@@ -2679,6 +2804,13 @@ ctrl = 0
 anim =1050
 sprpriority = 2
 poweradd=cond(map(phoenix),0,-1000)
+
+[State Tui Voices]
+type = PlaySnd
+triggerall = !map(phoenix)
+trigger1 = animelem = 1
+value = 1050, 0+Random%2
+volumescale=125
 
 [State EX Limiters]
 type = mapset
@@ -2841,8 +2973,8 @@ trigger2 = anim=1044&&animtime=0
 trigger3 = root,animelemtime(2)<=0
 trigger3 = root,stateno=1040 || root,stateno=1045 || root,stateno=1050 || root,stateno=1055
 trigger4 = root,stateno=700 || root,stateno=710
-trigger4 = rootdist x > -60 && rootdist x < 40
-trigger4 = rootdist y > -80 && rootdist y < 80
+trigger4 = rootdist x > -62 && rootdist x < 42
+trigger4 = rootdist y > -82 && rootdist y < 82
 ignorehitpause=1
 ;-----------------------------
 ;EX5S Boom
@@ -2898,7 +3030,7 @@ trigger3 =animelem=8
 attr = A, SP
 animtype  = Light
 air.animtype = back
-damage = ceil(cond(root,fvar(11) *30 < 5, 5, root,fvar(11) * 30)), 0
+damage = ceil(cond(root,fvar(11) *25 < 5, 5, root,fvar(11) * 25)), 0
 hitflag = MAFD
 guardflag = MA
 pausetime = 2,6
@@ -2942,6 +3074,13 @@ ctrl = 0
 anim =1055
 sprpriority = 2
 poweradd=cond(map(phoenix),0,-1000)
+
+[State Tui Voices]
+type = PlaySnd
+triggerall = !map(phoenix)
+trigger1 = animelem = 1
+value = 1050, 0+Random%2
+volumescale=125
 
 [State EX Limiters]
 type = mapset
@@ -3027,5 +3166,5 @@ trigger1 = AnimTime = 0
 value = 1
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = pos y>=-5 && vel y>=0
+trigger1 = pos y>=-10 && vel y>=0
 value = 1003

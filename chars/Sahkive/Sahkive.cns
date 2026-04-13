@@ -405,6 +405,7 @@ velset = 0,0
 type = selfstate
 triggerall = enemynear,name != "Angous"
 triggerall = enemynear,name != "Arzon"
+triggerall = enemynear,name != "Tui"
 triggerall=time=0
 trigger1 = prevstateno!=191
 value = 191+random%3
@@ -419,6 +420,7 @@ flag2 = nomusic
 type = ChangeState
 trigger1 = enemynear,name = "Angous"
 trigger2 = enemynear,name = "arzon"
+trigger3 = enemynear,name = "Tui"
 triggerall = Time = 0
 value = 194 
 
@@ -457,12 +459,7 @@ trigger1 = enemynear,name = "roger"
 trigger1 = enemynear,palno=7||enemynear,palno=4||enemynear,palno=9
 value = 190, (0+(Random%3))
 volumescale=150
-[State Sahkive Voices]
-type = PlaySnd
-triggerall = time=0
-trigger1 = enemynear,name = "tui"
-value = 197, (0+(Random%3))
-volumescale=150
+
 [State Sahkive Voices]
 type = PlaySnd
 triggerall = time=0
@@ -590,12 +587,7 @@ trigger1 = enemynear,name = "roger"
 trigger1 = enemynear,palno=7||enemynear,palno=4||enemynear,palno=9
 value = 190, (0+(Random%3))
 volumescale=150
-[State Sahkive Voices]
-type = PlaySnd
-triggerall = time=0
-trigger1 = enemynear,name = "tui"
-value = 197, (0+(Random%3))
-volumescale=150
+
 [State Sahkive Voices]
 type = PlaySnd
 triggerall = time=0
@@ -656,6 +648,12 @@ trigger1= enemynear,name = "arzon"
 value = 193, 0
 volumescale=150
 
+[State Sahkive Voices]
+type = PlaySnd
+triggerall = time=180
+trigger1 = enemynear,name = "tui"
+value = 197, (0+(Random%3))
+volumescale=175
 
 [State 0, VarSet]
 type = VarSet
@@ -665,12 +663,14 @@ value = 1
 
 [State 191, 1] ;Freeze animation until PreIntro is over
 type = ChangeAnim
-trigger1 = time = 120
+trigger1 = time = 120 && enemynear,name != "tui"
+trigger2 = time = 280 && enemynear,name = "tui"
 value = 13
 
 [State 0, EnvShake]
 type = EnvShake
 trigger1 = time=0
+trigger1= enemynear,name = "angous"
 time = 110
 freq = 120
 ampl = -4

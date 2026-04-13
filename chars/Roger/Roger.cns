@@ -804,19 +804,19 @@ volumescale = 150
 type = PlaySnd
 triggerall = enemynear,name="angous"
 trigger1 = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
-value = 191,0+random%5
+value = 191,0+random%6
 volumescale = 150
 [State 0, PlaySnd] ;what can I say.
 type = PlaySnd
 triggerall = enemynear,name="sahkive"
 trigger1 = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
-value = 192,0+random%4
+value = 192,0+random%5
 volumescale = 150
 [State 0, PlaySnd] ;what can I say.
 type = PlaySnd
 triggerall = enemynear,name="tui"
 trigger1 = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
-value = 193,0+random%5
+value = 193,0+random%6
 volumescale = 150
 [State 0, PlaySnd] ;what can I say.
 type = PlaySnd
@@ -1036,19 +1036,19 @@ volumescale = 150
 type = PlaySnd
 triggerall = enemynear,name="angous"
 trigger1 = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
-value = 191,0+random%5
+value = 191,0+random%6
 volumescale = 150
 [State 0, PlaySnd] ;what can I say.
 type = PlaySnd
 triggerall = enemynear,name="sahkive"
 trigger1 = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
-value = 192,0+random%4
+value = 192,0+random%5
 volumescale = 150
 [State 0, PlaySnd] ;what can I say.
 type = PlaySnd
 triggerall = enemynear,name="tui"
 trigger1 = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
-value = 193,0+random%5
+value = 193,0+random%6
 volumescale = 150
 [State 0, PlaySnd] ;what can I say.
 type = PlaySnd
@@ -1249,19 +1249,19 @@ volumescale = 150
 type = PlaySnd
 triggerall = enemynear,name="angous"
 trigger1 = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
-value = 191,0+random%5
+value = 191,0+random%6
 volumescale = 150
 [State 0, PlaySnd] ;what can I say.
 type = PlaySnd
 triggerall = enemynear,name="sahkive"
 trigger1 = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
-value = 192,0+random%4
+value = 192,0+random%5
 volumescale = 150
 [State 0, PlaySnd] ;what can I say.
 type = PlaySnd
 triggerall = enemynear,name="tui"
 trigger1 = time = 0 && palno != 9&& palno != 7&& palno != 8&& palno != 4
-value = 193,0+random%5
+value = 193,0+random%6
 volumescale = 150
 [State 0, PlaySnd] ;what can I say.
 type = PlaySnd

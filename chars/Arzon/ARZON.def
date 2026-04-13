@@ -48,5 +48,6 @@ a2 = 10
 b2 = 11
 c2 = 12
 
-;Var1 = Special Cancel Counter
+[Map]
+Human = 1
 

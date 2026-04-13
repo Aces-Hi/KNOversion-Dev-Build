@@ -799,7 +799,7 @@ anim = 193
 
 [State -3, Win Voices] ;Win
 type = PlaySnd
-trigger1 = animelem = 20
+trigger1 = animelem = 28
 value = 1005,0
 
 [State 193, 1]
@@ -811,14 +811,14 @@ flag2 = nomusic
 
 [State 0, EnvShake]
 type = EnvShake
-trigger1 = animelem = 44
+trigger1 = animelem = 52
 time = 20
 freq = 210
 ampl = 4
 
 [State 0, Explod]
 type = Explod
-trigger1 = animelem  = 45
+trigger1 = animelem  = 53
 anim = 6800
 ID = 6800
 pos = 33,0
@@ -834,7 +834,7 @@ ontop = 1
 
 [State 0, Explod]
 type = Explod
-trigger1 = animelem = 45
+trigger1 = animelem = 53
 anim = 10042
 ID = 10042
 pos = 33,0
@@ -870,19 +870,19 @@ volumescale = 150
 [State -3, Voices]
 type = PlaySnd
 trigger1 = enemynear,name = "Tui"
-trigger1 = animelem = 12
+trigger1 = animelem = 38
 value = 192, (0+(Random%3))
-volumescale = 150
+volumescale = 200
 
 [State -3, Voices] ;Win
 type = PlaySnd
-trigger1 = animelem = 44
+trigger1 = animelem = 52
 value = 3010,4
 channel = 0
 
 [State -3, Voices] ;Win
 type = PlaySnd
-trigger1 = animelem = 44
+trigger1 = animelem = 52
 value = 3010,2
 channel = 1
 
@@ -2128,6 +2128,7 @@ loop = 0
 persistent = 0
 volumescale=200
 ignorehitpause=1
+
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = map(DIE)=1
@@ -2138,6 +2139,7 @@ loop = 0
 persistent = 0
 volumescale=150
 ignorehitpause=1
+
 [State 0, VarAdd]
 type = MapAdd
 trigger1 = !alive

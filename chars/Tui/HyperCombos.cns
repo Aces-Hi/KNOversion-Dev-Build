@@ -69,7 +69,7 @@ x = .95
 [State 0, VelSet]
 type = VelSet
 trigger1 = animelem = 12
-x = 6
+x = 7
 y = 9
 
 [State 0, PalFXWiz]
@@ -183,7 +183,7 @@ persistent = 0
 type = VarAdd
 trigger1 = movehit=1
 fv =13     ;fv = 
-value = 2
+value = 7
 persistent = 0
 
 [State -3, Tui Voices]
@@ -288,6 +288,58 @@ fall.envshake.freq = 0
 fall.envshake.ampl = 0
 getpower = (0)*(cond(var(var(3)) = 1, 1, .5))
 fall.yvelocity=0
+
+;=======================================
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = WinKO
+value = 8991,0
+channel = 0
+ignorehitpause = 1
+persistent=0
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = WinKO
+flag = Nobardisplay
+flag2 = NoFG
+flag3 = Noshadow
+ignorehitpause=1
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = WinKO
+flag = Nomusic
+ignorehitpause=1
+[State 8990, Explod]
+type = Explod
+trigger1 = WinKO
+anim = F8990
+id = 8990
+pos = 0,0
+scale = 1,1
+postype = back
+bindtime = -1
+removetime = -2
+sprpriority = -10
+ownpal = 1
+supermovetime = -1
+persistent=0
+ignorehitpause=1
+[State 8990, Explod]
+type = Explod
+trigger1 = WinKO
+anim = F8991
+id = 8991
+pos = 0,0
+scale = 1,1
+postype = Left
+bindtime = -1
+removetime = -2
+sprpriority = -9
+ownpal = 1
+supermovetime = -1
+persistent=0
+ignorehitpause=1
+;=======================================
 
 [State 0, ChangeState]
 type = ChangeState
@@ -993,7 +1045,7 @@ persistent = 0
 type = ParentVarAdd
 trigger1 = movehit=1
 fv =13     ;fv = 
-value = 5
+value = 7
 persistent = 0
 ignorehitpause = 1
 persistent = 0
@@ -1174,6 +1226,58 @@ trigger2 = time >= 50
 value = 3107
 ctrl = 0
 
+;=======================================
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = WinKO
+value = 8991,0
+channel = 0
+ignorehitpause = 1
+persistent=0
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = WinKO
+flag = Nobardisplay
+flag2 = NoFG
+flag3 = Noshadow
+ignorehitpause=1
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = WinKO
+flag = Nomusic
+ignorehitpause=1
+[State 8990, Explod]
+type = Explod
+trigger1 = WinKO
+anim = F8990
+id = 8990
+pos = 0,0
+scale = 1,1
+postype = back
+bindtime = -1
+removetime = -2
+sprpriority = -10
+ownpal = 1
+supermovetime = -1
+persistent=0
+ignorehitpause=1
+[State 8990, Explod]
+type = Explod
+trigger1 = WinKO
+anim = F8991
+id = 8991
+pos = 0,0
+scale = 1,1
+postype = Left
+bindtime = -1
+removetime = -2
+sprpriority = -9
+ownpal = 1
+supermovetime = -1
+persistent=0
+ignorehitpause=1
+;=======================================
+
 [State 0, DestroySelf]
 type = DestroySelf
 trigger1 = parent,movetype = H
@@ -1340,11 +1444,26 @@ ignorehitpause = 1
 [State 0, SuperPause]
 type = SuperPause
 trigger1 = time = 0
+trigger1 = combocount || enemy,movetype=H
 time = 30
 anim = -1
 sound = 20,0
 pos = 0,-50
 movetime = 30
+darken = 1
+p2defmul = 1
+unhittable = 1
+;ignorehitpause = 
+;persistent = 
+[State 0, SuperPause]
+type = SuperPause
+trigger1 = time = 15
+trigger1 = !combocount && !enemy,movetype=H
+time = 15
+anim = -1
+sound = 20,0
+pos = 0,-50
+movetime = 0
 darken = 1
 p2defmul = 1
 unhittable = 1
@@ -1549,23 +1668,9 @@ trigger3 = rootdist y > -80 && rootdist y < 80
 ID = 3502
 removetime = 0
 
-[State 0, VarSet]
-type = MapSet
-trigger1 = time=0
-map = "hellzonetimer"
-value = 0
-ignorehitpause = 1
-[State 0, VarSet]
-type = MapAdd
-trigger1 = root,map(Collapse)
-map = "hellzonetimer"
-value = 1
-ignorehitpause = 1
-persistent=1
-
 [State 0, ChangeAnim]
 type = ChangeAnim
-trigger1 = time>=300&&anim!=3504&&animtime=0&&map(hellzonetimer)=0&&root,!combocount
+trigger1 = parent,movetype = H&&anim!=3504
 value = 3504
 
 [State 0, ChangeState]
@@ -1573,8 +1678,7 @@ type = ChangeState
 triggerall = root,stateno!=3500
 trigger1 = p2bodydist x > -30 && p2bodydist x < 20
 trigger1 = p2bodydist  y > -70 && p2bodydist  y < 60
-trigger1 = enemy,stateno!=5120 && enemy,stateno!=5111
-trigger2 = map(hellzonetimer)>=60
+trigger1 = enemy,stateno!=5120 && enemy,stateno!=5111 && enemy,stateno!=915111
 value = 3502
 
 [State 0, VelSet]
@@ -1600,11 +1704,10 @@ x =-.4
 
 [State 0, DestroySelf]
 type = DestroySelf
-trigger1 = parent,movetype = H
-trigger2 = anim=3504&&animtime=0
-trigger3 = root,stateno=700 || root,stateno=710
-trigger3 = rootdist x > -60 && rootdist x < 40
-trigger3 = rootdist y > -80 && rootdist y < 80
+trigger1 = anim=3504&&animtime=0
+trigger2 = root,stateno=700 || root,stateno=710
+trigger2 = rootdist x > -60 && rootdist x < 40
+trigger2 = rootdist y > -80 && rootdist y < 80
 ignorehitpause=1
 
 ;-----------------------------

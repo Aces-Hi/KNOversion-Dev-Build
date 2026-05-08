@@ -155,94 +155,38 @@ type = S
 
 [State 180, 1]
 type = ChangeState
-trigger1 = Time = 0
-value = 182
+trigger1 = map(phoenixdie)=0&&map(phoenix)=0
+value = 181
 
+[State 180, 1]
+type = ChangeState
+trigger1 = map(phoenixdie)||map(phoenix)
+value = 189
 ;---------------------------------------------------------------------------
 ; Win 1
 [Statedef 181]
 type = S
 ctrl = 0
-anim = 181
-velset = 0,0
-
-[State -3, Win Announcer]
-type = PlaySnd
-trigger1 = time=0
-value = 7410, 0
-
-[State 0, EnvShake]
-type = EnvShake
-trigger1 = animelem = 5
-time = 15
-freq = 80
-ampl = -3
-
-[State -3, Tui Voices]
-type = PlaySnd
-trigger1 = animelem = 4
-value = 1016, (0+(Random%6))
-
-
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem  = 5
-anim = 6800
-ID = 6800
-pos = 33,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-removetime = -2
-pausemovetime = 0
-scale = .5,.5
-sprpriority = 6
-ontop = 1
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 5
-anim = 10042
-ID = 10042
-pos = 33,0
-postype = p1  ;p2,front,back,left,right
-facing = -1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-removetime = -2
-pausemovetime = 1
-scale = 0.65,0.65
-sprpriority = 0
-ontop = 0
-shadow = 0,0,0
-ownpal = 0
-removeongethit = 0
-ignorehitpause = 1
-
-
-[State 181, 1]
-type = NotHitBy
-trigger1 = 1
-value = SCA
-time = 1
-
-;---------------------------------------------------------------------------
-; Win 2
-[Statedef 182]
-type = S
-ctrl = 0
 anim = 182
 velset = 0,0
 
+[State 0, AssertSpecial]
+type = MapSet
+trigger1 = time=0
+map = "phoenix"
+value = 0
+ignorehitpause=1
+
 [State -3, Win Announcer]
 type = PlaySnd
+triggerall=teammode!=Tag
 trigger1 = time=0
 value = 7410, 0
+[State -3, Win Announcer]
+type = PlaySnd
+triggerall=teammode!=Tag
+trigger1 = time=50
+value = F1000,0
 
 [State 8990, AssertSpecial]
 type = AssertSpecial
@@ -254,6 +198,39 @@ type = PlaySnd
 trigger1 = animelem = 3
 trigger2 = animelem = 9
 value = 5,0
+
+[State 181, 1]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 1
+
+;---------------------------------------------------------------------------
+; Win Final
+[Statedef 189]
+type = S
+ctrl = 0
+anim = 189
+velset = 0,0
+
+[State 0, AssertSpecial]
+type = MapSet
+trigger1 = time=0
+map = "phoenix"
+value = 0
+ignorehitpause=1
+
+[State -3, Win Announcer]
+type = PlaySnd
+triggerall=teammode!=Tag
+trigger1 = time=0
+value = 7410, 0
+[State -3, Win Announcer]
+type = PlaySnd
+triggerall=teammode!=Tag
+trigger1 = time=50
+value = F1000,0
+
 
 [State 181, 1]
 type = NotHitBy
@@ -521,6 +498,7 @@ value = 0
 type = S
 ctrl = 0
 anim = 193  
+sprpriority=-1
 
 [State -3, Tui Voices]
 type = PlaySnd
@@ -546,29 +524,29 @@ value = 0
 
 [State 0, EnvShake]
 type = EnvShake
-trigger1 = animelem = 53
+trigger1 = animelem = 55
 time = 20
 freq = 210
 ampl = 4
 
 [State -3, Tui Voices]
 type = PlaySnd
-trigger1 = animelem = 53
+trigger1 = animelem = 55
 value = 1003, (0+(Random%4))
 
 [State 0, PlaySnd]
 type = PlaySnd
-trigger1 = animelem = 53
+trigger1 = animelem = 55
 value = 6,2
 
 [State 0, PlaySnd]
 type = PlaySnd
-trigger1 = animelem = 53
+trigger1 = animelem = 55
 value = 8080,0
 
 [State 0, Explod]
 type = Explod
-trigger1 = animelem  = 53
+trigger1 = animelem  = 55
 anim = 6800
 ID = 6800
 pos = 33,0
@@ -584,7 +562,7 @@ ontop = 1
 
 [State 0, Explod]
 type = Explod
-trigger1 = animelem = 53
+trigger1 = animelem = 55
 anim = 10042
 ID = 10042
 pos = 33,0
@@ -1235,6 +1213,7 @@ value = 40, 0
 type = PlaySnd
 trigger1 = map(DIE)=1
 triggerall = !map(phoenixdie)
+triggerall = !map(phoenix)
 value = 9000,0+(random%3)
 channel = -1
 loop = 0
@@ -1244,8 +1223,9 @@ ignorehitpause=1
 
 [State 0, PlaySnd]
 type = PlaySnd
-trigger1 = map(DIE)=1
-triggerall = map(phoenixdie)
+triggerall = map(DIE)=1
+trigger1 = map(phoenixdie)
+trigger2 = map(phoenix)
 value = 9001,0
 channel = -1
 loop = 0

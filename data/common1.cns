@@ -10404,7 +10404,7 @@ persistent=1
 
 [State 0, AssertSpecial]
 type = MapSet
-trigger1 = roundstate!=2
+trigger1 = roundstate<2
 map = "phoenix"
 value = 0
 ignorehitpause=1

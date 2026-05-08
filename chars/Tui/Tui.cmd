@@ -54,6 +54,7 @@ trigger5 = stateno = 1033 && movecontact ;&& enemynear, movetype = H
 [State Hellzone Super]
 type = ChangeState
 value = 3500
+triggerall=stateno!=40
 triggerall = map(phoenix)=0
 triggerall = roundstate = 2 ;only attack during the round
 triggerall = command = "QCB"
@@ -71,6 +72,7 @@ trigger5 = stateno = 1033 && movecontact ;&& enemynear, movetype = H
 [State Hellzone Collapse]
 type = ChangeState
 value = 3505
+triggerall=stateno!=40
 triggerall = map(Collapse)=0
 triggerall = roundstate = 2 ;only attack during the round
 triggerall = command = "QCB"
@@ -85,14 +87,14 @@ trigger4 = stateno = 1030 && movecontact ;&& enemynear, movetype = H
 trigger5 = stateno = 1033 && movecontact ;&& enemynear, movetype = H
 
 
-[State Manual Install FOR TESTING PURPOSES ONLY]
-type = ChangeState
-value = 4000
-triggerall = roundstate = 2 ;only attack during the round
-triggerall = command = "QCBs"
-triggerall = statetype != A
-triggerall = map(phoenix)=0
-trigger1 = ctrl
+;[State Manual Install FOR TESTING PURPOSES ONLY]
+;type = ChangeState
+;value = 4000
+;triggerall = roundstate = 2 ;only attack during the round
+;triggerall = command = "QCBs"
+;triggerall = statetype != A
+;triggerall = map(phoenix)=0
+;trigger1 = ctrl
 
 [State Final Divekick Super]
 type = ChangeState
@@ -135,8 +137,6 @@ trigger3 = stateno != 504 && stateno !=1655 && stateno !=1656 && stateno !=1657 
 trigger3 = stateno != 504 && stateno !=1655 && stateno !=1656 && stateno !=1657 && vel y>.1
 
 ;---------------------------------------------------------------------------
-
-
 ;Aerial Dash
 [State -1, Airdash]
 type = ChangeState
@@ -196,6 +196,7 @@ trigger1 = ctrl
 [State 5S]
 type = ChangeState
 value = 1040
+triggerall=stateno!=40
 triggerall = command = "b"
 triggerall = command != "c" && command != "EX"
 triggerall = command != "holddown"
@@ -208,6 +209,7 @@ trigger2 = var(1)
 [State EX5S]
 type = ChangeState
 value = 1050
+triggerall=stateno!=40
 triggerall=map(EXLimiter4)=0
 triggerall = command = "EX"
 triggerall = power>=1000||map(phoenix)=0
@@ -267,6 +269,7 @@ trigger2 = var(1)
 [State 4S]
 type = ChangeState
 value = 1010
+triggerall=stateno!=40
 triggerall = roundstate = 2 ;only attack during the round
 triggerall = command = "b" && command="holdback"
 triggerall = command != "holddown"
@@ -274,9 +277,10 @@ triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
 
-[State EX 4S]
+[State EX4S]
 type = ChangeState
 value = 1016
+triggerall=stateno!=40
 triggerall=map(EXLimiter2)=0
 triggerall = numhelper(1013)=0
 triggerall = roundstate = 2 ;only attack during the round
@@ -325,6 +329,7 @@ trigger2 = var(1)
 [State 6S]
 type = ChangeState
 value = 1025
+triggerall=stateno!=40
 triggerall = stateno!=1025
 triggerall = command = "holdfwd"
 triggerall = command = "b"
@@ -364,6 +369,7 @@ trigger6 = stateno = 101
 [State 5L]
 type = ChangeState
 value = 200
+triggerall=stateno!=40
 triggerall = roundstate = 2 ;only attack during the round
 triggerall = command = "x"
 triggerall = command != "holddown"
@@ -376,6 +382,7 @@ trigger4 = stateno = 101
 [State 5M]
 type = ChangeState
 value =  210
+triggerall=stateno!=40
 triggerall = roundstate = 2 ;only attack during the round
 triggerall = command = "y"
 triggerall = command != "holddown"
@@ -389,6 +396,7 @@ trigger4 = stateno = 410 && movecontact&&prevstateno!=210
 [State 6H]
 type = ChangeState
 value =  230
+triggerall=stateno!=40
 triggerall = roundstate = 2 ;only attack during the round
 trigger1 = statetype != A
 triggerall = command = "z"
@@ -406,6 +414,7 @@ trigger8 = stateno = 400 && movecontact ;&& enemynear, movetype = H
 [State 5H]
 type = ChangeState
 value =  220
+triggerall=stateno!=40
 triggerall = roundstate = 2 ;only attack during the round
 trigger1 = statetype != A
 triggerall = command = "z"
@@ -422,6 +431,7 @@ trigger6 = stateno = 400 && movecontact ;&& enemynear, movetype = H
 [State 2L]
 type = ChangeState
 value = 400
+triggerall=stateno!=40
 triggerall = roundstate = 2 ;only attack during the round
 triggerall = command = "x"
 triggerall = command = "holddown"
@@ -434,6 +444,7 @@ trigger3 = stateno = 400 && movecontact ;&& enemynear, movetype = H
 [State 2M]
 type = ChangeState
 value = 410
+triggerall=stateno!=40
 triggerall = roundstate = 2 ;only attack during the round
 triggerall = command = "y"
 triggerall = command = "holddown"
@@ -448,6 +459,7 @@ trigger3 = stateno = 210 && movecontact&&prevstateno!=410
 [State 3H]
 type = ChangeState
 value = 430
+triggerall=stateno!=40
 triggerall = roundstate = 2 ;only attack during the round
 triggerall = command = "z"
 triggerall = command = "holddown"
@@ -462,6 +474,7 @@ trigger3 = stateno = 101
 [State 2H]
 type = ChangeState
 value = 420
+triggerall=stateno!=40
 triggerall = roundstate = 2 ;only attack during the round
 triggerall = command = "z"
 triggerall = command = "holddown"

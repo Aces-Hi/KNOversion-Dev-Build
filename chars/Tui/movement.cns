@@ -477,7 +477,7 @@ value =1
 type    = A
 movetype= I
 physics = N
-velset = 7,0
+velset = 6,0
 anim = 161
 ctrl = 1
 
@@ -1066,7 +1066,7 @@ value = 1
 [State 0, VelSet]
 type = VelSet
 trigger1 = time >= 0
-x = 7
+x = 6
 
 [State 0, Explod]
 type = Explod

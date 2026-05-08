@@ -31,8 +31,8 @@ _!TWO-CORE STRIKE	-		<#65b5ff>(AIR ONLY)</> _F^Y
         <#bbbbbb>The grounded version launches enemies,
         the air version causes a sliding knockdown.</>
 PROMETHEUS	-		<#aaffff>(GROUND OR AIR)</> _B^Y
-   <#bbbbbb>You can hold Special while performing the
-   grounded version to increase its power.</>
+   <#bbbbbb>You can hold Special while performing the grounded version
+   to perform a palm strike and increase the projectile's distance.</>
 SPIRAL OUT	-		<#aaffff>(GROUND OR AIR)</> _D^Y
    <#bbbbbb>The grounded version is a rising anti-air/anti-projectile attack.</>
 
@@ -79,7 +79,7 @@ WINDMILL KICK	-		^A
    <#bbbbbb>Can be jump cancelled on hit.</>
 STOMP	-		^B
 FLASH FIRE	-		^C
-   <#bbbbbb>A command grab. Can be used during combos.</>
+   <#bbbbbb>A command grab. Can be used to extend combos.</>
 RAPID-FIRE	-		<#65b5ff>(AIR ONLY)</> ^A
 SUPERIORITY	-		<#65b5ff>(AIR ONLY)</> ^B
 DIVE	-		<#65b5ff>(AIR ONLY)</> ^C
@@ -124,7 +124,8 @@ _D	_D		_D
    <#bbbbbb>A divekick that does more damage the higher up it hits.
    The grounded version is invincible.</>
 <#ff8400>SPIRIT FLAMES</>	-		<#55ffff>(2 BARS)</> _D_DB_B_-^A/^B/^C
-   <#bbbbbb>Tui creates several <#0097ff>Flame Traps<#bbbbbb> that explode when near an enemy.</>
+   <#bbbbbb>Tui creates several <#0097ff>Flame Traps<#bbbbbb> that explode when near an enemy.
+   This move is faster when used during a combo or after knocking the enemy down.</>
 _!<#ff8400>SPIRIT FLAME COLLAPSE</>	-		_D_DB_B_-^A/^B/^C
         <#bbbbbb>This move causes all of the <#0097ff>Flame Traps<#bbbbbb> to home in on the enemy.</>
 <#ff8400>INFERNO RUSH</>	-		<#65b5ff>(AIR ONLY)<#55ffff>(2 BARS)</> _D_DB_B_-^A/^B/^C
@@ -139,7 +140,6 @@ _!<#ff8400>DIVINE COMEDY</>	-		<#65b5ff>(AIR ONLY)<#55ffff>(1 BAR)</> (HOLD)^A/^
 <#ff8400>FINAL PHOENIX</>		(PHOENIX REVIVAL) <#aaffff>(GROUND OR AIR)</> _D_DF_F_-^A/^B/^C
    <#bbbbbb>A stronger version of Phoenix Dive. If this move doesn't defeat the enemy,
    Tui will immediately die after using it.</>
-
 
 _D	_D		_D
 

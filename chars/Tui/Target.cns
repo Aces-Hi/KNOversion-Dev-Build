@@ -612,6 +612,7 @@ movetype= H
 physics = N
 velset = 0,0
 
+
 [State 5020, 1] ;Anim for HIT_LIGHT to HIT_HARD
 type = ChangeAnim
 trigger1 = Time = 0

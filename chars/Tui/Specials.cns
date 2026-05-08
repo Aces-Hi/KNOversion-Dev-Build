@@ -428,7 +428,8 @@ guard.velocity = 0
 ground.velocity = -3,-3
 air.velocity = -3,-4
 air.hittime = 24
-forcenofall = 1
+fall = 1
+fall.yvelocity = 0
 getpower = (100)*(cond(var(var(3)) = 1, 1, .5))
 [State 630, 2]
 type = HitDef 
@@ -871,14 +872,14 @@ persistent = 0
 type = VelSet
 trigger1 =map(rotate)&&StageFrontEdgeDist > 10
 x = 1
-y = 2
+y = 1
 ignorehitpause = 1
 persistent = 1
 [State 0, VelSet]
 type = VelSet
 trigger1 =map(rotate)&&StageFrontEdgeDist <= 10
 x = 0
-y = 2
+y = 1
 ignorehitpause = 1
 persistent = 1
 [State 0, PosAdd]
@@ -958,7 +959,7 @@ guardsound = 5,1
 ground.type = Low
 animtype = medium
 ground.slidetime = 14
-ground.hittime  = 20
+ground.hittime  = 24
 ground.velocity = -3.6
 fall.yvelocity = 0
 air.velocity = -3.6,-2
@@ -1577,11 +1578,20 @@ anim =1029
 sprpriority = 2
 velset = 3,-4
 
+[State 0, StateTypeSet]
+type = StateTypeSet
+trigger1 = animelem=5
+statetype = A       ;S,A,C,L
+movetype = A        ;I,A,H
+physics = N         ;A,C,S,N
+ignorehitpause = 1
+
+
 [State 200, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = .5; You can make this whatever you want to increase stun scaling per move
+value = 1; You can make this whatever you want to increase stun scaling per move
 ignorehitpause = 1
 persistent = 0
 
@@ -1792,8 +1802,8 @@ p2facing = 1
 triggerall = map(launchkick)=0 
 trigger1 = !movecontact
 attr = A, SA
-damage = ceil(cond(fvar(11) *80 < 8, 8, fvar(11) * 80)), 8
-hitflag = MAFD
+damage = ceil(cond(fvar(11) *70 < 7, 7, fvar(11) * 70)), 7
+hitflag = MAFD+
 guardflag = HAFD
 pausetime = 12,12
 sparkno = 3
@@ -1822,8 +1832,8 @@ p2facing = 1
 triggerall = map(launchkick)
 trigger1 = !movecontact
 attr = A, SA
-damage = ceil(cond(fvar(11) *80 < 8, 8, fvar(11) * 80)), 8
-hitflag = MAFD
+damage = ceil(cond(fvar(11) *70 < 7, 7, fvar(11) * 70)), 7
+hitflag = MAFD+
 guardflag = HAFD
 pausetime = 12,12
 sparkno = 3
@@ -1974,7 +1984,7 @@ ground.velocity = -4,-5
 ;fall.yvelocity = -0
 air.velocity = -5,-3
 getpower = (105)*(cond(var(var(3)) = 1, 1, .5))
-
+guard.ctrltime=8
 
 [State 0, ChangeState]
 type = ChangeState
@@ -2017,7 +2027,7 @@ volumescale=125
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = .5; You can make this whatever you want to increase stun scaling per move
+value = 1; You can make this whatever you want to increase stun scaling per move
 ignorehitpause = 1
 persistent = 0
 
@@ -2025,7 +2035,7 @@ persistent = 0
 type = VarAdd
 trigger1 = movehit=1
 fv =13     ;fv = 
-value = .5
+value = 2
 persistent = 0
 
 [State -3, Tui Voices]
@@ -2066,7 +2076,7 @@ p2facing = 1
 trigger1 = !movecontact
 triggerall = map(slidekick)=0 
 attr = S, SA
-damage = ceil(cond(fvar(11) *80 < 8, 8, fvar(11) * 80)), 8
+damage = ceil(cond(fvar(11) *70 < 7, 7, fvar(11) * 70)), 7
 hitflag = MAF
 guardflag = HAFD
 ;priority = 3
@@ -2079,10 +2089,11 @@ ground.type = Low
 animtype = medium
 ground.slidetime = 14
 ground.hittime  = 33
-ground.velocity = -10,6
+ground.velocity = -10,7
 fall.xvelocity = -4
 fall.yvelocity = -4
-air.velocity = -10,6
+air.velocity = -10,7
+airguard.velocity = -4,7
 air.hittime = 34
 fall = 1
 fall.yvelocity = -3
@@ -2091,8 +2102,8 @@ envshake.freq = 110
 envshake.ampl = 6
 envshake.phase = 1
 guard.slidetime = 16
-guard.hittime = 28
-guard.ctrltime = 28
+guard.hittime = 8
+guard.ctrltime = 8
 getpower = (105)*(cond(var(var(3)) = 1, 1, .5))
 id = 910313
 
@@ -2110,7 +2121,7 @@ p2facing = 1
 trigger1 = !movecontact
 triggerall = map(slidekick) 
 attr = S, SA
-damage = ceil(cond(fvar(11) *80 < 8, 8, fvar(11) * 80)), 8
+damage = ceil(cond(fvar(11) *70 < 7, 7, fvar(11) * 70)), 7
 hitflag = MAF
 guardflag = HAFD
 ;priority = 3
@@ -2622,14 +2633,14 @@ removetime = 0
 
 [State 0, ChangeAnim]
 type = ChangeAnim
-trigger1 = time>=130&&anim!=1044&&animtime=0&&root,!combocount
+trigger1 = time>=300&&anim!=1044&&animtime=0&&root,!combocount
 value = 1044
 
 [State 0, ChangeState]
 type = ChangeState
 trigger1 = p2bodydist x > -30 && p2bodydist x < 20
 trigger1 = p2bodydist  y > -70 && p2bodydist  y < 60
-trigger1 = enemy,stateno!=5120 && enemy,stateno!=5111
+trigger1 = enemy,stateno!=5120 && enemy,stateno!=5111 && enemy,stateno!=915111
 value = 1043
 
 [State 0, DestroySelf]
@@ -2716,9 +2727,9 @@ palfx.add = 100, 0,20
 envshake.freq = 80
 envshake.ampl = 3
 envshake.phase = 1
-guard.hittime = 7
-guard.slidetime = 7
-guard.ctrltime = 7
+guard.hittime = 2
+guard.slidetime = 2
+guard.ctrltime = 2
 guard.cornerpush.veloff = -3
 forcenofall = 1
 getpower = (115)*(cond(var(var(3)) = 1, 1, 1))
@@ -2747,32 +2758,32 @@ volumescale=200
 
 [State 0, VelMul]
 type = VelMul
-trigger1 = animelemtime(7)<0
+trigger1 = animelemtime(6)<0
 x = .85
 y = .85
 [State 0, PosSet]
 type = PosSet
-trigger1 = animelemtime(7)<0
+trigger1 = animelemtime(6)<0
 trigger1 = pos y >-10
 y = -10
 
 [State 0, StateTypeSet]
 type = StateTypeSet
-trigger1 = animelem=7
+trigger1 = animelem=6
 statetype = A       ;S,A,C,L
 movetype =A        ;I,A,H
 physics = A         ;A,C,S,N
 ignorehitpause = 1
 [State 0, VelAdd]
 type = VelAdd
-trigger1 = animelem=7
+trigger1 = animelem=6
 x = -2
 y = -2
 ignorehitpause = 1
 
 [State 0, Helper]
 type = Helper
-trigger1 = animelem=7
+trigger1 = animelem=6
 helpertype = normal ;player
 name = "MASSIVE X"
 ID = 1041
@@ -2956,14 +2967,14 @@ removetime = 0
 
 [State 0, ChangeAnim]
 type = ChangeAnim
-trigger1 = time>=260&&anim!=1044&&animtime=0&&root,!combocount
+trigger1 = time>=600&&anim!=1044&&animtime=0&&root,!combocount
 value = 1044
 
 [State 0, ChangeState]
 type = ChangeState
 trigger1 = p2bodydist x > -30 && p2bodydist x < 20
 trigger1 = p2bodydist  y > -70 && p2bodydist  y < 60
-trigger1 = enemy,stateno!=5120 && enemy,stateno!=5111
+trigger1 = enemy,stateno!=5120 && enemy,stateno!=5111 && enemy,stateno!=915111
 value = 1053
 
 [State 0, DestroySelf]

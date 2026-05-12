@@ -51,7 +51,7 @@ y = -2
 [State 0, VelSet]
 type = VelSet
 trigger1 = time=0&&pos y >= 0
-x = 1
+x = 2
 y = -4
 
 ;2S explosion removal
@@ -170,6 +170,17 @@ ctrl = 0
 anim = 3002
 velset = 4,0
 sprpriority = 2
+
+[State Phoenix Cry]
+type = PlaySnd
+trigger1 = animelem = 1
+value = 8080, 0
+volumescale=100
+[State Phoenix Cry]
+type = PlaySnd
+trigger1 = animelem = 3
+value = 7979, 0+Random%2
+volumescale=50
 
 [State 200, VarAdd]
 type = VarAdd
@@ -1885,6 +1896,32 @@ trigger1 = time=95
 id = 1
 value=1
 
+[State Phoenix Cry]
+type = PlaySnd
+trigger1 = time =0
+value = 6,0
+volumescale=100
+[State Phoenix Cry]
+type = PlaySnd
+trigger1 = time =40
+value = 1,2
+volumescale=150
+[State Phoenix Cry]
+type = PlaySnd
+trigger1 = time = 90
+value = 8080, 0
+volumescale=100
+[State Phoenix Cry]
+type = PlaySnd
+trigger1 = time = 90
+value = 5,1
+volumescale=200
+[State Phoenix Cry]
+type = PlaySnd
+trigger1 = time = 170
+value = 5,0
+volumescale=100
+
 [State 0, Explod]
 type = Explod
 trigger1 = time=95
@@ -2174,6 +2211,16 @@ anim = 4101
 velset = 4,0
 sprpriority = 2
 
+[State Phoenix Cry]
+type = PlaySnd
+trigger1 = animelem = 1
+value = 8080, 0
+volumescale=100
+[State Phoenix Cry]
+type = PlaySnd
+trigger1 = animelem = 3
+value = 7979, 0+Random%2
+volumescale=50
 
 [State 0, NotHitBy]
 type = NotHitBy

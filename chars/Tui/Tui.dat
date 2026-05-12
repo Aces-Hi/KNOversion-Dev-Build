@@ -49,24 +49,24 @@ _D	_D		_D
 
 	<#ff8400>REMIX MOVES</>
 PHOENIX STANCE	-		<#aaffff>(GROUND OR AIR) ^Z
-   <#bbbbbb>When performed near a <#0097ff>Flame Trap<#bbbbbb>,
-   this move is enhanced and becomes an attack.
-
+   <#bbbbbb>When performed near a <#0097ff>Flame Trap<#bbbbbb>,  this move is enhanced
+   and becomes an attack. Hitting an enemy with this attack reduces your
+   combo's scaling, allowing you to get a longer combo.
 
 	<#ff8400>PHOENIX STANCE FOLLOWUPS</>
 	These moves can be performed while in Phoenix Stance.
 
 PHOENIX RISE	-		<#aaffff>(GROUND OR AIR) _U^Z
-   <#bbbbbb>Using this move leaves Tui in the air.</>
+   <#bbbbbb>You can hold Left or Right to change Tui's trajectory.</>
 PHOENIX DASH	-		_F^Z
 PHOENIX FLIGHT	-		<#65b5ff>(AIR ONLY)</> _F^Z
    <#bbbbbb>You can hold Up or Down to change Tui's trajectory.</>
 RETREAT	-		<#aaffff>(GROUND OR AIR)</> _B^Z
 BLAST KICK	-		_D^Z 
 PHOENIX DESCENT	-		<#65b5ff>(AIR ONLY)</> _D^Z
-   <#bbbbbb>Using this move leaves Tui on the ground.</>
 CANCEL	-		<#aaffff>(GROUND OR AIR) ^Z
    <#bbbbbb>This can also be performed during any of the followups.</>
+
 
 
 _D	_D		_D
@@ -97,8 +97,8 @@ _D	_D		_D
 
 	<#ffef0f>EX MOVES</>
 _EX FLAME	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> ^Y+^Z
-   <#bbbbbb>This move creates a <#0097ff>Flame Trap<#bbbbbb> that explodes
-   multiple times when near an enemy.</>
+   <#bbbbbb>This move creates a long-lasting <#0097ff>Flame Trap<#bbbbbb>
+   that explodes multiple times when near an enemy.</>
 _EX COIL STRIKE	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _F^Y+^Z
 _EX PROMETHEUS	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _B^Y+^Z
 _EX SPIRAL OUT	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _D^Y+^Z

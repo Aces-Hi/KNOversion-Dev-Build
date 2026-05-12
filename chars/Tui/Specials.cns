@@ -1196,7 +1196,7 @@ persistent = 0
 type = VelSet
 trigger1 =map(rotate)&&StageFrontEdgeDist > 10
 x = 2
-y = 2
+y = 1
 ignorehitpause = 1
 persistent = 1
 [State 0, VelSet]
@@ -1226,7 +1226,7 @@ value=0
 [State 0, AngleDraw]
 type = AngleDraw
 trigger1 =map(rotate)
-value =-60
+value =-45
 
 ;normal projectiles collide 
 [State 0, HitOverride]
@@ -1273,7 +1273,7 @@ removeongethit = 0
 
 [State 410, 2]
 type = HitDef
-trigger1 = time %5= 0
+trigger1 = time %10= 0
 attr = S, SP
 damage = ceil(cond(root, fvar(11) * 30< 3, 3, root, fvar(11) * 30)), 3
 hitflag = MAF
@@ -1299,6 +1299,14 @@ envshake.time = 5
 yaccel = .38
 air.fall = 1
 ground.cornerpush.veloff = 0
+
+[State 0, TargetBind]
+type = TargetBind
+trigger1 = movehit && enemynear,statetype=A
+time = 1
+pos = 0, 30
+ignorehitpause = 1
+persistent = 0
 
 [State 0, VarSet]
 type = VarSet
@@ -1576,7 +1584,7 @@ juggle  = 2
 ctrl = 0
 anim =1029
 sprpriority = 2
-velset = 3,-4
+velset = 4,-4
 
 [State 0, StateTypeSet]
 type = StateTypeSet
@@ -1879,7 +1887,7 @@ juggle  = 2
 ctrl = 0
 anim =1030
 sprpriority = 2
-velset = 3,-4
+velset =4,-4
 
 [State 200, VarAdd]
 type = VarAdd
@@ -2705,7 +2713,7 @@ trigger1 =!movecontact
 attr = A, SP
 animtype  = Light
 air.animtype = back
-damage = ceil(cond(root,fvar(11) *75 < 5, 5, root,fvar(11) * 75)), 0
+damage = ceil(cond(root,fvar(11) *50 < 5, 5, root,fvar(11) * 50)), 0
 hitflag = MAFD
 guardflag = MA
 pausetime = 8,8
@@ -2718,9 +2726,9 @@ ground.slidetime = 12
 ground.hittime  = ceil(cond(root,fvar(15) *35 < 9, 9, root,fvar(15) * 35))
 air.hittime  = ceil(cond(root,fvar(15) *42 < 9, 9, root,fvar(15) * 42))
 down.hittime = ceil(cond(root,fvar(15) *42 < 9, 9, root,fvar(15) * 42))  
-ground.velocity = -4,-2
-air.velocity = -4,-2
-down.velocity = -4,-2
+ground.velocity = 0,-2
+air.velocity = 0,-2
+down.velocity = 0,-2
 palfx.time = 12
 palfx.add = 100, 0,20
  envshake.time = 14
@@ -2965,11 +2973,6 @@ trigger4 = rootdist y > -80 && rootdist y < 80
 ID = 1042
 removetime = 0
 
-[State 0, ChangeAnim]
-type = ChangeAnim
-trigger1 = time>=600&&anim!=1044&&animtime=0&&root,!combocount
-value = 1044
-
 [State 0, ChangeState]
 type = ChangeState
 trigger1 = p2bodydist x > -30 && p2bodydist x < 20
@@ -3044,7 +3047,7 @@ air.animtype = back
 damage = ceil(cond(root,fvar(11) *25 < 5, 5, root,fvar(11) * 25)), 0
 hitflag = MAFD
 guardflag = MA
-pausetime = 2,6
+pausetime = 6,10
 sparkno = 3
 sparkxy = -20,-55
 hitsound   = 5,3
@@ -3054,9 +3057,9 @@ ground.slidetime = 12
 ground.hittime  = ceil(cond(root,fvar(15) *35 < 9, 9, root,fvar(15) * 35))
 air.hittime  = ceil(cond(root,fvar(15) *42 < 9, 9, root,fvar(15) * 42))
 down.hittime = ceil(cond(root,fvar(15) *42 < 9, 9, root,fvar(15) * 42))  
-ground.velocity = -2,-4
-air.velocity = -2,-4
-down.velocity = -2,-4
+ground.velocity = 0,-4
+air.velocity = 0,-4
+down.velocity = 0,-4
 palfx.time = 12
 palfx.add = 100, 0,20
  envshake.time = 14

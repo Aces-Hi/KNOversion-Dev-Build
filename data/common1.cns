@@ -1161,7 +1161,7 @@ removeongethit = 0
 type = PlaySnd
 trigger1 = animelem=2
 value = F1020, (0+(Random%2))
-volumescale=200
+volumescale=100
 [State 210, 1]
 type = PlaySnd
 trigger1 = time = 0
@@ -1341,7 +1341,7 @@ removeongethit = 0
 type = PlaySnd
 trigger1 = animelem=2
 value = F1021, (0+(Random%2))
-volumescale=200
+volumescale=100
 [State 210, 1]
 type = PlaySnd
 trigger1 = time = 0
@@ -1406,9 +1406,11 @@ ignorehitpause = 1
 
 [State 0, PlaySnd]
 type = PlaySnd
+triggerall= name = "roger"
 trigger1 = animelem=2
-value = 8000,8+random%2
+value = 900,0+random%2
 ignorehitpause =1 
+volumescale = 175
 
 [State 0, ChangeState]
 type = ChangeState

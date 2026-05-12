@@ -1,10 +1,4 @@
 ; Definition file for Tui
-; Contains all the filenames needed for the character
-
-;Last edit: 09/05/22(Z)
-; - Reordered all hurt sprites to fit the recommended group numbers
-
-; Player information
 [Info]
 name = "Tui"        ;Name of character
 displayname = "TUI" ;Name of character to display

@@ -982,7 +982,7 @@ type = VarAdd
 triggerall = stateno!=[1000,1003]
 triggerall = stateno!=1010
 triggerall = stateno!=1020&&stateno!=1035
-triggerall = stateno!=[500,750]
+triggerall = stateno!=[500,720]
 triggerall = stateno!=[3000,3001]
 ;triggerall = stateno!=
 trigger1 = !IsHelper

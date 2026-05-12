@@ -1579,14 +1579,6 @@ fv = 25
 value = 1
 ignorehitpause = 1
 persistent = 0
-[State 200, VarAdd]
-type = VarAdd
-trigger1 = movehit = 1
-trigger1 = combocount<=1
-fv = 25   
-value = .5
-ignorehitpause = 1
-persistent = 0
 
 [State 0, VarAdd]
 type = VarAdd
@@ -1665,6 +1657,7 @@ damage = ceil(cond(fvar(11) *40 < 4, 4, fvar(11) * 40)), 0
 hitflag = MAF
 guardflag = MA
 pausetime = 10,10
+guard.pausetime = 10,8
 sparkno = 2
 sparkxy = -15,-30
 hitsound   = 5,3
@@ -2414,11 +2407,7 @@ channel=1
 type = PlaySnd
 trigger1 =animelem = 6
 value = 666,4
-
-[State 200, 2]
-type = PlaySnd
-trigger1 = animelem = 13
-value = 1, 2
+VOLUMEscale=75
 [State 0, Explod]
 type = Explod
 trigger1 = animelem  = 14
@@ -2438,10 +2427,7 @@ ontop = 1
 type = PlaySnd
 trigger1 = animelem = 13
 value = 40, 0
-[State 200, 2]
-type = PlaySnd
-trigger1 = animelem = 5
-value = 5,0
+
  [State 1200, Shake Screen]
 type = EnvShake
 trigger1 = animelem = 13
@@ -2478,11 +2464,6 @@ pausemovetime = 0
 scale = .3,.3
 sprpriority = 6
 ontop = 0
-[State 200, 2]
-type = PlaySnd
-trigger1 = animelem = 14
-value = 5,2
-
 
 [State 0, PosAdd]
 type = PosAdd
@@ -2531,13 +2512,13 @@ ground.hittime  = 35
 air.hittime  = 12
 ground.velocity = -2,2
 air.velocity = -2,10
-down.velocity =-2,10
+down.velocity =-2,-4
 fall = 1
 envshake.time = 20
 envshake.freq = 80
 envshake.ampl = 6
 envshake.phase = 1
-fall.yvelocity = cond(map(stomp),0,-2)
+fall.yvelocity = cond(map(stomp),0,-3)
 getpower = (70)*(cond(var(var(3)) = 1, 1, .5))
 guard.hittime=21
 guard.ctrltime=21
@@ -2561,7 +2542,7 @@ sprpriority = 5
 
 [State -3, Angous Voices]
 type = PlaySnd
-trigger1 = animelem = 2
+trigger1 = animelem = 2&&anim=515
 value = 515, 0+Random%4
 volumescale=200
 
@@ -2599,20 +2580,20 @@ persistent = 0
 
 [State 0, PosAdd]
 type = PosAdd
-trigger1 = animelem=1
+trigger1 = animelem=1&&anim=515
 x = 15
 
 ignorehitpause = 1
 [State 0, PosAdd]
 type = PosAdd
-trigger1 = animelem=2
+trigger1 = animelem=2&&anim=515
 x = 18
 ignorehitpause = 1
 [State 0, VelSet]
 type = VelSet
 trigger1 = animelemtime(4)>=0&&animelemtime(6)<0&&anim=515
 x = 6
-ignorehitpause = 1
+ignorehitpause = 0
 persistent=1
 
 [State 0, PlayerPush]
@@ -2681,6 +2662,7 @@ envshake.ampl = 6
 envshake.phase = 1
 fall.yvelocity = 0
 getpower = (70)*(cond(var(var(3)) = 1, 1, .5))
+snap = -10,0
 
 [State 200, 1]
 type = HitDef 
@@ -2712,22 +2694,15 @@ envshake.phase = 1
 fall.yvelocity = 0
 getpower = (70)*(cond(var(var(3)) = 1, 1, .5))
 id=6150
-
-[State 0, TargetBind]
-type = TargetBind
-trigger1 = movehit
-time = 1
-id=6150
-pos = -50,0
-ignorehitpause = 1
-persistent=0
+snap = -10,0
 
 [State 0, PlayerPush]
-type = PosAdd
+type = PlayerPush
 trigger1 = movehit
-x = 50
+value = 0
 ignorehitpause = 1
-persistent=0
+persistent = 1
+
 
 [State 0, TargetState]
 type = TargetState
@@ -2766,15 +2741,8 @@ envshake.phase = 1
 fall.yvelocity = 0
 getpower = (70)*(cond(var(var(3)) = 1, 1, .5))
 id=6151
+snap = -10,0
 
-[State 0, TargetBind]
-type = TargetBind
-trigger1 = movehit
-time = 1
-id=6151
-pos = -50,0
-ignorehitpause = 1
-persistent=0
 
 [State 210, 5]
 type = ChangeState
@@ -3061,6 +3029,17 @@ y = .85
 type = VelSet
 trigger1 = animelem=5
 y = -6.5
+[State 0, VelSet]
+type = VelSet
+trigger1 = command = "holdback" && animelemtime(5)>=0&&animelemtime(10)<0
+x = -5
+persistent=0
+[State 0, VelSet]
+type = VelSet
+trigger1 = command = "holdfwd" && animelemtime(5)>=0&&animelemtime(10)<0
+x = 5
+persistent=0
+
 [State 0, StateTypeSet]
 type = StateTypeSet
 trigger1 = animelem=5
@@ -3518,6 +3497,18 @@ x = 3
 y = -1
 ignorehitpause = 1
 
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 3
+trigger2 = animelem = 5
+trigger3 = animelem = 7
+trigger4 = animelem = 9
+trigger5 = animelem = 11
+trigger6 = animelem = 13
+trigger7 = animelem = 15
+value = 1,0
+volumescale=75
+
 [State Tui Voices]
 type = PlaySnd
 triggerall = !map(phoenix)
@@ -3659,9 +3650,14 @@ volumescale=200
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
-value = 1; You can make this whatever you want to increase stun scaling per move
+value = .5; You can make this whatever you want to increase stun scaling per move
 ignorehitpause = 1
 persistent = 0
+
+[State 200, 2]
+type = PlaySnd
+trigger1 = animelem = 5
+value = 5,0
 
 [State 0, VarAdd]
 type = VarAdd
@@ -4288,7 +4284,7 @@ value = 565
 [State 0, ChangeState]
 type = ChangeState
 triggerall = time> 13
-trigger1 = command = "c" || animtime=0
+trigger1 = command = "holdback" || command = "c" || animtime=0
 value = 551
 
 ;==================================
@@ -4374,6 +4370,16 @@ y = .85
 type = VelSet
 trigger1 = animelem=5
 y = -6
+[State 0, VelSet]
+type = VelSet
+trigger1 = command = "holdback" && animelemtime(5)>=0&&animelemtime(10)<0
+x = -5
+persistent=0
+[State 0, VelSet]
+type = VelSet
+trigger1 = command = "holdfwd" && animelemtime(5)>=0&&animelemtime(10)<0
+x = 5
+persistent=0
 
 [State 0, PosSet]
 type = PosSet
@@ -4505,6 +4511,14 @@ ctrl = 0
 anim = 700
 sprpriority = 2
 
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = -.5; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
+
 [State Limiter]
 type = MapSet
 trigger1=1
@@ -4555,7 +4569,7 @@ guardflag = MA                   ;Flags on how move is to be guarded against
 hitflag = MAFD                 ;Flags of conditions that move can hit
 ;priority = 3, Hit                ;Attack ;priority: 0 (least) to 7 (most), 4 default
 ;Hit/Miss/Dodge type (Def: Hit)
-pausetime = 2,2                ;Time attacker pauses, time opponent shakes
+pausetime = 2,3                ;Time attacker pauses, time opponent shakes
 sparkno = 0                      ;Spark anim no (Def: set above)
 sparkxy = -14, -56               ;X-offset for the "hit spark" rel. to p2,
 ;Y-offset for the spark rel. to p1
@@ -4671,6 +4685,14 @@ ctrl = 0
 anim =710
 sprpriority = 2
 
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = -.5; You can make this whatever you want to increase stun scaling per move
+ignorehitpause = 1
+persistent = 0
+
 [State 0, VelMul]
 type = VelMul
 trigger1 = 1
@@ -4731,9 +4753,9 @@ guardflag = MA                   ;Flags on how move is to be guarded against
 hitflag = MAFD                 ;Flags of conditions that move can hit
 ;priority = 3, Hit                ;Attack ;priority: 0 (least) to 7 (most), 4 default
 ;Hit/Miss/Dodge type (Def: Hit)
-pausetime = 2,2                ;Time attacker pauses, time opponent shakes
+pausetime = 2,3                ;Time attacker pauses, time opponent shakes
 sparkno = 0                      ;Spark anim no (Def: set above)
-sparkxy = -14, -56               ;X-offset for the "hit spark" rel. to p2,
+sparkxy = -14, 30               ;X-offset for the "hit spark" rel. to p2,
 ;Y-offset for the spark rel. to p1
 hitsound = 5, 0                  ;Sound to play on hit
 guardsound = 6, 0                ;Sound to play on guard

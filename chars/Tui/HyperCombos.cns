@@ -1671,11 +1671,16 @@ ignorehitpause = 1
 [State 0, ModifyExplod]
 type = ModifyExplod
 trigger5 = anim!=3501
+trigger6 = anim=3504&&animtime=0
 trigger1 = parent,movetype = H
-trigger2 = anim=3504&&animtime=0
-trigger3 = root,stateno=700 || root,stateno=710
-trigger3 = rootdist x > -60 && rootdist x < 40
-trigger3 = rootdist y > -80 && rootdist y < 80
+trigger2 = root,stateno=700 || root,stateno=710
+trigger2 = rootdist x > -60 && rootdist x < 40
+trigger2 = rootdist y > -80 && rootdist y < 80
+trigger3 = ishelper(3500)&&enemy,map(hz1d)
+trigger4 = ishelper(3501)&&enemy,map(hz2d)
+trigger5 = ishelper(3502)&&enemy,map(hz3d)
+trigger6 = ishelper(3503)&&enemy,map(hz4d)
+trigger7 = ishelper(3504)&&enemy,map(hz5d)
 ID = 3502
 removetime = 0
 
@@ -1719,6 +1724,11 @@ trigger1 = anim=3504&&animtime=0
 trigger2 = root,stateno=700 || root,stateno=710
 trigger2 = rootdist x > -60 && rootdist x < 40
 trigger2 = rootdist y > -80 && rootdist y < 80
+trigger3 = ishelper(3500)&&enemy,map(hz1d)
+trigger4 = ishelper(3501)&&enemy,map(hz2d)
+trigger5 = ishelper(3502)&&enemy,map(hz3d)
+trigger6 = ishelper(3503)&&enemy,map(hz4d)
+trigger7 = ishelper(3504)&&enemy,map(hz5d)
 ignorehitpause=1
 
 ;-----------------------------

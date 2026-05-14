@@ -857,11 +857,17 @@ trigger1=!combocount
 map = "fireball"
 value=0
 
+[State Limiter]
+type = MapSet
+trigger1=!combocount
+map = "traplaunch"
+value=0
+
 [State 0, Limiter Display]
 type = DisplayToClipboard
 trigger1 = 1
-text = "dmg %f stun %f phoenix %f dk %f"
-params = fvar(13),fvar(25),map(phoenix),map(divekick)
+text = "dmg %f stun %f phoenix %f dk %f bd %f"
+params = fvar(13),fvar(25),map(phoenix),map(divekick),map(bombdeleter)
 
 [State 0, VarSet]
 type = VarSet

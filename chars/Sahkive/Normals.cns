@@ -4371,6 +4371,19 @@ trigger1 = enemy,name="vile"&&enemy,numhelper(6001)&&map(vile)<=10&&map(vile)>=-
 value = 1101
 ignorehitpause = 1
 
+[State 0, SelfState]
+type = SelfState
+triggerall=time<=15
+triggerall = enemy,name="tui"
+trigger1 =  enemy,numhelper(1041)&&map(vile)<=25&&map(vile)>-25&&root,map(viley)<90
+trigger2 = enemy,numhelper(3500)&&map(hz1x)<=25&&map(hz1x)>-25&&root,map(hz1y)<90
+trigger3 = enemy,numhelper(3501)&&map(hz2x)<=25&&map(hz2x)>-25&&root,map(hz2y)<90
+trigger4 = enemy,numhelper(3502)&&map(hz3x)<=25&&map(hz3x)>-25&&root,map(hz3y)<90
+trigger5 = enemy,numhelper(3503)&&map(hz4x)<=25&&map(hz4x)>-25&&root,map(hz4y)<90
+trigger6 = enemy,numhelper(3504)&&map(hz5x)<=25&&map(hz5x)>-25&&root,map(hz5y)<90
+value = 1101
+ignorehitpause = 1
+
 ;Armament Haki------------------------------------------------------------------------------------------------------------------------------
 ;----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ;Shadow Override

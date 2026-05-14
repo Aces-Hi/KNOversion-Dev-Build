@@ -701,7 +701,7 @@ value = 0
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "toss %f stun %f damage %f red %f R %vile x %f vile y %f haki %f OBS %f"
+text = "toss %f stun %f damage %f red %f R %f vile x %f vile y %f haki %f OBS %f"
 params = map(toss),fvar(25),fvar(13),map(truth),map(raga),map(vile),map(viley),map(haki),map(observation)
 ;ignorehitpause = 
 ;persistent = 
@@ -838,7 +838,6 @@ trigger1 = enemy,name="Vile"&&enemy,numhelper(6001)
 map = "Vile"
 value = (p2bodydist x)+enemy,helper(6001),RootDist X
 ignorehitpause = 1
-
 [State 0, VarSet]
 type = MapSet
 trigger1 = enemy,name="Vile"&&enemy,numhelper(6001)
@@ -846,18 +845,101 @@ map = "VileY"
 value = (p2bodydist y)+enemy,helper(6001),RootDist y
 ignorehitpause = 1
 
+
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(1041)
+map = "Vile"
+value = (p2bodydist x)+enemy,helper(1041),RootDist X
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(1041)
+map = "VileY"
+value = (p2bodydist y)+enemy,helper(1041),RootDist y
+ignorehitpause = 1
+
+
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(3500)
+map = "hz1x"
+value = (p2bodydist x)+enemy,helper(3500),RootDist X
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(3500)
+map = "hz1y"
+value = (p2bodydist y)+enemy,helper(3500),RootDist y
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(3501)
+map = "hz2x"
+value = (p2bodydist x)+enemy,helper(3501),RootDist X
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(3501)
+map = "hz2y"
+value = (p2bodydist y)+enemy,helper(3501),RootDist y
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(3502)
+map = "hz3x"
+value = (p2bodydist x)+enemy,helper(3502),RootDist X
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(3502)
+map = "hz3y"
+value = (p2bodydist y)+enemy,helper(3502),RootDist y
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(3503)
+map = "hz4x"
+value = (p2bodydist x)+enemy,helper(3503),RootDist X
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(3503)
+map = "hz4y"
+value = (p2bodydist y)+enemy,helper(3503),RootDist y
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(3504)
+map = "hz5x"
+value = (p2bodydist x)+enemy,helper(3504),RootDist X
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(3504)
+map = "hz5y"
+value = (p2bodydist y)+enemy,helper(3504),RootDist y
+ignorehitpause = 1
+
+
+
 [State -2, VarSet]
 type = VarSet
 trigger1 = !numtarget
 v = 2
 value = 1
-
-[State 0, VarSet]
-type = MapSet
-trigger1 = enemy,name="Vile"&&enemy,numhelper(6001)
-map = "Vile"
-value = (p2bodydist x)+enemy,helper(6001),RootDist X
-ignorehitpause = 1
 
 ;j.R SKD Limiter
 [State 0, RemoveExplod]

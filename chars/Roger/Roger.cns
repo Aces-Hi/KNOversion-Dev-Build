@@ -1624,6 +1624,55 @@ map = "hslide"
 value = 0
 ignorehitpause = 1
 
+[State 0, VarSet]
+type = MapSet
+trigger1 = movetype!=A
+trigger1 = numhelper(500)=0
+trigger2 = enemy,name="tui"&&enemy,numhelper(1041)=0
+map = "bombdeleter"
+value = 0
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = movetype!=A
+trigger1 = numhelper(500)=0
+trigger2 = enemy,name="tui"&&enemy,numhelper(3500)=0
+map = "hz1d"
+value = 0
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = movetype!=A
+trigger1 = numhelper(500)=0
+trigger2 = enemy,name="tui"&&enemy,numhelper(3501)=0
+map = "hz2d"
+value = 0
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = movetype!=A
+trigger1 = numhelper(500)=0
+trigger2 = enemy,name="tui"&&enemy,numhelper(3502)=0
+map = "hz3d"
+value = 0
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = movetype!=A
+trigger1 = numhelper(500)=0
+trigger2 = enemy,name="tui"&&enemy,numhelper(3503)=0
+map = "hz4d"
+value = 0
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = movetype!=A
+trigger1 = numhelper(500)=0
+trigger2 = enemy,name="tui"&&enemy,numhelper(3504)=0
+map = "hz5d"
+value = 0
+ignorehitpause = 1
+
 [State -2, map]
  type=mapset
  trigger1= statetype!=A
@@ -1641,6 +1690,94 @@ type = MapSet
 trigger1 = enemy,name="Vile"&&enemy,numhelper(6001)
 map = "VileY"
 value = (p2bodydist y)+enemy,helper(6001),RootDist y
+ignorehitpause = 1
+
+
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(1041)
+map = "Vile"
+value = (p2bodydist x)+enemy,helper(1041),RootDist X
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(1041)
+map = "VileY"
+value = (p2bodydist y)+enemy,helper(1041),RootDist y
+ignorehitpause = 1
+
+
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(3500)
+map = "hz1x"
+value = (p2bodydist x)+enemy,helper(3500),RootDist X
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(3500)
+map = "hz1y"
+value = (p2bodydist y)+enemy,helper(3500),RootDist y
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(3501)
+map = "hz2x"
+value = (p2bodydist x)+enemy,helper(3501),RootDist X
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(3501)
+map = "hz2y"
+value = (p2bodydist y)+enemy,helper(3501),RootDist y
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(3502)
+map = "hz3x"
+value = (p2bodydist x)+enemy,helper(3502),RootDist X
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(3502)
+map = "hz3y"
+value = (p2bodydist y)+enemy,helper(3502),RootDist y
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(3503)
+map = "hz4x"
+value = (p2bodydist x)+enemy,helper(3503),RootDist X
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(3503)
+map = "hz4y"
+value = (p2bodydist y)+enemy,helper(3503),RootDist y
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(3504)
+map = "hz5x"
+value = (p2bodydist x)+enemy,helper(3504),RootDist X
+ignorehitpause = 1
+[State 0, VarSet]
+type = MapSet
+trigger1 = enemy,name="Tui"
+trigger1 = enemy,numhelper(3504)
+map = "hz5y"
+value = (p2bodydist y)+enemy,helper(3504),RootDist y
 ignorehitpause = 1
 
 ;4R Lv1 SKD Limiter
@@ -2226,8 +2363,8 @@ channel = 5
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "big=%f small=%f hs=%f lead %f enemy %f armor %f,install %f viley %f"
-params = map(bigpunch),map(smallpunch),map(hslide),map(teamlead),map(enemyteamlead) ,map(armorlimit),map(install),map(viley)
+text = "big=%f small=%f hs=%f lead %f enemy %f armor %f,install %f vile %f viley %f"
+params = map(bigpunch),map(smallpunch),map(hslide),map(teamlead),map(enemyteamlead) ,map(armorlimit),map(install),map(hz4x),map(hz4y)
 ignorehitpause = 1
 
 [State 0, VarAdd]

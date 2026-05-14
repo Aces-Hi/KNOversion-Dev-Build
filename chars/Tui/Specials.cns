@@ -2628,7 +2628,7 @@ ignorehitpause = 1
 
 [State 0, ModifyExplod]
 type = ModifyExplod
-trigger5 = anim!=1041
+trigger6 = anim!=1041
 trigger1 = parent,movetype = H
 trigger2 = anim=1044&&animtime=0
 trigger3 = root,animelemtime(2)<=0
@@ -2636,6 +2636,7 @@ trigger3 = root,stateno=1040 || root,stateno=1045 || root,stateno=1050 || root,s
 trigger4 = root,stateno=700 || root,stateno=710
 trigger4 = rootdist x > -60 && rootdist x < 40
 trigger4 = rootdist y > -80 && rootdist y < 80
+trigger5 = enemy,map(bombdeleter)
 ID = 1042
 removetime = 0
 
@@ -2660,6 +2661,7 @@ trigger3 = root,stateno=1040 || root,stateno=1045 || root,stateno=1050 || root,s
 trigger4 = root,stateno=700 || root,stateno=710
 trigger4 = rootdist x > -62 && rootdist x < 42
 trigger4 = rootdist y > -82 && rootdist y < 82
+trigger5 = enemy,map(bombdeleter)
 ignorehitpause=1
 ;-----------------------------
 ;5S Boom
@@ -2726,9 +2728,9 @@ ground.slidetime = 12
 ground.hittime  = ceil(cond(root,fvar(15) *35 < 9, 9, root,fvar(15) * 35))
 air.hittime  = ceil(cond(root,fvar(15) *42 < 9, 9, root,fvar(15) * 42))
 down.hittime = ceil(cond(root,fvar(15) *42 < 9, 9, root,fvar(15) * 42))  
-ground.velocity = 0,-2
-air.velocity = 0,-2
-down.velocity = 0,-2
+ground.velocity = -2,-2+root,map(traplaunch)
+air.velocity = -2,-2+root,map(traplaunch)
+down.velocity = -2,-2+root,map(traplaunch)
 palfx.time = 12
 palfx.add = 100, 0,20
  envshake.time = 14
@@ -2741,6 +2743,14 @@ guard.ctrltime = 2
 guard.cornerpush.veloff = -3
 forcenofall = 1
 getpower = (115)*(cond(var(var(3)) = 1, 1, 1))
+
+[State Limiter]
+type = ParentMapAdd
+trigger1=movehit
+map = "traplaunch"
+value=3
+persistent=0
+ignorehitpause=1
 
 [State 0, DestroySelf]
 type = DestroySelf
@@ -2962,7 +2972,7 @@ ignorehitpause = 1
 
 [State 0, ModifyExplod]
 type = ModifyExplod
-trigger5 = anim!=1041
+trigger6 = anim!=1041
 trigger1 = parent,movetype = H
 trigger2 = anim=1044&&animtime=0
 trigger3 = root,animelemtime(2)<=0
@@ -2970,6 +2980,7 @@ trigger3 = root,stateno=1040 || root,stateno=1045 || root,stateno=1050 || root,s
 trigger4 = root,stateno=700 || root,stateno=710
 trigger4 = rootdist x > -60 && rootdist x < 40
 trigger4 = rootdist y > -80 && rootdist y < 80
+trigger5 = enemy,map(bombdeleter)
 ID = 1042
 removetime = 0
 
@@ -2989,6 +3000,7 @@ trigger3 = root,stateno=1040 || root,stateno=1045 || root,stateno=1050 || root,s
 trigger4 = root,stateno=700 || root,stateno=710
 trigger4 = rootdist x > -62 && rootdist x < 42
 trigger4 = rootdist y > -82 && rootdist y < 82
+trigger5 = enemy,map(bombdeleter)
 ignorehitpause=1
 ;-----------------------------
 ;EX5S Boom
@@ -3047,7 +3059,7 @@ air.animtype = back
 damage = ceil(cond(root,fvar(11) *25 < 5, 5, root,fvar(11) * 25)), 0
 hitflag = MAFD
 guardflag = MA
-pausetime = 6,10
+pausetime = 2,6
 sparkno = 3
 sparkxy = -20,-55
 hitsound   = 5,3
@@ -3072,6 +3084,7 @@ guard.ctrltime = 4
 guard.cornerpush.veloff = -3
 forcenofall = 1
 getpower = (115)*(cond(var(var(3)) = 1, 1, 1))
+
 
 [State 0, DestroySelf]
 type = DestroySelf

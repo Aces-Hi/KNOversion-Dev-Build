@@ -867,7 +867,7 @@ value=0
 type = DisplayToClipboard
 trigger1 = 1
 text = "dmg %f stun %f phoenix %f dk %f bd %f"
-params = fvar(13),fvar(25),map(phoenix),map(divekick),map(bombdeleter)
+params = fvar(13),fvar(25),map(phoenix),map(divekick),map(sbombdeleter)
 
 [State 0, VarSet]
 type = VarSet

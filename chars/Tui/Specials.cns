@@ -2628,15 +2628,16 @@ ignorehitpause = 1
 
 [State 0, ModifyExplod]
 type = ModifyExplod
-trigger6 = anim!=1041
+trigger7 = anim!=1041
 trigger1 = parent,movetype = H
 trigger2 = anim=1044&&animtime=0
-trigger3 = root,animelemtime(2)<=0
+trigger3 = root,animelemtime(6)<0
 trigger3 = root,stateno=1040 || root,stateno=1045 || root,stateno=1050 || root,stateno=1055
 trigger4 = root,stateno=700 || root,stateno=710
 trigger4 = rootdist x > -60 && rootdist x < 40
 trigger4 = rootdist y > -80 && rootdist y < 80
 trigger5 = enemy,map(bombdeleter)
+trigger6 = root,numhelper(1041)>1
 ID = 1042
 removetime = 0
 
@@ -2656,12 +2657,13 @@ value = 1043
 type = DestroySelf
 trigger1 = parent,movetype = H
 trigger2 = anim=1044&&animtime=0
-trigger3 = root,animelemtime(2)<=0
+trigger3 = root,animelemtime(6)<0
 trigger3 = root,stateno=1040 || root,stateno=1045 || root,stateno=1050 || root,stateno=1055
 trigger4 = root,stateno=700 || root,stateno=710
 trigger4 = rootdist x > -62 && rootdist x < 42
 trigger4 = rootdist y > -82 && rootdist y < 82
 trigger5 = enemy,map(bombdeleter)
+trigger6 = root,numhelper(1041)>1
 ignorehitpause=1
 ;-----------------------------
 ;5S Boom
@@ -2972,15 +2974,16 @@ ignorehitpause = 1
 
 [State 0, ModifyExplod]
 type = ModifyExplod
-trigger6 = anim!=1041
+trigger7 = anim!=1041
 trigger1 = parent,movetype = H
 trigger2 = anim=1044&&animtime=0
-trigger3 = root,animelemtime(2)<=0
+trigger3 = root,animelemtime(6)<0
 trigger3 = root,stateno=1040 || root,stateno=1045 || root,stateno=1050 || root,stateno=1055
 trigger4 = root,stateno=700 || root,stateno=710
 trigger4 = rootdist x > -60 && rootdist x < 40
 trigger4 = rootdist y > -80 && rootdist y < 80
 trigger5 = enemy,map(bombdeleter)
+trigger6 = root,numhelper(1041)>1
 ID = 1042
 removetime = 0
 
@@ -2995,12 +2998,13 @@ value = 1053
 type = DestroySelf
 trigger1 = parent,movetype = H
 trigger2 = anim=1044&&animtime=0
-trigger3 = root,animelemtime(2)<=0
+trigger3 = root,animelemtime(6)<0
 trigger3 = root,stateno=1040 || root,stateno=1045 || root,stateno=1050 || root,stateno=1055
 trigger4 = root,stateno=700 || root,stateno=710
 trigger4 = rootdist x > -62 && rootdist x < 42
 trigger4 = rootdist y > -82 && rootdist y < 82
 trigger5 = enemy,map(bombdeleter)
+trigger6 = root,numhelper(1041)>1
 ignorehitpause=1
 ;-----------------------------
 ;EX5S Boom
@@ -3149,32 +3153,32 @@ value = 6800, 0
 
 [State 0, VelMul]
 type = VelMul
-trigger1 = animelemtime(7)<0
+trigger1 = animelemtime(6)<0
 x = .85
 y = .85
 [State 0, PosSet]
 type = PosSet
-trigger1 = animelemtime(7)<0
+trigger1 = animelemtime(6)<0
 trigger1 = pos y >-10
 y = -10
 
 [State 0, StateTypeSet]
 type = StateTypeSet
-trigger1 = animelem=7
+trigger1 = animelem=6
 statetype = A       ;S,A,C,L
 movetype =A        ;I,A,H
 physics = A         ;A,C,S,N
 ignorehitpause = 1
 [State 0, VelAdd]
 type = VelAdd
-trigger1 = animelem=7
+trigger1 = animelem=6
 x = -2
 y = 0
 ignorehitpause = 1
 
 [State 0, Helper]
 type = Helper
-trigger1 = animelem=7
+trigger1 = animelem=6
 helpertype = normal ;player
 name = "MASSIVE EX"
 ID = 1041

@@ -2540,8 +2540,9 @@ ctrl = 0
 anim = 515
 sprpriority = 5
 
-[State -3, Angous Voices]
+[State -3, Tui Voices]
 type = PlaySnd
+triggerall = !map(phoenix)
 trigger1 = animelem = 2&&anim=515
 value = 515, 0+Random%4
 volumescale=200
@@ -3111,6 +3112,7 @@ x = 3
 
 [State -3, Tui Voices]
 type = PlaySnd
+triggerall = !map(phoenix)
 trigger1 = animelem = 7
 value = 1011, (0+(Random%4))
 

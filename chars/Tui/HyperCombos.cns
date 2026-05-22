@@ -121,7 +121,7 @@ kill = 0
 p2facing = 1
 trigger1 = time%2=0
 attr = A, HA
-damage = 7, 2
+damage = 4, 2
 animtype  = Medium
 hitflag = MAFD
 guardflag = MA
@@ -240,7 +240,7 @@ type = HitDef
 p2facing = 1
 trigger1 = animelem = 1
 attr = S, HA
-damage = ceil(cond(fvar(11) * 90 < 30, 30, fvar(11) * 90)),15
+damage = ceil(cond(fvar(11) * 133 < 30, 30, fvar(11) * 133)),15
 animtype  = Medium
 hitflag = MAFD
 guardflag = MA
@@ -272,7 +272,7 @@ type = HitDef
 p2facing = 1
 trigger1 = animelem = 3
 attr = S, HA
-damage = ceil(cond(fvar(11) * 200 < 80, 80, fvar(11) * 200)),15
+damage = ceil(cond(fvar(11) * 260 < 80, 80, fvar(11) * 260)),15
 animtype  = Medium
 hitflag = MAFD
 guardflag = MA
@@ -1148,9 +1148,8 @@ ground.cornerpush.veloff = 0
 type = HitDef
 trigger1 = var(21)>=2
 trigger1 = time %2= 0
-trigger1 = root,map(bigblue)=1
 attr = A, HP
-damage = ceil(cond(root, fvar(11) * 81< 40, 40, root, fvar(11) * 81)), 3
+damage = ceil(cond(root, fvar(11) * 104< 40, 40, root, fvar(11) * 104)), 3
 hitflag = MAF
 air.animtype = back
 guardflag = MA
@@ -1177,46 +1176,6 @@ yaccel = .38
 forcenofall = 1
 ground.cornerpush.veloff = 0
 
-[State Limiter]
-type = RootMapAdd
-trigger1 = movehit
-map = "bigblue"
-value=1
-ignorehitpause=1
-persistent=0
-
-[State 410, 2]
-type = HitDef
-trigger1 = var(21)>=2
-trigger1 = time %2= 0
-trigger1 = root,map(bigblue)>1
-attr = A, HP
-damage = ceil(cond(root, fvar(11) * 66< 40, 40, root, fvar(11) * 66)), 3
-hitflag = MAF
-air.animtype = back
-guardflag = MA
-;priority = 3
-pausetime = 15,15
-sparkno = 2
-sparkxy = random%20,10-random%20
-hitsound   = 5,2
-guardsound = 5,1
-ground.type = Low
-animtype = medium
-ground.slidetime = 14
-ground.hittime  = 10
-air.velocity = -6,-1
-fall.yvelocity = 0
-air.velocity = -6,-1
-air.hittime = 10
-airguard.velocity = -2,-3
-getpower = 0
-envshake.time = 12
-envshake.freq = 80
-envshake.ampl = 12
-yaccel = .38
-forcenofall = 1
-ground.cornerpush.veloff = 0
 
 [State 0, VarSet]
 type = VarSet
@@ -1670,8 +1629,8 @@ ignorehitpause = 1
 
 [State 0, ModifyExplod]
 type = ModifyExplod
-trigger5 = anim!=3501
-trigger6 = anim=3504&&animtime=0
+trigger9 = anim!=3501
+trigger8 = anim=3504&&animtime=0
 trigger1 = parent,movetype = H
 trigger2 = root,stateno=700 || root,stateno=710
 trigger2 = rootdist x > -60 && rootdist x < 40
@@ -1816,7 +1775,7 @@ guard.slidetime = 7
 guard.ctrltime = 7
 guard.cornerpush.veloff = -3
 fall = 1
-getpower = (115)*(cond(var(var(3)) = 1, 1, 1))
+getpower = 0
 fall.yvelocity=0
 
 [State 0, DestroySelf]

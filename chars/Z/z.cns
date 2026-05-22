@@ -352,6 +352,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State LTG]
 type = PlaySnd
@@ -544,6 +545,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State LTG]
 type = PlaySnd
@@ -633,6 +635,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State LTG]
 type = PlaySnd

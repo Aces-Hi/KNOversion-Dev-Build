@@ -339,6 +339,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State 0, VarSet]
 type = VarSet
@@ -408,6 +409,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State 0, VarSet]
 type = VarSet
@@ -471,6 +473,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State 0, VarSet]
 type = VarSet

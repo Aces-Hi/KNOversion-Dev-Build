@@ -212,7 +212,7 @@ value = 1050
 triggerall=stateno!=40
 triggerall=map(EXLimiter4)=0
 triggerall = command = "EX"
-triggerall = power>=1000||map(phoenix)=0
+triggerall = power>=1000||map(phoenix)=1
 triggerall = command != "holddown"
 triggerall = command != "holdfwd"
 triggerall = command != "holdback"
@@ -237,7 +237,7 @@ type = ChangeState
 value = 1055
 triggerall=map(EXLimiter4)=0
 triggerall = command = "EX"
-triggerall = power>=1000||map(phoenix)=0
+triggerall = power>=1000||map(phoenix)=1
 triggerall = command != "holddown"
 triggerall = command != "holdfwd"
 triggerall = command != "holdback"
@@ -250,7 +250,7 @@ type = ChangeState
 value = 1005
 triggerall=map(EXLimiter1)=0
 triggerall = roundstate = 2 ;only attack during the round
-triggerall = power>=1000||map(phoenix)=0
+triggerall = power>=1000||map(phoenix)=1
 triggerall = command = "EX"
 triggerall = command = "holddown"
 triggerall = stateno != 1020
@@ -284,7 +284,7 @@ triggerall=stateno!=40
 triggerall=map(EXLimiter2)=0
 triggerall = numhelper(1013)=0
 triggerall = roundstate = 2 ;only attack during the round
-triggerall = power>=1000||map(phoenix)=0
+triggerall = power>=1000||map(phoenix)=1
 triggerall = command="holdback" 
 triggerall = command != "holddown"
 triggerall = command = "EX"
@@ -308,7 +308,7 @@ value = 1022
 triggerall=map(EXLimiter2)=0
 triggerall = numhelper(1013)=0
 triggerall = roundstate = 2 ;only attack during the round
-triggerall = power>=1000||map(phoenix)=0
+triggerall = power>=1000||map(phoenix)=1
 triggerall = command="holdback" 
 triggerall = command != "holddown"
 triggerall = command = "EX"
@@ -320,7 +320,7 @@ trigger2 = var(1)
 type = ChangeState
 value = 1035
 triggerall=map(EXLimiter3)=0
-triggerall = power>=1000||map(phoenix)=0
+triggerall = power>=1000||map(phoenix)=1
 triggerall = command = "holdfwd"
 triggerall = command = "EX"
 trigger1 = ctrl

@@ -1106,6 +1106,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State 0, AssertSpecial]
 type = AssertSpecial
@@ -1867,6 +1868,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State 191, 3] ;Change to stand state when done
 type = ChangeState
@@ -2159,6 +2161,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State 191, 3] ;Change to stand state when done
 type = ChangeState
@@ -2267,6 +2270,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State 191, 3] ;Change to stand state when done
 type = ChangeState

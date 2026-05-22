@@ -478,6 +478,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State 190]
 type = selfstate
@@ -622,6 +623,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State -3, Voices]
 type = PlaySnd
@@ -718,6 +720,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State -3, Voices]
 type = PlaySnd
@@ -807,6 +810,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 
 [State 0, EnvShake]

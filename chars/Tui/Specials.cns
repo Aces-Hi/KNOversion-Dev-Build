@@ -1232,22 +1232,19 @@ value =-45
 [State 0, HitOverride]
 type = HitOverride
 trigger1 = 1
-attr = SCA,SP
+attr = SCA,SP,HP
 slot=1
 stateno=1018
 forceair = 0
 
+
 [State 0, NotHitBy]
 type = NotHitBy
 trigger1 = 1
-value = SCA,NA,SA,HA,NT,ST,HT
+value = SCA,NA,SA,HA,NT,ST,HT,NP
 time = 1
 
-[State 0, HitBy]
-type = HitBy
-trigger1 = 1
-value = SCA,SP,HP
-time = 1
+
 
 [State 0, Explod]
 type = Explod
@@ -2380,6 +2377,7 @@ fall.yvelocity = -3
 air.velocity = -4,-4.0
 air.hittime = 34
 fall = 1
+
 [State 0, TargetBind]
 type = TargetBind
 triggerall=movehit
@@ -2822,6 +2820,7 @@ trigger1 = AnimTime = 0
 value = 1
 [State 0, ChangeState]
 type = ChangeState
+trigger1 = animelemtime(6)>=0
 trigger1 = pos y>=-10 && vel y>=0
 value = 1003
 
@@ -3087,7 +3086,7 @@ guard.slidetime = 4
 guard.ctrltime = 4
 guard.cornerpush.veloff = -3
 forcenofall = 1
-getpower = (115)*(cond(var(var(3)) = 1, 1, 1))
+getpower = 0
 
 
 [State 0, DestroySelf]
@@ -3197,5 +3196,6 @@ trigger1 = AnimTime = 0
 value = 1
 [State 0, ChangeState]
 type = ChangeState
+trigger1 = animelemtime(6)>=0
 trigger1 = pos y>=-10 && vel y>=0
 value = 1003

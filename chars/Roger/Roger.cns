@@ -726,6 +726,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State 190]
 type = selfstate
@@ -946,6 +947,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State 0, Explod]
 type = Explod
@@ -1177,6 +1179,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State 0, Explod]
 type = Explod
@@ -1723,6 +1726,7 @@ trigger1 = enemy,numhelper(3500)
 map = "hz1y"
 value = (p2bodydist y)+enemy,helper(3500),RootDist y
 ignorehitpause = 1
+
 [State 0, VarSet]
 type = MapSet
 trigger1 = enemy,name="Tui"
@@ -1737,6 +1741,7 @@ trigger1 = enemy,numhelper(3501)
 map = "hz2y"
 value = (p2bodydist y)+enemy,helper(3501),RootDist y
 ignorehitpause = 1
+
 [State 0, VarSet]
 type = MapSet
 trigger1 = enemy,name="Tui"
@@ -1751,6 +1756,7 @@ trigger1 = enemy,numhelper(3502)
 map = "hz3y"
 value = (p2bodydist y)+enemy,helper(3502),RootDist y
 ignorehitpause = 1
+
 [State 0, VarSet]
 type = MapSet
 trigger1 = enemy,name="Tui"
@@ -1765,6 +1771,7 @@ trigger1 = enemy,numhelper(3503)
 map = "hz4y"
 value = (p2bodydist y)+enemy,helper(3503),RootDist y
 ignorehitpause = 1
+
 [State 0, VarSet]
 type = MapSet
 trigger1 = enemy,name="Tui"

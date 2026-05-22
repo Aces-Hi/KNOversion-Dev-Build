@@ -3137,13 +3137,14 @@ ignorehitpause=1
 type = SelfState
 triggerall = enemy,name="tui"
 trigger1 =  enemy,numhelper(1041)&&root,map(vile)<=90&&root,map(vile)>0&&root,map(viley)<90
-trigger2 = enemy,numhelper(3500)&&root,map(hz1x)<=90&&root,map(vile)>0&&root,map(hz1y)<90
-trigger3 = enemy,numhelper(3501)&&root,map(hz2x)<=90&&root,map(vile)>0&&root,map(hz2y)<90
-trigger4 = enemy,numhelper(3502)&&root,map(hz3x)<=90&&root,map(vile)>0&&root,map(hz3y)<90
-trigger5 = enemy,numhelper(3503)&&root,map(hz4x)<=90&&root,map(vile)>0&&root,map(hz4y)<90
-trigger6 = enemy,numhelper(3504)&&root,map(hz5x)<=90&&root,map(vile)>0&&root,map(hz5y)<90
+trigger2 = enemy,numhelper(3500)&&root,map(hz1x)<=90&&root,map(hz1x)>0&&root,map(hz1y)<90
+trigger3 = enemy,numhelper(3501)&&root,map(hz2x)<=90&&root,map(hz2x)>0&&root,map(hz2y)<90
+trigger4 = enemy,numhelper(3502)&&root,map(hz3x)<=90&&root,map(hz3x)>0&&root,map(hz3y)<90
+trigger5 = enemy,numhelper(3503)&&root,map(hz4x)<=90&&root,map(hz4x)>0&&root,map(hz4y)<90
+trigger6 = enemy,numhelper(3504)&&root,map(hz5x)<=90&&root,map(hz5x)>0&&root,map(hz5y)<90
 value = 525
 ignorehitpause=1
+
 
 [State 0, DestroySelf]
 type = DestroySelf

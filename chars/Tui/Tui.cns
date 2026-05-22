@@ -167,15 +167,8 @@ value = 189
 [Statedef 181]
 type = S
 ctrl = 0
-anim = 182
+anim = 181
 velset = 0,0
-
-[State 0, AssertSpecial]
-type = MapSet
-trigger1 = time=0
-map = "phoenix"
-value = 0
-ignorehitpause=1
 
 [State -3, Win Announcer]
 type = PlaySnd
@@ -188,6 +181,22 @@ triggerall=teammode!=Tag
 trigger1 = time=50
 value = F1000,0
 
+[State -3, Tui Voices]
+type = PlaySnd
+trigger1 = time=60 && enemynear,name!="Angous" && enemynear,name!="Deus"
+value = 180, 0+Random%4
+volumescale=175
+[State -3, Tui Voices]
+type = PlaySnd
+trigger1 = time=60 && enemynear,name="Angous"
+value = 181, 0+Random%3
+volumescale=175
+[State -3, Tui Voices]
+type = PlaySnd
+trigger1 = time=60 && enemynear,name="Deus"
+value = 182, 0+Random%2
+volumescale=175
+
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = Roundstate > 3
@@ -196,8 +205,259 @@ flag = Nobardisplay
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = animelem = 3
-trigger2 = animelem = 9
-value = 5,0
+value = 1,0
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 12
+value = 1,1
+[State 181, 1]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 1
+
+;---------------------------------------------------------------------------
+; Win 2
+[Statedef 182]
+type = S
+ctrl = 0
+anim = 182
+velset = 0,0
+
+[State -3, Win Announcer]
+type = PlaySnd
+triggerall=teammode!=Tag
+trigger1 = time=0
+value = 7410, 0
+[State -3, Win Announcer]
+type = PlaySnd
+triggerall=teammode!=Tag
+trigger1 = time=50
+value = F1000,0
+
+[State -3, Tui Voices]
+type = PlaySnd
+trigger1 = time=60 && enemynear,name!="Angous" && enemynear,name!="Deus"
+value = 180, 0+Random%4
+volumescale=175
+[State -3, Tui Voices]
+type = PlaySnd
+trigger1 = time=60 && enemynear,name="Angous"
+value = 181, 0+Random%3
+volumescale=175
+[State -3, Tui Voices]
+type = PlaySnd
+trigger1 = time=60 && enemynear,name="Deus"
+value = 182, 0+Random%2
+volumescale=175
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 6
+value = 8080,0
+
+[State 650, 2]
+type = Explod
+trigger1 = animelem=7
+anim = 184
+pos = 0,0
+id = 182
+postype = p1
+ignorehitpause = 0
+persistent = 0
+sprpriority = -3
+ownpal = 0
+scale=.84,.84
+ontop=0
+facing=facing
+removetime = -2
+removeonchangestate=1
+[State 650, 2]
+type = Explod
+trigger1 = animelem=7
+anim = 171
+pos = 130,180
+id = 181
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = -4
+ownpal = 0
+scale=1,1
+ontop=0
+facing=facing
+removetime = -2
+removeonchangestate=1
+
+
+[State 650, 2]
+type = Explod
+trigger1 = animelem=26
+anim = 185
+pos = 130,180
+id = 181
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 5
+ownpal = 0
+scale=1,1
+ontop=1
+facing=facing
+removetime = -1
+removeonchangestate=1
+[State 650, 2]
+type = Explod
+trigger1 = animelem=26
+anim = 186
+pos = 130,180
+id = 181
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 5
+ownpal = 0
+scale=1,1
+ontop=1
+facing=facing
+removetime = -1
+removeonchangestate=1
+[State 650, 2]
+type = Explod
+trigger1 = animelem=26
+anim = 187
+pos = 130,180
+id = 181
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 5
+ownpal = 0
+scale=1,1
+ontop=1
+facing=facing
+removetime = -1
+removeonchangestate=1
+[State 650, 2]
+type = Explod
+trigger1 = animelem=26
+anim = 183
+pos = 140,170
+id = 181
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 5
+ownpal = 0
+scale=.84,.84
+ontop=1
+facing=facing
+removetime = -1
+removeonchangestate=1
+[State 650, 2]
+type = Explod
+trigger1 = animelem=26
+anim = 188
+pos = 130,180
+id = 181
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 5
+ownpal = 0
+scale=1,1
+ontop=1
+facing=facing
+removetime = -1
+removeonchangestate=1
+[State 650, 2]
+type = Explod
+trigger1 = animelem=23
+anim = 172
+pos = 130,180
+id = 181
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 5
+ownpal = 0
+scale=1,1
+ontop=1
+facing=facing
+removetime = -2
+removeonchangestate=1
+[State 650, 2]
+type = Explod
+trigger1 = animelem=26
+anim = 173
+pos = 130,180
+id = 181
+postype = back
+ignorehitpause = 0
+persistent = 0
+sprpriority = 5
+ownpal = 0
+scale=1,1
+ontop=1
+facing=facing
+removetime = -2
+removeonchangestate=1
+
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = Roundstate > 3
+flag = Nobardisplay
+
+[State 181, 1]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 1
+
+;---------------------------------------------------------------------------
+; Win 3
+[Statedef 183]
+type = S
+ctrl = 0
+anim = 174
+velset = 0,0
+
+[State -3, Win Announcer]
+type = PlaySnd
+triggerall=teammode!=Tag
+trigger1 = time=0
+value = 7410, 0
+[State -3, Win Announcer]
+type = PlaySnd
+triggerall=teammode!=Tag
+trigger1 = time=50
+value = F1000,0
+
+[State -3, Tui Voices]
+type = PlaySnd
+trigger1 = time=60 && enemynear,name!="Angous" && enemynear,name!="Deus"
+value = 180, 0+Random%4
+volumescale=175
+[State -3, Tui Voices]
+type = PlaySnd
+trigger1 = time=60 && enemynear,name="Angous"
+value = 181, 0+Random%3
+volumescale=175
+[State -3, Tui Voices]
+type = PlaySnd
+trigger1 = time=60 && enemynear,name="Deus"
+value = 182, 0+Random%2
+volumescale=175
+
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = Roundstate > 3
+flag = Nobardisplay
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 3
+value = 1,2
 
 [State 181, 1]
 type = NotHitBy
@@ -251,6 +511,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State Intro]
 type = ChangeState
@@ -294,7 +555,7 @@ volumescale=175
 
 [State -3, Tui Voices]
 type = PlaySnd
-trigger1 = time=250 && enemynear,name="Roger"
+trigger1 = time=170 && enemynear,name="Roger"
 value = 192, 0+Random%2
 volumescale=175
 [State 0, ChangeAnim]
@@ -333,6 +594,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State -3, Tui Voices]
 type = PlaySnd
@@ -348,7 +610,7 @@ volumescale=175
 
 [State -3, Tui Voices]
 type = PlaySnd
-trigger1 = time=250 && enemynear,name="Roger"
+trigger1 = time=170 && enemynear,name="Roger"
 value = 192, 0+Random%2
 volumescale=175
 [State 0, ChangeAnim]
@@ -416,6 +678,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State -3, Tui Voices]
 type = PlaySnd
@@ -516,6 +779,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State 193, 4] ;Change to stand state when done
 type = ChangeState
@@ -989,7 +1253,7 @@ triggerall = stateno!=[1000,1003]
 triggerall = stateno!=1010
 triggerall = stateno!=1020&&stateno!=1035
 triggerall = stateno!=[500,720]
-triggerall = stateno!=[3000,3001]
+triggerall = stateno!=[3000,3490]
 ;triggerall = stateno!=
 trigger1 = !IsHelper
 trigger1 = MoveHit = 1 

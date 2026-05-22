@@ -415,6 +415,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State 191, Special Intro vs Angous]
 type = ChangeState
@@ -517,6 +518,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State Sahkive Voices]
 type = PlaySnd
@@ -551,6 +553,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State Sahkive Voices]
 type = PlaySnd
@@ -634,6 +637,7 @@ type = AssertSpecial
 trigger1 = 1
 flag = Intro
 flag2 = nomusic
+flag3 = nobardisplay 
 
 [State Sahkive Voices]
 type = PlaySnd

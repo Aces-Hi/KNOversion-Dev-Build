@@ -10,8 +10,8 @@
 HEAVY FLAME	-		_F^C
 SWEEP	-		(CAN BE HELD) _DF^C
    <#bbbbbb>Launches enemies higher when held.</>
-
-
+ROYAL PRESENTATION	-		TAUNT </>
+   <#bbbbbb>Tui's taunt is an attack.</>
 
 
 
@@ -24,7 +24,7 @@ SWEEP	-		(CAN BE HELD) _DF^C
 _D	_D		_D
 
 	<#ff8400>SPECIAL MOVES</>
-X FLAME	-		<#aaffff>(GROUND OR AIR)</> ^Y
+X-FLAME	-		<#aaffff>(GROUND OR AIR)</> ^Y
    <#bbbbbb>This move creates a <#0097ff>Flame Trap<#bbbbbb> that explodes when near an enemy.</>
 COIL STRIKE	-		<#aaffff>(GROUND OR AIR)</> _F^Y
 _!TWO-CORE STRIKE	-		<#65b5ff>(AIR ONLY)</> _F^Y
@@ -96,7 +96,7 @@ DIVE	-		<#65b5ff>(AIR ONLY)</> ^C
 _D	_D		_D
 
 	<#ffef0f>EX MOVES</>
-_EX FLAME	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> ^Y+^Z
+_EX-FLAME	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> ^Y+^Z
    <#bbbbbb>This move creates a long-lasting <#0097ff>Flame Trap<#bbbbbb>
    that explodes multiple times when near an enemy.</>
 _EX COIL STRIKE	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _F^Y+^Z
@@ -124,8 +124,8 @@ _D	_D		_D
    <#bbbbbb>A divekick that does more damage the higher up it hits.
    The grounded version is invincible.</>
 <#ff8400>SPIRIT FLAMES</>	-		<#55ffff>(2 BARS)</> _D_DB_B_-^A/^B/^C
-   <#bbbbbb>Tui creates several <#0097ff>Flame Traps<#bbbbbb> that explode when near an enemy.
-   This move is faster when used during a combo or after knocking the enemy down.</>
+   <#bbbbbb>Tui creates several <#0097ff>Flame Traps<#bbbbbb>. This move is faster
+   when used during a combo or after knocking the enemy down.</>
 _!<#ff8400>SPIRIT FLAME COLLAPSE</>	-		_D_DB_B_-^A/^B/^C
         <#bbbbbb>This move causes all of the <#0097ff>Flame Traps<#bbbbbb> to home in on the enemy.</>
 <#ff8400>INFERNO RUSH</>	-		<#65b5ff>(AIR ONLY)<#55ffff>(2 BARS)</> _D_DB_B_-^A/^B/^C
@@ -136,8 +136,8 @@ _!<#ff8400>DIVINE COMEDY</>	-		<#65b5ff>(AIR ONLY)<#55ffff>(1 BAR)</> (HOLD)^A/^
    Tui no longer takes damage in this state, but his meter will slowly drain,
    and it drains faster while he's getting hit. If his meter empties out,
    he will instantly die. While in this state, all EX moves cost no meter,
-   and Tui loses access to all Super Moves except for Final Phoenix.
-<#ff8400>FINAL PHOENIX</>		(PHOENIX REVIVAL) <#aaffff>(GROUND OR AIR)</> _D_DF_F_-^A/^B/^C
+   and Tui loses access to all Super Moves except for Phoenix Finale.
+<#ff8400>PHOENIX FINALE</>		(PHOENIX REVIVAL) <#aaffff>(GROUND OR AIR)</> _D_DF_F_-^A/^B/^C
    <#bbbbbb>A stronger version of Phoenix Dive. If this move doesn't defeat the enemy,
    Tui will immediately die after using it.</>
 

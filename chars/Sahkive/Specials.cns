@@ -1959,7 +1959,7 @@ physics = S                      ;Physics: S-stand, C-crouch, A-air
 ctrl = 0                         ;Set ctrl (Def: no change)
 anim = 1020                       ;Change animation (Def: no change)
 sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in front)
-poweradd = -1000 * (prevstateno != 666999)
+poweradd = -1000 * (prevstateno != 666999&&prevstateno != 1030)
 facep2 = 1
 
 [State EX Limiters]

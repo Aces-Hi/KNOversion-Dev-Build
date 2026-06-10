@@ -1,11 +1,7 @@
-.\external\script\start.lua:1403: chars\Yuko/Specials.cns:2755:
-Missing trigger1
+external/script/main.lua:4026: <game end>
 stack traceback:
-	[G]: in function 'game'
-	.\external\script\start.lua:1403: in function 'f_game'
-	.\external\script\start.lua:1836: in function 'launchFight'
-	external/script/default.lua:2: in function <external/script/default.lua:0>
-	.\external\script\start.lua:1457: in function 'f'
-	external/script/main.lua:3097: in function 'loop'
+	[G]: in function 'refresh'
+	external/script/main.lua:4026: in function 'f_menuCommonDraw'
+	external/script/main.lua:3093: in function 'loop'
 	external/script/main.lua:4148: in main chunk
 	[G]: ?

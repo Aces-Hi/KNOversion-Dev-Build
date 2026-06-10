@@ -265,6 +265,7 @@ envshake.ampl = 0
 fall.envshake.time = 0
 fall.envshake.freq = 0
 fall.envshake.ampl = 0
+airguard.velocity=-3,-3
 getpower = (0)*(cond(var(var(3)) = 1, 1, .5))
 fall.yvelocity=0
 [State 410, 2]
@@ -276,7 +277,7 @@ damage = ceil(cond(fvar(11) * 260 < 80, 80, fvar(11) * 260)),15
 animtype  = Medium
 hitflag = MAFD
 guardflag = MA
-pausetime = 12,32
+pausetime = 25,45
 guard.pausetime=12,12
 sparkno = 3
 sparkxy = -10,0
@@ -297,8 +298,61 @@ envshake.ampl = 0
 fall.envshake.time = 0
 fall.envshake.freq = 0
 fall.envshake.ampl = 0
+airguard.velocity=-3,-3
 getpower = (0)*(cond(var(var(3)) = 1, 1, .5))
 fall.yvelocity=0
+
+;DEATH ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+triggerall=animelemtime(3)>=0
+trigger1 = enemy,HitShakeOver = 0&&movehit
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-10
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+triggerall=animelemtime(3)>=0
+trigger1 = enemy,HitShakeOver = 0&&movehit
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-10
+ignorehitpause=1
+[State 0]
+type = MapAdd
+triggerall=animelemtime(4)>=0
+trigger1 = movehit
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+triggerall=animelemtime(3)>=0
+trigger1 = enemy,HitShakeOver = 0&&movehit
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
 
 ;=======================================
 [State 0, PlaySnd]
@@ -1600,8 +1654,8 @@ time = 1
 type = AssertSpecial
 triggerall = anim=3501
 triggerall = root,stateno!=3500
-trigger1 = rootdist x > -60 && rootdist x < 40
-trigger1 = rootdist y > -80 && rootdist y < 80
+trigger1 = rootdist x > -70 && rootdist x < 50
+trigger1 = rootdist y > -90 && rootdist y < 90
 flag = invisible
 ignorehitpause = 1
 persistent = 1
@@ -1633,8 +1687,8 @@ trigger9 = anim!=3501
 trigger8 = anim=3504&&animtime=0
 trigger1 = parent,movetype = H
 trigger2 = root,stateno=700 || root,stateno=710
-trigger2 = rootdist x > -60 && rootdist x < 40
-trigger2 = rootdist y > -80 && rootdist y < 80
+trigger2 = rootdist x > -70 && rootdist x < 50
+trigger2 = rootdist y > -90 && rootdist y < 90
 trigger3 = ishelper(3500)&&enemy,map(hz1d)
 trigger4 = ishelper(3501)&&enemy,map(hz2d)
 trigger5 = ishelper(3502)&&enemy,map(hz3d)
@@ -1681,8 +1735,8 @@ x =-.4
 type = DestroySelf
 trigger1 = anim=3504&&animtime=0
 trigger2 = root,stateno=700 || root,stateno=710
-trigger2 = rootdist x > -60 && rootdist x < 40
-trigger2 = rootdist y > -80 && rootdist y < 80
+trigger2 = rootdist x > -70 && rootdist x < 50
+trigger2 = rootdist y > -90 && rootdist y < 90
 trigger3 = ishelper(3500)&&enemy,map(hz1d)
 trigger4 = ishelper(3501)&&enemy,map(hz2d)
 trigger5 = ishelper(3502)&&enemy,map(hz3d)
@@ -1700,6 +1754,12 @@ poweradd= 0
 ctrl = 0
 anim = 3503
 sprpriority = 5
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = root,map(Collapse)&&time=0
+value = 3503
+elem = 5
 
 [State 200, VarAdd]
 type = ParentVarAdd
@@ -1761,9 +1821,9 @@ ground.slidetime = 12
 ground.hittime  = ceil(cond(root,fvar(15) *35 < 9, 9, root,fvar(15) * 35))
 air.hittime  = ceil(cond(root,fvar(15) *42 < 9, 9, root,fvar(15) * 42))
 down.hittime = ceil(cond(root,fvar(15) *42 < 9, 9, root,fvar(15) * 42))  
-ground.velocity = -2.5,-6.5
-air.velocity = -2.5,-6.5
-down.velocity = -2.5,-6.5
+ground.velocity = -2,-6
+air.velocity = -2,-6
+down.velocity = -2,-6
 palfx.time = 12
 palfx.add = 100, 0,20
  envshake.time = 14
@@ -1773,7 +1833,9 @@ envshake.phase = 1
 guard.hittime = 7
 guard.slidetime = 7
 guard.ctrltime = 7
-guard.cornerpush.veloff = -3
+ground.cornerpush.veloff = 0
+down.cornerpush.veloff = 0
+air.cornerpush.veloff = 0
 fall = 1
 getpower = 0
 fall.yvelocity=0
@@ -2284,6 +2346,54 @@ fall.envshake.freq = 0
 fall.envshake.ampl = 0
 getpower = (0)*(cond(var(var(3)) = 1, 1, .5))
 fall.yvelocity=0
+
+;DEATH ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+trigger1 = enemy,HitShakeOver = 0&&movehit
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-10
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+trigger1 = enemy,HitShakeOver = 0&&movehit
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-10
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = movehit
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+trigger1 = enemy,HitShakeOver = 0&&movehit
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
 
 [State 0, RemoveExplod]
 type = RemoveExplod

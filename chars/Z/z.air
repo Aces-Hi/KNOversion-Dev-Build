@@ -2146,14 +2146,12 @@ LoopStart
 [Begin Action 1400]
 Clsn2Default: 1
   Clsn2[0] = -29, -83, 34, -1
-Clsn1: 1
-  Clsn1[0] = -62, -104, 63, -2
-1400,3, 0,0, 5, , AS100D100
+1400,3, 0,0, 3, , AS100D100
 Clsn2Default: 1
   Clsn2[0] = -29, -83, 34, -1
 Clsn1: 1
   Clsn1[0] = -62, -104, 63, -2
-1400,4, 0,0, 10, , AS100D100
+1400,4, 0,0, 5, , AS100D100
 Clsn2Default: 1
   Clsn2[0] = -29, -83, 34, -1
 Clsn1: 1

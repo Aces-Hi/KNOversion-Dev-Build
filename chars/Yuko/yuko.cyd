@@ -222,15 +222,15 @@ trigger1 = hitdefattr = A,NA
 [State 5S]
 type = ChangeState
 value = 1000
-trigger1 = command = "b"
+triggerall = command = "b"
 triggerall = command != "EX"
 triggerall = command != "QCBs"
-triggerall = command !="holddown"
-triggerall = command !="holdfwd"
+trigger1 = command !="holddown"
+trigger1 = command !="holdfwd"
 triggerall = command !="holdback"
-triggerall = statetype != A
 triggerall = var(1)
-
+trigger1 = statetype != A
+trigger2 = statetype = A&&map(Imagination)>=800
 ;---------------------------------------------------------------------------
 [State EX 5S]
 type = ChangeState
@@ -239,12 +239,12 @@ triggerall=map(EXLimiter1)=0
 triggerall = command = "EX"
 triggerall = command != "QCBs"
 triggerall = power>=1000
-triggerall = command !="holddown"
-triggerall = command !="holdfwd"
+trigger1= command !="holddown"
+trigger1 = command !="holdfwd"
 triggerall = command !="holdback"
-triggerall = statetype != A
-trigger1 = var(1)
-
+triggerall = var(1)
+trigger1 = statetype != A
+trigger2 = statetype = A&&map(Imagination)>=800
 ;---------------------------------------------------------------------------
 [State 4S]
 type = ChangeState
@@ -271,6 +271,29 @@ triggerall = statetype != A
 trigger1 = var(1)
 
 ;---------------------------------------------------------------------------
+[State j4S]
+type = ChangeState
+value = 1400
+triggerall = command = "b"
+triggerall = command != "QCBs"
+triggerall = command != "EX"
+triggerall = command ="holdback"
+triggerall = statetype = A
+trigger1 = var(1)
+
+;---------------------------------------------------------------------------
+[State EX j4S]
+type = ChangeState
+value = 1500
+triggerall = power>=1000
+triggerall=map(EXLimiter3)=0
+triggerall = command = "EX"
+triggerall = command != "QCBs"
+triggerall = command ="holdback"
+triggerall = statetype = A
+trigger1 = var(1)
+
+;---------------------------------------------------------------------------
 [State 2S]
 type = ChangeState
 value = 1600
@@ -293,48 +316,69 @@ triggerall = statetype != A
 trigger1 = var(1)
 
 ;---------------------------------------------------------------------------
-[State 6S]
+[State 5R]
 type = ChangeState
-value = 1400
-triggerall = command = "b"
-triggerall = command != "QCBs"
+value = 1800
+triggerall = command = "c"
 triggerall = command != "EX"
-triggerall = command ="holdfwd"
+triggerall = command != "QCBs"
 triggerall = command !="holddown"
 triggerall = statetype != A
 trigger1 = var(1)
 
 ;---------------------------------------------------------------------------
+[State 2R]
+type = ChangeState
+value = 1900
+triggerall=map(Imagination)>=400
+triggerall = command = "c"
+triggerall = command != "EX"
+triggerall = command != "QCBs"
+triggerall = command ="holddown"
+triggerall = statetype != A
+trigger1 = var(1)
+
+;---------------------------------------------------------------------------
+[State 6S]
+type = ChangeState
+value = 2000
+triggerall = command = "b"
+triggerall = command != "EX"
+triggerall = command != "QCBs"
+triggerall = command ="holdfwd"
+triggerall = command !="holddown"
+triggerall = statetype != A
+trigger1 = var(1)
+;---------------------------------------------------------------------------
 [State EX 6S]
 type = ChangeState
-value = 1500
+value = 2050
+triggerall=map(EXLimiter5)=0
 triggerall = power>=1000
-triggerall=map(EXLimiter3)=0
 triggerall = command = "EX"
 triggerall = command != "QCBs"
 triggerall = command ="holdfwd"
 triggerall = command !="holddown"
 triggerall = statetype != A
-triggerall = numhelper(1410)=0
 trigger1 = var(1)
 
 ;---------------------------------------------------------------------------
-[State Super]
-type = ChangeState
-value = 3000
-triggerall = power>=2000
-triggerall = command = "QCF"|| command = "QCB"
-trigger1 = var(1)
-trigger2 = hitdefattr=SCA,NA,SA,ST
-trigger2 = movehit
+;[State Super]
+;type = ChangeState
+;value = 3000
+;triggerall = power>=2000
+;triggerall = command = "QCF"|| command = "QCB"
+;trigger1 = var(1)
+;trigger2 = hitdefattr=SCA,NA,SA,ST
+;trigger2 = movehit
 
 ;---------------------------------------------------------------------------
-[State Counter Super]
-type = ChangeState
-value = 3500
-triggerall = power>=2000
-triggerall = command = "QCFs"|| command = "QCBs"
-triggerall = statetype != A
-trigger1 = var(1)
-trigger2 = hitdefattr=SCA,NA,SA,ST
-trigger2 = movehit
+;[State Counter Super]
+;type = ChangeState
+;value = 3500
+;triggerall = power>=2000
+;triggerall = command = "QCFs"|| command = "QCBs"
+;triggerall = statetype != A
+;trigger1 = var(1)
+;trigger2 = hitdefattr=SCA,NA,SA,ST
+;trigger2 = movehit

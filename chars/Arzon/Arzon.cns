@@ -185,7 +185,7 @@ volumescale=160
 
 [State Arzon Voices]
 type = PlaySnd
-trigger1=enemynear,name="tui"||enemynear,name="sahkive"||enemynear,name="vile"||enemynear,name="roger"||enemynear,name="alicia"
+trigger1=enemynear,name="sahkive"||enemynear,name="vile"||enemynear,name="roger"||enemynear,name="alicia"
 trigger1 = animelem = 1
 trigger1=palno!=3
 value = 180, (0+(Random%4))

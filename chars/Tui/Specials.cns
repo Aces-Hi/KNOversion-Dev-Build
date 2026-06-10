@@ -131,7 +131,7 @@ physics = N         ;A,C,S,N
 type = NotHitBy
 triggerall=enemynear,stateno!=900
 triggerall=enemynear,stateno!=901
-value = A
+value = SCA
 trigger1 = pos y >= 0
 time = 1
 ignorehitpause = 1
@@ -215,11 +215,24 @@ trigger1 = movehit = 1
 fv =13     ;fv = 
 value = 2
 persistent = 0
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1&&prevstateno=1005
+fv =13     ;fv = 
+value = 3
+persistent = 0
 [State 200, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
 fv = 25   
 value = 2
+ignorehitpause = 1
+persistent = 0
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1&&prevstateno=1005
+fv = 25   
+value = 3
 ignorehitpause = 1
 persistent = 0
 
@@ -1574,7 +1587,7 @@ ctrl = 1
 ;6S
 ;-----------------------------
 [Statedef 1025]
-type    = S
+type    = A
 movetype= A
 physics = N
 juggle  = 2
@@ -1582,14 +1595,6 @@ ctrl = 0
 anim =1029
 sprpriority = 2
 velset = 4,-4
-
-[State 0, StateTypeSet]
-type = StateTypeSet
-trigger1 = animelem=5
-statetype = A       ;S,A,C,L
-movetype = A        ;I,A,H
-physics = N         ;A,C,S,N
-ignorehitpause = 1
 
 
 [State 200, VarAdd]
@@ -1818,10 +1823,10 @@ guardsound = 6,2
 ground.type = Low
 animtype = medium
 ground.slidetime = 14
-ground.hittime  = 33
+ground.hittime  = 50
 ground.velocity = -2.5,-5
 air.velocity = -2.5,-5
-air.hittime = 34
+air.hittime = 50
 forcenofall = 1
 envshake.time = 25
 envshake.freq = 110
@@ -2358,7 +2363,7 @@ trigger3 = animelem = 12
 trigger4 = animelem = 15
 getpower = 0
 attr = A, SA
-damage = ceil(cond(fvar(11) *10 < 4, 4, fvar(11) * 10)), 3
+damage = ceil(cond(fvar(11) *5 < 2, 2, fvar(11) * 5)), 3
 hitflag = MAFD
 guardflag = MAF
 ;priority = 3
@@ -2425,7 +2430,7 @@ damage = ceil(cond(fvar(11) *50 < 10, 10, fvar(11) * 50)), 4
 hitflag = MAFD
 guardflag = MAFD
 ;priority = 3
-pausetime = 12,12
+pausetime = 12,22
 sparkno = 3
 sparkxy = -20,-30
 hitsound   = 5,4
@@ -2597,8 +2602,8 @@ time = 1
 type = AssertSpecial
 triggerall = anim=1041
 triggerall = root,stateno!=1040 && root,stateno!=1045 && root,stateno!=1050 && root,stateno!=1055
-trigger1 = rootdist x > -60 && rootdist x < 40
-trigger1 = rootdist y > -80 && rootdist y < 80
+trigger1 = rootdist x > -70 && rootdist x < 50
+trigger1 = rootdist y > -90 && rootdist y < 90
 flag = invisible
 ignorehitpause = 1
 persistent = 1
@@ -2632,8 +2637,8 @@ trigger2 = anim=1044&&animtime=0
 trigger3 = root,animelemtime(6)<0
 trigger3 = root,stateno=1040 || root,stateno=1045 || root,stateno=1050 || root,stateno=1055
 trigger4 = root,stateno=700 || root,stateno=710
-trigger4 = rootdist x > -60 && rootdist x < 40
-trigger4 = rootdist y > -80 && rootdist y < 80
+trigger4 = rootdist x > -70 && rootdist x < 50
+trigger4 = rootdist y > -90 && rootdist y < 90
 trigger5 = enemy,map(bombdeleter)
 trigger6 = root,numhelper(1041)>1
 ID = 1042
@@ -2658,8 +2663,8 @@ trigger2 = anim=1044&&animtime=0
 trigger3 = root,animelemtime(6)<0
 trigger3 = root,stateno=1040 || root,stateno=1045 || root,stateno=1050 || root,stateno=1055
 trigger4 = root,stateno=700 || root,stateno=710
-trigger4 = rootdist x > -62 && rootdist x < 42
-trigger4 = rootdist y > -82 && rootdist y < 82
+trigger4 = rootdist x > -72 && rootdist x < 52
+trigger4 = rootdist y > -92 && rootdist y < 92
 trigger5 = enemy,map(bombdeleter)
 trigger6 = root,numhelper(1041)>1
 ignorehitpause=1
@@ -2674,6 +2679,15 @@ ctrl = 0
 anim = 1043
 sprpriority = 5
 velset=0,0
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+triggerall = time=0
+trigger1 = enemy,movetype!=H
+trigger2 = enemy,movetype=H&&root,!combocount
+value = 1043
+elem = 3
+ignorehitpause = 1
 
 [State 200, VarAdd]
 type = ParentVarAdd
@@ -2719,6 +2733,7 @@ damage = ceil(cond(root,fvar(11) *50 < 5, 5, root,fvar(11) * 50)), 0
 hitflag = MAFD
 guardflag = MA
 pausetime = 8,8
+guard.pausetime=6,6
 sparkno = 3
 sparkxy = -20,-55
 hitsound   = 5,3
@@ -2737,12 +2752,15 @@ palfx.add = 100, 0,20
 envshake.freq = 80
 envshake.ampl = 3
 envshake.phase = 1
-guard.hittime = 2
-guard.slidetime = 2
-guard.ctrltime = 2
-guard.cornerpush.veloff = -3
+guard.hittime = 0
+guard.slidetime = 0
+guard.ctrltime = 0
+ground.cornerpush.veloff = 0
+down.cornerpush.veloff = 0
+air.cornerpush.veloff = 0
 forcenofall = 1
 getpower = (115)*(cond(var(var(3)) = 1, 1, 1))
+
 
 [State Limiter]
 type = ParentMapAdd
@@ -2944,8 +2962,8 @@ time = 1
 type = AssertSpecial
 triggerall = anim=1041
 triggerall = root,stateno!=1040 && root,stateno!=1045 && root,stateno!=1050 && root,stateno!=1055
-trigger1 = rootdist x > -60 && rootdist x < 40
-trigger1 = rootdist y > -80 && rootdist y < 80
+trigger1 = rootdist x > -70 && rootdist x < 50
+trigger1 = rootdist y > -90 && rootdist y < 90
 flag = invisible
 ignorehitpause = 1
 persistent = 1
@@ -2979,8 +2997,8 @@ trigger2 = anim=1044&&animtime=0
 trigger3 = root,animelemtime(6)<0
 trigger3 = root,stateno=1040 || root,stateno=1045 || root,stateno=1050 || root,stateno=1055
 trigger4 = root,stateno=700 || root,stateno=710
-trigger4 = rootdist x > -60 && rootdist x < 40
-trigger4 = rootdist y > -80 && rootdist y < 80
+trigger4 = rootdist x > -70 && rootdist x < 50
+trigger4 = rootdist y > -90 && rootdist y < 90
 trigger5 = enemy,map(bombdeleter)
 trigger6 = root,numhelper(1041)>1
 ID = 1042
@@ -3000,8 +3018,8 @@ trigger2 = anim=1044&&animtime=0
 trigger3 = root,animelemtime(6)<0
 trigger3 = root,stateno=1040 || root,stateno=1045 || root,stateno=1050 || root,stateno=1055
 trigger4 = root,stateno=700 || root,stateno=710
-trigger4 = rootdist x > -62 && rootdist x < 42
-trigger4 = rootdist y > -82 && rootdist y < 82
+trigger4 = rootdist x > -72 && rootdist x < 52
+trigger4 = rootdist y > -92 && rootdist y < 92
 trigger5 = enemy,map(bombdeleter)
 trigger6 = root,numhelper(1041)>1
 ignorehitpause=1
@@ -3016,6 +3034,15 @@ ctrl = 0
 anim = 1053
 sprpriority = 5
 velset=0,0
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+triggerall = time=0
+trigger1 = enemy,movetype!=H
+trigger2 = enemy,movetype=H&&root,!combocount
+value = 1053
+elem = 3
+ignorehitpause = 1
 
 [State 200, VarAdd]
 type = ParentVarAdd
@@ -3063,6 +3090,7 @@ damage = ceil(cond(root,fvar(11) *25 < 5, 5, root,fvar(11) * 25)), 0
 hitflag = MAFD
 guardflag = MA
 pausetime = 2,6
+guard.pausetime=0,2
 sparkno = 3
 sparkxy = -20,-55
 hitsound   = 5,3
@@ -3081,10 +3109,12 @@ palfx.add = 100, 0,20
 envshake.freq = 80
 envshake.ampl = 3
 envshake.phase = 1
-guard.hittime = 4
-guard.slidetime = 4
-guard.ctrltime = 4
-guard.cornerpush.veloff = -3
+guard.hittime = 0
+guard.slidetime = 0
+guard.ctrltime = 0
+ground.cornerpush.veloff = 0
+down.cornerpush.veloff = 0
+air.cornerpush.veloff = 0
 forcenofall = 1
 getpower = 0
 

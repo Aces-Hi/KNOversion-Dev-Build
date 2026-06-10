@@ -1529,7 +1529,7 @@ ground.type = high
 ground.slidetime = 12
 forcenofall = 1
 ground.hittime  = ceil(cond(fvar(15) *18 < 8, 8, fvar(15) * 18))
-air.hittime  = ceil(cond(fvar(1) *18 < 8, 8, fvar(1) * 18))
+air.hittime  = ceil(cond(fvar(1) *20 < 8, 8, fvar(1) * 20))
 down.hittime = ceil(cond(fvar(1) *18 < 8, 8, fvar(1) * 18))
 ground.velocity = -6
 air.velocity = -1,-4.5;
@@ -1622,7 +1622,7 @@ guardsound = 6,2
 ground.type = high
 ground.slidetime = 10
 ground.hittime  = ceil(cond(fvar(1) *20 < 8, 8, fvar(1) * 20))
-air.hittime  = ceil(cond(fvar(1) *20 < 8, 8, fvar(1) * 20))
+air.hittime  = ceil(cond(fvar(1) *25 < 8, 8, fvar(1) * 25))
 down.hittime = ceil(cond(fvar(1) *20 < 8, 8, fvar(1) * 20))
 ground.velocity = -2,0
 air.velocity = -1.5,-2.8
@@ -1653,7 +1653,7 @@ trigger1 = animelem = 9
 attr = A, NA
 animtype  = Hard
 air.animtype = back
-damage = ceil(cond(fvar(11) *40 < 4, 4, fvar(11) * 40)), 0
+damage = ceil(cond(fvar(11) *30 < 3, 3, fvar(11) * 30)), 0
 hitflag = MAF
 guardflag = MA
 pausetime = 10,10
@@ -1665,7 +1665,7 @@ guardsound = 6,1
 ground.type = high
 ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(1) *20 < 8, 8, fvar(1) * 20))
-air.hittime  = ceil(cond(fvar(1) *20 < 8, 8, fvar(1) * 20))
+air.hittime  = ceil(cond(fvar(1) *25 < 8, 8, fvar(1) * 25))
 down.hittime = ceil(cond(fvar(1) *20 < 8, 8, fvar(1) * 20))
 ground.velocity = -5,0
 air.velocity = -2, -4.4
@@ -2133,6 +2133,16 @@ trigger1 = animelem = 1
 value =505, 0+Random%2
 volumescale=150
 
+[State 0, NotHitBy]
+type = NotHitBy
+triggerall=enemynear,stateno!=900
+triggerall=enemynear,stateno!=901
+value = A
+trigger1 = animelemtime(3)>=0&&animelemtime(8)<0
+time = 1
+ignorehitpause = 1
+persistent = 1
+
 [State 200, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
@@ -2285,9 +2295,9 @@ hitsound   = 5,4
 guardsound = 6,2
 ground.type = Low
 ground.slidetime = 12
-ground.hittime  = ceil(cond(fvar(15) *40 < 14, 14, fvar(15) * 40))
-air.hittime  =  ceil(cond(fvar(15) *40 < 14, 14, fvar(15) * 40))
-down.hittime = ceil(cond(fvar(15) *40 < 14, 14, fvar(15) * 40))
+ground.hittime  = ceil(cond(fvar(15) *50 < 14, 14, fvar(15) * 50))
+air.hittime  =  ceil(cond(fvar(15) *50 < 14, 14, fvar(15) * 50))
+down.hittime = ceil(cond(fvar(15) *50 < 14, 14, fvar(15) * 50))
 ground.velocity = -.4,-6
 air.velocity = -1.5,-5;
 ground.cornerpush.veloff = 0
@@ -2491,14 +2501,53 @@ trigger1=movehit
 map = "stomp"
 value=1
 ignorehitpause=1
+persistent=0
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = movehit&&combocount<=1&&animelem=14
+value = 227
+ignorehitpause = 1
 
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!combocount
 attr = S, SA
 animtype  = Hard
-damage = ceil(cond(fvar(11) *120 < 10,10, fvar(11) * 120)), 0
+damage = ceil(cond(fvar(11) *100 < 10,10, fvar(11) * 100)), 0
+hitflag = MAFD
+guardflag = HAFD
+pausetime = 25,35
+guard.pausetime = 12,12
+sparkno = 3
+sparkxy = -10,-80
+hitsound   = 5,3
+guardsound = 6,2
+ground.type = Low
+ground.slidetime = 12
+ground.hittime  = 35
+air.hittime  = 12
+ground.velocity = -2,8
+air.velocity = -2,8
+down.velocity =-2,-10
+fall = 1
+envshake.time = 20
+envshake.freq = 80
+envshake.ampl = 6
+envshake.phase = 1
+fall.yvelocity = -10
+getpower = (70)*(cond(var(var(3)) = 1, 1, .5))
+guard.hittime=21
+guard.ctrltime=21
+
+[State 200, 1]
+type = HitDef 
+p2facing = 1
+trigger1 = !movecontact&&combocount
+attr = S, SA
+animtype  = Hard
+damage = ceil(cond(fvar(11) *100 < 10,10, fvar(11) * 100)), 0
 hitflag = MAFD
 guardflag = HAFD
 pausetime = 12,12
@@ -2522,6 +2571,60 @@ fall.yvelocity = cond(map(stomp),0,-3)
 getpower = (70)*(cond(var(var(3)) = 1, 1, .5))
 guard.hittime=21
 guard.ctrltime=21
+
+;DEATH ZOOM ================================================
+[State 0]
+type = MapSet
+trigger1 = time=0
+map = "nozoom"
+value = 0
+ignorehitpause = 0
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist<=100
+triggerall=map(stomp)<2
+triggerall=combocount<=1
+trigger1 = enemy,HitShakeOver = 0&&movehit
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0,-10
+ignorehitpause=1
+[State 0, Zoom]
+type = zoom
+triggerall=map(nozoom)=0
+triggerall=backedgebodydist>100
+triggerall=map(stomp)<2
+triggerall=combocount<=1
+trigger1 = enemy,HitShakeOver = 0&&movehit
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos = pos x,-10
+ignorehitpause=1
+[State 0]
+type = MapAdd
+trigger1 = movehit
+map = "nozoom"
+value = 1
+ignorehitpause = 0
+[State 0, BGPalFX]
+type = BGPalFX
+triggerall=map(nozoom)=0
+triggerall=map(stomp)<2
+triggerall=combocount<=1
+trigger1 = enemy,HitShakeOver = 0&&movehit
+time = 1
+;add = 0,0,0
+mul = 50,50,50
+;sinadd = 0,0,0,10
+;color = 256
+ignorehitpause = 1
+persistent = 1
+;==============================================================
 
 [State 210, 5]
 type = ChangeState
@@ -2593,7 +2696,7 @@ ignorehitpause = 1
 [State 0, VelSet]
 type = VelSet
 trigger1 = animelemtime(4)>=0&&animelemtime(6)<0&&anim=515
-x = 6
+x = 9
 ignorehitpause = 0
 persistent=1
 
@@ -3214,7 +3317,7 @@ triggerall = !map(dkick)
 trigger1 = !movecontact
 attr = S, SA
 damage = ceil(cond(fvar(11) *80 < 8, 8, fvar(11) * 80)), 0
-hitflag = MAF
+hitflag = MAFD
 guardflag = MAF
 ;priority = 3
 pausetime = 12,10
@@ -3263,7 +3366,7 @@ triggerall = map(dkick)
 trigger1 = !movecontact
 attr = S, SA
 damage = ceil(cond(fvar(11) *40 < 4, 4, fvar(11) * 40)), 5
-hitflag = MAF
+hitflag = MAFD
 guardflag = MAF
 ;priority = 3
 pausetime = 12,10
@@ -3714,7 +3817,7 @@ air.animtype = back
 damage = ceil(cond(fvar(11) *100 < 10,10, fvar(11) * 100)), 0
 hitflag = MAFD
 guardflag = HA
-pausetime = 10,16
+pausetime = 10,20
 guard.pausetime=10,10
 sparkno = 3
 sparkxy = -20,-55
@@ -4143,8 +4246,8 @@ guard.hittime = 23
 guard.slidetime = 18
 guard.ctrltime = 19
 guard.cornerpush.veloff = -15
-air.velocity = -4,-8
-down.velocity = -4,-8
+air.velocity = -3.5,-8
+down.velocity = -3.5,-8
 forcenofall = 1
 
 [State 630, 2]
@@ -4169,14 +4272,14 @@ ground.slidetime = 14
 ground.hittime  = 78
 air.hittime  = 78
 down.hittime = 78
-ground.velocity = -1,-8
+ground.velocity = -4,-8
 getpower = 0
 guard.hittime = 23
 guard.slidetime = 18
 guard.ctrltime = 19
 guard.cornerpush.veloff = -15
-air.velocity = -1,-8
-down.velocity = -1,-8
+air.velocity = -4,-8
+down.velocity = -4,-8
 forcenofall = 1
 
 [State 630, 2]

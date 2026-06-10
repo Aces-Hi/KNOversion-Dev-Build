@@ -1002,6 +1002,19 @@ ctrl = 0
 
 ;==================================================================================================
 
+[State -2, Imagination]
+type = Helper
+triggerall = map(TrailerMode)=0
+triggerall=alive
+trigger1 = !NumHelper(7010)&&RoundState=2
+stateNo = 7010
+ID = 7010
+name = "Imagination"
+posType = Left
+facing = cond(Facing = 1, 1, -1)
+keyCtrl = 0
+ignoreHitPause = 1
+
 [State 0, Pause]
 type = Pause
 trigger1 = time%2 = 0
@@ -1056,9 +1069,8 @@ value = 0
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "stale s %f stale c %f stun %f  dmg %f smash %f mh %f D %f vel %f rina %f bmh %f"
-params = map(stales),map(stalec), fvar(25), fvar(13), map(smashattack), map(multihits), map(fulldsmash), map(vel), map(rina), map(bmhit)
-
+text = "Imagination %f Momentum %f Boredom %f IMHL %f"
+params = map(Imagination),map(Momentum),map(Boredom),map(IMHL)
 
 
 [State 0, PalFXWiz]

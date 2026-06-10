@@ -851,11 +851,12 @@ ground.hittime  = ceil(cond(fvar(15) *24 < 10, 10, fvar(15) * 24))
 air.hittime  = ceil(cond(fvar(15) *24 < 10, 10, fvar(15) * 24))
 down.hittime = ceil(cond(fvar(15) *24 < 10, 10, fvar(15) * 24))
 ground.velocity = 6
-air.velocity = -6,-2
+air.velocity = 2,-2
 guard.ctrltime = 2
 guard.slidetime = 12
 guard.hittime = 12
 getpower = (40)*(cond(var(var(2)) = 1, 1, 1)) 
+
 [State 610, 3]
 type = HitDef 
 p2facing = 1
@@ -878,7 +879,7 @@ ground.hittime  = ceil(cond(fvar(15) *24 < 10, 10, fvar(15) * 24))
 air.hittime  = ceil(cond(fvar(15) *24 < 10, 10, fvar(15) * 24))
 down.hittime = ceil(cond(fvar(15) *24 < 10, 10, fvar(15) * 24))
 ground.velocity = 6
-air.velocity = -6,-2
+air.velocity = 4,-2
 guard.ctrltime =2
 guard.slidetime = 12
 guard.hittime = 12

@@ -2231,7 +2231,7 @@ Clsn2Default: 2
 ; Knuckle Dust Projectile
 [Begin Action 1093]
 Clsn1Default: 1
-  Clsn1[0] = -44, -41, 41, 1
+  Clsn1[0] = -4, -41, 41, 1
 Clsn2Default: 1
   Clsn2[0] = -45, -41, 42, 2
 1070,25, 0,0, 3

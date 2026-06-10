@@ -1,1 +1,189 @@
-;)
+;------------------------------------------------------------------------------------------
+;Imagination
+[Statedef 7010]
+type = U
+physics = N
+anim =15999
+ctrl = 0
+sprpriority = 5
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = roundstate!=2
+trigger2=root,!alive
+flag = invisible
+persistent=1
+
+;p1 side
+
+[State -2, Explod];BG
+type = Explod
+triggerall = teamside = 1
+triggerall=numexplod(7000)=0
+trigger1=root,alive
+anim = 7000
+pos = 26,185
+postype = left
+removetime = -1
+scale = .6,.6
+sprpriority = -2
+id = 7000
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+[State -2, Explod];Base Bar
+type = Explod
+triggerall = teamside = 1
+triggerall=numexplod(7002)=0
+trigger1=root,alive
+anim = 7002
+pos = 26,185
+postype = left
+removetime = -1
+scale = .6,.6
+sprpriority = -2
+id = 7002
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+[State -2, Explod];Lvl3 Bar
+type = Explod
+triggerall = teamside = 1
+triggerall=numexplod(7003)=0
+trigger1=root,alive
+trigger1 = root,map(Imagination)>=800
+anim = 7003
+pos = 26,185
+postype = left
+removetime = -1
+scale = .6,.6
+sprpriority = -2
+id = 7003
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+[State -2, Explod];Full Bar
+type = Explod
+triggerall = teamside = 1
+triggerall=numexplod(7004)=0
+trigger1=root,alive
+trigger1 = root,map(Imagination)>=1000
+anim = 7004
+pos = 26,185
+postype = left
+removetime = -1
+scale = .6,.6
+sprpriority = -2
+id = 7004
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+[State -2, Explod];Momentum
+type = Explod
+triggerall = teamside = 1
+triggerall=numexplod(7010)=0
+trigger1=root,alive
+pos = 26,185
+postype = left
+removetime = -1
+scale = .6,.6
+sprpriority = -2
+id = 7010
+anim=7009
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+
+;p2 side
+[State -2, Explod];Wings BG
+type = Explod
+triggerall = teamside = 2
+triggerall=numexplod(7000)=0
+trigger1=root,alive
+anim = 7000
+pos =  -119.5,185
+postype = right
+removetime = -1
+scale = .6,.6
+sprpriority = -2
+id = 7000
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+
+[State -2, Explod];Scaling The Bar
+type =ModifyExplod
+Trigger1=TeamSide=1
+triggerall=root,alive
+trigger1 = NumExplod(7002)
+window = 1,0,76*(root,map(Imagination)/1000),20
+id = 7002
+ignorehitpause = 1
+[State -2, Explod];Scaling The Bar
+type =ModifyExplod
+Trigger1=TeamSide=1
+triggerall=root,alive
+trigger1 = NumExplod(7003)
+window = 1,0,76*(root,map(Imagination)/1000),20
+id = 7003
+ignorehitpause = 1
+
+
+[State -2, Explod];Momentum
+type =ModifyExplod
+triggerall=root,alive
+trigger1 = NumExplod(7010)&&root,map(Momentum)<6
+anim = 7009+root,map(Momentum)
+id = 7010
+ignorehitpause = 1
+
+[State 0]
+Type=RemoveExplod
+Trigger1 = RoundState != 2
+trigger2 = winko
+trigger3 = enemy,map(cutscene)||root,map(cutscene)||map(cutscene)
+trigger4=root,!alive
+ignorehitpause=1
+persistent=1
+
+[State 0]
+Type=RemoveExplod
+trigger1 = root,map(Imagination)>=800
+ignorehitpause=1
+persistent=1
+id=7002
+[State 0]
+Type=RemoveExplod
+trigger1 = root,map(Imagination)<800||root,map(Imagination)>=1000
+ignorehitpause=1
+persistent=1
+id=7003
+[State 0]
+Type=RemoveExplod
+trigger1 = root,map(Imagination)<1000
+ignorehitpause=1
+persistent=1
+id=7004
+[State 0]
+Type=RemoveExplod
+trigger1 = root,map(Imagination)>=1000
+ignorehitpause=1
+persistent=1
+id=7005

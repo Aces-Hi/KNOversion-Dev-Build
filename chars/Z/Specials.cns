@@ -2407,6 +2407,7 @@ p1sprpriority = 0
 p2sprpriority = -1
 ignorehitpause = 0
 
+
 [State 210, 5]
 type = ChangeState
 trigger1 = AnimTime = 0

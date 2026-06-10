@@ -539,6 +539,7 @@ envshake.time 	= 20
 envshake.freq 	= 80
 envshake.ampl 	= 6
 envshake.phase 	= 1
+
 ;DEATH ZOOM ================================================
 [State 0]
 type = MapSet

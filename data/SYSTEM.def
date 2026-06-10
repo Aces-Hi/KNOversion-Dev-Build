@@ -156,7 +156,6 @@ menu.window.visibleitems = 7
 ; MAIN MENU
 menu.itemname.ko = "KNOCKOUT!"
 menu.itemname.ko.versus = "1v1"
-menu.itemname.ko.teamversus = "2v2"
 menu.itemname.ko.freebattle = "PLAYER VS AI"    
 menu.itemname.ko.watch = "AI VS AI"   
 menu.itemname.ko.back = "BACK"
@@ -193,7 +192,6 @@ menu.itemname.extras.bonusgames.back = "BACK"               ;Ikemen feature
 ; This group is hidden and should not be moved to other menus.
 ; It's opened automatically, after synchronization with online player.
 menu.itemname.server.netplayversus = "1v1"              ;Ikemen feature
-menu.itemname.server.netplayteamversus = "2v2"              ;Ikemen feature
 menu.itemname.server.back = "EXIT"                          ;Ikemen feature
 
 
@@ -492,7 +490,7 @@ p2.teammenu.ratio7.icon.facing = 1,        ;Ikemen feature
 p2.teammenu.ratio7.icon.scale = 0.40, 0.40 ;Ikemen feature
 
 teammenu.itemname.single = Solo ;Ikemen feature
-teammenu.itemname.tag = Tag      ;Ikemen feature
+teammenu.itemname.tag =      ;Ikemen feature
 teammenu.itemname.simul =   ;Ikemen feature
 teammenu.itemname.turns =    ;Ikemen feature
 teammenu.itemname.ratio =    ;Ikemen feature
@@ -1028,7 +1026,7 @@ roundstowin = 5           ;Number of rounds to get win pose (lose pose otherwise
 	keymenu.itemname.c = "Remix"
 	keymenu.itemname.start = "Taunt"
 	keymenu.itemname.d = "EX"
-	keymenu.itemname.w = "Dash/Assist"
+	keymenu.itemname.w = "Dash"
 	keymenu.itemname.menu = "Pause"
 	keymenu.itemname.back = "Back"
 	keymenu.itemname.page = "Page"

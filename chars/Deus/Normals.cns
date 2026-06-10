@@ -2047,7 +2047,6 @@ value = 0.25
 [State 610, 3]
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
-trigger1 = vel y <= 0
 trigger1 = !movecontact
 attr = A, NA
 damage = ceil(cond(fvar(11) *40 < 5, 5, fvar(11) * 40)), 0
@@ -2072,34 +2071,7 @@ guard.slidetime = 6
 guard.pausetime=2,2
 guard.hittime = 12
 getpower = (40)*(cond(var(var(2)) = 1, 1, 1)) 
-[State 610, 3]
-type = HitDef 
-p2facing = cond(combocount>0,1,0)
-trigger1 = vel y > 0
-trigger1 = !movecontact
-attr = A, NA
-damage = ceil(cond(fvar(11) *40 < 5, 5, fvar(11) * 40)), 0
-guardflag = HA
-hitflag = MAFD
-pausetime = 8,8
-sparkno = 2
-sparkxy = -20,-35
-guardsound = S300, 2
-animtype =up
-air.animtype = up
-ground.type = high
-ground.slidetime = 12
-forcenofall = 1
-ground.hittime  = ceil(cond(fvar(15) *33 < 10, 10, fvar(15) * 33))
-air.hittime  = ceil(cond(fvar(15) *33 < 10, 10, fvar(15) * 33))
-down.hittime = ceil(cond(fvar(15) *33 < 10, 10, fvar(15) * 33))
-ground.velocity = -1,-6
-air.velocity = -1,-5
-guard.ctrltime =6
-guard.slidetime = 6
-guard.pausetime=2,2
-guard.hittime = 12
-getpower = (40)*(cond(var(var(2)) = 1, 1, 1)) 
+
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = movehit
@@ -2211,6 +2183,46 @@ type = HitDef
 p2facing = cond(combocount>0,1,0)
 trigger1 = movecontact = 0
 trigger1 = map(fair)=0
+trigger1 = vel y <= 0
+attr = A, NA
+animtype  = Hard
+air.animtype = back
+damage = ceil(cond(fvar(11) *60 < 10, 10, fvar(11) * 60)), 7
+hitflag = MAFD
+guardflag = MA
+pausetime = 10,12
+guard.pausetime = 12,12
+sparkno = 2
+sparkxy = -15,-30
+guardsound = S300, 2
+ground.type = high
+ground.slidetime = 12
+ground.hittime  = ceil(cond(fvar(15) *17 < 1, 1, fvar(15) *17))
+air.hittime  = ceil(cond(fvar(15) *50 < 20, 20, fvar(15) * 50))
+down.hittime = ceil(cond(fvar(15) *50 < 20, 20, fvar(15) *50))
+ground.velocity = -5
+air.velocity =0,15
+down.velocity = 0, 15
+air.fall = 1
+fall.yvelocity = -6
+guard.ctrltime = 8
+guard.hittime = 8
+guard.pausetime= 14,14
+guard.velocity = -7
+guard.dist = 20
+guard.slidetime = 16
+envshake.time = 12
+envshake.freq = 90
+envshake.ampl = 3
+envshake.phase = 1
+palfx.time=32
+getpower = (80)*(cond(var(var(2)) = 1, 1, 1)) 
+[State 0]
+type = HitDef 
+p2facing = cond(combocount>0,1,0)
+trigger1 = movecontact = 0
+trigger1 = map(fair)=0
+trigger1 = vel y > 0
 attr = A, NA
 animtype  = Hard
 air.animtype = back

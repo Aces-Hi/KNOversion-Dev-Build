@@ -141,13 +141,4 @@ PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(5 BARS)</> ^X+^A/^B/^C
    <#bbbbbb>An extra burst that can be used in an emergency.</>
    <#ff0000>Using this PERMANENTLY lowers your max meter
    for the rest of the game.</>
-_D	_D		_D
-
-	2V2 MODE
-SWITCH CHARACTERS	-		ASSIST </>
-ACTIVE SWITCH (WHILE ATTACKING)	-		<#55ffff>(2 BARS)</>ASSIST </>
-ASSIST ATTACK	-		_B/_D/_F+ASSIST </>
-   <#bbbbbb>Each character has 3 assist attacks.</>
-TAG SUPER (DURING A SUPER)		<#55ffff>(2 BARS)</>_D_DF_F+ASSIST OR _D_DB_B+ASSIST </>
-
 </>

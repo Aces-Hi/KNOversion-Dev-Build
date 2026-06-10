@@ -782,23 +782,30 @@ trigger1 = Time = 0
 x = 1
 y = 1
 
+
+[State 0, PosFreeze]
+type = PosFreeze
+trigger1 = !HitShakeOver
+value = 1
+ignorehitpause = 1
+
 [State 5030, 4]
 type = ChangeState
 triggerall = !HitFall
-trigger1 = HitOver
+trigger1 = HitOver&&HitShakeOver
 value = 915111 ;HITA_RECOV
 
 [State 5030, 5]
 type = ChangeState
 triggerall = HitFall
-trigger1 = HitOver
-trigger2 = Vel Y > 0    ;Hit ground
-trigger2 = Pos Y >= Const(movement.air.gethit.groundlevel)
+trigger1 = HitOver&&HitShakeOver
+trigger1 = Vel Y > 0    ;Hit ground
+trigger1 = Pos Y >= Const(movement.air.gethit.groundlevel)
 value = 915111 ;HITA_FALL
 
 [State 5030, 6]
 type = ChangeState
-trigger1 = AnimTime = 0
+trigger1 = AnimTime = 0&&HitShakeOver
 value = 915035 ;Air get-hit (transition)
 
 ;---------------------------------------------------------------------------
@@ -871,6 +878,10 @@ persistent = 0
 type = VelAdd
 trigger1 = 1
 y = GetHitVar(yaccel)
+[State 5050, 3] ;Gravity
+type = VelAdd
+trigger1 = 1
+y = .2
 
 [State 5050, 6]
 type = ChangeState
@@ -1030,6 +1041,18 @@ trigger1 = 1
 value = 1
 ignorehitpause = 1
 
+[State 0, VarAdd]
+type = MapSet
+trigger1 = time=0&&stateowner,stateno=1700
+map = "claw"
+value = 1
+ignorehitpause=1
+[State 0, VarAdd]
+type = MapSet
+trigger1 = time=0&&enemy,stateno!=1700
+map = "claw"
+value = 0
+ignorehitpause=1
 
 [State 1025, Anim] ;Custom animation
 type = ChangeAnim
@@ -1125,9 +1148,18 @@ physics = N
 
 [State 1028, Vel Y]
 type = VelSet
-trigger1 = Time = 0
+trigger1 = Time = 0&&map(claw)=0
 y = -8
 x=0
+
+[State 1028, Vel Y]
+type = VelSet
+trigger1 = Time = 0&&map(claw)
+y = -7
+x=2
+
+
+
 
 [State 1028, Gravity]
 type = VelAdd
@@ -1272,6 +1304,7 @@ type = VelSet
 trigger1 = Time = 0
 y = -6
 x=0
+
 
 [State 1028, Gravity]
 type = VelAdd
@@ -1603,4 +1636,74 @@ invertall = 0
 color = 256
 ignorehitpause = 1
 
+;-----------------------------------------------------------------------------
+;Horizon Buster Custom State (Shaking)
+[Statedef 30000]
+type    = A
+movetype= H
+physics = N
+ctrl = 0
+velset=0,0
+sprpriority=2
+
+[State 30000, Width]
+type = Width
+trigger1 = 1
+edge = 25,-25
+player = 25,0
+
+[State 30000, ChangeAnim]
+type = ChangeAnim
+trigger1 = !Time
+value = 5030
+
+[State 30000, Bounce]
+type = ChangeState
+trigger1 = hitshakeover
+value = 30001
+
+;-----------------------------------------------------------------------------
+;Horizon Buster Custom State (Flipping)
+[Statedef 30001]
+type = A
+movetype = H
+physics = N
+velset = 0,0
+
+[State 30001, ChangeAnim]
+type = ChangeAnim
+trigger1 = !Time
+value = 6160
+
+[State 1026, Velocity]
+type = HitVelSet
+trigger1 = Time = 0
+x = HitVel x
+y = HitVel x
+
+
+[State 30001, AngleDraw]
+type = AngleDraw
+trigger1 = 1
+[State 30001, AngleAdd]
+type = AngleAdd
+trigger1 = Time%2 = 0
+value = 45
+
+[State 30001, Gravity]
+type = VelAdd
+trigger1 = 1
+y = 0.38
+
+[State 30001, Gravity]
+type = VelAdd
+trigger1 = 1
+y = 0.05
+
+
+
+[State 30001, ChangeState]
+type = selfstate
+trigger1 = pos y>=0  && vel y>=0
+value = 5100
 

@@ -34,7 +34,7 @@ PROMETHEUS	-		<#aaffff>(GROUND OR AIR)</> _B^Y
    <#bbbbbb>You can hold Special while performing the grounded version
    to perform a palm strike and increase the projectile's distance.</>
 SPIRAL OUT	-		<#aaffff>(GROUND OR AIR)</> _D^Y
-   <#bbbbbb>The grounded version is a rising anti-air/anti-projectile attack.</>
+   <#bbbbbb>The grounded version is a rising anti-air/anti-projectile reversal.</>
 
 
 
@@ -76,15 +76,15 @@ _D	_D		_D
 	OR during a Phoenix Stance Followup.
 
 WINDMILL KICK	-		^A
-   <#bbbbbb>Can be jump cancelled on hit.</>
+   <#bbbbbb>Can be jump cancelled on hit.
+   The spinning kicks are an anti-air/anti-projectile attack.</>
 STOMP	-		^B
+<#bbbbbb>A powerful overhead that can start combos.</>
 FLASH FIRE	-		^C
    <#bbbbbb>A command grab. Can be used to extend combos.</>
 RAPID-FIRE	-		<#65b5ff>(AIR ONLY)</> ^A
 SUPERIORITY	-		<#65b5ff>(AIR ONLY)</> ^B
 DIVE	-		<#65b5ff>(AIR ONLY)</> ^C
-
-
 
 
 
@@ -103,7 +103,7 @@ _EX COIL STRIKE	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _F^Y+^Z
 _EX PROMETHEUS	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _B^Y+^Z
 _EX SPIRAL OUT	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _D^Y+^Z
    <#bbbbbb>A rising kick followed by an overhead divekick.
-   The grounded version is a rising anti-air/anti-projectile attack.</>
+   The grounded version is an invincible reversal.</>
 
 
 
@@ -165,13 +165,4 @@ PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(5 BARS)</> ^X+^A/^B/^C
    <#bbbbbb>An extra burst that can be used in an emergency.</>
    <#ff0000>Using this PERMANENTLY lowers your max meter
    for the rest of the game.</>
-_D	_D		_D
-
-	2V2 MODE
-SWITCH CHARACTERS	-		ASSIST </>
-ACTIVE SWITCH (WHILE ATTACKING)	-		<#55ffff>(2 BARS)</>ASSIST </>
-ASSIST ATTACK	-		_B/_D/_F+ASSIST </>
-   <#bbbbbb>Each character has 3 assist attacks.</>
-TAG SUPER (DURING A SUPER)		<#55ffff>(2 BARS)</>_D_DF_F+ASSIST OR _D_DB_B+ASSIST </>
-
 </>

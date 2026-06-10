@@ -72,21 +72,21 @@ LIGHTSPEED	-		<#65b5ff>(AIR ONLY)</> (ANY DIRECTION)+^Z
 _D	_D		_D
 
 	<#ffef0f>EX MOVES</>
-_EX BE NOT AFRAID	-		<#55ffff>(1 BAR)</> ^Y
+_EX BE NOT AFRAID	-		<#55ffff>(1 BAR)</> ^Y+^Z
    <#bbbbbb>A fullscreen command grab that causes a wallbounce.
    Can be used in combos.</>
-_EX HEAVEN'S BLESSING	-		<#65b5ff>(AIR ONLY)<#55ffff>(1 BAR)</> ^Y
+_EX HEAVEN'S BLESSING	-		<#65b5ff>(AIR ONLY)<#55ffff>(1 BAR)</> ^Y+^Z
    <#bbbbbb>Fires a kiss that does damage and sticks to others.</>
 _!_EX HEAVEN'S CALL	-		<#65b5ff>(AIR ONLY)</> ^Y
         <#bbbbbb>Can be done normally by pressing ^Y in the air, or can be done
         at certain points during other special moves or during throws.</>
-_EX HALO	-		<#aaffff>(GROUND OR AIR)<#55ffff>(1 BAR)</> _F^Y
+_EX HALO	-		<#aaffff>(GROUND OR AIR)<#55ffff>(1 BAR)</> _F^Y+^Z
    <#bbbbbb>You can hold _B during startup to reduce the range of
    the projectile, and to also make it drift backwards.</>
-_EX SHINE THROUGH	-		(CAN BE HELD)<#55ffff>(1 BAR)</> _D^Y
+_EX SHINE THROUGH	-		(CAN BE HELD)<#55ffff>(1 BAR)</> _D^Y+^Z
    <#bbbbbb>Invincible startup. The rest of the attack is
    an anti-air and projectile immune.</>
-_EX LIGHT FROM ABOVE	-		<#65b5ff>(AIR ONLY)<#55ffff>(1 BAR)</> _D^Y
+_EX LIGHT FROM ABOVE	-		<#65b5ff>(AIR ONLY)<#55ffff>(1 BAR)</> _D^Y+^Z
 
 
 
@@ -141,13 +141,4 @@ PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(5 BARS)</> ^X+^A/^B/^C
    <#bbbbbb>An extra burst that can be used in an emergency.</>
    <#ff0000>Using this PERMANENTLY limits my max meter
    for the rest of the game.</>
-_D	_D		_D
-
-	2V2 MODE
-SWITCH CHARACTERS	-		ASSIST </>
-ACTIVE SWITCH (WHILE ATTACKING)	-		<#55ffff>(2 BARS)</>ASSIST </>
-ASSIST ATTACK	-		_B/_D/_F+ASSIST </>
-   <#bbbbbb>Everyone has 3 assist attacks.</>
-TAG SUPER (DURING A SUPER)		<#55ffff>(2 BARS)</>_D_DF_F+ASSIST OR _D_DB_B+ASSIST </>
-
 </>

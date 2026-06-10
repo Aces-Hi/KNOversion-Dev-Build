@@ -296,29 +296,6 @@ trigger1 = prevstateno = 100 ;RUN_FWD
 trigger1 = sysvar(1) = 1
 x = const(velocity.runjump.fwd.x)
 
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 1
-anim = 7010
-ID = 673
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-removetime = -2
-pausemovetime = 0
-scale = 0.3,0.3
-sprpriority = 0
-ontop = 0
-shadow = 0,0,0
-ownpal = 1
-removeongethit = 0
-ignorehitpause = 0
-
 [State 40, 6]
 type = selfstate
 trigger1 = AnimTime = 0
@@ -476,7 +453,7 @@ removeongethit = 0
 type    = A
 movetype= I
 physics = N
-velset = 5,0
+velset = 4,0
 anim = 161
 ctrl = 1
 
@@ -691,28 +668,6 @@ trigger1 = AnimTime = 0
 trigger1 = prevstateno = 100 ;RUN_FWD
 trigger1 = sysvar(1) = 1
 x = const(velocity.runjump.fwd.x)
-
-[State 0, Explod]
-type = Explod
-trigger1 = animelem = 1
-anim = 7010
-ID = 673
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-removetime = -2
-pausemovetime = 0
-scale = 0.3,0.3
-sprpriority = 0
-ontop = 0
-shadow = 0,0,0
-ownpal = 1
-removeongethit = 0
 
 [State 40, 6]
 type = selfstate

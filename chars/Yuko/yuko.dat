@@ -1,61 +1,109 @@
-	<#bbbbbb>This move list assumes I am facing to the right.</>
+	<#bbbbbb>This move list assumes you are facing to the right.</>
 
-	<#107105>UNIQUE TRAIT: BOUNDLESS</>
-	I have many traits that make me play unlike any other character in this game.
-	I can face either direction at any time, I don't have a traditional walk,
-	backdash, or air dash, and I can freely move back and forward in the air.
-	There's even more, so check the rest of the move list for more info. :)
+	<#7f41b9>UNIQUE TRAIT: THE FUNDAMENTALS OF MAGIC</>
+	Yuko's moves can be modified with Imagination and Motivation.
+	Imagination is gained by attacking the enemy, and lost by taking
+	damage or by not landing any attacks. Motivation is gained in a
+	variety of ways, and can be spent to expand Yuko's moveset.
 
-	<#107105>UNIQUE MOVES</>
-FORWARD KO	-		(HOLD)^C
-   <#bbbbbb>Increases in power the longer it's charged.</>
-DOWN KO	-		(HOLD)_D^C
-   <#bbbbbb>Increases in power the longer it's charged.</>
-BACK AIR (MEDIUM)	-		<#65b5ff>(AIR ONLY)</> _B^B
-BACK AIR	-		<#65b5ff>(AIR ONLY)</> _B^C
-   <#bbbbbb>Becomes more powerful if I hit the sweetspot.</>
-FASTFALL (AFTER HITTING ANY AIR NORMAL)		<#65b5ff>(AIR ONLY)</> _D
+	<#7f41b9>IMAGINATION GAUGE</>
+	The different levels drastically change Yuko's capabilities.
+	It is strongly encouraged to check the rest of the movelist
+	to understand the full extent of Imagination's effects.
+	<#818181>LEVEL 0: All damage is decreased.</>
+	<#ffd541>LEVELS 1-2: Yuko's default state.</>
+	<#f0710a>LEVEL 3: All of Yuko's Special Moves become enhanced.</>
+	<#ff0000>LEVEL 4: Devil-Chain Enders refund all Momentum used
+	during the chain.</>
 
-	<#107105>STRINGS</>
-NEUTRAL ATTACK	-		^A_-^A_-^A
-
-
-
-_D	_D		_D
-
-	<#107105>SPECIAL MOVES</>
-BE NOT AFRAID	-		^Y
-   <#bbbbbb>A fullscreen command grab.
-   Can be used in combos.</>
-HEAVEN'S BLESSING	-		<#65b5ff>(AIR ONLY)</> ^Y
-   <#bbbbbb>Fires an unblockable kiss that sticks to others.</>
-_!HEAVEN'S CALL	-		<#aaffff>(GROUND OR AIR)</> ^Y
-        <#bbbbbb>Can be done normally by pressing ^Y in the air, or can be done
-        at certain points during other special moves or during throws.</>
-HALO	-		<#aaffff>(GROUND OR AIR)</> _F^Y
-   <#bbbbbb>You can hold _B during startup to reduce the range of
-   the projectile, and to also make it drift backwards.</>
-SHINE THROUGH	-		(CAN BE HELD) _D^Y
-   <#bbbbbb>The slide is projectile immune. The uppercut is anti-air/anti-projectile.
-   Becomes more powerful when fully held.</>
-LIGHT FROM ABOVE	-		<#65b5ff>(AIR ONLY)</> _D^Y
-
-
-
+	<#7f41b9>UNIQUE MOVES</>
+REAPING	-		_DF^C
 
 
 
 _D	_D		_D
 
-	<#107105>REMIX MOVES</>
-REFLECTION	-		(HOLD)^Z
-   <#bbbbbb>Makes me face the other person. I can also walk while this is active.</>
-_!DODGE	-		_F_F/_B_B/_D_D
-        <#bbbbbb>Functions like a typical back dash,
-        except I can do it in other directions. Passes through others.</>
-LIGHTSPEED	-		<#65b5ff>(AIR ONLY)</> (ANY DIRECTION)+^Z
-   <#bbbbbb>An 8-way airdash with invulnerability.
-   Passes through others during combos.</>
+	<#7f41b9>SPECIAL MOVES</>
+ORDINARY OFFENSIVE MAGIC: ZOLTRAAK		^Y
+   <#f0710a>LEVEL 3+: This move can be cast in the air.
+   Additionally, you can input any direction to fly during this move.</>
+A SPELL THAT MOVES YOU FORWARD: WINDBURST		_B^Y
+   <#bbbbbb>The dash is projectile immune.</>
+   <#f0710a>LEVEL 3+: This move can pass through the opponent.</>
+A SPELL THAT MOVES YOU DOWNWARD: WINDBURST~ALTER		<#65b5ff>(AIR ONLY)</> _B^Y
+   <#f0710a>LEVEL 3+: This move causes a sliding knockdown.</>
+A SPELL THAT CUTS THINGS: CLAW	-		^Y
+   <#bbbbbb>The second hit is jump cancellable on block.
+   Both hits are jump cancellable during combos.</>
+   <#f0710a>LEVEL 3+: The first swing creates a projectile,
+   and the second swing shoots it forward.</>
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#7f41b9>DEVIL-CHAIN</>
+DEVIL-CHAIN	-		_F^Y
+   <#f0710a>LEVEL 3+: Any non Devil-Chain Special Move can be
+   cancelled into this for <#db00ac>1 Momentum.</>
+
+	<#7f41b9>DEVIL-CHAIN FOLLOWUPS</>
+	These moves can be used after Devil-Chain.
+DEVIL-CHAIN~PIERCE	-		_F^Y
+   <#bbbbbb>The basic followup for combos.</>
+DEVIL-CHAIN~WINDBURST	-		_B^Y
+   <#bbbbbb>The dash is projectile immune.</>
+   <#f0710a>LEVEL 3+: This move can pass through the opponent.</>
+DEVIL-CHAIN~SLIP THROUGH	-		_D^Y
+   <#bbbbbb>The dash is fully invincible and can pass through opponents.</>
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#7f41b9>//HUNT// FOLLOWUPS</>
+	These moves can be used after Devil-Chain or any followup.
+	<#db00ac>All of these moves cost 1 Momentum to use.</>
+HUNT//SWEEP	-		_F^Z
+   <#bbbbbb>The second hit is jump cancellable.</>
+   <#db00ac>Holding R during the startup spends 1 Momentum
+   to cancel this move into HUNT//DIVE.</>
+HUNT//DIVE	-		_B^Z
+   <#db00ac>Holding R during the startup spends 1 Momentum
+   to cancel this move into HUNT//SWEEP.</>
+HUNT//CRUSH	-		_D^Z
+   <#bbbbbb>A command grab that can be used during combos.</>
+
+	<#7f41b9>DEVIL-CHAIN ENDERS</>
+	These moves can be used after any followup.
+ENDE	-		_F^Y
+   <#db00ac>Grants 1 Momentum on hit.</>
+ENDE~</>DISMANTLE	-		_B^Y
+   <#db00ac>Grants 2 Momentum on hit.</>
+ENDE~COLLAPSE	-		_D^Y
+   <#db00ac>Grants 1 Momentum on hit.</>
+
+_D	_D		_D
+
+	<#7f41b9>REMIX MOVES</>
+DEVIL-CHAIN~ALTER	-		^Z
+   <#bbbbbb>This move can pass through opponents.</>
+   <#db00ac>Grants 1 Momentum when used.</>
+MAGIC BURST	-		_D^Z
+   <#bbbbbb>An invincible reversal attack.</>
+   <#ffd541>Costs 2 Imagination Levels to use.</>
+
+
 
 
 
@@ -72,21 +120,21 @@ LIGHTSPEED	-		<#65b5ff>(AIR ONLY)</> (ANY DIRECTION)+^Z
 _D	_D		_D
 
 	<#ffef0f>EX MOVES</>
-_EX BE NOT AFRAID	-		<#55ffff>(1 BAR)</> ^Y
-   <#bbbbbb>A fullscreen command grab that causes a wallbounce.
-   Can be used in combos.</>
-_EX HEAVEN'S BLESSING	-		<#65b5ff>(AIR ONLY)<#55ffff>(1 BAR)</> ^Y
-   <#bbbbbb>Fires a kiss that does damage and sticks to others.</>
-_!_EX HEAVEN'S CALL	-		<#65b5ff>(AIR ONLY)</> ^Y
-        <#bbbbbb>Can be done normally by pressing ^Y in the air, or can be done
-        at certain points during other special moves or during throws.</>
-_EX HALO	-		<#aaffff>(GROUND OR AIR)<#55ffff>(1 BAR)</> _F^Y
-   <#bbbbbb>You can hold _B during startup to reduce the range of
-   the projectile, and to also make it drift backwards.</>
-_EX SHINE THROUGH	-		(CAN BE HELD)<#55ffff>(1 BAR)</> _D^Y
-   <#bbbbbb>Invincible startup. The rest of the attack is
-   an anti-air and projectile immune.</>
-_EX LIGHT FROM ABOVE	-		<#65b5ff>(AIR ONLY)<#55ffff>(1 BAR)</> _D^Y
+_EX KILLING MAGIC: ZOLTRAAK		<#55ffff>(1 BAR)</> ^Y+^Z
+   <#f0710a>LEVEL 3+: This move can be cast in the air.
+   Additionally, you can input any direction to fly during this move.</>
+_EX DEVIL-CHAIN	-		<#55ffff>(1 BAR)</> _F^Y+^Z
+   <#f0710a>LEVEL 3+: Any non Devil-Chain Special Move can be
+   cancelled into this for <#db00ac>1 Momentum.</>
+_EX WINDBURST	-		<#55ffff>(1 BAR)</> _B^Y+^Z
+   <#bbbbbb>This move is projectile immune.</>
+   <#f0710a>LEVEL 3+: Yuko gains full control when this move makes contact.</>
+_EX WINDBURST~ALTER	-		<#65b5ff>(AIR ONLY)</><#55ffff>(1 BAR)</> _B^Y+^Z
+   <#f0710a>LEVEL 3+: Yuko gains full control when this move makes contact.</>
+_EX CLAW	-		<#55ffff>(1 BAR)</> _D^Y+^Z
+   <#bbbbbb>Both hits are jump cancellable on hit or block,
+   and the second swing fires a projectile that causes a wallbounce.</>
+   <#f0710a>LEVEL 3+: Both swings create projectiles.</>
 
 
 
@@ -95,14 +143,14 @@ _EX LIGHT FROM ABOVE	-		<#65b5ff>(AIR ONLY)<#55ffff>(1 BAR)</> _D^Y
 
 _D	_D		_D
 
-	<#55ffff>SUPERS</>
-<#107105>DIVINE INTERVENTION</>		<#aaffff>(GROUND OR AIR)<#55ffff><#55ffff>(2 BARS)</> _D_DF_F_-^A/^B/^C
-_!<#107105>HOLY TRINITY</>		<#aaffff>(GROUND OR AIR)<#55ffff><#55ffff>(1 BAR)</> (HOLD)^A/^B/^C
-   _!<#107105>ABSOLUTION.</>		<#aaffff>(GROUND OR AIR)<#55ffff><#55ffff>(1 BAR)</> (HOLD)^A/^B/^C
-<#107105>FUTILITY</>	-		<#55ffff>(2 BARS)</> _D_DF_F_-^Y
-   <#bbbbbb>A counter that beats strikes and projectiles.
-   The opposition may have time to block when this is used to beat a projectile.
-   This move can also be used during a combo.</>
+	<#55ffff>SUPER MOVES</>
+...
+
+
+
+
+
+
 
 
 
@@ -120,34 +168,25 @@ _!<#107105>HOLY TRINITY</>		<#aaffff>(GROUND OR AIR)<#55ffff><#55ffff>(1 BAR)</>
 _D	_D		_D
 
 	UNIVERSAL MOVES
-OVERHEAD	-		(NOT AVAILABLE) </>
-   <#bbbbbb>I actually don't do this one. Oops!</>
+OVERHEAD	-		_F^B
+   <#bbbbbb>Puts you in the air and hits overhead.</>
 ANTI-AIR	-		_D^C
-   <#bbbbbb>This move has invulnerability to projectiles and airborne attacks.</>
+   <#bbbbbb>This move has invulnerability to projectiles and airborne enemies.</>
 GRAB	-		ANY 2 NORMALS </>
    <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.
-   People can break this by pressing ^A/^B/^C.</>
+   Enemies can break this by pressing ^A/^B/^C.</>
 FORCE BLOCK (WHILE BLOCKING)	-		<#55ffff>(1 BAR)</> _B^X
-   <#bbbbbb>Can push people backwards while I block.</>
+   <#bbbbbb>Can push the enemy backwards while you block.</>
 NO PARRY	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _F^X
-   <#bbbbbb>A reversal option that makes me invincible if someone hits me.
+   <#bbbbbb>A reversal option that makes you invincible if the enemy hits you.
    Can be used again FOR FREE while the invincibility is active.</>
 RECORD SCRATCH (WHILE ATTACKING)		<#55ffff>(1 BAR/2 BARS ON BLOCK)</> ^X
    <#bbbbbb>Can be used to instantly cancel most attacks.
-   Holding any direction during this will cause me to move that way.</>
+   Holding any direction during this will cause you to move that way.</>
 BURST (WHILE GETTING HIT)	-		^X+^A/^B/^C
-   <#bbbbbb>A large reversal that can be used while I'm getting hit.</>
+   <#bbbbbb>A large reversal that can be used while you're getting hit.</>
 PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(5 BARS)</> ^X+^A/^B/^C
    <#bbbbbb>An extra burst that can be used in an emergency.</>
-   <#ff0000>Using this PERMANENTLY limits my max meter
+   <#ff0000>Using this PERMANENTLY lowers your max meter
    for the rest of the game.</>
-_D	_D		_D
-
-	2V2 MODE
-SWITCH CHARACTERS	-		ASSIST </>
-ACTIVE SWITCH (WHILE ATTACKING)	-		<#55ffff>(2 BARS)</>ASSIST </>
-ASSIST ATTACK	-		_B/_D/_F+ASSIST </>
-   <#bbbbbb>Everyone has 3 assist attacks.</>
-TAG SUPER (DURING A SUPER)		<#55ffff>(2 BARS)</>_D_DF_F+ASSIST OR _D_DB_B+ASSIST </>
-
 </>

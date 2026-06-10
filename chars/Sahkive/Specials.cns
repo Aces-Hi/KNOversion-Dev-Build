@@ -34,11 +34,11 @@ type = PosAdd
 trigger1 = animelem = 4
 x = 1
 [State 0, VelSet]
-type = VelSet
+type = VelAdd
 trigger1 = animelem = 5
 x = 2
 [State 0, VelSet]
-type = VelSet
+type = VelAdd
 trigger1 = animelem = 6
 x = 3
 
@@ -1027,11 +1027,11 @@ type = PosAdd
 trigger1 = animelem = 4
 x = 1
 [State 0, VelSet]
-type = VelSet
+type = VelAdd
 trigger1 = animelem = 5
 x = 2
 [State 0, VelSet]
-type = VelSet
+type = VelAdd
 trigger1 = animelem = 6
 x = 3
 
@@ -1643,7 +1643,7 @@ persistent = 1
 type = MapSet
 trigger1 = map(haki)&&prevstateno = 100
 triggerall = (AnimElemTime (8) < 0)
-trigger1 = time>=0
+trigger1 = time>=7
 trigger2 = prevstateno=666999
 map = "armor"
 value=2
@@ -1654,7 +1654,7 @@ type = HitOverride
 trigger1 = map(haki)&&prevstateno = 100
 triggerall = (AnimElemTime (8) < 0)
 triggerall = map(armorlimit)=0
-trigger1 = time>=0
+trigger1 = time>=7
 trigger2 = prevstateno=666999
 attr = SCA,NA,SA,NP,SP
 slot = 0
@@ -2068,7 +2068,7 @@ persistent = 1
 type = MapSet
 trigger1 = map(haki)&&prevstateno = 100
 triggerall = (AnimElemTime (8) < 0)
-trigger1 = time>=0
+trigger1 = time>=7
 trigger2 = prevstateno=666999
 map = "armor"
 value=2
@@ -2079,7 +2079,7 @@ type = HitOverride
 trigger1 = map(haki)&&prevstateno = 100
 triggerall = (AnimElemTime (8) < 0)
 triggerall = map(armorlimit)=0
-trigger1 = time>=0
+trigger1 = time>=7
 trigger2 = prevstateno=666999
 attr = SCA,NA,SA,NP,SP
 slot = 0

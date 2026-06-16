@@ -2933,7 +2933,7 @@ value = 5041 ;Jump land
 ; Air get-hit (recovering in air, not falling)
 [Statedef 5041]
 type    = A
-movetype= H
+movetype= I
 physics = A
 ctrl=0
 velset=0,0
@@ -9938,6 +9938,80 @@ persistent = 1
 
 ;==================================
 
+;==================================
+;2v2 shit...
+;==================================
+[state 0]
+type=Mapset
+trigger1=partner,map(teamlead)=0
+map="teamlead"
+value=playerno
+[state 0]
+type=Mapset
+trigger1=!alive
+map="teamlead"
+value=0
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = map(teamlead)=0
+flag = NoTurnTarget
+ignorehitpause = 1
+persistent=1
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = enemynear,map(teamlead)=0
+flag = NoAutoTurn
+ignorehitpause = 1
+persistent=1
+
+[State 0, NotHitBy]
+type = NotHitBy
+triggerall=teammode=tag
+triggerall = !InCustomState
+trigger1=!alive
+trigger1=partner,alive
+value = SCA
+time = 1
+ignorehitpause = 1 
+persistent = 1
+
+[state 0]
+type=Mapset
+trigger1=teamside=1
+map="enemyteamlead"
+value=player(2),map(teamlead)+player(4),map(teamlead)
+[state 0]
+type=Mapset
+trigger1=teamside=2
+map="enemyteamlead"
+value=player(1),map(teamlead)+player(3),map(teamlead)
+
+[State 0, PalFX]
+type = null
+trigger1=playerno=1&&map(teamlead)=1
+trigger2 = playerno=2&&map(teamlead)=2
+trigger3 = playerno=3&&map(teamlead)=3
+trigger4 = playerno=4&&map(teamlead)=4
+time = 1
+add = 0,0,256
+mul = 256,256,256
+invertall = 0
+color = 256
+ignorehitpause = 1
+persistent = 1
+[State 0, PalFX]
+type = null
+trigger1 = map(teamlead)=0
+time = 1
+add = 256,0,0
+mul = 256,256,256
+invertall = 0
+color = 256
+ignorehitpause = 1
+persistent = 1
+;==================================
+
 ;===============================================================================
 ; god stuff
 ;===============================================================================
@@ -10112,6 +10186,7 @@ triggerall=name="Yuko"
 triggerall = map(IMHL)=1
 trigger1 = stateno!=200&&stateno!=400&&stateno!=600
 trigger1 = stateno!=210&&stateno!=410&&stateno!=610
+trigger1 = stateno!=1900&&stateno!=1300&&stateno!=1500
 map = "Imagination"
 value = 30+cond(map(Imagination)<400,10,cond(map(Imagination)>=800,-15,0))-cond(combocount,0,10)
 ignorehitpause = 1
@@ -10225,6 +10300,17 @@ persistent = 1
 
 [State 0]
 type = MapSet
+triggerall = GameMode = "Training"
+triggerall=name="Yuko"
+trigger1 = map(trainingi)&&combocount=0
+map = "Imagination"
+value = (map(trainingi)-1)*200
+ignorehitpause = 1
+persistent = 1
+
+
+[State 0]
+type = MapSet
 triggerall=name="Yuko"
 trigger1 = map(Momentum)>5
 map = "Momentum"
@@ -10239,6 +10325,284 @@ map = "Momentum"
 value = 0
 ignorehitpause = 1
 persistent = 1
+
+[State 0]
+type = MapSet
+triggerall = GameMode = "Training"
+triggerall=name="Yuko"
+trigger1 = map(trainingm)&&combocount=0
+map = "Momentum"
+value = map(trainingm)-1
+ignorehitpause = 1
+persistent = 1
+
+
+;------------------------------------training options------------------------------------------
+
+[State 0]
+type = text
+triggerall = map(TrailerMode)=0
+triggerall = map(_iksys_trainingAtkDataDisp) = 0
+triggerall = GameMode = "Training"
+triggerall=enemy,command!="hold_a"
+trigger1=teamside=2&&enemy,name="Yuko"&&enemy,combocount=0
+removetime=1
+layerno=2  
+text="HOLD KNO FOR YUKO SPECIFIC OPTIONS"
+scale=0.6,0.6
+font=F3
+align=0
+pos=160,192
+ignorehitpause = 1
+color=256,0,0
+[State 0]
+type = text
+triggerall = map(TrailerMode)=0
+triggerall = map(_iksys_trainingAtkDataDisp) = 0
+triggerall = GameMode = "Training"
+triggerall = enemy,command="hold_a"
+trigger1=teamside=2&&enemy,name="Yuko"&&enemy,combocount=0
+removetime=1
+layerno=2  
+text="LEFT RIGHT - IMAGINATION      UP DOWN - MOTIVATION"
+scale=0.6,0.6
+font=F3
+align=0
+pos=160,192
+ignorehitpause = 1
+color=256,0,0
+
+
+[State 0]
+type = text
+triggerall = map(TrailerMode)=0
+triggerall = map(_iksys_trainingAtkDataDisp) = 0
+trigger1=teamside=2
+trigger1= player(1),map(trainingi)=0
+trigger1 =  player(1),map(cockko)>-60
+triggerall = enemy,command="hold_a"
+triggerall = GameMode = "Training"
+removetime=1
+layerno=2  
+text="IMAGINATION RESETS OFF"
+scale=0.6,0.6
+font=F3
+align=0
+pos=160,170
+ignorehitpause = 1
+color=256,0,0
+[State 0]
+type = text
+triggerall = map(TrailerMode)=0
+triggerall = map(_iksys_trainingAtkDataDisp) = 0
+trigger1=teamside=2
+trigger1= player(1),map(trainingm)=0
+trigger1 =  player(1),map(yucock)>-60
+triggerall = enemy,command="hold_a"
+triggerall = GameMode = "Training"
+removetime=1
+layerno=2  
+text="MOTIVATION RESETS OFF"
+scale=0.6,0.6
+font=F3
+align=0
+pos=160,180
+ignorehitpause = 1
+color=256,0,0
+
+
+[State 0, VarAdd]
+type = MapSet
+trigger1 = combocount=0
+triggerall = GameMode = "Training"
+trigger1 = roundstate=2
+trigger1 = command="hold_a"
+trigger1 = command="holdfwd"||command="holdback"
+map ="cockko"
+value = 1
+persistent=0
+[State 0, VarAdd]
+type = MapSet
+triggerall = GameMode = "Training"
+trigger1 = command!="hold_a"||(command!="holdfwd"&&command!="holdback")
+trigger1 = map(cockko)>0
+map ="cockko"
+value = 0
+[State 0, VarAdd]
+type = MapAdd
+triggerall = GameMode = "Training"
+trigger1 = command!="hold_a"||(command!="holdfwd"&&command!="holdback")
+trigger1 = map(cockko)<=0
+trigger1 = map(cockko)>-60
+map ="cockko"
+value = -1
+
+[State 0, VarAdd]
+type = MapSet
+trigger1 = combocount=0
+triggerall = GameMode = "Training"
+trigger1 = roundstate=2
+trigger1 = command="hold_a"
+trigger1 = command="holdup"||command="holddown"
+map ="yucock"
+value = 1
+persistent=0
+[State 0, VarAdd]
+type = MapSet
+triggerall = GameMode = "Training"
+trigger1 = command!="hold_a"||(command!="holdup"&&command!="holddown")
+trigger1 = map(yucock)>0
+map ="yucock"
+value = 0
+[State 0, VarAdd]
+type = MapAdd
+triggerall = GameMode = "Training"
+trigger1 = command!="hold_a"||(command!="holdup"&&command!="holddown")
+trigger1 = map(yucock)<=0
+trigger1 = map(yucock)>-60
+map ="yucock"
+value = -1
+
+[State 0, VarAdd]
+type = MapSet
+triggerall = GameMode = "Training"
+trigger1 =command="holdup"&&command!="holddown"
+map ="yukoup"
+value = 1
+[State 0, VarAdd]
+type = MapSet
+triggerall = GameMode = "Training"
+trigger1 =command="holdup"&&command!="holddown"
+map ="yukodown"
+value = 0
+[State 0, VarAdd]
+type = MapSet
+triggerall = GameMode = "Training"
+trigger1 =command!="holdup"&&command="holddown"
+map ="yukodown"
+value = 1
+[State 0, VarAdd]
+type = MapSet
+triggerall = GameMode = "Training"
+trigger1 =command!="holdup"&&command="holddown"
+map ="yukoup"
+value = 0
+
+[State 0, VarAdd]
+type = MapSet
+triggerall = GameMode = "Training"
+trigger1 =facing=1&&command="holdback"&&command!="holdfwd"
+trigger2 =facing=-1&&command!="holdback"&&command="holdfwd"
+map ="yukoleft"
+value = 1
+[State 0, VarAdd]
+type = MapSet
+triggerall = GameMode = "Training"
+trigger1 =facing=1&&command="holdback"&&command!="holdfwd"
+trigger2 =facing=-1&&command!="holdback"&&command="holdfwd"
+map ="yukoright"
+value = 0
+[State 0, VarAdd]
+type = MapSet
+triggerall = GameMode = "Training"
+trigger1 =facing=1&&command!="holdback"&&command="holdfwd"
+trigger2 =facing=-1&&command="holdback"&&command!="holdfwd"
+map ="yukoright"
+value = 1
+[State 0, VarAdd]
+type = MapSet
+triggerall = GameMode = "Training"
+trigger1 =facing=1&&command!="holdback"&&command="holdfwd"
+trigger2 =facing=-1&&command="holdback"&&command!="holdfwd"
+map ="yukoleft"
+value = 0
+
+
+
+[State 0, VarAdd]
+type = MapAdd
+trigger1 = combocount=0
+triggerall = GameMode = "Training"
+trigger1 = roundstate=2
+trigger1 = map(cockko)=-1
+trigger1 = map(yukoright)=1&&map(yukoleft)=0
+map="trainingi"
+value = 1
+persistent=0
+[State 0, VarAdd]
+type = MapAdd
+trigger1 = combocount=0
+triggerall = GameMode = "Training"
+trigger1 = roundstate=2
+trigger1 = map(cockko)=-1
+trigger1 = map(yukoright)=0&&map(yukoleft)=1
+map="trainingi"
+value = -1
+persistent=0
+
+[State 0, VarAdd]
+type = MapSet
+trigger1 = combocount=0
+triggerall = GameMode = "Training"
+trigger1 = roundstate=2
+trigger1 = map(cockko)=-1
+trigger1 = map(trainingi)=7
+map="trainingi"
+value = 0
+persistent=0
+[State 0, VarAdd]
+type = MapSet
+trigger1 = combocount=0
+triggerall = GameMode = "Training"
+trigger1 = roundstate=2
+trigger1 = map(cockko)=-1
+trigger1 = map(trainingi)=-1
+map="trainingi"
+value = 6
+persistent=0
+
+
+[State 0, VarAdd]
+type = MapAdd
+trigger1 = combocount=0
+triggerall = GameMode = "Training"
+trigger1 = roundstate=2
+trigger1 = map(yucock)=-1
+trigger1 = map(yukoup)=1&&map(yukodown)=0
+map="trainingm"
+value = 1
+persistent=0
+[State 0, VarAdd]
+type = MapAdd
+trigger1 = combocount=0
+triggerall = GameMode = "Training"
+trigger1 = roundstate=2
+trigger1 = map(yucock)=-1
+trigger1 = map(yukoup)=0&&map(yukodown)=1
+map="trainingm"
+value = -1
+persistent=0
+
+[State 0, VarAdd]
+type = MapSet
+trigger1 = combocount=0
+triggerall = GameMode = "Training"
+trigger1 = roundstate=2
+trigger1 = map(yucock)=-1
+trigger1 = map(trainingm)=7
+map="trainingm"
+value = 0
+persistent=0
+[State 0, VarAdd]
+type = MapSet
+trigger1 = combocount=0
+triggerall = GameMode = "Training"
+trigger1 = roundstate=2
+trigger1 = map(yucock)=-1
+trigger1 = map(trainingm)=-1
+map="trainingm"
+value = 6
+persistent=0
 
 ;===============================================================================
 
@@ -10685,32 +11049,23 @@ type = Poweradd
 trigger1 = movetype = H
 value = gethitvar(damage)*0.7
 
-[State 200, 2]
-type = mapset
-trigger1 = command="superassist_fwd"
-map = "assSoup"
-value = 1
-ignorehitpause=1
-[State 200, 2]
-type = mapset
-trigger1 = command="superassist_back"
-map = "assSoup"
-value = 2
-ignorehitpause=1
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = map(grabimmune)>0&&enemy,combocount=0
+value = ,AT
+time = 1
+ignorehitpause = 1
+persistent = 1
 
-[State 0, PowerAdd]
-type = PowerAdd
-trigger1 = roundstate=2
-trigger1 = TeamMode = Tag
-trigger1 = !alive
-trigger1 = power<1000
-value = 2
-
-[State 0, PowerAdd]
-type = PowerAdd
-trigger1 = roundstate=2
-trigger1 = TeamMode = Tag
-trigger1 = !alive
-trigger1 = power>=1000
-trigger1 = power<4000
-value = 1
+[State yeah]
+type = mapset
+trigger1 = stateno=[120,155]||stateno=[820,821]||stateno=[5000,5210]
+map = "grabimmune"
+value = 5
+ignorehitpause=1
+[State yeah]
+type = mapadd
+trigger1 = map(grabimmune)>0
+map = "grabimmune"
+value = -1
+ignorehitpause=1

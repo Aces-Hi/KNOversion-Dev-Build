@@ -82,9 +82,9 @@ air.type = High                  ;Type: High, Low, Trip (def: same as ground.typ
 air.velocity = -1.4,-1           ;X-velocity at which opponent is pushed,
 envshake.time = 0;
 forcenofall = 1
-guard.hittime = 6
+guard.hittime = 9
 guard.slidetime = 12
-guard.ctrltime = 6
+guard.ctrltime = 9
 getpower = (30)*(cond(var(var(2)) = 1, 1,1)) 
 
 [State 200, 3]
@@ -219,12 +219,6 @@ velset = vel x,0
 anim = 220
 sprpriority = 2
 
-[State 0, VelSet]
-type = VelAdd
-trigger1 = animelem = 8
-x = 4
-ignorehitpause=1
-
 ;=====SCALING SHIT==================
 [State Starter Stun Scaling]
 type = VarAdd
@@ -265,7 +259,7 @@ persistent = 0
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = movecontact = 0
+trigger1 = movecontact = 0&&p2bodydist x >-10
 attr = S, NA
 animtype  = Hard
 air.animtype = back
@@ -281,18 +275,51 @@ ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *20 < 9, 9, fvar(15) * 20))
 air.hittime  = ceil(cond(fvar(15) *30 < 15, 15, fvar(15) * 30))
 down.hittime = ceil(cond(fvar(15) *30 < 15, 15, fvar(15) * 30))
-ground.velocity = -6,0
-air.velocity = -3,-3
+ground.velocity = 4,0
+air.velocity = 2,-3
 envshake.time = 12
 envshake.freq = 90
 envshake.ampl = 3
 envshake.phase = 1
-guard.hittime =15
-guard.slidetime = 15
-guard.ctrltime = 15
-guard.velocity = -6
+guard.hittime =10
+guard.slidetime = 10
+guard.ctrltime = 10
+guard.velocity = 6
 forcenofall = 1
 getpower = (100)*(cond(var(var(2)) = 1, 1, 1)) 
+
+[State 200, 1]
+type = HitDef 
+p2facing = 1
+trigger1 = movecontact = 0&&p2bodydist x <=-10
+attr = S, NA
+animtype  = Hard
+air.animtype = back
+damage = ceil(cond(fvar(11) * 70 < 7, 7, fvar(11) * 70)), 0
+hitflag = MAFD
+guardflag = MA
+pausetime = 14,14
+sparkno = 2
+sparkxy = -15,-45
+guardsound =S300, 2
+ground.type = high
+ground.slidetime = 12
+ground.hittime  = ceil(cond(fvar(15) *20 < 9, 9, fvar(15) * 20))
+air.hittime  = ceil(cond(fvar(15) *30 < 15, 15, fvar(15) * 30))
+down.hittime = ceil(cond(fvar(15) *30 < 15, 15, fvar(15) * 30))
+ground.velocity = -7,-4
+air.velocity = -7,-4
+envshake.time = 12
+envshake.freq = 90
+envshake.ampl = 3
+envshake.phase = 1
+guard.hittime =10
+guard.slidetime = 10
+guard.ctrltime = 10
+guard.velocity = -2
+forcenofall = 1
+getpower = (100)*(cond(var(var(2)) = 1, 1, 1)) 
+
 
 [State 0, ChangeState]
 type = ChangeState
@@ -377,9 +404,9 @@ air.velocity = -1.4,0           ;X-velocity at which opponent is pushed,
 ;Y-velocity at which opponent is pushed                 ;Time before opponent regains control in air
 envshake.time = 0;
 forcenofall = 1
-guard.hittime = 6
+guard.hittime = 10
 guard.slidetime = 12
-guard.ctrltime = 6
+guard.ctrltime = 10
 getpower = (30)*(cond(var(var(2)) = 1, 1, 1)) 
 
 [State 400, 4]
@@ -853,8 +880,8 @@ down.hittime = ceil(cond(fvar(15) *24 < 10, 10, fvar(15) * 24))
 ground.velocity = 6
 air.velocity = 2,-2
 guard.ctrltime = 2
-guard.slidetime = 12
-guard.hittime = 12
+guard.slidetime = 7
+guard.hittime = 7
 getpower = (40)*(cond(var(var(2)) = 1, 1, 1)) 
 
 [State 610, 3]
@@ -881,8 +908,8 @@ down.hittime = ceil(cond(fvar(15) *24 < 10, 10, fvar(15) * 24))
 ground.velocity = 6
 air.velocity = 4,-2
 guard.ctrltime =2
-guard.slidetime = 12
-guard.hittime = 12
+guard.slidetime = 7
+guard.hittime = 7
 getpower = (40)*(cond(var(var(2)) = 1, 1, 1)) 
 
 [State 0, ChangeState]

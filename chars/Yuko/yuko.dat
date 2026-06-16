@@ -32,11 +32,11 @@ A SPELL THAT MOVES YOU FORWARD: WINDBURST		_B^Y
    <#f0710a>LEVEL 3+: This move can pass through the opponent.</>
 A SPELL THAT MOVES YOU DOWNWARD: WINDBURST~ALTER		<#65b5ff>(AIR ONLY)</> _B^Y
    <#f0710a>LEVEL 3+: This move causes a sliding knockdown.</>
-A SPELL THAT CUTS THINGS: CLAW	-		^Y
-   <#bbbbbb>The second hit is jump cancellable on block.
-   Both hits are jump cancellable during combos.</>
+A SPELL THAT CUTS THINGS: CLAW	-		_D^Y
+   <#bbbbbb>Can be jump cancelled.</>
    <#f0710a>LEVEL 3+: The first swing creates a projectile,
    and the second swing shoots it forward.</>
+
 
 
 
@@ -50,7 +50,7 @@ _D	_D		_D
 	<#7f41b9>DEVIL-CHAIN</>
 DEVIL-CHAIN	-		_F^Y
    <#f0710a>LEVEL 3+: Any non Devil-Chain Special Move can be
-   cancelled into this for <#db00ac>1 Momentum.</>
+   cancelled into this on hit for <#db00ac>1 Momentum.</>
 
 	<#7f41b9>DEVIL-CHAIN FOLLOWUPS</>
 	These moves can be used after Devil-Chain.

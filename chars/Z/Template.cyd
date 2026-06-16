@@ -170,7 +170,6 @@ trigger2 = var(1)
 type = ChangeState
 value = 8104
 triggerall=map(EXLimiter5)=0
-triggerall = !numexplod(924687) ;ex limiter works but not in the way i want it to
 triggerall = power>=1000
 triggerall = !NumHelper(1110)
 triggerall = !NumHelper(1111)
@@ -240,7 +239,6 @@ trigger2 = var(1)
 type = ChangeState
 value = 8012
 triggerall=map(EXLimiter6)=0
-triggerall = !numexplod(924687) ;ex limiter works but not in the way i want it to
 triggerall = power>=1000
 triggerall = command ="EX"
 triggerall = command = "holdfwd"

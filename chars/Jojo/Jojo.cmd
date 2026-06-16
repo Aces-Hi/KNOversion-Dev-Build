@@ -48,7 +48,7 @@ triggerall = command = "QCF"
 triggerall = power >= 2000
 trigger1 = ctrl
 triggerall = statetype != A
-trigger2 = hitdefattr = SC, NA, SA, HA
+trigger2 = hitdefattr = SCA, NA, SA, HA
 trigger2 = stateno != [3000,3050)
 trigger2 = movecontact
 trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
@@ -63,7 +63,7 @@ triggerall = command = "QCB"
 triggerall = power >= 2000
 trigger1 = ctrl
 triggerall = statetype != A
-trigger2 = hitdefattr = SC, NA, SA, HA
+trigger2 = hitdefattr = SCA, NA, SA, HA
 trigger2 = stateno != [3000,3050)
 trigger2 = movecontact
 trigger3 = stateno = 1310 || stateno = 1330 ;From blocking

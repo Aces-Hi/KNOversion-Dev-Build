@@ -1604,6 +1604,13 @@ type = PlaySnd
 trigger1 = animelem = 9
 value = 1, 1
 
+[State Limiter]
+type = MapAdd
+trigger1=Movehit&&enemy,statetype=A
+map = "jhspam"
+value=1
+persistent=0
+
 [State 0]
 type = HitDef 
 p2facing = 1
@@ -1625,7 +1632,7 @@ ground.hittime  = ceil(cond(fvar(1) *20 < 8, 8, fvar(1) * 20))
 air.hittime  = ceil(cond(fvar(1) *25 < 8, 8, fvar(1) * 25))
 down.hittime = ceil(cond(fvar(1) *20 < 8, 8, fvar(1) * 20))
 ground.velocity = -2,0
-air.velocity = -1.5,-2.8
+air.velocity = -1.5,-2.8+(map(jHspam)/2)
 down.velocity = -1, -4
 ground.cornerpush.veloff = 0
 down.cornerpush.veloff = 0
@@ -1668,7 +1675,7 @@ ground.hittime  = ceil(cond(fvar(1) *20 < 8, 8, fvar(1) * 20))
 air.hittime  = ceil(cond(fvar(1) *25 < 8, 8, fvar(1) * 25))
 down.hittime = ceil(cond(fvar(1) *20 < 8, 8, fvar(1) * 20))
 ground.velocity = -5,0
-air.velocity = -2, -4.4
+air.velocity = -2, -4.4+map(jHspam)
 ground.cornerpush.veloff = 0
 down.cornerpush.veloff = 0
 air.cornerpush.veloff = 0

@@ -1,4 +1,4 @@
-zqqqqqqqqqqqqqqqqqeeqqeecqZedeqaaaqqqeeqqqqeqqqqqqqqqqaazzEEeqeCZZczzzcqeceqzzzecQqeqeeeeqeqqqeqcc.zeecqzzccqeze1aaazczzeeeeeeeeeqeeeqeeqqeqqqqqqeeeeeeeeeeeecqeeceqeeeeqeqqeqqqqqeeqqeeeeeqeeqqqqqqqeqeeccqqqqqqzczczqqqzzecqaqcezqqzqsssqezecqeeeeqeeqeeeqccqeeeeqeeccadazcddzqqeqeeqqzzzzeczczzccqqeqqzzzzzsseqqeeqqqqqeeezezqqzqeqqqeeeeee3eqeqqqezzzeqeczzcczezqeqeeeqeeeqeeqjjkkkkkkkkkkkkkk31011,,klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
+eeeccczqqqqqqqqqqqqqqqqqeeqqeecqZedeqaaaqqqeeqqqqeqqqqqqqqqqaazzEEeqeCZZczzzcqeceqzzzecQqeqeeeeqeqqqeqcc.zeecqzzccqeze1aaazczzeeeeeeeeeqeeeqeeqqeqqqqqqeeeeeeeeeeeecqeeceqeeeeqeqqeqqqqqeeqqeeeeeqeeqqqqqqqeqeeccqqqqqqzczczqqqzzecqaqcezqqzqsssqezecqeeeeqeeqeeeqccqeeeeqeeccadazcddzqqeqeeqqzzzzeczczzccqqeqqzzzzzsseqqeeqqqqqeeezezqqzqeqqqeeeeee3eqeqqqezzzeqeczzcczezqeqeeeqeeeqeeqjjkkkkkkkkkkkkkk31011,,klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
 ..,......,,,...j,,,./..kl,,----..,,.,,,,,,,,,,,.; KFM's animation data
 ; see docs/air.txt for more information
 
@@ -190,9 +190,13 @@ Clsn2: 2
   Clsn2[0] = -28, -108, 29, -1
   Clsn2[1] = 6, -98, 60, -23
 200,1, 0,0, 3
+Clsn2: 2
+  Clsn2[0] = -28, -108, 29, -1
+  Clsn2[1] = 6, -98, 60, -23
+200,1, 0,0, 3
 Clsn2: 1
   Clsn2[0] = -28, -109, 32, -1
-200,2, 0,0, 5
+200,2, 0,0, 7
 
 ;-----------------------------------
 ; M
@@ -225,13 +229,13 @@ Clsn2: 1
 220,1, 0,0, 2
 Clsn2: 1
   Clsn2[0] = -25, -108, 42, -1
-220,2, 0,0, 2
+220,2, 0,0, 3
 Clsn2: 1
   Clsn2[0] = -14, -84, 76, 0
-220,3, 0,0, 2
+220,3, 0,0, 3
 Clsn2: 1
   Clsn2[0] = -14, -84, 76, 0
-220,4, 0,0, 2
+220,4, 0,0, 3
 Clsn2: 1
   Clsn2[0] = -14, -84, 76, 0
 220,5, 0,0, 3
@@ -239,10 +243,10 @@ Clsn2: 1
   Clsn2[0] = -17, -77, 90, 0
 220,6, 0,0, 2
 Clsn1: 1
-  Clsn1[0] = -103, -70, 219, -14
+  Clsn1[0] = -103, -70, 208, -14
 Clsn2: 1
   Clsn2[0] = -15, -85, 81, 0
-220,7, 0,0, 4
+220,7, 0,0, 2
 Clsn2: 1
   Clsn2[0] = -15, -85, 81, 0
 220,8, 0,0, 5
@@ -251,10 +255,10 @@ Clsn2: 1
 220,9, 0,0, 5
 Clsn2: 1
   Clsn2[0] = -15, -103, 56, 0
-220,10, 0,0, 4
+220,10, 0,0, 5
 Clsn2: 1
   Clsn2[0] = -19, -110, 39, 0
-220,11, 0,0, 4
+220,11, 0,0, 5
 220,12, 0,0, 4
 
 ; 2L
@@ -266,8 +270,11 @@ Clsn1: 1
   Clsn1[0] = 9, -58, 59, -15
 Clsn2: 1
   Clsn2[0] = -34, -64, 60, 0
+400,1, 0,0, 3
+Clsn2: 1
+  Clsn2[0] = -34, -64, 60, 0
 400,1, 0,0, 4
-400,2, 0,0, 5
+400,2, 0,0, 6
 
 ; 2M
 [Begin Action 410]
@@ -317,7 +324,7 @@ Clsn1: 3
 Clsn2Default: 1
   Clsn2[0] = -39, -61, 31, -1
 430,0, 0,0, 2
-430,1, 0,0, 5
+430,1, 0,0, 4
 430,2, 0,0, 5
 430,3, 0,0, 3
 Clsn1: 1
@@ -351,9 +358,9 @@ Clsn2Default: 1
 610,1, 0,0, 4
 610,2, 0,0, 5
 Clsn1: 3
-  Clsn1[0] = 0, -78, 157, -61
-  Clsn1[1] = 0, -88, 120, -69
-  Clsn1[2] = 0, -96, 98, -83
+  Clsn1[0] = 0, -78, 144, -61
+  Clsn1[1] = 0, -88, 110, -69
+  Clsn1[2] = 0, -96, 88, -83
 610,3, 0,1, 3
 610,4, 0,0, 6
 610,5, 0,0, 6
@@ -471,7 +478,7 @@ Clsn2Default: 1
 1000,3, 0,0, 3
 1000,4, 0,0, 3
 1000,5, 0,0, 3
-1000,6, 0,0, 6
+1000,6, 0,0, 3
 Clsn1: 1
   Clsn1[0] = 48, -88, 1028, -54
 1000,7, 0,0, 6
@@ -493,7 +500,7 @@ Clsn2Default: 1
 1000,3, 0,0, 3
 1000,4, 0,0, 3
 1000,5, 0,0, 3
-1000,6, 0,0, 6
+1000,6, 0,0, 3
 Clsn1: 1
   Clsn1[0] = 48, -88, 1028, -54
 1000,7, 0,0, 6
@@ -584,11 +591,11 @@ Clsn2Default: 1
 [Begin Action 1300]
 Clsn2Default: 1
   Clsn2[0] = -21, -95, 43, -4
-1300,0, 0,0, 2
+1300,0, 0,0, 4
 Clsn2Default: 1
   Clsn2[0] = -13, -63, 72, 2
-1300,1, 0,0, 3
-1300,2, -1,0, 3
+1300,1, 0,0, 4
+1300,2, 0,0, 4
 Clsn2: 1
   Clsn2[0] = -41, -65, 64, -1
 1300,3, -30,0, 3
@@ -596,13 +603,11 @@ Clsn2Default: 1
   Clsn2[0] = -53, -83, 53, -7
 Clsn1: 1
   Clsn1[0] = -15, -66, 147, -45
-1300,4, 0,0, 3, , AS100D100
+1300,4, 0,0, 2, , AS100D100
 Clsn1: 1
   Clsn1[0] = 18, -65, 136, -43
 1300,5, 0,0, 2, , AS100D100
-Clsn1: 1
-  Clsn1[0] = 18, -65, 136, -43
-1300,6, 2,0, 2, , AS100D100
+1300,6, 2,0, 3, , AS100D100
 1300,7, 0,0, 3
 1300,8, 0,0, 3
 1300,9, 0,0, 3
@@ -642,9 +647,9 @@ Clsn2: 1
 [Begin Action 1500]
 Clsn2Default: 1
   Clsn2[0] = -38, -105, 30, -26
-1400,0, 0,0, 3
-1400,1, 0,0, 4
-1400,2, 0,0, 3
+1400,0, 0,0, 4
+1400,1, 0,0, 5
+1400,2, 0,0, 4
 Clsn1Default: 2
   Clsn1[0] = -10, -86, 18, -40
   Clsn1[1] = -2, -51, 39, 4
@@ -883,12 +888,12 @@ Clsn2: 1
 2010,5, -60,0, 3
 Clsn2Default: 1
   Clsn2[0] = -44, -72, 51, 0
-2010,6, -60,0, 4
-2010,7, -60,0, 4
-2010,8, -60,0, 4
+2010,6, -60,0, 5
+2010,7, -60,0, 5
+2010,8, -60,0, 5
 Clsn2Default: 1
   Clsn2[0] = -31, -99, 27, 0
-2010,9, -40,0, 4
+2010,9, -40,0, 5
 2010,10, -20,0, 4
 2010,11, 0,0, 4
 
@@ -961,8 +966,8 @@ Clsn2: 1
 Clsn2Default: 1
   Clsn2[0] = -38, -105, 30, -26
 -1,0, 0,0, 3
-1400,0, 0,0, 6
-1400,1, 0,0, 5
+1400,0, 0,0, 5
+1400,1, 0,0, 6
 1400,2, 0,0, 4
 Clsn1Default: 2
   Clsn1[0] = -10, -86, 18, -40

@@ -1846,19 +1846,19 @@ phase = 1
 [State 0, Turn]
 type = Turn
 trigger1 = time=1
-trigger1 = facing=player(map(enemyteamlead)),facing
+trigger1 = facing=enemy,facing
 ignorehitpause = 1
 
 [State 0, PosSet]
 type = PosSet
-trigger1 = time=2 && player(map(enemyteamlead)),pos y < 0
-x = player(map(enemyteamlead)),pos x + cond(facing=1,120,-120)
-y = player(map(enemyteamlead)),pos y
+trigger1 = time=2 && enemy,pos y < 0
+x = enemy,pos x + cond(facing=1,120,-120)
+y = enemy,pos y
 ignorehitpause = 1
 [State 0, PosSet]
 type = PosSet
-trigger1 = time=2 && player(map(enemyteamlead)),pos y >= 0
-x = player(map(enemyteamlead)),pos x + cond(facing=1,120,-120)
+trigger1 = time=2 && enemy,pos y >= 0
+x = enemy,pos x + cond(facing=1,120,-120)
 y = 0
 ignorehitpause = 1
 

@@ -153,7 +153,7 @@ persistent=0
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
 trigger1 = !movecontact
-trigger1 = player(map(enemyteamlead)),statetype!=A
+trigger1 = enemy,statetype!=A
 attr = S, ST
 animtype  = med
 air.animtype = back
@@ -185,7 +185,7 @@ kill=0
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
 trigger1 = !movecontact
-trigger1 = player(map(enemyteamlead)),statetype=A
+trigger1 = enemy,statetype=A
 attr = S, ST
 animtype  = med
 air.animtype = back
@@ -568,7 +568,7 @@ value = 1
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
 trigger1 = !movecontact
-trigger1 = player(map(enemyteamlead)),statetype!=A
+trigger1 = enemy,statetype!=A
 attr = S, ST
 animtype  = med
 air.animtype = back
@@ -600,7 +600,7 @@ kill=0
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
 trigger1 = !movecontact
-trigger1 = player(map(enemyteamlead)),statetype=A
+trigger1 = enemy,statetype=A
 attr = S, ST
 animtype  = med
 air.animtype = back
@@ -1081,14 +1081,14 @@ ignorehitpause = 1
 
 [State 0, Turn]
 type = Turn
-trigger1 = facing=player(map(enemyteamlead)),facing
+trigger1 = facing=enemy,facing
 ignorehitpause = 1
 
 [State 0, PosSet]
 type = PosSet
 trigger1 = 1
-x = player(map(enemyteamlead)),pos x
-y = player(map(enemyteamlead)),pos y-100
+x = enemy,pos x
+y = enemy,pos y-100
 ignorehitpause = 1
 
 [State j5S]
@@ -1260,7 +1260,7 @@ ignorehitpause=1
 [State 0, PosSet]
 type = PosSet
 trigger1 = time=0
-x = player(map(enemyteamlead)),pos x
+x = enemy,pos x
 y = 1
 ignorehitpause = 1
 
@@ -1531,14 +1531,14 @@ ignorehitpause = 1
 
 [State 0, Turn]
 type = Turn
-trigger1 = facing=player(map(enemyteamlead)),facing
+trigger1 = facing=enemy,facing
 ignorehitpause = 1
 
 [State 0, PosSet]
 type = PosSet
 trigger1 = 1
-x = player(map(enemyteamlead)),pos x
-y = player(map(enemyteamlead)),pos y-100
+x = enemy,pos x
+y = enemy,pos y-100
 ignorehitpause = 1
 
 [State 0]
@@ -1752,7 +1752,7 @@ ignorehitpause=1
 [State 0, PosSet]
 type = PosSet
 trigger1 = time<=16
-x = player(map(enemyteamlead)),pos x
+x = enemy,pos x
 y = 1
 ignorehitpause = 1
 persistent=1
@@ -2728,10 +2728,10 @@ type = VelSet
 triggerall = anim=1600
 triggerall = animelemtime(2)>=0
 triggerall=map(slowslide)=0
-trigger1 = facing != player(map(enemyteamlead)),facing
+trigger1 = facing != enemy,facing
 trigger2 = combocount>0
-trigger3=player(map(enemyteamlead)),movetype!=H&&combocount=0
-trigger4 = player(map(enemyteamlead)),name="Deus"
+trigger3=enemy,movetype!=H&&combocount=0
+trigger4 = enemy,name="Deus"
 x = 11
 ignorehitpause = 1	
 [State 0, VelSet]
@@ -2739,9 +2739,9 @@ type = VelSet
 triggerall = combocount=0
 triggerall = anim=1600
 triggerall = animelemtime(2)>=0
-triggerall = player(map(enemyteamlead)),name!="Deus"
-trigger1=player(map(enemyteamlead)),movetype=H&&combocount=0
-trigger1 = facing = player(map(enemyteamlead)),facing
+triggerall = enemy,name!="Deus"
+trigger1=enemy,movetype=H&&combocount=0
+trigger1 = facing = enemy,facing
 trigger2=map(slowslide)>0
 x = 3
 ignorehitpause = 1
@@ -3244,7 +3244,7 @@ value = 1
 [State 0, PlayerPush]
 type = PlayerPush
 triggerall = anim=1600||anim=1700
-trigger1 = player(map(enemyteamlead)),statetype=A
+trigger1 = enemy,statetype=A
 trigger2 = combocount>0
 value = 0
 ignorehitpause = 1

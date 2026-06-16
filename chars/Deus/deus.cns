@@ -805,7 +805,7 @@ ctrl=0
 [State Voice From Above]
 type = PlaySnd
 triggerall=map(december)=0
-triggerall = player(map(enemyteamlead)),name!="Deus"
+triggerall = enemy,name!="Deus"
 trigger1 = time=5
 trigger1 = roundstate=2
 value = 185,0+random%5
@@ -824,8 +824,8 @@ channel=7
 [State Voice From Above]
 type = PlaySnd
 triggerall=map(december)=0
-triggerall = player(map(enemyteamlead)),name="Deus"
-triggerall = player(map(enemyteamlead)),map(december)=0
+triggerall = enemy,name="Deus"
+triggerall = enemy,map(december)=0
 trigger1 = time=5
 trigger1 = teamside=1
 trigger1 = roundstate=2
@@ -876,9 +876,9 @@ value = 194
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name!="Angous"&&player(map(enemyteamlead)),name!="Eddy"&&player(map(enemyteamlead)),name!="One"&&player(map(enemyteamlead)),name!="Roger"
-triggerall=player(map(enemyteamlead)),name!="Roger"&&player(map(enemyteamlead)),name!="Vile"&&player(map(enemyteamlead)),name!="Sahkive"&&player(map(enemyteamlead)),name!="JoJo"&&player(map(enemyteamlead)),name!="Dreyvon"&&player(map(enemyteamlead)),name!="Alicia"
-triggerall=player(map(enemyteamlead)),name!="Arzon"&&player(map(enemyteamlead)),name!="JV"&&player(map(enemyteamlead)),name!="Alicia"&&player(map(enemyteamlead)),name!="Crow"&&player(map(enemyteamlead)),name!="Akira"
+triggerall=enemy,name!="Angous"&&enemy,name!="Eddy"&&enemy,name!="One"&&enemy,name!="Roger"
+triggerall=enemy,name!="Roger"&&enemy,name!="Vile"&&enemy,name!="Sahkive"&&enemy,name!="JoJo"&&enemy,name!="Dreyvon"&&enemy,name!="Alicia"
+triggerall=enemy,name!="Arzon"&&enemy,name!="JV"&&enemy,name!="Alicia"&&enemy,name!="Crow"&&enemy,name!="Akira"
 trigger1 = time=45
 value = 190, (1+(Random%5))
 volumescale=150
@@ -889,7 +889,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Angous"||player(map(enemyteamlead)),name="Eddy"||player(map(enemyteamlead)),name="One"
+triggerall=enemy,name="Angous"||enemy,name="Eddy"||enemy,name="One"
 trigger1 = time=45
 value = 190, (0+(Random%6))
 volumescale=150
@@ -899,10 +899,10 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-trigger1=player(map(enemyteamlead)),name="Sahkive"||player(map(enemyteamlead)),name="Dreyvon"
+trigger1=enemy,name="Sahkive"||enemy,name="Dreyvon"
 triggerall = time=45
-trigger2=player(map(enemyteamlead)),name="Roger"
-trigger2=player(map(enemyteamlead)),palno=4||player(map(enemyteamlead)),palno=7||player(map(enemyteamlead)),palno=8||player(map(enemyteamlead)),palno=9
+trigger2=enemy,name="Roger"
+trigger2=enemy,palno=4||enemy,palno=7||enemy,palno=8||enemy,palno=9
 value = 190, (1+(Random%6))
 volumescale=150
 channel=7
@@ -911,7 +911,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Vile"
+triggerall=enemy,name="Vile"
 trigger1 = time=45
 value = 190, (7+(Random%3))
 volumescale=150
@@ -921,7 +921,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="JoJo"
+triggerall=enemy,name="JoJo"
 trigger1 = time=45
 value = 190, (8+(Random%2))
 volumescale=150
@@ -932,7 +932,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Arzon"
+triggerall=enemy,name="Arzon"
 trigger1 = time=2
 value = 191, (0+(Random%2))
 volumescale=200
@@ -943,7 +943,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="JV"
+triggerall=enemy,name="JV"
 trigger1 = time=45
 value = 192, (0+(Random%2))
 volumescale=150
@@ -953,7 +953,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Alicia"
+triggerall=enemy,name="Alicia"
 trigger1 = time=45
 value = 193, (0+(Random%2))
 volumescale=150
@@ -963,7 +963,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Crow"
+triggerall=enemy,name="Crow"
 trigger1 = time=45
 value = 194, (0+(Random%2))
 volumescale=150
@@ -973,7 +973,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Akira"
+triggerall=enemy,name="Akira"
 trigger1 = time=45
 value = 195, (0+(Random%2))
 volumescale=150
@@ -1157,9 +1157,9 @@ value = 194
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name!="Angous"&&player(map(enemyteamlead)),name!="Eddy"&&player(map(enemyteamlead)),name!="One"&&player(map(enemyteamlead)),name!="Roger"
-triggerall=player(map(enemyteamlead)),name!="Roger"&&player(map(enemyteamlead)),name!="Vile"&&player(map(enemyteamlead)),name!="Sahkive"&&player(map(enemyteamlead)),name!="JoJo"&&player(map(enemyteamlead)),name!="Dreyvon"&&player(map(enemyteamlead)),name!="Alicia"
-triggerall=player(map(enemyteamlead)),name!="Arzon"&&player(map(enemyteamlead)),name!="JV"&&player(map(enemyteamlead)),name!="Alicia"&&player(map(enemyteamlead)),name!="Crow"&&player(map(enemyteamlead)),name!="Akira"
+triggerall=enemy,name!="Angous"&&enemy,name!="Eddy"&&enemy,name!="One"&&enemy,name!="Roger"
+triggerall=enemy,name!="Roger"&&enemy,name!="Vile"&&enemy,name!="Sahkive"&&enemy,name!="JoJo"&&enemy,name!="Dreyvon"&&enemy,name!="Alicia"
+triggerall=enemy,name!="Arzon"&&enemy,name!="JV"&&enemy,name!="Alicia"&&enemy,name!="Crow"&&enemy,name!="Akira"
 trigger1 = time=60
 value = 190, (1+(Random%5))
 volumescale=150
@@ -1170,7 +1170,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Angous"||player(map(enemyteamlead)),name="Eddy"||player(map(enemyteamlead)),name="One"
+triggerall=enemy,name="Angous"||enemy,name="Eddy"||enemy,name="One"
 trigger1 = time=60
 value = 190, (0+(Random%6))
 volumescale=150
@@ -1180,10 +1180,10 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-trigger1=player(map(enemyteamlead)),name="Sahkive"||player(map(enemyteamlead)),name="Dreyvon"
+trigger1=enemy,name="Sahkive"||enemy,name="Dreyvon"
 triggerall = time=45
-trigger2=player(map(enemyteamlead)),name="Roger"
-trigger2=player(map(enemyteamlead)),palno=4||player(map(enemyteamlead)),palno=7||player(map(enemyteamlead)),palno=8||player(map(enemyteamlead)),palno=9
+trigger2=enemy,name="Roger"
+trigger2=enemy,palno=4||enemy,palno=7||enemy,palno=8||enemy,palno=9
 value = 190, (1+(Random%6))
 volumescale=150
 channel=7
@@ -1192,7 +1192,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Vile"
+triggerall=enemy,name="Vile"
 trigger1 = time=60
 value = 190, (7+(Random%3))
 volumescale=150
@@ -1202,7 +1202,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="JoJo"
+triggerall=enemy,name="JoJo"
 trigger1 = time=60
 value = 190, (8+(Random%2))
 volumescale=150
@@ -1213,7 +1213,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Arzon"
+triggerall=enemy,name="Arzon"
 trigger1 = time=2
 value = 191, (0+(Random%2))
 volumescale=200
@@ -1224,7 +1224,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="JV"
+triggerall=enemy,name="JV"
 trigger1 = time=60
 value = 192, (0+(Random%2))
 volumescale=150
@@ -1234,7 +1234,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Alicia"
+triggerall=enemy,name="Alicia"
 trigger1 = time=60
 value = 193, (0+(Random%2))
 volumescale=150
@@ -1244,7 +1244,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Crow"
+triggerall=enemy,name="Crow"
 trigger1 = time=60
 value = 194, (0+(Random%2))
 volumescale=150
@@ -1254,7 +1254,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Akira"
+triggerall=enemy,name="Akira"
 trigger1 = time=60
 value = 195, (0+(Random%2))
 volumescale=150
@@ -1265,7 +1265,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=enemy,name="Deus"
 triggerall=map(december)=0
-triggerall=player(map(enemyteamlead)),map(december)=0
+triggerall=enemy,map(december)=0
 trigger1 = teamside=1
 trigger1 = time=60
 value = 77, (0+(Random%4))
@@ -1893,9 +1893,9 @@ value = 194
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name!="Angous"&&player(map(enemyteamlead)),name!="Eddy"&&player(map(enemyteamlead)),name!="One"&&player(map(enemyteamlead)),name!="Roger"
-triggerall=player(map(enemyteamlead)),name!="Roger"&&player(map(enemyteamlead)),name!="Vile"&&player(map(enemyteamlead)),name!="Sahkive"&&player(map(enemyteamlead)),name!="JoJo"&&player(map(enemyteamlead)),name!="Dreyvon"&&player(map(enemyteamlead)),name!="Alicia"
-triggerall=player(map(enemyteamlead)),name!="Arzon"&&player(map(enemyteamlead)),name!="JV"&&player(map(enemyteamlead)),name!="Alicia"&&player(map(enemyteamlead)),name!="Crow"&&player(map(enemyteamlead)),name!="Akira"
+triggerall=enemy,name!="Angous"&&enemy,name!="Eddy"&&enemy,name!="One"&&enemy,name!="Roger"
+triggerall=enemy,name!="Roger"&&enemy,name!="Vile"&&enemy,name!="Sahkive"&&enemy,name!="JoJo"&&enemy,name!="Dreyvon"&&enemy,name!="Alicia"
+triggerall=enemy,name!="Arzon"&&enemy,name!="JV"&&enemy,name!="Alicia"&&enemy,name!="Crow"&&enemy,name!="Akira"
 trigger1 = time=5
 value = 190, (1+(Random%5))
 volumescale=150
@@ -1906,7 +1906,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Angous"||player(map(enemyteamlead)),name="Eddy"||player(map(enemyteamlead)),name="One"
+triggerall=enemy,name="Angous"||enemy,name="Eddy"||enemy,name="One"
 trigger1 = time=5
 value = 190, (0+(Random%6))
 volumescale=150
@@ -1916,10 +1916,10 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-trigger1=player(map(enemyteamlead)),name="Sahkive"||player(map(enemyteamlead)),name="Dreyvon"
+trigger1=enemy,name="Sahkive"||enemy,name="Dreyvon"
 triggerall = time=45
-trigger2=player(map(enemyteamlead)),name="Roger"
-trigger2=player(map(enemyteamlead)),palno=4||player(map(enemyteamlead)),palno=7||player(map(enemyteamlead)),palno=8||player(map(enemyteamlead)),palno=9
+trigger2=enemy,name="Roger"
+trigger2=enemy,palno=4||enemy,palno=7||enemy,palno=8||enemy,palno=9
 value = 190, (1+(Random%6))
 volumescale=150
 channel=7
@@ -1928,7 +1928,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Vile"
+triggerall=enemy,name="Vile"
 trigger1 = time=5
 value = 190, (7+(Random%3))
 volumescale=150
@@ -1938,7 +1938,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="JoJo"
+triggerall=enemy,name="JoJo"
 trigger1 = time=5
 value = 190, (8+(Random%2))
 volumescale=150
@@ -1949,7 +1949,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Arzon"
+triggerall=enemy,name="Arzon"
 trigger1 = time=2
 value = 191, (0+(Random%2))
 volumescale=200
@@ -1960,7 +1960,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="JV"
+triggerall=enemy,name="JV"
 trigger1 = time=5
 value = 192, (0+(Random%2))
 volumescale=150
@@ -1970,7 +1970,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Alicia"
+triggerall=enemy,name="Alicia"
 trigger1 = time=5
 value = 193, (0+(Random%2))
 volumescale=150
@@ -1980,7 +1980,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Crow"
+triggerall=enemy,name="Crow"
 trigger1 = time=5
 value = 194, (0+(Random%2))
 volumescale=150
@@ -1990,7 +1990,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=player(map(enemyteamlead)),name="Akira"
+triggerall=enemy,name="Akira"
 trigger1 = time=5
 value = 195, (0+(Random%2))
 volumescale=150
@@ -2001,7 +2001,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=enemy,name="Deus"
 triggerall=map(december)=0
-triggerall=player(map(enemyteamlead)),map(december)=0
+triggerall=enemy,map(december)=0
 trigger1 = teamside=1
 trigger1 = time=60
 value = 77, (0+(Random%4))
@@ -2179,7 +2179,7 @@ velset = 0,0
 [State Voice From Above]
 type = PlaySnd
 triggerall=map(december)=0
-triggerall=player(map(enemyteamlead)),map(december)=0
+triggerall=enemy,map(december)=0
 trigger1 = teamside=1
 trigger1 = time=1
 value = 77, (0+(Random%4))
@@ -2346,7 +2346,7 @@ ignorehitpause = 1
 persistent = 1
 [State 0, LifeSet]
 type = LifeSet
-triggerall = player(map(enemyteamlead)),name!="Deus"
+triggerall = enemy,name!="Deus"
 trigger1 = TimeRemaining <=60
 trigger1 = map(notime)<=10
 trigger1 = map(notime)>0

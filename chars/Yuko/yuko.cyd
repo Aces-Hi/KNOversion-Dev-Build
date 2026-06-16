@@ -265,6 +265,7 @@ triggerall=map(EXLimiter2)=0
 triggerall = command = "EX"
 triggerall = command != "QCBs"
 triggerall = power>=1000
+triggerall = stateno!=1300&&prevstateno!=1300
 triggerall = command !="holddown"
 triggerall = command ="holdback"
 triggerall = statetype != A

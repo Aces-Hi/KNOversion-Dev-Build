@@ -1069,8 +1069,8 @@ value = 0
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "Imagination %f Momentum %f Boredom %f IMHL %f"
-params = map(Imagination),map(Momentum),map(Boredom),map(IMHL)
+text = "Imagination %f Momentum %f Boredom %f IMHL %f yc %f ti %f"
+params = map(Imagination),map(Momentum),map(Boredom),map(IMHL),map(yucock),map(trainingi)
 
 
 [State 0, PalFXWiz]
@@ -1284,6 +1284,13 @@ ignorehitpause = 1
 type = MapSet
 trigger1 = !combocount
 map = "jhbounce"
+value = 0
+ignorehitpause = 1
+
+[State 0, VarAdd]
+type = MapSet
+trigger1 = stateno!=[2000,2999]
+map = "refund"
 value = 0
 ignorehitpause = 1
 

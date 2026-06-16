@@ -1254,6 +1254,12 @@ trigger1=!combocount
 map = "traplaunch"
 value=0
 
+[State Limiter]
+type = MapSet
+trigger1=!combocount&&stateno!=630
+map = "jhspam"
+value=0
+
 [State 0, Limiter Display]
 type = DisplayToClipboard
 trigger1 = 1

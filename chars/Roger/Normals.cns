@@ -1845,6 +1845,14 @@ ctrl = 0
 sprpriority = 2
 velset = vel x, vel y
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State 200, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1

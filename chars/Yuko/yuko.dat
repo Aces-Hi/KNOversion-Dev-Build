@@ -82,7 +82,7 @@ HUNT//DIVE	-		_B^Z
    <#db00ac>Holding R during the startup spends 1 Momentum
    to cancel this move into HUNT//SWEEP.</>
 HUNT//CRUSH	-		_D^Z
-   <#bbbbbb>A command grab that can be used during combos.</>
+   <#bbbbbb>A command grab that can be used to extend combos.</>
 
 	<#7f41b9>DEVIL-CHAIN ENDERS</>
 	These moves can be used after any followup.
@@ -100,7 +100,7 @@ DEVIL-CHAIN~ALTER	-		^Z
    <#bbbbbb>This move can pass through opponents.</>
    <#db00ac>Grants 1 Momentum when used.</>
 MAGIC BURST	-		_D^Z
-   <#bbbbbb>An invincible reversal attack.</>
+   <#bbbbbb>An invincible reversal attack that can extend combos.</>
    <#ffd541>Costs 2 Imagination Levels to use.</>
 
 
@@ -128,14 +128,14 @@ _EX DEVIL-CHAIN	-		<#55ffff>(1 BAR)</> _F^Y+^Z
    cancelled into this for <#db00ac>1 Momentum.</>
 _EX WINDBURST	-		<#55ffff>(1 BAR)</> _B^Y+^Z
    <#bbbbbb>This move is projectile immune.</>
-   <#f0710a>LEVEL 3+: Yuko gains full control when this move makes contact.</>
+   <#f0710a>LEVEL 3+: Crumples the opponent, and Yuko gains full control on hit.</>
 _EX WINDBURST~ALTER	-		<#65b5ff>(AIR ONLY)</><#55ffff>(1 BAR)</> _B^Y+^Z
-   <#f0710a>LEVEL 3+: Yuko gains full control when this move makes contact.</>
+   <#bbbbbb>Causes a sliding knockdown.</>
+   <#f0710a>LEVEL 3+: Causes a floor bounce, and Yuko gains full control on hit.</>
 _EX CLAW	-		<#55ffff>(1 BAR)</> _D^Y+^Z
    <#bbbbbb>Both hits are jump cancellable on hit or block,
    and the second swing fires a projectile that causes a wallbounce.</>
    <#f0710a>LEVEL 3+: Both swings create projectiles.</>
-
 
 
 

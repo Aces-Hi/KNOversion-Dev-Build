@@ -104,6 +104,14 @@ sprpriority = -1
 facep2 = 1
 velset = vel x, vel y
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State Sahkive Voices]
 type = PlaySnd
 trigger1 =  animelem = 3
@@ -799,6 +807,14 @@ anim = 410
 sprpriority = 2
 velset = vel x, vel y
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State Sahkive Voices]
 type = PlaySnd
 trigger1 =  animelem = 3
@@ -866,6 +882,14 @@ ctrl = 0
 anim = 430
 sprpriority = 2
 velset = vel x, vel y
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
 
 [State Sahkive Voices]
 type = PlaySnd
@@ -1869,6 +1893,14 @@ anim = 620
 sprpriority = 2
 velset = vel x, vel y
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State Sahkive Voices]
 type = PlaySnd
 trigger1 =  animelem = 5
@@ -1985,6 +2017,14 @@ ctrl = 0
 anim = 630
 sprpriority = 2
 velset = vel x, vel y
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
 
 [State 0, VelSet]
 type = VelSet

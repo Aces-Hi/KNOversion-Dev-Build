@@ -48,35 +48,17 @@ volumescale = 75
 persistent=0
 
 ;=====SCALING SHIT==================
-[State Starter Stun Scaling]
-type = VarAdd
-trigger1 = combocount<=1
-trigger1 = movehit=1
-fv = 25  
-value = 1
-ignorehitpause = 1
-persistent = 0
 [State Stun Scaling]
 type = VarAdd
-trigger1 = combocount>1
 trigger1 = movehit=1
 fv = 25  
 value = 2
 ignorehitpause = 1
 persistent = 0
 
-[State Starter Damage Scaling]
-type = VarAdd
-trigger1 = movehit=1
-trigger1 = combocount<=1
-fv =13     ;fv = 
-value = 1
-persistent = 0
-ignorehitpause = 1
 [State Damage Scaling]
 type = VarAdd
 trigger1 = movehit=1
-trigger1 = combocount>1
 fv =13     ;fv = 
 value = 2
 persistent = 0
@@ -1127,35 +1109,17 @@ volumescale = 75
 persistent=0
 
 ;=====SCALING SHIT==================
-[State Starter Stun Scaling]
-type = VarAdd
-trigger1 = combocount<=1
-trigger1 = movehit=1
-fv = 25  
-value = 1
-ignorehitpause = 1
-persistent = 0
 [State Stun Scaling]
 type = VarAdd
-trigger1 = combocount>1
 trigger1 = movehit=1
 fv = 25  
 value = 2
 ignorehitpause = 1
 persistent = 0
 
-[State Starter Damage Scaling]
-type = VarAdd
-trigger1 = movehit=1
-trigger1 = combocount<=1
-fv =13     ;fv = 
-value = 1
-persistent = 0
-ignorehitpause = 1
 [State Damage Scaling]
 type = VarAdd
 trigger1 = movehit=1
-trigger1 = combocount>1
 fv =13     ;fv = 
 value = 2
 persistent = 0
@@ -1843,35 +1807,17 @@ volumescale = 75
 persistent=0
 
 ;=====SCALING SHIT==================
-[State Starter Stun Scaling]
-type = VarAdd
-trigger1 = combocount<=1
-trigger1 = movehit=1
-fv = 25  
-value = 1
-ignorehitpause = 1
-persistent = 0
 [State Stun Scaling]
 type = VarAdd
-trigger1 = combocount>1
 trigger1 = movehit=1
 fv = 25  
 value = 2
 ignorehitpause = 1
 persistent = 0
 
-[State Starter Damage Scaling]
-type = VarAdd
-trigger1 = movehit=1
-trigger1 = combocount<=1
-fv =13     ;fv = 
-value = 1
-persistent = 0
-ignorehitpause = 1
 [State Damage Scaling]
 type = VarAdd
 trigger1 = movehit=1
-trigger1 = combocount>1
 fv =13     ;fv = 
 value = 2
 persistent = 0

@@ -10142,7 +10142,7 @@ persistent = 1
 [State 0]
 type = MapAdd
 triggerall=name="Yuko"
-trigger1 = map(Boredom)>=120&&map(Imagination)>200
+trigger1 = map(Boredom)>=180&&map(Imagination)>200
 trigger1 = time%2=1
 trigger1 = enemy,stateno!=[900,902]&&enemy,stateno!=69002
 map = "Imagination"
@@ -10162,7 +10162,7 @@ persistent = 1
 [State 0]
 type = MapAdd
 triggerall=name="Yuko"
-trigger1 = map(Boredom)>=120&&map(Imagination)<=200&&map(Imagination)>0
+trigger1 = map(Boredom)>=180&&map(Imagination)<=200&&map(Imagination)>0
 trigger1 = time%4=1
 trigger1 = enemy,stateno!=[900,902]&&enemy,stateno!=69002
 map = "Imagination"
@@ -10186,9 +10186,9 @@ triggerall=name="Yuko"
 triggerall = map(IMHL)=1
 trigger1 = stateno!=200&&stateno!=400&&stateno!=600
 trigger1 = stateno!=210&&stateno!=410&&stateno!=610
-trigger1 = stateno!=1900&&stateno!=1300&&stateno!=1500
+trigger1 = stateno!=1900
 map = "Imagination"
-value = 30+cond(map(Imagination)<400,10,cond(map(Imagination)>=800,-15,0))-cond(combocount,0,10)
+value = 25+cond(map(Imagination)<400,10,cond(map(Imagination)>=800,-15,0))-cond(combocount,0,10)
 ignorehitpause = 1
 persistent = 1
 
@@ -10198,7 +10198,7 @@ triggerall=name="Yuko"
 triggerall = map(IMHL)=1
 trigger1 = stateno=200||stateno=400||stateno=600
 map = "Imagination"
-value = 10+cond(map(Imagination)<400,10,cond(map(Imagination)>=800,-5,0))-cond(combocount,0,5)
+value = 5+cond(map(Imagination)<400,10,cond(map(Imagination)>=800,-5,0))-cond(combocount,0,5)
 ignorehitpause = 1
 persistent = 1
 [State 0]
@@ -10207,7 +10207,7 @@ triggerall=name="Yuko"
 triggerall = map(IMHL)=1
 trigger1 = stateno=210||stateno=410||stateno=610
 map = "Imagination"
-value = 20+cond(map(Imagination)<400,10,cond(map(Imagination)>=800,-10,0))-cond(combocount,0,5)
+value = 15+cond(map(Imagination)<400,10,cond(map(Imagination)>=800,-10,0))-cond(combocount,0,5)
 ignorehitpause = 1
 persistent = 1
 
@@ -10245,7 +10245,7 @@ persistent = 1
 [State 0]
 type = MapAdd
 triggerall=name="Yuko"
-trigger1 = map(Boredom)<120
+trigger1 = map(Boredom)<180
 map = "Boredom"
 value = 1
 ignorehitpause = 1
@@ -10256,7 +10256,7 @@ triggerall=name="Yuko"
 trigger1 = movetype=H
 trigger1 = enemy,stateno!=[900,902]&&enemy,stateno!=69002&&enemy,prevstateno!=[900,902]&&enemy,prevstateno!=69002
 map = "Boredom"
-value = 120
+value = 180
 ignorehitpause = 1
 persistent = 1
 
@@ -10321,6 +10321,7 @@ persistent = 1
 type = MapSet
 triggerall=name="Yuko"
 trigger1 = map(Momentum)<0
+trigger2 = roundstate<2
 map = "Momentum"
 value = 0
 ignorehitpause = 1

@@ -397,7 +397,7 @@ sysvar(1) = 0
 type    = A
 movetype= I
 physics = N
-velset =-4,0
+velset =-3,0
 anim = 160
 ctrl = 1
 
@@ -1090,7 +1090,7 @@ y = 0
 [State 0, VelSet]
 type = VelSet
 trigger1 = time <10
-x = -5
+x = -4
 [State 0, StateTypeSet]
 type = StateTypeSet
 trigger1 =  time =10

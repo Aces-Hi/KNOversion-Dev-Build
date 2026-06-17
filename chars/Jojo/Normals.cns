@@ -1858,6 +1858,14 @@ ctrl = 0
 anim = 620
 sprpriority = 2
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State JoJo Voices]
 type = PlaySnd
 trigger1 = animelem =2

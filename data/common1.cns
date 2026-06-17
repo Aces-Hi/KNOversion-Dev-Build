@@ -10285,7 +10285,7 @@ triggerall = name="Yuko"
 trigger1=map(afterparry)=0
 trigger1=map(counterdamage)=0
 trigger1 = map(Imagination)<=200
-value = .8
+value = .7
 ignorehitpause = 1
 persistent = 1
 [State 0, AttackMulSet]
@@ -10294,7 +10294,7 @@ triggerall = name="Yuko"
 trigger1=map(afterparry)=0
 trigger1=map(counterdamage)
 trigger1 = map(Imagination)<=200
-value = 1
+value = .9
 ignorehitpause = 1
 persistent = 1
 

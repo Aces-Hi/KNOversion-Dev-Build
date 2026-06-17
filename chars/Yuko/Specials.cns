@@ -792,9 +792,9 @@ envshake.time = 12
 envshake.freq = 90
 envshake.ampl = 3
 envshake.phase = 1
-guard.hittime =22
-guard.slidetime = 22
-guard.ctrltime = 22
+guard.hittime =0
+guard.slidetime = 0
+guard.ctrltime = 0
 forcenofall = 1
 getpower = 0
 p2getp1state=0
@@ -810,6 +810,7 @@ damage = ceil(cond(fvar(11) * 80 < 8, 8, fvar(11) * 80)), 0
 hitflag = MAFD
 guardflag = MA
 pausetime = 12,0
+GUARD.PAUSETIME=12,12
 sparkno = 2
 sparkxy = -15,-45
 guardsound =S300, 2
@@ -824,9 +825,9 @@ envshake.time = 12
 envshake.freq = 90
 envshake.ampl = 3
 envshake.phase = 1
-guard.hittime =22
-guard.slidetime = 22
-guard.ctrltime = 22
+guard.hittime =0
+guard.slidetime = 0
+guard.ctrltime = 0
 forcenofall = 1
 getpower = 0
 p2stateno=6150
@@ -2064,9 +2065,16 @@ persistent = 0
 
 [State 0, VarAdd]
 type = MapSet
-trigger1 = 1
+trigger1 = !movehit
 map = "norc"
 value = 1
+ignorehitpause=1
+persistent=1
+[State 0, VarAdd]
+type = MapSet
+trigger1 = movehit
+map = "norc"
+value = 0
 ignorehitpause=1
 persistent=1
 
@@ -2074,7 +2082,7 @@ persistent=1
 type = MapAdd
 trigger1 = time=0
 map = "Imagination"
-value = -400
+value = -600
 ignorehitpause=1
 persistent=0
 

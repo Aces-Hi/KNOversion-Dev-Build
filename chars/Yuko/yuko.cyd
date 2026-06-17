@@ -331,7 +331,7 @@ trigger1 = var(1)
 [State 2R]
 type = ChangeState
 value = 1900
-triggerall=map(Imagination)>=400
+triggerall=map(Imagination)>=600
 triggerall = command = "c"
 triggerall = command != "EX"
 triggerall = command != "QCBs"

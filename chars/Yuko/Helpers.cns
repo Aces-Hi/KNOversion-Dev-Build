@@ -14,7 +14,6 @@ flag = invisible
 persistent=1
 
 ;p1 side
-
 [State -2, Explod];BG
 type = Explod
 triggerall = teamside = 1
@@ -33,6 +32,25 @@ ownpal = 1
 ignorehitpause = 1
 pausemovetime = 999999
 supermovetime = 999999
+[State -2, Explod];Install BG
+type = Explod
+triggerall = teamside = 1
+triggerall=numexplod(7100)=0
+trigger1=root,alive&&root,map(Install)
+anim = 7100
+pos = 26,185
+postype = left
+removetime = -1
+scale = .6,.6
+sprpriority = -2
+id = 7100
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+
 [State -2, Explod];Base Bar
 type = Explod
 triggerall = teamside = 1
@@ -51,6 +69,25 @@ ownpal = 1
 ignorehitpause = 1
 pausemovetime = 999999
 supermovetime = 999999
+[State -2, Explod];Install Bar
+type = Explod
+triggerall = teamside = 1
+triggerall=numexplod(7102)=0
+trigger1=root,alive&&root,map(Install)
+anim = 7102
+pos = 26,185
+postype = left
+removetime = -1
+scale = .6,.6
+sprpriority = -2
+id = 7102
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+
 [State -2, Explod];Lvl3 Bar
 type = Explod
 triggerall = teamside = 1
@@ -70,6 +107,26 @@ ownpal = 1
 ignorehitpause = 1
 pausemovetime = 999999
 supermovetime = 999999
+[State -2, Explod];Install Lvl3 Bar
+type = Explod
+triggerall = teamside = 1
+triggerall=numexplod(7103)=0
+trigger1=root,alive&&root,map(Install)
+trigger1 = root,map(Imagination)>=800
+anim = 7103
+pos = 26,185
+postype = left
+removetime = -1
+scale = .6,.6
+sprpriority = -2
+id = 7103
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+
 [State -2, Explod];Full Bar
 type = Explod
 triggerall = teamside = 1
@@ -108,6 +165,9 @@ ignorehitpause = 1
 pausemovetime = 999999
 supermovetime = 999999
 
+
+
+
 ;p2 side
 [State -2, Explod];BG
 type = Explod
@@ -127,6 +187,25 @@ ownpal = 1
 ignorehitpause = 1
 pausemovetime = 999999
 supermovetime = 999999
+[State -2, Explod];Install BG
+type = Explod
+triggerall = teamside = 2
+triggerall=numexplod(7100)=0
+trigger1=root,alive&&root,map(Install)
+anim = 7101
+pos =  -119.5,185
+postype = right
+removetime = -1
+scale = .6,.6
+sprpriority = -2
+id = 7100
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+
 [State -2, Explod];Base Bar
 type = Explod
 triggerall = teamside = 2
@@ -145,6 +224,25 @@ ownpal = 1
 ignorehitpause = 1
 pausemovetime = 999999
 supermovetime = 999999
+[State -2, Explod];Install Base Bar
+type = Explod
+triggerall = teamside = 2
+triggerall=numexplod(7102)=0
+trigger1=root,alive&&root,map(Install)
+anim = 7105
+pos =  -119.5,185
+postype = right
+removetime = -1
+scale = .6,.6
+sprpriority = -2
+id = 7102
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+
 [State -2, Explod];Lvl3 Bar
 type = Explod
 triggerall = teamside = 2
@@ -164,6 +262,26 @@ ownpal = 1
 ignorehitpause = 1
 pausemovetime = 999999
 supermovetime = 999999
+[State -2, Explod];Install Lvl3 Bar
+type = Explod
+triggerall = teamside = 2
+triggerall=numexplod(7103)=0
+trigger1=root,alive&&root,map(Install)
+trigger1 = root,map(Imagination)>=800
+anim = 7106
+pos =  -119.5,185
+postype = right
+removetime = -1
+scale = .6,.6
+sprpriority = -2
+id = 7103
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+
 [State -2, Explod];Full Bar
 type = Explod
 triggerall = teamside = 2
@@ -202,6 +320,9 @@ ignorehitpause = 1
 pausemovetime = 999999
 supermovetime = 999999
 
+
+
+
 [State -2, Explod];Scaling The Bar
 type =ModifyExplod
 Trigger1=TeamSide=1
@@ -214,10 +335,19 @@ ignorehitpause = 1
 type =ModifyExplod
 Trigger1=TeamSide=1
 triggerall=root,alive
+trigger1 = NumExplod(7102)
+window = 1,0,76*(root,map(Imagination)/1000),20
+id = 7102
+ignorehitpause = 1
+[State -2, Explod];Scaling The Bar
+type =ModifyExplod
+Trigger1=TeamSide=1
+triggerall=root,alive
 trigger1 = NumExplod(7003)
 window = 1,0,76*(root,map(Imagination)/1000),20
 id = 7003
 ignorehitpause = 1
+
 
 [State -2, Explod];Scaling The Bar
 type =ModifyExplod
@@ -231,10 +361,19 @@ ignorehitpause = 1
 type =ModifyExplod
 Trigger1=TeamSide=2
 triggerall=root,alive
+trigger1 = NumExplod(7102)
+window = 15+75-(75*(root,map(Imagination)/1000)),0,90,20
+id = 7102
+ignorehitpause = 1
+[State -2, Explod];Scaling The Bar
+type =ModifyExplod
+Trigger1=TeamSide=2
+triggerall=root,alive
 trigger1 = NumExplod(7003)
 window = 15+75-(75*(root,map(Imagination)/1000)),0,90,20
 id = 7003
 ignorehitpause = 1
+
 
 [State -2, Explod];Momentum
 type =ModifyExplod
@@ -264,25 +403,48 @@ persistent=1
 
 [State 0]
 Type=RemoveExplod
+trigger1 = root,map(Install)
+ignorehitpause=1
+persistent=1
+id=7000
+[State 0]
+Type=RemoveExplod
+trigger1 = root,map(Install)=0
+ignorehitpause=1
+persistent=1
+id=7100
+[State 0]
+Type=RemoveExplod
 trigger1 = root,map(Imagination)>=800
+trigger2 = root,map(Install)
 ignorehitpause=1
 persistent=1
 id=7002
 [State 0]
 Type=RemoveExplod
+trigger1 = root,map(Imagination)>=800
+trigger2 = root,map(Install)=0
+ignorehitpause=1
+persistent=1
+id=7102
+[State 0]
+Type=RemoveExplod
 trigger1 = root,map(Imagination)<800||root,map(Imagination)>=1000
+trigger2 = root,map(Install)
 ignorehitpause=1
 persistent=1
 id=7003
 [State 0]
 Type=RemoveExplod
+trigger1 = root,map(Imagination)<800||root,map(Imagination)>=1000
+trigger2 = root,map(Install)=0
+ignorehitpause=1
+persistent=1
+id=7103
+[State 0]
+Type=RemoveExplod
 trigger1 = root,map(Imagination)<1000
+trigger2 = root,map(Install)
 ignorehitpause=1
 persistent=1
 id=7004
-[State 0]
-Type=RemoveExplod
-trigger1 = root,map(Imagination)>=1000
-ignorehitpause=1
-persistent=1
-id=7005

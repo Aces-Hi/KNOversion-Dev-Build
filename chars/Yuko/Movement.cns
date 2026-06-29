@@ -313,7 +313,7 @@ velset = 0,0
 [State 0, VarAdd]
 type = MapSet
 trigger1 = time =0
-map = "djump"
+map = "airdash"
 value = 1
 
 [State 50, 2]

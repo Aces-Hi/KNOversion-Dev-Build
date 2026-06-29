@@ -10133,15 +10133,52 @@ persistent = 1
 [State 0]
 type = MapSet
 triggerall=name="Yuko"
+trigger1 = roundstate<2
+map = "Install"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+
+[State 0]
+type = MapSet
+triggerall=name="Yuko"
 trigger1 = map(Imagination)>1000
 map = "Imagination"
 value = 1000
 ignorehitpause = 1
 persistent = 1
+[State 0]
+type = MapSet
+triggerall=name="Yuko"
+trigger1 = map(Install)
+trigger1 = map(Imagination)>800
+map = "Imagination"
+value = 800
+ignorehitpause = 1
+persistent = 1
+[State 0]
+type = MapSet
+triggerall=name="Yuko"
+trigger1 = map(Imagination)<0
+map = "Imagination"
+value = 0
+ignorehitpause = 1
+persistent = 1
+[State 0]
+type = MapSet
+triggerall=name="Yuko"
+trigger1 = map(Install)
+trigger1 = map(Imagination)<200
+map = "Imagination"
+value = 200
+ignorehitpause = 1
+persistent = 1
 
 [State 0]
 type = MapAdd
-triggerall=name="Yuko"
+triggerall=name="Yuko"&&stateno!=[3500,3599]
+triggerall = map(Install)=0
 trigger1 = map(Boredom)>=180&&map(Imagination)>200
 trigger1 = time%2=1
 trigger1 = enemy,stateno!=[900,902]&&enemy,stateno!=69002
@@ -10151,7 +10188,7 @@ ignorehitpause = 1
 persistent = 1
 [State 0]
 type = MapAdd
-triggerall=name="Yuko"
+triggerall=name="Yuko"&&stateno!=[3500,3599]
 trigger1 = enemy,combocount&&map(Imagination)>200
 trigger1 = time%2=1
 trigger1 = enemy,stateno!=[900,902]&&enemy,stateno!=69002
@@ -10161,7 +10198,8 @@ ignorehitpause = 1
 persistent = 1
 [State 0]
 type = MapAdd
-triggerall=name="Yuko"
+triggerall=name="Yuko"&&stateno!=[3500,3599]
+triggerall = map(Install)=0
 trigger1 = map(Boredom)>=180&&map(Imagination)<=200&&map(Imagination)>0
 trigger1 = time%4=1
 trigger1 = enemy,stateno!=[900,902]&&enemy,stateno!=69002
@@ -10171,12 +10209,36 @@ ignorehitpause = 1
 persistent = 1
 [State 0]
 type = MapAdd
-triggerall=name="Yuko"
+triggerall=name="Yuko"&&stateno!=[3500,3599]
 trigger1 = enemy,combocount&&map(Imagination)<=200&&map(Imagination)>0
 trigger1 = time%4=1
 trigger1 = enemy,stateno!=[900,902]&&enemy,stateno!=69002
 map = "Imagination"
 value = -1
+ignorehitpause = 1
+persistent = 1
+[State 0]
+type = MapAdd
+triggerall=name="Yuko"
+triggerall = map(Install)&&map(Imagination)<400
+triggerall = time%4=1
+trigger1 = enemy,combocount=0
+trigger2 = enemy,combocount
+trigger2 = enemy,stateno=[900,902]||enemy,stateno=69002
+map = "Imagination"
+value = 1
+ignorehitpause = 1
+persistent = 1
+[State 0]
+type = MapAdd
+triggerall=name="Yuko"
+triggerall = map(Install)&&map(Imagination)<600&&map(Imagination)>=400
+triggerall = time%8=1
+trigger1 = enemy,combocount=0
+trigger2 = enemy,combocount
+trigger2 = enemy,stateno=[900,902]||enemy,stateno=69002
+map = "Imagination"
+value = 1
 ignorehitpause = 1
 persistent = 1
 
@@ -10186,7 +10248,7 @@ triggerall=name="Yuko"
 triggerall = map(IMHL)=1
 trigger1 = stateno!=200&&stateno!=400&&stateno!=600
 trigger1 = stateno!=210&&stateno!=410&&stateno!=610
-trigger1 = stateno!=1900
+trigger1 = stateno!=1900&&stateno!=[3500,3599]
 map = "Imagination"
 value = 25+cond(map(Imagination)<400,10,cond(map(Imagination)>=800,-15,0))-cond(combocount,0,10)
 ignorehitpause = 1
@@ -10263,18 +10325,20 @@ persistent = 1
 [State 0, AttackMulSet]
 type = AttackMulSet
 triggerall = name="Yuko"
-trigger1=map(afterparry)=0
-trigger1=map(counterdamage)=0
+triggerall=map(afterparry)=0
+triggerall=map(counterdamage)=0
 trigger1 = map(Imagination)>200
+trigger2 = stateno=[3500,3599]
 value = 1
 ignorehitpause = 1
 persistent = 1
 [State 0, AttackMulSet]
 type = AttackMulSet
 triggerall = name="Yuko"
-trigger1=map(afterparry)=0
-trigger1=map(counterdamage)
+triggerall=map(afterparry)=0
+triggerall=map(counterdamage)
 trigger1 = map(Imagination)>200
+trigger2 = stateno=[3500,3599]
 value = 1.2
 ignorehitpause = 1
 persistent = 1
@@ -10284,7 +10348,7 @@ type = AttackMulSet
 triggerall = name="Yuko"
 trigger1=map(afterparry)=0
 trigger1=map(counterdamage)=0
-trigger1 = map(Imagination)<=200
+trigger1 = map(Imagination)<=200&&stateno!=[3500,3599]
 value = .7
 ignorehitpause = 1
 persistent = 1
@@ -10293,7 +10357,7 @@ type = AttackMulSet
 triggerall = name="Yuko"
 trigger1=map(afterparry)=0
 trigger1=map(counterdamage)
-trigger1 = map(Imagination)<=200
+trigger1 = map(Imagination)<=200&&stateno!=[3500,3599]
 value = .9
 ignorehitpause = 1
 persistent = 1
@@ -10302,7 +10366,7 @@ persistent = 1
 type = MapSet
 triggerall = GameMode = "Training"
 triggerall=name="Yuko"
-trigger1 = map(trainingi)&&combocount=0
+trigger1 = map(trainingi)&&combocount=0&&movetype!=A
 map = "Imagination"
 value = (map(trainingi)-1)*200
 ignorehitpause = 1
@@ -10381,7 +10445,7 @@ triggerall = map(_iksys_trainingAtkDataDisp) = 0
 trigger1=teamside=2
 trigger1= player(1),map(trainingi)=0
 trigger1 =  player(1),map(cockko)>-60
-triggerall = enemy,command="hold_a"
+triggerall = enemy,command="hold_a"&&enemy,name="Yuko"
 triggerall = GameMode = "Training"
 removetime=1
 layerno=2  
@@ -10399,7 +10463,7 @@ triggerall = map(_iksys_trainingAtkDataDisp) = 0
 trigger1=teamside=2
 trigger1= player(1),map(trainingm)=0
 trigger1 =  player(1),map(yucock)>-60
-triggerall = enemy,command="hold_a"
+triggerall = enemy,command="hold_a"&&enemy,name="Yuko"
 triggerall = GameMode = "Training"
 removetime=1
 layerno=2  
@@ -10543,25 +10607,47 @@ persistent=0
 
 [State 0, VarAdd]
 type = MapSet
-trigger1 = combocount=0
+triggerall = combocount=0
 triggerall = GameMode = "Training"
-trigger1 = roundstate=2
-trigger1 = map(cockko)=-1
-trigger1 = map(trainingi)=7
+triggerall = roundstate=2
+triggerall = map(cockko)=-1
+trigger1 = map(trainingi)=7&&map(Install)=0
+trigger2 = map(trainingi)=6&&map(Install)
+trigger3 = map(trainingi)=1&&map(Install)&&map(yukoright)=0&&map(yukoleft)=1
 map="trainingi"
 value = 0
 persistent=0
 [State 0, VarAdd]
 type = MapSet
 trigger1 = combocount=0
-triggerall = GameMode = "Training"
+triggerall = GameMode = "Training"&&map(Install)=0
 trigger1 = roundstate=2
 trigger1 = map(cockko)=-1
 trigger1 = map(trainingi)=-1
 map="trainingi"
 value = 6
 persistent=0
-
+[State 0, VarAdd]
+type = MapSet
+trigger1 = combocount=0
+triggerall = GameMode = "Training"&&map(Install)
+trigger1 = roundstate=2
+trigger1 = map(cockko)=-1
+trigger1 = map(trainingi)=-1
+map="trainingi"
+value = 5
+persistent=0
+[State 0, VarAdd]
+type = MapSet
+triggerall = combocount=0
+triggerall = GameMode = "Training"&&map(Install)&&map(trainingi)=1
+triggerall = roundstate=2
+trigger1 = map(cockko)=-1
+trigger1 = map(yukoright)=1&&map(yukoleft)=0
+trigger2 = stateno=3100
+map="trainingi"
+value = 2
+persistent=0
 
 [State 0, VarAdd]
 type = MapAdd

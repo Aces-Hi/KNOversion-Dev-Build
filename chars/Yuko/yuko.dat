@@ -101,7 +101,7 @@ DEVIL-CHAIN~ALTER	-		^Z
    <#db00ac>Grants 1 Momentum when used.</>
 MAGIC BURST	-		_D^Z
    <#bbbbbb>An invincible reversal attack that can extend combos.</>
-   <#ffd541>Costs 3 Imagination Levels to use.</>
+   <#f0710a>Costs 3 Imagination Levels to use.</>
 
 
 
@@ -144,18 +144,18 @@ _EX CLAW	-		<#55ffff>(1 BAR)</> _D^Y+^Z
 _D	_D		_D
 
 	<#55ffff>SUPER MOVES</>
-...
-
-
-
-
-
-
-
-
-
-
-
+<#7f41b9>DEVIL-CLAW</>	-		<#55ffff>(2 BARS)</> _D_DF_F_-^A/^B/^C
+_!<#7f41b9>DEVIL-CLAW~COMPLETE</>	-		<#55ffff>(1 BAR)</> (HOLD)^A/^B/^C
+        <#f0710a>Can only be used at Imagination Level 3+.</>
+<#7f41b9>ONE-WINGED DEVIL</>	-		<#55ffff>(2 BARS)</> _D_DB_B_-^Y
+   <#818181>Can only be used at Imagination Level 0.</>
+   <#bbbbbb>An Install that causes Yuko to passively gain Imagination
+   for the rest of the round. Additionally, she can no longer enter
+   Imagination Levels 0 or 4.</>
+<#7f41b9>DEVIL-CHAIN~<#7f41b9>BLITZSCHRITT</>		<#55ffff>(2 BARS)</> _D_DB_B_-^A/^B/^C
+   <#f0710a>Can only be used at Imagination Level 3+.</>
+   <#ff0000>Does increased damage at Imagination Level 4.</>
+   <#bbbbbb>Using this move completely drains the Imagination Gauge.</>
 
 
 

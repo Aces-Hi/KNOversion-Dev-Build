@@ -69,7 +69,7 @@ air.gethit.airrecover.up = -2         ;Extra y-velocity for holding up during ai
 air.gethit.airrecover.down = 1.5      ;Extra y-velocity for holding down during air recovery **MUGEN 1.0**
 
 [Movement]
-airjump.num = 1     ;Number of air jumps allowed (opt)
+airjump.num = 0     ;Number of air jumps allowed (opt)
 airjump.height = 35   ;Minimum distance from ground before you can air jump (opt)
 yaccel = .44          ;Vertical acceleration
 stand.friction = .85  ;Friction coefficient when standing
@@ -1070,7 +1070,7 @@ value = 0
 type = DisplayToClipboard
 trigger1 = 1
 text = "Imagination %f Momentum %f Boredom %f IMHL %f yc %f ti %f"
-params = map(Imagination),map(Momentum),map(Boredom),map(IMHL),map(yucock),map(trainingi)
+params = map(Imagination),map(Momentum),map(Boredom),map(IMHL),map(yucock),map(supertime)
 
 
 [State 0, PalFXWiz]
@@ -1381,6 +1381,13 @@ ignorehitpause = 1
 type = MapSet
 trigger1 = stateno!=[2000,2999]
 map = "refund"
+value = 0
+ignorehitpause = 1
+
+[State 0, VarAdd]
+type = MapSet
+trigger1 = !combocount
+map = "dclaw"
 value = 0
 ignorehitpause = 1
 

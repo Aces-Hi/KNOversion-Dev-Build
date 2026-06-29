@@ -2364,16 +2364,31 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, 1))
 
 [State 0, TargetBind]
 type = TargetBind
-trigger1 = movehit&&enemy,statetype!=A
+trigger1 = movehit&&enemy,statetype!=A&& p2dist x > 0
 time = 1
 pos = p2dist x,0
 ignorehitpause = 1
 persistent=0
 [State 0, TargetBind]
 type = TargetBind
-trigger1 = movehit&&enemy,statetype=A
+trigger1 = movehit&&enemy,statetype=A&& p2dist x > 0
 time = 1
 pos = p2dist x,-20
+ignorehitpause = 1
+persistent=0
+
+[State 0, TargetBind]
+type = TargetBind
+trigger1 = movehit&&enemy,statetype!=A&& p2dist x <= 0
+time = 1
+pos = 10,0
+ignorehitpause = 1
+persistent=0
+[State 0, TargetBind]
+type = TargetBind
+trigger1 = movehit&&enemy,statetype=A&& p2dist x <= 0
+time = 1
+pos = 10,-20
 ignorehitpause = 1
 persistent=0
 
@@ -2651,6 +2666,36 @@ forcenofall = 1
 getpower = 0
 p2stateno=6150
 p2getp1state=0
+
+[State 0, TargetBind]
+type = TargetBind
+trigger1 = movehit&&enemy,statetype!=A&& p2dist x > 0
+time = 1
+pos = p2dist x,0
+ignorehitpause = 1
+persistent=0
+[State 0, TargetBind]
+type = TargetBind
+trigger1 = movehit&&enemy,statetype=A&& p2dist x > 0
+time = 1
+pos = p2dist x,-20
+ignorehitpause = 1
+persistent=0
+
+[State 0, TargetBind]
+type = TargetBind
+trigger1 = movehit&&enemy,statetype!=A&& p2dist x <= 0
+time = 1
+pos = 10,0
+ignorehitpause = 1
+persistent=0
+[State 0, TargetBind]
+type = TargetBind
+trigger1 = movehit&&enemy,statetype=A&& p2dist x <= 0
+time = 1
+pos = 10,-20
+ignorehitpause = 1
+persistent=0
 
 [State 200, 3]
 type = ChangeState
@@ -3206,7 +3251,7 @@ trigger1 = animelem=3
 attr = S, SA
 animtype  = Hard
 air.animtype = back
-damage = ceil(cond(fvar(11) *40 < 4, 4, fvar(11) * 40)), 7
+damage = ceil(cond(fvar(11) *26 < 4, 4, fvar(11) * 26)), 7
 hitflag = MAFD
 guardflag = LA
 pausetime = 4,4
@@ -3233,7 +3278,7 @@ trigger1 = animelem=8
 attr = S, SA
 animtype  = up
 air.animtype = up
-damage = ceil(cond(fvar(11) *40 < 4, 4, fvar(11) * 40)), 7
+damage = ceil(cond(fvar(11) *26 < 4, 4, fvar(11) * 26)), 7
 hitflag = MAFD
 guardflag = MA
 pausetime = 10,10
@@ -3691,7 +3736,7 @@ ignorehitpause = 1
 type = HitDef 
 p2facing = 1
 trigger1 = !movecontact&&combocount=0
-attr = S, ST
+attr = S, NT
 animtype  = Hard
 air.animtype = back
 damage = 0
@@ -3720,7 +3765,7 @@ id=2600
 type = HitDef 
 p2facing = 1
 trigger1 = !movecontact&&combocount
-attr = S, ST
+attr = S, NT
 animtype  = Hard
 air.animtype = back
 damage = 0
@@ -4332,11 +4377,12 @@ air.hittime  = 15
 down.hittime = 15
 ground.velocity = 0,0
 air.velocity = 0,0
-guard.hittime =26
-guard.slidetime = 26
-guard.ctrltime = 26
+guard.hittime =22
+guard.slidetime = 22
+guard.ctrltime = 22
 guard.velocity = -6
 forcenofall = 1
+ground.cornerpush.veloff=0
 getpower = (50)*(cond(var(var(2)) = 1, 1, 1)) 
 [State 200, 1]
 type = HitDef 
@@ -4527,9 +4573,9 @@ envshake.time = 12
 envshake.freq = 90
 envshake.ampl = 3
 envshake.phase = 1
-guard.hittime =35
-guard.slidetime = 35
-guard.ctrltime = 35
+guard.hittime =27
+guard.slidetime = 27
+guard.ctrltime = 27
 guard.velocity = -6
 fall = 1
 fall.yvelocity=0
@@ -4560,9 +4606,9 @@ envshake.time = 12
 envshake.freq = 90
 envshake.ampl = 3
 envshake.phase = 1
-guard.hittime =35
-guard.slidetime = 35
-guard.ctrltime = 35
+guard.hittime =27
+guard.slidetime = 27
+guard.ctrltime = 27
 guard.velocity = -6
 fall = 1
 fall.yvelocity=0

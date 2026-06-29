@@ -1,5 +1,5 @@
-.\external\script\start.lua:1403: chars\Yuko/yuko.cns:1356:
-Missing ','
+.\external\script\start.lua:1403: data/common1.cns:10358:
+Invalid data: [
 stack traceback:
 	[G]: in function 'game'
 	.\external\script\start.lua:1403: in function 'f_game'

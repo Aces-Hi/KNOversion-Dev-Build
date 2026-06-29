@@ -20,6 +20,27 @@ var(1) = 1
 ;===========================================================================
 ;===========================================================================
 ;---------------------------------------------------------------------------
+
+[State -1,DJC]
+type = ChangeState
+value = 45
+triggerall = statetype=A
+triggerall = command = "holdupb"
+triggerall = command != "y"
+triggerall = command != "x"
+triggerall = command != "z"
+triggerall = command != "a"
+triggerall = command != "b"
+triggerall = command != "c"
+triggerall = stateno!=45 && stateno!=46 
+triggerall = stateno!=904 && stateno!=903 
+triggerall = map(airdash)=0
+trigger1 = ctrl && stateno!=45 && stateno!=46 && stateno!=50 && stateno!=40
+trigger2 = movecontact ;&& enemynear, movetype = H
+trigger2 = hitdefattr = A, NA
+trigger3 =  stateno=45 || stateno=46|| stateno=50
+trigger3 = vel y>.1
+
 ;Aerial Dash
 [State -1, Airdash]
 type = ChangeState
@@ -207,17 +228,6 @@ trigger2 = (stateno = 600) || (stateno = 610) || (stateno = 630)
 trigger2 = movecontact
 trigger3 = (stateno = 640) && (prevstateno != 620)
 trigger3 = movecontact
-
-;---------------------------------------------------------------
-[State Double Jump Cancel]
-type = ChangeState
-value = 45
-triggerall = statetype=A
-triggerall = command = "holdupb"
-triggerall = map(djump)=0
-trigger1 = movecontact 
-trigger1 = hitdefattr = A,NA
-
 ;---------------------------------------------------------------------------
 [State 5S]
 type = ChangeState
@@ -364,22 +374,34 @@ triggerall = statetype != A
 trigger1 = var(1)
 
 ;---------------------------------------------------------------------------
-;[State Super]
-;type = ChangeState
-;value = 3000
-;triggerall = power>=2000
-;triggerall = command = "QCF"|| command = "QCB"
-;trigger1 = var(1)
-;trigger2 = hitdefattr=SCA,NA,SA,ST
-;trigger2 = movehit
+[State Super Claw]
+type = ChangeState
+value = 3000
+triggerall = power>=2000
+triggerall = command = "QCF"
+trigger1 = var(1)
+trigger2 = hitdefattr=SCA,NA,SA,ST
+trigger2 = movehit
 
 ;---------------------------------------------------------------------------
-;[State Counter Super]
-;type = ChangeState
-;value = 3500
-;triggerall = power>=2000
-;triggerall = command = "QCFs"|| command = "QCBs"
-;triggerall = statetype != A
-;trigger1 = var(1)
-;trigger2 = hitdefattr=SCA,NA,SA,ST
-;trigger2 = movehit
+[State Install]
+type = ChangeState
+value = 3100
+triggerall = power>=2000
+triggerall = map(Install)=0&&map(Imagination)<=200
+triggerall = command = "QCBs"
+triggerall = statetype != A
+trigger1 = var(1)
+trigger2 = hitdefattr=SCA,NA,SA,ST
+trigger2 = movehit
+
+;---------------------------------------------------------------------------
+[State Super Claw]
+type = ChangeState
+value = 3500
+triggerall = map(Imagination)>=800
+triggerall = power>=2000
+triggerall = command = "QCB"
+trigger1 = var(1)
+trigger2 = hitdefattr=SCA,NA,SA,ST
+trigger2 = movehit

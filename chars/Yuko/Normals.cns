@@ -161,12 +161,12 @@ ground.hittime  = ceil(cond(fvar(15) *20 < 2, 2, fvar(15) * 20))
 air.hittime  = ceil(cond(fvar(15) *30 < 10, 10, fvar(15) * 30))
 down.hittime = ceil(cond(fvar(15) *30 < 10, 10, fvar(15) * 30))
 ground.velocity = -8
-air.velocity = -1.5,-2
-down.velocity = -1.5,-2
+air.velocity = -2,-2
+down.velocity = -2,-2
 guard.hittime = 11
 guard.slidetime = 6
 guard.ctrltime = 11
-guard.cornerpush.veloff = -12
+ground.cornerpush.veloff = -12
 forcenofall = 1
 getpower = (60)*(cond(var(var(2)) = 1, 1, 1)) 
 
@@ -244,7 +244,7 @@ persistent = 0
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = movecontact = 0&&p2bodydist x >=0
+trigger1 = movecontact = 0&&p2bodydist x >=-10
 attr = S, NA
 animtype  = Hard
 air.animtype = back
@@ -275,7 +275,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, 1))
 
 [State 0, VarAdd]
 type = MapAdd
-trigger1 = movecontact &&p2bodydist x <0
+trigger1 = movecontact &&p2bodydist x <-10
 map = "WHOWANTBACKSHOTS"
 value = 1
 ignorehitpause = 1
@@ -284,7 +284,7 @@ persistent=0
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = movecontact = 0&&p2bodydist x <0&&map(WHOWANTBACKSHOTS)=0
+trigger1 = movecontact = 0&&p2bodydist x <-10&&map(WHOWANTBACKSHOTS)=0
 attr = S, NA
 animtype  = Hard
 air.animtype = back
@@ -315,7 +315,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, 1))
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = movecontact = 0&&p2bodydist x <0&&map(WHOWANTBACKSHOTS)
+trigger1 = movecontact = 0&&p2bodydist x <-10&&map(WHOWANTBACKSHOTS)
 attr = S, NA
 animtype  = Hard
 air.animtype = back

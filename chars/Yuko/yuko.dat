@@ -101,7 +101,9 @@ DEVIL-CHAIN~ALTER	-		^Z
    <#db00ac>Grants 1 Momentum when used.</>
 MAGIC BURST	-		_D^Z
    <#bbbbbb>An invincible reversal attack that can extend combos.</>
-   <#f0710a>Costs 3 Imagination Levels to use.</>
+   <#ffd541>Costs 2 Imagination Levels to use during a combo.</>
+   <#f0710a>Costs 3 Imagination Levels to use outside of combos,
+   but using the move this way increases its damage.</>
 
 
 
@@ -115,9 +117,7 @@ MAGIC BURST	-		_D^Z
 
 
 
-
-
-_D	_D		_D
+_D	_D	b	_D
 
 	<#ffef0f>EX MOVES</>
 _EX KILLING MAGIC: ZOLTRAAK		<#55ffff>(1 BAR)</> ^Y+^Z

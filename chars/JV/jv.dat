@@ -47,7 +47,7 @@ _!FLOW STATE	-		^A/^B/^C
 
 _D	_D		_D
 
-<#190bd9>SPECIAL MOVES (PAGE 2)</>
+	<#190bd9>SPECIAL MOVES (PAGE 2)</>
 AIMLESS SERPENT	-		_B^Y
    <#bbbbbb>JV enters a stance with a unique followup.
    The stance can be dash canceled, but doing this
@@ -100,7 +100,8 @@ _D	_D		_D
 <#190bd9>WANDERING SERPENT</>	-		<#55ffff>(1 BAR)</> _D_DB_B_-^A/^B/^C
    <#bbbbbb>An invincible reversal attack. Can be dash canceled during combos.</>
 <#190bd9>KANON DRIVER</>		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _D_DB_B_-^Y
-   <#bbbbbb>Grounded version is an anti-air/anti-projectile that wallbounces airborne enemies.
+   <#bbbbbb>Grounded version is an anti-air/anti-projectile
+   that wallbounces airborne enemies.
    Air version is an overhead attack that causes a sliding knockdown.</>
 
 	<#55ffff>ENHANCED SUPER MOVES</>
@@ -110,7 +111,6 @@ _D	_D		_D
 <#983eff>TWENTY-EIGHT MALIGNANT GATES</>	-		<#55ffff>(2 BARS)</> _D_DB_B_-^A/^B/^C
    <#bbbbbb>A combo super.</>
 <#983eff>MAW OF OUROBOROS</>		<#aaffff>(GROUND OR AIR)</><#55ffff>(2 BARS)</> _D_DB_B_-^Y
-
 
 
 

@@ -1,0 +1,168 @@
+	<#bbbbbb>This move list assumes you are facing to the right.</>
+
+	<#190bd9>UNIQUE TRAIT: ARCHETYPE FALSE</>
+	JV can enhance his Special, Remix, and Super Moves by
+	dashing forward before using them. The enhanced moves are more powerful
+	and have unique properties. JV can also cancel certain moves into
+	King's Arsenal, a set of followup attacks.
+
+	<#190bd9>UNIQUE MOVES</>
+DIVIDER	-		_F^C
+EARTHEN SERPENT	-		_DF^C
+KICKBACK	-		<#65b5ff>(AIR ONLY)</> _D^C
+
+	<#190bd9>KING'S ARSENAL</>
+	<#bbbbbb>Can only be used after certain moves.</>
+_!SUNDR	-		^A
+        <#bbbbbb>Is dash cancellable on hit.
+        If spaced to hit at the tip, it will wallbounce.</></>
+_!NAORA	-		^B
+        <#bbbbbb>An anti-air/anti-projectile attack.</>
+_!YGGDRASIL	-		^C
+        <#bbbbbb>A very strong overhead attack.</>
+
+_D	_D		_D
+
+	<#190bd9>SPECIAL MOVES (PAGE 1)</>
+ONE-INCH PUNCH	-		^Y
+   <#983eff>Enhanced version launches higher and for longer,
+   and can be canceled into EX Moves on hit.</>
+JÖTUNN'S WRATH	-		<#65b5ff>(AIR ONLY)</> ^Y
+   <#983eff>Enhanced version wallbounces.</>
+BERETTA DRIVER	-		(HOLD) ^Y
+   <#bbbbbb>Can be dash canceled on hit.</>
+NAGANT DRIVER	-		(HOLD LONGER) ^Y
+   <#bbbbbb>Unblockable. Can be dash canceled on hit.</>
+DEATH DRIVER	-		(MAX HOLD) ^Y
+   <#bbbbbb>Executioner's Technique.</>
+VEÐRFÖLNIR	-		_F^Y
+   <#983eff>Enhanced version hits overhead.</>
+_!<#190bd9>KING'S ARSENAL</>	-		^A/^B/^C
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#190bd9>SPECIAL MOVES (PAGE 2)</>
+AIMLESS SERPENT	-		_B^Y
+   <#bbbbbb>This stance can be dash canceled, but doing this
+   locks JV out of using any normal attacks for a short while.
+   <#983eff>Enhanced version passes through enemies and
+   can be canceled into Spear of God.</>
+_!SPEAR OF GOD	-		^Y
+        <#bbbbbb>Causes a wallbounce. Can be dash canceled on hit.</>
+DISENGANGE	-		_D^Y 
+   <#983eff>Enhanced version has some invincibility can be canceled into <#190bd9>King's Arsenal.</>
+_!<#190bd9>KING'S ARSENAL</>	-		^A/^B/^C
+SKYFALL	-		<#65b5ff>(AIR ONLY)</> _D^Y 
+   <#bbbbbb>A fastfall JV can use to reach the ground.</>
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#190bd9>REMIX MOVES</>
+COILED SERPENT	-		^Z
+   <#bbbbbb>JV enters a stance with unique followup attacks.
+   <#983eff>Enhanced version is much faster.</>
+_!SVERA	-		^A
+        <#983eff>Enhanced version launches higher and has more hitstun.</>
+_!MEGIN	-		^B
+        <#983eff>Enhanced version is faster and has more hitstun.</>
+_!GUNGNIR	-		^C
+        <#983eff>Enhanced version has some invincibility, launches higher,
+        and can be jump canceled during a combo.</>
+STRIKING SERPENT	-		_D^Z
+   <#bbbbbb>A low-hitting kick that puts JV into COILED SERPENT stance.</>
+   <#983eff>Enhanced version is much faster.</>
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#ffef0f>EX MOVES</>
+_EX KANON DRIVER		<#55ffff>(1 BAR)</> ^Y+^Z
+   <#bbbbbb>A fullscreen anti-air/anti-projectile that wallbounces airborne enemies.</>
+_EX JÖTUNN'S WRATH	-		<#65b5ff>(AIR ONLY)</><#55ffff>(1 BAR)</> ^Y+^Z
+   <#bbbbbb>Always causes a wall bounce.</>
+_EX VEÐRFÖLNIR	-		<#55ffff>(1 BAR)</> _F^Y+^Z
+   <#bbbbbb>Does not hit overhead.</>
+_!<#190bd9>KING'S ARSENAL</>	-		^A/^B/^C
+_EX WINGED SERPENT	-		<#55ffff>(1 BAR)</> _B^Y+^Z
+   <#bbbbbb>JV instantly dashes forward with blinding speed.</>
+_EX SERPENT'S BASTION	-		<#55ffff>(1 BAR)</> _D^Y+^Z
+   <#bbbbbb>A reversal move with 2 hits of armor.</>
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	<#55ffff>SUPER MOVES</>
+<#190bd9>Enter the 36 CHAMBERS</>	-		<#55ffff>(2 BARS)</> _D_DF_F_-^A/^B/^C
+   <#983eff>Enhanced version travels farther and does more damage.</>
+<#190bd9>TWENTY-EIGHT MALIGNANT GATES</>	-		<#55ffff>(2 BARS)</> _D_DB_B_-^A/^B/^C
+   <#bbbbbb>A reversal super.</>
+   <#983eff>Enhanced version does more damage and is easier to combo from.</>
+<#190bd9>MAW OF OUROBOROS</>		<#55ffff>(4 BARS)</> _D_DB_B_-^Y
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_D	_D		_D
+
+	UNIVERSAL MOVES
+OVERHEAD	-		_F^B
+   <#bbbbbb>Puts you in the air and hits overhead.</>
+ANTI-AIR	-		_D^C
+   <#bbbbbb>This move has invulnerability to projectiles and airborne enemies.</>
+GRAB	-		ANY 2 NORMALS </>
+   <#bbbbbb>Cannot be blocked. Starts combos on counter-hit.
+   Enemies can break this by pressing ^A/^B/^C.</>
+FORCE BLOCK (WHILE BLOCKING)	-		<#55ffff>(1 BAR)</> _B^X
+   <#bbbbbb>Can push the enemy backwards while you block.</>
+NO PARRY	-		<#aaffff>(GROUND OR AIR)</><#55ffff>(1 BAR)</> _F^X
+   <#bbbbbb>A reversal option that makes you invincible if the enemy hits you.
+   Can be used again FOR FREE while the invincibility is active.</>
+RECORD SCRATCH (WHILE ATTACKING)		<#55ffff>(1 BAR/2 BARS ON BLOCK)</> ^X
+   <#bbbbbb>Can be used to instantly cancel most attacks.
+   Holding any direction during this will cause you to move that way.</>
+BURST (WHILE GETTING HIT)	-		^X+^A/^B/^C
+   <#bbbbbb>A large reversal that can be used while you're getting hit.</>
+PANIC BURST (WHILE GETTING HIT)	-		<#55ffff>(5 BARS)</> ^X+^A/^B/^C
+   <#bbbbbb>An extra burst that can be used in an emergency.</>
+   <#ff0000>Using this PERMANENTLY lowers your max meter
+   for the rest of the game.</>
+</>

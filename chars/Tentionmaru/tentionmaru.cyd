@@ -1,0 +1,407 @@
+[Statedef -1]
+
+[State -1, Combo condition Reset]
+type = VarSet
+trigger1 = 1
+var(1) = 0
+
+
+[State -1, Combo condition Check]
+type = VarSet
+trigger1 = ctrl
+trigger2 = hitdefattr = SCA, NA
+trigger2 = movecontact
+var(1) = 1
+;===========================================================================
+;===========================================================================
+;===========================================================================
+;=================================SYSTEMS==================================
+;===========================================================================
+;===========================================================================
+;===========================================================================
+;---------------------------------------------------------------------------
+
+[State -1,DJC]
+type = ChangeState
+value = 45
+triggerall = statetype=A
+triggerall = command = "holdupb"
+triggerall = command != "y"
+triggerall = command != "x"
+triggerall = command != "z"
+triggerall = command != "a"
+triggerall = command != "b"
+triggerall = command != "c"
+triggerall = stateno!=45 && stateno!=46 
+triggerall = stateno!=904 && stateno!=903 
+triggerall = map(airdash)=0
+trigger1 = ctrl && stateno!=45 && stateno!=46 && stateno!=50 && stateno!=40
+trigger2 = movecontact ;&& enemynear, movetype = H
+trigger2 = hitdefattr = A, NA
+trigger3 =  stateno=45 || stateno=46|| stateno=50
+trigger3 = vel y>.1
+
+;Aerial Dash
+[State -1, Airdash]
+type = ChangeState
+value =904
+triggerall = command = "aFF" || (command = "dash" && teammode !=tag) || (command = "dash" && teammode=tag && partner,stateno=5150)
+triggerall = command != "holdback" 
+trigger1 = statetype = A
+trigger1 = ctrl
+triggerall = stateno!=904
+triggerall = map(airdash)=0
+triggerall = (pos y<-30 && vel y < 0) || (vel y >=0)
+;Aerial Backdash
+[State -1, Air Backdash]
+type = ChangeState
+value =903
+triggerall = command = "aBB" || (command = "dash" && teammode !=tag) || (command = "dash" && teammode=tag && partner,stateno=5150)
+triggerall = command = "holdback" 
+trigger1 = statetype = A
+trigger1 = ctrl
+triggerall = stateno!=903
+triggerall = map(airdash)=0
+triggerall = (pos y<-30 && vel y < 0) || (vel y >=0)
+
+;---------------------------------------------------------------------------
+;Forward Dash
+[State -1, Run!!]
+type = ChangeState
+value = 100
+triggerall = stateno!=105
+triggerall = stateno!=100
+triggerall = command = "FF" || (command = "dash"&&teammode!=tag) || (command = "dash"&&teammode=tag && partner,stateno=5150)
+triggerall = command != "holdback"
+trigger1 = statetype != A
+trigger1 = ctrl
+trigger2 = stateno = 510 && time > 8
+;Backdash
+[State -1, Backdash]
+type = ChangeState
+value = 105
+triggerall = command = "BB" || (command = "dash"&&teammode!=tag) || (command = "dash"&&teammode=tag && partner,stateno=5150)
+triggerall = command = "holdback"
+trigger1 = statetype != A
+trigger1 = ctrl
+triggerall = stateno!=105
+trigger2 = stateno = 510 && time > 8
+[State -1, Grab]
+type = ChangeState
+value = 800
+triggerall=stateno!=40
+trigger1 = command = "throwtech"
+trigger1 = statetype != A
+trigger1 = ctrl
+
+
+;===========================================================================
+
+;---------------------------------------------------------------------------
+[State 5L]
+type = ChangeState
+value = 200
+triggerall = command = "x"
+triggerall = command !="holddown"
+triggerall = command != "QCF"&&command != "QCB"
+trigger1 = statetype != A
+trigger1 = ctrl
+trigger2 = stateno = 101 ; can be done while dashing
+trigger3 = stateno = 400 && movecontact && prevstateno !=200 && prevstateno !=201
+;---------------------------------------------------------------------------
+[State 5M]
+type = ChangeState
+value = 210
+triggerall = command = "y"
+triggerall = command !="holddown"
+triggerall = command != "QCF"&&command != "QCB"
+trigger1 = statetype != A
+trigger1 = ctrl
+trigger2 = stateno = 200 && movecontact
+trigger3 = stateno = 400 && movecontact
+trigger4 = stateno = 101
+trigger5 = stateno =410 && movecontact && prevstateno !=210 && prevstateno !=211 && prevstateno !=212 
+trigger6 = stateno = 201 && movecontact
+
+;---------------------------------------------------------------------------
+[State 5H]
+type = ChangeState
+value = 220
+triggerall = command = "z"
+triggerall = command !="holddown"
+triggerall = command != "QCF"&&command != "QCB"
+trigger1 = statetype != A
+trigger1 = ctrl
+trigger2 = stateno = 210 || stateno = 212
+trigger2 = movecontact
+trigger3 = stateno = 410 && movecontact
+trigger4 = stateno = 211 && movecontact
+trigger5 = stateno = 200 || stateno = 400 || stateno = 201
+trigger5 = movecontact
+trigger6 = stateno = 420 && movecontact && prevstateno !=220 
+;---------------------------------------------------------------------------
+[State 2L]
+type = ChangeState
+value = 400
+triggerall = command = "x"
+triggerall = command ="holddown"
+triggerall = command != "QCF"&&command != "QCB"
+triggerall = statetype != A
+trigger1 = ctrl
+trigger2 = stateno = 200 ||  stateno=400
+trigger2 = movecontact && prevstateno !=400 
+
+;---------------------------------------------------------------------------
+[State 2M]
+type = ChangeState
+value = 410
+triggerall = command = "y"
+triggerall = command ="holddown"
+triggerall = command != "QCF"&&command != "QCB"
+trigger1 = statetype != A
+trigger1 = ctrl
+trigger2 = stateno = 200 && movecontact
+trigger3 = stateno = 400 && movecontact
+trigger4 = stateno = 212 && movecontact
+trigger5 = stateno =210 && movecontact && prevstateno !=410 
+trigger6 = stateno = 201 && movecontact
+;---------------------------------------------------------------------------
+[State 2H]
+type = ChangeState
+value = 420
+triggerall = command = "z"
+triggerall = command ="holddown"&&command !="holdfwd"
+triggerall = command != "QCF"&&command != "QCB"
+trigger1 = statetype != A
+trigger1 = ctrl
+trigger2 = stateno = 410 && movecontact
+trigger3 = stateno = 210 || stateno = 211 || stateno = 212
+trigger3 = movecontact
+trigger4 = stateno = 200 || stateno = 400 || stateno = 201
+trigger4 = movecontact
+trigger5 = stateno = 220 && movecontact && prevstateno !=420 
+
+;---------------------------------------------------------------------------
+[State 3H]
+type = ChangeState
+value = 430
+triggerall = command = "z"
+triggerall = command ="holddown"&&command ="holdfwd"
+triggerall = command != "QCF"&&command != "QCB"
+trigger1 = statetype != A
+trigger1 = ctrl
+trigger2 = stateno = 410 && movecontact
+trigger3 = stateno = 210 || stateno = 211 || stateno = 212
+trigger3 = movecontact
+trigger4 = stateno = 200 || stateno = 400 || stateno = 201  || stateno = 420  || stateno = 220
+trigger4 = movecontact
+
+;---------------------------------------------------------------------------
+[State jL]
+type = ChangeState
+value = 600
+triggerall = command = "buffer_x" 
+trigger1 = statetype = A
+trigger1 = ctrl
+trigger2 = (stateno = 610) || (stateno = 630) || (stateno = 620) || (stateno = 640)
+trigger2 = movehit
+;---------------------------------------------------------------------------
+[State jM]
+type = ChangeState
+value = 610
+triggerall = command = "buffer_y"
+trigger1 = statetype = A
+trigger1 = ctrl
+trigger2 = stateno = 600 && movecontact
+trigger3 = (stateno = 620) || (stateno = 640)
+trigger3 = movehit
+trigger4 = (stateno = 630) && (prevstateno != 610)
+trigger4 = movecontact
+;---------------------------------------------------------------------------
+[State jH]
+type = ChangeState
+value = 620
+triggerall = command = "buffer_z"
+trigger1 = statetype = A
+trigger1 = ctrl
+trigger2 = (stateno = 600) || (stateno = 610) || (stateno = 630)
+trigger2 = movecontact
+trigger3 = (stateno = 640) && (prevstateno != 620)
+trigger3 = movecontact
+;---------------------------------------------------------------------------
+[State 5S]
+type = ChangeState
+value = 1000
+triggerall = command = "b"
+triggerall = command != "EX"
+triggerall = command != "QCBs"
+trigger1 = command !="holddown"
+trigger1 = command !="holdfwd"
+triggerall = command !="holdback"
+triggerall = var(1)
+trigger1 = statetype != A
+trigger2 = statetype = A&&map(Imagination)>=800
+;---------------------------------------------------------------------------
+[State EX 5S]
+type = ChangeState
+value = 1100
+triggerall=map(EXLimiter1)=0
+triggerall = command = "EX"
+triggerall = command != "QCBs"
+triggerall = power>=1000
+trigger1= command !="holddown"
+trigger1 = command !="holdfwd"
+triggerall = command !="holdback"
+triggerall = var(1)
+trigger1 = statetype != A
+trigger2 = statetype = A&&map(Imagination)>=800
+;---------------------------------------------------------------------------
+[State 4S]
+type = ChangeState
+value = 1200
+triggerall = command = "b"
+triggerall = command != "QCBs"
+triggerall = command != "EX"
+triggerall = command ="holdback"
+triggerall = command !="holddown"
+triggerall = statetype != A
+trigger1 = var(1)
+
+;---------------------------------------------------------------------------
+[State EX 4S]
+type = ChangeState
+value = 1300
+triggerall=map(EXLimiter2)=0
+triggerall = command = "EX"
+triggerall = command != "QCBs"
+triggerall = power>=1000
+triggerall = stateno!=1300&&prevstateno!=1300
+triggerall = command !="holddown"
+triggerall = command ="holdback"
+triggerall = statetype != A
+trigger1 = var(1)
+
+;---------------------------------------------------------------------------
+[State j4S]
+type = ChangeState
+value = 1400
+triggerall = command = "b"
+triggerall = command != "QCBs"
+triggerall = command != "EX"
+triggerall = command ="holdback"
+triggerall = statetype = A
+trigger1 = var(1)
+
+;---------------------------------------------------------------------------
+[State EX j4S]
+type = ChangeState
+value = 1500
+triggerall = power>=1000
+triggerall=map(EXLimiter3)=0
+triggerall = command = "EX"
+triggerall = command != "QCBs"
+triggerall = command ="holdback"
+triggerall = statetype = A
+trigger1 = var(1)
+
+;---------------------------------------------------------------------------
+[State 2S]
+type = ChangeState
+value = 1600
+triggerall = command = "b"
+triggerall = command != "EX"
+triggerall = command != "QCBs"
+triggerall = command ="holddown"
+triggerall = statetype != A
+trigger1 = var(1)
+;---------------------------------------------------------------------------
+[State EX 2S]
+type = ChangeState
+value = 1700
+triggerall=map(EXLimiter4)=0
+triggerall = power>=1000
+triggerall = command = "EX"
+triggerall = command != "QCBs"
+triggerall = command ="holddown"
+triggerall = statetype != A
+trigger1 = var(1)
+
+;---------------------------------------------------------------------------
+[State 5R]
+type = ChangeState
+value = 1800
+triggerall = command = "c"
+triggerall = command != "EX"
+triggerall = command != "QCBs"
+triggerall = command !="holddown"
+triggerall = statetype != A
+trigger1 = var(1)
+
+;---------------------------------------------------------------------------
+[State 2R]
+type = ChangeState
+value = 1900
+triggerall=map(Imagination)>=600
+triggerall = command = "c"
+triggerall = command != "EX"
+triggerall = command != "QCBs"
+triggerall = command ="holddown"
+triggerall = statetype != A
+trigger1 = var(1)
+
+;---------------------------------------------------------------------------
+[State 6S]
+type = ChangeState
+value = 2000
+triggerall = command = "b"
+triggerall = command != "EX"
+triggerall = command != "QCBs"
+triggerall = command ="holdfwd"
+triggerall = command !="holddown"
+triggerall = statetype != A
+trigger1 = var(1)
+;---------------------------------------------------------------------------
+[State EX 6S]
+type = ChangeState
+value = 2050
+triggerall=map(EXLimiter5)=0
+triggerall = power>=1000
+triggerall = command = "EX"
+triggerall = command != "QCBs"
+triggerall = command ="holdfwd"
+triggerall = command !="holddown"
+triggerall = statetype != A
+trigger1 = var(1)
+
+;---------------------------------------------------------------------------
+[State Super Claw]
+type = ChangeState
+value = 3000
+triggerall = power>=2000
+triggerall = command = "QCF"
+trigger1 = var(1)
+trigger2 = hitdefattr=SCA,NA,SA,ST
+trigger2 = movehit
+
+;---------------------------------------------------------------------------
+[State Install]
+type = ChangeState
+value = 3100
+triggerall = power>=2000
+triggerall = map(Install)=0&&map(Imagination)<=200
+triggerall = command = "QCBs"
+triggerall = statetype != A
+trigger1 = var(1)
+trigger2 = hitdefattr=SCA,NA,SA,ST
+trigger2 = movehit
+
+;---------------------------------------------------------------------------
+[State Super Claw]
+type = ChangeState
+value = 3500
+triggerall = map(Imagination)>=800
+triggerall = power>=2000
+triggerall = command = "QCB"
+trigger1 = var(1)
+trigger2 = hitdefattr=SCA,NA,SA,ST
+trigger2 = movehit

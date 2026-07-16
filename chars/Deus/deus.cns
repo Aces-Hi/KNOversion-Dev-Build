@@ -3022,8 +3022,7 @@ persistent = 1
 [State 0, VarSet]
 type = Mapset
 triggerall = palno=12
-trigger1 =command = "hold_start"
-triggerall = StageVar(info.name) = "From the Other Side"
+trigger1 = StageVar(info.name) = "From the Other Side"
 trigger1 =roundno=1&&roundstate=0
 map = "december"
 value = 1

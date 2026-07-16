@@ -48,6 +48,39 @@ unhittable = 1
 ;ignorehitpause = 
 ;persistent = 
 
+[State 0, Explod]
+type = Explod
+trigger1 = animelem=4&&stagefrontedgedist > 100 &&numexplod(3001)=0
+anim = 3001
+ID = 3001
+pos = -20,0
+postype = p1  ;p2,front,back,left,right
+bindtime = 0
+removetime = -2
+scale = .84,.84
+sprpriority = 3
+ownpal = 1
+removeongethit = 0
+ignorehitpause = 1
+persistent=0
+supermovetime=999
+
+[State 0, Explod]
+type = Explod
+trigger1 = animelem=4&&stagefrontedgedist <= 100 &&numexplod(3001)=0
+anim = 3001
+ID = 3001
+pos = -80 ,0
+postype = p1  ;p2,front,back,left,right
+bindtime = 0
+removetime = -2
+scale = .84,.84
+sprpriority = 3
+ownpal = 1
+removeongethit = 0
+ignorehitpause = 1
+persistent=0
+
 [State 0, VarAdd]
 type = MapAdd
 trigger1 =movehit
@@ -195,6 +228,41 @@ darken = 1
 p2defmul = 1
 unhittable = 1
 
+[State 0, Explod]
+type = Explod
+trigger1 = animelem=5&&stagefrontedgedist > 100 &&numexplod(3002)=0
+anim = 3001
+ID = 3002
+pos = 200,-50
+postype = p1  ;p2,front,back,left,right
+bindtime = 0
+removetime = -2
+scale = .84,.84
+sprpriority = 3
+ownpal = 1
+removeongethit = 0
+ignorehitpause = 1
+persistent=1
+facing=-1
+
+[State 0, Explod]
+type = Explod
+trigger1 = animelem=5&&stagefrontedgedist <= 100 &&numexplod(3002)=0
+anim = 3001
+ID = 3002
+pos = 170,-50
+postype = p1  ;p2,front,back,left,right
+bindtime = 0
+removetime = -2
+scale = .84,.84
+sprpriority = 3
+ownpal = 1
+removeongethit = 0
+ignorehitpause = 1
+persistent=1
+facing=-1
+
+
 [State 200, 1]
 type = HitDef 
 p2facing = 1
@@ -257,11 +325,11 @@ persistent = 1
 [State 0, SuperPause]
 type = SuperPause
 trigger1 = time=0
-time = 67
+time = 77
 anim = -1
 sound = 20,0
 pos = 0,-50
-movetime = 67
+movetime = 77
 darken = 1
 p2defmul = 1
 unhittable = 1
@@ -281,41 +349,31 @@ value = 0
 ignorehitpause = 0
 [State 0, Zoom]
 type = zoom
-triggerall=map(nozoom)=0
-trigger1=backedgebodydist<=20
-scale = 1.2
-lag = 0.8
+trigger1=map(nozoom)=0
+scale = 1.3
+lag = .94
 stagebound = 1
 camerabound = 0
-pos =-50*facing,0
+pos =-30*facing,-5
 ignorehitpause=1
-[State 0, Zoom]
-type = zoom
-triggerall=map(nozoom)=0
-trigger1=frontedgebodydist<=20
-scale = 1.2
-lag = 0.8
-stagebound = 1
-camerabound = 0
-pos =50*facing,0
-ignorehitpause=1
-[State 0, Zoom]
-type = zoom
-triggerall=map(nozoom)=0
-trigger1=frontedgebodydist>20&&backedgebodydist>20
-trigger1=1
-scale = 1.2
-lag = 0.8
-stagebound = 1
-camerabound = 0
-pos =10*facing,0
-ignorehitpause=1
+
 [State 0]
 type = MapAdd
-trigger1 = time=60
+trigger1 = time=76
 map = "nozoom"
 value = 1
 ignorehitpause = 0
+
+[State 0]
+type = Camera
+trigger1 = time=0
+view = follow
+FollowID = 1
+[State 0]
+type = Camera
+trigger1 = time>=76
+view = fighting
+FollowID = 1
 
 ;==============================================================
 
@@ -411,6 +469,7 @@ trigger1 =movehit&&anim=3500
 x = 15
 ignorehitpause = 1
 persistent=0
+
 
 [State 200, 1]
 type = HitDef 
@@ -587,6 +646,53 @@ pos = p2dist x,-40
 ignorehitpause = 1
 persistent = 0
 
+[State 0, Explod]
+type = Explod
+trigger1 = anim=3505&&animelem=5
+anim = 3507
+ID = 3507
+pos = -20,0
+postype = p1  ;p2,front,back,left,right
+bindtime = 1
+removetime = -2
+scale = .84,.84
+sprpriority = 3
+ownpal = 1
+removeongethit = 0
+ignorehitpause = 1
+persistent=1
+supermovetime=999
+[State 0, Explod]
+type = Explod
+trigger1 = anim=3505&&animelem=10
+anim = 3508
+ID = 3508
+pos = -50,0
+postype = p1  ;p2,front,back,left,right
+bindtime = 1
+removetime = -2
+scale = .84,.84
+sprpriority = 3
+ownpal = 1
+removeongethit = 0
+ignorehitpause = 1
+persistent=1
+[State 0, Explod]
+type = Explod
+trigger1 = anim=3506&&animelem=9
+anim = 3509
+ID = 3509
+pos = -50,20
+postype = p1  ;p2,front,back,left,right
+bindtime = 1
+removetime = -2
+scale = .84,.84
+sprpriority = 3
+ownpal = 1
+removeongethit = 0
+ignorehitpause = 1
+persistent=1
+
 [State 0]
 type = HitDef 
 p2facing = 1
@@ -761,7 +867,7 @@ scale = 1.5
 lag = 0.8
 stagebound = 1
 camerabound = 0
-pos =0,-10
+pos =30*facing,-10
 ignorehitpause=1
 [State 0]
 type = MapAdd

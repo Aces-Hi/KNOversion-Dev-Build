@@ -377,6 +377,12 @@ FollowID = 1
 
 ;==============================================================
 
+[State 0, RemapPal]
+type = RemapPal
+trigger1 = animelem=11 && palno=8
+source = 1,1
+dest = 2,palno
+
 [State 210, 5]
 type = ChangeState
 trigger1 = AnimTime = 0

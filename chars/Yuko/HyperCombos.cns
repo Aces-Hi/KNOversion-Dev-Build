@@ -766,9 +766,7 @@ p2stateno = 30000
 
 [State 0, VelSet]
 type = MapAdd
-trigger1 = time=0
-trigger2 = anim=3506&&animelemtime(1)=1
-trigger3 = anim=3505&&animelemtime(10)=0
+trigger1 = anim=3506&&animelemtime(9)=0
 map="Imagination"
 value=-200
 persistent=1
@@ -776,7 +774,7 @@ ignorehitpause=1
 
 [State 0, ChangeAnim]
 type = ChangeAnim
-trigger1 = animelem=8&&anim=3505&&map(Imagination)>=200
+trigger1 = animelem=8&&anim=3505&&map(Imagination)>=400
 value = 3506
 
 [State 0, PosAdd]

@@ -30,7 +30,7 @@ persistent = 0
 type = VarAdd
 trigger1 = movehit=1
 fv =13     ;fv = 
-value = 6
+value = 3
 persistent = 0
 ;==================================
 

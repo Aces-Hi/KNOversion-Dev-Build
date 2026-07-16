@@ -347,6 +347,7 @@ trigger1 = time=0
 map = "nozoom"
 value = 0
 ignorehitpause = 0
+
 [State 0, Zoom]
 type = zoom
 trigger1=map(nozoom)=0
@@ -862,8 +863,23 @@ trigger1 = time=0
 map = "nozoom"
 value = 0
 ignorehitpause = 0
+
 [State 0, Zoom]
 type = zoom
+triggerall = anim=3505
+triggerall=map(nozoom)=0
+trigger1 = enemy,HitShakeOver = 0
+trigger1 = movehit&&animelemtime(9)>=0&&animelemtime(11)<0
+scale = 1.5
+lag = 0.8
+stagebound = 1
+camerabound = 0
+pos =0*facing,-10
+ignorehitpause=1
+
+[State 0, Zoom]
+type = zoom
+triggerall = anim=3506
 triggerall=map(nozoom)=0
 trigger1 = enemy,HitShakeOver = 0
 trigger1 = movehit&&animelemtime(9)>=0&&animelemtime(11)<0
@@ -873,6 +889,7 @@ stagebound = 1
 camerabound = 0
 pos =30*facing,-10
 ignorehitpause=1
+
 [State 0]
 type = MapAdd
 trigger1 = animelem=11

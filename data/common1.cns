@@ -10328,7 +10328,7 @@ triggerall = name="Yuko"
 triggerall=map(afterparry)=0
 triggerall=map(counterdamage)=0
 trigger1 = map(Imagination)>200
-trigger2 = stateno=[3500,3599]
+trigger2 = stateno=[3500,3599]||stateno=1900
 value = 1
 ignorehitpause = 1
 persistent = 1
@@ -10338,7 +10338,7 @@ triggerall = name="Yuko"
 triggerall=map(afterparry)=0
 triggerall=map(counterdamage)
 trigger1 = map(Imagination)>200
-trigger2 = stateno=[3500,3599]
+trigger2 = stateno=[3500,3599]||stateno=1900
 value = 1.2
 ignorehitpause = 1
 persistent = 1
@@ -10348,7 +10348,7 @@ type = AttackMulSet
 triggerall = name="Yuko"
 trigger1=map(afterparry)=0
 trigger1=map(counterdamage)=0
-trigger1 = map(Imagination)<=200&&stateno!=[3500,3599]
+trigger1 = map(Imagination)<=200&&stateno!=[3500,3599]&&stateno!=1900
 value = .7
 ignorehitpause = 1
 persistent = 1
@@ -10357,7 +10357,7 @@ type = AttackMulSet
 triggerall = name="Yuko"
 trigger1=map(afterparry)=0
 trigger1=map(counterdamage)
-trigger1 = map(Imagination)<=200&&stateno!=[3500,3599]
+trigger1 = map(Imagination)<=200&&stateno!=[3500,3599]&&stateno!=1900
 value = .9
 ignorehitpause = 1
 persistent = 1

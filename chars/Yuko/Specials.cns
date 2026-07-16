@@ -2375,7 +2375,15 @@ persistent=1
 
 [State 0, VarAdd]
 type = MapAdd
-trigger1 = time=0
+trigger1 = time=0&&combocount
+map = "Imagination"
+value = -400
+ignorehitpause=1
+persistent=0
+
+[State 0, VarAdd]
+type = MapAdd
+trigger1 = time=0&&combocount=0
 map = "Imagination"
 value = -600
 ignorehitpause=1
@@ -2478,11 +2486,11 @@ trigger1 = time%2=1&&map(mburst)<=1&map(mburstreversal)=0
 attr = A, SP
 animtype  = up
 air.animtype = up
-damage = ceil(cond(fvar(11) * 22 < 2, 2, fvar(11) * 22)), 0
+damage = ceil(cond(fvar(11) * 20 < 2, 2, fvar(11) * 20)), 5
 hitflag = MAFD
 guardflag = MA
 pausetime = 2,16
-guard.pausetime=2,2
+guard.pausetime=2,8
 sparkno = 2
 sparkxy = -15,-45
 guardsound =S300, 2
@@ -2518,11 +2526,11 @@ trigger1 = map(mburst)>1&&map(mburstreversal)=0
 attr = A, SP
 animtype  = up
 air.animtype = up
-damage = ceil(cond(fvar(11) * 22 < 2, 2, fvar(11) * 22)), 0
+damage = ceil(cond(fvar(11) * 20 < 2, 2, fvar(11) * 20)), 5
 hitflag = MAFD
 guardflag = MA
 pausetime = 2,16
-guard.pausetime=2,2
+guard.pausetime=2,8
 sparkno = 2
 sparkxy = -15,-45
 guardsound =S300, 2
@@ -2552,16 +2560,15 @@ p2facing=1
 type = HitDef 
 p2facing = 1
 triggerall = time%2=1
-trigger1 = map(mburst)>1
-trigger2 = map(mburstreversal)
+trigger1 = map(mburstreversal)
 attr = A, SP
 animtype  = up
 air.animtype = up
-damage = ceil(cond(fvar(11) * 22 < 2, 2, fvar(11) * 22)), 0
+damage = ceil(cond(fvar(11) * 30 < 2, 2, fvar(11) * 30)), 5
 hitflag = MAFD
 guardflag = MA
 pausetime = 2,16
-guard.pausetime=2,2
+guard.pausetime=2,8
 sparkno = 2
 sparkxy = -15,-45
 guardsound =S300, 2
@@ -2570,8 +2577,8 @@ ground.slidetime = 12
 ground.hittime  =15
 air.hittime  = 15
 down.hittime = 15
-ground.velocity = -10,-1
-air.velocity = -10,5
+ground.velocity = -16,-2
+air.velocity = -16,6
 envshake.time = 12
 envshake.freq = 90
 envshake.ampl = 3

@@ -341,13 +341,14 @@ trigger1 = var(1)
 [State 2R]
 type = ChangeState
 value = 1900
-triggerall=map(Imagination)>=600
+trigger1=map(Imagination)>=600&&combocount=0
+trigger2=map(Imagination)>=400&&combocount
 triggerall = command = "c"
 triggerall = command != "EX"
 triggerall = command != "QCBs"
 triggerall = command ="holddown"
 triggerall = statetype != A
-trigger1 = var(1)
+triggerall = var(1)
 
 ;---------------------------------------------------------------------------
 [State 6S]

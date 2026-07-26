@@ -557,6 +557,12 @@ ctrl = 0
 anim = 3015
 sprpriority = 2
 
+[State 0, PosSet]
+type = PosSet
+trigger1 = combocount &&time=0
+y = enemy,pos y
+ignorehitpause = 1
+
 [State 0, NotHitBy]
 type = NotHitBy
 triggerall=prevstateno!=3013

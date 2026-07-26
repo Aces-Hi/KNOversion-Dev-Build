@@ -5718,8 +5718,17 @@ value = 3101,3
 type = VarAdd
 trigger1 = movehit
 trigger1=animelem=85
+fv =25     ;fv = 
+value =10
+ignorehitpause=1
+persistent=0
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = movehit
+trigger1=animelem=85
 fv =13     ;fv = 
-value = 5
+value =10
 ignorehitpause=1
 persistent=0
 

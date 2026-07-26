@@ -51,7 +51,7 @@ _D	_D		_D
 RAGE CHARGE	-		(HOLD)^Z
    <#bbbbbb>Angous will gain <#55ffff>Meter<#bbbbbb> as long as he holds ^Z.</>
 FADE	-		(CAN BE HELD) _F^Z
-   <#bbbbbb>A movement option that can pass through enemies.</>
+   <#bbbbbb>A briefly invincible movement option that can pass through enemies.</>
 _!OUT	-		(CAN BE HELD) ^A
 _!IN	-		(CAN BE HELD) ^B
 _!THROUGH	-		(CAN BE HELD) ^C

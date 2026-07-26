@@ -1987,6 +1987,8 @@ elem = cond(combocount,2,0)
 ;ignorehitpause = 
 ;persistent = 
 
+
+
 [State 0, VelSet]
 type = VelSet
 trigger1=prevstateno!=100
@@ -2598,6 +2600,13 @@ map =  "truecounter"
 value = 0
 ignorehitpause = 1
 persistent = 1
+
+[State 0, ChangeAnim]
+type = ChangeState
+trigger1=!movehit
+trigger1 = animelem=9
+value = 1037  
+ctrl=0
 
 [State Sahkive Voices]
 type = PlaySnd
@@ -3229,6 +3238,13 @@ value = 1
 ignorehitpause=1
 persistent=1
 
+[State 0, ChangeAnim]
+type = ChangeState
+trigger1=!movehit
+trigger1 = animelem=9
+value = 1037  
+ctrl=0
+
 [State Sahkive Voices]
 type = PlaySnd
 trigger1 =  animelem = 1
@@ -3574,6 +3590,22 @@ p1sprpriority = 0
 [State 0, ChangeState]
 type = ChangeState
 trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------------------
+;Whiff 2S
+[Statedef 1037]
+type    = S                      ;State-type: S-stand, C-crouch, A-air, L-liedown
+movetype= A                      ;Move-type: A-attack, I-idle, H-gethit
+physics = S                      ;Physics: S-stand, C-crouch, A-air
+juggle  = 0                      ;Number of air juggle points move takes                   ;Set velocity (x,y) (Def: no change)
+ctrl = 0                         ;Set ctrl (Def: no change)
+anim = 1037                       ;Change animation (Def: no change)=
+
+[State 200, 3]
+type = ChangeState
+trigger1 = AnimTime = 0
 value = 0
 ctrl = 1
 ;----------------------

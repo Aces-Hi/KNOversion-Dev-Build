@@ -122,7 +122,7 @@ volumescale=150
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1
+value = 1.5
 
 [State 200, VarAdd]
 type = VarAdd
@@ -825,7 +825,7 @@ volumescale=150
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1
+value = 1.5
 
 [State 0, VarAdd]
 type = VarAdd
@@ -912,13 +912,13 @@ value = .5
 [State 0, PosAdd]
 type = PosAdd
 trigger1 = animelemno(0) = [4,7]
-x = 2
+x = 1
 
 [State 0, NotHitBy]
 type = NotHitBy
 triggerall=enemy,stateno!=900
 triggerall=enemy,stateno!=901
-trigger1 = time>=4
+trigger1 = time>=3
 trigger1 = time<=18
 value = A
 time = 1
@@ -1926,7 +1926,7 @@ persistent = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1
+value = 1.5
 
 [State 200, 2]
 type = PlaySnd
@@ -1939,7 +1939,7 @@ p2facing = 1
 trigger1 = Time = 0
 attr = A, NA
 air.animtype = back
-damage = ceil(cond(fvar(11) *50 < 4, 4, fvar(11) * 50)), 0
+damage = ceil(cond(fvar(11) *40 < 4, 4, fvar(11) * 40)), 0
 guardflag = HA
 hitflag = MAFD
 
@@ -2044,7 +2044,7 @@ persistent = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1
+value = 1.5
 
 [State Sahkive Voices]
 type = PlaySnd
@@ -2071,7 +2071,7 @@ trigger1 = !movecontact&&map(kicklaunch)=0
 attr = A, NA
 animtype  = Medium
 air.animtype = back
-damage = ceil(cond(fvar(11) *70 < 5, 5, fvar(11) * 70)), 0
+damage = ceil(cond(fvar(11) *60 < 5, 5, fvar(11) * 60)), 0
 hitflag = MAFD
 guardflag = HA
 pausetime = 12,12
@@ -2112,7 +2112,7 @@ trigger1 = !movecontact&&map(kicklaunch)
 attr = A, NA
 animtype  = Medium
 air.animtype = back
-damage = ceil(cond(fvar(11) *70 < 5, 5, fvar(11) * 70)), 0
+damage = ceil(cond(fvar(11) *60 < 5, 5, fvar(11) * 60)), 0
 hitflag = MAFD
 guardflag = HA
 pausetime = 12,12
@@ -2231,7 +2231,7 @@ persistent = 0
 type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
-value = 1
+value = 1.5
 
 
 
@@ -2240,7 +2240,7 @@ type = hitdef
 p2facing = 1
 trigger1 = !movecontact
 attr = A, NA
-damage = ceil(cond(fvar(11) *100 < 10, 10, fvar(11) * 100)), 0
+damage = ceil(cond(fvar(11) *90 < 10, 10, fvar(11) * 90)), 0
 animtype = hard
 hitflag = MAF
 guardflag = HA

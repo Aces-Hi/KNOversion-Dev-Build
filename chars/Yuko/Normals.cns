@@ -583,8 +583,8 @@ persistent = 0
 type = NotHitBy
 triggerall=enemynear,stateno!=900
 triggerall=enemynear,stateno!=901
-trigger1 = time>=4
-trigger1 = animelemtime(13)<0
+trigger1 = time>=3
+trigger1 = animelemtime(7)<0
 value = A
 time = 1
 ignorehitpause = 1
@@ -715,8 +715,8 @@ guardsound =S300, 2
 ground.type = high
 ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *20 < 9, 9, fvar(15) * 20))
-air.hittime  = ceil(cond(fvar(15) *30 < 13, 13, fvar(15) * 30))
-down.hittime = ceil(cond(fvar(15) *30 < 13, 13, fvar(15) * 30))
+air.hittime  = ceil(cond(fvar(15) *40 < 13, 13, fvar(15) * 40))
+down.hittime = ceil(cond(fvar(15) *40 < 13, 13, fvar(15) * 40))
 ground.velocity = -4,-4
 air.velocity = -4,-3
 envshake.time = 12
@@ -1077,7 +1077,7 @@ value = .5
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time=0
-value = 800,0
+value = 0,0
 volumescale = 150
 persistent=0
 

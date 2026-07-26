@@ -1,4 +1,4 @@
-eqzzzecQqeqeeeeqeqqqeqcc.zeecqzzccqeze1aaazczzeeeeeeeeeqeeeqeeqqeqqqqqqeeeeeeeeeeeecqeeceqeeeeqeqqeqqqqqeeqqeeeeeqeeqqqqqqqeqeeccqqqqqqzczczqqqzzecqaqcezqqzqsssqezecqeeeeqeeqeeeqccqeeeeqeeccadazcddzqqeqeeqqzzzzeczczzccqqeqqzzzzzsseqqeeqqqqqeeezezqqzqeqqqeeeeee3eqeqqqezzzeqeczzcczezqeqeeeqeeeqeeqjjkkkkkkkkkkkkkk31011,,klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
+eqqceqzzzecQqeqeeeeqeqqqeqcc.zeecqzzccqeze1aaazczzeeeeeeeeeqeeeqeeqqeqqqqqqeeeeeeeeeeeecqeeceqeeeeqeqqeqqqqqeeqqeeeeeqeeqqqqqqqeqeeccqqqqqqzczczqqqzzecqaqcezqqzqsssqezecqeeeeqeeqeeeqccqeeeeqeeccadazcddzqqeqeeqqzzzzeczczzccqqeqqzzzzzsseqqeeqqqqqeeezezqqzqeqqqeeeeee3eqeqqqezzzeqeczzcczezqeqeeeqeeeqeeqjjkkkkkkkkkkkkkk31011,,klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
 ..,......,,,...j,,,./..kl,,----..,,.,,,,,,,,,,,.; KFM's animation data
 ; see docs/air.txt for more information
 
@@ -142,6 +142,14 @@ Clsn2Default: 1
   Clsn2[0] = -28, -111, 26, -1
 40,0, 0,11, 2
 
+; Tag In
+[Begin Action 41]
+Clsn2Default: 1
+  Clsn2[0] = -34, -111, 34, -21
+40,5, 0,0, 7
+40,6, 0,0, 7
+40,7, 0,0, 7
+
 ; F Jump Up
 [Begin Action 42]
 Clsn2Default: 1
@@ -167,14 +175,6 @@ Clsn2Default: 1
 
 ; Falling
 [Begin Action 45]
-Clsn2Default: 1
-  Clsn2[0] = -34, -111, 34, -21
-40,5, 0,0, 7
-40,6, 0,0, 7
-40,7, 0,0, 7
-
-; Tag In
-[Begin Action 41]
 Clsn2Default: 1
   Clsn2[0] = -34, -111, 34, -21
 40,5, 0,0, 7
@@ -214,6 +214,14 @@ LoopStart
 100,4, 0,12, 4
 100,5, 0,12, 4
 
+; Run Stop
+[Begin Action 101]
+Clsn2Default: 1
+  Clsn2[0] = -28, -111, 26, -1
+100,6, 0,0, 4
+100,7, 0,0, 4
+100,8, 0,0, 4
+
 ;Tag Out
 [Begin Action 102]
 Clsn2Default: 1
@@ -229,14 +237,6 @@ LoopStart
 100,3, 0,13, 4
 100,4, 0,12, 4
 100,5, 0,12, 4
-
-; Run Stop
-[Begin Action 101]
-Clsn2Default: 1
-  Clsn2[0] = -28, -111, 26, -1
-100,6, 0,0, 4
-100,7, 0,0, 4
-100,8, 0,0, 4
 
 ; Run Turn
 [Begin Action 103]
@@ -2070,6 +2070,15 @@ LoopStart
 167,15, 0,-3, 6
 167,15, 0,-1, 6
 167,15, 0,0, 6
+
+; Special Outro 17
+[Begin Action 3067]
+LoopStart
+168,16, 0,0, 2, , AS100D256
+168,16, 0,0, 2, , AS200D256
+168,16, 0,0, 5
+LoopStart
+167,16, 0,0, 2
 
 ; Super Outro
 [Begin Action 3100]

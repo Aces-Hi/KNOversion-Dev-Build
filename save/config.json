@@ -53,9 +53,7 @@
   "GameFramerate": 60,
   "InputButtonAssistWindow": 1,
   "InputSOCDResolution": 4,
-  "IP": {
-    "gaoqi": "26.178.149.14"
-  },
+  "IP": {},
   "LifeMul": 100,
   "ListenPort": "7500",
   "LoseSimul": true,

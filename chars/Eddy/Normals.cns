@@ -1720,7 +1720,7 @@ value = 30
 type = NotHitBy
 triggerall=enemynear,stateno!=900
 triggerall=enemynear,stateno!=901
-trigger1 = time>=3
+trigger1 = time>=4
 trigger1 = time<=11
 value = A
 time = 1

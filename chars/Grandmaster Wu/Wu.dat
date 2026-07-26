@@ -28,7 +28,7 @@ ENERGY BALL	-		^Y
 TATSU KATA	-		<#aaffff>(GROUND OR AIR)</> _F^Y
 _!TATSU KATA 2	-		<#65b5ff>(AIR ONLY)</> ^Y
 PALM	-		_B^Y
-RISING WU	-		(CAN BE HELD) _D^Y
+RISING WU	-		_D^Y
 
 	<#a454ff>CHARGED SPECIAL MOVES</>
 SPIRIT BALL	-		^Y
@@ -40,7 +40,7 @@ _!TATSU KATA 2	-		<#65b5ff>(AIR ONLY)</> ^Y
    _!TATSU KATA 3	-		<#65b5ff>(AIR ONLY)</> ^Y
       _!TATSU KATA 4	-		<#65b5ff>(AIR ONLY)</> ^Y
 FORCE PALM	-		_B^Y
-RISING MASTER	-		(CAN BE HELD) _D^Y
+RISING MASTER	-		_D^Y
    <#bbbbbb>An anti-air/anti-projectile upward kick.</>
 
 
@@ -77,7 +77,7 @@ _EX SPIRIT BALL	-		<#55ffff>(1 BAR)</> ^Y
 _EX TATSU KATA	-		<#aaffff>(GROUND OR AIR)<#55ffff>(1 BAR)</> _F^Y
 _!TATSU KATA EXTENSION	-		<#65b5ff>(AIR ONLY)</> ^Y
 _EX FORCE PALM	-		<#55ffff>(1 BAR)</> _B^Y
-_EX RISING MASTER	-		(CAN BE HELD) <#55ffff>(1 BAR)</> _D^Y
+_EX RISING MASTER	-		<#55ffff>(1 BAR)</> _D^Y
    <#bbbbbb>An invincible upward kick.</>
 
 

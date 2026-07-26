@@ -84,7 +84,7 @@ trigger3 = stateno = 400 && movecontact && prevstateno !=200 && prevstateno !=20
 [State 5LL]
 type = ChangeState
 value = 201
-triggerall = (command = "x"&&combocount) || (command = "nobuffer_x"&&!combocount)
+triggerall = command = "x"
 triggerall = command !="holddown"
 triggerall = command != "QCF"&&command != "QCB"
 triggerall = statetype != A
@@ -96,7 +96,7 @@ trigger2 = animelemtime(3)>=0
 [State 5LLL]
 type = ChangeState
 value = 202
-triggerall = (command = "x"&&combocount) || (command = "nobuffer_x"&&!combocount)
+triggerall = command = "x"
 triggerall = command !="holddown"
 triggerall = command != "QCF"&&command != "QCB"
 triggerall = statetype != A

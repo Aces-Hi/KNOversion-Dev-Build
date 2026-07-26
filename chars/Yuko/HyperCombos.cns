@@ -351,24 +351,12 @@ ignorehitpause = 0
 [State 0, Zoom]
 type = zoom
 trigger1=map(nozoom)=0
-triggerall = stagefrontedgedist >50
 scale = 1.3
 lag = .94
 stagebound = 1
 camerabound = 0
 pos =-30*facing,-5
 ignorehitpause=1
-[State 0, Zoom]
-type = zoom
-trigger1=map(nozoom)=0
-triggerall = stagefrontedgedist <=50
-scale = 1.3
-lag = .94
-stagebound = 1
-camerabound = 0
-pos =10,-5
-ignorehitpause=1
-
 
 [State 0]
 type = MapAdd
@@ -453,22 +441,6 @@ unhittable = 1
 ;ignorehitpause = 
 ;persistent = 
 
-[State 0, Explod]
-type = Explod
-trigger1 = anim=3500&&animelem=5
-trigger2 = anim=3501&&animelem=2
-anim = 3510
-ID = 3510
-pos = 175,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 0
-removetime = -2
-scale = .84,.84
-sprpriority = 5
-ownpal = 1
-ignorehitpause = 1
 
 [State 0, VelSet]
 type = VelSet
@@ -793,19 +765,18 @@ forcenofall = 1
 getpower = 0
 p2stateno = 30000
 
+[State 0, VelSet]
+type = MapAdd
+trigger1 = anim=3506&&animelemtime(9)=0
+map="Imagination"
+value=-200
+persistent=1
+ignorehitpause=1
+
 [State 0, ChangeAnim]
 type = ChangeAnim
 trigger1 = animelem=8&&anim=3505&&map(Imagination)>=400
 value = 3506
-
-[State 0, VelSet]
-type = MapSet
-trigger1 = anim=3505&&animelemtime(10)=0
-trigger2 = anim=3506&&animelemtime(9)=0
-map="Imagination"
-value=200
-persistent=1
-ignorehitpause=1
 
 [State 0, PosAdd]
 type = PosAdd

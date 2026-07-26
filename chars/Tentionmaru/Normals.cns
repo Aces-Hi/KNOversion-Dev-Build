@@ -583,7 +583,7 @@ persistent = 0
 type = NotHitBy
 triggerall=enemynear,stateno!=900
 triggerall=enemynear,stateno!=901
-trigger1 = time>=3
+trigger1 = time>=4
 trigger1 = animelemtime(13)<0
 value = A
 time = 1

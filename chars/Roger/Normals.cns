@@ -1317,7 +1317,7 @@ lowpriority=1
 type = NotHitBy
 triggerall=enemynear,stateno!=900
 triggerall=enemynear,stateno!=901
-trigger1 = time>=3
+trigger1 = time>=4
 trigger1 = time<=16
 value = A
 time = 1
@@ -2163,7 +2163,7 @@ ctrl = 1
 ;jH land
 [Statedef 616]
 type    = S
-movetype= A
+movetype= I
 physics = S
 juggle  = 2
 poweradd= 0

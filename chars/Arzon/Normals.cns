@@ -1071,7 +1071,7 @@ volumescale=150
 type = NotHitBy
 triggerall=enemynear,stateno!=900
 triggerall=enemynear,stateno!=901
-trigger1 = time>=3
+trigger1 = time>=4
 trigger1 = time<=19
 value = A
 time = 1

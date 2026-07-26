@@ -33,10 +33,10 @@ A SPELL THAT MOVES YOU FORWARD: WINDBURST		_B^Y
 A SPELL THAT MOVES YOU DOWNWARD: WINDBURST~ALTER		<#65b5ff>(AIR ONLY)</> _B^Y
    <#f0710a>LEVEL 3+: This move causes a sliding knockdown.</>
 A SPELL THAT CUTS THINGS: CLAW	-		_D^Y
-   <#bbbbbb>Can be jump cancelled.
-   This move is an anti-air/anti-projectile during the first swing.</>
+   <#bbbbbb>Can be jump cancelled.</>
    <#f0710a>LEVEL 3+: The first swing creates a projectile,
    and the second swing shoots it forward.</>
+
 
 
 
@@ -91,8 +91,8 @@ ENDE	-		_F^Y
 ENDE~</>DISMANTLE	-		_B^Y
    <#db00ac>Grants 2 Momentum on hit.</>
 ENDE~COLLAPSE	-		_D^Y
-   <#bbbbbb>Can be used to start combos.</>
    <#db00ac>Grants 1 Momentum on hit.</>
+
 _D	_D		_D
 
 	<#7f41b9>REMIX MOVES</>
@@ -134,9 +134,9 @@ _EX WINDBURST~ALTER	-		<#65b5ff>(AIR ONLY)</><#55ffff>(1 BAR)</> _B^Y+^Z
    <#f0710a>LEVEL 3+: Causes a floor bounce, and Yuko gains full control on hit.</>
 _EX CLAW	-		<#55ffff>(1 BAR)</> _D^Y+^Z
    <#bbbbbb>Both hits are jump cancellable on hit or block,
-   and the second swing fires a projectile that causes a wallbounce.
-   This move is an anti-air/anti-projectile during the first swing.</>
+   and the second swing fires a projectile that causes a wallbounce.</>
    <#f0710a>LEVEL 3+: Both swings create projectiles.</>
+
 
 
 

@@ -203,8 +203,9 @@ dest = 2,root, var(17)
 
 [State 0, DestroySelf]
 type = DestroySelf
-trigger1 = parent,stateno !=2010
-trigger2 = parent,movetype = H
+trigger1 = animtime = 0
+trigger2 = parent,stateno !=2010
+trigger3 = parent,movetype = H
 ;ignorehitpause = 
 ;persistent = 
 
@@ -248,8 +249,9 @@ dest = 3,root, var(17)
 
 [State 0, DestroySelf]
 type = DestroySelf
-trigger1 = parent,stateno !=2010
-trigger2 = parent,movetype = H
+trigger1 = animtime = 0
+trigger2 = parent,stateno !=2010
+trigger3 = parent,movetype = H
 ;ignorehitpause = 
 ;persistent = 
 

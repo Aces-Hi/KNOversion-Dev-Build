@@ -329,14 +329,6 @@ velset = vel x,0
 anim = 230
 sprpriority = 2
 
-[State 0, VarAdd]
-type = mapset
-trigger1 = 1
-map =  "truecounter"
-value = 0
-ignorehitpause = 1
-persistent = 1
-
 [State -3, Win Voices] 
 type = PlaySnd
 trigger1 = time = 0
@@ -2506,7 +2498,7 @@ value = 0
 type = NotHitBy
 triggerall=enemy,stateno!=900
 triggerall=enemy,stateno!=901
-trigger1 = time>=3
+trigger1 = time>=4
 trigger1 = time<=12
 value = A
 time = 1
@@ -2774,7 +2766,7 @@ value = .5
 type = NotHitBy
 triggerall=enemy,stateno!=900
 triggerall=enemy,stateno!=901
-trigger1 = time>=3
+trigger1 = time>=4
 trigger1 = time<=14
 value = A
 time = 1
@@ -2842,14 +2834,6 @@ juggle  = 0 ; juggle  = 0  = 5
 ctrl = 0
 anim = 440+var(50)
 sprpriority = 2
-
-[State 0, VarAdd]
-type = mapset
-trigger1 = 1
-map =  "truecounter"
-value = 0
-ignorehitpause = 1
-persistent = 1
 
 [State -3, Win Voices] 
 type = PlaySnd
@@ -3778,14 +3762,6 @@ anim = 620
 sprpriority = 2
 velset=  vel x, vel y
 
-[State 0, VarAdd]
-type = mapset
-trigger1 = 1
-map =  "truecounter"
-value = 0
-ignorehitpause = 1
-persistent = 1
-
 [State -3, Win Voices] 
 type = PlaySnd
 trigger1 = time = 0
@@ -3854,9 +3830,9 @@ guardsound = 6,2
 animtype = Med
 ground.type = high
 ground.slidetime = 12
-ground.hittime  = ceil(cond(fvar(14) *24 < 7, 7, fvar(14) * 24))
-air.hittime  = ceil(cond(fvar(7) *24 < 7, 7, fvar(7) * 24))
-down.hittime = ceil(cond(fvar(7) *24 < 7, 7, fvar(7) * 24))
+ground.hittime  = ceil(cond(fvar(14) *24 < 9, 9, fvar(14) * 24))
+air.hittime  = ceil(cond(fvar(7) *24 < 9, 9, fvar(7) * 24))
+down.hittime = ceil(cond(fvar(7) *24 < 9, 9, fvar(7) * 24))
 guard.hittime = 11
 guard.slidetime = 11
 guard.ctrltime =11
@@ -3897,14 +3873,6 @@ anim = 630
 sprpriority = 2
 velset=  vel x, vel y
 facep2=1
-
-[State 0, VarAdd]
-type = mapset
-trigger1 = 1
-map =  "truecounter"
-value = 0
-ignorehitpause = 1
-persistent = 1
 
 [State -3, Win Voices] 
 type = PlaySnd
@@ -4011,14 +3979,6 @@ ctrl = 0
 anim = 640
 sprpriority = 2
 velset=  vel x, vel y
-
-[State 0, VarAdd]
-type = mapset
-trigger1 = 1
-map =  "truecounter"
-value = 0
-ignorehitpause = 1
-persistent = 1
 
 [State -3, Win Voices] 
 type = PlaySnd
@@ -4826,9 +4786,9 @@ hitsound   = 5,2
 guardsound = 6,0
 ground.type = high
 ground.slidetime = 12
-ground.hittime  = ceil(cond(fvar(14) *24 < 7, 7, fvar(14) * 24))
-air.hittime  = ceil(cond(fvar(7) *20 < 7, 7, fvar(7) * 20))
-down.hittime = ceil(cond(fvar(7) *20 < 7, 7, fvar(7) * 20))
+ground.hittime  = ceil(cond(fvar(14) *24 < 9, 9, fvar(14) * 24))
+air.hittime  = ceil(cond(fvar(7) *20 < 9, 9, fvar(7) * 20))
+down.hittime = ceil(cond(fvar(7) *20 < 9, 9, fvar(7) * 20))
 ground.velocity = -2,0
 air.velocity = -1.3,2
 down.velocity = -1, -4

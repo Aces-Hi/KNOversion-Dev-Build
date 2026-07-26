@@ -1397,12 +1397,11 @@ poweradd = 0
 sprpriority = 2
 
 [State 0, VarSet]
-type = mapAdd
+type = mapset
 trigger1 = movehit
 map ="beamskd"
 value = 1
 ignorehitpause = 1
-persistent=0
 
 [State 200, VOICE]
 type = PlaySnd
@@ -1459,7 +1458,7 @@ p2facing = 1
 triggerall=enemynear,map(armor)=0
 triggerall=enemynear,!ishelper
 triggerall=!map(beamskd)
-trigger1 = movecontact = 0
+trigger1 = fvar(8) = 0 && movecontact = 0
 trigger1 = (enemynear, stateno!= [5110,5119])
 attr = S, SP
 animtype  = Light
@@ -1493,14 +1492,14 @@ p2stateno=915020
 type = HitDef 
 p2facing = 1
 trigger1=enemynear,map(armor)>0
-trigger2=map(beamskd)=1
+trigger2=map(beamskd)
 triggerall=enemynear,!ishelper
-triggerall = movecontact = 0
+triggerall = fvar(8) = 0 && movecontact = 0
 triggerall = (enemynear, stateno!= [5110,5119])
 attr = S, SP
 animtype  = Light
 air.animtype = back
-damage = ceil(cond(fvar(11) *100 < 10, 10, fvar(11) * 100)), 10
+damage = ceil(cond(fvar(11) *120 < 15, 15, fvar(11) * 120)), 10
 hitflag = MAFD
 guardflag = MA
 pausetime = 12,19
@@ -1522,22 +1521,61 @@ envshake.phase = 1
 guard.hittime = 25
 guard.ctrltime = 17
 fall.yvelocity = 0
-getpower = (50)*(cond(var(var(2)) = 1, 1, 1)) 
+getpower = (100)*(cond(var(var(2)) = 1, 1.5, 1)) 
+
+
+
 
 [State 630, 2]
 type = HitDef 
 p2facing = 1
-trigger1=map(beamskd)>1
+triggerall=enemynear,map(armor)=0
 triggerall=enemynear,!ishelper
-triggerall = movecontact = 0
-triggerall = (enemynear, stateno!= [5110,5119])
+triggerall=!map(beamskd)
+trigger1 = fvar(8) >0 && movecontact = 0
+trigger1 = (enemynear, stateno!= [5110,5119])
 attr = S, SP
 animtype  = Light
 air.animtype = back
-damage = ceil(cond(fvar(11) *70 < 10, 10, fvar(11) * 70)), 10
+damage = ceil(cond(fvar(11) *120 < 15, 15, fvar(11) * 120)), 10
 hitflag = MAFD
 guardflag = MA
-pausetime = 12,19
+pausetime = 12,14
+sparkno = 3
+sparkxy = -35,-45
+hitsound   = 5,3
+guardsound = 6,2
+ground.type = low
+ground.slidetime = 40
+ground.hittime  = 40
+ground.velocity = -4,-2
+air.velocity = -4,1
+down.velocity= -4,-4
+fall = 1
+ envshake.time = 15
+envshake.freq = 80
+envshake.ampl = 2
+envshake.phase = 1
+guard.hittime = 25
+guard.ctrltime = 17
+fall.yvelocity = 0
+getpower = (100)*(cond(var(var(2)) = 1, 1.5, 1)) 
+p2stateno=915020
+[State 630, 2]
+type = HitDef 
+p2facing = 1
+trigger1=enemynear,map(armor)>0
+trigger2=map(beamskd)
+triggerall=enemynear,!ishelper
+trigger1 = fvar(8) >0 && movecontact = 0
+trigger1 = (enemynear, stateno!= [5110,5119])
+attr =S, SP
+animtype  = Light
+air.animtype = back
+damage = ceil(cond(fvar(11) *120 < 15, 15, fvar(11) * 120)), 10
+hitflag = MAFD
+guardflag = MA
+pausetime = 12,14
 sparkno = 3
 sparkxy = -35,-45
 hitsound   = 5,3
@@ -1556,7 +1594,10 @@ envshake.phase = 1
 guard.hittime = 25
 guard.ctrltime = 17
 fall.yvelocity = 0
-getpower = 0
+getpower = (100)*(cond(var(var(2)) = 1, 1.5, 1)) 
+
+
+
 
 [State 0, PlaySnd]
 type = PlaySnd

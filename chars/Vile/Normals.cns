@@ -945,7 +945,7 @@ sprpriority = 2
 type = NotHitBy
 triggerall=enemynear,stateno!=900
 triggerall=enemynear,stateno!=901
-trigger1 = time>=3
+trigger1 = time>=4
 trigger1 = time<=15
 value = A
 time = 1

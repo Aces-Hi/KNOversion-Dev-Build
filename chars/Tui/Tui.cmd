@@ -271,7 +271,7 @@ type = ChangeState
 value = 1010
 triggerall=stateno!=40
 triggerall = roundstate = 2 ;only attack during the round
-triggerall = command = "b" && command="holdback" && command != "EX"
+triggerall = command = "b" && command="holdback"
 triggerall = command != "holddown"
 triggerall = statetype != A
 trigger1 = ctrl

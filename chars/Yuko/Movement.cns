@@ -145,7 +145,7 @@ x = 0
 [Statedef 12]
 type    = S
 physics = S
-anim = 13
+anim = 12+var(50)
 
 [State 0, VarSet]
 type = VarSet
@@ -309,13 +309,17 @@ type    = A
 physics = N
 ctrl = 0
 velset = 0,0
-anim= 53
 
 [State 0, VarAdd]
 type = MapSet
 trigger1 = time =0
 map = "airdash"
 value = 1
+
+[State 50, 2]
+type = ChangeAnim
+trigger1 = Time = 0
+value =69000+var(50)*20
 
 [State 200, 2]
 type = PlaySnd
@@ -360,6 +364,11 @@ ctrl = 1
 type = VarSet
 trigger1 = Time = 0
 sysvar(1) = 0
+
+[State 50, 2]
+type = ChangeAnim
+trigger1 = Time = 0
+value = 69000+var(50)*20
 
 ;--------------------------------------
 ;---------------------------------------------------------------------------
@@ -1047,7 +1056,7 @@ value = 0
 ctrl = 1
 
 ;---------------------------------------------------------------------------
-;Backdash
+;Roll Backwards
 [Statedef 105]
 type    = S
 physics = N
@@ -1063,6 +1072,11 @@ value = 105,1
 volumescale = 75
 persistent=0
 
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = time<10
+value = 0
 
 [State 0, 2]
 type = VelSet

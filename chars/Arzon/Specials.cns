@@ -1044,13 +1044,6 @@ anim =1307
 sprpriority = 2
 poweradd = -1000
 
-[State 0, ChangeAnim]
-type = ChangeAnim
-trigger1 = time=0&&combocount
-value = 1307
-elem = 3
-ignorehitpause = 1
-
 [State 200, VarAdd]
 type = VarAdd
 trigger1 = time = 0

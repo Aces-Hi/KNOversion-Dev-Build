@@ -25,6 +25,13 @@ type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
 value = 0.7
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 1
+ignorehitpause = 1
+persistent = 0
 
 [State 1, Dash Slide]
 type = Velset
@@ -432,6 +439,13 @@ value = 0
 type = varadd
 trigger1 = time = 0
 fvar(13) = 1
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 1
+ignorehitpause = 1
+persistent = 0
 
 ;EX Effects
 [State 200, 2]
@@ -735,6 +749,13 @@ type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
 value = 1
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 2
+ignorehitpause = 1
+persistent = 0
 
 [State -3, Win Voices] 
 type = PlaySnd
@@ -918,6 +939,13 @@ type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
 value = 1
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = 2
+ignorehitpause = 1
+persistent = 0
 
 [State 200, 2]
 type = PlaySnd
@@ -1532,6 +1560,13 @@ type = VarAdd
 trigger1 = movehit = 1
 fv =13     ;fv = 
 value = 1
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = .5
+ignorehitpause = 1
+persistent = 0
 
 [State 410, 2]
 type = HitDef 
@@ -1846,6 +1881,13 @@ trigger1 = movehit
 fv =13     ;fv = 
 value = 0.19
 ignorehitpause=1
+[State 200, VarAdd]
+type = VarAdd
+trigger1 = movehit = 1
+fv = 25   
+value = .5
+ignorehitpause = 1
+persistent = 0
 
 [State 0, Explod]
 type = Explod
@@ -5512,6 +5554,14 @@ anim =1055
 velset = 3,-1 
 sprpriority = 2
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 [State 0, VelSet]
 type = VelSet
 trigger1 = player(map(enemyteamlead)),statetype!=A
@@ -5980,6 +6030,14 @@ ctrl 		= 0
 anim 		= 1045
 sprpriority 	= 2
 velset 		= vel x, 0
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
 
 [State 0, VarAdd]
 type = VarAdd

@@ -1069,8 +1069,8 @@ value = 0
 [State 0, DisplayToClipboard]
 type = DisplayToClipboard
 trigger1 = 1
-text = "Imagination %f Momentum %f Boredom %f IMHL %f yc %f ti %f"
-params = map(Imagination),map(Momentum),map(Boredom),map(IMHL),map(yucock),map(supertime)
+text = "Imagination %f Momentum %f Boredom %f IMHL %f yc %f idt %f"
+params = map(Imagination),map(Momentum),map(Boredom),map(IMHL),map(yucock),map(IDtimer)
 
 
 [State 0, PalFXWiz]
@@ -1267,6 +1267,44 @@ value = 0
 ignorehitpause=0
 ;------------------------------------------------
 
+[State 0, Explod]
+type = Explod
+trigger1 = stateno=150
+trigger2 = stateno=154
+triggerall=time=0
+anim = 125
+ID = 125
+pos = -10,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = -2
+pausemovetime = 0
+scale = .84,.84
+sprpriority =1
+ownpal = 1
+removeongethit = 0
+ignorehitpause =0
+[State 0, Explod]
+type = Explod
+trigger1 = stateno=152
+triggerall=time=0
+anim = 125
+ID = 125
+pos = -10,50
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = -2
+pausemovetime = 0
+scale = .84,.84
+sprpriority =1
+ownpal = 1
+removeongethit = 0
+ignorehitpause =0
+
 [State 0, VarAdd]
 type = MapSet
 trigger1 = stateno!=1900&&map(norc)!=0
@@ -1374,6 +1412,13 @@ type = MapSet
 trigger1 = !combocount
 trigger1 = stateno!=2900
 map = "rawstomp"
+value = 0
+ignorehitpause = 1
+
+[State 0, VarAdd]
+type = MapSet
+trigger1 = !combocount
+map = "clawheight"
 value = 0
 ignorehitpause = 1
 

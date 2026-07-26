@@ -1003,7 +1003,7 @@ value = 10, (0+(Random%2))
 
 [State 0, NotHitBy]
 type = NotHitBy
-trigger1 = time>=4
+trigger1 = time>=3
 trigger1 = time<=18
 triggerall=enemynear,stateno!=900
 triggerall=enemynear,stateno!=901
@@ -1773,7 +1773,7 @@ type = HitDef
 p2facing = 1
 trigger1 = animelem = 8
 attr = A, NA
-damage = ceil(cond(fvar(11) *30 < 3, 3, fvar(11) * 20)), 0
+damage = ceil(cond(fvar(11) *20 < 3, 3, fvar(11) * 20)), 0
 guardflag = MA
 hitflag = MAF
 pausetime = 3,5
@@ -1972,7 +1972,7 @@ trigger1 =movecontact = 0
 attr = A, NA
 animtype  = Hard
 air.animtype = back
-damage = ceil(cond(fvar(11) *60 < 5, 5, fvar(11) * 60)), 6
+damage = ceil(cond(fvar(11) *50 < 5, 5, fvar(11) * 50)), 6
 hitflag = MAF
 guardflag = HA
 pausetime = 10,10
@@ -2197,9 +2197,9 @@ trigger1 = movecontact = 0
 attr = A, NA
 animtype  = up
 air.animtype = up
-damage = ceil(cond(fvar(11) *60 < 5, 5, fvar(11) * 60)), 6
+damage = ceil(cond(fvar(11) *50 < 5, 5, fvar(11) * 50)), 6
 hitflag = MAFD
-guardflag = MA
+guardflag = HA
 pausetime = 8,8
 sparkno = 2
 sparkxy = -10,-60

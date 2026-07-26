@@ -1025,7 +1025,8 @@ removeonchangestate=1
 [State 650, 2]
 type = Explod
 trigger1 = time=17
-trigger1 = palno=11&&map(rina)=3
+trigger1 = palno=11
+trigger1 = map(rina)=3||map(rina)=6
 anim = 3113
 pos = 0,0
 id = 3113
@@ -1241,7 +1242,8 @@ removetime=-1
 [State 650, 2]
 type = Explod
 trigger1 = time=0
-trigger1 = palno=11&&map(rina)=3
+trigger1 = palno=11
+trigger1 = map(rina)=3||map(rina)=6
 anim = 3113
 pos = 0,0
 id = 3113

@@ -4281,13 +4281,18 @@ ownpal = 1
 type = changestate
 triggerall = fvar(19)>=100
 trigger1 = time >= 20
+trigger1 = command!="hold_b"
+trigger1 = command!="hold_EX"
 value = 2013
 
 [State 13, ChangeState]
 type = changestate
 triggerall = fvar(19)<100
 trigger1 = time >= 20
+trigger1 = command!="hold_b"
+trigger1 = command!="hold_EX"
 value = 2012
+
 ;-----------------------------
 ;2EX: Coom Kick
 [StateDef 2015]
@@ -4429,6 +4434,8 @@ ownpal = 1
 [State 13, ChangeState]
 type = changestate
 trigger1 = time >= 20
+trigger1 = command!="hold_b"
+trigger1 = command!="hold_EX"
 value = 2013
 
 ;----------------------

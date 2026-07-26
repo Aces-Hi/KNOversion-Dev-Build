@@ -1415,6 +1415,17 @@ supermovetime = 0
 pausemovetime = 0
 ignorehitpause =0
 
+[State 0, NotHitBy]
+type = NotHitBy
+triggerall=enemynear,stateno!=900
+triggerall=enemynear,stateno!=901
+trigger1 = animelemtime(4)>=0
+trigger1 = animelemtime(6)<0
+value = A
+time = 1
+ignorehitpause = 1
+persistent = 1
+
 [State 0]
 type = HitDef 
 p2facing = 1
@@ -1466,10 +1477,10 @@ guardsound =S300, 2
 ground.type = high
 ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *20 < 9, 9, fvar(15) * 20))
-air.hittime  = ceil(cond(fvar(15) *30 < 15, 15, fvar(15) * 30))
-down.hittime = ceil(cond(fvar(15) *30 < 15, 15, fvar(15) * 30))
-ground.velocity = -6,0
-air.velocity = -6,.5
+air.hittime  = ceil(cond(fvar(15) *40 < 15, 15, fvar(15) * 40))
+down.hittime = ceil(cond(fvar(15) *40 < 15, 15, fvar(15) * 40))
+ground.velocity = -6,cond(Map(Clawheight),-1.5,0)
+air.velocity = -6,cond(Map(Clawheight),-2,.5)
 envshake.time = 12
 envshake.freq = 90
 envshake.ampl = 3
@@ -1486,6 +1497,13 @@ type = ChangeState
 trigger1 = movehit && command = "holdupb"
 trigger2 = movehit && command = "holdup"
 value = 40
+
+[State 0, VarAdd]
+type = MapSet
+trigger1 = time=0
+map = "clawheight"
+value = 0
+ignorehitpause = 0
 
 [State Devil Chain]
 type = ChangeState
@@ -1624,6 +1642,13 @@ trigger1 = StageFrontEdgeDist < 100 && anim = 1610
 x = -10
 ignorehitpause = 1
 persistent=1
+
+[State 0, VarAdd]
+type = RootMapSet
+trigger1 = movehit
+map = "clawheight"
+value = 1
+ignorehitpause = 1
 
 [State 0, DestroySelf]
 type = ChangeState
@@ -1812,6 +1837,17 @@ ownpal = 1
 supermovetime = 0
 pausemovetime = 0
 ignorehitpause =0
+
+[State 0, NotHitBy]
+type = NotHitBy
+triggerall=enemynear,stateno!=900
+triggerall=enemynear,stateno!=901
+trigger1 = animelemtime(4)>=0
+trigger1 = animelemtime(6)<0
+value = A
+time = 1
+ignorehitpause = 1
+persistent = 1
 
 [State 0]
 type = HitDef 
@@ -4669,6 +4705,7 @@ air.hittime  = ceil(cond(fvar(15) *30 < 15, 15, fvar(15) * 30))
 down.hittime = ceil(cond(fvar(15) *30 < 15, 15, fvar(15) * 30))
 ground.velocity = -4,-2
 air.velocity =-4,-2
+down.velocity = -4,-3
 guard.velocity=-14
 envshake.time = 12
 envshake.freq = 90

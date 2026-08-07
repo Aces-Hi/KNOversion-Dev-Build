@@ -2321,7 +2321,7 @@ value = fvar(6)
 
 [Statedef -3]
 
-;THE GREAT EQUALIZER is DEATH!!!!!!!
+;GREAT EQUALIZER is THE DEATH!!!!!!!
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = map(DIE)=1

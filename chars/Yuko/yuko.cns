@@ -139,661 +139,178 @@ type = S
 [State 180, 1]
 type = ChangeState
 trigger1 = Time = 0
-trigger1 = prevstateno!=3003
-value = 181
+triggerall = enemynear,name!="Grandmaster Wu"&&enemynear,name!="Arzon"&&enemynear,name!="JV"&&enemynear,name!="FJV"
+value = 181+random%2
 
 [State 180, 1]
 type = ChangeState
 trigger1 = Time = 0
-trigger1 = prevstateno=3003
-value = 182
-
-[State 650, 2]
-type = Explod
-trigger1 = time=0
-trigger1 = map(december)=1
-anim = 3112
-pos = 0,0
-id = 3112
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = -1
-ownpal = 0
-scale=1,1
-ontop=1
-facing=1
-removetime=-1
-
-[State 0, AssertSpecial]
-type = AssertSpecial
-trigger1 = prevstateno=3003
-flag = invisible
-flag2 = nobardisplay
-flag3 = globalnoshadow
-ignorehitpause=1
-
-[State 0, AssertSpecial]
-type = AssertSpecial
-trigger1 = prevstateno=3003
-flag = timerfreeze
-flag2 = noFG
-flag3 = noBG
-ignorehitpause=1
+triggerall = enemynear,name="Grandmaster Wu"||enemynear,name="Arzon"||enemynear,name="JV"||enemynear,name="FJV"
+value = 181
 
 ;---------------------------------------------------------------------------
 ; Win
 [Statedef 181]
 type = S
 ctrl = 0
-anim = 1
+anim = 181
 velset = 0,0
 
 [State -3, Win Announcer]
 type = PlaySnd
 triggerall=teammode!=Tag
 trigger1 = time=0
-value = 7410, 1
-
-[State 0, AssertSpecial]
-type = AssertSpecial
-trigger1 = 1
-trigger1 = map(december)=0
-flag = invisible
-ignorehitpause = 1
-persistent = 1
-
-[State 0, VarSet]
-type = Mapset
-triggerall = palno=4||palno=5||palno=6||palno=7||palno=8||palno=9||palno=10||palno=11
-trigger1 =time=1
-map = "specialoutro"
-value = 0+random%2
-ignorehitpause = 1
-persistent = 0
-
-
-
-[State 0, PlaySnd]
+value = 7410, 0
+[State -3, Win Announcer]
 type = PlaySnd
-trigger1 = time=0
-value = 3000,1
-volumescale = 100
-persistent=0
-[State 0, PlaySnd]
-type = PlaySnd
-trigger1 = time=15
-value = 3000,1
-volumescale = 100
-persistent=0
+triggerall=teammode!=Tag
+trigger1 = time=50
+value = F1000,0
 
-[State 0, Explod]
-type = Explod
-trigger1 = time=0
-anim = 5121
-ID = 5121
-pos = 0,0
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-vel = 0,0
-accel = 0,0
-random = 0,0
-removetime = -2
-scale = .84,.84
-sprpriority = 3
-ontop = 0
-ownpal = 0
-
-[State Voice From Above]
+[State Yuko Voice]
 type = PlaySnd
-trigger1 = map(specialoutro)=0
-trigger2 = map(specialoutro)=1
-trigger2 = palno=5||palno=6||palno=7||palno=8||palno=9
-triggerall=map(december)=0
-triggerall=enemy,name!="Deus"
-triggerall = time=30
-triggerall=enemynear,name!="Roger"&&enemynear,name!="Vile"&&enemynear,name!="JoJo"&&enemynear,name!="Dreyvon"&&enemynear,name!="JV"&&enemynear,name!="Akira"&&enemynear,name!="Alicia"&&enemynear,name!="Crow"
-value = 170, (1+(Random%5))
+triggerall = palno!=6&&palno!=8&&palno!=9&&palno!=10
+triggerall = enemynear,name!="Grandmaster Wu"&&enemynear,name!="Arzon"&&enemynear,name!="JV"&&enemynear,name!="FJV"
+triggerall = enemynear,name!="Deus"
+trigger1 = time=1
+value = 180, 0+random%3
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno!=6&&palno!=8&&palno!=9&&palno!=10
+triggerall = enemynear,name="Grandmaster Wu"||enemynear,name="Arzon"||enemynear,name="JV"||enemynear,name="FJV"
+trigger1 = time=1
+value = 181, 0+random%2
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno!=6&&palno!=8&&palno!=9&&palno!=10
+triggerall = enemynear,name="Deus"
+trigger1 = time=1
+value = 187, 0+random%2
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno=6
+trigger1 = time=1
+value = 182, 0+random%3
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno=8
+trigger1 = time=1
+value = 8383, 3+random%2
 volumescale=200
-channel=7
-[State Voice From Above]
+[State Yuko Voice]
 type = PlaySnd
-trigger1 = map(specialoutro)=0
-trigger2 = map(specialoutro)=1
-trigger2 = palno=5||palno=6||palno=7||palno=8||palno=9
-triggerall=map(december)=0
-triggerall=enemy,name!="Deus"
-triggerall = time=30
-triggerall=enemynear,name="Roger"||enemynear,name="Dreyvon"
-value = 170, (0+(Random%6))
-volumescale=200
-channel=7
-[State Voice From Above]
+triggerall = palno=9
+trigger1 = time=1
+value = 183, 0+random%2
+volumescale=150
+[State Yuko Voice]
 type = PlaySnd
-trigger1 = map(specialoutro)=0
-trigger2 = map(specialoutro)=1
-trigger2 = palno=5||palno=6||palno=7||palno=8||palno=9
-triggerall=map(december)=0
-triggerall=enemy,name!="Deus"
-triggerall = time=30
-triggerall=enemynear,name="Alicia"||enemynear,name="Akira"||enemynear,name="JV"||enemynear,name="Crow"
-value = 170, (3+(Random%4))
-volumescale=200
-channel=7
-[State Voice From Above]
-type = PlaySnd
-trigger1 = map(specialoutro)=0
-trigger2 = map(specialoutro)=1
-trigger2 = palno=5||palno=6||palno=7||palno=8||palno=9
-triggerall=map(december)=0
-triggerall=enemy,name!="Deus"
-triggerall = time=30
-triggerall=enemynear,name="JoJo"||enemynear,name="Vile"
-value = 170, (7+(Random%2))
-volumescale=200
-channel=7
+triggerall = palno=10
+trigger1 = time=1
+value = 184, 0+random%2
+volumescale=150
 
-[State Voice From Above]
-type = PlaySnd
-trigger1 = map(specialoutro)=0
-trigger2 = map(specialoutro)=1
-trigger2 = palno=5||palno=6||palno=7||palno=8||palno=9
-triggerall=map(december)=0
-triggerall= time=30
-triggerall=enemy,name="Deus"
-value = 177, (0+(Random%3))
-volumescale=200
-channel=7
-
-[State 650, 2]
-type = Explod
-trigger1 = time=15
-trigger1 = map(specialoutro)=0
-trigger1 = map(december)=0
-anim = 165+random%10
-pos = 140,170
-id = 181
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = 5
-ownpal = 0
-scale=.84,.84
-ontop=1
-facing=1
-removetime = -1
-removeonchangestate=1
-[State 650, 2]
-type = Explod
-trigger1 = time=15
-trigger1 = map(specialoutro)=1
-trigger1 = palno=4
-anim = 3050
-pos = 140,170
-id = 181
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = 5
-ownpal = 0
-scale=.84,.84
-ontop=1
-facing=facing
-removetime = -1
-removeonchangestate=1
-[State Voice From Above]
-type = PlaySnd
-trigger1 = map(specialoutro)=1
-trigger1 = time=25
-trigger1 = palno=4
-value = 171, (0+(Random%2))
-volumescale=200
-channel=7
-
-[State 650, 2]
-type = Explod
-trigger1 = time=15
-trigger1 = map(specialoutro)=1
-trigger1 = palno=5
-anim = 3051+random%2
-pos = 140,170
-id = 181
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = 5
-ownpal = 0
-scale=.84,.84
-ontop=1
-facing=1
-removetime = -1
-removeonchangestate=1
-
-[State 650, 2]
-type = Explod
-trigger1 = time=15
-trigger1 = map(specialoutro)=1
-trigger1 = palno=6
-anim = 3053
-pos = 140,170
-id = 181
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = 5
-ownpal = 0
-scale=.84,.84
-ontop=1
-facing=1
-removetime = -1
-removeonchangestate=1
-[State 650, 2]
-type = Explod
-trigger1 = time=15
-trigger1 = map(specialoutro)=1
-trigger1 = palno=7
-anim = 3054
-pos = 140,170
-id = 181
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = 5
-ownpal = 0
-scale=.84,.84
-ontop=1
-facing=facing
-removetime = -1
-removeonchangestate=1
-[State 650, 2]
-type = Explod
-trigger1 = time=15
-trigger1 = map(specialoutro)=1
-trigger1 = palno=8
-anim = 3055+random%2
-pos = 140,170
-id = 181
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = 5
-ownpal = 0
-scale=.84,.84
-ontop=1
-facing=facing
-removetime = -1
-removeonchangestate=1
-[State 650, 2]
-type = Explod
-trigger1 = time=15
-trigger1 = map(specialoutro)=1
-trigger1 = palno=9
-anim = 3057
-pos = 140,170
-id = 181
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = 5
-ownpal = 0
-scale=.84,.84
-ontop=1
-facing=1
-removetime = -1
-removeonchangestate=1
-[State 650, 2]
-type = Explod
-trigger1 = time=15
-trigger1 = map(specialoutro)=1
-trigger1 = palno=10
-anim = 3058
-pos = 140,170
-id = 181
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = 5
-ownpal = 0
-scale=.84,.84
-ontop=1
-facing=facing
-removetime = -1
-removeonchangestate=1
-[State Voice From Above]
-type = PlaySnd
-trigger1 = map(specialoutro)=1
-trigger1 = time=25
-trigger1 = palno=10
-value = 172, (0+(Random%2))
-volumescale=200
-channel=7
-
-
-[State 650, 2]
-type = Explod
-trigger1 = time=15
-trigger1 = map(specialoutro)=1
-trigger1 = palno=11
-trigger1 = map(rina)=1
-anim = 3059
-pos = 140,170
-id = 181
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = 5
-ownpal = 0
-scale=.84,.84
-ontop=1
-facing=facing
-removetime = -1
-removeonchangestate=1
-[State 650, 2]
-type = Explod
-trigger1 = time=15
-trigger1 = map(specialoutro)=1
-trigger1 = palno=11
-trigger1 = map(rina)=2
-anim = 3060
-pos = 140,170
-id = 181
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = 5
-ownpal = 0
-scale=.84,.84
-ontop=1
-facing=facing
-removetime = -1
-removeonchangestate=1
-[State 650, 2]
-type = Explod
-trigger1 = time=15
-trigger1 = map(specialoutro)=1
-trigger1 = palno=11
-trigger1 = map(rina)=5
-anim = 3061
-pos = 140,170
-id = 181
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = 5
-ownpal = 0
-scale=.84,.84
-ontop=1
-facing=facing
-removetime = -1
-removeonchangestate=1
-[State 650, 2]
-type = Explod
-trigger1 = time=15
-trigger1 = map(specialoutro)=1
-trigger1 = palno=11
-trigger1 = map(rina)=4
-anim = 3062
-pos = 140,170
-id = 181
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = 5
-ownpal = 0
-scale=.84,.84
-ontop=1
-facing=facing
-removetime = -1
-removeonchangestate=1
-[State 650, 2]
-type = Explod
-trigger1 = time=15
-trigger1 = map(specialoutro)=1
-trigger1 = palno=11
-trigger1 = map(rina)=3
-anim = 3063
-pos = 140,170
-id = 181
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = 5
-ownpal = 0
-scale=.84,.84
-ontop=1
-facing=facing
-removetime = -1
-removeonchangestate=1
-[State Voice From Above]
-type = PlaySnd
-trigger1 = map(specialoutro)=1
-trigger1 = time=25
-trigger1 = palno=11
-value = 173, (0+(Random%2))
-volumescale=200
-channel=7
-
-
-[State 0, ChangeAnim]
-type = ChangeAnim
-trigger1 = time=15
-trigger1 = map(december)=1
-value = 3064+random%2
-
-[State 0, PosSet]
-type = PosSet
-trigger1 = time=15
-trigger1 = map(december)=1
-y = -10
-
-[State 8990, AssertSpecial]
-type = AssertSpecial
-trigger1 = Roundstate > 3
-flag = Nobardisplay
-;---------------------------------------------------------------------------
-; Super Outro
-[Statedef 182]
-type = S
-ctrl = 0
-anim = 3100
-velset = 0,0
 
 [State -3, Win Announcer]
 type = PlaySnd
-trigger1 = time=0
-value = 7410, 1
-
-[State 0, PlaySnd]
-type = PlaySnd
-trigger1 = time=0
-value = 3000,1
-volumescale = 100
-persistent=0
-[State 650, 2]
-type = Explod
-trigger1 = time=0
-trigger1 = map(december)=0&&map(rina)!=3
-anim = 3111
-pos = 0,0
-id = 3111
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = -1
-ownpal = 0
-scale=1,1
-ontop=1
-facing=1
-removetime=-1
-[State 650, 2]
-type = Explod
-trigger1 = time=0
-trigger1 = map(december)=1
-anim = 3112
-pos = 0,0
-id = 3112
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = -1
-ownpal = 0
-scale=1,1
-ontop=1
-facing=1
-removetime=-1
-[State 650, 2]
-type = Explod
-trigger1 = time=0
-trigger1 = palno=11&&map(rina)=3
-anim = 3113
-pos = 0,0
-id = 3113
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = -1
-ownpal = 0
-scale=1,1
-ontop=1
-facing=1
-removetime=-1
-[State 650, 2]
-type = Explod
-trigger1 = time=0
-anim = 3100
-pos = 10,-37
-id = 3100
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = 5
-ownpal = 0
-scale=.5,.5
-ontop=1
-facing=1
-removetime=-1
-
-
-[State 0, VarSet]
-type = Mapset
-triggerall = palno=4||palno=7||palno=8||palno=10
-trigger1 =time=1
-map = "specialoutro"
-value = 1
-ignorehitpause = 1
-persistent = 0
-
-[State 650, 2]
-type = Explod
-trigger1 = animelem=23
-triggerall= map(specialoutro)=0
-trigger1 = map(december)=0
-anim = 3101+random%3
-pos = 10,-37
-id = 3101
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = 6
-ownpal = 0
-scale=.5,.5
-ontop=1
-facing=1
-removetime=-1
-
-[State 650, 2]
-type = Explod
-trigger1 = animelem=23
-triggerall= map(specialoutro)=1
-trigger1 = palno=4||palno=10
-anim = 3104
-pos = 10,-37
-id = 3101
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = 6
-ownpal = 0
-scale=.5,.5
-ontop=1
-facing=1
-removetime=-1
-[State 650, 2]
-type = Explod
-trigger1 = animelem=23
-triggerall= map(specialoutro)=1
-trigger1 = palno=7
-anim = 3105
-pos = 10,-37
-id = 3101
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = 6
-ownpal = 0
-scale=.5,.5
-ontop=1
-facing=1
-removetime=-1
-[State 650, 2]
-type = Explod
-trigger1 = animelem=23
-triggerall= map(specialoutro)=1
-trigger1 = palno=8
-anim = 3106
-pos = 10,-37
-id = 3101
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = 6
-ownpal = 0
-scale=.5,.5
-ontop=1
-facing=1
-removetime=-1
-
-[State 650, 2]
-type = Explod
-trigger1 = animelem=23
-trigger1 = map(december)=1
-anim = 3107
-pos = 10,-37
-id = 3101
-postype = back
-ignorehitpause = 0
-persistent = 0
-sprpriority = 6
-ownpal = 0
-scale=.5,.5
-ontop=1
-facing=1
-removetime=-1
-
-
-[State 0, AssertSpecial]
-type = AssertSpecial
-trigger1 = 1
-flag = invisible
-flag2 = nobardisplay
-flag3 = globalnoshadow
-ignorehitpause=1
-
-[State 0, AssertSpecial]
-type = AssertSpecial
-trigger1 = 1
-flag = timerfreeze
-flag2 = noFG
-flag3 = noBG
-ignorehitpause=1
+trigger1 = animelem=10
+value = 9,4
+volumescale=150
+[State 0, EnvShake]
+type = EnvShake
+trigger1 = animelem=11
+time = 15
+freq = 120
+ampl = 4
+phase = 1
 
 [State 8990, AssertSpecial]
 type = AssertSpecial
 trigger1 = Roundstate > 3
 flag = Nobardisplay
 
+[State 0, EnvShake]
+type = EnvShake
+trigger1 = animelem=11
+time = 12
+freq = 90
+ampl = 4
+phase = 1
+
+;---------------------------------------------------------------------------
+; Win 2
+[Statedef 182]
+type = S
+ctrl = 0
+anim = 182
+
+[State -3, Win Announcer]
+type = PlaySnd
+triggerall=teammode!=Tag
+trigger1 = time=0
+value = 7410, 0
+[State -3, Win Announcer]
+type = PlaySnd
+triggerall=teammode!=Tag
+trigger1 = time=50
+value = F1000,0
+
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno!=6&&palno!=8&&palno!=9&&palno!=10
+triggerall = enemynear,name!="Grandmaster Wu"&&enemynear,name!="Arzon"&&enemynear,name!="JV"&&enemynear,name!="FJV"
+triggerall = enemynear,name!="Deus"
+trigger1 = time=1
+value = 180, 0+random%3
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno!=6&&palno!=8&&palno!=9&&palno!=10
+triggerall = enemynear,name="Grandmaster Wu"||enemynear,name="Arzon"||enemynear,name="JV"||enemynear,name="FJV"
+trigger1 = time=1
+value = 181, 0+random%2
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno!=6&&palno!=8&&palno!=9&&palno!=10
+triggerall = enemynear,name="Deus"
+trigger1 = time=1
+value = 187, 0+random%2
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno=6
+trigger1 = time=1
+value = 182, 0+random%3
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno=8
+trigger1 = time=1
+value = 8383, 3+random%2
+volumescale=200
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno=9
+trigger1 = time=1
+value = 183, 0+random%2
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno=10
+trigger1 = time=1
+value = 184, 0+random%2
+volumescale=150
+
+
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = Roundstate > 3
+flag = Nobardisplay
 
 ;---------------------------------------------------------------------------
 ;TimeOut
@@ -856,10 +373,212 @@ ctrl = 0
 anim = 185
 velset = 0,0
 
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno!=8&&palno!=9&&palno!=10
+triggerall = enemynear,name!="Grandmaster Wu"&&enemynear,name!="Arzon"&&enemynear,name!="JV"&&enemynear,name!="FJV"
+triggerall = enemynear,name!="Roger"&&enemynear,name!="Jo=Jo"&&enemynear,name!="Sahkive"
+triggerall = enemynear,name!="Vile"&&enemynear,name!="Z"&&enemynear,name!="Yuko"&&enemynear,name!="Deus"
+trigger1 = time=1
+value = 190, 0+random%3
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno!=8&&palno!=9&&palno!=10
+triggerall = enemynear,name="Grandmaster Wu"||enemynear,name="Arzon"||enemynear,name="JV"||enemynear,name="FJV"
+trigger1 = time=1
+value = 191, 0+random%3
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno!=8&&palno!=9&&palno!=10
+triggerall = enemynear,name="Roger"||enemynear,name="Jo-Jo"||enemynear,name="Sahkive"
+trigger1 = time=1
+value = 192, 0+random%2
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno!=8&&palno!=9&&palno!=10
+triggerall = enemynear,name="Vile"||enemynear,name="Z"
+trigger1 = time=1
+value = 193, 0+random%2
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno!=8&&palno!=9&&palno!=10
+triggerall = enemynear,name="Yuko"&&teamside=1
+trigger1 = time=1
+value = 194, 0+random%2
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno!=8&&palno!=9&&palno!=10
+triggerall = enemynear,name="Deus"
+trigger1 = time=1
+value = 197, 0+random%2
+volumescale=150
+
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno=8
+triggerall = time=1
+trigger1 = enemynear,name!="Angous"
+trigger2 = enemynear,name="Angous"&&enemynear,palno!=8
+value = 8383, 0+random%2
+volumescale=200
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno=8
+triggerall = time=1
+trigger1 = enemynear,name="Angous"&&enemynear,palno=8
+value = 8383, 2
+volumescale=200
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno=9
+trigger1 = time=1
+value = 196, 0+random%2
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno=10
+triggerall = time=1
+trigger1 = enemynear,map(Human)
+value = 195, 1
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno=10
+triggerall = time=1
+trigger1 = enemynear,map(Human)=0
+value = 195, 0
+volumescale=150
+
+[State 190]
+type = selfstate
+triggerall=time=0
+trigger1 = prevstateno!=191
+value = 191+random%2
+
+[State 193, 1]
+type = AssertSpecial
+trigger1 = 1
+flag = Intro
+flag2 = nomusic
+flag3 = nobardisplay 
+
 [State 191, 3] ;Change to stand state when done
 type = ChangeState
 trigger1 = animtime=0
 value = 0
+
+;---------------------------------------------------------------------------
+; Intro 2
+[Statedef 192]
+type = S
+ctrl = 0
+anim = 186
+velset = 0,0
+
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno!=8&&palno!=9&&palno!=10
+triggerall = enemynear,name!="Grandmaster Wu"&&enemynear,name!="Arzon"&&enemynear,name!="JV"&&enemynear,name!="FJV"
+triggerall = enemynear,name!="Roger"&&enemynear,name!="Jo=Jo"&&enemynear,name!="Sahkive"
+triggerall = enemynear,name!="Vile"&&enemynear,name!="Z"&&enemynear,name!="Yuko"&&enemynear,name!="Deus"
+trigger1 = time=1
+value = 190, 0+random%3
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno!=8&&palno!=9&&palno!=10
+triggerall = enemynear,name="Grandmaster Wu"||enemynear,name="Arzon"||enemynear,name="JV"||enemynear,name="FJV"
+trigger1 = time=1
+value = 191, 0+random%3
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno!=8&&palno!=9&&palno!=10
+triggerall = enemynear,name="Roger"||enemynear,name="Jo-Jo"||enemynear,name="Sahkive"
+trigger1 = time=1
+value = 192, 0+random%2
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno!=8&&palno!=9&&palno!=10
+triggerall = enemynear,name="Vile"||enemynear,name="Z"
+trigger1 = time=1
+value = 193, 0+random%2
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno!=8&&palno!=9&&palno!=10
+triggerall = enemynear,name="Yuko"&&teamside=1
+trigger1 = time=1
+value = 194, 0+random%2
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno!=8&&palno!=9&&palno!=10
+triggerall = enemynear,name="Deus"
+trigger1 = time=1
+value = 197, 0+random%2
+volumescale=150
+
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno=8
+triggerall = time=1
+trigger1 = enemynear,name!="Angous"
+trigger2 = enemynear,name="Angous"&&enemynear,palno!=8
+value = 8383, 0+random%2
+volumescale=200
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno=8
+triggerall = time=1
+trigger1 = enemynear,name="Angous"&&enemynear,palno=8
+value = 8383, 2
+volumescale=200
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno=9
+trigger1 = time=1
+value = 196, 0+random%2
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno=10
+triggerall = time=1
+trigger1 = enemynear,map(Human)
+value = 195, 1
+volumescale=150
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno=10
+triggerall = time=1
+trigger1 = enemynear,map(Human)=0
+value = 195, 0
+volumescale=150
+
+[State 200, 2]
+type = PlaySnd
+trigger1 = time=50
+value = 2300,0+random%2
+volumescale=65
+
+[State 193, 1]
+type = AssertSpecial
+trigger1 = 1
+flag = Intro
+flag2 = nomusic
+flag3 = nobardisplay 
+
+[State 191, 3] ;Change to stand state when done
+type = ChangeState
+trigger1 = animtime=0
+value = 0
+
 
 ;---------------------------------------------------------------------------
 ; Override common states (use same number to override) :
@@ -1243,12 +962,22 @@ ignoreHitPause = 1
 ;GREAT EQUALIZER is THE DEATH!!!!!!!
 [State 0, PlaySnd]
 type = PlaySnd
+triggerall = palno!=8
 trigger1 = map(DIE)=1
-value = 9000,0+random%4
+value = 9000,0+random%3
 channel = -1
 loop = 0
 persistent = 0
-volumescale=100
+volumescale=150
+ignorehitpause=1
+channel=7
+
+[State Yuko Voice]
+type = PlaySnd
+triggerall = palno=8
+trigger1 = map(DIE)=1
+value = 8383, 6
+volumescale=200
 ignorehitpause=1
 channel=7
 
@@ -1371,14 +1100,14 @@ ignorehitpause = 1
 [State 0, VarAdd]
 type = MapSet
 trigger1 = !combocount
-trigger2 = stateno!=[2400,2500]
+trigger1 = stateno!=[2400,2500]
 map = "tphi"
 value = 0
 ignorehitpause = 1
 [State 0, VarAdd]
 type = MapSet
 trigger1 = !combocount
-trigger2 = stateno!=[2400,2500]
+trigger1 = stateno!=[2400,2500]
 map = "tplow"
 value = 0
 ignorehitpause = 1
@@ -1386,6 +1115,12 @@ ignorehitpause = 1
 type = MapSet
 trigger1 = !combocount
 map = "hdive"
+value = 0
+ignorehitpause = 1
+[State 0, VarAdd]
+type = MapSet
+trigger1 = !combocount
+map = "hlaunch"
 value = 0
 ignorehitpause = 1
 [State 0, VarAdd]
@@ -1419,6 +1154,13 @@ ignorehitpause = 1
 type = MapSet
 trigger1 = !combocount
 map = "clawheight"
+value = 0
+ignorehitpause = 1
+
+[State 0, VarAdd]
+type = MapSet
+trigger1 = stateno!=[2000,2999]
+map = "exchain"
 value = 0
 ignorehitpause = 1
 

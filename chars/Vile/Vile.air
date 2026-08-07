@@ -1369,6 +1369,7 @@ Clsn2Default: 1
 11,4, 0,0, 5
 11,5, 0,0, 5
 11,6, 0,0, 1
+LoopStart
 11,7, 0,0, 1
 
 [Begin Action 905]

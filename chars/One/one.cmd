@@ -132,7 +132,8 @@ trigger1 = stateno!= 1055 && stateno !=1052 && ctrl && stateno!=45 && stateno!=4
 trigger2 = stateno!= 1055 && stateno !=1052 && movecontact  && enemynear, movetype = H
 trigger2 = stateno!= 1055 && stateno !=1052 && hitdefattr = A, NA
 trigger3 = stateno!= 1055 && stateno !=1052 && stateno=45 || stateno=46|| stateno=50 
-trigger4 = stateno= 1055 &&movehit
+trigger4 = stateno= 1055 || stateno = 1031 || stateno = 10300 || stateno = 1031 || stateno = 10301
+trigger4 = movehit
 
 
 
@@ -438,6 +439,8 @@ triggerall = var(29)>0
 triggerall = (pos y<-30 && vel y < 0) || (vel y >=0)
 trigger2 = (stateno = [600,650]) 
 trigger2 = movehit
+trigger3 = stateno=1031||stateno=10300
+trigger3 = movehit
 ;Aerial Backdash
 [State -1, Air Backdash]
 type = ChangeState
@@ -451,6 +454,8 @@ triggerall = var(29)>0
 triggerall = (pos y<-30 && vel y < 0) || (vel y >=0)
 trigger2 = (stateno = [600,650]) 
 trigger2 = movehit
+trigger3 = stateno=1031||stateno=10300
+trigger3 = movehit
 
 ;---------------------------------------------------------------------------
 
@@ -847,7 +852,7 @@ triggerall = command = "buffer_z"
 triggerall = command = "holddown"
 triggerall = statetype = A
 trigger1 = ctrl
-trigger2 = (stateno = 600)|| stateno = 630  || stateno = 650  || stateno = 635
+trigger2 = (stateno = 600)|| stateno = 630  || stateno = 650  || stateno = 635 || stateno = 620
 trigger2 = movecontact ;&& enemynear, movetype = H
 trigger3 = stateno = 1350 ;Air blocking
 
@@ -1024,3 +1029,15 @@ trigger4 = (stateno = [600,635]) || stateno=645
 trigger4 = movecontact ;&& enemynear, movetype = H
 value = 651
 
+;-------------------------------------------------------------------------------
+[State Teleport]
+type = ChangeState
+triggerall = stateno!=40
+triggerall = map(teleport)=0
+triggerall = command = "holdback"
+triggerall = command != "holddown"
+triggerall = command != "b"
+triggerall = command = "buffer_c"
+triggerall = helper(260), stateno != 262 && helper(260), stateno != 265 && helper(260), stateno != 263
+trigger1= helper(260), stateno = 665 || helper(260), stateno = 261 || helper(260), stateno = 661 || helper(260), stateno = 461
+value = 690

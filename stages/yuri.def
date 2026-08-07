@@ -1,4 +1,4 @@
-ceq;Art by J4RMS31
+;Art by J4RMS31
 ;Implementation by Ace's Hi
 
 [Info]
@@ -48,8 +48,8 @@ topscale = 1
 botscale = 1.2
 
 [Bound]
-screenleft = 15
-screenright = 15
+screenleft = 25
+screenright = 25
 
 [StageInfo]
 zoffset = 200

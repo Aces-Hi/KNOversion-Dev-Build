@@ -14,36 +14,114 @@ flag = invisible
 persistent=1
 
 ;p1 side
-[State -2, Explod];BG
+[State -2, Explod];Face0
 type = Explod
 triggerall = teamside = 1
-triggerall=numexplod(7000)=0
+triggerall=numexplod(7030)=0
 trigger1=root,alive
-anim = 7000
-pos = 26,185
+trigger1=root,map(Imagination)<=200&&root,map(Install)=0 
+anim = 7030
+pos = 31,185
 postype = left
 removetime = -1
 scale = .6,.6
-sprpriority = -2
-id = 7000
+sprpriority = -3
+id = 7030
 bindtime = -1
 ontop = 1
 ownpal = 1
 ignorehitpause = 1
 pausemovetime = 999999
 supermovetime = 999999
-[State -2, Explod];Install BG
+[State -2, Explod];Face1
 type = Explod
 triggerall = teamside = 1
-triggerall=numexplod(7100)=0
-trigger1=root,alive&&root,map(Install)
-anim = 7100
-pos = 26,185
+triggerall=numexplod(7031)=0
+trigger1=root,alive
+trigger1=root,map(Imagination)>200&&root,map(Install)=0&&root,map(Imagination)<800
+anim = 7031
+pos = 31,185
 postype = left
 removetime = -1
 scale = .6,.6
-sprpriority = -2
-id = 7100
+sprpriority = -3
+id = 7031
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+[State -2, Explod];Face2
+type = Explod
+triggerall = teamside = 1
+triggerall=numexplod(7032)=0
+trigger1=root,alive
+trigger1=root,map(Imagination)>=800&&root,map(Install)=0 &&root,map(Imagination)<1000
+anim = 7032
+pos = 31,185
+postype = left
+removetime = -1
+scale = .6,.6
+sprpriority = -3
+id = 7032
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+[State -2, Explod];Face3
+type = Explod
+triggerall = teamside = 1
+triggerall=numexplod(7033)=0
+trigger1=root,alive
+trigger1=root,map(Imagination)>=1000&&root,map(Install)=0 
+anim = 7033
+pos = 31,185
+postype = left
+removetime = -1
+scale = .6,.6
+sprpriority = -3
+id = 7033
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+[State -2, Explod];InstallFace1
+type = Explod
+triggerall = teamside = 1
+triggerall=numexplod(7034)=0
+trigger1=root,alive
+trigger1=root,map(Imagination)<800&&root,map(Install)
+anim = 7034
+pos = 31,185
+postype = left
+removetime = -1
+scale = .6,.6
+sprpriority = -3
+id = 7034
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+[State -2, Explod];InstallFace2
+type = Explod
+triggerall = teamside = 1
+triggerall=numexplod(7035)=0
+trigger1=root,alive
+trigger1=root,map(Imagination)>=800&&root,map(Install)
+anim = 7035
+pos = 31,185
+postype = left
+removetime = -1
+scale = .6,.6
+sprpriority = -3
+id = 7035
 bindtime = -1
 ontop = 1
 ownpal = 1
@@ -51,13 +129,32 @@ ignorehitpause = 1
 pausemovetime = 999999
 supermovetime = 999999
 
+[State -2, Explod];0 Bar
+type = Explod
+triggerall = teamside = 1
+triggerall=numexplod(7001)=0
+trigger1=root,map(Imagination)<=200
+trigger1=root,alive
+anim = 7002
+pos = 31,185
+postype = left
+removetime = -1
+scale = .6,.6
+sprpriority = -2
+id = 7001
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
 [State -2, Explod];Base Bar
 type = Explod
 triggerall = teamside = 1
 triggerall=numexplod(7002)=0
 trigger1=root,alive
 anim = 7002
-pos = 26,185
+pos = 31,185
 postype = left
 removetime = -1
 scale = .6,.6
@@ -75,7 +172,7 @@ triggerall = teamside = 1
 triggerall=numexplod(7102)=0
 trigger1=root,alive&&root,map(Install)
 anim = 7102
-pos = 26,185
+pos = 31,185
 postype = left
 removetime = -1
 scale = .6,.6
@@ -95,7 +192,7 @@ triggerall=numexplod(7003)=0
 trigger1=root,alive
 trigger1 = root,map(Imagination)>=800
 anim = 7003
-pos = 26,185
+pos = 31,185
 postype = left
 removetime = -1
 scale = .6,.6
@@ -114,7 +211,7 @@ triggerall=numexplod(7103)=0
 trigger1=root,alive&&root,map(Install)
 trigger1 = root,map(Imagination)>=800
 anim = 7103
-pos = 26,185
+pos = 31,185
 postype = left
 removetime = -1
 scale = .6,.6
@@ -134,7 +231,7 @@ triggerall=numexplod(7004)=0
 trigger1=root,alive
 trigger1 = root,map(Imagination)>=1000
 anim = 7004
-pos = 26,185
+pos = 31,185
 postype = left
 removetime = -1
 scale = .6,.6
@@ -151,7 +248,7 @@ type = Explod
 triggerall = teamside = 1
 triggerall=numexplod(7010)=0
 trigger1=root,alive
-pos = 26,185
+pos = 31,185
 postype = left
 removetime = -1
 scale = .6,.6
@@ -169,36 +266,114 @@ supermovetime = 999999
 
 
 ;p2 side
-[State -2, Explod];BG
+[State -2, Explod];Face0
 type = Explod
 triggerall = teamside = 2
-triggerall=numexplod(7000)=0
+triggerall=numexplod(7030)=0
 trigger1=root,alive
-anim = 7001
-pos =  -119.5,185
+trigger1=root,map(Imagination)<=200&&root,map(Install)=0 
+anim = 7040
+pos =  -124.5,185
 postype = right
 removetime = -1
 scale = .6,.6
-sprpriority = -2
-id = 7000
+sprpriority = -3
+id = 7030
 bindtime = -1
 ontop = 1
 ownpal = 1
 ignorehitpause = 1
 pausemovetime = 999999
 supermovetime = 999999
-[State -2, Explod];Install BG
+[State -2, Explod];Face1
 type = Explod
 triggerall = teamside = 2
-triggerall=numexplod(7100)=0
-trigger1=root,alive&&root,map(Install)
-anim = 7101
-pos =  -119.5,185
+triggerall=numexplod(7031)=0
+trigger1=root,alive
+trigger1=root,map(Imagination)>200&&root,map(Install)=0&&root,map(Imagination)<800
+anim = 7041
+pos =  -124.5,185
 postype = right
 removetime = -1
 scale = .6,.6
-sprpriority = -2
-id = 7100
+sprpriority = -3
+id = 7031
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+[State -2, Explod];Face2
+type = Explod
+triggerall = teamside = 2
+triggerall=numexplod(7032)=0
+trigger1=root,alive
+trigger1=root,map(Imagination)>=800&&root,map(Install)=0 &&root,map(Imagination)<1000
+anim = 7042
+pos =  -124.5,185
+postype = right
+removetime = -1
+scale = .6,.6
+sprpriority = -3
+id = 7032
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+[State -2, Explod];Face3
+type = Explod
+triggerall = teamside = 2
+triggerall=numexplod(7033)=0
+trigger1=root,alive
+trigger1=root,map(Imagination)>=1000&&root,map(Install)=0 
+anim = 7043
+pos =  -124.5,185
+postype = right
+removetime = -1
+scale = .6,.6
+sprpriority = -3
+id = 7033
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+[State -2, Explod];InstallFace1
+type = Explod
+triggerall = teamside = 2
+triggerall=numexplod(7034)=0
+trigger1=root,alive
+trigger1=root,map(Imagination)<800&&root,map(Install)
+anim = 7044
+pos =  -124.5,185
+postype = right
+removetime = -1
+scale = .6,.6
+sprpriority = -3
+id = 7034
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
+[State -2, Explod];InstallFace2
+type = Explod
+triggerall = teamside = 2
+triggerall=numexplod(7035)=0
+trigger1=root,alive
+trigger1=root,map(Imagination)>=800&&root,map(Install)
+anim = 7045
+pos =  -124.5,185
+postype = right
+removetime = -1
+scale = .6,.6
+sprpriority = -3
+id = 7035
 bindtime = -1
 ontop = 1
 ownpal = 1
@@ -206,13 +381,32 @@ ignorehitpause = 1
 pausemovetime = 999999
 supermovetime = 999999
 
+[State -2, Explod];0 Bar
+type = Explod
+triggerall = teamside = 2
+triggerall=numexplod(7001)=0
+trigger1=root,map(Imagination)<=200
+trigger1=root,alive
+anim = 7005
+pos =  -124.5,185
+postype = right
+removetime = -1
+scale = .6,.6
+sprpriority = -2
+id = 7001
+bindtime = -1
+ontop = 1
+ownpal = 1
+ignorehitpause = 1
+pausemovetime = 999999
+supermovetime = 999999
 [State -2, Explod];Base Bar
 type = Explod
 triggerall = teamside = 2
 triggerall=numexplod(7002)=0
 trigger1=root,alive
 anim = 7005
-pos =  -119.5,185
+pos =  -124.5,185
 postype = right
 removetime = -1
 scale = .6,.6
@@ -230,7 +424,7 @@ triggerall = teamside = 2
 triggerall=numexplod(7102)=0
 trigger1=root,alive&&root,map(Install)
 anim = 7105
-pos =  -119.5,185
+pos =  -124.5,185
 postype = right
 removetime = -1
 scale = .6,.6
@@ -250,7 +444,7 @@ triggerall=numexplod(7003)=0
 trigger1=root,alive
 trigger1 = root,map(Imagination)>=800
 anim = 7006
-pos =  -119.5,185
+pos =  -124.5,185
 postype = right
 removetime = -1
 scale = .6,.6
@@ -269,7 +463,7 @@ triggerall=numexplod(7103)=0
 trigger1=root,alive&&root,map(Install)
 trigger1 = root,map(Imagination)>=800
 anim = 7106
-pos =  -119.5,185
+pos =  -124.5,185
 postype = right
 removetime = -1
 scale = .6,.6
@@ -289,7 +483,7 @@ triggerall=numexplod(7004)=0
 trigger1=root,alive
 trigger1 = root,map(Imagination)>=1000
 anim = 7007
-pos =  -119.5,185
+pos =  -124.5,185
 postype = right
 removetime = -1
 scale = .6,.6
@@ -306,7 +500,7 @@ type = Explod
 triggerall = teamside = 2
 triggerall=numexplod(7010)=0
 trigger1=root,alive
-pos =  -119.5,185
+pos =  -124.5,185
 postype = right
 removetime = -1
 scale = .6,.6
@@ -322,7 +516,14 @@ supermovetime = 999999
 
 
 
-
+[State -2, Explod];Scaling The Bar
+type =ModifyExplod
+Trigger1=TeamSide=1
+triggerall=root,alive
+trigger1 = NumExplod(7001)
+window = 1,0,76*(root,map(Imagination)/1000),20
+id = 7001
+ignorehitpause = 1
 [State -2, Explod];Scaling The Bar
 type =ModifyExplod
 Trigger1=TeamSide=1
@@ -349,6 +550,14 @@ id = 7003
 ignorehitpause = 1
 
 
+[State -2, Explod];Scaling The Bar
+type =ModifyExplod
+Trigger1=TeamSide=2
+triggerall=root,alive
+trigger1 = NumExplod(7001)
+window = 15+75-(75*(root,map(Imagination)/1000)),0,90,20
+id = 7001
+ignorehitpause = 1
 [State -2, Explod];Scaling The Bar
 type =ModifyExplod
 Trigger1=TeamSide=2
@@ -415,7 +624,14 @@ persistent=1
 id=7100
 [State 0]
 Type=RemoveExplod
-trigger1 = root,map(Imagination)>=800
+trigger1 = root,map(Imagination)>200
+trigger2 = root,map(Install)
+ignorehitpause=1
+persistent=1
+id=7001
+[State 0]
+Type=RemoveExplod
+trigger1 = root,map(Imagination)>=800||root,map(Imagination)<=200
 trigger2 = root,map(Install)
 ignorehitpause=1
 persistent=1
@@ -448,3 +664,47 @@ trigger2 = root,map(Install)
 ignorehitpause=1
 persistent=1
 id=7004
+
+[State 0]
+Type=RemoveExplod
+trigger1 = root,map(Imagination)>200
+trigger2 = root,map(Install)
+ignorehitpause=1
+persistent=1
+id=7030
+[State 0]
+Type=RemoveExplod
+trigger1 = root,map(Imagination)>=800||root,map(Imagination)<=200
+trigger2 = root,map(Install)
+ignorehitpause=1
+persistent=1
+id=7031
+[State 0]
+Type=RemoveExplod
+trigger1 = root,map(Imagination)<800||root,map(Imagination)>=1000
+trigger2 = root,map(Install)
+ignorehitpause=1
+persistent=1
+id=7032
+[State 0]
+Type=RemoveExplod
+trigger1 = root,map(Imagination)<1000
+trigger2 = root,map(Install)
+ignorehitpause=1
+persistent=1
+id=7033
+[State 0]
+Type=RemoveExplod
+trigger1 = root,map(Imagination)>=800
+trigger2 = root,map(Install)=0
+ignorehitpause=1
+persistent=1
+id=7034
+[State 0]
+Type=RemoveExplod
+trigger1 = root,map(Imagination)<800
+trigger2 = root,map(Install)=0
+ignorehitpause=1
+persistent=1
+id=7035
+

@@ -1,5 +1,5 @@
+	<#bbbbbb>Health: 1400</>
 	<#bbbbbb>This move list assumes you are facing to the right.</>
-
 	<#009d20>UNIQUE TRAIT: ACID PUDDLES</>
 	Vile can empower himself by placing and interacting with acid puddles.
 	Puddles placed with Remix Moves are temporary, but puddles placed with
@@ -35,7 +35,7 @@ LOOPHOLD	-		_B^Y
    <#bbbbbb>A command grab.</>
    <#aaff00>IN PUDDLE: Does more damage.</>
 CURB STOMP	-		_D^Y
-   <#bbbbbb>Can be canceled into _F^Y on hit.</>
+   <#bbbbbb>Can be canceled other specials during combos.</>
    <#aaff00>IN PUDDLE: Has much more range and launches the enemy.</>
 
 

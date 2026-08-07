@@ -140,13 +140,13 @@ type = S
 [State 180, 1]
 type = ChangeState
 trigger1 = Time = 0
-trigger1 = enemynear,name!="alicia"&&enemynear,name!="deus"&&enemynear,name!="crow"
+trigger1 = enemynear,name!="alicia"&&enemynear,name!="deus"&&enemynear,name!="crow"&&enemynear,name!="yuko"&&enemynear,name!="akira"
 value = 181+random%3
 
 [State 180, 1]
 type = ChangeState
 trigger1 = Time = 0
-trigger1 = enemynear,name="alicia"||enemynear,name="deus"||enemynear,name="crow"
+trigger1 = enemynear,name="alicia"||enemynear,name="deus"||enemynear,name="crow"||enemynear,name="yuko"||enemynear,name="akira"
 value = 183
 ;---------------------------------------------------------------------------
 ; Win 1
@@ -346,7 +346,7 @@ value = F1000,0
 type = PlaySnd
 triggerall = time=0
 triggerall = enemynear,name!="angous"
-triggerall = enemynear,name!="alicia"&&enemynear,name!="deus"&&enemynear,name!="crow"&&enemynear,name!="akira"
+triggerall = enemynear,name!="alicia"&&enemynear,name!="deus"&&enemynear,name!="crow"&&enemynear,name!="akira"&&enemynear,name!="yuko"
 trigger1 = palno!=11
 trigger2 = palno=11&&roundtype<=1
 value = 180, (0+(Random%7))
@@ -370,7 +370,7 @@ volumescale=200
 [State Sahkive Voices]
 type = PlaySnd
 triggerall = time=0
-triggerall = enemynear,name="alicia"||enemynear,name="deus"||enemynear,name="crow"||enemynear,name="akira"
+triggerall = enemynear,name="alicia"||enemynear,name="deus"||enemynear,name="crow"||enemynear,name="akira"||enemynear,name="yuko"
 trigger1 = palno!=11
 trigger2 = palno=11&&roundtype<=1
 value = 180,0
@@ -1474,7 +1474,7 @@ value = fvar(6)
 
 [Statedef -3]
 
-;THE GREAT EQUALIZER is DEATH!!!!!!!
+;GREAT EQUALIZER is THE DEATH!!!!!!!
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = map(DIE)=1

@@ -6334,6 +6334,15 @@ statetype = A       ;S,A,C,L
 movetype = A        ;I,A,H
 physics = N         ;A,C,S,N
 
+[State 0, VelSet]
+type = VelSet
+trigger1 = time=12&&command="holdfwd"&&vel x <6
+x = 6
+[State 0, VelSet]
+type = VelSet
+trigger1 = time=12&&command="holdback"&&vel x >-6
+x = -6
+
 [State 0, VelAdd]
 type = VelAdd
 triggerall = time<=60
@@ -6349,6 +6358,19 @@ triggerall=time>12
 triggerall=vel x>-4
 trigger1 = command="holdback"
 x =-.6
+
+[State 0, VelAdd]
+type = VelAdd
+triggerall = time<=60
+triggerall=time>12
+trigger1=vel x<-4
+x =.1
+[State 0, VelAdd]
+type = VelAdd
+triggerall = time<=60
+triggerall=time>12
+trigger1=vel x>4
+x =-.1
 
 [State 0, VelAdd]
 type = VelAdd

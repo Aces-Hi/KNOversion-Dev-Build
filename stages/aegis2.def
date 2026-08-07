@@ -57,8 +57,8 @@ topscale = 1
 botscale = 1     
 
 [Bound]
-screenleft = 15    
-screenright = 15  
+screenleft = 25    
+screenright = 25  
 
 [StageInfo]
 zoffset = 200

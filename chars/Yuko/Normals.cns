@@ -37,6 +37,11 @@ value = 2
 persistent = 0
 ;==================================
 
+[State 200, 2]
+type = PlaySnd
+trigger1 = animelem = 2
+value = 0, 0
+
 [State 200, 1]
 type = HitDef 
 p2facing = 1
@@ -52,7 +57,8 @@ pausetime = 8, 8               ;Time attacker pauses, time opponent shakes
 sparkno = 0                      ;Spark anim no (Def: set above)
 sparkxy = -15, -60              ;X-offset for the "hit spark" rel. to p2,
 ;Y-offset for the spark rel. to p1
-guardsound =S300, 2                ;Sound to play on guard
+hitsound = 5, 0                  ;Sound to play on hit
+guardsound = 6, 0                ;Sound to play on guard
 ground.type = high               ;Type: High, Low, Trip (def: Normal)
 ground.slidetime = 5             ;Time that the opponent slides back
 ground.hittime  = ceil(cond(fvar(15) *20 < 8, 8, fvar(15) * 20))
@@ -123,6 +129,11 @@ value = .5
 persistent = 0
 ;==================================
 
+[State 200, 2]
+type = PlaySnd
+trigger1 = animelem = 4
+value = 0, 3
+
 [State 0, Explod]
 type = Explod
 trigger1 = animelem=6
@@ -153,8 +164,9 @@ hitflag = MAFD
 guardflag = MA
 pausetime = 10,10
 sparkno = 1
-sparkxy = -20,-43
-guardsound = S300, 2
+sparkxy = -20,-70
+hitsound   = S8,1
+guardsound = 6,1
 ground.type = low
 ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *20 < 2, 2, fvar(15) * 20))
@@ -240,6 +252,10 @@ value = 1
 persistent = 0
 ;==================================
 
+[State 200, 2]
+type = PlaySnd
+trigger1 = animelem = 7
+value = 0, 1
 
 [State 200, 1]
 type = HitDef 
@@ -254,7 +270,8 @@ guardflag = MA
 pausetime = 12,12
 sparkno = 2
 sparkxy = -15,-45
-guardsound =S300, 2
+hitsound   = s8,0
+guardsound = 6,2
 ground.type = high
 ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *20 < 9, 9, fvar(15) * 20))
@@ -292,14 +309,15 @@ damage = ceil(cond(fvar(11) * 70 < 7, 7, fvar(11) * 70)), 0
 hitflag = MAFD
 guardflag = MA
 pausetime = 14,14
-sparkno = 2
+sparkno = 3
 sparkxy = -15,-45
-guardsound =S300, 2
+hitsound   = s8,0
+guardsound = 6,2
 ground.type = high
 ground.slidetime = 12
-ground.hittime  = 30
-air.hittime  = 30
-down.hittime = 30
+ground.hittime  = 40
+air.hittime  = 40
+down.hittime = 40
 ground.velocity = -7,-4
 air.velocity = -7,-4
 envshake.time = 12
@@ -325,7 +343,8 @@ guardflag = MA
 pausetime = 12,12
 sparkno = 2
 sparkxy = -15,-45
-guardsound =S300, 2
+hitsound   = s8,0
+guardsound = 6,2
 ground.type = high
 ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *20 < 9, 9, fvar(15) * 20))
@@ -390,6 +409,11 @@ value = 2
 persistent = 0
 ;==================================
 
+[State 200, 2]
+type = PlaySnd
+trigger1 = animelem = 2
+value = 0, 0
+
 [State 200, 1]
 type = HitDef 
 p2facing = 1
@@ -403,9 +427,10 @@ hitflag = MAFD                ;Flags of conditions that move can hit
 ;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 8, 8               ;Time attacker pauses, time opponent shakes
 sparkno = 0                      ;Spark anim no (Def: set above)
-sparkxy = -15, -70              ;X-offset for the "hit spark" rel. to p2,
+sparkxy = -15, -40              ;X-offset for the "hit spark" rel. to p2,
 ;Y-offset for the spark rel. to p1               ;Sound to play on hit
-guardsound =S300, 2               ;Sound to play on guard
+hitsound = 5, 0                  ;Sound to play on hit
+guardsound = 6, 0                ;Sound to play on guard
 ground.type = low               ;Type: High, Low, Trip (def: Normal)
 ground.slidetime = 5             ;Time that the opponent slides back
 ground.hittime  = ceil(cond(fvar(15) *20 < 8, 8, fvar(15) * 20))
@@ -489,6 +514,11 @@ value = .5
 persistent = 0
 ;==================================
 
+[State 200, 2]
+type = PlaySnd
+trigger1 = animelem = 2
+value = 0, 3
+
 [State 0, Explod]
 type = Explod
 trigger1 = animelem=6
@@ -520,7 +550,8 @@ guardflag = LA
 pausetime = 10,10
 sparkno = 1
 sparkxy = -20,0
-guardsound = S300, 2
+hitsound   = S8,0
+guardsound = 6,1
 ground.type = Low
 ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *20 < 2, 2, fvar(15) * 20))
@@ -579,6 +610,11 @@ value = 1
 persistent = 0
 ;==================================
 
+[State 200, 2]
+type = PlaySnd
+trigger1 = animelem = 5
+value = 0, 2
+
 [State 0, NotHitBy]
 type = NotHitBy
 triggerall=enemynear,stateno!=900
@@ -602,8 +638,9 @@ hitflag = MAFD
 guardflag = MA
 pausetime = 12,12
 sparkno = 2
-sparkxy = -10,-20
-guardsound = S300, 2
+sparkxy = -10,-70
+hitsound   = s8,2
+guardsound = 6,2
 ground.type = Low
 ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *30 < 9, 9, fvar(15) * 30))
@@ -697,6 +734,10 @@ value = 1
 persistent = 0
 ;==================================
 
+[State 200, 2]
+type = PlaySnd
+trigger1 = animelem = 4
+value = 0, 1
 
 [State 200, 1]
 type = HitDef 
@@ -710,8 +751,9 @@ hitflag = MAFD
 guardflag = LA
 pausetime = 12,12
 sparkno = 2
-sparkxy = -15,-45
-guardsound =S300, 2
+sparkxy = -15,-20
+hitsound   = s8,2
+guardsound = 6,2
 ground.type = high
 ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *20 < 9, 9, fvar(15) * 20))
@@ -734,11 +776,9 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, 1))
 [State 0, ChangeState]
 type = ChangeState
 trigger1 = animtime = 0
-value = 0
+value = 11
 ctrl = 1
-;anim =
-;ignorehitpause = 
-;persistent = 
+
 
 ;---------------------------------------------------------------------------
 ;jL
@@ -776,6 +816,11 @@ value = 2
 persistent = 0
 ;==================================
 
+[State 200, 2]
+type = PlaySnd
+trigger1 = animelem = 2
+value = 0, 0
+
 [State 600, 2]
 type = HitDef 
 p2facing = 1
@@ -786,8 +831,9 @@ guardflag = MA
 HITFLAG=MAFD
 pausetime = 8,8
 sparkno = 0
-sparkxy = -10,-30
-guardsound = S300, 2
+sparkxy = -10,-50
+hitsound = 5, 0                  ;Sound to play on hit
+guardsound = 6, 0                ;Sound to play on guard
 ground.type = high
 animtype = light
 air.animtype = back
@@ -823,6 +869,14 @@ ctrl = 0
 anim = 610
 sprpriority = 2
 
+[State 0, VarAdd]
+type = mapset
+trigger1 = 1
+map =  "truecounter"
+value = 0
+ignorehitpause = 1
+persistent = 1
+
 ;=====SCALING SHIT==================
 [State Stun Scaling]
 type = VarAdd
@@ -840,6 +894,11 @@ value = 1
 persistent = 0
 ;==================================
 
+[State 200, 2]
+type = PlaySnd
+trigger1 = animelem = 3
+value = 0, 3
+ 
 [State 610, 3]
 type = HitDef 
 p2facing = 1
@@ -851,8 +910,9 @@ guardflag = MA
 hitflag = MAFD
 pausetime = 10,10
 sparkno = 1
-sparkxy = -20,-35
-guardsound = S300, 2
+sparkxy = -20,-50
+hitsound   = S8,1
+guardsound = 6,1
 animtype =up
 air.animtype = up
 ground.type = high
@@ -878,9 +938,10 @@ damage = ceil(cond(fvar(11) *40 < 5, 5, fvar(11) * 40)), 0
 guardflag = HA
 hitflag = MAFD
 pausetime = 10,10
-sparkno = 2
-sparkxy = -20,-35
-guardsound = S300, 2
+sparkno = 1
+sparkxy = -20,-50
+hitsound   = S8,1
+guardsound = 6,1
 animtype =up
 air.animtype = up
 ground.type = high
@@ -948,6 +1009,11 @@ value = 1
 persistent = 0
 ;==================================
 
+[State 200, 2]
+type = PlaySnd
+trigger1 = animelem = 4
+value = 0, 2
+
 [State 0]
 type = HitDef 
 p2facing = 1
@@ -961,8 +1027,9 @@ hitflag = MAFD
 guardflag = HA
 pausetime = 12,12
 sparkno = 2
-sparkxy = -15,-30
-guardsound = S300, 2
+sparkxy = -15,-10
+hitsound   = s8,0
+guardsound = 6,2
 ground.type = high
 ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *17 < 1, 1, fvar(15) *17))
@@ -972,7 +1039,7 @@ ground.velocity = -2,20
 air.velocity = -2,20
 down.velocity = -2,20
 fall = 1
-fall.yvelocity=-6
+fall.yvelocity=-7
 fall.xvelocity=-2
 guard.ctrltime = 8
 guard.hittime = 8
@@ -1006,8 +1073,9 @@ hitflag = MAFD
 guardflag = HA
 pausetime = 12,12
 sparkno = 2
-sparkxy = -15,-30
-guardsound = S300, 2
+sparkxy = -15,-10
+hitsound   = s8,0
+guardsound = 6,2
 ground.type = high
 ground.slidetime = 12
 ground.hittime  = ceil(cond(fvar(15) *17 < 6, 6, fvar(15) *17))
@@ -1255,7 +1323,8 @@ damage = ceil(cond(fvar(11) *158 < 4, 4, fvar(11) * 158)), 0
 guardflag = MA
 pausetime = 8,8
 sparkno = 2
-sparkxy = -10,-40
+sparkxy = -60,-70
+hitsound   = S8,1
 guardsound = S300, 2
 ground.type = high
 ground.slidetime = 12
@@ -1284,7 +1353,8 @@ damage = 150
 guardflag = MA
 pausetime = 8,8
 sparkno = 2
-sparkxy = -10,-40
+sparkxy = -60,-70
+hitsound   = S8,1
 guardsound = S300, 2
 ground.type = high
 air.hittime  = 120
@@ -1352,7 +1422,8 @@ damage = 150
 guardflag = MA
 pausetime = 8,8
 sparkno = 2
-sparkxy = -10,-40
+sparkxy = -60,-70
+hitsound   = S8,1
 guardsound = S300, 2
 ground.type = high
 ground.slidetime = 12
@@ -1380,7 +1451,8 @@ damage = ceil(cond(fvar(11) *158 < 4, 4, fvar(11) * 158)), 0
 guardflag = MA
 pausetime = 8,8
 sparkno = 2
-sparkxy = -10,-40
+sparkxy = -60,-70
+hitsound   = S8,1
 guardsound = S300, 2
 ground.type = high
 air.hittime  = 120

@@ -664,6 +664,17 @@ value = 0.3; You can make this whatever you want to increase stun scaling per mo
 ignorehitpause = 1
 persistent = 0
 
+[State 0, ChangeState]
+type = ChangeState
+triggerall = enemy, HitPauseTime = 0
+triggerall = var(50)
+triggerall = helper(260), stateno = 665 || helper(260), stateno = 261 || helper(260), stateno = 661 || helper(260), stateno = 263 || helper(260), stateno = 262  || helper(260), stateno = 461
+triggerall = animelem = 5
+trigger1 = map(SwordDIstX) < 30 && map(SwordDIstX) >-80
+trigger1 = map(SworddistY) < 90 && map(SworddistY) > -20
+value = 260
+redirectid = helper(260), id
+
 [State 0, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
@@ -1675,6 +1686,7 @@ trigger10=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3
 trigger11 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && root,ctrl=1
 trigger11= root, command = "hold_c" || root,command = "c"
 trigger12=root, stateno =1311 && root,animelemtime(3)>=0 
+trigger13=root,stateno=690
 value = 265
 ignorehitpause=1
 
@@ -1704,11 +1716,16 @@ trigger1 = 1
 x = .8
 y = 1
 
+[State 0, Turn]
+type = Turn
+trigger1 = root,movetype=A
+trigger1 = facing!=root,facing
+
 [State 0. MapSet]
 type 		= parentMapSet
 trigger1 		= 1
 map 		= "swordDistX"
-value 		= 0
+value 		= rootdist x
 ignorehitpause 	= 1
 persistent 		= 1
 
@@ -1716,7 +1733,7 @@ persistent 		= 1
 type 		= parentMapSet
 trigger1 		= 1
 map 		= "swordDistY"
-value 		= 0
+value 		= rootdist y
 ignorehitpause 	= 1
 persistent 		= 1
 
@@ -1809,6 +1826,7 @@ trigger10=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3
 trigger11 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && root,ctrl=1
 trigger11= root, command = "hold_c" || root,command = "c"
 trigger12=root, stateno =1311 && root,animelemtime(3)>=0 
+trigger13=root,stateno=690
 value = 265
 ignorehitpause=1
 
@@ -1868,6 +1886,7 @@ trigger4 = (rootdist x=[-40,40])&& (rootdist y=[-30,30]) && root, stateno = 105 
 trigger5 = (rootdist x=[-40,40])&& (rootdist y=[-30,30]) && root, stateno = 10
 trigger6 = (rootdist x=[-40,40])&& (rootdist y=0) && root, stateno = 5120
 trigger7 = (rootdist x=[-30,30])&& (rootdist y=0) && ( root, stateno = 1041 ||root, stateno = 1042 ||root, stateno = 1241 || root, stateno = 1242) && root, animelem = 7
+trigger8=root,stateno=690
 value = 265
 ignorehitpause=1
 ;ignorehitpause = 
@@ -1987,6 +2006,7 @@ trigger10=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3
 trigger11 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && root,ctrl=1
 trigger11= root, command = "hold_c" || root,command = "c"
 trigger12=root, stateno =1311 && root,animelemtime(3)>=0 
+trigger13=root,stateno=690
 value = 265
 ignorehitpause=1
 
@@ -2059,6 +2079,7 @@ trigger10=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3
 trigger11 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && root,ctrl=1
 trigger11= root, command = "hold_c" || root,command = "c"
 trigger12=root, stateno =1311 && root,animelemtime(3)>=0 
+trigger13=root,stateno=690
 value = 265
 ignorehitpause=1
 
@@ -2749,6 +2770,17 @@ type = VelSet
 trigger1 = animelem = 5
 x = 2
 
+[State 0, ChangeState]
+type = ChangeState
+triggerall = enemy, HitPauseTime = 0
+triggerall = var(50)
+triggerall = helper(260), stateno = 665 || helper(260), stateno = 261 || helper(260), stateno = 661 || helper(260), stateno = 263 || helper(260), stateno = 262  || helper(260), stateno = 461
+triggerall = animelem = 7
+trigger1 = map(SwordDIstX) < 30 && map(SwordDIstX) >-80
+trigger1 = map(SworddistY) < 120 && map(SworddistY) > -20
+value = 460
+redirectid = helper(260), id
+
 [State 200, VarAdd]
 type = VarAdd
 trigger1 = movehit = 1
@@ -2850,6 +2882,17 @@ map =  "truecounter"
 value = 0
 ignorehitpause = 1
 persistent = 1
+
+[State 0, ChangeState]
+type = ChangeState
+triggerall = enemy, HitPauseTime = 0
+triggerall = var(50)
+triggerall = helper(260), stateno = 665 || helper(260), stateno = 261 || helper(260), stateno = 661 || helper(260), stateno = 263 || helper(260), stateno = 262 || helper(260), stateno = 461
+triggerall = animelem = 6
+trigger1 = map(SwordDIstX) < 30 && map(SwordDIstX) >-100
+trigger1 = map(SworddistY) < 90 && map(SworddistY) > -20
+value = 260
+redirectid = helper(260), id
 
 [State -3, Win Voices] 
 type = PlaySnd
@@ -3248,6 +3291,12 @@ value = S,SA
 time = 1
 
 [State 0, ParentVarAdd]
+type = ParentMapAdd
+trigger1 = movehit = 1
+map = "upsword"
+value=1
+
+[State 0, ParentVarAdd]
 type = ParentVarAdd
 trigger1 = movehit = 1
 fv = 13
@@ -3280,7 +3329,7 @@ time = 1
 [State 410, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = time = 0
+trigger1 = !movecontact &&root,map(upsword)=0
 attr = A, SP
 damage = ceil(cond(root,fvar(11) * 30 < 7, 7, root,fvar(11) * 30)),7
 animtype  = up
@@ -3307,6 +3356,37 @@ fall.envshake.freq = 0
 fall.envshake.ampl = 0
 getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 guard.dist=0
+[State 410, 2]
+type = HitDef 
+p2facing = 1
+trigger1 = !movecontact &&root,map(upsword)
+attr = A, SP
+damage = ceil(cond(root,fvar(11) * 30 < 7, 7, root,fvar(11) * 30)),7
+animtype  = up
+air.animtype= up 
+hitflag = MAFD
+guardflag = MA
+pausetime = 12,12
+sparkno = 12
+sparkxy = -10,0
+hitsound   = S8,0
+guardsound = 6,0
+ground.type = high
+ground.slidetime = 12
+ground.hittime  = ceil(cond(root,fvar(14) *50 < 11, 11, root,fvar(14) * 50))
+air.hittime  = ceil(cond(root,fvar(14) *50 < 11, 11, root,fvar(14) * 50))
+ground.velocity = -3,2
+air.velocity = -3,0
+forcenofall = 1
+envshake.time = 0
+envshake.freq = 0
+envshake.ampl = 0
+fall.envshake.time = 0
+fall.envshake.freq = 0
+fall.envshake.ampl = 0
+getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
+guard.dist=0
+
 [State 460, Hit Marker]
 type = Explod
 trigger1 = movehit
@@ -3375,6 +3455,7 @@ trigger10=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3
 trigger11 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && root,ctrl=1
 trigger11= root, command = "hold_c" || root,command = "c"
 trigger12=root, stateno =1311 && root,animelemtime(3)>=0 
+trigger13=root,stateno=690
 value = 265
 ignorehitpause=1
 
@@ -3906,6 +3987,14 @@ value = 0
 ignorehitpause = 1
 persistent = 1
 
+[State 0, VarAdd]
+type = mapAdd
+trigger1 = movehit&&enemy,statetype=A
+map =  "jH"
+value = 1.75
+ignorehitpause = 1
+persistent = 0
+
 [State -3, Win Voices] 
 type = PlaySnd
 trigger1 = time = 0
@@ -3978,7 +4067,7 @@ ground.hittime  = ceil(cond(fvar(7) *30 < 10, 10, fvar(7) * 30))
 air.hittime  = ceil(cond(fvar(7) *30 < 10, 10, fvar(7) * 30))
 down.hittime = ceil(cond(fvar(7) *30 < 10, 10, fvar(7) * 30))
 ground.velocity = -4
-air.velocity = -2.5,-3.5
+air.velocity = -2.5,-3.5+map(jH)
 guard.hittime = 10
 guard.slidetime = 10
 guard.ctrltime = 10
@@ -4252,6 +4341,7 @@ trigger10=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3
 trigger11 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 60]) && root,ctrl=1
 trigger11= root, command = "hold_c" || root,command = "c" 
 trigger12=root, stateno =1311 && root,animelemtime(3)>=0
+trigger13=root,stateno=690
 value = 265
 
 [State 0, ChangeState]
@@ -4588,13 +4678,52 @@ value = 1
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = animelem = 1&& p2stateno != 5110
+trigger1 = animelem = 1&& p2stateno != 5110&& map(j6rland)=0
 attr = A, SA
 animtype  = hard
 damage = ceil(cond(fvar(11) *20 < 7, 7, fvar(11) * 20)), 0
 hitflag = MAFD
 guardflag = MA
 pausetime = 10,17
+sparkno = 11
+sparkxy = -10,-40
+hitsound   = s8,2
+guardsound = 6,2
+ground.type = Low
+ground.slidetime = 12
+ground.hittime  = 1
+air.hittime  = 12
+ground.velocity = -1.5,5
+air.velocity = -1.5,5
+forcenofall = 1;
+ envshake.time = 8
+envshake.freq = 10
+envshake.ampl = 2
+envshake.phase = 1
+getpower = 0
+
+[State 0, VarAdd]
+type = mapadd
+trigger1 = movehit
+map =  "j6rland"
+value = 1
+ignorehitpause = 1
+persistent = 0
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time=0&& map(j6rland)
+value = 504
+
+[State 200, 1]
+type = HitDef 
+p2facing = 1
+trigger1 = animelem = 1&& p2stateno != 5110&& map(j6rland)
+attr = A, SA
+animtype  = hard
+damage = ceil(cond(fvar(11) *20 < 7, 7, fvar(11) * 20)), 0
+hitflag = MAFD
+guardflag = MA
+pausetime = 10,10
 sparkno = 11
 sparkxy = -10,-40
 hitsound   = s8,2
@@ -4921,10 +5050,20 @@ value = 0
 type = ChangeState
 triggerall = enemy, HitPauseTime = 0
 triggerall = var(50)
-triggerall = helper(260), stateno = 665 || helper(260), stateno = 261 || helper(260), stateno = 661 || helper(260), stateno = 263
+triggerall = helper(260), stateno = 665 || helper(260), stateno = 261 || helper(260), stateno = 661 || helper(260), stateno = 263  || helper(260), stateno = 461
 triggerall = animelem = 7
 trigger1 = map(SwordDIstX) < 30 && map(SwordDIstX) >-80
 trigger1 = map(SworddistY) < 70 && map(SworddistY) > -20
+value = 260
+redirectid = helper(260), id
+[State 0, ChangeState]
+type = ChangeState
+triggerall = enemy, HitPauseTime = 0
+triggerall = var(50)
+triggerall = helper(260), stateno = 262
+triggerall = animelem = 7
+trigger1 = map(SwordDIstX) < 30 && map(SwordDIstX) >-80
+trigger1 = map(SworddistY) < 70 && map(SworddistY) > -80
 value = 260
 redirectid = helper(260), id
 
@@ -5045,7 +5184,7 @@ value = .5
 type = ChangeState
 triggerall = enemy, HitPauseTime = 0
 triggerall = var(50)
-triggerall = helper(260), stateno = 665 || helper(260), stateno = 261 || helper(260), stateno = 661 || helper(260), stateno = 263
+triggerall = helper(260), stateno = 665 || helper(260), stateno = 261 || helper(260), stateno = 661 || helper(260), stateno = 263 || helper(260), stateno = 262  || helper(260), stateno = 461
 triggerall = animelem =6
 trigger1 = map(SwordDIstX) < 30 && map(SwordDIstX) > -70
 trigger1 = map(SworddistY) < 75 && map(SwordDIsty) > -10
@@ -5118,6 +5257,16 @@ anim = 259
 sprpriority = 2
 velset = 25,0
 
+[State 0, PosSet]
+type = PosSet
+trigger1 = pos y >-40
+y = -40
+
+[State 0, VelMul]
+type = VelMul
+trigger1 = facing!=root,facing&&time=0
+x = -1
+ignorehitpause = 1
 [State 0, NotHitBy]
 type = NotHitBy
 triggerall = enemy,name="Roger"
@@ -5186,7 +5335,7 @@ getpower =(100)*(cond(var(var(2)) = 1, 1, .5))
 guard.dist=0
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = movecontact = 1 || frontedgedist<-14
+trigger1 = movecontact = 1 || frontedgedist<-14 || time>60
 value = 261
 ctrl = 0
 
@@ -5354,6 +5503,7 @@ trigger10=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3
 trigger11 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && root,ctrl=1
 trigger11= root, command = "hold_c" || root,command = "c" 
 trigger12=root, stateno =1311 && root,animelemtime(3)>=0
+trigger13=root,stateno=690
 value = 265
 ignorehitpause=1
 
@@ -5412,6 +5562,7 @@ trigger10=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3
 trigger11 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && root,ctrl=1
 trigger11= root, command = "hold_c" || root,command = "c"
 trigger12=root, stateno =1311 && root,animelemtime(3)>=0 
+trigger13=root,stateno=690
 value = 265
 ignorehitpause=1
 
@@ -5491,6 +5642,7 @@ trigger10=(rootdist x = [-40, 40]) && (rootdist y = [-30, 30])&&root, stateno =3
 trigger11 = (rootdist x = [-40, 40]) && (rootdist y = [-30, 30]) && root,ctrl=1
 trigger11= root, command = "hold_c" || root,command = "c"
 trigger12=root, stateno =1311 && root,animelemtime(3)>=0 
+trigger13=root,stateno=690
 value = 265
 ignorehitpause=1
 
@@ -5500,6 +5652,73 @@ trigger1 = pos y>=-10 && vel y>=0
 value = 262
 ctrl = 0
 
+;ONO 4R Teleport
+;-----------------------------
+[Statedef 690]
+type    		= A
+movetype		= A
+physics 		= N
+ctrl 		= 0
+anim 		= 690
+sprpriority 	= 2
+velset 		= 7, 0
+facep2		= 1
+
+[State 0, VelMul]
+type = VelMul
+trigger1 = 1
+x = .9
+
+[State 0, VarAdd]
+type = mapset
+trigger1 = time=0
+map =  "teleport"
+value = 1
+ignorehitpause = 1
+persistent = 1
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time=0&&!combocount
+value = 691
+ignorehitpause = 1
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = time=0
+fv =13     ;fv = 
+value = 1
+
+[State 0, StateTypeSet]
+type = StateTypeSet
+triggerall =  pos y <-5
+trigger1 = animelem=7
+trigger2 = combocount
+statetype = A       ;S,A,C,L
+movetype = A        ;I,A,H
+physics = A         ;A,C,S,N
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = pos y >=-5
+y = 0
+ignorehitpause = 1
+[State 0, PosAdd]
+type = PosSet
+trigger1 = !time
+x = helper(260), pos x
+y = helper(260), pos y
+ignorehitpause = 1
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = animelem=7&&pos y = 0
+value = 0
+ctrl = 1
+[State 0, CtrlSet]
+type = CtrlSet
+trigger1 = animelem=7
+value = 1
 ;-----------------------------
 [Statedef 69000]
 type    = A

@@ -328,27 +328,12 @@ name = "x"
 command = x
 
 [Command]
-name = "x"
-command = /x
-buffer.time=0
-
-[Command]
 name = "y"
 command = y
 
 [Command]
-name = "y"
-command = /y
-buffer.time=0
-
-[Command]
 name = "z"
 command = z
-
-[Command]
-name = "z"
-command = /z
-buffer.time=0
 
 [Command]
 name = "nobuffer_x"
@@ -370,29 +355,14 @@ name = "a"
 command = a
 
 [Command]
-name = "a"
-command = /a
-buffer.time=0
-
-[Command]
 name = "b"
 command = b
 buffer.time = 5
 
 [Command]
-name = "b"
-command = /b
-buffer.time=0
-
-[Command]
 name = "c"
 command = c
 buffer.time = 5
-
-[Command]
-name = "c"
-command = /c
-buffer.time=0
 
 [Command]
 name = "nobuffer_a"
@@ -849,11 +819,6 @@ buffer.time = 5
 name = "EX"
 command = d
 buffer.time = 5
-
-[Command]
-name = "EX"
-command = /d
-buffer.time=0
 
 [Command]
 name = "nobuffer_EX"

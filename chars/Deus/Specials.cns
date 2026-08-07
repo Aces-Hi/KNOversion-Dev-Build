@@ -1099,9 +1099,9 @@ triggerall =  root,command !="holddown"
 triggerall =  root,command !="holdfwd"
 triggerall =  root,command !="holdback"
 trigger1 =  root,statetype = A
-triggerall = root,HitDefAttr != SCA, HA,HP,HT
+trigger1= root,HitDefAttr != SCA, HA,HP,HT
 trigger1 =  root,movetype!=H
-trigger2 = root,stateno=1010||root,stateno=1801||root,stateno=1600||root,stateno=1400||root,stateno=801||root,stateno=802||root,stateno=1700||root,stateno=1501||root,stateno=1110||root,stateno=1800||root,stateno=1900||root,stateno=1901
+trigger2 = root,stateno=1010||root,stateno=1801||root,stateno=1600||root,stateno=1400||root,stateno=801||root,stateno=802||root,stateno=1700||root,stateno=1501||root,stateno=1110||root,stateno=1800||root,stateno=1900||root,stateno=1901||root,stateno=3501
 ignorehitpause=1
 
 [State j5S]
@@ -1581,9 +1581,9 @@ triggerall =  root,command !="holddown"
 triggerall =  root,command !="holdfwd"
 triggerall =  root,command !="holdback"
 trigger1 =  root,statetype = A
-triggerall = root,HitDefAttr != SCA, HA,HP,HT
+trigger1 = root,HitDefAttr != SCA, HA,HP,HT
 trigger1 =  root,movetype!=H
-trigger2 = root,stateno=1010||root,stateno=1801||root,stateno=1600||root,stateno=1400||root,stateno=801||root,stateno=802||root,stateno=1700||root,stateno=1501||root,stateno=1110||root,stateno=1800||root,stateno=1900||root,stateno=1901
+trigger2 = root,stateno=1010||root,stateno=1801||root,stateno=1600||root,stateno=1400||root,stateno=801||root,stateno=802||root,stateno=1700||root,stateno=1501||root,stateno=1110||root,stateno=1800||root,stateno=1900||root,stateno=1901||root,stateno=3501
 ignorehitpause=1
 
 [State j5S]
@@ -3798,6 +3798,7 @@ palfx.time=32
 getpower = (100)*(cond(var(var(2)) = 1, 1,1)) 
 fall=1
 fall.yvelocity=0
+
 [State 0, EnvShake]
 type = EnvShake
 trigger1 = time=0 
@@ -4566,7 +4567,7 @@ persistent = 1
 [State 0, VelAdd]
 type = VelSet
 trigger1 = time=0
-x = 8
+x = 10
 y = 15
 [State 0, VelMul]
 type = VelMul
@@ -4768,7 +4769,7 @@ persistent = 1
 [State 0, VelAdd]
 type = VelSet
 trigger1 = time=0
-x = 8
+x = 10
 y = 15
 [State 0, VelMul]
 type = VelMul

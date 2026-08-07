@@ -133,6 +133,7 @@ trigger2 = var(1)
 ;trigger3 = !ishelper
 ;trigger4 = stateno = 5120
 trigger3 = stateno = 1017 && movecontact ;&& enemynear, movetype = H
+trigger4 = stateno = 1010&&movehit
 
 [State -1, EX 6S: Rising Knee (Air)]
 type = ChangeState
@@ -191,8 +192,7 @@ triggerall = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
 trigger3 = stateno = 100
-trigger4 = stateno = 1010
-trigger4 = movecontact ;&& enemynear, movetype = H
+trigger4 = stateno = 1010&&movehit
 trigger5 = stateno = 1017 && movecontact ;&& enemynear, movetype = H
 
 ;-------------------------------------------------------------------------
@@ -226,7 +226,7 @@ trigger2 = var(1)
 ;trigger3 = movecontact ;&& enemynear, movetype = H
 ;trigger3 = stateno = 1010
 trigger3 = stateno = 1017 && movecontact ;&& enemynear, movetype = H
-
+trigger4 = stateno = 1010&&movehit
 
 [State -1, 2S: Acid Stomp]
 type = ChangeState
@@ -279,8 +279,7 @@ triggerall = command="holdback"
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-trigger3 = stateno = 1010
-trigger3 = movecontact ;&& enemynear, movetype = H
+trigger3 = stateno = 1010&&movehit
 
 [State -1, 4S: Acid Grab]
 type = ChangeState
@@ -291,6 +290,7 @@ triggerall=command!="c"
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
+trigger3 = stateno = 1010&&movehit
 ;-------------------------------------------------------------------------
 
 [State -1, j5S: (Air) Rayzah]
@@ -354,6 +354,7 @@ trigger2 = var(1)
 ;trigger3 = movecontact ;&& enemynear, movetype = H
 ;trigger4 = stateno=1000
 trigger3 = stateno=1017 && movecontact ;&& enemynear, movetype = H
+trigger4 = stateno = 1010&&movehit
 
 [State -1, 5S: Acid Razor]
 type = ChangeState
@@ -370,7 +371,7 @@ triggerall=command!="c"
 trigger1 = statetype != A
 trigger1 = ctrl
 trigger2 = var(1)
-
+trigger3 = stateno = 1010&&movehit
 ;===========================================================================
 ;===========================================================================
 ;===========================================================================

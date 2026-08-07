@@ -1,6 +1,6 @@
 [Data]
 ;Amount of life to start with
-life = 1500
+life = 1300
 ;attack power (more is stronger)
 attack = 100
 ;defensive power (more is stronger)
@@ -1107,7 +1107,35 @@ map =  "kickbang"
 value = 0
 ignorehitpause = 1
 persistent = 1
-
+[State 0, VarAdd]
+type = mapset
+trigger1 = combocount=0
+map =  "upsword"
+value = 0
+ignorehitpause = 1
+persistent = 1
+[State 0, VarAdd]
+type = mapset
+trigger1 = combocount=0
+map =  "jH"
+value = 0
+ignorehitpause = 1
+persistent = 1
+[State 0, VarAdd]
+type = mapset
+trigger1 = combocount
+trigger2 = movetype!=a
+map =  "teleport"
+value = 0
+ignorehitpause = 1
+persistent = 1
+[State 0, VarAdd]
+type = mapset
+trigger1 = combocount=0
+map =  "j6rland"
+value = 0
+ignorehitpause = 1
+persistent = 1
 [State 45, Limiter Removal]
 type = RemoveExplod
 trigger1 = Statetype != A

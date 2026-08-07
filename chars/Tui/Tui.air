@@ -1,4 +1,4 @@
-eeeecccscceceeqeeeeeeeeqqecezecqzqqqqqqeqccccczzcczzeqqaaeeeeceeccccqeqeeqeeqzjR
+eeeeecccscceceeqeeeeeeeeqqecezecqzqqqqqqeqccccczzcczzeqqaaeeeeceeccccqeqeeqeeqzjR
 qqqqeeceeqeqqzeqeec31011,,klkl,,..,,,,,..505,,,lf,,, ,,, .,kl610
 ..,......,,,...j,,,./..kl,,----..,,.,,,,,,,,,,,.; KFM's animation data
 ; see docs/air.txt for more information
@@ -2308,6 +2308,7 @@ Clsn2Default: 1
 11,3, 0,0, 5
 11,3, 0,0, 5
 11,4, 0,0, 1
+LoopStart
 11,5, 0,0, 1
 
 ; 22R: Desp Refill

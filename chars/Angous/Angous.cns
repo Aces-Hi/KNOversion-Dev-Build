@@ -1371,10 +1371,22 @@ triggerall = palno = 8
 triggerall=animelem=4
 triggerall=stateno=3010
 trigger1=enemynear,var(28)=0&&enemynear,name="Angous"
-trigger2=enemynear,name!="Angous"
+trigger2=enemynear,name!="Angous"&&enemynear,name!="Yuko"
+trigger3=enemynear,name="Yuko"&&enemynear,palno!=8
 ignorehitpause=1
 persistent=0
 bgm = "sound/angoushatred.mp3"
+loop = 1
+[State 0, PlaySnd] ;FRAUD /// THIRD - DISINTEGRATION LOOP
+type = PlayBgm
+triggerall=RoundType=3
+triggerall = palno = 8
+triggerall=animelem=4
+triggerall=stateno=3010
+trigger1=enemynear,name="Yuko"&&enemynear,palno=8
+ignorehitpause=1
+persistent=0
+bgm = "sound/angousfraud.mp3"
 loop = 1
 [State 0, PlaySnd] ;MARK OF THE WOLF
 type = PlayBgm

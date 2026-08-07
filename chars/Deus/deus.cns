@@ -1,6 +1,6 @@
 [Data]
 ;Amount of life to start with
-life = 1500
+life = 1300
 ;attack power (more is stronger)
 attack = 100
 ;defensive power (more is stronger)
@@ -252,7 +252,7 @@ trigger2 = palno=5||palno=6||palno=7||palno=8||palno=9
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
 triggerall = time=30
-triggerall=enemynear,name!="Roger"&&enemynear,name!="Vile"&&enemynear,name!="JoJo"&&enemynear,name!="Dreyvon"&&enemynear,name!="JV"&&enemynear,name!="Akira"&&enemynear,name!="Alicia"&&enemynear,name!="Crow"
+triggerall=enemynear,name!="Roger"&&enemynear,name!="Vile"&&enemynear,name!="JoJo"&&enemynear,name!="Dreyvon"&&enemynear,name!="JV"&&enemynear,name!="Akira"&&enemynear,name!="Alicia"&&enemynear,name!="Crow"&&enemy,name!="FJV"&&enemy,name!="Yuko"
 value = 170, (1+(Random%5))
 volumescale=200
 channel=7
@@ -276,7 +276,7 @@ trigger2 = palno=5||palno=6||palno=7||palno=8||palno=9
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
 triggerall = time=30
-triggerall=enemynear,name="Alicia"||enemynear,name="Akira"||enemynear,name="JV"||enemynear,name="Crow"
+triggerall=enemynear,name="Alicia"||enemynear,name="Akira"||enemynear,name="JV"||enemynear,name="Crow"||enemy,name="FJV"||enemy,name="Yuko"
 value = 170, (3+(Random%4))
 volumescale=200
 channel=7
@@ -886,7 +886,7 @@ triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
 triggerall=enemy,name!="Angous"&&enemy,name!="Eddy"&&enemy,name!="One"&&enemy,name!="Roger"
 triggerall=enemy,name!="Roger"&&enemy,name!="Vile"&&enemy,name!="Sahkive"&&enemy,name!="JoJo"&&enemy,name!="Dreyvon"&&enemy,name!="Alicia"
-triggerall=enemy,name!="Arzon"&&enemy,name!="JV"&&enemy,name!="Alicia"&&enemy,name!="Crow"&&enemy,name!="Akira"
+triggerall=enemy,name!="Arzon"&&enemy,name!="JV"&&enemy,name!="Alicia"&&enemy,name!="Crow"&&enemy,name!="Akira"&&enemy,name!="FJV"&&enemy,name!="Yuko"
 trigger1 = time=45
 value = 190, (1+(Random%5))
 volumescale=150
@@ -951,7 +951,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=enemy,name="JV"
+triggerall=enemy,name="JV"||enemy,name="FJV"
 trigger1 = time=45
 value = 192, (0+(Random%2))
 volumescale=150
@@ -1167,7 +1167,7 @@ triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
 triggerall=enemy,name!="Angous"&&enemy,name!="Eddy"&&enemy,name!="One"&&enemy,name!="Roger"
 triggerall=enemy,name!="Roger"&&enemy,name!="Vile"&&enemy,name!="Sahkive"&&enemy,name!="JoJo"&&enemy,name!="Dreyvon"&&enemy,name!="Alicia"
-triggerall=enemy,name!="Arzon"&&enemy,name!="JV"&&enemy,name!="Alicia"&&enemy,name!="Crow"&&enemy,name!="Akira"
+triggerall=enemy,name!="Arzon"&&enemy,name!="JV"&&enemy,name!="Alicia"&&enemy,name!="Crow"&&enemy,name!="Akira"&&enemy,name!="FJV"&&enemy,name!="Yuko"
 trigger1 = time=60
 value = 190, (1+(Random%5))
 volumescale=150
@@ -1232,7 +1232,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=enemy,name="JV"
+triggerall=enemy,name="JV"||enemy,name="FJV"
 trigger1 = time=60
 value = 192, (0+(Random%2))
 volumescale=150
@@ -1903,7 +1903,7 @@ triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
 triggerall=enemy,name!="Angous"&&enemy,name!="Eddy"&&enemy,name!="One"&&enemy,name!="Roger"
 triggerall=enemy,name!="Roger"&&enemy,name!="Vile"&&enemy,name!="Sahkive"&&enemy,name!="JoJo"&&enemy,name!="Dreyvon"&&enemy,name!="Alicia"
-triggerall=enemy,name!="Arzon"&&enemy,name!="JV"&&enemy,name!="Alicia"&&enemy,name!="Crow"&&enemy,name!="Akira"
+triggerall=enemy,name!="Arzon"&&enemy,name!="JV"&&enemy,name!="Alicia"&&enemy,name!="Crow"&&enemy,name!="Akira"&&enemy,name!="FJV"&&enemy,name!="Yuko"
 trigger1 = time=5
 value = 190, (1+(Random%5))
 volumescale=150
@@ -1968,7 +1968,7 @@ lowpriority=1
 type = PlaySnd
 triggerall=map(december)=0
 triggerall=enemy,name!="Deus"
-triggerall=enemy,name="JV"
+triggerall=enemy,name="JV"||enemy,name="FJV"
 trigger1 = time=5
 value = 192, (0+(Random%2))
 volumescale=150
@@ -2741,6 +2741,8 @@ value = 0
 ignorehitpause=0
 ;------------------------------------------------
 
+
+
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = movetype=H
@@ -3145,7 +3147,7 @@ ignorehitpause = 1
 
 [State 0, AssertSpecial]
 type = AssertSpecial
-trigger1 = map(lockin)=0
+trigger1 = map(lockin)=0&&facing=enemy,facing
 flag = nostandguard
 flag2 = nocrouchguard
 flag3 = noairguard

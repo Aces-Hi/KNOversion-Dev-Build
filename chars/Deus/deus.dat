@@ -1,5 +1,5 @@
+	<#bbbbbb>Health: 1300</>
 	<#bbbbbb>This move list assumes I am facing to the right.</>
-
 	<#107105>UNIQUE TRAIT: BOUNDLESS</>
 	I have many traits that make me play unlike any other character in this game.
 	I can face either direction at any time, I don't have a traditional walk,
@@ -31,7 +31,7 @@ HEAVEN'S BLESSING	-		<#65b5ff>(AIR ONLY)</> ^Y
    <#bbbbbb>Fires an unblockable kiss that sticks to others.</>
 _!HEAVEN'S CALL	-		<#aaffff>(GROUND OR AIR)</> ^Y
         <#bbbbbb>Can be done normally by pressing ^Y in the air, or can be done
-        at certain points during other special moves or during throws.</>
+        at certain points during other special moves, throws or Futility.</>
 HALO	-		<#aaffff>(GROUND OR AIR)</> _F^Y
    <#bbbbbb>You can hold _B during startup to reduce the range of
    the projectile, and to also make it drift backwards.</>
@@ -79,7 +79,7 @@ _EX HEAVEN'S BLESSING	-		<#65b5ff>(AIR ONLY)<#55ffff>(1 BAR)</> ^Y+^Z
    <#bbbbbb>Fires a kiss that does damage and sticks to others.</>
 _!_EX HEAVEN'S CALL	-		<#65b5ff>(AIR ONLY)</> ^Y
         <#bbbbbb>Can be done normally by pressing ^Y in the air, or can be done
-        at certain points during other special moves or during throws.</>
+        at certain points during other special moves, throws or Futility.</>
 _EX HALO	-		<#aaffff>(GROUND OR AIR)<#55ffff>(1 BAR)</> _F^Y+^Z
    <#bbbbbb>You can hold _B during startup to reduce the range of
    the projectile, and to also make it drift backwards.</>

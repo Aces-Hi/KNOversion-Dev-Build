@@ -1023,6 +1023,7 @@ Clsn2Default: 1
 11,2, 0,0, 5
 11,3, 0,0, 5
 11,4, 0,0, 1
+LoopStart
 11,5, 0,0, 1
 
 ; Desperation Refill (22R)

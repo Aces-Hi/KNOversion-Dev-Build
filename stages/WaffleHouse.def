@@ -6,7 +6,7 @@ name = "WAFFLE HOUSE PARKING LOT"
 attachedchar = data/dynamiclight/DynamicLight.def
 
 [Constants]
-DynamicLighting = 1
+DynamicLighting = 0
 DynamicR = 255
 DynamicG = 255
 DynamicB = 255

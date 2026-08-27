@@ -3145,14 +3145,6 @@ trigger1 = map(lockin)=0
 flag = NoAutoTurn
 ignorehitpause = 1
 
-[State 0, AssertSpecial]
-type = AssertSpecial
-trigger1 = map(lockin)=0&&facing=enemy,facing
-flag = nostandguard
-flag2 = nocrouchguard
-flag3 = noairguard
-ignorehitpause = 1
-
 [state 1]
 type = mapset
 trigger1 = command!="hold_c"

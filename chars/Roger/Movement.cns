@@ -35,10 +35,10 @@ physics = S
 sprpriority = 0
 anim = 0
 
-;[State 0, AssertSpecial]
-;type = AssertSpecial
-;trigger1 = 1
-;flag = invisible
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = invisible
 
 [State 0, ChangeAnim]
 type = ChangeAnim

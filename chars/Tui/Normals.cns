@@ -55,7 +55,7 @@ value = 1, 0
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *20 < 4, 4, fvar(11) * 20)), 0
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -149,7 +149,7 @@ value = 1, 1
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NA
 animtype  = Light
 air.animtype = back
@@ -345,7 +345,7 @@ getpower = (60)*(cond(var(var(3)) = 1, 1, 1))
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = animelem = 9 && !movecontact
+trigger1 = animelem = 9 && !movecontact&&!movereversed
 attr = S, NA
 animtype  = up
 air.animtype = back
@@ -857,7 +857,7 @@ value = 1, 1
 [State 0]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NA
 animtype  = hard
 air.animtype = up
@@ -1034,7 +1034,7 @@ value = 1, 2
 [State 0]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NA
 animtype  = hard
 air.animtype = up
@@ -1135,7 +1135,7 @@ y = 0
 
 [State 0, ChangeAnim]
 type = ChangeAnim
-trigger1 = command = "hold_z"&&animelemtime(7)=0&&vel x > 1&&!movecontact
+trigger1 = command = "hold_z"&&animelemtime(7)=0&&vel x > 1&&!movecontact&&!movereversed
 value = 430
 elem = 4
 ignorehitpause = 1
@@ -1166,7 +1166,7 @@ persistent = 0
 [State 430, 2]
 type = HitDef 
 p2facing = 1
-triggerall = !movecontact
+triggerall = !movecontact&&!movereversed
 trigger1= time<=19
 triggerall = !map(triphit)
 attr = C, NA
@@ -1202,7 +1202,7 @@ getpower = (100)*(cond(var(var(3)) = 1, 1, 1))
 [State 430, 2]
 type = HitDef 
 p2facing = 1
-triggerall = !movecontact
+triggerall = !movecontact&&!movereversed
 trigger1= time>19
 triggerall = !map(triphit)
 triggerall = enemy,movetype!=A
@@ -1239,7 +1239,7 @@ getpower = (100)*(cond(var(var(3)) = 1, 1, 1))
 [State 430, 2]
 type = HitDef 
 p2facing = 1
-triggerall = !movecontact
+triggerall = !movecontact&&!movereversed
 trigger1= time>19
 triggerall = !map(triphit)
 triggerall = enemy,movetype=A
@@ -1286,7 +1286,7 @@ persistent=0
 [State 430, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 triggerall = map(triphit)
 attr = C, NA
 damage = ceil(cond(fvar(11) *80 < 8, 8, fvar(11) * 80)), 0
@@ -1512,7 +1512,7 @@ value = 1, 1
 [State 610, While Rising]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, NA
 damage = ceil(cond(fvar(11) *40 < 4, 4, fvar(11) * 40)), 0
 guardflag = MA
@@ -2519,7 +2519,7 @@ ignorehitpause = 1
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact&&!combocount
+trigger1 = !movecontact&&!movereversed&&!combocount
 attr = S, SA
 animtype  = Hard
 damage = ceil(cond(fvar(11) *100 < 10,10, fvar(11) * 100)), 0
@@ -2551,7 +2551,7 @@ guard.ctrltime=21
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact&&combocount
+trigger1 = !movecontact&&!movereversed&&combocount
 attr = S, SA
 animtype  = Hard
 damage = ceil(cond(fvar(11) *100 < 10,10, fvar(11) * 100)), 0
@@ -2748,7 +2748,7 @@ ignorehitpause = 1
 type = HitDef 
 p2facing = 1
 trigger1 = !map(slash)
-trigger1 = !movecontact&&!combocount
+trigger1 = !movecontact&&!movereversed&&!combocount
 attr = S, ST
 animtype  = Hard
 damage = 150
@@ -2779,7 +2779,7 @@ snap = -10,0
 type = HitDef 
 p2facing = 1
 trigger1 = !map(slash)
-trigger1 = !movecontact&&combocount
+trigger1 = !movecontact&&!movereversed&&combocount
 attr = S, ST
 animtype  = Hard
 damage = ceil(cond(fvar(11) *90 < 9, 9, fvar(11) * 90)), 10
@@ -2826,7 +2826,7 @@ ignorehitpause = 0
 type = HitDef 
 p2facing = 1
 trigger1 = map(slash)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, ST
 animtype  = Hard
 damage = ceil(cond(fvar(11) *90 < 9, 9, fvar(11) * 90)), 10
@@ -3321,7 +3321,7 @@ ignorehitpause=1
 type = HitDef 
 p2facing = 1 
 triggerall = !map(dkick)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) *80 < 8, 8, fvar(11) * 80)), 0
 hitflag = MAFD
@@ -3370,7 +3370,7 @@ ignorehitpause = 1
 type = HitDef 
 p2facing = 1 
 triggerall = map(dkick)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) *40 < 4, 4, fvar(11) * 40)), 5
 hitflag = MAFD
@@ -3817,7 +3817,7 @@ persistent=0
 type = HitDef 
 p2facing = 1
 triggerall = !map(wham)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA
 animtype  = Light
 air.animtype = back
@@ -3866,7 +3866,7 @@ ignorehitpause = 1
 type = HitDef 
 p2facing = 1
 triggerall = map(wham)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA
 animtype  = Light
 air.animtype = back
@@ -3978,7 +3978,7 @@ value = 666,4
 type = HitDef 
 p2facing = 1 
 trigger1 = map(exdp)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA
 damage = ceil(cond(fvar(11) *30 < 3, 3, fvar(11) * 30)), 2
 hitflag = MAF
@@ -4008,7 +4008,7 @@ getpower = (105)*(cond(var(var(3)) = 1, 1, .5))
 type = HitDef 
 p2facing = 1 
 trigger1 = map(exdp)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA
 damage = ceil(cond(fvar(11) *31 < 5, 5, fvar(11) * 31)), 2
 hitflag = MAF
@@ -4228,7 +4228,7 @@ ignorehitpause=1
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-triggerall = !movecontact
+triggerall = !movecontact&&!movereversed
 trigger1 = map(divekick)=0
 attr = S, SA
 damage = ceil(cond(fvar(11) *60 < 6, 6, fvar(11) * 60)), 6
@@ -4260,7 +4260,7 @@ forcenofall = 1
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-triggerall = !movecontact
+triggerall = !movecontact&&!movereversed
 trigger1 = map(exdp)
 attr = S, SA
 damage = ceil(cond(fvar(11) *60 < 6, 6, fvar(11) * 60)), 6
@@ -4292,7 +4292,7 @@ forcenofall = 1
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-triggerall = !movecontact
+triggerall = !movecontact&&!movereversed
 trigger1 = map(divekick)
 trigger1 = map(exdp)=0
 attr = S, SA

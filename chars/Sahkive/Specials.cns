@@ -49,7 +49,7 @@ value = 0, 3
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 trigger1 = enemynear,statetype!=A
 attr = S, ST          ;Attributes: Standing, Normal Throw
 hitflag = MFD        ;Affect only ground people who are not being hit
@@ -77,7 +77,7 @@ guard.slidetime = 15
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 trigger1 = enemynear,statetype=A
 attr = S, ST          ;Attributes: Standing, Normal Throw
 hitflag = MAFD+       ;Affect only ground people who are not being hit
@@ -1042,7 +1042,7 @@ value = 0, 3
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 trigger1 = enemynear,statetype!=A
 attr = S, ST          ;Attributes: Standing, Normal Throw
 hitflag = MFD        ;Affect only ground people who are not being hit
@@ -1070,7 +1070,7 @@ guard.slidetime = 15
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 trigger1 = enemynear,statetype=A
 attr = S, ST          ;Attributes: Standing, Normal Throw
 hitflag = MAFD+        ;Affect only ground people who are not being hit
@@ -1502,7 +1502,7 @@ removeongethit = 0
 [State 800, 1] ;With grab sound
 type = HitDef
 trigger1=prevstateno!=100
-Triggerall = !movecontact
+Triggerall = !movecontact&&!movereversed
 trigger2=enemynear,movetype=H
 attr = S, ST          ;Attributes: Standing, Normal Throw
 hitflag = MAFD          ;Affect only ground people who are not being hit
@@ -1549,7 +1549,7 @@ ignorehitpause = 1
 [State 800, 1] ;With grab sound
 type = HitDef
 trigger1=prevstateno=100
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 trigger1=enemynear,movetype!=H
 attr = S, ST          ;Attributes: Standing, Normal Throw
 hitflag = MFD          ;Affect only ground people who are not being hit
@@ -1866,7 +1866,7 @@ value = 6
 
 [State 1041, 2]
 type = hitdef 
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, ST
 damage = ceil(cond(fvar(11) * 120 < 20, 20, fvar(11) * 120)),12
 animtype  = Hard
@@ -2253,7 +2253,7 @@ removeongethit = 0
 [State 800, 1] ;With grab sound
 type = HitDef
 trigger1=prevstateno!=100
-Triggerall =!movecontact
+Triggerall =!movecontact&&!movereversed
 trigger2=enemynear,movetype=H
 attr = S, ST          ;Attributes: Standing, Normal Throw
 hitflag = MAFD          ;Affect only ground people who are not being hit
@@ -2299,7 +2299,7 @@ ignorehitpause = 1
 [State 800, 1] ;With grab sound
 type = HitDef
 trigger1=prevstateno=100
-Trigger1 =!movecontact
+Trigger1 =!movecontact&&!movereversed
 trigger1=enemynear,movetype!=H
 attr = S, ST          ;Attributes: Standing, Normal Throw
 hitflag = MFD          ;Affect only ground people who are not being hit
@@ -2785,7 +2785,7 @@ removeongethit = 0
 type = hitdef 
 triggerall=enemynear,map(armor)=0
 trigger1 = map(ds)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 p2facing=1
 attr = S, SA
 damage = ceil(cond(fvar(11) * 80 < 8, 8, fvar(11) * 80)),6
@@ -2829,7 +2829,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, 1))
 type = hitdef 
 triggerall=enemynear,map(armor)>0
 trigger1 = map(ds)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 p2facing=1
 attr = S, SA
 damage = ceil(cond(fvar(11) * 80 < 8, 8, fvar(11) * 80)),6
@@ -2875,7 +2875,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, 1))
 [State 1041, 2]
 type = hitdef 
 trigger1 = map(ds)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 p2facing=1
 attr = S, SA
 damage = ceil(cond(fvar(11) * 80 < 8, 8, fvar(11) * 80)),6
@@ -3115,7 +3115,7 @@ removeongethit = 0
 [State 1041, 2]
 type = hitdef 
 trigger1 = map(ds)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 p2facing=1
 attr = S, HT
 damage = ceil(cond(fvar(11) * 100 < 10, 10, fvar(11) * 100)),12
@@ -3159,7 +3159,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, 1))
 [State 1041, 2]
 type = hitdef 
 trigger1 = map(ds)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 p2facing=1
 attr = S, HT
 damage = ceil(cond(fvar(11) * 100 < 10, 10, fvar(11) * 100)),12
@@ -3645,7 +3645,7 @@ value = 0, 3
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = S, ST          ;Attributes: Standing, Normal Throw
 hitflag = AFD          ;Affect only ground people who are not being hit   ;Throw has low priority, must be miss or dodge type.
 sparkno = 1000          ;No spark
@@ -4501,7 +4501,7 @@ value = 0, 3
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = S, ST          ;Attributes: Standing, Normal Throw
 hitflag = AFD          ;Affect only ground people who are not being hit
   ;Throw has low priority, must be miss or dodge type.

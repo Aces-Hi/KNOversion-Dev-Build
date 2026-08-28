@@ -276,7 +276,7 @@ time = 1
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A,HP
 getpower = 0
 air.animtype = back
@@ -535,7 +535,7 @@ x = 0
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S,HA
 getpower = 0
 damage = 10

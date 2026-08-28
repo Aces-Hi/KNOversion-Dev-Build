@@ -10461,7 +10461,7 @@ persistent = 1
 [State 0]
 type = MapSet
 triggerall=name="Yuko"
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 map = "IMHL"
 value = 0
 ignorehitpause = 1

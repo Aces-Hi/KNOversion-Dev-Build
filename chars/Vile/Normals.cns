@@ -808,7 +808,7 @@ value = 1004, (0+(Random%15))
 
 [State 400, 2]
 type = HitDef
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = C, NA
 damage = ceil(cond(fvar(11) *20 < 4, 4, fvar(11) * 20)), 0
 priority  = 3

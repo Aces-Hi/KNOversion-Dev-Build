@@ -133,7 +133,7 @@ player = 30,15
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact&&map(dclaw)=0
+trigger1 = !movecontact&&!movereversed&&map(dclaw)=0
 attr = S, HA
 animtype  = Hard
 air.animtype = back
@@ -169,7 +169,7 @@ fall.yvelocity=0
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact&&map(dclaw)
+trigger1 = !movecontact&&!movereversed&&map(dclaw)
 attr = S, HA
 animtype  = Hard
 air.animtype = back
@@ -210,6 +210,58 @@ trigger1 = command = "hold_x"||command = "hold_y"||command = "hold_z"
 trigger1 = movehit
 value =3050
 ctrl = 0
+
+;=======================================
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = WinKO
+value = 8991,0
+channel = 0
+ignorehitpause = 1
+persistent=0
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = WinKO
+flag = Nobardisplay
+flag2 = NoFG
+flag3 = Noshadow
+ignorehitpause=1
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = WinKO
+flag = Nomusic
+ignorehitpause=1
+[State 8990, Explod]
+type = Explod
+trigger1 = WinKO
+anim = F8990
+id = 8990
+pos = 0,0
+scale = 1,1
+postype = back
+bindtime = -1
+removetime = -2
+sprpriority = -10
+ownpal = 1
+supermovetime = -1
+persistent=0
+ignorehitpause=1
+[State 8990, Explod]
+type = Explod
+trigger1 = WinKO
+anim = F8991
+id = 8991
+pos = 0,0
+scale = 1,1
+postype = Left
+bindtime = -1
+removetime = -2
+sprpriority = -9
+ownpal = 1
+supermovetime = -1
+persistent=0
+ignorehitpause=1
+;=======================================
 
 [State 210, 5]
 type = ChangeState
@@ -303,7 +355,7 @@ facing=-1
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, HA
 animtype  = Hard
 air.animtype = back
@@ -334,6 +386,58 @@ forcenofall = 1
 getpower = 0
 p2stateno = 30000
 fall.yvelocity=0
+
+;=======================================
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = WinKO
+value = 8991,0
+channel = 0
+ignorehitpause = 1
+persistent=0
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = WinKO
+flag = Nobardisplay
+flag2 = NoFG
+flag3 = Noshadow
+ignorehitpause=1
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = WinKO
+flag = Nomusic
+ignorehitpause=1
+[State 8990, Explod]
+type = Explod
+trigger1 = WinKO
+anim = F8990
+id = 8990
+pos = 0,0
+scale = 1,1
+postype = back
+bindtime = -1
+removetime = -2
+sprpriority = -10
+ownpal = 1
+supermovetime = -1
+persistent=0
+ignorehitpause=1
+[State 8990, Explod]
+type = Explod
+trigger1 = WinKO
+anim = F8991
+id = 8991
+pos = 0,0
+scale = 1,1
+postype = Left
+bindtime = -1
+removetime = -2
+sprpriority = -9
+ownpal = 1
+supermovetime = -1
+persistent=0
+ignorehitpause=1
+;=======================================
 
 [State 210, 5]
 type = ChangeState
@@ -627,6 +731,7 @@ persistent=0
 [State 200, 1]
 type = HitDef 
 p2facing = 1
+kill=0
 trigger1 = movecontact = 0&&anim=3500
 attr = S, HA
 animtype  = up
@@ -659,6 +764,7 @@ getpower = 0
 p2getp1state=0
 [State 200, 1]
 type = HitDef 
+kill=0
 p2facing = 1
 trigger1 = anim=3501&&animelem=2
 attr = S, HA
@@ -890,6 +996,7 @@ persistent=1
 [State 0]
 type = HitDef 
 p2facing = 1
+kill=0
 trigger1 = animelem=5
 trigger2 = animelem=6
 attr = S, HA
@@ -923,6 +1030,7 @@ getpower = 0
 [State 0]
 type = HitDef 
 p2facing = 1
+kill=0
 trigger1 = animelem=7
 attr = S, HA
 animtype  = up
@@ -1133,6 +1241,57 @@ mul = 50,50,50
 ignorehitpause = 1
 persistent = 1
 ;==============================================================
+;=======================================
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = WinKO
+value = 8991,0
+channel = 0
+ignorehitpause = 1
+persistent=0
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = WinKO
+flag = Nobardisplay
+flag2 = NoFG
+flag3 = Noshadow
+ignorehitpause=1
+[State 8990, AssertSpecial]
+type = AssertSpecial
+trigger1 = WinKO
+flag = Nomusic
+ignorehitpause=1
+[State 8990, Explod]
+type = Explod
+trigger1 = WinKO
+anim = F8990
+id = 8990
+pos = 0,0
+scale = 1,1
+postype = back
+bindtime = -1
+removetime = -2
+sprpriority = -10
+ownpal = 1
+supermovetime = -1
+persistent=0
+ignorehitpause=1
+[State 8990, Explod]
+type = Explod
+trigger1 = WinKO
+anim = F8991
+id = 8991
+pos = 0,0
+scale = 1,1
+postype = Left
+bindtime = -1
+removetime = -2
+sprpriority = -9
+ownpal = 1
+supermovetime = -1
+persistent=0
+ignorehitpause=1
+;=======================================
 
 
 [State 210, 5]

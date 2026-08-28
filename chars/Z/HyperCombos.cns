@@ -1287,7 +1287,7 @@ id = 2002
 [State 200, 1]  
 type = HitDef
 triggerall = anim = 3051
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, HA
 damage = ceil(cond(fvar(11) *150 < 100, 100, fvar(11) * 150)), 30
 animtype = up

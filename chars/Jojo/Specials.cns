@@ -84,7 +84,7 @@ value = 0,4
 
 [State 1110, 3]
 type = HitDef
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 animtype  = Up
 damage = ceil(cond(fvar(11) *60 < 15, 15, fvar(11) * 60)), 2
@@ -310,7 +310,7 @@ persistent = 1
 [State 1110, 3]
 type = HitDef
 trigger1 = map(EW)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 getpower = 50
 animtype  = Up
@@ -346,7 +346,7 @@ guard.hittime=11
 type = HitDef
 trigger1 = map(EW)=1
 trigger1 = map(DAMN)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 getpower = 50
 animtype  = Up
@@ -381,7 +381,7 @@ guard.hittime=11
 type = HitDef
 trigger1 = map(EW)=1
 trigger1 = map(DAMN)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 getpower = 50
 animtype  = Up
@@ -416,7 +416,7 @@ guard.hittime=11
 type = HitDef
 trigger1 = map(EW)=2
 trigger1 = map(DAMN)<=1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 getpower = 50
 animtype  = Up
@@ -451,7 +451,7 @@ guard.hittime=11
 type = HitDef
 trigger1 = map(EW)=2
 trigger1 = map(DAMN)>1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 getpower = 50
 animtype  = Up
@@ -486,7 +486,7 @@ guard.hittime=11
 type = HitDef
 trigger1 = map(EW)>2
 trigger1 = map(DAMN)<=2
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 getpower = 50
 animtype  = Up
@@ -521,7 +521,7 @@ guard.hittime=11
 type = HitDef
 trigger1 = map(EW)>2
 trigger1 = map(DAMN)>2
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 getpower = 50
 animtype  = Up
@@ -768,7 +768,7 @@ ignorehitpause = 1
 
 [State 1110, 3]
 type = HitDef
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 animtype  = Up
 damage = ceil(cond(fvar(11) *50 < 10, 10, fvar(11) * 50)), 0
@@ -1070,7 +1070,7 @@ x = 6
 [State 410, 2]
 type = hitdef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) *70 < 15, 15, fvar(11) * 70)), 2
 animtype  = Medium
@@ -1181,7 +1181,7 @@ x = 20
 type = hitdef 
 p2facing = 1
 triggerall=enemynear,map(armor)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) *80 < 20, 20, fvar(11) * 80)), 7
 animtype  = Medium
@@ -1216,7 +1216,7 @@ p2stateno= 915020
 type = hitdef 
 p2facing = 1
 triggerall=enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) *80 < 20, 20, fvar(11) * 80)), 7
 animtype  = Medium
@@ -1336,7 +1336,7 @@ x = 20
 type = hitdef 
 p2facing = 1
 triggerall=enemynear,map(armor)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) *100 < 30, 30, fvar(11) * 100)), 15
 animtype  = Medium
@@ -1373,7 +1373,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 type = hitdef 
 p2facing = 1
 triggerall=enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) *100 < 30, 30, fvar(11) * 100)), 15
 animtype  = Medium
@@ -1587,7 +1587,7 @@ x = 6
 type = hitdef 
 p2facing = 1
 triggerall=enemynear,map(armor)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) *80 < 20, 20, fvar(11) * 80)), 7
 animtype  = Medium
@@ -1622,7 +1622,7 @@ p2stateno= 915020
 type = hitdef 
 p2facing = 1
 triggerall=enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) *80 < 20, 20, fvar(11) * 80)), 7
 animtype  = Medium
@@ -1899,7 +1899,7 @@ type = hitdef
 p2facing = 1
 triggerall=anim=1052
 triggerall=enemynear,map(armor)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) *120 < 40, 40, fvar(11) * 120)), 15
 animtype  = Medium
@@ -1937,7 +1937,7 @@ type = hitdef
 p2facing = 1
 triggerall=anim=1052
 triggerall=enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) *120 < 40, 40, fvar(11) * 120)), 0
 animtype  = Medium
@@ -2734,7 +2734,7 @@ ignorehitpause = 1
 [State 410, 2]
 type = hitdef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) *60 < 15, 15, fvar(11) * 60)), 2
 animtype  = Medium
@@ -2770,7 +2770,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 type = hitdef 
 p2facing = 1
 trigger1 = prevstateno=190195
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) *60 < 15, 15, fvar(11) * 60)), 2
 animtype  = Medium
@@ -3012,7 +3012,7 @@ ignorehitpause = 1
 [State 410, 2]
 type = hitdef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) *60 < 15, 15, fvar(11) * 60)), 2
 animtype  = Medium
@@ -3157,7 +3157,7 @@ freq = 100   ;A frequency of 180 shakes the screen rapidly
 [State 410, 2]
 type = hitdef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA
 damage = ceil(cond(fvar(11) *60 < 15, 15, fvar(11) * 60)), 2
 animtype  = Medium
@@ -3392,7 +3392,7 @@ freq = 100   ;A frequency of 180 shakes the screen rapidly
 [State 410, 2]
 type = hitdef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA
 damage = ceil(cond(fvar(11) *60 < 15, 15, fvar(11) * 60)), 2
 animtype  = Medium
@@ -3545,7 +3545,7 @@ ignorehitpause = 1
 [State 410, 2]
 type = hitdef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) *60 < 15, 15, fvar(11) * 60)), 2
 animtype  = Medium
@@ -3581,7 +3581,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 type = hitdef 
 p2facing = 1
 trigger1 = prevstateno=190195
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) *60 < 15, 15, fvar(11) * 60)), 2
 animtype  = Medium

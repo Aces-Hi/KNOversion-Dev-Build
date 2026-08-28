@@ -2299,12 +2299,13 @@ x = 5
 type = mapset
 trigger1 = movehit
 map="cockstomp"
-value =1
+value =3
 ignorehitpause = 1
+persistent=0
 
 [State 410, 2]
 type = HitDef
-trigger1 =!movecontact&&map(cockstomp)=0
+trigger1 =!movecontact&&!movereversed&&map(cockstomp)=0
 attr = S, SA
 damage = ceil(cond(fvar(11) * 90 < 10, 10, fvar(11) * 90)),20
 animtype  = up
@@ -2320,8 +2321,8 @@ ground.type = Low
 ground.slidetime = 12
 ground.hittime  = 999
 ground.velocity = -2,-7
-air.velocity = -2,-7
-down.velocity = -2,-7
+air.velocity = -2,-4+map(cockstomp)
+down.velocity = -2,-4+map(cockstomp)
 envshake.time = 9
 envshake.freq = 90
 envshake.ampl = 2
@@ -2337,7 +2338,7 @@ ground.cornerpush.veloff = -13
 
 [State 410, 2]
 type = HitDef
-trigger1 =!movecontact&&map(cockstomp)>0
+trigger1 =!movecontact&&!movereversed&&map(cockstomp)>0
 attr = S, SA
 damage = ceil(cond(fvar(11) * 90 < 10, 10, fvar(11) * 90)),20
 animtype  = up
@@ -2355,8 +2356,8 @@ ground.hittime  = ceil(cond(fvar(15) *30 < 9, 9, fvar(15) *60))
 air.hittime  = ceil(cond(fvar(15) *30< 9, 9, fvar(15) * 60))
 down.hittime = ceil(cond(fvar(15) *30 < 9, 9, fvar(15) * 60))
 ground.velocity = -2,-7
-air.velocity = -2,-7
-down.velocity = -2,-7
+air.velocity = -2,-4+map(cockstomp)
+down.velocity = -2,-4+map(cockstomp)
 envshake.time = 9
 envshake.freq = 90
 envshake.ampl = 2
@@ -3009,7 +3010,7 @@ removeongethit = 0
 
 [State 1050, 4]
 type = HitDef
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA
 animtype  = up
 damage    = ceil(ifElse(fvar(11) * 50 < 7, 7, fvar(11) * 50)), 10
@@ -3165,7 +3166,7 @@ value = 1053
 ;Do what you want Tommy
 ;[State 1055, Naoto] ;Change state when KFM is close to ground
 ;type = ChangeState
-;triggerall = !movecontact
+;triggerall = !movecontact&&!movereversed
 ;trigger1 = Vel Y > 0 && Pos Y >= -5
 ;value = 52
 
@@ -3325,7 +3326,7 @@ removeongethit = 0
 
 [State 1050, 4]
 type = HitDef
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA
 animtype  = up
 damage    = ceil(ifElse(fvar(11) * 50 < 7, 7, fvar(11) * 50)), 10
@@ -7930,7 +7931,7 @@ ignorehitpause=1
 
 [State 200, 1]
 type = HitDef
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SP                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(root,fvar(11) * 100 < 10, 10, root,fvar(11) * 100)),20
 animtype = up               ;Animation type: Light, Medium, Heavy, Back (def: Light)

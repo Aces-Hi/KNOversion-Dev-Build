@@ -162,7 +162,7 @@ removeongethit = 0
 type = HitDef 
 p2facing = 1 
 trigger1=enemynear,movetype=A
-trigger1 = !movecontact 
+trigger1 = !movecontact&&!movereversed 
 attr = S, SA
 damage = ceil(cond(fvar(11) *160 < 15, 15, fvar(11) * 160)), 15
 hitflag = MAF
@@ -200,7 +200,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 type = HitDef 
 p2facing = 1 
 trigger1=enemynear,movetype!=A
-trigger1 = fvar(8) = 1 && !movecontact 
+trigger1 = fvar(8) = 1 && !movecontact&&!movereversed 
 attr = S, SA
 damage = ceil(cond(fvar(11) *160 < 15, 15, fvar(11) * 160)), 15
 hitflag = MAF
@@ -237,7 +237,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1 = fvar(8) = 0 && !movecontact 
+trigger1 = fvar(8) = 0 && !movecontact&&!movereversed 
 attr = S, SA
 damage = ceil(cond(fvar(11) *100 < 5, 5, fvar(11) * 100)), 15
 hitflag = MAF
@@ -439,7 +439,7 @@ value = 0, 4
 type = HitDef 
 p2facing = 1 
 triggerall=enemynear,movetype!=A
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 hitonce = 1
 attr = S, SA
 damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 5
@@ -483,7 +483,7 @@ y = 0
 type = HitDef 
 p2facing = 1 
 trigger1=enemynear,movetype=A
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 hitonce = 1
 attr = S, SA
 damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 5
@@ -779,7 +779,7 @@ y = 0
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1=!movecontact
+trigger1=!movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) *60 < 5, 5, fvar(11) * 60)), 5
 hitflag = MAFD
@@ -885,7 +885,7 @@ persistent = 0
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1=!movecontact
+trigger1=!movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) *60 < 5, 5, fvar(11) * 60)), 5
 hitflag = MAFD
@@ -972,7 +972,7 @@ persistent = 0
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1=!movecontact
+trigger1=!movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) *60 < 5, 5, fvar(11) * 60)), 5
 hitflag = MAFD
@@ -1050,7 +1050,7 @@ value = 0, 4
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1=!movecontact
+trigger1=!movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) *60 < 5, 5, fvar(11) * 60)), 5
 hitflag = MAFD
@@ -2162,7 +2162,7 @@ ignorehitpause =0
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1 = fvar(8) = 0 && !movecontact 
+trigger1 = fvar(8) = 0 && !movecontact&&!movereversed 
 hitonce = 1
 attr = S, SA
 damage = ceil(cond(fvar(11) *95 < 5, 5, fvar(11) * 95)), 10
@@ -2194,7 +2194,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 type = HitDef 
 p2facing = 1 
 triggerall=enemynear,map(armor)=0
-trigger1 = fvar(8) = 1 && !movecontact 
+trigger1 = fvar(8) = 1 && !movecontact&&!movereversed 
 hitonce = 1
 attr = S, SA
 damage = ceil(cond(fvar(11) *120 < 10, 10, fvar(11) * 120)), 10
@@ -2226,7 +2226,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 type = HitDef 
 p2facing = 1 
 triggerall=enemynear,map(armor)>0
-trigger1 = fvar(8) = 1 && !movecontact 
+trigger1 = fvar(8) = 1 && !movecontact&&!movereversed 
 hitonce = 1
 attr = S, SA
 damage = ceil(cond(fvar(11) *120 < 10, 10, fvar(11) * 120)), 10
@@ -2375,7 +2375,7 @@ ignorehitpause =0
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1 = fvar(8) = 0 && !movecontact 
+trigger1 = fvar(8) = 0 && !movecontact&&!movereversed 
 hitonce = 1
 attr = S, HT
 damage = ceil(cond(fvar(11) *95 < 5, 5, fvar(11) * 95)), 10
@@ -2407,7 +2407,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 type = HitDef 
 p2facing = 1 
 triggerall=enemynear,map(armor)=0
-trigger1 = fvar(8) = 1 && !movecontact 
+trigger1 = fvar(8) = 1 && !movecontact&&!movereversed 
 hitonce = 1
 attr = S, SA
 damage = ceil(cond(fvar(11) *120 < 10, 10, fvar(11) * 120)), 10
@@ -2439,7 +2439,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 type = HitDef 
 p2facing = 1 
 triggerall=enemynear,map(armor)>0
-trigger1 = fvar(8) = 1 && !movecontact 
+trigger1 = fvar(8) = 1 && !movecontact&&!movereversed 
 hitonce = 1
 attr = S, SA
 damage = ceil(cond(fvar(11) *120 < 10, 10, fvar(11) * 120)), 10
@@ -2712,7 +2712,7 @@ ignorehitpause =0
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 getpower = (0)*(cond(var(var(2)) = 1, 1, .5))
 attr = S, SA
 damage = ceil(cond(fvar(11) *100 < 10, 10, fvar(11) * 100)), 5
@@ -2854,7 +2854,7 @@ value = 669,6
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) *40 < 7, 7, fvar(11) * 40)), 5
 hitflag = MAFD
@@ -2979,7 +2979,7 @@ y = .3
 type = HitDef 
 p2facing = 1 
 triggerall = prevstateno=1300
-trigger1 = !movecontact && (enemynear, stateno!= [5110,5119])
+trigger1 = !movecontact&&!movereversed && (enemynear, stateno!= [5110,5119])
 attr = A, SA
 damage = ceil(cond(fvar(11) *40 < 7, 7, fvar(11) * 40)), 5
 hitflag = MAFD
@@ -3009,7 +3009,7 @@ type = HitDef
 p2facing = 1 
 triggerall = map(uppermiss)
 triggerall = prevstateno=1305
-trigger1 = !movecontact && (enemynear, stateno!= [5110,5119])
+trigger1 = !movecontact&&!movereversed && (enemynear, stateno!= [5110,5119])
 attr = A, SA
 damage = ceil(cond(fvar(11) *80 < 14, 14, fvar(11) * 80)), 10
 hitflag = MAFD
@@ -3086,7 +3086,7 @@ y = .30
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1 = !movecontact 
+trigger1 = !movecontact&&!movereversed 
 hitonce = 1
 attr = A, SA
 damage = ceil(cond(fvar(11) *80 < 7, 7, fvar(11) * 80)), 5
@@ -3268,7 +3268,7 @@ type = HitDef
 p2facing = 1 
 triggerall=enemynear,map(armor)=0
 trigger1=enemynear,movetype=H
-trigger1 =!movecontact 
+trigger1 =!movecontact&&!movereversed 
 hitonce = 1
 attr = A, SA
 damage = ceil(cond(fvar(11) *80 < 7, 7, fvar(11) * 80)), 5
@@ -3300,7 +3300,7 @@ type = HitDef
 p2facing = 1 
 triggerall=enemynear,map(armor)>0
 trigger1=enemynear,movetype=H
-trigger1 =!movecontact 
+trigger1 =!movecontact&&!movereversed 
 hitonce = 1
 attr = A, SA
 damage = ceil(cond(fvar(11) *80 < 7, 7, fvar(11) * 80)), 5
@@ -3334,7 +3334,7 @@ type = HitDef
 p2facing = 1 
 trigger1=enemynear,movetype!=H
 trigger1=enemynear,movetype!=A
-trigger1 = !movecontact 
+trigger1 = !movecontact&&!movereversed 
 hitonce = 1
 attr = A, SA
 damage = ceil(cond(fvar(11) *80 < 7, 7, fvar(11) * 80)), 5
@@ -3362,7 +3362,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 type = HitDef 
 p2facing = 1 
 trigger1=enemynear,movetype=A
-trigger1 =!movecontact 
+trigger1 =!movecontact&&!movereversed 
 hitonce = 1
 attr = A, SA
 damage = ceil(cond(fvar(11) *80 < 7, 7, fvar(11) * 80)), 5
@@ -3456,7 +3456,7 @@ value = 669,6
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1 = !movecontact && (enemynear, stateno!= [5110,5119])
+trigger1 = !movecontact&&!movereversed && (enemynear, stateno!= [5110,5119])
 attr = A, SA
 damage = ceil(cond(fvar(11) *80 < 14, 14, fvar(11) * 80)), 10
 hitflag = MAFD
@@ -3714,7 +3714,7 @@ timegap = 1
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1 = !movecontact && (enemynear, stateno!= [5110,5119])
+trigger1 = !movecontact&&!movereversed && (enemynear, stateno!= [5110,5119])
 attr = S, SA
 damage = ceil(cond(fvar(11) *32 < 7, 7, fvar(11) * 32)), 5
 hitflag = MAFD
@@ -3952,7 +3952,7 @@ x=1
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1 = !movecontact 
+trigger1 = !movecontact&&!movereversed 
 attr = A, SA
 triggerall=enemynear,map(armor)=0
 damage = ceil(cond(fvar(11) *30 < 7, 7, fvar(11) * 30)), 5
@@ -3987,7 +3987,7 @@ p2stateno = 915020
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1 = !movecontact 
+trigger1 = !movecontact&&!movereversed 
 attr = A, SA
 triggerall=enemynear,map(armor)>0
 damage = ceil(cond(fvar(11) *30 < 7, 7, fvar(11) * 30)), 5

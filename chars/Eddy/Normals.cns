@@ -829,7 +829,7 @@ value = 30,0
 type = HitDef 
 p2facing = 1
 triggerall=enemynear,movetype=H
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = 0
 animtype  = Medium
@@ -866,7 +866,7 @@ type = HitDef
 p2facing = 1
 triggerall=enemynear,movetype!=A
 triggerall=enemynear,movetype!=H
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = 0
 animtype  = Medium
@@ -902,7 +902,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 type = HitDef 
 p2facing = 1
 triggerall=enemynear,movetype=A
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = 0
 animtype  = Medium
@@ -1084,7 +1084,7 @@ value = 30,0
 [State 410, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = 0
 animtype  = Medium
@@ -1341,7 +1341,7 @@ type = HitDef
 p2facing = 1
 trigger1=anim=251
 triggerall=enemynear,movetype=H
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, HT
 damage = ceil(cond(fvar(11) *80 < 10, 10, fvar(11) * 80)), 0
 animtype  = Medium
@@ -1379,7 +1379,7 @@ p2facing = 1
 trigger1=anim=251
 triggerall=enemynear,movetype!=A
 triggerall=enemynear,movetype!=H
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, HT
 damage = ceil(cond(fvar(11) *80 < 10, 10, fvar(11) * 80)), 0
 animtype  = Medium
@@ -1416,7 +1416,7 @@ type = HitDef
 p2facing = 1
 trigger1=anim=251
 triggerall=enemynear,movetype=A
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, HT
 damage = 120,15
 animtype  = Medium
@@ -1914,7 +1914,7 @@ persistent = 1
 [State 440, 3]
 type = HitDef 
 p2facing = 1
-trigger1 =  !movecontact
+trigger1 =  !movecontact&&!movereversed
 attr = C, NA
 damage = ceil(cond(fvar(11) *70 < 4, 4, fvar(11) * 70)), 0
 hitflag = MAFD
@@ -2761,7 +2761,7 @@ value = 0
 [State 800, 1] ;With grab sound
 type = HitDef 
 p2facing = 1
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = S, NT          ;Attributes: Standing, Normal Throw
 hitflag = M-          ;Affect only ground people who are not being hit
 priority = 1, Miss    ;Throw has low priority, must be miss or dodge type.

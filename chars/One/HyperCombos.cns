@@ -587,7 +587,7 @@ x = cond(p2dist x<60,p2dist x+20, 80)
 
 [State 410, 2]
 type = HitDef
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 kill = 0
 attr = S, HA
 damage = ceil(cond(fvar(11) * 110 < 50, 50, fvar(11) * 110)),6
@@ -859,7 +859,7 @@ x = 10
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, HA
 damage = ceil(cond(fvar(11) *80 < 40, 40, fvar(11) * 80)), 3
 hitflag = MAFD
@@ -1118,7 +1118,7 @@ ignorehitpause = 0
 
 [State 410, 2]
 type = HitDef
-trigger1 = !movecontact && p2dist x>70
+trigger1 = !movecontact&&!movereversed && p2dist x>70
 attr = S, HA
 damage = 200
 animtype  = Medium
@@ -1146,7 +1146,7 @@ getpower = 0
 
 [State 410, 2]
 type = HitDef
-trigger1 =!movecontact && p2dist x<70
+trigger1 =!movecontact&&!movereversed && p2dist x<70
 trigger1 = enemynear,statetype!=A
 trigger1 = enemynear,movetype!=H
 attr = S, HA
@@ -1175,7 +1175,7 @@ fall.envshake.ampl = 0
 getpower = 0
 [State 410, 2]
 type = HitDef
-trigger1 =!movecontact && p2dist x<70
+trigger1 =!movecontact&&!movereversed && p2dist x<70
 trigger1 = enemynear,statetype!=A
 trigger1 = enemynear,movetype=H
 attr = S, HA
@@ -1206,7 +1206,7 @@ getpower = 0
 
 [State 410, 2]
 type = HitDef
-trigger1 =!movecontact && p2dist x<70
+trigger1 =!movecontact&&!movereversed && p2dist x<70
 trigger1 = enemynear,statetype=A
 trigger1 = enemynear,movetype!=H
 attr = S, HT
@@ -1235,7 +1235,7 @@ fall.envshake.ampl = 0
 getpower = 0
 [State 410, 2]
 type = HitDef
-trigger1 =!movecontact && p2dist x<70
+trigger1 =!movecontact&&!movereversed && p2dist x<70
 trigger1 = enemynear,statetype=A
 trigger1 = enemynear,movetype=H
 attr = S, HT

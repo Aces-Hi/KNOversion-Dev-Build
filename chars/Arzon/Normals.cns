@@ -48,7 +48,7 @@ value = 0, 3
 [State 2, Hit]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NA                    
 damage = ceil(cond(fvar(11) *24 < 4, 4, fvar(11) * 24)), 0
 animtype = light                 
@@ -299,7 +299,7 @@ removeongethit = 0
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NA
 animtype  = Hard
 air.animtype = back
@@ -442,7 +442,7 @@ x = .95
 type = HitDef 
 p2facing = 1
 triggerall=enemynear,map(armor)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NA
 animtype  = Hard
 air.animtype = back
@@ -476,7 +476,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, 1))
 type = HitDef 
 p2facing = 1
 triggerall=enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NA
 animtype  = Hard
 air.animtype = back
@@ -623,7 +623,7 @@ x = .95
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NA
 animtype  = Hard
 air.animtype = back
@@ -1621,7 +1621,7 @@ y = .44
 [State 0]
 type = HitDef 
 p2facing = 1
-triggerall = !movecontact
+triggerall = !movecontact&&!movereversed
 trigger1 = !numexplod(90101)
 attr = A, NA
 animtype  = Medium
@@ -1662,7 +1662,7 @@ getpower = (100)*(cond(var(var(3)) = 1, 1, .5))
 [State 0]
 type = HitDef 
 p2facing = 1
-triggerall = !movecontact
+triggerall = !movecontact&&!movereversed
 trigger1 = numexplod(90101)
 attr = A, NA
 animtype  = Medium
@@ -1821,7 +1821,7 @@ type = HitDef
 p2facing = 1
 triggerall=enemynear,map(armor)=0
 trigger1=!numhelper(230)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, NA
 animtype  = Hard
 air.animtype = back
@@ -1856,7 +1856,7 @@ type = HitDef
 p2facing = 1
 triggerall=enemynear,map(armor)>0
 trigger1=!numhelper(230)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, NA
 animtype  = Hard
 air.animtype = back
@@ -1892,7 +1892,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, 1))
 type = HitDef 
 p2facing = 1
 trigger1=numhelper(230)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, NA
 animtype  = Hard
 air.animtype = back
@@ -3112,7 +3112,7 @@ velset = 0,-10
 type = HitDef 
 p2facing = 0
 triggerall =  p2movetype = H
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA                    
 damage = 0;ceil(cond(fvar(11) *24 < 4, 4, fvar(11) * 24)), 0
 animtype = light                 
@@ -3181,7 +3181,7 @@ p2facing = 0
 trigger1 = root,helper(12050),!stateno=12052
 trigger2 = root,numhelper(12050)=0
 triggerall =  p2movetype = H && p2statetype = A
-triggerall = !movecontact
+triggerall = !movecontact&&!movereversed
 attr = S, SA                    
 damage = 0;ceil(cond(fvar(11) *24 < 4, 4, fvar(11) * 24)), 0
 animtype = light                 

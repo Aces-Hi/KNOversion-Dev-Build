@@ -1,7 +1,11 @@
-external/script/main.lua:1293: <game end>
+.\external\script\start.lua:1403: chars\Vile/Specials.cns:2300:
+Invalid data: mapadd
 stack traceback:
-	[G]: in function 'refresh'
-	external/script/main.lua:1293: in function 'f_loadingRefresh'
-	external/script/main.lua:1896: in function 'f_addChar'
-	external/script/main.lua:2053: in main chunk
+	[G]: in function 'game'
+	.\external\script\start.lua:1403: in function 'f_game'
+	.\external\script\start.lua:1836: in function 'launchFight'
+	external/script/default.lua:2: in function <external/script/default.lua:0>
+	.\external\script\start.lua:1457: in function 'f'
+	external/script/main.lua:3097: in function 'loop'
+	external/script/main.lua:4148: in main chunk
 	[G]: ?

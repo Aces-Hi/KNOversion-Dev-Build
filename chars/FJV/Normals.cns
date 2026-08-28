@@ -80,7 +80,7 @@ value = 1, 1
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NA
 animtype  = Light
 air.animtype = back
@@ -479,7 +479,7 @@ removeongethit = 0
 [State 430, 2]
 type = HitDef 
 p2facing = 1
-trigger1 =  !movecontact&&combocount
+trigger1 =  !movecontact&&!movereversed&&combocount
 attr = C, NA
 damage = ceil(cond(fvar(11) *55 < 10, 10, fvar(11) * 55)), 7
 animtype  = Hard
@@ -511,7 +511,7 @@ getpower = (50)*(cond(var(var(2)) = 1, 1, 1))
 [State 430, 2]
 type = HitDef 
 p2facing = 1
-trigger1 =  !movecontact&&!combocount
+trigger1 =  !movecontact&&!movereversed&&!combocount
 attr = C, NA
 damage = ceil(cond(fvar(11) *55 < 10, 10, fvar(11) * 55)), 7
 animtype  = Hard
@@ -1089,7 +1089,7 @@ value = 1, 0
 [State 400, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact&& (enemynear, stateno!= [5110,5119])
+trigger1 = !movecontact&&!movereversed&& (enemynear, stateno!= [5110,5119])
 attr = C, NA
 damage = ceil(cond(fvar(11) *20 < 4, 4, fvar(11) * 20)), 0
 priority  = 3
@@ -1180,7 +1180,7 @@ value = 1, 1
 [State 0]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact && (enemynear, stateno!= [5110,5119])
+trigger1 = !movecontact&&!movereversed && (enemynear, stateno!= [5110,5119])
 attr = S, NA
 animtype  = hard
 air.animtype = up
@@ -1296,7 +1296,7 @@ value = 1, 2
 [State 0]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact && (enemynear, stateno!= [5110,5119])
+trigger1 = !movecontact&&!movereversed && (enemynear, stateno!= [5110,5119])
 attr = S, NA
 animtype  = hard
 air.animtype = up
@@ -1571,7 +1571,7 @@ value = 1, 0
 type = HitDef 
 p2facing = 1
 trigger1 = vel y < 0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, NA
 damage = ceil(cond(fvar(11) *20 < 4, 4, fvar(11) * 20)), 0
 guardflag = MA
@@ -1601,7 +1601,7 @@ forcenofall = 1
 type = HitDef 
 p2facing = 1
 trigger1 = vel y >= 0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, NA
 damage = ceil(cond(fvar(11) *20 < 4, 4, fvar(11) * 20)), 0
 guardflag = HA
@@ -1885,7 +1885,7 @@ value = 1, 1
 [State 0]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact &&vel  y <0
+trigger1 = !movecontact&&!movereversed &&vel  y <0
 attr = A, NA
 animtype  = Medium
 air.animtype = back
@@ -1926,7 +1926,7 @@ forcenofall = 1
 [State 0]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact &&vel  y >=0
+trigger1 = !movecontact&&!movereversed &&vel  y >=0
 attr = A, NA
 animtype  = Medium
 air.animtype = back
@@ -2139,7 +2139,7 @@ persistent = 0
 [State 630, 2]
 type = HitDef 
 p2facing 	= 1
-trigger1 	= !movecontact
+trigger1 	= !movecontact&&!movereversed
 attr 	= A, NA
 damage = ceil(cond(fvar(11) *65 < 7, 7, fvar(11) * 65)),10
 hitflag 	= MAFD
@@ -3523,7 +3523,7 @@ persistent = 1
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NA
 animtype  = Hard
 damage = ceil(cond(fvar(11) *70 < 10, 10, fvar(11) * 70)), 10

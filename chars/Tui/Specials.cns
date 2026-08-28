@@ -958,7 +958,7 @@ removeongethit = 0
 
 [State 410, 2]
 type = HitDef
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SP
 damage = ceil(cond(root, fvar(11) * 40< 8, 8, root, fvar(11) * 40)), 6
 hitflag = MAF
@@ -1810,7 +1810,7 @@ ignorehitpause=1
 type = HitDef 
 p2facing = 1
 triggerall = map(launchkick)=0 
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA
 damage = ceil(cond(fvar(11) *70 < 7, 7, fvar(11) * 70)), 7
 hitflag = MAFD+
@@ -1840,7 +1840,7 @@ getpower = (105)*(cond(var(var(3)) = 1, 1, .5))
 type = HitDef 
 p2facing = 1
 triggerall = map(launchkick)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA
 damage = ceil(cond(fvar(11) *70 < 7, 7, fvar(11) * 70)), 7
 hitflag = MAFD+
@@ -2083,7 +2083,7 @@ ignorehitpause=1
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 triggerall = map(slidekick)=0 
 attr = S, SA
 damage = ceil(cond(fvar(11) *70 < 7, 7, fvar(11) * 70)), 7
@@ -2128,7 +2128,7 @@ ignorehitpause = 1
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 triggerall = map(slidekick) 
 attr = S, SA
 damage = ceil(cond(fvar(11) *70 < 7, 7, fvar(11) * 70)), 7
@@ -2725,7 +2725,7 @@ x = -1
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 =!movecontact
+trigger1 =!movecontact&&!movereversed
 attr = A, SP
 animtype  = Light
 air.animtype = back

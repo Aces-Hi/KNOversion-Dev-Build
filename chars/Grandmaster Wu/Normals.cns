@@ -1599,7 +1599,7 @@ persistent = 1
 [State 430, 2]
 type = HitDef
 trigger1 = !map(sweeplaunch)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = C, NA
 damage = ceil(cond(fvar(11) *80 < 4, 4, fvar(11) * 80)), 0
 animtype  = heavy
@@ -1633,7 +1633,7 @@ guard.slidetime = 12
 [State 430, 2]
 type = HitDef
 trigger1 = map(sweeplaunch)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = C, NA
 damage = ceil(cond(fvar(11) *80 < 4, 4, fvar(11) * 80)), 0
 animtype  = heavy
@@ -4815,7 +4815,7 @@ value = 1,1
 
 [State 0]
 type = HitDef
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NA
 animtype  = Hard
 air.animtype = back

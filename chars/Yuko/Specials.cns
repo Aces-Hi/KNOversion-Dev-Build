@@ -1085,8 +1085,14 @@ movetype = A        ;I,A,H
 physics = S        ;A,C,S,N
 [State 0, ChangeAnim]
 type = ChangeAnim
-trigger1 = pos y >=-5&&animelemtime(4)>=0&&anim!=1401
+trigger1 = pos y >=-5&&animelemtime(4)>=0&&anim!=1401&&anim!=1402
+trigger1 = movecontact
 value = 1401
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = pos y >=-5&&animelemtime(4)>=0&&anim!=1402&&anim!=1401
+trigger1 = !movecontact
+value = 1402
 
 [State 0, VarAdd]
 type = MapAdd
@@ -1119,7 +1125,7 @@ p2facing = 1
 trigger1= map(Imagination)<800
 trigger2 = enemy,map(armor)
 trigger3 = map(divekick)
-triggerall = !movecontact
+triggerall = !movecontact&&!movereversed
 attr = A, SA
 damage = ceil(cond(fvar(11) * 80 < 8, 8, fvar(11) * 80)), 0
 guardflag = HA
@@ -1150,7 +1156,7 @@ p2facing = 1
 trigger1= map(Imagination)<800
 trigger1 = enemy,!map(armor)
 trigger1 = map(divekick)=0
-triggerall = !movecontact
+triggerall = !movecontact&&!movereversed
 attr = A, SA
 damage = ceil(cond(fvar(11) * 80 < 8, 8, fvar(11) * 80)), 0
 guardflag = HA
@@ -1180,7 +1186,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, 1))
 type = HitDef 
 p2facing = 1
 triggerall = map(Imagination)>=800&&enemy,!map(armor)&&map(divekick)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA
 damage = ceil(cond(fvar(11) * 80 < 8, 8, fvar(11) * 80)), 0
 guardflag = HA
@@ -1235,7 +1241,8 @@ ctrl = 0
 
 [State 200, 3]
 type = ChangeState
-trigger1 = AnimTime = 0&&anim=1401
+triggerall = AnimTime = 0
+trigger1 = anim=1401 || anim=1402
 value = 0
 ctrl = 1
 
@@ -1398,7 +1405,7 @@ accel = 0.05,0.05
 [State 610, 3]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact&&map(Imagination)<800
+trigger1 = !movecontact&&!movereversed&&map(Imagination)<800
 attr = A, SA
 damage = ceil(cond(fvar(11) * 100 < 10, 10, fvar(11) * 100)), 0
 guardflag = HA
@@ -1419,9 +1426,9 @@ down.hittime = ceil(cond(fvar(15) *24 < 10, 10, fvar(15) * 24))
 ground.velocity = -15,15
 air.velocity = -15,15
 down.velocity = -8,-2
-guard.ctrltime =14
-guard.slidetime = 14
-guard.hittime = 14
+guard.ctrltime =12
+guard.slidetime = 12
+guard.hittime = 12
 getpower = 0
 fall.yvelocity=-8
 fall.xvelocity=-2
@@ -1429,7 +1436,7 @@ p2stateno=915020
 [State 610, 3]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact&&map(Imagination)>=800
+trigger1 = !movecontact&&!movereversed&&map(Imagination)>=800
 attr = A, SA
 damage = ceil(cond(fvar(11) * 100 < 10, 10, fvar(11) * 100)), 0
 guardflag = HA
@@ -1450,9 +1457,9 @@ down.hittime = ceil(cond(fvar(15) *24 < 10, 10, fvar(15) * 24))
 ground.velocity = -15,15
 air.velocity = -15,15
 down.velocity = -8,-2
-guard.ctrltime =14
-guard.slidetime = 14
-guard.hittime = 14
+guard.ctrltime =12
+guard.slidetime = 12
+guard.hittime = 12
 getpower = 0
 fall.yvelocity=-8
 fall.xvelocity=-2
@@ -1717,7 +1724,7 @@ freqmul = 0.8
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact&&anim=1610
+trigger1 = !movecontact&&!movereversed&&anim=1610
 attr = A, SP
 animtype  = Hard
 air.animtype = back
@@ -1765,7 +1772,7 @@ persistent = 0
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact&&anim=1611
+trigger1 = !movecontact&&!movereversed&&anim=1611
 attr = S, SA
 animtype  = Hard
 air.animtype = back
@@ -2208,7 +2215,7 @@ freqmul = 0.8
 type = HitDef 
 p2facing = 1
 trigger1 = anim=1710
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SP
 animtype  = Hard
 air.animtype = back
@@ -2245,7 +2252,7 @@ ground.cornerpush.veloff = 0
 type = HitDef 
 p2facing = 1
 trigger1 = anim=1711
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SP
 animtype  = Hard
 air.animtype = back
@@ -2569,9 +2576,12 @@ trigger1 = 1
 x = .9
 [State 0, PosAdd]
 type = PosAdd
-trigger1 = time=0
+trigger1 = time=0&&root,!combocount
 x = 50
-
+[State 0, PosAdd]
+type = PosAdd
+trigger1 = time=0&&root,combocount
+x = 80
 [State 0, VelSet]
 type = VelSet
 trigger1 = StageFrontEdgeDist < 1
@@ -2646,7 +2656,7 @@ phase = 1
 
 [State 0, VarAdd]
 type = MapSet
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 map = "norc"
 value = 0
 ignorehitpause=1
@@ -2909,7 +2919,6 @@ anim = 2000
 sprpriority = 2
 facep2=1
 
-
 ;=====SCALING SHIT==================
 [State Stun Scaling]
 type = VarAdd
@@ -2927,6 +2936,18 @@ fv =13     ;fv =
 value = .5
 persistent = 0
 ;==================================
+
+[State Indicator]
+type = Helper
+trigger1 = !NumHelper(7020)
+trigger1 = animelem=8
+stateNo = 7020
+ID = 7020
+name = "Indicator"
+posType = p1
+facing = 1
+keyCtrl = 0
+ignoreHitPause = 1
 
 [State 0, VarAdd]
 type = MapSet
@@ -2997,6 +3018,16 @@ y = 0
 
 [State 0, PosAdd]
 type = PosAdd
+triggerall = !combocount
+trigger1 =animelem=2
+trigger2 =animelem=3
+trigger3 =animelem=7
+trigger4 =animelem=8
+x = 10
+
+[State 0, PosAdd]
+type = PosAdd
+triggerall = combocount
 trigger1 =animelem=2
 trigger2 =animelem=3
 trigger3 =animelem=7
@@ -3029,9 +3060,9 @@ envshake.time = 12
 envshake.freq = 90
 envshake.ampl = 3
 envshake.phase = 1
-guard.hittime =10
-guard.slidetime = 10
-guard.ctrltime = 10
+guard.hittime =3
+guard.slidetime = 3
+guard.ctrltime = 3
 guard.velocity = -6
 forcenofall = 1
 getpower = (100)*(cond(var(var(2)) = 1, 1, 1)) 
@@ -3102,7 +3133,7 @@ triggerall = command != "QCBs"
 triggerall = command ="holdfwd"
 triggerall = command !="holddown"
 trigger1 = movecontact
-trigger2 = animelemtime(10)>=0
+trigger2 = animelemtime(12)>=0
 value = 2100
 ctrl = 0
 [State Chain 2]
@@ -3113,7 +3144,7 @@ triggerall = command != "QCBs"
 triggerall = command ="holdback"
 triggerall = command !="holddown"
 trigger1 = movecontact
-trigger2 = animelemtime(10)>=0
+trigger2 = animelemtime(12)>=0
 value = 2200
 ctrl = 0
 [State Chain 3]
@@ -3123,7 +3154,7 @@ triggerall = command != "c"
 triggerall = command != "QCBs"
 triggerall = command ="holddown"
 trigger1 = movecontact
-trigger2 = animelemtime(10)>=0
+trigger2 = animelemtime(12)>=0
 value = 2300
 ctrl = 0
 
@@ -3137,7 +3168,7 @@ triggerall = command !="holddown"
 triggerall = map(Momentum)
 triggerall = map(Hunt1)=0
 trigger1 = movecontact
-trigger2 = animelemtime(10)>=0
+trigger2 = animelemtime(12)>=0
 value = 2400
 ctrl = 0
 [State Hunt 2]
@@ -3150,7 +3181,7 @@ triggerall = command !="holddown"
 triggerall = map(Momentum)
 triggerall = map(Hunt2)=0
 trigger1 = movecontact
-trigger2 = animelemtime(10)>=0
+trigger2 = animelemtime(12)>=0
 value = 2500
 ctrl = 0
 [State Hunt 3]
@@ -3162,7 +3193,7 @@ triggerall = command ="holddown"
 triggerall = map(Momentum)
 triggerall = map(Hunt3)=0
 trigger1 = movecontact
-trigger2 = animelemtime(10)>=0
+trigger2 = animelemtime(12)>=0
 value = 2600
 ctrl = 0
 
@@ -3235,6 +3266,18 @@ value = 6800, 0
 ;EX Effects End
 ;---------------------------------------------------------------
 
+[State Indicator]
+type = Helper
+trigger1 = !NumHelper(7020)
+trigger1 = animelem=8
+stateNo = 7020
+ID = 7020
+name = "Indicator"
+posType = p1
+facing = 1
+keyCtrl = 0
+ignoreHitPause = 1
+
 [State 0, VarAdd]
 type = MapSet
 trigger1 = 1
@@ -3297,6 +3340,16 @@ y = 0
 
 [State 0, PosAdd]
 type = PosAdd
+triggerall = !combocount
+trigger1 =animelem=2
+trigger2 =animelem=3
+trigger3 =animelem=7
+trigger4 =animelem=8
+x = 10
+
+[State 0, PosAdd]
+type = PosAdd
+triggerall = combocount
 trigger1 =animelem=2
 trigger2 =animelem=3
 trigger3 =animelem=7
@@ -3327,9 +3380,9 @@ down.hittime = ceil(cond(fvar(15) *30 < 15, 15, fvar(15) * 30))
 ground.velocity = 0,0
 air.velocity = 0,0
 envshake.phase = 1
-guard.hittime =12
-guard.slidetime = 12
-guard.ctrltime = 12
+guard.hittime =10
+guard.slidetime = 10
+guard.ctrltime = 10
 guard.velocity = -6
 forcenofall = 1
 ground.cornerpush.veloff = 0
@@ -3360,9 +3413,9 @@ envshake.time = 12
 envshake.freq = 90
 envshake.ampl = 3
 envshake.phase = 1
-guard.hittime =12
-guard.slidetime = 12
-guard.ctrltime = 12
+guard.hittime =10
+guard.slidetime = 10
+guard.ctrltime = 10
 guard.velocity = -6
 forcenofall = 1
 getpower = 0
@@ -3435,7 +3488,7 @@ triggerall = command != "QCBs"
 triggerall = command ="holdfwd"
 triggerall = command !="holddown"
 trigger1 = movecontact
-trigger2 = animelemtime(10)>=0
+trigger2 = animelemtime(11)>=0
 value = 2100
 ctrl = 0
 [State Chain 2]
@@ -3446,7 +3499,7 @@ triggerall = command != "QCBs"
 triggerall = command ="holdback"
 triggerall = command !="holddown"
 trigger1 = movecontact
-trigger2 = animelemtime(10)>=0
+trigger2 = animelemtime(11)>=0
 value = 2200
 ctrl = 0
 [State Chain 3]
@@ -3456,7 +3509,7 @@ triggerall = command != "c"
 triggerall = command != "QCBs"
 triggerall = command ="holddown"
 trigger1 = movecontact
-trigger2 = animelemtime(10)>=0
+trigger2 = animelemtime(11)>=0
 value = 2300
 ctrl = 0
 
@@ -3470,7 +3523,7 @@ triggerall = command !="holddown"
 triggerall = map(Momentum)
 triggerall = map(Hunt1)=0
 trigger1 = movecontact
-trigger2 = animelemtime(10)>=0
+trigger2 = animelemtime(11)>=0
 value = 2400
 ctrl = 0
 [State Hunt 2]
@@ -3483,7 +3536,7 @@ triggerall = command !="holddown"
 triggerall = map(Momentum)
 triggerall = map(Hunt2)=0
 trigger1 = movecontact
-trigger2 = animelemtime(10)>=0
+trigger2 = animelemtime(11)>=0
 value = 2500
 ctrl = 0
 [State Hunt 3]
@@ -3495,7 +3548,7 @@ triggerall = command ="holddown"
 triggerall = map(Momentum)
 triggerall = map(Hunt3)=0
 trigger1 = movecontact
-trigger2 = animelemtime(10)>=0
+trigger2 = animelemtime(11)>=0
 value = 2600
 ctrl = 0
 
@@ -3575,13 +3628,13 @@ type = PosAdd
 trigger1 =animelem=1
 trigger2 =animelem=2
 trigger3 =animelem=3
-x = 20
+x = 15
 [State 0, PosAdd]
 type = PosAdd
 trigger1 =animelem=10
 trigger2 =animelem=11
 trigger3 =animelem=12
-x = -20
+x = -15
 [State 0, VelAdd]
 type = VelAdd
 trigger1 = animelem=6
@@ -3636,7 +3689,7 @@ triggerall = command !="holddown"
 triggerall = map(Momentum)
 triggerall = map(Hunt1)=0
 trigger1 = movecontact
-trigger2 = animelemtime(9)>=0
+trigger2 = animelemtime(11)>=0
 value = 2400
 ctrl = 0
 [State Hunt 2]
@@ -3649,7 +3702,7 @@ triggerall = command !="holddown"
 triggerall = map(Momentum)
 triggerall = map(Hunt2)=0
 trigger1 = movecontact
-trigger2 = animelemtime(9)>=0
+trigger2 = animelemtime(11)>=0
 value = 2500
 ctrl = 0
 [State Hunt 3]
@@ -3661,7 +3714,7 @@ triggerall = command ="holddown"
 triggerall = map(Momentum)
 triggerall = map(Hunt3)=0
 trigger1 = movecontact
-trigger2 = animelemtime(9)>=0
+trigger2 = animelemtime(11)>=0
 value = 2600
 ctrl = 0
 
@@ -3673,7 +3726,7 @@ triggerall = command != "QCBs"
 triggerall = command ="holdfwd"
 triggerall = command !="holddown"
 trigger1 = movecontact
-trigger2 = animelemtime(9)>=0
+trigger2 = animelemtime(11)>=0
 value = 2700
 ctrl = 0
 [State End 2]
@@ -3684,7 +3737,7 @@ triggerall = command != "QCBs"
 triggerall = command ="holdback"
 triggerall = command !="holddown"
 trigger1 = movecontact
-trigger2 = animelemtime(9)>=0
+trigger2 = animelemtime(11)>=0
 value = 2800
 ctrl = 0
 [State End 3]
@@ -3694,7 +3747,7 @@ triggerall = command != "c"
 triggerall = command != "QCBs"
 triggerall = command ="holddown"
 trigger1 = movecontact
-trigger2 = animelemtime(9)>=0
+trigger2 = animelemtime(11)>=0
 value = 2900
 ctrl = 0
 
@@ -4307,7 +4360,7 @@ triggerall = command !="holddown"
 triggerall = map(Momentum)
 triggerall = map(Hunt1)=0
 trigger1 = movecontact
-trigger2 = animelemtime(12)>=0
+trigger2 = animelemtime(13)>=0
 value = 2400
 ctrl = 0
 
@@ -4321,7 +4374,7 @@ triggerall = command !="holddown"
 triggerall = map(Momentum)
 triggerall = map(Hunt2)=0
 trigger1 = movecontact
-trigger2 = animelemtime(12)>=0
+trigger2 = animelemtime(13)>=0
 value = 2500
 ctrl = 0
 [State Hunt 2]
@@ -4357,7 +4410,7 @@ triggerall = command ="holddown"
 triggerall = map(Momentum)
 triggerall = map(Hunt3)=0
 trigger1 = movecontact
-trigger2 = animelemtime(12)>=0
+trigger2 = animelemtime(13)>=0
 value = 2600
 ctrl = 0
 
@@ -4369,7 +4422,7 @@ triggerall = command != "QCBs"
 triggerall = command ="holdfwd"
 triggerall = command !="holddown"
 trigger1 = movecontact
-trigger2 = animelemtime(12)>=0
+trigger2 = animelemtime(13)>=0
 value = 2700
 ctrl = 0
 [State End 2]
@@ -4380,7 +4433,7 @@ triggerall = command != "QCBs"
 triggerall = command ="holdback"
 triggerall = command !="holddown"
 trigger1 = movecontact
-trigger2 = animelemtime(12)>=0
+trigger2 = animelemtime(13)>=0
 value = 2800
 ctrl = 0
 [State End 3]
@@ -4390,7 +4443,7 @@ triggerall = command != "c"
 triggerall = command != "QCBs"
 triggerall = command ="holddown"
 trigger1 = movecontact
-trigger2 = animelemtime(12)>=0
+trigger2 = animelemtime(13)>=0
 value = 2900
 ctrl = 0
 
@@ -4544,7 +4597,7 @@ ignorehitpause = 1
 [State 610, 3]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA
 damage = ceil(cond(fvar(11) *80 < 8, 8, fvar(11) * 80)), 10
 guardflag = HA
@@ -4639,7 +4692,7 @@ triggerall = command !="holddown"
 triggerall = map(Momentum)
 triggerall = map(Hunt1)=0
 trigger1 = movecontact
-trigger2 = animelemtime(2)>=0
+trigger2 = animelemtime(3)>=0
 value = 2400
 ctrl = 0
 [State Teleport]
@@ -4680,7 +4733,7 @@ triggerall = command !="holddown"
 triggerall = map(Momentum)
 triggerall = map(Hunt2)=0
 trigger1 = movecontact
-trigger2 = animelemtime(2)>=0
+trigger2 = animelemtime(3)>=0
 value = 2500
 ctrl = 0
 [State Hunt 3]
@@ -4693,7 +4746,7 @@ triggerall = command ="holddown"
 triggerall = map(Momentum)
 triggerall = map(Hunt3)=0
 trigger1 = movecontact
-trigger2 = animelemtime(2)>=0
+trigger2 = animelemtime(3)>=0
 value = 2600
 ctrl = 0
 
@@ -4706,7 +4759,7 @@ triggerall = command != "QCBs"
 triggerall = command ="holdfwd"
 triggerall = command !="holddown"
 trigger1 = movecontact
-trigger2 = animelemtime(2)>=0
+trigger2 = animelemtime(3)>=0
 value = 2700
 ctrl = 0
 [State End 2]
@@ -4718,7 +4771,7 @@ triggerall = command != "QCBs"
 triggerall = command ="holdback"
 triggerall = command !="holddown"
 trigger1 = movecontact
-trigger2 = animelemtime(2)>=0
+trigger2 = animelemtime(3)>=0
 value = 2800
 ctrl = 0
 [State End 3]
@@ -4729,7 +4782,7 @@ triggerall = command != "c"
 triggerall = command != "QCBs"
 triggerall = command ="holddown"
 trigger1 = movecontact
-trigger2 = animelemtime(2)>=0
+trigger2 = animelemtime(3)>=0
 value = 2900
 ctrl = 0
 
@@ -4800,7 +4853,7 @@ ignorehitpause = 1
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact&&combocount=0
+trigger1 = !movecontact&&!movereversed&&combocount=0
 attr = S, NT
 animtype  = Hard
 air.animtype = back
@@ -4830,7 +4883,7 @@ id=2600
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact&&combocount
+trigger1 = !movecontact&&!movereversed&&combocount
 attr = S, NT
 animtype  = Hard
 air.animtype = back
@@ -4895,7 +4948,7 @@ triggerall = command ="holdfwd"
 triggerall = command !="holddown"
 triggerall = map(Momentum)
 triggerall = map(Hunt1)=0
-trigger1 = animelemtime(10)>=0
+trigger1 = animelemtime(11)>=0
 value = 2400
 ctrl = 0
 [State Hunt 2]
@@ -4907,7 +4960,7 @@ triggerall = command ="holdback"
 triggerall = command !="holddown"
 triggerall = map(Momentum)
 triggerall = map(Hunt2)=0
-trigger1 = animelemtime(10)>=0
+trigger1 = animelemtime(11)>=0
 value = 2500
 ctrl = 0
 [State Hunt 3]
@@ -4918,7 +4971,7 @@ triggerall = command != "QCBs"
 triggerall = command ="holddown"
 triggerall = map(Momentum)
 triggerall = map(Hunt3)=0
-trigger1 = animelemtime(10)>=0
+trigger1 = animelemtime(11)>=0
 value = 2600
 ctrl = 0
 
@@ -4929,7 +4982,7 @@ triggerall = command != "c"
 triggerall = command != "QCBs"
 triggerall = command ="holdfwd"
 triggerall = command !="holddown"
-trigger1 = animelemtime(10)>=0
+trigger1 = animelemtime(11)>=0
 value = 2700
 ctrl = 0
 [State End 2]
@@ -4939,7 +4992,7 @@ triggerall = command != "c"
 triggerall = command != "QCBs"
 triggerall = command ="holdback"
 triggerall = command !="holddown"
-trigger1 = animelemtime(10)>=0
+trigger1 = animelemtime(11)>=0
 value = 2800
 ctrl = 0
 [State End 3]
@@ -4948,7 +5001,7 @@ triggerall = command = "b"
 triggerall = command != "c"
 triggerall = command != "QCBs"
 triggerall = command ="holddown"
-trigger1 = animelemtime(10)>=0
+trigger1 = animelemtime(11)>=0
 value = 2900
 ctrl = 0
 
@@ -5034,7 +5087,7 @@ ignorehitpause = 1
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = map(cgrab)=1&&map(rawgrab)=0
 attr = S, SA
 animtype  = Hard
@@ -5071,7 +5124,7 @@ snap=60,35
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = map(cgrab)>1||map(rawgrab)
 attr = S, SA
 animtype  = Hard
@@ -5362,6 +5415,7 @@ guard.hittime =22
 guard.slidetime = 22
 guard.ctrltime = 22
 guard.velocity = -6
+airguard.velocity = -4,4
 fall = 1
 fall.yvelocity=0
 getpower = (100)*(cond(var(var(2)) = 1, 1, 1)) 
@@ -5396,6 +5450,7 @@ guard.hittime =22
 guard.slidetime = 22
 guard.ctrltime = 22
 guard.velocity = -6
+airguard.velocity = -4,4
 forcenofall = 1
 fall.yvelocity=0
 getpower = (100)*(cond(var(var(2)) = 1, 1, 1)) 
@@ -5483,31 +5538,35 @@ ignorehitpause = 1
 
 [State Yuko Voice]
 type = PlaySnd
+triggerall = movehit&&map(ender)<=1
 triggerall = palno!=3
 trigger1 = map(exchain)=0
-trigger1 = animelem=11
+trigger1 = animelem=10
 value = 2800, 0+random%2
 volumescale=125
 [State Yuko Voice]
 type = PlaySnd
+triggerall = movehit&&map(ender)<=1
 triggerall = palno!=3
 trigger1 = map(exchain)
-trigger1 = animelem=11
+trigger1 = animelem=10
 value = 2801, 0+random%2
 volumescale=150
 
 [State Yuko Voice]
 type = PlaySnd
 triggerall = palno=3
+triggerall = movehit&&map(ender)<=1
 trigger1 = map(exchain)=0
-trigger1 = animelem=11
+trigger1 = animelem=10
 value = 2802, 0+random%2
 volumescale=175
 [State Yuko Voice]
 type = PlaySnd
 triggerall = palno=3
+triggerall = movehit&&map(ender)<=1
 trigger1 = map(exchain)
-trigger1 = animelem=11
+trigger1 = animelem=10
 value = 2803, 0
 volumescale=150
 
@@ -5614,10 +5673,11 @@ air.hittime  = 15
 down.hittime = 15
 ground.velocity = 0,-.1
 air.velocity = 0,-.1
-guard.hittime =22
-guard.slidetime = 22
-guard.ctrltime = 22
+guard.hittime =15
+guard.slidetime = 15
+guard.ctrltime = 15
 guard.velocity = -6
+airguard.velocity = -4,4
 forcenofall = 1
 ground.cornerpush.veloff=0
 getpower = (50)*(cond(var(var(2)) = 1, 1, 1)) 
@@ -5652,6 +5712,7 @@ guard.hittime =15
 guard.slidetime = 15
 guard.ctrltime = 15
 guard.velocity = -6
+airguard.velocity = -4,4
 forcenofall = 1
 getpower = (100)*(cond(var(var(2)) = 1, 1, 1)) 
 
@@ -5807,10 +5868,11 @@ envshake.time = 12
 envshake.freq = 90
 envshake.ampl = 3
 envshake.phase = 1
-guard.hittime =15
-guard.slidetime = 15
-guard.ctrltime = 15
+guard.hittime =8
+guard.slidetime = 8
+guard.ctrltime = 8
 guard.velocity = -6
+airguard.velocity = -4,4
 fall = 1
 ground.cornerpush.veloff = 0
 getpower = (50)*(cond(var(var(2)) = 1, 1, 1)) 
@@ -5840,10 +5902,11 @@ envshake.time = 12
 envshake.freq = 90
 envshake.ampl = 3
 envshake.phase = 1
-guard.hittime =15
-guard.slidetime = 15
-guard.ctrltime = 15
+guard.hittime =8
+guard.slidetime = 8
+guard.ctrltime = 8
 guard.velocity = -6
+airguard.velocity = -4,4
 fall = 1
 ground.cornerpush.veloff = 0
 getpower = (50)*(cond(var(var(2)) = 1, 1, 1)) 
@@ -5873,10 +5936,11 @@ envshake.time = 12
 envshake.freq = 90
 envshake.ampl = 3
 envshake.phase = 1
-guard.hittime =15
-guard.slidetime = 15
-guard.ctrltime = 15
+guard.hittime =8
+guard.slidetime = 8
+guard.ctrltime = 8
 guard.velocity = -6
+airguard.velocity = -4,4
 fall = 1
 fall.yvelocity=0
 p2stateno = 30000
@@ -5907,10 +5971,11 @@ envshake.time = 12
 envshake.freq = 90
 envshake.ampl = 3
 envshake.phase = 1
-guard.hittime =15
-guard.slidetime = 15
-guard.ctrltime = 15
+guard.hittime =8
+guard.slidetime = 8
+guard.ctrltime = 8
 guard.velocity = -6
+airguard.velocity = -4,4
 fall = 1
 fall.yvelocity=0
 getpower = (100)*(cond(var(var(2)) = 1, 1, 1)) 

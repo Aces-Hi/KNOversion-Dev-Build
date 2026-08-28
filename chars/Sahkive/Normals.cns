@@ -54,7 +54,7 @@ persistent = 0
 
 [State 200, 1]
 type = HitDef
-triggerall = !movecontact
+triggerall = !movecontact&&!movereversed
 trigger1 = time  
 attr = S, NA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *25 < 4, 4, fvar(11) * 25)), 0
@@ -165,7 +165,7 @@ ignorehitpause = 1
 
 [State 210, 2]
 type = HitDef
-triggerall = !movecontact
+triggerall = !movecontact&&!movereversed
 trigger1 = time  
 attr = S, NA
 animtype  = Light
@@ -293,7 +293,7 @@ x = .45
 
 [State 0, PosAdd]
 type = PosAdd
-triggerall = !movecontact
+triggerall = !movecontact&&!movereversed
 trigger1 = animelemno(0) = [4,6]
 x = 5
 
@@ -304,7 +304,7 @@ x = .25
 
 [State 1055, 5]
 type = HitDef
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S,NA
 air.animtype = back
 damage = ceil(ifElse(fvar(11) * 75 < 7, 7, fvar(11) * 75)), 0
@@ -431,7 +431,7 @@ x = 1
 
 [State 1055, 5]
 type = HitDef
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S,NA
 damage = ceil(ifElse(fvar(11) * 75 < 7, 7, fvar(11) * 75)), 0
 animtype = hard
@@ -474,7 +474,7 @@ getpower = (50)*(cond(var(var(2)) = 1, 1.5, 1))
 type = HitDef
 triggerall=enemynear,map(armor)=0
 triggerall = prevstateno = 100
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S,NA
 damage = ceil(ifElse(fvar(11) * 90 < 9, 9, fvar(11) * 90)), 0
 animtype = hard
@@ -515,7 +515,7 @@ getpower = (70)*(cond(var(var(2)) = 1, 1, 1))
 type = HitDef
 triggerall=enemynear,map(armor)>0
 triggerall = prevstateno = 100
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S,NA
 damage = ceil(ifElse(fvar(11) * 90 < 9, 9, fvar(11) * 90)), 0
 animtype = hard
@@ -1103,7 +1103,7 @@ value = 1.7
 [State 800, 1] ;With grab sound
 type = HitDef
 triggerall=enemynear,map(armor)=0
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = C, NA         ;Attributes: Standing, Normal Throw
 hitflag = MAFD         ;Affect only ground people who are not being hit
 guardflag = MA
@@ -1129,7 +1129,7 @@ id = 440
 [State 800, 1] ;With grab sound
 type = HitDef
 triggerall=enemynear,map(armor)>0
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = C, NA         ;Attributes: Standing, Normal Throw
 hitflag = MAFD         ;Affect only ground people who are not being hit
 guardflag = MA
@@ -1196,7 +1196,7 @@ volumescale=150
 [State 800, 1] ;With grab sound
 type = HitDef
 triggerall=enemynear,map(armor)=0
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = C, NA         ;Attributes: Standing, Normal Throw
 hitflag = MAFD         ;Affect only ground people who are not being hit
 guardflag = LA
@@ -1222,7 +1222,7 @@ id = 440
 [State 800, 1] ;With grab sound
 type = HitDef
 triggerall=enemynear,map(armor)>0
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = C, NA         ;Attributes: Standing, Normal Throw
 hitflag = MAFD         ;Affect only ground people who are not being hit
 guardflag = LA
@@ -1580,7 +1580,7 @@ value = 0,20
 
 [State 1055, 5]
 type = HitDef
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S,NA
 damage = ceil(ifElse(fvar(11) * 100 < 5, 5, fvar(11) * 100)), 0
 animtype = up
@@ -2067,7 +2067,7 @@ persistent = 1
 
 [State 0]
 type = HitDef
-trigger1 = !movecontact&&map(kicklaunch)=0
+trigger1 = !movecontact&&!movereversed&&map(kicklaunch)=0
 attr = A, NA
 animtype  = Medium
 air.animtype = back
@@ -2108,7 +2108,7 @@ getpower = (70)*(cond(var(var(2)) = 1, 1, 1))
 
 [State 0]
 type = HitDef
-trigger1 = !movecontact&&map(kicklaunch)
+trigger1 = !movecontact&&!movereversed&&map(kicklaunch)
 attr = A, NA
 animtype  = Medium
 air.animtype = back
@@ -2238,7 +2238,7 @@ value = 1.5
 [State 0]
 type = hitdef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, NA
 damage = ceil(cond(fvar(11) *90 < 10, 10, fvar(11) * 90)), 0
 animtype = hard
@@ -3391,7 +3391,7 @@ removetime = -1
 [State 410, 2]
 type = hitdef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NA
 damage = ceil(ifElse(fvar(11) * 70 < 7, 7, fvar(11) * 70)), 0
 animtype  = Medium
@@ -3689,7 +3689,7 @@ removetime = -1
 type = hitdef 
 p2facing = 1
 triggerall=enemynear,map(armor)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NA
 damage = ceil(cond(fvar(11) *80 < 8, 8, fvar(11) * 80)), 5
 animtype  = Medium
@@ -3728,7 +3728,7 @@ p2stateno = 15000
 type = hitdef 
 p2facing = 1
 triggerall=enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NA
 damage = ceil(cond(fvar(11) *80 < 8, 8, fvar(11) * 80)), 5
 animtype  = Medium
@@ -4666,7 +4666,7 @@ supermove = 1
 
 [State 1055, 5]
 type = HitDef
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S,SA
 air.animtype = back
 damage = 0

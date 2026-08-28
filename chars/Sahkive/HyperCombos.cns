@@ -172,7 +172,7 @@ ignorehitpause =0
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = S, HA          ;Attributes: Standing, Normal Throw
 hitflag = MAFD        ;Affect only ground people who are not being hit
 guardflag=HA
@@ -408,7 +408,7 @@ ignorehitpause = 0
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = S, HA          ;Attributes: Standing, Normal Throw
 hitflag = MAFD        ;Affect only ground people who are not being hit
 guardflag=HA
@@ -645,7 +645,7 @@ ignorehitpause = 0
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = S, HA          ;Attributes: Standing, Normal Throw
 hitflag = MAFD        ;Affect only ground people who are not being hit
 guardflag=HA
@@ -895,7 +895,7 @@ ignorehitpause = 0
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = S, HA          ;Attributes: Standing, Normal Throw
 hitflag = MAFD        ;Affect only ground people who are not being hit
 guardflag=HA
@@ -1141,7 +1141,7 @@ ignorehitpause = 0
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = S, HA          ;Attributes: Standing, Normal Throw
 hitflag = MAFD        ;Affect only ground people who are not being hit
 guardflag=HA
@@ -1380,7 +1380,7 @@ ignorehitpause = 0
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = S, HA          ;Attributes: Standing, Normal Throw
 hitflag = MAFD        ;Affect only ground people who are not being hit
 guardflag=HA
@@ -1619,7 +1619,7 @@ ignorehitpause = 0
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = S, HA          ;Attributes: Standing, Normal Throw
 hitflag = MAFD        ;Affect only ground people who are not being hit
 guardflag=HA
@@ -1872,7 +1872,7 @@ ignorehitpause = 0
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = S, HA          ;Attributes: Standing, Normal Throw
 hitflag = MAFD        ;Affect only ground people who are not being hit
 guardflag=HA
@@ -2128,7 +2128,7 @@ ignorehitpause = 0
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = S, HA          ;Attributes: Standing, Normal Throw
 hitflag = MAFD        ;Affect only ground people who are not being hit
 guardflag=HA
@@ -2366,7 +2366,7 @@ ignorehitpause = 0
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = S, HA          ;Attributes: Standing, Normal Throw
 hitflag = MAFD        ;Affect only ground people who are not being hit
 guardflag=HA
@@ -2617,7 +2617,7 @@ ignorehitpause = 0
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = S, HA          ;Attributes: Standing, Normal Throw
 hitflag = MAFD        ;Affect only ground people who are not being hit
 guardflag=HA
@@ -2872,7 +2872,7 @@ ignorehitpause = 0
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = S, HA          ;Attributes: Standing, Normal Throw
 hitflag = MAFD        ;Affect only ground people who are not being hit
 guardflag=HA
@@ -3222,7 +3222,7 @@ ignorehitpause = 0
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = S, HA          ;Attributes: Standing, Normal Throw
 hitflag = MAFD        ;Affect only ground people who are not being hit
 guardflag=HA
@@ -3468,7 +3468,7 @@ ignorehitpause = 0
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = S, HA          ;Attributes: Standing, Normal Throw
 hitflag = MAFD        ;Affect only ground people who are not being hit
 guardflag=HA
@@ -3563,7 +3563,7 @@ ignorehitpause = 0
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = S, HA          ;Attributes: Standing, Normal Throw
 hitflag = MAFD        ;Affect only ground people who are not being hit
 guardflag=HA
@@ -3659,7 +3659,7 @@ ignorehitpause = 0
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = S, HA          ;Attributes: Standing, Normal Throw
 hitflag = MAFD        ;Affect only ground people who are not being hit
 guardflag=HA
@@ -3842,7 +3842,7 @@ ignorehitpause = 1
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = S, HA          ;Attributes: Standing, Normal Throw
 hitflag = MAFD        ;Affect only ground people who are not being hit
 guardflag=HA
@@ -4307,7 +4307,7 @@ removeongethit = 0
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 =!movecontact
+Trigger1 =!movecontact&&!movereversed
 attr = S, ST          ;Attributes: Standing, Normal Throw
 hitflag = MAFD          ;Affect only ground people who are not being hit
 guardflag = MA
@@ -5199,7 +5199,7 @@ persistent=0
 
 [State 800, 1] ;With grab sound
 type = HitDef
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 attr = S, HA          ;Attributes: Standing, Normal Throw
 hitflag = MAFD        ;Affect only ground people who are not being hit
 guardflag=HA
@@ -5555,7 +5555,7 @@ value = 0, 3
 [State 800, 1] ;With grab sound
 type = HitDef
 trigger1 = teammode!=tag
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 trigger1 = enemynear,statetype!=A
 attr = S, HT          ;Attributes: Standing, Normal Throw
 hitflag = MFD        ;Affect only ground people who are not being hit
@@ -5582,7 +5582,7 @@ guard.slidetime = 15
 [State 800, 1] ;With grab sound
 type = HitDef
 trigger1 = teammode!=tag
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 trigger1 = enemynear,statetype=A
 attr = S, HT          ;Attributes: Standing, Normal Throw
 hitflag = MAFD+        ;Affect only ground people who are not being hit
@@ -5612,7 +5612,7 @@ guard.slidetime = 15
 [State 800, 1] ;With grab sound
 type = HitDef
 trigger1 = teammode=tag
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 trigger1 = enemynear,statetype!=A
 attr = S, HT          ;Attributes: Standing, Normal Throw
 hitflag = MFD        ;Affect only ground people who are not being hit
@@ -5638,7 +5638,7 @@ guard.slidetime = 15
 [State 800, 1] ;With grab sound
 type = HitDef
 trigger1 = teammode=tag
-Trigger1 = !movecontact
+Trigger1 = !movecontact&&!movereversed
 trigger1 = enemynear,statetype=A
 attr = S, HT          ;Attributes: Standing, Normal Throw
 hitflag = MAFD+        ;Affect only ground people who are not being hit

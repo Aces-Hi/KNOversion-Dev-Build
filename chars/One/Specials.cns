@@ -2360,7 +2360,7 @@ value = 1
 type = HitDef 
 p2facing = 1
 trigger1=map(sixs)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr =S, SA
 damage = ceil(cond(fvar(11) *60 < 6, 6, fvar(11) * 60)), 0
 animtype  = Medium
@@ -2396,7 +2396,7 @@ id = 99856
 type = HitDef 
 p2facing = 1
 trigger1=map(sixs)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr =S, SA
 damage = ceil(cond(fvar(11) *60 < 6, 6, fvar(11) * 60)), 0
 animtype  = Medium
@@ -2555,7 +2555,7 @@ value = 1
 type = HitDef 
 p2facing = 1
 trigger1=map(sixs)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr =S, SA
 damage = ceil(cond(fvar(11) *60 < 6, 6, fvar(11) * 60)), 0
 animtype  = Medium
@@ -2591,7 +2591,7 @@ id = 99856
 type = HitDef 
 p2facing = 1
 trigger1=map(sixs)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr =S, SA
 damage = ceil(cond(fvar(11) *60 < 6, 6, fvar(11) * 60)), 0
 animtype  = Medium
@@ -2746,7 +2746,7 @@ value = 1
 type = HitDef 
 p2facing = 1
 trigger1=map(sixs)=0
-trigger1 =!movecontact
+trigger1 =!movecontact&&!movereversed
 attr =S, SA
 damage = ceil(cond(fvar(11) *60 < 6, 6, fvar(11) * 60)), 0
 animtype  = Medium
@@ -2785,7 +2785,7 @@ id = 99856
 type = HitDef 
 p2facing = 1
 trigger1=map(sixs)>0
-trigger1 =!movecontact
+trigger1 =!movecontact&&!movereversed
 attr =S, SA
 damage = ceil(cond(fvar(11) *60 < 6, 6, fvar(11) * 60)), 0
 animtype  = Medium
@@ -2987,7 +2987,7 @@ removeongethit = 0
 ignorehitpause = 0
 [State 410, 2]
 type = HitDef
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) * 85 < 7, 7, fvar(11) * 85)),12
 animtype  = Medium
@@ -3068,7 +3068,7 @@ ignorehitpause = 0
 
 [State 410, 2]
 type = HitDef
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) * 95 < 10, 10, fvar(11) * 95)),12
 animtype  = Medium
@@ -5090,7 +5090,7 @@ value = 9,1
 type = HitDef 
 triggerall=prevstateno!=1051
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA
 animtype  = hard
 air.animtype = back
@@ -5120,7 +5120,7 @@ getpower = 0
 type = HitDef 
 triggerall=prevstateno=1051
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA
 animtype  = hard
 air.animtype = back
@@ -5215,7 +5215,7 @@ ignorehitpause=1
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact&&map(lslam)=0
+trigger1 = !movecontact&&!movereversed&&map(lslam)=0
 attr = A, SA
 animtype  = hard
 air.animtype = back
@@ -5249,7 +5249,7 @@ guard.cornerpush.veloff = -15
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact&&map(lslam)>0
+trigger1 = !movecontact&&!movereversed&&map(lslam)>0
 attr = A, SA
 animtype  = hard
 air.animtype = back
@@ -5425,7 +5425,7 @@ value = 9,0
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 =!movecontact
+trigger1 =!movecontact&&!movereversed
 trigger1 = prevstateno != 1251
 trigger1 = prevstateno != 12251
 attr = A, NA
@@ -5462,7 +5462,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-triggerall = !movecontact
+triggerall = !movecontact&&!movereversed
 trigger1 = prevstateno = 1251
 trigger2 = prevstateno = 12251
 attr = A, NA
@@ -5537,7 +5537,7 @@ volumescale=200
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = p2stateno != [120,199]
 attr = A, ST
 animtype  = hard
@@ -5653,7 +5653,7 @@ ignorehitpause=1
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 =!movecontact
+trigger1 =!movecontact&&!movereversed
 trigger1 = map(airgrab)=3
 attr = A, ST
 animtype  = hard
@@ -5685,7 +5685,7 @@ getpower = (100)*(cond(var(var(1)) = 1, 1, .5))
 [State 200, 1]
 type = HitDef 
 p2facing = 1
-trigger1 =!movecontact
+trigger1 =!movecontact&&!movereversed
 trigger1 = map(airgrab)>3
 attr = A, ST
 animtype  = hard
@@ -5970,7 +5970,7 @@ persistent = 0
 type = HitDef 
 p2facing 	= 1
 triggerall	= enemy, map(Armor) = 0
-trigger1 	= !movecontact
+trigger1 	= !movecontact&&!movereversed
 trigger1	= !map(kickbang)
 attr 	= S, SA
 damage = ceil(cond(fvar(11) *50 < 5, 5, fvar(11) * 50)), 0
@@ -6007,7 +6007,7 @@ type = HitDef
 p2facing 	= 1 
 trigger1	= enemy, map(Armor)
 trigger2	= map(kickbang)
-triggerall 	= !movecontact && !movereversed
+triggerall 	= !movecontact&&!movereversed && !movereversed
 hitonce 	= 1
 attr 	= S, SA
 damage = ceil(cond(fvar(11) *50 < 5, 5, fvar(11) * 50)), 0
@@ -6159,7 +6159,7 @@ ignorehitpause = 1
 [State 630, 2]
 type = HitDef 
 p2facing 	= 1
-trigger1 	= !movecontact && !movereversed
+trigger1 	= !movecontact&&!movereversed && !movereversed
 trigger1	= animelemno(0) = [2,3]
 attr 	= A, SA
 damage = ceil(cond(fvar(11) *20 < 2, 2, fvar(11) * 20)), 0
@@ -6190,7 +6190,7 @@ id = 1
 type = HitDef 
 p2facing 	= 1
 trigger1	= animelemno(0) = 5 && !map(SLAM_UseCount)
-trigger1 	= (!movecontact && !movereversed) || enemy, GetHitVar(chainid) = 1
+trigger1 	= (!movecontact&&!movereversed && !movereversed) || enemy, GetHitVar(chainid) = 1
 hitonce 	= 1
 attr 	= A, SA
 damage = ceil(cond(fvar(11) *60 < 7,7, fvar(11) * 60)), 0
@@ -6220,7 +6220,7 @@ id = 2
 type = HitDef 
 p2facing 	= 1
 trigger1	= animelemno(0) = 5 && map(SLAM_UseCount)>0
-trigger1 	= (!movecontact && !movereversed) || enemy, GetHitVar(chainid) = 1
+trigger1 	= (!movecontact&&!movereversed && !movereversed) || enemy, GetHitVar(chainid) = 1
 hitonce 	= 1
 attr 	= A, SA
 damage = ceil(cond(fvar(11) *60 < 7,7, fvar(11) * 60)), 0

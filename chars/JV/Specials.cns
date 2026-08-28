@@ -201,7 +201,7 @@ persistent=0
 type = HitDef 
 p2facing = 1 
 triggerall=enemynear,map(armor)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 hitonce = 1
 attr = S, SA
 damage = ceil(cond(fvar(11) *50 < 10,10, fvar(11) * 50)), 5
@@ -233,7 +233,7 @@ envshake.phase = 1
 type = HitDef 
 p2facing = 1 
 triggerall=enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 hitonce = 1
 attr = S, SA
 damage = ceil(cond(fvar(11) *50 < 10,10, fvar(11) * 50)), 5
@@ -510,7 +510,7 @@ persistent=0
 [State 200, 1]
 type = HitDef 
 p2facing 	= 1
-trigger1 	= !movecontact
+trigger1 	= !movecontact&&!movereversed
 trigger1	= combocount=0
 attr 	= S, NA
 animtype  	= Hard
@@ -591,7 +591,7 @@ persistent = 1
 [State 200, 1]
 type = HitDef 
 p2facing 	= 1
-trigger1 	= !movecontact
+trigger1 	= !movecontact&&!movereversed
 trigger1	= combocount>0
 attr 	= S, NA
 animtype  	= Hard
@@ -1699,7 +1699,7 @@ type = HitDef
 p2facing = 1
 triggerall=enemynear,map(armor)=0
 triggerall=enemynear,!ishelper
-trigger1 =!movecontact
+trigger1 =!movecontact&&!movereversed
 trigger1=p2movetype!=H
 attr = S, SP
 animtype  = Light
@@ -1732,7 +1732,7 @@ type = HitDef
 p2facing = 1
 triggerall=enemynear,map(armor)=0
 triggerall=enemynear,!ishelper
-trigger1 =!movecontact
+trigger1 =!movecontact&&!movereversed
 trigger1=p2movetype=H
 attr = S, SP
 animtype  = Light
@@ -1766,7 +1766,7 @@ type = HitDef
 p2facing = 1
 triggerall=enemynear,map(armor)>0
 triggerall=enemynear,!ishelper
-trigger1 =!movecontact
+trigger1 =!movecontact&&!movereversed
 attr = S, SP
 animtype  = Light
 air.animtype = back
@@ -1971,7 +1971,7 @@ type = HitDef
 p2facing = 1
 triggerall=enemynear,map(armor)=0
 triggerall=enemynear,!ishelper
-trigger1 =!movecontact
+trigger1 =!movecontact&&!movereversed
 trigger1 = p2movetype!=H
 attr =S, SP
 animtype  = Light
@@ -2004,7 +2004,7 @@ type = HitDef
 p2facing = 1
 triggerall=enemynear,map(armor)=0
 triggerall=enemynear,!ishelper
-trigger1 =!movecontact
+trigger1 =!movecontact&&!movereversed
 trigger1 = p2movetype=H
 attr =S, SP
 animtype  = Light
@@ -2038,7 +2038,7 @@ type = HitDef
 p2facing = 1
 triggerall=enemynear,map(armor)>0
 triggerall=enemynear,!ishelper
-trigger1 =!movecontact
+trigger1 =!movecontact&&!movereversed
 attr = S, SP
 animtype  = Light
 air.animtype = back
@@ -2750,7 +2750,7 @@ ignorehitpause = 1
 type = HitDef
 p2facing = 1 
 triggerall=enemynear,map(armor)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 hitonce = 1
 attr = S, SA
 damage = ceil(cond(fvar(11) *80 < 10, 10, fvar(11) * 80)), 10
@@ -2782,7 +2782,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 type = HitDef
 p2facing = 1 
 triggerall=enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 hitonce = 1
 attr = S, SA
 damage = ceil(cond(fvar(11) *80 < 10, 10, fvar(11) * 80)), 10
@@ -2867,7 +2867,7 @@ ignorehitpause = 1
 type = HitDef
 p2facing = 1 
 trigger1=enemynear,movetype!=H
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 hitonce = 1
 attr = S, SA
 damage = ceil(cond(fvar(11) *40 < 10, 10, fvar(11) * 50)), 10
@@ -2898,7 +2898,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 type = HitDef
 p2facing = 1 
 trigger1=enemynear,movetype=H
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 hitonce = 1
 attr = S, SA
 damage = ceil(cond(fvar(11) *40 < 10, 10, fvar(11) * 50)), 10
@@ -3369,7 +3369,7 @@ trans = add
 type = HitDef 
 p2facing = 1 
 triggerall=enemynear,map(armor)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 hitonce = 1
 attr = S, SA
 damage = ceil(cond(fvar(11) *75 < 20,20, fvar(11) * 75)), 15
@@ -3402,7 +3402,7 @@ envshake.phase = 1
 type = HitDef 
 p2facing = 1 
 triggerall=enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 hitonce = 1
 attr = S, SA
 damage = ceil(cond(fvar(11) *75 < 20,20, fvar(11) * 75)), 15

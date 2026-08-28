@@ -152,7 +152,7 @@ persistent=0
 [State 210, 2]
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = enemy,statetype!=A
 attr = S, ST
 animtype  = med
@@ -184,7 +184,7 @@ kill=0
 [State 210, 2]
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = enemy,statetype=A
 attr = S, ST
 animtype  = med
@@ -567,7 +567,7 @@ value = 1
 [State 210, 2]
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = enemy,statetype!=A
 attr = S, ST
 animtype  = med
@@ -599,7 +599,7 @@ kill=0
 [State 210, 2]
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = enemy,statetype=A
 attr = S, ST
 animtype  = med
@@ -1544,7 +1544,7 @@ ignorehitpause = 1
 [State 0]
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
-trigger1 =!movecontact
+trigger1 =!movecontact&&!movereversed
 attr = A,SP
 animtype  = up
 air.animtype = up
@@ -2853,7 +2853,7 @@ value = 1
 [State 210, 2]
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = map(dspecial)=0
 trigger1 = map(full)=0
 attr = S, SA
@@ -2885,7 +2885,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1,1))
 [State 210, 2]
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = map(dspecial)=0
 trigger1 = map(full)
 attr = S, SA
@@ -2926,7 +2926,7 @@ persistent = 0
 [State 210, 2]
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = map(dspecial)>0
 attr = S, SA
 animtype  = up
@@ -3324,7 +3324,7 @@ persistent = 0
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
 trigger1 = map(exreverse)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 animtype  = med
 air.animtype = back
@@ -3356,7 +3356,7 @@ getpower = 0
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
 trigger1 = map(exreverse)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 animtype  = med
 air.animtype = back

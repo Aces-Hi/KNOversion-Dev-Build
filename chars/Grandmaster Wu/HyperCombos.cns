@@ -699,7 +699,7 @@ persistent = 0
 
 [State 0, Helper]
 type = Helper
-trigger1 = time = 75 && !movecontact
+trigger1 = time = 75 && !movecontact&&!movereversed
 helpertype = normal ;player
 name = "Beam Hitbox"
 ID = 3011
@@ -947,7 +947,7 @@ unhittable = 1
 
 [State 0, Helper]
 type = Helper
-trigger1 = animelem = 3 ;&& !movecontact
+trigger1 = animelem = 3 ;&& !movecontact&&!movereversed
 helpertype = normal ;player
 name = "Main Bawl Helper"
 ID = 3021
@@ -1104,7 +1104,7 @@ time = 1
 
 [State 0, Helper]
 type = Helper
-trigger1 = time %14 = 0;&& !movecontact
+trigger1 = time %14 = 0;&& !movecontact&&!movereversed
 helpertype = normal ;player
 name = "Little Bawls"
 ID = 3023

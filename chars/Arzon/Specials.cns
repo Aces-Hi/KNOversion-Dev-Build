@@ -993,7 +993,7 @@ time = 999
 
 [State 630, 2]
 type = HitDef 
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 hitonce = 1
 attr = S, SP
 air.animtype = up
@@ -3369,7 +3369,7 @@ p2facing = 1
 trigger1 = enemynear,map(projc)=0&player(map(enemyteamlead)),movetype!=A
 trigger2 = enemynear,map(projc)>0&player(map(enemyteamlead)),movetype=A
 triggerall = enemynear,map(armor)=0
-triggerall = !movecontact
+triggerall = !movecontact&&!movereversed
 attr = S, NP
 animtype  = Hard
 air.animtype = back
@@ -3404,7 +3404,7 @@ guard.dist=0
 type = HitDef 
 p2facing = 1
 triggerall = enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NP
 animtype  = Hard
 air.animtype = back
@@ -3499,7 +3499,7 @@ type = HitDef
 trigger1 = enemynear,map(projc)=0&player(map(enemyteamlead)),movetype!=A
 trigger2 = enemynear,map(projc)>0&player(map(enemyteamlead)),movetype=A
 triggerall = enemynear,map(armor)=0
-triggerall = !movecontact
+triggerall = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(parent, fvar(11) *150 < 30, 30, parent, fvar(11) * 150)), 25
 hitflag = MAF
@@ -3533,7 +3533,7 @@ guard.dist=0
 [State 2, Counter Hit]
 type = HitDef 
 triggerall = enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(parent, fvar(11) *150 < 30, 30, parent, fvar(11) * 150)), 25
 hitflag = MAF
@@ -3629,7 +3629,7 @@ type = HitDef
 p2facing = 1
 trigger1 = enemynear,map(projc)=0&player(map(enemyteamlead)),movetype!=A
 trigger2 = enemynear,map(projc)>0&player(map(enemyteamlead)),movetype=A
-triggerall = !movecontact
+triggerall = !movecontact&&!movereversed
 animtype  = Light
 air.animtype = back
 attr = S, SP
@@ -3737,7 +3737,7 @@ p2facing = 1
 trigger1 = enemynear,map(projc)=0&player(map(enemyteamlead)),movetype!=A
 trigger2 = enemynear,map(projc)>0&player(map(enemyteamlead)),movetype=A
 triggerall = enemynear,map(armor)=0
-triggerall = !movecontact
+triggerall = !movecontact&&!movereversed
 attr = S, NP
 animtype  = Hard
 air.animtype = back
@@ -3772,7 +3772,7 @@ guard.dist=0
 type = HitDef 
 p2facing = 1
 triggerall = enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NP
 animtype  = Hard
 air.animtype = back

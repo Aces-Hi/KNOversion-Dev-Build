@@ -310,7 +310,7 @@ ignorehitpause = 0
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NA
 animtype  = med
 air.animtype = back
@@ -467,7 +467,7 @@ ignorehitpause = 0
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NA
 animtype  = med
 air.animtype = back
@@ -1525,7 +1525,7 @@ value = 1, 0
 [State 600, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, NA
 damage = ceil(cond(fvar(11) *20 < 1, 1, fvar(11) * 20)), 0
 guardflag = MA
@@ -1676,14 +1676,14 @@ ignorehitpause = 0
 removeonchangestate=1
 [State 0, ModifyExplod]
 type = ModifyExplod
-trigger1 = animelem=5&&!movecontact
+trigger1 = animelem=5&&!movecontact&&!movereversed
 ID = 611
 anim = 611
 animelem=10
 removetime = 17
 [State 0, ChangeAnim]
 type = ChangeAnim
-trigger1 = animelem=5&&!movecontact
+trigger1 = animelem=5&&!movecontact&&!movereversed
 value = 610
 elem = 9
 ;neutral hover explod 1

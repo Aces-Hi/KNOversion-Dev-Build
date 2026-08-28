@@ -1146,7 +1146,7 @@ type = HitDef
 ID = 410
 p2facing = 1
 trigger1 = map(lol)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) * 75 < 22, 22, fvar(11) * 75)),1
 animtype  = up
@@ -1182,7 +1182,7 @@ type = HitDef
 ID = 410
 p2facing = 1
 trigger1 = map(lol)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) * 75 < 22, 22, fvar(11) * 75)),1
 animtype  = up
@@ -1311,7 +1311,7 @@ value = 252
 [State 410, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) * 55 < 5, 5, fvar(11) * 55)),1
 animtype  = DIagup
@@ -2704,7 +2704,7 @@ value = 0, 0
 [State 0]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact&& (enemynear, stateno!= [5110,5119])
+trigger1 = !movecontact&&!movereversed&& (enemynear, stateno!= [5110,5119])
 attr = S, NA
 animtype  = Light
 damage = ceil(cond(fvar(11) *30 < 4, 4, fvar(11) * 30)), 0
@@ -3329,7 +3329,7 @@ time = 1
 [State 410, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact &&root,map(upsword)=0
+trigger1 = !movecontact&&!movereversed &&root,map(upsword)=0
 attr = A, SP
 damage = ceil(cond(root,fvar(11) * 30 < 7, 7, root,fvar(11) * 30)),7
 animtype  = up
@@ -3359,7 +3359,7 @@ guard.dist=0
 [State 410, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact &&root,map(upsword)
+trigger1 = !movecontact&&!movereversed &&root,map(upsword)
 attr = A, SP
 damage = ceil(cond(root,fvar(11) * 30 < 7, 7, root,fvar(11) * 30)),7
 animtype  = up
@@ -4047,7 +4047,7 @@ value = 1
 [State 630, While Falling Hit]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 hitonce = 1
 attr = A, NA
 damage = ceil(cond(fvar(11) *60 < 6, 6, fvar(11) * 60)), 0

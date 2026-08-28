@@ -1942,7 +1942,7 @@ type = HitDef
 p2facing = 1 
 triggerall=enemynear,map(armor)=0
 triggerall= enemynear, statetype!=A
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 hitonce = 1
 attr = S, SA
 damage = 0, 0
@@ -1976,7 +1976,7 @@ type = HitDef
 p2facing = 1 
 triggerall=enemynear,map(armor)>0
 triggerall= enemynear, statetype!=A
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 hitonce = 1
 attr = S, SA
 damage = 0, 0
@@ -2011,7 +2011,7 @@ p2facing = 1
 triggerall=enemynear,map(armor)=0
 triggerall= enemynear, statetype=A
 triggerall = enemynear, movetype!=A 
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 hitonce = 1
 attr = S, SA
 damage = 0, 0
@@ -2046,7 +2046,7 @@ p2facing = 1
 triggerall=enemynear,map(armor)>0
 triggerall= enemynear, statetype=A
 triggerall = enemynear, movetype!=A 
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 hitonce = 1
 attr = S, SA
 damage = 0, 0
@@ -2476,7 +2476,7 @@ timegap = 1
 type = HitDef 
 p2facing = 1 
 triggerall=enemynear,map(armor)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 hitonce = 1
 attr = S, SA
 damage = 0, 0
@@ -2504,7 +2504,7 @@ getpower = 0
 type = HitDef 
 p2facing = 1 
 triggerall=enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 hitonce = 1
 attr = S, SA
 damage = 0, 0
@@ -2899,7 +2899,7 @@ removeongethit = 0
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, ST
 animtype  = Hard
 damage = ceil(cond(fvar(11) *60 < 10, 10, fvar(11) *60)), 6
@@ -3103,7 +3103,7 @@ removeongethit = 0
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, ST
 animtype  = Hard
 damage = ceil(cond(fvar(11) *50 < 10, 10, fvar(11) *50)), 6
@@ -6416,7 +6416,7 @@ ownpal = 1
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1 =!movecontact
+trigger1 =!movecontact&&!movereversed
 trigger1 = p2stateno != [120,199]
 hitonce = 1
 attr = A, ST
@@ -6593,7 +6593,7 @@ ownpal = 1
 [State 630, 2]
 type = HitDef 
 p2facing = 1 
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 hitonce = 1
 attr = A, ST
 damage = 0, 0
@@ -6806,7 +6806,7 @@ type = HitDef
 p2facing = 1
 trigger1 = p2stateno != [120,199]
 trigger1 = p2stateno != [40, 43]
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, ST
 animtype  = Hard
 damage = 0, 0
@@ -6843,7 +6843,7 @@ type = HitDef
 p2facing = 1
 trigger1 = p2movetype=H
 trigger1 = p2statetype=A
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, ST
 animtype  = Hard
 damage = 0, 0
@@ -7527,7 +7527,7 @@ removeongethit = 0
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = p2movetype = H
 attr = S, ST
 animtype  = Hard
@@ -7563,7 +7563,7 @@ p2stateno = 1404
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = p2movetype != H
 attr = S, ST
 animtype  = Hard
@@ -7992,7 +7992,7 @@ removeongethit = 0
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = p2movetype = H
 attr = S, HT
 animtype  = Hard
@@ -8028,7 +8028,7 @@ p2stateno = 1404
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = p2movetype != H
 attr = S, HT
 animtype  = Hard

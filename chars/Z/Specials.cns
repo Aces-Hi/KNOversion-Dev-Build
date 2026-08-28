@@ -1386,7 +1386,7 @@ facing=1
 type = HitDef 
 p2facing = 1
 trigger1=map(dunk)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA
 animtype  = Hard
 air.animtype = back
@@ -1431,7 +1431,7 @@ id = 910311
 type = HitDef 
 p2facing = 1
 trigger1=map(dunk)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA
 animtype  = Hard
 air.animtype = back
@@ -2072,7 +2072,7 @@ value = 30,0
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 animtype  = hard
 air.animtype = back

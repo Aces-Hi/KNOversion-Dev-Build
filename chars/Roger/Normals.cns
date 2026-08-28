@@ -312,7 +312,7 @@ value = 0, 3
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact && (enemynear, stateno!= [5110,5119])
+trigger1 = !movecontact&&!movereversed && (enemynear, stateno!= [5110,5119])
 attr = S, NA
 animtype  = Light
 air.animtype = back
@@ -446,7 +446,7 @@ value = 0, 3
 [State 210, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact && (enemynear, stateno!= [5110,5119])
+trigger1 = !movecontact&&!movereversed && (enemynear, stateno!= [5110,5119])
 attr = S, NA
 animtype  = Light
 air.animtype = back
@@ -1102,7 +1102,7 @@ value = 0, 2
 [State 410, 3]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = C, NA
 damage = ceil(cond(fvar(11) *70 < 7, 7, fvar(11) * 70)), 0
 animtype  = Light
@@ -1259,7 +1259,7 @@ value = 0, 2
 [State 410, 3]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = C, NA
 damage = ceil(cond(fvar(11) *70 < 7, 7, fvar(11) * 70)), 0
 animtype  = Light
@@ -1419,7 +1419,7 @@ removeongethit = 0
 [State 0]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact && enemynear, stateno!=5110
+trigger1 = !movecontact&&!movereversed && enemynear, stateno!=5110
 attr = S, NA
 animtype  = UP
 damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 0
@@ -1611,7 +1611,7 @@ x = 4.35+cond(map(Install),7,0)
 [State 430, 2]
 type = HitDef 
 p2facing = 1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = C, NA
 damage = ceil(cond(fvar(11) *100 < 25, 25, fvar(11) * 100)), 0
 animtype  = hard
@@ -1749,7 +1749,7 @@ value = 0, 4
 type = HitDef 
 p2facing = 1
 trigger1 = vel y < 0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, NA
 hitflag = MAF
 damage = ceil(cond(fvar(11) *25 < 4, 4, fvar(11) * 25)), 0
@@ -1782,7 +1782,7 @@ getpower = (25)*(cond(var(var(3)) = 1, 1, .5))
 type = HitDef 
 p2facing = 1
 trigger1 = vel y >= 0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, NA
 hitflag = MAF
 damage = ceil(cond(fvar(11) *25 < 4, 4, fvar(11) * 25)), 0
@@ -3544,7 +3544,7 @@ removeongethit = 0
 type = HitDef 
 p2facing = 1
 triggerall=enemynear,map(armor)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 animtype  = Light
 damage = ceil(cond(fvar(11) *100 < 25, 25, fvar(11) * 100)),10
@@ -3584,7 +3584,7 @@ getpower = (100)*(cond(var(var(2)) = 1, 1, .5))
 type = HitDef 
 p2facing = 1
 triggerall=enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 animtype  = Light
 damage = ceil(cond(fvar(11) *100 < 25, 25, fvar(11) * 100)),10
@@ -3735,7 +3735,7 @@ type = HitDef
 p2facing = 1
 triggerall=enemynear,map(armor)=0
 triggerall=map(bigpunch)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 animtype  = Light
 damage = ceil(cond(fvar(11) *150 < 50, 50, fvar(11) * 150)),20
@@ -3773,7 +3773,7 @@ type = HitDef
 p2facing = 1
 triggerall=enemynear,map(armor)>0
 triggerall=map(bigpunch)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 animtype  = Light
 damage = ceil(cond(fvar(11) *150 < 50, 50, fvar(11) * 150)),20
@@ -3814,7 +3814,7 @@ p2facing = 1
 triggerall=enemynear,map(armor)=0
 triggerall=map(bigpunch)>0
 triggerall=map(smallpunch)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 animtype  = Light
 damage = ceil(cond(fvar(11) *150 < 50, 50, fvar(11) * 150)),20
@@ -3856,7 +3856,7 @@ p2facing = 1
 triggerall=enemynear,map(armor)>0
 triggerall=map(bigpunch)>0
 triggerall=map(smallpunch)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 animtype  = Light
 damage = ceil(cond(fvar(11) *150 < 50, 50, fvar(11) * 150)),20
@@ -3900,7 +3900,7 @@ p2facing = 1
 triggerall=enemynear,map(armor)=0
 triggerall=map(bigpunch)>0
 triggerall=map(smallpunch)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 animtype  = Light
 damage = ceil(cond(fvar(11) *150 < 50, 50, fvar(11) * 150)),20
@@ -3942,7 +3942,7 @@ p2facing = 1
 triggerall=enemynear,map(armor)>0
 triggerall=map(bigpunch)>0
 triggerall=map(smallpunch)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 animtype  = Light
 damage = ceil(cond(fvar(11) *150 < 50, 50, fvar(11) * 150)),20
@@ -4109,7 +4109,7 @@ type = HitDef
 p2facing = 1
 triggerall=enemynear,map(armor)=0
 triggerall=var(25)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 animtype  = Light
 damage = ceil(cond(fvar(11) *200 < 100, 100, fvar(11) * 200)),30
@@ -4148,7 +4148,7 @@ type = HitDef
 p2facing = 1
 triggerall=enemynear,map(armor)>0
 triggerall=var(25)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 animtype  = Light
 damage = ceil(cond(fvar(11) *200 < 100, 100, fvar(11) * 200)),30
@@ -4189,7 +4189,7 @@ type = HitDef
 p2facing = 1
 triggerall=enemynear,map(armor)=0
 triggerall=var(25)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 animtype  = Light
 damage = ceil(cond(fvar(11) *200 < 100, 100, fvar(11) * 200)),30
@@ -4229,7 +4229,7 @@ type = HitDef
 p2facing = 1
 triggerall=enemynear,map(armor)>0
 triggerall=var(25)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 animtype  = Light
 damage = ceil(cond(fvar(11) *200 < 100, 100, fvar(11) * 200)),30
@@ -4644,7 +4644,7 @@ value = S6,0
 type = HitDef 
 p2facing = 1
 triggerall=var(43)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 triggerall = !combocount
 attr = S, SA
 damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 25
@@ -4682,7 +4682,7 @@ p1sprpriority = 0
 type = HitDef 
 p2facing = 1
 triggerall=var(43)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 triggerall = combocount
 attr = S, SA
 damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 25
@@ -4721,7 +4721,7 @@ p1sprpriority = 0
 type = HitDef 
 p2facing = 1
 triggerall=var(43)=1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA
 damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 25
 animtype  = Diagup

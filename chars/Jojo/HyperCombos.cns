@@ -130,7 +130,7 @@ ignorehitpause = 1
 
 [State 200, 1]
 type = HitDef
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, HA                     ;Attribute: Standing, Normal Attack
 damage = ceil(ifElse(fvar(11) * 85 < 40, 40, fvar(11) * 85)), 10                  ;Damage that move inflicts, guard damage
 animtype = up                ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -1045,7 +1045,7 @@ type = HitDef
 trigger1 = anim=1003
 trigger1 = animelem=4
 trigger2 = anim=1000
-trigger2 = !movecontact
+trigger2 = !movecontact&&!movereversed
 attr = S, HA
 getpower = 0
 animtype  = Up

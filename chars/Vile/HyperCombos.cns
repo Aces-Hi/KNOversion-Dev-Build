@@ -1546,7 +1546,7 @@ freq = 120   ;A frequency of 180 shakes the screen rapidly
 
 [State 0]
 type = HitDef
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, HA
 animtype  = up
 air.animtype = back

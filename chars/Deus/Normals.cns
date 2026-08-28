@@ -85,7 +85,7 @@ persistent = 0
 [State 200, 1]
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *30 < 4, 4, fvar(11) * 30)), 0
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -229,7 +229,7 @@ ignorehitpause=1
 [State 200, 1]
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *30 < 4, 4, fvar(11) * 30)), 0
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -520,7 +520,7 @@ ignorehitpause=1
 type = HitDef 
 triggerall = anim=202
 p2facing = cond(combocount>0,1,0)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *30 < 4, 4, fvar(11) * 30)), 0
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -680,7 +680,7 @@ persistent = 0
 [State 210, 2]
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NA
 animtype  = med
 air.animtype = back
@@ -1128,7 +1128,7 @@ persistent = 0
 [State 200, 1]
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, NA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *30 < 4, 4, fvar(11) * 30)), 0
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -1294,7 +1294,7 @@ facing=1
 [State 0]
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = C, NA
 animtype  = med
 air.animtype = back
@@ -1827,7 +1827,7 @@ persistent = 0
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
 trigger1 = facing!=enemy,facing
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, NA
 damage = ceil(cond(fvar(11) *20 < 4, 4, fvar(11) * 20)), 0
 guardflag = MA
@@ -1856,7 +1856,7 @@ forcenofall = 1
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
 trigger1 = facing=enemy,facing
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, NA
 damage = ceil(cond(fvar(11) *20 < 4, 4, fvar(11) * 20)), 0
 guardflag = MA
@@ -1993,7 +1993,7 @@ value = 0.25
 [State 610, 3]
 type = HitDef 
 p2facing = cond(combocount>0,1,0)
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, NA
 damage = ceil(cond(fvar(11) *40 < 5, 5, fvar(11) * 40)), 0
 guardflag = MA
@@ -2398,7 +2398,7 @@ persistent=0
 [State 610, 3]
 type = HitDef 
 p2facing = -1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = vel y <=0
 attr = A, NA
 damage = ceil(cond(fvar(11) *40 < 5, 5, fvar(11) * 40)), 0
@@ -2428,7 +2428,7 @@ getpower = (50)*(cond(var(var(2)) = 1, 1, 1))
 [State 610, 3]
 type = HitDef 
 p2facing = -1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = vel y >0
 attr = A, NA
 damage = ceil(cond(fvar(11) *40 < 5, 5, fvar(11) * 40)), 0
@@ -2536,7 +2536,7 @@ ignorehitpause = 1
 [State 610, 3]
 type = HitDef 
 p2facing = -1
-triggerall = !movecontact
+triggerall = !movecontact&&!movereversed
 trigger1 = root,anim=630&&root,animelemtime(7)>=0
 triggerall = root,map(bmhit)=0
 trigger2 = root,anim!=630
@@ -2670,7 +2670,7 @@ ontop=1
 [State 0]
 type = HitDef 
 p2facing = -1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = P2Dist x>-40
 attr = A, NA
 animtype  = Hard
@@ -2710,7 +2710,7 @@ persistent = 0
 [State 0]
 type = HitDef 
 p2facing = -1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = P2Dist x<= -40
 trigger1 = map(bair)=0
 attr = A, NA
@@ -2753,7 +2753,7 @@ id=640
 [State 0]
 type = HitDef 
 p2facing = -1
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 trigger1 = P2Dist x<= -40
 trigger1 = map(bair)>0
 attr = A, NA

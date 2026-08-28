@@ -384,7 +384,7 @@ value = 7, 3
 type = HitDef
 triggerall=enemynear,map(armor)=0
 trigger1 = map(push)=0
-trigger1 =  !movecontact
+trigger1 =  !movecontact&&!movereversed
 attr = S, SA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 10
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -424,7 +424,7 @@ p2stateno = 915020
 type = HitDef
 triggerall=enemynear,map(armor)>0
 trigger1 = map(push)=0
-trigger1 =  !movecontact
+trigger1 =  !movecontact&&!movereversed
 attr = S, SA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 10
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -466,7 +466,7 @@ getpower = (100)*(cond(var(var(3)) = 1, 1, .5))
 [State 1000, 1]
 type = HitDef
 trigger1 = map(push)>0
-trigger1 =  !movecontact 
+trigger1 =  !movecontact&&!movereversed 
 attr = S, SA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 10
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -655,7 +655,7 @@ value = 7, 2
 [State 1000, 1]
 type = HitDef
 triggerall=enemynear,map(armor)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, HT                    ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 12
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -694,7 +694,7 @@ p2stateno=1225
 [State 1000, 1]
 type = HitDef
 triggerall=enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, HT                    ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 12
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -896,7 +896,7 @@ value = 7, 3
 type = HitDef
 triggerall=enemynear,map(armor)=0
 trigger1 = !NumExplod(99857)
-trigger1 =  !movecontact
+trigger1 =  !movecontact&&!movereversed
 attr = S, HT                    ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *130 < 15, 15, fvar(11) * 130)), 20
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -936,7 +936,7 @@ p2stateno = 915020
 type = HitDef
 triggerall=enemynear,map(armor)>0
 trigger1 = !NumExplod(99857)
-trigger1 =  !movecontact
+trigger1 =  !movecontact&&!movereversed
 attr = S, HT                    ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *130 < 15, 15, fvar(11) * 130)), 20
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -977,7 +977,7 @@ getpower = (100)*(cond(var(var(3)) = 1, 1, .5))
 [State 1000, 1]
 type = HitDef
 trigger1 = NumExplod(99857)
-trigger1 =  !movecontact 
+trigger1 =  !movecontact&&!movereversed 
 attr = S, HT                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *180 < 15, 15, fvar(11) * 180)), 20
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -1330,7 +1330,7 @@ value = 7, 3
 [State 1000, 1]
 type = HitDef
 triggerall=enemynear,map(armor)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *130 < 15, 15, fvar(11) * 130)), 20
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -1368,7 +1368,7 @@ p2stateno = 1225
 [State 1000, 1]
 type = HitDef
 triggerall=enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *130 < 15, 15, fvar(11) * 130)), 20
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -2098,7 +2098,7 @@ y = .3
 [State 1000, 1]
 type = HitDef
 trigger1 = map(balls)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *80 < 6, 6, fvar(11) * 80)), 8
 animtype = up                ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -2131,7 +2131,7 @@ getpower = cond(map(exkick)=1,0,(20)*(cond(var(var(2)) = 1, 1, 1)))
 [State 1000, 1]
 type = HitDef
 trigger1 = map(balls)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *80 < 6, 6, fvar(11) * 80)), 8
 animtype = up                ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -2256,7 +2256,7 @@ ignorehitpause = 1
 type = HitDef
 triggerall=enemynear,map(armor)=0
 trigger1 = map(penis)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *70 < 7, 7, fvar(11) * 70)), 8
 animtype = medium                ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -2295,7 +2295,7 @@ getpower = cond(map(exkick)=1,0,(40)*(cond(var(var(2)) = 1, 1, 1)))
 type = HitDef
 triggerall=enemynear,map(armor)>0
 trigger1 = map(penis)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *70 < 7, 7, fvar(11) * 70)), 8
 animtype = medium                ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -2335,7 +2335,7 @@ getpower = cond(map(exkick)=1,0,(40)*(cond(var(var(2)) = 1, 1, 1)))
 [State 1000, 1]
 type = HitDef
 trigger1 =map(penis)>0
-trigger1 =  !movecontact
+trigger1 =  !movecontact&&!movereversed
 attr = A, SA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *70 < 7, 7, fvar(11) * 70)), 8
 animtype = medium                ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -2444,7 +2444,7 @@ y = .3
 [State 1000, 1]
 type = HitDef
 triggerall=enemynear,map(armor)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *70 < 7, 7, fvar(11) * 70)), 8
 animtype = medium                ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -2480,7 +2480,7 @@ getpower = 0
 [State 1000, 1]
 type = HitDef
 triggerall=enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = A, SA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *70 < 7, 7, fvar(11) * 70)), 8
 animtype = medium                ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -2869,7 +2869,7 @@ removeongethit = 0
 [State 1000, 1]
 type = HitDef
 triggerall=enemynear,map(armor)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *80 < 15, 15, fvar(11) * 80)), 8
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -2900,7 +2900,7 @@ getpower = (100)*(cond(var(var(3)) = 1, 1, .5))
 [State 1000, 1]
 type = HitDef
 triggerall=enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *80 < 15, 15, fvar(11) * 80)), 8
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -4525,7 +4525,7 @@ removeongethit = 0
 [State 1000, 1]
 type = HitDef
 triggerall=enemynear,map(armor)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *70 < 10, 10, fvar(11) * 70)), 8
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -4555,7 +4555,7 @@ getpower = (80)*(cond(var(var(2)) = 1, 1, 1))
 [State 1000, 1]
 type = HitDef
 triggerall=enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *70 < 10, 10, fvar(11) * 70)), 8
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -4730,7 +4730,7 @@ removeongethit = 0
 type = HitDef
 triggerall=prevstateno!=2015
 triggerall=enemynear,map(armor)=0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 8
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -4762,7 +4762,7 @@ getpower = cond(prevstateno=2015,0,(80)*(cond(var(var(2)) = 1, 1, 1)))
 type = HitDef
 triggerall=prevstateno!=2015
 triggerall=enemynear,map(armor)>0
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 8
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -4792,7 +4792,7 @@ getpower = cond(prevstateno=2015,0,(80)*(cond(var(var(2)) = 1, 1, 1)))
 [State 1000, 1]
 type = HitDef
 triggerall=prevstateno=2015
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, SA                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 8
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -4988,7 +4988,7 @@ removeongethit = 0
 type = HitDef
 triggerall=anim = 11055 
 triggerall=enemynear,movetype=A
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, HT                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *100 < 10, 10, fvar(11) * 100)), 8
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -5021,7 +5021,7 @@ type = HitDef
 triggerall=enemynear,map(armor)=0
 triggerall=anim = 11055 
 triggerall=enemynear,movetype!=A
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, HT                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *100 < 10, 10, fvar(11) * 100)), 8
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -5053,7 +5053,7 @@ type = HitDef
 triggerall=enemynear,map(armor)>0
 triggerall=anim = 11055 
 triggerall=enemynear,movetype!=A
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, HT                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *100 < 10, 10, fvar(11) * 100)), 8
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -5152,7 +5152,7 @@ removeongethit = 0
 type = HitDef
 triggerall = anim = 101555 
 triggerall=enemynear,movetype=A
-trigger1 =!movecontact
+trigger1 =!movecontact&&!movereversed
 attr = S, HT                     ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *150 < 15, 15, fvar(11) * 150)), 8
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -5185,7 +5185,7 @@ type = HitDef
 triggerall=enemynear,map(armor)=0
 triggerall = anim = 101555 
 triggerall=enemynear,movetype!=A
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, HT                 ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 8
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -5217,7 +5217,7 @@ type = HitDef
 triggerall=enemynear,map(armor)>0
 triggerall = anim = 101555 
 triggerall=enemynear,movetype!=A
-trigger1 = !movecontact
+trigger1 = !movecontact&&!movereversed
 attr = S, HT                 ;Attribute: Standing, Normal Attack
 damage = ceil(cond(fvar(11) *100 < 15, 15, fvar(11) * 100)), 8
 animtype = light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
